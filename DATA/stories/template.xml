@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Story>
+<name>
+  <short></short>
+</name>
+
+<participants>
+   <person></person>
+   <person></person>
+</participants>
+
+<route>
+   <day date=""></day>
+   <day date=""></day>  
+</route>
+
+<visa>&lt;p class='story_celltext'&gt;        &lt;/p&gt;&lt;br&gt;</visa>
+
+<exrate>
+   <rate cur1="" curnt="" rate=""></rate>
+   <rate cur1="" curnt="" rate=""></rate>
+</exrate>
+
+<habitation>
+   <place price="" currency="" room="" name="" nights="" city=""></place>
+</habitation>
+
+<food>
+   <dish name="" price="" currency=""></dish>
+   <dish name="" price="" currency=""></dish>
+</food>
+
+<transport>
+   <day date="" price="" currency="" type="" time="hm" dep="" arr=""></day>
+   <day date="" price="" currency="" type="" time="hm" dep="" arr=""></day>
+</transport>
+
+<sights>
+   <sight price="0" currency="" name="" city=""></sight>
+   <sight price="0" currency="" name="" city=""></sight>
+</sights>
+
+<souvenirs>
+   <souvenirs price="" currency="" name="" num=""></souvenirs>
+   <souvenirs price="" currency="" name="" num=""></souvenirs>
+</souvenirs>
+
+<links>
+   <link src=""></links>
+</links>
+
+<custom>
+   <item name=""></item>
+</custom>
+
+<summary>&lt;p class='story_celltext'&gt;        &lt;/p&gt;&lt;br&gt;</summary>
+   
+</Story>

@@ -1,0 +1,80 @@
+/* DEFAULTS
+----------------------------------------------------------*/
+body {background: #FFFFFF; padding-top: 70px; padding-bottom: 30px;}
+
+a, a:visited {margin: 0px; text-decoration: none; color: #483D8B;}
+a:hover {text-decoration: none; color: #696969;}
+
+.float_l {float: left;}
+
+.float_r {float: right;}
+
+.clear {clear: both;}
+
+/* Header and Menu
+----------------------------------------------------------*/
+.singin {padding-bottom: 15px; padding-top: 15px;}
+
+ul.dropdown-menu {max-height: 300px; overflow-y: auto;}
+
+/* COUNTRIES PAGE (WORLD)
+----------------------------------------------------------*/
+div.mainsection {font-size: 12px;}
+div.map {width: 700px; height: 480px; margin-left: 20%;}
+
+div.countryhead {width: 900px; height: 50px;  text-align:left; font-weight:bold; font-size: 14px; padding: 15px 0px 5px 0px; margin-left: 15%;}
+div.my_countries {width: 900px; font-weight: normal; padding: 5px 0px 5px 0px; margin-left: 15%; text-align: left;}
+
+img.countflag {width: 25px; height: 25px; border: solid #c1d4cc 1px; border-radius: 3px; padding: 1px; margin: 3px;}
+
+div.visityear {width: 200px; font-weight:bold;  padding: 0px 0px 0px 145px; text-align: left; margin-left: 20%}
+div.firstcell {width: 200px; text-align:right; padding: 0px 10px 0px 25px; margin-left: 20%;}
+div.secondcell {text-align:left; width: 550px;}
+
+div.switchlink_l {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 15px; margin-left: 20%;}
+div.switchlink {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 15px;}
+
+/* COUNTRIES PAGE (COUNTRY)
+----------------------------------------------------------*/
+div.countrylabel {text-align:center; font-weight:bold; padding: 0px 0px 10px 0px; font-size: 20px;}
+div.countrydetail {text-align:left; font-size: 12px; padding: 5px 45px 5px 45px; margin-left: 20%}
+
+div.countryEmbFlag {width: 100%;}
+img.country_emb {width: 150px; height: 150px; margin-right: 75px; margin-left: 25%}
+img.country_flag {width: 300px; height: 150px; border: 2px solid; margin-left: 75px;}
+
+div.switchlink {min-width: 370px; height: 30px; text-align:center; padding: 0px 0px 0px 0px; font-weight:bold; font-size: 16px;}
+a.link {text-decoration: underline;}
+
+div.countryregion {text-align:left; font-size: 12px; padding: 0px 45px 0px 65px; margin-left: 20%}
+div.cityrow {text-align:left; padding: 0px 45px 5px 75px; margin-left: 20%}
+
+/* CITY PAGE
+----------------------------------------------------------*/
+img.city_photo {margin: 10px 27px 10px 27px; width: 300px; height:225px;}
+img.crown {width: 23px; height:12px;}
+
+/* SIGNIN PAGE (WORLD)
+----------------------------------------------------------*/
+.form-signin {max-width: 330px; padding: 15px; margin: 0 auto;}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {margin-bottom: 10px;}
+.form-signin .checkbox {font-weight: normal;}
+.form-signin .form-control {position: relative; height: auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 10px; font-size: 16px;}
+.form-signin .form-control:focus {z-index: 2;}
+.form-signin input[type="email"] {margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0;}
+.form-signin input[type="password"] {margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0;}
+
+/* STORY PROCESSOR PAGE
+----------------------------------------------------------*/
+.story_celltext {text-indent: 35px;}
+p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; margin-right: 20px; margin-left: 20px;} 
+.reg_header {font-weight: bold; margin-bottom: 0px;}
+.reg_header_impr {padding: 8px;}
+
+/* Overview settings  PAGE
+----------------------------------------------------------*/
+#thalign {text-align: left;}
+
+/* THE END
+----------------------------------------------------------*/
