@@ -1,0 +1,8 @@
+target/
+.project
+.settings
+.factorypath
+.springbeans
+.idea
+*.*~
+*.log
