@@ -520,3192 +520,576 @@
     {"country_id": "SK","region_id": "SK-TA","name": "Trnava","name_ru": "Трнавский край","active": "Y"},
     {"country_id": "SK","region_id": "SK-ZI","name": "Zilina","name_ru": "Жилинский край","active": "Y"},
 
-      {
-        "-id": "DE",
-        "-mc_name": "DE-BW",
-        "-title": "Baden-Wurttemberg",
-        "-title_ru": "�����-����������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-BY",
-        "-title": "Bavaria (Bayern)",
-        "-title_ru": "��������� ����������� �������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-BE",
-        "-title": "Berlin",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-BB",
-        "-title": "Brandenburg",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-HB",
-        "-title": "Bremen",
-        "-title_ru": "��������� ���������� ����� ������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-HH",
-        "-title": "Hamburg",
-        "-title_ru": "��������� � ���������� ����� �������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-HE",
-        "-title": "Hesse (Hessen)",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-MV",
-        "-title": "Mecklenburg-Vorpommern",
-        "-title_ru": "����������-�������� ���������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-NI",
-        "-title": "Lower Saxony (Niedersachsen)",
-        "-title_ru": "������ ��������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-NW",
-        "-title": "North Rhine-Westphalia (Nordrhein-Westfalen)",
-        "-title_ru": "�������� ����-���������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-RP",
-        "-title": "Rhineland-Palatinate (Rheinland-Pfalz)",
-        "-title_ru": "��������-������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-SL",
-        "-title": "Saarland",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-SN",
-        "-title": "Saxony (Sachsen)",
-        "-title_ru": "��������� ����������� ��������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-ST",
-        "-title": "Saxony-Anhalt (Sachsen-Anhalt)",
-        "-title_ru": "��������-�������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-SH",
-        "-title": "Schleswig-Holstein",
-        "-title_ru": "�������-���������"
-      },
-      {
-        "-id": "DE",
-        "-mc_name": "DE-TH",
-        "-title": "Thuringia (Thuringen)",
-        "-title_ru": "��������� ����������� ��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BK",
-        "-title": "Bacs-Kiskun",
-        "-title_ru": "���-������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BA",
-        "-title": "Baranya",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BE",
-        "-title": "Bekes",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BC",
-        "-title": "Bekescsaba",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BZ",
-        "-title": "Borsod-Abauj-Zemplen",
-        "-title_ru": "������-�����-�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-BU",
-        "-title": "Budapest",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-CS",
-        "-title": "Csongrad",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-DE",
-        "-title": "Debrecen",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-DU",
-        "-title": "Dunaujvaros",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-EG",
-        "-title": "Eger",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-FE",
-        "-title": "Fejer",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-GY",
-        "-title": "Gyor",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-GS",
-        "-title": "Gyor-Moson-Sopron",
-        "-title_ru": "����-�����-������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-HB",
-        "-title": "Hajdu-Bihar",
-        "-title_ru": "�����-�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-HE",
-        "-title": "Heves",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-HV",
-        "-title": "Hodmezovasarhely",
-        "-title_ru": "��������������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-JN",
-        "-title": "Jasz-Nagykun-Szolnok",
-        "-title_ru": "��-�������-�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-KV",
-        "-title": "Kaposvar",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-KM",
-        "-title": "Kecskemet",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-KE",
-        "-title": "Komarom-Esztergom",
-        "-title_ru": "�������-��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-MI",
-        "-title": "Miskolc",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-NK",
-        "-title": "Nagykanizsa",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-NO",
-        "-title": "Nograd",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-NY",
-        "-title": "Nyiregyhaza",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-PS",
-        "-title": "Pecs",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-PE",
-        "-title": "Pest",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SO",
-        "-title": "Somogy",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SN",
-        "-title": "Sopron",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SZ",
-        "-title": "Szabolcs-Szatmar-Bereg",
-        "-title_ru": "�������-������-�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SD",
-        "-title": "Szeged",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SF",
-        "-title": "Szekesfehervar",
-        "-title_ru": "�������������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SK",
-        "-title": "Szolnok",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-SH",
-        "-title": "Szombathely",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-TB",
-        "-title": "Tatabanya",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-TO",
-        "-title": "Tolna",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-VA",
-        "-title": "Vas",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-VE",
-        "-title": "Veszprem",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-VM",
-        "-title": "Veszprem",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-ZA",
-        "-title": "Zala",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "HU",
-        "-mc_name": "HU-ZE",
-        "-title": "Zalaegerszeg",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-AB",
-        "-title": "Alba",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-AR",
-        "-title": "Arad",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-AG",
-        "-title": "Arges",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BC",
-        "-title": "Bacau",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BH",
-        "-title": "Bihor",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BN",
-        "-title": "Bistrita-Nasaud",
-        "-title_ru": "��������-������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BT",
-        "-title": "Botosani",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BV",
-        "-title": "Brasov",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BR",
-        "-title": "Braila",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-BZ",
-        "-title": "Buzau",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-CS",
-        "-title": "Caras-Severin",
-        "-title_ru": "�����-�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-CL",
-        "-title": "Calarasi",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-CJ",
-        "-title": "Cluj",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-CT",
-        "-title": "Constanta",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-CV",
-        "-title": "Covasna",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-DB",
-        "-title": "Dambovita",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-DJ",
-        "-title": "Dolj",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-GL",
-        "-title": "Galati",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-GR",
-        "-title": "Giurgiu",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-GJ",
-        "-title": "Gorj",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-HR",
-        "-title": "Harghita",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-HD",
-        "-title": "Hunedoara",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-IL",
-        "-title": "Ialomita",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-IS",
-        "-title": "Iasi",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-IF",
-        "-title": "Ilfov",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-MM",
-        "-title": "Maramures",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-MH",
-        "-title": "Mehedinti",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-MS",
-        "-title": "Mures",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-NT",
-        "-title": "Neamt",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-OT",
-        "-title": "Olt",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-PH",
-        "-title": "Prahova",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-SM",
-        "-title": "Satu Mare",
-        "-title_ru": "����-����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-SJ",
-        "-title": "Salaj",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-SB",
-        "-title": "Sibiu",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-SV",
-        "-title": "Suceava",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-TR",
-        "-title": "Teleorman",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-TM",
-        "-title": "Timis",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-TL",
-        "-title": "Tulcea",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-VS",
-        "-title": "Vaslui",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-VL",
-        "-title": "Valcea",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-VN",
-        "-title": "Vrancea",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RO",
-        "-mc_name": "RO-B",
-        "-title": "Bucuresti",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-DGV",
-        "-title": "Daugavpils",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-JEL",
-        "-title": "Jelgava",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-JKB",
-        "-title": "Jekabpils",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-JUR",
-        "-title": "Jurmala",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-LPX",
-        "-title": "Liepaja",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-REZ",
-        "-title": "Rezekne",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-RIX",
-        "-title": "Riga",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-VMR",
-        "-title": "Valmiera",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-VEN",
-        "-title": "Ventspils",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-001",
-        "-title": "Aglonas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-002",
-        "-title": "Aizkraukles novads",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-003",
-        "-title": "Aizputes novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-004",
-        "-title": "Aknistes novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-005",
-        "-title": "Alojas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-006",
-        "-title": "Alsungas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-007",
-        "-title": "Aluksnes novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-008",
-        "-title": "Amatas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-009",
-        "-title": "Apes novads",
-        "-title_ru": "������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-010",
-        "-title": "Auces novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-011",
-        "-title": "Adazu novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-012",
-        "-title": "Babites novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-013",
-        "-title": "Baldones novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-014",
-        "-title": "Baltinavas novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-015",
-        "-title": "Balvu novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-016",
-        "-title": "Bauskas novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-017",
-        "-title": "Beverinas novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-018",
-        "-title": "Brocenu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-019",
-        "-title": "Burtnieku novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-020",
-        "-title": "Carnikavas novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-021",
-        "-title": "Cesvaines novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-022",
-        "-title": "Cesu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-023",
-        "-title": "Ciblas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-024",
-        "-title": "Dagdas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-025",
-        "-title": "Daugavpils novads",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-026",
-        "-title": "Dobeles novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-027",
-        "-title": "Dundagas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-028",
-        "-title": "Durbes novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-029",
-        "-title": "Engures novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-030",
-        "-title": "Erglu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-031",
-        "-title": "Garkalnes novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-032",
-        "-title": "Grobinas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-033",
-        "-title": "Gulbenes novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-034",
-        "-title": "Iecavas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-035",
-        "-title": "Ikskiles novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-036",
-        "-title": "Incukalna novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-037",
-        "-title": "Ilukstes novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-038",
-        "-title": "Jaunjelgavas novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-039",
-        "-title": "Jaunpiebalgas novads",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-040",
-        "-title": "Jaunpils novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-041",
-        "-title": "Jelgavas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-042",
-        "-title": "Jekabpils novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-043",
-        "-title": "Kandavas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-044",
-        "-title": "Karsavas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-045",
-        "-title": "Kocenu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-046",
-        "-title": "Kokneses novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-047",
-        "-title": "Kraslavas novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-048",
-        "-title": "Krimuldas novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-049",
-        "-title": "Krustpils novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-050",
-        "-title": "Kuldigas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-051",
-        "-title": "Keguma novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-052",
-        "-title": "Kekavas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-053",
-        "-title": "Lielvardes novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-054",
-        "-title": "Limbazu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-055",
-        "-title": "Ligatnes novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-056",
-        "-title": "Livanu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-057",
-        "-title": "Lubanas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-058",
-        "-title": "Ludzas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-059",
-        "-title": "Madonas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-060",
-        "-title": "Mazsalacas novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-061",
-        "-title": "Malpils novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-062",
-        "-title": "Marupes novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-063",
-        "-title": "Mersraga novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-064",
-        "-title": "Nauksenu novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-065",
-        "-title": "Neretas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-066",
-        "-title": "Nicas novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-067",
-        "-title": "Ogres novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-068",
-        "-title": "Olaines novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-069",
-        "-title": "Ozolnieku novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-070",
-        "-title": "Pargaujas novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-071",
-        "-title": "Pavilostas novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-072",
-        "-title": "Plavinu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-073",
-        "-title": "Preilu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-074",
-        "-title": "Priekules novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-075",
-        "-title": "Priekulu novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-076",
-        "-title": "Raunas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-077",
-        "-title": "Rezeknes novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-078",
-        "-title": "Riebinu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-079",
-        "-title": "Rojas novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-080",
-        "-title": "Ropazu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-081",
-        "-title": "Rucavas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-082",
-        "-title": "Rugaju novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-083",
-        "-title": "Rundales novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-084",
-        "-title": "Rujienas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-085",
-        "-title": "Salas novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-086",
-        "-title": "Salacgrivas novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-087",
-        "-title": "Salaspils novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-088",
-        "-title": "Saldus novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-089",
-        "-title": "Saulkrastu novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-090",
-        "-title": "Sejas novads",
-        "-title_ru": "������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-091",
-        "-title": "Siguldas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-092",
-        "-title": "Skriveru novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-093",
-        "-title": "Skrundas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-094",
-        "-title": "Smiltenes novads",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-095",
-        "-title": "Stopinu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-096",
-        "-title": "Strencu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-097",
-        "-title": "Talsu novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-098",
-        "-title": "Tervetes novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-099",
-        "-title": "Tukuma novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-100",
-        "-title": "Vainodes novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-101",
-        "-title": "Valkas novads",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-102",
-        "-title": "Varaklanu novads",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-103",
-        "-title": "Varkavas novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-104",
-        "-title": "Vecpiebalgas novads",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-105",
-        "-title": "Vecumnieku novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-106",
-        "-title": "Ventspils novads",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-107",
-        "-title": "Viesites novads",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-108",
-        "-title": "Vilakas novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-109",
-        "-title": "Vilanu novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "LV",
-        "-mc_name": "LV-110",
-        "-title": "Zilupes novads",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ALT",
-        "-title": "Altai Krai",
-        "-title_ru": "��������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-AL",
-        "-title": "Altai Republic",
-        "-title_ru": "���������� �����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-AMU",
-        "-title": "Amur Oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ARK",
-        "-title": "Arkhangelsk Oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-AST",
-        "-title": "Astrakhan Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-BEL",
-        "-title": "Belgorod Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-BRY",
-        "-title": "Bryansk Oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-BU",
-        "-title": "Buryat Republic",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-CE",
-        "-title": "Chechen Republic",
-        "-title_ru": "���������� �����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-CHE",
-        "-title": "Chelyabinsk Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-CHU",
-        "-title": "Chukotka Autonomous Okrug",
-        "-title_ru": "��������� ���������� �����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-CU",
-        "-title": "Chuvash Republic",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-IRK",
-        "-title": "Irkutsk Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-IVA",
-        "-title": "Ivanovo Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-YEV",
-        "-title": "Jewish Autonomous Oblast",
-        "-title_ru": "��������� ���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KB",
-        "-title": "Kabardino-Balkar Republic",
-        "-title_ru": "���������-���������� ����������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KGD",
-        "-title": "Kaliningrad Oblast",
-        "-title_ru": "��������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KLU",
-        "-title": "Kaluga Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KAM",
-        "-title": "Kamchatka Krai",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KC",
-        "-title": "Karachay-Cherkess Republic",
-        "-title_ru": "���������-���������� ����������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KEM",
-        "-title": "Kemerovo Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KHA",
-        "-title": "Khabarovsk Krai",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KHM",
-        "-title": "Khanty-Mansi Autonomous Oblast",
-        "-title_ru": "�����-���������� ���������� ����� � ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KIR",
-        "-title": "Kirov Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KO",
-        "-title": "Komi Republic",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KOS",
-        "-title": "Kostroma Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KDA",
-        "-title": "Krasnodar Krai",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KYA",
-        "-title": "Krasnoyarsk Krai",
-        "-title_ru": "������������ ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KGN",
-        "-title": "Kurgan Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KRS",
-        "-title": "Kursk Oblast",
-        "-title_ru": "������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-LEN",
-        "-title": "Leningrad Oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-LIP",
-        "-title": "Lipetsk Oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-MAG",
-        "-title": "Magadan Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ME",
-        "-title": "Mari El Republic",
-        "-title_ru": "���������� ����� ��"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-MOW",
-        "-title": "Moscow",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-MOS",
-        "-title": "Moscow Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-MUR",
-        "-title": "Murmansk Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-NEN",
-        "-title": "Nenets Autonomous Okrug",
-        "-title_ru": "�������� ���������� �����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-NIZ",
-        "-title": "Nizhny Novgorod Oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-NGR",
-        "-title": "Novgorod Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-NVS",
-        "-title": "Novosibirsk Oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-OMS",
-        "-title": "Omsk Oblast",
-        "-title_ru": "������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ORE",
-        "-title": "Orenburg Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ORL",
-        "-title": "Oryol Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-PNZ",
-        "-title": "Penza Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-PER",
-        "-title": "Perm Krai",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-PRI",
-        "-title": "Primorsky Krai",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-PSK",
-        "-title": "Pskov Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-AD",
-        "-title": "Republic of Adygea",
-        "-title_ru": "���������� ������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-BA",
-        "-title": "Republic of Bashkortostan",
-        "-title_ru": "���������� ������������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-DA",
-        "-title": "Republic of Dagestan",
-        "-title_ru": "���������� ��������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-IN",
-        "-title": "Republic of Ingushetia",
-        "-title_ru": "���������� ���������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KL",
-        "-title": "Republic of Kalmykia",
-        "-title_ru": "���������� ��������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KR",
-        "-title": "Republic of Karelia",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-KK",
-        "-title": "Republic of Khakassia",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-MO",
-        "-title": "Republic of Mordovia",
-        "-title_ru": "���������� ��������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SE",
-        "-title": "Republic of North Ossetia-Alania",
-        "-title_ru": "���������� �������� ������ � ������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TA",
-        "-title": "Republic of Tatarstan",
-        "-title_ru": "���������� ���������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ROS",
-        "-title": "Rostov Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-RYA",
-        "-title": "Ryazan Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SPE",
-        "-title": "Saint Petersburg",
-        "-title_ru": "����� ���������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SA",
-        "-title": "Sakha (Yakutia) Republic",
-        "-title_ru": "���������� ���� (������)"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SAK",
-        "-title": "Sakhalin Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SAM",
-        "-title": "Samara Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SAR",
-        "-title": "Saratov Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SMO",
-        "-title": "Smolensk Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-STA",
-        "-title": "Stavropol Krai",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-SVE",
-        "-title": "Sverdlovsk Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TAM",
-        "-title": "Tambov Oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TOM",
-        "-title": "Tomsk Oblast",
-        "-title_ru": "������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TUL",
-        "-title": "Tula Oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TVE",
-        "-title": "Tver Oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TYU",
-        "-title": "Tyumen Oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-TY",
-        "-title": "Tyva Republic",
-        "-title_ru": "���������� ���� (����)"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-UD",
-        "-title": "Udmurt Republic",
-        "-title_ru": "���������� ��������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ULY",
-        "-title": "Ulyanovsk Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-VLA",
-        "-title": "Vladimir Oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-VGG",
-        "-title": "Volgograd Oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-VLG",
-        "-title": "Vologda Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-VOR",
-        "-title": "Voronezh Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-YAN",
-        "-title": "Yamalo-Nenets Autonomous Okrug",
-        "-title_ru": "�����-�������� ���������� �����"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-YAR",
-        "-title": "Yaroslavl Oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "RU",
-        "-mc_name": "RU-ZAB",
-        "-title": "Zabaykalsky Krai",
-        "-title_ru": "������������� ����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-01",
-        "-title": "Adana",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-02",
-        "-title": "Ad?yaman",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-03",
-        "-title": "Afyonkarahisar (Afyon)",
-        "-title_ru": "��������������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-04",
-        "-title": "Agri",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-68",
-        "-title": "Aksaray",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-05",
-        "-title": "Amasya",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-06",
-        "-title": "Ankara",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-07",
-        "-title": "Antalya",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-75",
-        "-title": "Ardahan",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-08",
-        "-title": "Artvin",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-09",
-        "-title": "Ayd?n",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-10",
-        "-title": "Bal?kesir",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-74",
-        "-title": "Bart?n",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-72",
-        "-title": "Batman",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-69",
-        "-title": "Bayburt",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-11",
-        "-title": "Bilecik",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-12",
-        "-title": "Bingol",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-13",
-        "-title": "Bitlis",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-14",
-        "-title": "Bolu",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-15",
-        "-title": "Burdur",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-16",
-        "-title": "Bursa",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-17",
-        "-title": "Canakkale",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-18",
-        "-title": "Cank?r?",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-19",
-        "-title": "Corum",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-20",
-        "-title": "Denizli",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-21",
-        "-title": "Diyarbak?r",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-81",
-        "-title": "Duzce",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-22",
-        "-title": "Edirne",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-23",
-        "-title": "Elaz?g",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-24",
-        "-title": "Erzincan",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-25",
-        "-title": "Erzurum",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-26",
-        "-title": "Eskisehir",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-27",
-        "-title": "Gaziantep",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-28",
-        "-title": "Giresun",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-29",
-        "-title": "Gumushane",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-30",
-        "-title": "Hakkari",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-31",
-        "-title": "Hatay",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-76",
-        "-title": "Igdir",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-32",
-        "-title": "Isparta",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-34",
-        "-title": "Istanbul",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-35",
-        "-title": "Izmir",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-46",
-        "-title": "Kahramanmaras",
-        "-title_ru": "�������������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-78",
-        "-title": "Karabuk",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-70",
-        "-title": "Karaman",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-36",
-        "-title": "Kars",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-37",
-        "-title": "Kastamonu",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-38",
-        "-title": "Kayseri",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-79",
-        "-title": "Kilis",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-71",
-        "-title": "K?r?kkale",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-39",
-        "-title": "K?rklareli",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-40",
-        "-title": "K?rsehir",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-41",
-        "-title": "Kocaeli",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-42",
-        "-title": "Konya",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-43",
-        "-title": "Kutahya",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-44",
-        "-title": "Malatya",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-45",
-        "-title": "Manisa",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-47",
-        "-title": "Mardin",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-33",
-        "-title": "Mersin",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-48",
-        "-title": "Mugla",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-49",
-        "-title": "Mus",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-50",
-        "-title": "Nevsehir",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-51",
-        "-title": "Nigde",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-52",
-        "-title": "Ordu",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-80",
-        "-title": "Osmaniye",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-53",
-        "-title": "Rize",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-54",
-        "-title": "Sakarya",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-55",
-        "-title": "Samsun",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-63",
-        "-title": "Sanl?urfa",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-56",
-        "-title": "Siirt",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-57",
-        "-title": "Sinop",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-73",
-        "-title": "S?rnak",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-58",
-        "-title": "Sivas",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-59",
-        "-title": "Tekirdag",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-60",
-        "-title": "Tokat",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-61",
-        "-title": "Trabzon",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-62",
-        "-title": "Tunceli",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-64",
-        "-title": "Usak",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-65",
-        "-title": "Van",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-77",
-        "-title": "Yalova",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-66",
-        "-title": "Yozgat",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "TR",
-        "-mc_name": "TR-67",
-        "-title": "Zonguldak",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-AN",
-        "-title": "Andaman and Nicobar Islands",
-        "-title_ru": "����������� � ����������� �������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-AP",
-        "-title": "Andhra Pradesh",
-        "-title_ru": "������-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-AR",
-        "-title": "Arunachal Pradesh",
-        "-title_ru": "��������-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-AS",
-        "-title": "Assam",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-BR",
-        "-title": "Bihar",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-CH",
-        "-title": "Chandigarh",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-CT",
-        "-title": "Chhattisgarh",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-DN",
-        "-title": "Dadra and Nagar Haveli",
-        "-title_ru": "����� � �����-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-DD",
-        "-title": "Daman and Diu",
-        "-title_ru": "����� � ���"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-DL",
-        "-title": "Delhi",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-GA",
-        "-title": "Goa",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-GJ",
-        "-title": "Gujarat",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-HR",
-        "-title": "Haryana",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-HP",
-        "-title": "Himachal Pradesh",
-        "-title_ru": "�������-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-JK",
-        "-title": "Jammu and Kashmir",
-        "-title_ru": "������ � ������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-JH",
-        "-title": "Jharkhand",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-KA",
-        "-title": "Karnataka",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-KL",
-        "-title": "Kerala",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-LD",
-        "-title": "Lakshadweep",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-MP",
-        "-title": "Madhya Pradesh",
-        "-title_ru": "������-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-MH",
-        "-title": "Maharashtr",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-MN",
-        "-title": "Manipur",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-ML",
-        "-title": "Meghalaya",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-MZ",
-        "-title": "Mizoram",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-NL",
-        "-title": "Nagaland",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-OR",
-        "-title": "Orissa",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-PY",
-        "-title": "Puducherry",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-PB",
-        "-title": "Punjab",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-RJ",
-        "-title": "Rajasthan",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-SK",
-        "-title": "Sikkim",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-TN",
-        "-title": "Tamil Nadu",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-TR",
-        "-title": "Tripura",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-UT",
-        "-title": "Uttarakhand",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-UP",
-        "-title": "Uttar Pradesh",
-        "-title_ru": "�����-������"
-      },
-      {
-        "-id": "IN",
-        "-mc_name": "IN-WB",
-        "-title": "West Bengal",
-        "-title_ru": "�������� ��������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-WP",
-        "-title": "Greater Poland (Wielkopolskie)",
-        "-title_ru": "�������������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-KP",
-        "-title": "Kuyavian-Pomeranian (Kujawsko-Pomorskie)",
-        "-title_ru": "�������-��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-MA",
-        "-title": "Lesser Poland (Malopolskie)",
-        "-title_ru": "������������ ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-LD",
-        "-title": "Lodz (Lodzkie)",
-        "-title_ru": "���������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-DS",
-        "-title": "Lower Silesian (Dolnoslaskie)",
-        "-title_ru": "�������������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-LU",
-        "-title": "Lublin (Lubelskie)",
-        "-title_ru": "���������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-LB",
-        "-title": "Lubusz (Lubuskie)",
-        "-title_ru": "��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-MZ",
-        "-title": "Masovian (Mazowieckie)",
-        "-title_ru": "���������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-OP",
-        "-title": "Opole (Opolskie)",
-        "-title_ru": "��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-PD",
-        "-title": "Podlaskie (Podlaskie)",
-        "-title_ru": "���������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-PM",
-        "-title": "Pomeranian (Pomorskie)",
-        "-title_ru": "��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-SL",
-        "-title": "Silesian (Slaskie)",
-        "-title_ru": "��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-PK",
-        "-title": "Subcarpathian (Podkarpackie)",
-        "-title_ru": "������������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-SK",
-        "-title": "Swietokrzyskie",
-        "-title_ru": "������������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-WN",
-        "-title": "Warmian-Masurian (Warminsko-Mazurskie)",
-        "-title_ru": "���������-��������� ����������"
-      },
-      {
-        "-id": "PL",
-        "-mc_name": "PL-ZP",
-        "-title": "West Pomeranian (Zachodniopomorskie)",
-        "-title_ru": "�������-��������� ����������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-01",
-        "-title": "Andrijevica",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-02",
-        "-title": "Bar",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-03",
-        "-title": "Berane",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-04",
-        "-title": "Bijelo Polje",
-        "-title_ru": "�����-����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-05",
-        "-title": "Budva",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-06",
-        "-title": "Cetinje",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-07",
-        "-title": "Danilovgrad",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-08",
-        "-title": "Herceg Novi",
-        "-title_ru": "������-����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-09",
-        "-title": "Kolasin",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-10",
-        "-title": "Kotor",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-11",
-        "-title": "Mojkovac",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-12",
-        "-title": "Niksic",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-13",
-        "-title": "Plav",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-14",
-        "-title": "Pljevlja",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-15",
-        "-title": "Pluzine",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-16",
-        "-title": "Podgorica",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-17",
-        "-title": "Rozaje",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-18",
-        "-title": "Savnik",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-19",
-        "-title": "Tivat",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-20",
-        "-title": "Ulcinj",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-21",
-        "-title": "Zabljak",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "ME",
-        "-mc_name": "ME-SLK",
-        "-title": "Skadar Lake",
-        "-title_ru": "���������� �����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-AG",
-        "-title": "Aargau",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-AI",
-        "-title": "Appenzell Inner-Rhoden",
-        "-title_ru": "����������-����������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-AR",
-        "-title": "Appenzell Ausser-Rhoden",
-        "-title_ru": "����������-�����������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-BE",
-        "-title": "Bern",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-BL",
-        "-title": "Basel-Landschaft",
-        "-title_ru": "������-����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-BS",
-        "-title": "Basel-Stadt",
-        "-title_ru": "������-�����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-FR",
-        "-title": "Fribourg",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-GE",
-        "-title": "Geneve",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-GL",
-        "-title": "Glarus",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-GR",
-        "-title": "Graubunden",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-JU",
-        "-title": "Jura",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-LU",
-        "-title": "Lucerne",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-NE",
-        "-title": "Neuchatel",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-NW",
-        "-title": "Nidwalden",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-OW",
-        "-title": "Obwalden",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-SG",
-        "-title": "Sankt Gallen",
-        "-title_ru": "�����-������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-SH",
-        "-title": "Schaffhausen",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-SO",
-        "-title": "Solothurn",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-SZ",
-        "-title": "Schwyz",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-TG",
-        "-title": "Thurgau",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-TI",
-        "-title": "Ticino",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-UR",
-        "-title": "Uri",
-        "-title_ru": " ���"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-VD",
-        "-title": "Vaud",
-        "-title_ru": "��"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-VS",
-        "-title": "Valais",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-ZH",
-        "-title": "Zurich",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "CH",
-        "-mc_name": "CH-ZG",
-        "-title": "Zug",
-        "-title_ru": "���"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_CK",
-        "-title": "Cherkasy oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_CH",
-        "-title": "Chernihiv oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_CV",
-        "-title": "Chernivtsi oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KR",
-        "-title": "Crimean Autonomic Republica",
-        "-title_ru": "���������� ���������� ����"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_DP",
-        "-title": "Dnipropetrovs'k oblast",
-        "-title_ru": "���������������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_DT",
-        "-title": "Donets'k oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_IF",
-        "-title": "Ivano-Frankivs'k oblast",
-        "-title_ru": "�����-����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KK",
-        "-title": "Kharkiv oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KS",
-        "-title": "Kherson oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KM",
-        "-title": "Khmel'nyts'kyy oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KV",
-        "-title": "Kyiv oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_KH",
-        "-title": "Kirovohrad oblast",
-        "-title_ru": "�������������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_LH",
-        "-title": "Luhans'k oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_LV",
-        "-title": "L'viv oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_MY",
-        "-title": "Mykolayiv oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_OD",
-        "-title": "Odessa oblast",
-        "-title_ru": "�������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_PL",
-        "-title": "Poltava oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_RV",
-        "-title": "Rivne oblast",
-        "-title_ru": "���������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_SM",
-        "-title": "Sumy oblast",
-        "-title_ru": "������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_TP",
-        "-title": "Ternopil oblast",
-        "-title_ru": "������������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_ZK",
-        "-title": "Transcarpathia (Zakarpattia) oblast",
-        "-title_ru": "������������ �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_VI",
-        "-title": "Vinnytsya oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_VO",
-        "-title": "Volyn oblast",
-        "-title_ru": "��������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_ZP",
-        "-title": "Zaporizhzhya oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA_ZT",
-        "-title": "Zhytomyr oblast",
-        "-title_ru": "����������� �������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA-40",
-        "-title": "Sevastpol' City",
-        "-title_ru": "����� �����������"
-      },
-      {
-        "-id": "UA",
-        "-mc_name": "UA-30",
-        "-title": "Kyiv City",
-        "-title_ru": "����� ����"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "VA",
-        "-title": "Vatican City",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "SM",
-        "-title": "San Marino",
-        "-title_ru": "���-������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "FR-H",
-        "-title": "Corsica, France",
-        "-title_ru": "�������, �������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "MT",
-        "-title": "Malta",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-65",
-        "-title": "Abruzzi",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-77",
-        "-title": "Basilicata",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-78",
-        "-title": "Calabria",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-72",
-        "-title": "Campania",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-45",
-        "-title": "Emilia-Romagna",
-        "-title_ru": "������-�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-36",
-        "-title": "Friuli-Venezia Giulia",
-        "-title_ru": "������-�������-������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-62",
-        "-title": "Lazio",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-42",
-        "-title": "Liguria",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-25",
-        "-title": "Lombardy",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-57",
-        "-title": "Marche",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-67",
-        "-title": "Molise",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-21",
-        "-title": "Piedmont",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-75",
-        "-title": "Apulia",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-88",
-        "-title": "Sardinia",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-82",
-        "-title": "Sicily",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-52",
-        "-title": "Tuscany",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-32",
-        "-title": "Trentino-Alto-Adige",
-        "-title_ru": "��������-�����-������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-55",
-        "-title": "Umbria",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-23",
-        "-title": "Valle d'Aosta",
-        "-title_ru": "�����-������"
-      },
-      {
-        "-id": "IT",
-        "-mc_name": "IT-34",
-        "-title": "Veneto",
-        "-title_ru": "������"
-      },
+    {"country_id": "DE","region_id": "DE-BW","name": "Baden-Wurttemberg","name_ru": "Баден-Вюртемберг","active": "Y"},
+    {"country_id": "DE","region_id": "DE-BY","name": "Bavaria (Bayern)","name_ru": "Свободное государство Бавария","active": "Y"},
+    {"country_id": "DE","region_id": "DE-BE","name": "Berlin","name_ru": "Берлин","active": "Y"},
+    {"country_id": "DE","region_id": "DE-BB","name": "Brandenburg","name_ru": "Бранденбург","active": "Y"},
+    {"country_id": "DE","region_id": "DE-HB","name": "Bremen","name_ru": "Свободный ганзейский город Бремен","active": "Y"},
+    {"country_id": "DE","region_id": "DE-HH","name": "Hamburg","name_ru": "Свободный и ганзейский город Гамбург","active": "Y"},
+    {"country_id": "DE","region_id": "DE-HE","name": "Hesse (Hessen)","name_ru": "Гессен","active": "Y"},
+    {"country_id": "DE","region_id": "DE-MV","name": "Mecklenburg-Vorpommern","name_ru": "Мекленбург-Передняя Померания","active": "Y"},
+    {"country_id": "DE","region_id": "DE-NI","name": "Lower Saxony (Niedersachsen)","name_ru": "Нижняя Саксония","active": "Y"},
+    {"country_id": "DE","region_id": "DE-NW","name": "North Rhine-Westphalia (Nordrhein-Westfalen)","name_ru": "Северный Рейн-Вестфалия","active": "Y"},
+    {"country_id": "DE","region_id": "DE-RP","name": "Rhineland-Palatinate (Rheinland-Pfalz)","name_ru": "Рейнланд-Пфальц","active": "Y"},
+    {"country_id": "DE","region_id": "DE-SL","name": "Saarland","name_ru": "Саар","active": "Y"},
+    {"country_id": "DE","region_id": "DE-SN","name": "Saxony (Sachsen)","name_ru": "Свободное государство Саксония","active": "Y"},
+    {"country_id": "DE","region_id": "DE-ST","name": "Saxony-Anhalt (Sachsen-Anhalt)","name_ru": "Саксония-Анхальт","active": "Y"},
+    {"country_id": "DE","region_id": "DE-SH","name": "Schleswig-Holstein","name_ru": "Шлезвиг-Гольштейн","active": "Y"},
+    {"country_id": "DE","region_id": "DE-TH","name": "Thuringia (Thuringen)","name_ru": "Свободное государство Тюрингия","active": "Y"},
+
+    {"country_id": "HU","region_id": "HU-BK","name": "Bács-Kiskun","name_ru": "Бач-Кишкун","active": "Y"},
+    {"country_id": "HU","region_id": "HU-BA","name": "Baranya","name_ru": "Баранья","active": "Y"},
+    {"country_id": "HU","region_id": "HU-BE","name": "Békés","name_ru": "Бекеш","active": "Y"},
+    {"country_id": "HU","region_id": "HU-BC","name": "Békéscsaba","name_ru": "Бекешчаба","active": "Y"},
+    {"country_id": "HU","region_id": "HU-BZ","name": "Borsod-Abaúj-Zemplén","name_ru": "Боршод-Абауй-Земплен","active": "Y"},
+    {"country_id": "HU","region_id": "HU-BU","name": "Budapest","name_ru": "Будапешт","active": "Y"},
+    {"country_id": "HU","region_id": "HU-CS","name": "Csongrád","name_ru": "Чонград","active": "Y"},
+    {"country_id": "HU","region_id": "HU-DE","name": "Debrecen","name_ru": "Дебрецен","active": "Y"},
+    {"country_id": "HU","region_id": "HU-DU","name": "Dunaújváros","name_ru": "Дунауйварош","active": "Y"},
+    {"country_id": "HU","region_id": "HU-EG","name": "Eger","name_ru": "Эгер","active": "Y"},
+    {"country_id": "HU","region_id": "HU-FE","name": "Fejér","name_ru": "Фейер","active": "Y"},
+    {"country_id": "HU","region_id": "HU-GY","name": "Győr","name_ru": "Дьёр","active": "Y"},
+    {"country_id": "HU","region_id": "HU-GS","name": "Győr-Moson-Sopron","name_ru": "Дьёр-Мошон-Шопрон","active": "Y"},
+    {"country_id": "HU","region_id": "HU-HB","name": "Hajdú-Bihar","name_ru": "Хайду-Бихар","active": "Y"},
+    {"country_id": "HU","region_id": "HU-HE","name": "Heves","name_ru": "Хевеш","active": "Y"},
+    {"country_id": "HU","region_id": "HU-HV","name": "Hódmezővásárhely","name_ru": "Ходмезёвашархей","active": "Y"},
+    {"country_id": "HU","region_id": "HU-JN","name": "Jász-Nagykun-Szolnok","name_ru": "Яс-Надькун-Сольнок","active": "Y"},
+    {"country_id": "HU","region_id": "HU-KV","name": "Kaposvár","name_ru": "Капошвар","active": "Y"},
+    {"country_id": "HU","region_id": "HU-KM","name": "Kecskemét","name_ru": "Кечкемет","active": "Y"},
+    {"country_id": "HU","region_id": "HU-KE","name": "Komárom-Esztergom","name_ru": "Комаром-Эстергом","active": "Y"},
+    {"country_id": "HU","region_id": "HU-MI","name": "Miskolc","name_ru": "Мишкольц","active": "Y"},
+    {"country_id": "HU","region_id": "HU-NK","name": "Nagykanizsa","name_ru": "Надьканижа","active": "Y"},
+    {"country_id": "HU","region_id": "HU-NO","name": "Nógrád","name_ru": "Ноград","active": "Y"},
+    {"country_id": "HU","region_id": "HU-NY","name": "Nyíregyháza","name_ru": "Ньиредьхаза","active": "Y"},
+    {"country_id": "HU","region_id": "HU-PS","name": "Pécs","name_ru": "Печ","active": "Y"},
+    {"country_id": "HU","region_id": "HU-PE","name": "Pest","name_ru": "Пешт","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SO","name": "Somogy","name_ru": "Шомодь","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SN","name": "Sopron","name_ru": "Шопрон","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SZ","name": "Szabolcs-Szatmár-Bereg","name_ru": "Сабольч-Сатмар-Берег","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SD","name": "Szeged","name_ru": "Сегед","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SF","name": "Székesfehérvár","name_ru": "Секешфехервар","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SK","name": "Szolnok","name_ru": "Сольнок","active": "Y"},
+    {"country_id": "HU","region_id": "HU-SH","name": "Szombathely","name_ru": "Сомбатхей","active": "Y"},
+    {"country_id": "HU","region_id": "HU-TB","name": "Tatabánya","name_ru": "Татабанья","active": "Y"},
+    {"country_id": "HU","region_id": "HU-TO","name": "Tolna","name_ru": "Тольна","active": "Y"},
+    {"country_id": "HU","region_id": "HU-VA","name": "Vas","name_ru": "Ваш","active": "Y"},
+    {"country_id": "HU","region_id": "HU-VE","name": "Veszprém","name_ru": "Веспрем","active": "Y"},
+    {"country_id": "HU","region_id": "HU-VM","name": "Veszprém","name_ru": "Веспрем","active": "Y"},
+    {"country_id": "HU","region_id": "HU-ZA","name": "Zala","name_ru": "Зала","active": "Y"},
+    {"country_id": "HU","region_id": "HU-ZE","name": "Zalaegerszeg","name_ru": "Залаэгерсег","active": "Y"},
+
+    {"country_id": "RO","region_id": "RO-AB","name": "Alba","name_ru": "Алба","active": "Y"},
+    {"country_id": "RO","region_id": "RO-AR","name": "Arad","name_ru": "Арад","active": "Y"},
+    {"country_id": "RO","region_id": "RO-AG","name": "Argeş","name_ru": "Арджеш","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BC","name": "Bacău","name_ru": "Бакэу","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BH","name": "Bihor","name_ru": "Бихор","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BN","name": "Bistriţa-Năsăud","name_ru": "Бистрица-Нэсэуд","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BT","name": "Botoşani","name_ru": "Ботошани","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BV","name": "Braşov","name_ru": "Брашов","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BR","name": "Brăila","name_ru": "Брэила","active": "Y"},
+    {"country_id": "RO","region_id": "RO-BZ","name": "Buzău","name_ru": "Бузэу","active": "Y"},
+    {"country_id": "RO","region_id": "RO-CS","name": "Caraş-Severin","name_ru": "Караш-Северин","active": "Y"},
+    {"country_id": "RO","region_id": "RO-CL","name": "Călăraşi","name_ru": "Кэлэраши","active": "Y"},
+    {"country_id": "RO","region_id": "RO-CJ","name": "Cluj","name_ru": "Клуж","active": "Y"},
+    {"country_id": "RO","region_id": "RO-CT","name": "Constanţa","name_ru": "Констанца","active": "Y"},
+    {"country_id": "RO","region_id": "RO-CV","name": "Covasna","name_ru": "Ковасна","active": "Y"},
+    {"country_id": "RO","region_id": "RO-DB","name": "Dâmboviţa","name_ru": "Дымбовица","active": "Y"},
+    {"country_id": "RO","region_id": "RO-DJ","name": "Dolj","name_ru": "Долж","active": "Y"},
+    {"country_id": "RO","region_id": "RO-GL","name": "Galaţi","name_ru": "Галац","active": "Y"},
+    {"country_id": "RO","region_id": "RO-GR","name": "Giurgiu","name_ru": "Джурджу","active": "Y"},
+    {"country_id": "RO","region_id": "RO-GJ","name": "Gorj","name_ru": "Горж","active": "Y"},
+    {"country_id": "RO","region_id": "RO-HR","name": "Harghita","name_ru": "Харгита","active": "Y"},
+    {"country_id": "RO","region_id": "RO-HD","name": "Hunedoara","name_ru": "Хунедоара","active": "Y"},
+    {"country_id": "RO","region_id": "RO-IL","name": "Ialomiţa","name_ru": "Яломица","active": "Y"},
+    {"country_id": "RO","region_id": "RO-IS","name": "Iaşi","name_ru": "Яссы","active": "Y"},
+    {"country_id": "RO","region_id": "RO-IF","name": "Ilfov","name_ru": "Илфов","active": "Y"},
+    {"country_id": "RO","region_id": "RO-MM","name": "Maramureş","name_ru": "Марамуреш","active": "Y"},
+    {"country_id": "RO","region_id": "RO-MH","name": "Mehedinţi","name_ru": "Мехединци","active": "Y"},
+    {"country_id": "RO","region_id": "RO-MS","name": "Mureş","name_ru": "Муреш","active": "Y"},
+    {"country_id": "RO","region_id": "RO-NT","name": "Neamţ","name_ru": "Нямц","active": "Y"},
+    {"country_id": "RO","region_id": "RO-OT","name": "Olt","name_ru": "Олт","active": "Y"},
+    {"country_id": "RO","region_id": "RO-PH","name": "Prahova","name_ru": "Прахова","active": "Y"},
+    {"country_id": "RO","region_id": "RO-SM","name": "Satu Mare","name_ru": "Сату-Маре","active": "Y"},
+    {"country_id": "RO","region_id": "RO-SJ","name": "Sălaj","name_ru": "Сэлаж","active": "Y"},
+    {"country_id": "RO","region_id": "RO-SB","name": "Sibiu","name_ru": "Сибиу","active": "Y"},
+    {"country_id": "RO","region_id": "RO-SV","name": "Suceava","name_ru": "Сучава","active": "Y"},
+    {"country_id": "RO","region_id": "RO-TR","name": "Teleorman","name_ru": "Телеорман","active": "Y"},
+    {"country_id": "RO","region_id": "RO-TM","name": "Timiş","name_ru": "Тимиш","active": "Y"},
+    {"country_id": "RO","region_id": "RO-TL","name": "Tulcea","name_ru": "Тулча","active": "Y"},
+    {"country_id": "RO","region_id": "RO-VS","name": "Vaslui","name_ru": "Васлуй","active": "Y"},
+    {"country_id": "RO","region_id": "RO-VL","name": "Vâlcea","name_ru": "Вылча","active": "Y"},
+    {"country_id": "RO","region_id": "RO-VN","name": "Vrancea","name_ru": "Вранча","active": "Y"},
+    {"country_id": "RO","region_id": "RO-B","name": "Bucureşti","name_ru": "Бухарест","active": "Y"},
+
+    {"country_id": "LV","region_id": "LV-AI","name": "Aizkraukle","name_ru": "Айзкраукльский","active": "N"},
+    {"country_id": "LV","region_id": "LV-AL","name": "Alūksne","name_ru": "Алуксненский","active": "N"},
+    {"country_id": "LV","region_id": "LV-BL","name": "Balvi","name_ru": "Балвский","active": "N"},
+    {"country_id": "LV","region_id": "LV-BU","name": "Bauska","name_ru": "Бауский","active": "N"},
+    {"country_id": "LV","region_id": "LV-CE","name": "Cēsis","name_ru": "Цесисский","active": "N"},
+    {"country_id": "LV","region_id": "LV-DA","name": "Daugavpils","name_ru": "Даугавпилсский","active": "N"},
+    {"country_id": "LV","region_id": "LV-DO","name": "Dobele","name_ru": "Добельский","active": "N"},
+    {"country_id": "LV","region_id": "LV-GU","name": "Gulbene","name_ru": "Гулбенский","active": "N"},
+    {"country_id": "LV","region_id": "LV-JK","name": "Jēkabpils","name_ru": "Екабпилсский","active": "N"},
+    {"country_id": "LV","region_id": "LV-JL","name": "Jelgava","name_ru": "Елгавский","active": "N"},
+    {"country_id": "LV","region_id": "LV-KR","name": "Krāslava","name_ru": "Краславский","active": "N"},
+    {"country_id": "LV","region_id": "LV-KU","name": "Kuldīga","name_ru": "Кулдигский","active": "N"},
+    {"country_id": "LV","region_id": "LV-LE","name": "Liepāja","name_ru": "Лиепайский","active": "N"},
+    {"country_id": "LV","region_id": "LV-LM","name": "Limbaži","name_ru": "Лимбажский","active": "N"},
+    {"country_id": "LV","region_id": "LV-LU","name": "Ludza","name_ru": "Лудзенский","active": "N"},
+    {"country_id": "LV","region_id": "LV-MA","name": "Madona","name_ru": "Мадонский","active": "N"},
+    {"country_id": "LV","region_id": "LV-OG","name": "Ogre","name_ru": "Огрский","active": "N"},
+    {"country_id": "LV","region_id": "LV-PR","name": "Preili","name_ru": "Прейльский","active": "N"},
+    {"country_id": "LV","region_id": "LV-RE","name": "Rēzekne","name_ru": "Резекненский","active": "N"},
+    {"country_id": "LV","region_id": "LV-RI","name": "Riga","name_ru": "Рижский","active": "N"},
+    {"country_id": "LV","region_id": "LV-SA","name": "Saldus","name_ru": "Салдусский","active": "N"},
+    {"country_id": "LV","region_id": "LV-TA","name": "Talsi","name_ru": "Талсинский","active": "N"},
+    {"country_id": "LV","region_id": "LV-TU","name": "Tukum","name_ru": "Тукумсский","active": "N"},
+    {"country_id": "LV","region_id": "LV-VK","name": "Valka","name_ru": "Валкский","active": "N"},
+    {"country_id": "LV","region_id": "LV-VM","name": "Valmiera","name_ru": "Валмиерский","active": "N"},
+    {"country_id": "LV","region_id": "LV-VE","name": "Ventspils","name_ru": "Вентспилсский","active": "N"},
+
+    {"country_id": "LV","region_id": "LV-DGV","name": "Daugavpils","name_ru": "Даугавпилс","active": "Y"},
+    {"country_id": "LV","region_id": "LV-JEL","name": "Jelgava","name_ru": "Елгава","active": "Y"},
+    {"country_id": "LV","region_id": "LV-JKB","name": "Jēkabpils","name_ru": "Екабпилс","active": "Y"},
+    {"country_id": "LV","region_id": "LV-JUR","name": "Jūrmala","name_ru": "Юрмала","active": "Y"},
+    {"country_id": "LV","region_id": "LV-LPX","name": "Liepāja","name_ru": "Лиепая","active": "Y"},
+    {"country_id": "LV","region_id": "LV-REZ","name": "Rēzekne","name_ru": "Резекне","active": "Y"},
+    {"country_id": "LV","region_id": "LV-RIX","name": "Riga","name_ru": "Рига","active": "Y"},
+    {"country_id": "LV","region_id": "LV-VMR","name": "Valmiera","name_ru": "Валмиера","active": "Y"},
+    {"country_id": "LV","region_id": "LV-VEN","name": "Ventspils","name_ru": "Вентспилс","active": "Y"},
+    {"country_id": "LV","region_id": "LV-001","name": "Aglonas novads","name_ru": "Аглонский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-002","name": "Aizkraukles novads","name_ru": "Айзкраукльский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-003","name": "Aizputes novads","name_ru": "Айзпутский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-004","name": "Aknīstes novads","name_ru": "Акнистский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-005","name": "Alojas novads","name_ru": "Алойский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-006","name": "Alsungas novads","name_ru": "Алсунгский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-007","name": "Alūksnes novads","name_ru": "Алуксненский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-008","name": "Amatas novads","name_ru": "Аматский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-009","name": "Apes novads","name_ru": "Апский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-010","name": "Auces novads","name_ru": "Ауцский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-011","name": "Ādažu novads","name_ru": "Адажский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-012","name": "Babītes novads","name_ru": "Бабитский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-013","name": "Baldones novads","name_ru": "Балдонский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-014","name": "Baltinavas novads","name_ru": "Балтинавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-015","name": "Balvu novads","name_ru": "Балвский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-016","name": "Bauskas novads","name_ru": "Бауский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-017","name": "Beverīnas novads","name_ru": "Беверинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-018","name": "Brocēnu novads","name_ru": "Броценский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-019","name": "Burtnieku novads","name_ru": "Буртниекский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-020","name": "Carnikavas novads","name_ru": "Царникавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-021","name": "Cesvaines novads","name_ru": "Цесвайнский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-022","name": "Cēsu novads","name_ru": "Цесисский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-023","name": "Ciblas novads","name_ru": "Циблский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-024","name": "Dagdas novads","name_ru": "Дагдский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-025","name": "Daugavpils novads","name_ru": "Даугавпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-026","name": "Dobeles novads","name_ru": "Добельский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-027","name": "Dundagas novads","name_ru": "Дундагский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-028","name": "Durbes novads","name_ru": "Дурбский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-029","name": "Engures novads","name_ru": "Энгурский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-030","name": "Ērgļu novads","name_ru": "Эргльский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-031","name": "Garkalnes novads","name_ru": "Гаркалнский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-032","name": "Grobiņas novads","name_ru": "Гробинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-033","name": "Gulbenes novads","name_ru": "Гулбенский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-034","name": "Iecavas novads","name_ru": "Иецавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-035","name": "Ikšķiles novads","name_ru": "Икшкильский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-036","name": "Inčukalna novads","name_ru": "Инчукалнский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-037","name": "Ilūkstes novads","name_ru": "Илукстский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-038","name": "Jaunjelgavas novads","name_ru": "Яунелгавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-039","name": "Jaunpiebalgas novads","name_ru": "Яунпиебалгский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-040","name": "Jaunpils novads","name_ru": "Яунпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-041","name": "Jelgavas novads","name_ru": "Елгавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-042","name": "Jēkabpils novads","name_ru": "Екабпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-043","name": "Kandavas novads","name_ru": "Кандавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-044","name": "Kārsavas novads","name_ru": "Карсавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-045","name": "Kocēnu novads","name_ru": "Коценский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-046","name": "Kokneses novads","name_ru": "Кокнесский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-047","name": "Krāslavas novads","name_ru": "Краславский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-048","name": "Krimuldas novads","name_ru": "Кримулдский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-049","name": "Krustpils novads","name_ru": "Крустпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-050","name": "Kuldīgas novads","name_ru": "Кулдигский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-051","name": "Ķeguma novads","name_ru": "Кегумский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-052","name": "Ķekavas novads","name_ru": "Кекавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-053","name": "Lielvārdes novads","name_ru": "Лиелвардский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-054","name": "Limbažu novads","name_ru": "Лимбажский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-055","name": "Līgatnes novads","name_ru": "Лигатненский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-056","name": "Līvānu novads","name_ru": "Ливанский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-057","name": "Lubānas novads","name_ru": "Лубанский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-058","name": "Ludzas novads","name_ru": "Лудзенский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-059","name": "Madonas novads","name_ru": "Мадонский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-060","name": "Mazsalacas novads","name_ru": "Мазсалацский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-061","name": "Mālpils novads","name_ru": "Малпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-062","name": "Mārupes novads","name_ru": "Марупский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-063","name": "Mērsraga novads","name_ru": "Мерсрагский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-064","name": "Naukšēnu novads","name_ru": "Наукшенский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-065","name": "Neretas novads","name_ru": "Неретский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-066","name": "Nīcas novads","name_ru": "Ницский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-067","name": "Ogres novads","name_ru": "Огрский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-068","name": "Olaines novads","name_ru": "Олайнский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-069","name": "Ozolnieku novads","name_ru": "Озолниекский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-070","name": "Pārgaujas novads","name_ru": "Паргауйский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-071","name": "Pāvilostas novads","name_ru": "Павилостский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-072","name": "Pļaviņu novads","name_ru": "Плявинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-073","name": "Preiļu novads","name_ru": "Прейльский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-074","name": "Priekules novads","name_ru": "Приекульский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-075","name": "Priekuļu novads","name_ru": "Приекульский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-076","name": "Raunas novads","name_ru": "Раунский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-077","name": "Rēzeknes novads","name_ru": "Резекненский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-078","name": "Riebiņu novads","name_ru": "Риебинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-079","name": "Rojas novads","name_ru": "Ройский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-080","name": "Ropažu novads","name_ru": "Ропажский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-081","name": "Rucavas novads","name_ru": "Руцавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-082","name": "Rugāju novads","name_ru": "Ругайский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-083","name": "Rundāles novads","name_ru": "Рундальский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-084","name": "Rūjienas novads","name_ru": "Руйиенский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-085","name": "Salas novads","name_ru": "Салский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-086","name": "Salacgrīvas novads","name_ru": "Салацгривский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-087","name": "Salaspils novads","name_ru": "Саласпилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-088","name": "Saldus novads","name_ru": "Салдусский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-089","name": "Saulkrastu novads","name_ru": "Саулкрастский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-090","name": "Sējas novads","name_ru": "Сейский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-091","name": "Siguldas novads","name_ru": "Сигулдский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-092","name": "Skrīveru novads","name_ru": "Скриверский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-093","name": "Skrundas novads","name_ru": "Скрундский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-094","name": "Smiltenes novads","name_ru": "Смилтенский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-095","name": "Stopiņu novads","name_ru": "Стопинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-096","name": "Strenču novads","name_ru": "Стренчский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-097","name": "Talsu novads","name_ru": "Талсинский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-098","name": "Tērvetes novads","name_ru": "Терветский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-099","name": "Tukuma novads","name_ru": "Тукумский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-100","name": "Vaiņodes novads","name_ru": "Вайнёдский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-101","name": "Valkas novads","name_ru": "Валкский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-102","name": "Varakļānu novads","name_ru": "Вараклянский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-103","name": "Vārkavas novads","name_ru": "Варкавский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-104","name": "Vecpiebalgas novads","name_ru": "Вецпиебалгский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-105","name": "Vecumnieku novads","name_ru": "Вецумниекский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-106","name": "Ventspils novads","name_ru": "Вентспилсский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-107","name": "Viesītes novads","name_ru": "Виеситский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-108","name": "Viļakas novads","name_ru": "Вилякский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-109","name": "Viļānu novads","name_ru": "Вилянский край","active": "Y"},
+    {"country_id": "LV","region_id": "LV-110","name": "Zilupes novads","name_ru": "Зилупский край","active": "Y"},
+
+    {"country_id": "RU","region_id": "RU-ALT","name": "Altai Krai","name_ru": "Алтайский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-AL","name": "Altai Republic","name_ru": "Республика Алтай","active": "Y"},
+    {"country_id": "RU","region_id": "RU-AMU","name": "Amur Oblast","name_ru": "Амурская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ARK","name": "Arkhangelsk Oblast","name_ru": "Архангельская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-AST","name": "Astrakhan Oblast","name_ru": "Астраханская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-BEL","name": "Belgorod Oblast","name_ru": "Белгородская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-BRY","name": "Bryansk Oblast","name_ru": "Брянская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-BU","name": "Buryat Republic","name_ru": "Республика Бурятия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-CE","name": "Chechen Republic","name_ru": "Республика Чечня","active": "Y"},
+    {"country_id": "RU","region_id": "RU-CHE","name": "Chelyabinsk Oblast","name_ru": "Челябинская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-CHU","name": "Chukotka Autonomous Okrug","name_ru": "Чукотский Автономный округ","active": "Y"},
+    {"country_id": "RU","region_id": "RU-CU","name": "Chuvash Republic","name_ru": "Республика Чувашия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-IRK","name": "Irkutsk Oblast","name_ru": "Иркутская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-IVA","name": "Ivanovo Oblast","name_ru": "Ивановская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-YEV","name": "Jewish Autonomous Oblast","name_ru": "Еврейская Автономная область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KB","name": "Kabardino-Balkar Republic","name_ru": "Кабардино-Балкарская республика","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KGD","name": "Kaliningrad Oblast","name_ru": "Калининградская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KLU","name": "Kaluga Oblast","name_ru": "Калужская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KAM","name": "Kamchatka Krai","name_ru": "Камчатский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KC","name": "Karachay-Cherkess Republic","name_ru": "Карачаево-Черкесская республика","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KEM","name": "Kemerovo Oblast","name_ru": "Кемеровская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KHA","name": "Khabarovsk Krai","name_ru": "Хабаровский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KHM","name": "Khanty-Mansi Autonomous Oblast","name_ru": "Ханты-Мансийский Автономный округ — Югра","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KIR","name": "Kirov Oblast","name_ru": "Кировская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KO","name": "Komi Republic","name_ru": "Республика Коми","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KOS","name": "Kostroma Oblast","name_ru": "Костромская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KDA","name": "Krasnodar Krai","name_ru": "Краснодарский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KYA","name": "Krasnoyarsk Krai","name_ru": "Красноярский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KGN","name": "Kurgan Oblast","name_ru": "Курганская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KRS","name": "Kursk Oblast","name_ru": "Курская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-LEN","name": "Leningrad Oblast","name_ru": "Ленинградская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-LIP","name": "Lipetsk Oblast","name_ru": "Липецкая область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-MAG","name": "Magadan Oblast","name_ru": "Магаданская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ME","name": "Mari El Republic","name_ru": "Республика Марий Эл","active": "Y"},
+    {"country_id": "RU","region_id": "RU-MOW","name": "Moscow","name_ru": "Москва","active": "Y"},
+    {"country_id": "RU","region_id": "RU-MOS","name": "Moscow Oblast","name_ru": "Московская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-MUR","name": "Murmansk Oblast","name_ru": "Мурманская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-NEN","name": "Nenets Autonomous Okrug","name_ru": "Ненецкий Автономный округ","active": "Y"},
+    {"country_id": "RU","region_id": "RU-NIZ","name": "Nizhny Novgorod Oblast","name_ru": "Нижегородская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-NGR","name": "Novgorod Oblast","name_ru": "Новгородская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-NVS","name": "Novosibirsk Oblast","name_ru": "Новосибирская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-OMS","name": "Omsk Oblast","name_ru": "Омская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ORE","name": "Orenburg Oblast","name_ru": "Оренбургская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ORL","name": "Oryol Oblast","name_ru": "Орловская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-PNZ","name": "Penza Oblast","name_ru": "Пензенская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-PER","name": "Perm Krai","name_ru": "Пермский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-PRI","name": "Primorsky Krai","name_ru": "Приморский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-PSK","name": "Pskov Oblast","name_ru": "Псковская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-AD","name": "Republic of Adygea","name_ru": "Республика Адыгея","active": "Y"},
+    {"country_id": "RU","region_id": "RU-BA","name": "Republic of Bashkortostan","name_ru": "Республика Башкортостан","active": "Y"},
+    {"country_id": "RU","region_id": "RU-DA","name": "Republic of Dagestan","name_ru": "Республика Дагестан","active": "Y"},
+    {"country_id": "RU","region_id": "RU-IN","name": "Republic of Ingushetia","name_ru": "Республика Ингушетия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KL","name": "Republic of Kalmykia","name_ru": "Республика Калмыкия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KR","name": "Republic of Karelia","name_ru": "Республика Карелия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-KK","name": "Republic of Khakassia","name_ru": "Республика Хакасия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-MO","name": "Republic of Mordovia","name_ru": "Республика Мордовия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SE","name": "Republic of North Ossetia-Alania","name_ru": "Республика Северная Осетия — Алания","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TA","name": "Republic of Tatarstan","name_ru": "Республика Татарстан","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ROS","name": "Rostov Oblast","name_ru": "Ростовская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-RYA","name": "Ryazan Oblast","name_ru": "Рязанская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SPE","name": "Saint Petersburg","name_ru": "Санкт Петербург","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SA","name": "Sakha (Yakutia) Republic","name_ru": "Республика Саха (Якутия)","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SAK","name": "Sakhalin Oblast","name_ru": "Сахалинская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SAM","name": "Samara Oblast","name_ru": "Самарская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SAR","name": "Saratov Oblast","name_ru": "Саратовская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SMO","name": "Smolensk Oblast","name_ru": "Смоленская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-STA","name": "Stavropol Krai","name_ru": "Ставропольский край","active": "Y"},
+    {"country_id": "RU","region_id": "RU-SVE","name": "Sverdlovsk Oblast","name_ru": "Свердловская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TAM","name": "Tambov Oblast","name_ru": "Тамбовская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TOM","name": "Tomsk Oblast","name_ru": "Томская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TUL","name": "Tula Oblast","name_ru": "Тульская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TVE","name": "Tver Oblast","name_ru": "Тверская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TYU","name": "Tyumen Oblast","name_ru": "Тюменская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-TY","name": "Tyva Republic","name_ru": "Республика Тыва (Тува)","active": "Y"},
+    {"country_id": "RU","region_id": "RU-UD","name": "Udmurt Republic","name_ru": "Республика Удмуртия","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ULY","name": "Ulyanovsk Oblast","name_ru": "Ульяновская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-VLA","name": "Vladimir Oblast","name_ru": "Владимирская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-VGG","name": "Volgograd Oblast","name_ru": "Волгоградская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-VLG","name": "Vologda Oblast","name_ru": "Вологодская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-VOR","name": "Voronezh Oblast","name_ru": "Воронежская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-YAN","name": "Yamalo-Nenets Autonomous Okrug","name_ru": "Ямало-Ненецкий Автономный округ","active": "Y"},
+    {"country_id": "RU","region_id": "RU-YAR","name": "Yaroslavl Oblast","name_ru": "Ярославская область","active": "Y"},
+    {"country_id": "RU","region_id": "RU-ZAB","name": "Zabaykalsky Krai","name_ru": "Забайкальский край","active": "Y"},
+
+    {"country_id": "TR","region_id": "TR-01","name": "Adana","name_ru": "Адана","active": "Y"},
+    {"country_id": "TR","region_id": "TR-02","name": "Adıyaman","name_ru": "Адыяман","active": "Y"},
+    {"country_id": "TR","region_id": "TR-03","name": "Afyonkarahisar (Afyon)","name_ru": "Афьонкарахисар","active": "Y"},
+    {"country_id": "TR","region_id": "TR-04","name": "Ağri","name_ru": "Агры","active": "Y"},
+    {"country_id": "TR","region_id": "TR-68","name": "Aksaray","name_ru": "Аксарай","active": "Y"},
+    {"country_id": "TR","region_id": "TR-05","name": "Amasya","name_ru": "Амасья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-06","name": "Ankara","name_ru": "Анкара","active": "Y"},
+    {"country_id": "TR","region_id": "TR-07","name": "Antalya","name_ru": "Анталья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-75","name": "Ardahan","name_ru": "Ардахан","active": "Y"},
+    {"country_id": "TR","region_id": "TR-08","name": "Artvin","name_ru": "Артвин","active": "Y"},
+    {"country_id": "TR","region_id": "TR-09","name": "Aydın","name_ru": "Айдын","active": "Y"},
+    {"country_id": "TR","region_id": "TR-10","name": "Balıkesir","name_ru": "Балыкесир","active": "Y"},
+    {"country_id": "TR","region_id": "TR-74","name": "Bartın","name_ru": "Бартын","active": "Y"},
+    {"country_id": "TR","region_id": "TR-72","name": "Batman","name_ru": "Батман","active": "Y"},
+    {"country_id": "TR","region_id": "TR-69","name": "Bayburt","name_ru": "Байбурт","active": "Y"},
+    {"country_id": "TR","region_id": "TR-11","name": "Bilecik","name_ru": "Биледжик","active": "Y"},
+    {"country_id": "TR","region_id": "TR-12","name": "Bingöl","name_ru": "Бингёль","active": "Y"},
+    {"country_id": "TR","region_id": "TR-13","name": "Bitlis","name_ru": "Битлис","active": "Y"},
+    {"country_id": "TR","region_id": "TR-14","name": "Bolu","name_ru": "Болу","active": "Y"},
+    {"country_id": "TR","region_id": "TR-15","name": "Burdur","name_ru": "Бурдур","active": "Y"},
+    {"country_id": "TR","region_id": "TR-16","name": "Bursa","name_ru": "Бурса","active": "Y"},
+    {"country_id": "TR","region_id": "TR-17","name": "Çanakkale","name_ru": "Чанаккале","active": "Y"},
+    {"country_id": "TR","region_id": "TR-18","name": "Çankırı","name_ru": "Чанкыры","active": "Y"},
+    {"country_id": "TR","region_id": "TR-19","name": "Çorum","name_ru": "Чорум","active": "Y"},
+    {"country_id": "TR","region_id": "TR-20","name": "Denizli","name_ru": "Денизли","active": "Y"},
+    {"country_id": "TR","region_id": "TR-21","name": "Diyarbakır","name_ru": "Диярбакыр","active": "Y"},
+    {"country_id": "TR","region_id": "TR-81","name": "Düzce","name_ru": "Дюздже","active": "Y"},
+    {"country_id": "TR","region_id": "TR-22","name": "Edirne","name_ru": "Эдирне","active": "Y"},
+    {"country_id": "TR","region_id": "TR-23","name": "Elazığ","name_ru": "Элязыг","active": "Y"},
+    {"country_id": "TR","region_id": "TR-24","name": "Erzincan","name_ru": "Эрзинджан","active": "Y"},
+    {"country_id": "TR","region_id": "TR-25","name": "Erzurum","name_ru": "Эрзурум","active": "Y"},
+    {"country_id": "TR","region_id": "TR-26","name": "Eskişehir","name_ru": "Эскишехир","active": "Y"},
+    {"country_id": "TR","region_id": "TR-27","name": "Gaziantep","name_ru": "Газиантеп","active": "Y"},
+    {"country_id": "TR","region_id": "TR-28","name": "Giresun","name_ru": "Гиресун","active": "Y"},
+    {"country_id": "TR","region_id": "TR-29","name": "Gümüşhane","name_ru": "Гюмюшхане","active": "Y"},
+    {"country_id": "TR","region_id": "TR-30","name": "Hakkari","name_ru": "Хаккяри","active": "Y"},
+    {"country_id": "TR","region_id": "TR-31","name": "Hatay","name_ru": "Хатай","active": "Y"},
+    {"country_id": "TR","region_id": "TR-76","name": "Iğdir","name_ru": "Ыгдыр","active": "Y"},
+    {"country_id": "TR","region_id": "TR-32","name": "Isparta","name_ru": "Ыспарта","active": "Y"},
+    {"country_id": "TR","region_id": "TR-34","name": "İstanbul","name_ru": "Стамбул","active": "Y"},
+    {"country_id": "TR","region_id": "TR-35","name": "İzmir","name_ru": "Измир","active": "Y"},
+    {"country_id": "TR","region_id": "TR-46","name": "Kahramanmaraş","name_ru": "Кахраманмараш","active": "Y"},
+    {"country_id": "TR","region_id": "TR-78","name": "Karabük","name_ru": "Карабюк","active": "Y"},
+    {"country_id": "TR","region_id": "TR-70","name": "Karaman","name_ru": "Караман","active": "Y"},
+    {"country_id": "TR","region_id": "TR-36","name": "Kars","name_ru": "Карс","active": "Y"},
+    {"country_id": "TR","region_id": "TR-37","name": "Kastamonu","name_ru": "Кастамону","active": "Y"},
+    {"country_id": "TR","region_id": "TR-38","name": "Kayseri","name_ru": "Кайсери","active": "Y"},
+    {"country_id": "TR","region_id": "TR-79","name": "Kilis","name_ru": "Килис","active": "Y"},
+    {"country_id": "TR","region_id": "TR-71","name": "Kırıkkale","name_ru": "Кырыккале","active": "Y"},
+    {"country_id": "TR","region_id": "TR-39","name": "Kırklareli","name_ru": "Кыркларели","active": "Y"},
+    {"country_id": "TR","region_id": "TR-40","name": "Kırşehir","name_ru": "Кыршехир","active": "Y"},
+    {"country_id": "TR","region_id": "TR-41","name": "Kocaeli","name_ru": "Коджаэли","active": "Y"},
+    {"country_id": "TR","region_id": "TR-42","name": "Konya","name_ru": "Конья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-43","name": "Kütahya","name_ru": "Кютахья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-44","name": "Malatya","name_ru": "Малатья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-45","name": "Manisa","name_ru": "Маниса","active": "Y"},
+    {"country_id": "TR","region_id": "TR-47","name": "Mardin","name_ru": "Мардин","active": "Y"},
+    {"country_id": "TR","region_id": "TR-33","name": "Mersin","name_ru": "Мерсин","active": "Y"},
+    {"country_id": "TR","region_id": "TR-48","name": "Muğla","name_ru": "Мугла","active": "Y"},
+    {"country_id": "TR","region_id": "TR-49","name": "Muş","name_ru": "Муш","active": "Y"},
+    {"country_id": "TR","region_id": "TR-50","name": "Nevşehir","name_ru": "Невшехир","active": "Y"},
+    {"country_id": "TR","region_id": "TR-51","name": "Niğde","name_ru": "Нигде","active": "Y"},
+    {"country_id": "TR","region_id": "TR-52","name": "Ordu","name_ru": "Орду","active": "Y"},
+    {"country_id": "TR","region_id": "TR-80","name": "Osmaniye","name_ru": "Османие","active": "Y"},
+    {"country_id": "TR","region_id": "TR-53","name": "Rize","name_ru": "Ризе","active": "Y"},
+    {"country_id": "TR","region_id": "TR-54","name": "Sakarya","name_ru": "Сакарья","active": "Y"},
+    {"country_id": "TR","region_id": "TR-55","name": "Samsun","name_ru": "Самсун","active": "Y"},
+    {"country_id": "TR","region_id": "TR-63","name": "Şanlıurfa","name_ru": "Шанлыурфа","active": "Y"},
+    {"country_id": "TR","region_id": "TR-56","name": "Siirt","name_ru": "Сиирт","active": "Y"},
+    {"country_id": "TR","region_id": "TR-57","name": "Sinop","name_ru": "Синоп","active": "Y"},
+    {"country_id": "TR","region_id": "TR-73","name": "Şırnak","name_ru": "Ширнак","active": "Y"},
+    {"country_id": "TR","region_id": "TR-58","name": "Sivas","name_ru": "Сивас","active": "Y"},
+    {"country_id": "TR","region_id": "TR-59","name": "Tekirdağ","name_ru": "Текирдаг","active": "Y"},
+    {"country_id": "TR","region_id": "TR-60","name": "Tokat","name_ru": "Токат","active": "Y"},
+    {"country_id": "TR","region_id": "TR-61","name": "Trabzon","name_ru": "Трабзон","active": "Y"},
+    {"country_id": "TR","region_id": "TR-62","name": "Tunceli","name_ru": "Тунджели","active": "Y"},
+    {"country_id": "TR","region_id": "TR-64","name": "Uşak","name_ru": "Ушак","active": "Y"},
+    {"country_id": "TR","region_id": "TR-65","name": "Van","name_ru": "Ван","active": "Y"},
+    {"country_id": "TR","region_id": "TR-77","name": "Yalova","name_ru": "Ялова","active": "Y"},
+    {"country_id": "TR","region_id": "TR-66","name": "Yozgat","name_ru": "Йозгат","active": "Y"},
+    {"country_id": "TR","region_id": "TR-67","name": "Zonguldak","name_ru": "Зонгулдак","active": "Y"},
+
+    {"country_id": "IN","region_id": "IN-AN","name": "Andaman and Nicobar Islands","name_ru": "Андаманские и Никобарские острова","active": "Y"},
+    {"country_id": "IN","region_id": "IN-AP","name": "Andhra Pradesh","name_ru": "Андхра-Прадеш","active": "Y"},
+    {"country_id": "IN","region_id": "IN-AR","name": "Arunachal Pradesh","name_ru": "Аруначал-Прадеш","active": "Y"},
+    {"country_id": "IN","region_id": "IN-AS","name": "Assam","name_ru": "Ассам","active": "Y"},
+    {"country_id": "IN","region_id": "IN-BR","name": "Bihar","name_ru": "Бихар","active": "Y"},
+    {"country_id": "IN","region_id": "IN-CH","name": "Chandigarh","name_ru": "Чандигарх","active": "Y"},
+    {"country_id": "IN","region_id": "IN-CT","name": "Chhattisgarh","name_ru": "Чхаттисгарх","active": "Y"},
+    {"country_id": "IN","region_id": "IN-DN","name": "Dadra and Nagar Haveli","name_ru": "Дадра и Нагар-Хавели","active": "Y"},
+    {"country_id": "IN","region_id": "IN-DD","name": "Daman and Diu","name_ru": "Даман и Диу","active": "Y"},
+    {"country_id": "IN","region_id": "IN-DL","name": "Delhi","name_ru": "Дели","active": "Y"},
+    {"country_id": "IN","region_id": "IN-GA","name": "Goa","name_ru": "Гоа","active": "Y"},
+    {"country_id": "IN","region_id": "IN-GJ","name": "Gujarat","name_ru": "Гуджарат","active": "Y"},
+    {"country_id": "IN","region_id": "IN-HR","name": "Haryana","name_ru": "Харьяна","active": "Y"},
+    {"country_id": "IN","region_id": "IN-HP","name": "Himachal Pradesh","name_ru": "Химачал-Прадеш","active": "Y"},
+    {"country_id": "IN","region_id": "IN-JK","name": "Jammu and Kashmir","name_ru": "Джамму и Кашмир","active": "Y"},
+    {"country_id": "IN","region_id": "IN-JH","name": "Jharkhand","name_ru": "Джаркханд","active": "Y"},
+    {"country_id": "IN","region_id": "IN-KA","name": "Karnataka","name_ru": "Карнатака","active": "Y"},
+    {"country_id": "IN","region_id": "IN-KL","name": "Kerala","name_ru": "Керала","active": "Y"},
+    {"country_id": "IN","region_id": "IN-LD","name": "Lakshadweep","name_ru": "Лакшадвип","active": "Y"},
+    {"country_id": "IN","region_id": "IN-MP","name": "Madhya Pradesh","name_ru": "Мадхья-Прадеш","active": "Y"},
+    {"country_id": "IN","region_id": "IN-MH","name": "Maharashtr","name_ru": "Махараштра","active": "Y"},
+    {"country_id": "IN","region_id": "IN-MN","name": "Manipur","name_ru": "Манипур","active": "Y"},
+    {"country_id": "IN","region_id": "IN-ML","name": "Meghalaya","name_ru": "Мегхалая","active": "Y"},
+    {"country_id": "IN","region_id": "IN-MZ","name": "Mizoram","name_ru": "Мизорам","active": "Y"},
+    {"country_id": "IN","region_id": "IN-NL","name": "Nagaland","name_ru": "Нагаланд","active": "Y"},
+    {"country_id": "IN","region_id": "IN-OR","name": "Orissa","name_ru": "Орисса","active": "Y"},
+    {"country_id": "IN","region_id": "IN-PY","name": "Puducherry","name_ru": "Пондишери","active": "Y"},
+    {"country_id": "IN","region_id": "IN-PB","name": "Punjab","name_ru": "Пенджаб","active": "Y"},
+    {"country_id": "IN","region_id": "IN-RJ","name": "Rajasthan","name_ru": "Раджастхан","active": "Y"},
+    {"country_id": "IN","region_id": "IN-SK","name": "Sikkim","name_ru": "Сикким","active": "Y"},
+    {"country_id": "IN","region_id": "IN-TN","name": "Tamil Nadu","name_ru": "Тамилнад","active": "Y"},
+    {"country_id": "IN","region_id": "IN-TR","name": "Tripura","name_ru": "Трипура","active": "Y"},
+    {"country_id": "IN","region_id": "IN-UT","name": "Uttarakhand","name_ru": "Уттаракханд","active": "Y"},
+    {"country_id": "IN","region_id": "IN-UP","name": "Uttar Pradesh","name_ru": "Уттар-Прадеш","active": "Y"},
+    {"country_id": "IN","region_id": "IN-WB","name": "West Bengal","name_ru": "Западная Бенгалия","active": "Y"},
+
+    {"country_id": "PL","region_id": "PL-WP","name": "Greater Poland (Wielkopolskie)","name_ru": "Великопольское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-KP","name": "Kuyavian-Pomeranian (Kujawsko-Pomorskie)","name_ru": "Куявско-Поморское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-MA","name": "Lesser Poland (Małopolskie)","name_ru": "Малопольское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-LD","name": "Łódź (Łódzkie)","name_ru": "Лодзинское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-DS","name": "Lower Silesian (Dolnośląskie)","name_ru": "Нижнесилезское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-LU","name": "Lublin (Lubelskie)","name_ru": "Люблинское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-LB","name": "Lubusz (Lubuskie)","name_ru": "Любушское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-MZ","name": "Masovian (Mazowieckie)","name_ru": "Мазовецкое воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-OP","name": "Opole (Opolskie)","name_ru": "Опольское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-PD","name": "Podlaskie (Podlaskie)","name_ru": "Подляшское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-PM","name": "Pomeranian (Pomorskie)","name_ru": "Поморское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-SL","name": "Silesian (Śląskie)","name_ru": "Силезское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-PK","name": "Subcarpathian (Podkarpackie)","name_ru": "Подкарпатское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-SK","name": "Świętokrzyskie","name_ru": "Свентокшиское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-WN","name": "Warmian-Masurian (Warmińsko-Mazurskie)","name_ru": "Варминско-Мазурское воеводство","active": "Y"},
+    {"country_id": "PL","region_id": "PL-ZP","name": "West Pomeranian (Zachodniopomorskie)","name_ru": "Западно-Поморское воеводство","active": "Y"},
+
+    {"country_id": "ME","region_id": "ME-01","name": "Andrijevica","name_ru": "Андриевица","active": "Y"},
+    {"country_id": "ME","region_id": "ME-02","name": "Bar","name_ru": "Бар","active": "Y"},
+    {"country_id": "ME","region_id": "ME-03","name": "Berane","name_ru": "Беране","active": "Y"},
+    {"country_id": "ME","region_id": "ME-04","name": "Bijelo Polje","name_ru": "Биело-Поле","active": "Y"},
+    {"country_id": "ME","region_id": "ME-05","name": "Budva","name_ru": "Будва","active": "Y"},
+    {"country_id": "ME","region_id": "ME-06","name": "Cetinje","name_ru": "Цетине","active": "Y"},
+    {"country_id": "ME","region_id": "ME-07","name": "Danilovgrad","name_ru": "Даниловград","active": "Y"},
+    {"country_id": "ME","region_id": "ME-08","name": "Herceg Novi","name_ru": "Херцег-Нови","active": "Y"},
+    {"country_id": "ME","region_id": "ME-09","name": "Kolašin","name_ru": "Колашин","active": "Y"},
+    {"country_id": "ME","region_id": "ME-10","name": "Kotor","name_ru": "Котор","active": "Y"},
+    {"country_id": "ME","region_id": "ME-11","name": "Mojkovac","name_ru": "Мойковац","active": "Y"},
+    {"country_id": "ME","region_id": "ME-12","name": "Nikšić","name_ru": "Никшич","active": "Y"},
+    {"country_id": "ME","region_id": "ME-13","name": "Plav","name_ru": "Плав","active": "Y"},
+    {"country_id": "ME","region_id": "ME-14","name": "Pljevlja","name_ru": "Плевля","active": "Y"},
+    {"country_id": "ME","region_id": "ME-15","name": "Plužine","name_ru": "Плужине","active": "Y"},
+    {"country_id": "ME","region_id": "ME-16","name": "Podgorica","name_ru": "Подгорица","active": "Y"},
+    {"country_id": "ME","region_id": "ME-17","name": "Rožaje","name_ru": "Рожае","active": "Y"},
+    {"country_id": "ME","region_id": "ME-18","name": "Šavnik","name_ru": "Шавник","active": "Y"},
+    {"country_id": "ME","region_id": "ME-19","name": "Tivat","name_ru": "Тиват","active": "Y"},
+    {"country_id": "ME","region_id": "ME-20","name": "Ulcinj","name_ru": "Улцинь","active": "Y"},
+    {"country_id": "ME","region_id": "ME-21","name": "Žabljak","name_ru": "Жабляк","active": "Y"},
+    {"country_id": "ME","region_id": "ME-SLK","name": "Skadar Lake","name_ru": "Скадарское озеро","active": "Y"},
+
+    {"country_id": "CH","region_id": "CH-AG","name": "Aargau","name_ru": "Аргау","active": "Y"},
+    {"country_id": "CH","region_id": "CH-AI","name": "Appenzell Inner-Rhoden","name_ru": "Аппенцелль-Иннерроден","active": "Y"},
+    {"country_id": "CH","region_id": "CH-AR","name": "Appenzell Ausser-Rhoden","name_ru": "Аппенцелль-Ауссерроден","active": "Y"},
+    {"country_id": "CH","region_id": "CH-BE","name": "Bern","name_ru": "Берн","active": "Y"},
+    {"country_id": "CH","region_id": "CH-BL","name": "Basel-Landschaft","name_ru": "Базель-Ланд","active": "Y"},
+    {"country_id": "CH","region_id": "CH-BS","name": "Basel-Stadt","name_ru": "Базель-Штадт","active": "Y"},
+    {"country_id": "CH","region_id": "CH-FR","name": "Fribourg","name_ru": "Фрибур","active": "Y"},
+    {"country_id": "CH","region_id": "CH-GE","name": "Genève","name_ru": "Женева","active": "Y"},
+    {"country_id": "CH","region_id": "CH-GL","name": "Glarus","name_ru": "Гларус","active": "Y"},
+    {"country_id": "CH","region_id": "CH-GR","name": "Graubünden","name_ru": "Граубюнден","active": "Y"},
+    {"country_id": "CH","region_id": "CH-JU","name": "Jura","name_ru": "Юра","active": "Y"},
+    {"country_id": "CH","region_id": "CH-LU","name": "Lucerne","name_ru": "Люцерн","active": "Y"},
+    {"country_id": "CH","region_id": "CH-NE","name": "Neuchâtel","name_ru": "Невшатель","active": "Y"},
+    {"country_id": "CH","region_id": "CH-NW","name": "Nidwalden","name_ru": "Нидвальден","active": "Y"},
+    {"country_id": "CH","region_id": "CH-OW","name": "Obwalden","name_ru": "Обвальден","active": "Y"},
+    {"country_id": "CH","region_id": "CH-SG","name": "Sankt Gallen","name_ru": "Санкт-Галлен","active": "Y"},
+    {"country_id": "CH","region_id": "CH-SH","name": "Schaffhausen","name_ru": "Шаффхаузен","active": "Y"},
+    {"country_id": "CH","region_id": "CH-SO","name": "Solothurn","name_ru": "Золотурн","active": "Y"},
+    {"country_id": "CH","region_id": "CH-SZ","name": "Schwyz","name_ru": "Швиц","active": "Y"},
+    {"country_id": "CH","region_id": "CH-TG","name": "Thurgau","name_ru": "Тургау","active": "Y"},
+    {"country_id": "CH","region_id": "CH-TI","name": "Ticino","name_ru": "Тичино","active": "Y"},
+    {"country_id": "CH","region_id": "CH-UR","name": "Uri","name_ru": " Ури","active": "Y"},
+    {"country_id": "CH","region_id": "CH-VD","name": "Vaud","name_ru": "Во","active": "Y"},
+    {"country_id": "CH","region_id": "CH-VS","name": "Valais","name_ru": "Вале","active": "Y"},
+    {"country_id": "CH","region_id": "CH-ZH","name": "Zürich","name_ru": "Цюрих","active": "Y"},
+    {"country_id": "CH","region_id": "CH-ZG","name": "Zug","name_ru": "Цуг","active": "Y"},
+
+    {"country_id": "UA","region_id": "UA_CK","name": "Cherkasy oblast","name_ru": "Черкасская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_CH","name": "Chernihiv oblast","name_ru": "Черниговская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_CV","name": "Chernivtsi oblast","name_ru": "Черновицкая область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KR","name": "Crimean Autonomic Republica","name_ru": "Автономная Республика Крым","active": "Y"},
+    {"country_id": "UA","region_id": "UA_DP","name": "Dnipropetrovs'k oblast","name_ru": "Днепропетровская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_DT","name": "Donets'k oblast","name_ru": "Донецкая область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_IF","name": "Ivano-Frankivs'k oblast","name_ru": "Ивано-Франковская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KK","name": "Kharkiv oblast","name_ru": "Харьковская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KS","name": "Kherson oblast","name_ru": "Херсонская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KM","name": "Khmel'nyts'kyy oblast","name_ru": "Хмельницкая область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KV","name": "Kyiv oblast","name_ru": "Киевская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_KH","name": "Kirovohrad oblast","name_ru": "Кировоградская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_LH","name": "Luhans'k oblast","name_ru": "Луганская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_LV","name": "L'viv oblast","name_ru": "Львовская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_MY","name": "Mykolayiv oblast","name_ru": "Николаевская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_OD","name": "Odessa oblast","name_ru": "Одесская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_PL","name": "Poltava oblast","name_ru": "Полтавская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_RV","name": "Rivne oblast","name_ru": "Ровненская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_SM","name": "Sumy oblast","name_ru": "Сумская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_TP","name": "Ternopil oblast","name_ru": "Тернопольская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_ZK","name": "Transcarpathia (Zakarpattia) oblast","name_ru": "Закарпатская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_VI","name": "Vinnytsya oblast","name_ru": "Винницкая область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_VO","name": "Volyn oblast","name_ru": "Волынская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_ZP","name": "Zaporizhzhya oblast","name_ru": "Запорожская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA_ZT","name": "Zhytomyr oblast","name_ru": "Житомирская область","active": "Y"},
+    {"country_id": "UA","region_id": "UA-40","name": "Sevastpol' City","name_ru": "город Севастополь","active": "Y"},
+    {"country_id": "UA","region_id": "UA-30","name": "Kyiv City","name_ru": "город Киев","active": "Y"},
+
+    {"country_id": "IT","region_id": "VA","name": "Vatican City","name_ru": "Ватикан","active": "Y"},
+    {"country_id": "IT","region_id": "SM","name": "San Marino","name_ru": "Сан-Марино","active": "Y"},
+    {"country_id": "IT","region_id": "FR-H","name": "Corsica, France","name_ru": "Корсика, Франция","active": "Y"},
+    {"country_id": "IT","region_id": "MT","name": "Malta","name_ru": "Мальта","active": "Y"},
+    {"country_id": "IT","region_id": "IT-65","name": "Abruzzi","name_ru": "Абруццо","active": "Y"},
+    {"country_id": "IT","region_id": "IT-77","name": "Basilicata","name_ru": "Базиликата","active": "Y"},
+    {"country_id": "IT","region_id": "IT-78","name": "Calabria","name_ru": "Калабрия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-72","name": "Campania","name_ru": "Кампания","active": "Y"},
+    {"country_id": "IT","region_id": "IT-45","name": "Emilia-Romagna","name_ru": "Эмилия-Романья","active": "Y"},
+    {"country_id": "IT","region_id": "IT-36","name": "Friuli-Venezia Giulia","name_ru": "Фриули-Венеция-Джулия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-62","name": "Lazio","name_ru": "Лацио","active": "Y"},
+    {"country_id": "IT","region_id": "IT-42","name": "Liguria","name_ru": "Лигурия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-25","name": "Lombardy","name_ru": "Ломбардия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-57","name": "Marche","name_ru": "Марке","active": "Y"},
+    {"country_id": "IT","region_id": "IT-67","name": "Molise","name_ru": "Молизе","active": "Y"},
+    {"country_id": "IT","region_id": "IT-21","name": "Piedmont","name_ru": "Пьемонт","active": "Y"},
+    {"country_id": "IT","region_id": "IT-75","name": "Apulia","name_ru": "Апулия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-88","name": "Sardinia","name_ru": "Сардиния","active": "Y"},
+    {"country_id": "IT","region_id": "IT-82","name": "Sicily","name_ru": "Сицилия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-52","name": "Tuscany","name_ru": "Тоскана","active": "Y"},
+    {"country_id": "IT","region_id": "IT-32","name": "Trentino-Alto-Adige","name_ru": "Трентино-Альто-Адидже","active": "Y"},
+    {"country_id": "IT","region_id": "IT-55","name": "Umbria","name_ru": "Умбрия","active": "Y"},
+    {"country_id": "IT","region_id": "IT-23","name": "Valle d'Aosta","name_ru": "Валле-д’Аоста","active": "Y"},
+    {"country_id": "IT","region_id": "IT-34","name": "Veneto","name_ru": "Венето","active": "Y"},
+
       {
         "-id": "LU",
         "-mc_name": "LU-G",
