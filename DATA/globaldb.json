@@ -1136,721 +1136,181 @@
     {"country_id": "XK","region_id": "XK-UR","name": "Urosevac","name_ru": "Призренский округ","active": "Y"},
     {"country_id": "XK","region_id": "XK-PZ","name": "Prizren","name_ru": "Урошевацкий округ","active": "Y"},
 
-      {
-        "-id": "MK",
-        "-mc_name": "MK-01",
-        "-title": "Aerodrom",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-02",
-        "-title": "Aracinovo",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-03",
-        "-title": "Berovo",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-04",
-        "-title": "Bitola",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-05",
-        "-title": "Bogdanci",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-06",
-        "-title": "Bogovinje",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-07",
-        "-title": "Bosilovo",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-08",
-        "-title": "Brvenica",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-09",
-        "-title": "Butel",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-10",
-        "-title": "Valandovo",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-11",
-        "-title": "Vasilevo",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-12",
-        "-title": "Vevcani",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-13",
-        "-title": "Veles",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-14",
-        "-title": "Vinica",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-15",
-        "-title": "Vranestica",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-16",
-        "-title": "Vrapciste",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-17",
-        "-title": "Gazi Baba",
-        "-title_ru": "����-����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-18",
-        "-title": "Gevgelija",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-19",
-        "-title": "Gostivar",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-20",
-        "-title": "Gradsko",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-21",
-        "-title": "Debar",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-22",
-        "-title": "Debarca",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-23",
-        "-title": "Delcevo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-24",
-        "-title": "Demir Kapija",
-        "-title_ru": "�����-�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-25",
-        "-title": "Demir Hisar",
-        "-title_ru": "�����-�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-26",
-        "-title": "Dojran",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-27",
-        "-title": "Dolneni",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-28",
-        "-title": "Drugovo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-29",
-        "-title": "Gjorce Petrov",
-        "-title_ru": "ø���-������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-30",
-        "-title": "Zelino",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-31",
-        "-title": "Zajas",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-32",
-        "-title": "Zelenikovo",
-        "-title_ru": "����������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-33",
-        "-title": "Zrnovci",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-34",
-        "-title": "Ilinden",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-35",
-        "-title": "Jegunovce",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-36",
-        "-title": "Kavadarci",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-37",
-        "-title": "Karbinci",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-38",
-        "-title": "Karpos",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-39",
-        "-title": "Kisela Voda",
-        "-title_ru": "������-����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-40",
-        "-title": "Kicevo",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-41",
-        "-title": "Konce",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-42",
-        "-title": "Kocani",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-43",
-        "-title": "Kratovo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-44",
-        "-title": "Kriva Palanka",
-        "-title_ru": "�����-�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-45",
-        "-title": "Krivogastani",
-        "-title_ru": "������������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-46",
-        "-title": "Krusevo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-47",
-        "-title": "Kumanovo",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-48",
-        "-title": "Lipkovo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-49",
-        "-title": "Lozovo",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-50",
-        "-title": "Mavrovo i Rostusa",
-        "-title_ru": "������� � �������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-51",
-        "-title": "Makedonska Kamenica",
-        "-title_ru": "����������-��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-52",
-        "-title": "Makedonski Brod",
-        "-title_ru": "����������-����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-53",
-        "-title": "Mogila",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-54",
-        "-title": "Negotino",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-55",
-        "-title": "Novaci",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-56",
-        "-title": "Novo Selo",
-        "-title_ru": "����-����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-57",
-        "-title": "Oslomej",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-58",
-        "-title": "Ohrid",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-59",
-        "-title": "Petrovec",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-60",
-        "-title": "Pehcevo",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-61",
-        "-title": "Plasnica",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-62",
-        "-title": "Prilep",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-63",
-        "-title": "Probistip",
-        "-title_ru": "���������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-64",
-        "-title": "Radovis",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-65",
-        "-title": "Rankovce",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-66",
-        "-title": "Resen",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-67",
-        "-title": "Rosoman",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-68",
-        "-title": "Saraj",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-69",
-        "-title": "Sveti Nikole",
-        "-title_ru": "�����-������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-70",
-        "-title": "Sopiste",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-71",
-        "-title": "Staro Nagoricane",
-        "-title_ru": "�����-����������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-72",
-        "-title": "Struga",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-73",
-        "-title": "Strumica",
-        "-title_ru": "��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-74",
-        "-title": "Studenicani",
-        "-title_ru": "�����������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-75",
-        "-title": "Tearce",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-76",
-        "-title": "Tetovo",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-77",
-        "-title": "Centar",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-78",
-        "-title": "Centar Zupa",
-        "-title_ru": "������-����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-79",
-        "-title": "Cair",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-80",
-        "-title": "Caska",
-        "-title_ru": "�����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-81",
-        "-title": "Cesinovo-Oblesevo",
-        "-title_ru": "��������-��������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-82",
-        "-title": "Cucer Sandevo",
-        "-title_ru": "�����-�������"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-83",
-        "-title": "Stip",
-        "-title_ru": "����"
-      },
-      {
-        "-id": "MK",
-        "-mc_name": "MK-84",
-        "-title": "Suto Orizari",
-        "-title_ru": "�����-�������"
-      },
-      {
-        "-id": "VA",
-        "-mc_name": "VA",
-        "-title": "Vatican City",
-        "-title_ru": "�������"
-      },
-      {
-        "-id": "MC",
-        "-mc_name": "MC",
-        "-title": "Monaco",
-        "-title_ru": "������"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-AN",
-        "-title": "Andijon"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-BU",
-        "-title": "Buxoro"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-FA",
-        "-title": "Farg`ona"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-JI",
-        "-title": "Jizzax"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-QR",
-        "-title": "Karakalpakstan"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-QA",
-        "-title": "Kashkadarya"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-NG",
-        "-title": "Namangan"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-NW",
-        "-title": "Navoi"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-SA",
-        "-title": "Samarkand"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-SI",
-        "-title": "Sirdaryo"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-SU",
-        "-title": "Surxondaryo"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-TO",
-        "-title": "Tashkent"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-TK",
-        "-title": "Tashkent City",
-        "-title_ru": "����� �������"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-XO",
-        "-title": "Xorazm"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "TJ-SU",
-        "-title": "Sarvan (Sughd Province, Tajikistan)"
-      },
-      {
-        "-id": "UZ",
-        "-mc_name": "UZ-AS",
-        "-title": "Aral Sea"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-AL",
-        "-title": "Alytus",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-KU",
-        "-title": "Kaunas",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-KL",
-        "-title": "Klaipeda",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-MR",
-        "-title": "Marijampole",
-        "-title_ru": "�������������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-PN",
-        "-title": "Panevezys",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-SA",
-        "-title": "Siauliai",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-TA",
-        "-title": "Taurage",
-        "-title_ru": "���������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-TE",
-        "-title": "Telsiai",
-        "-title_ru": "����������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-UT",
-        "-title": "Utena",
-        "-title_ru": "�������� ����"
-      },
-      {
-        "-id": "LT",
-        "-mc_name": "LT-VL",
-        "-title": "Vilnius",
-        "-title_ru": "����������� ����"
-      }
-    ],
-    "city": [
-      {
-        "-title": "Cairo (Al Qahirah)",
-        "-title_nt": "???????",
-        "-title_ru": "����",
-        "-id": "cairo",
-        "-mc_name": "EG-C",
-        "-capital_city": "true",
-        "-lat": "30.0412863",
-        "-long": "31.2409477",
-        "-img": "eg_cairo.jpg",
-        "description": "C������ ������, ���������� ����� ��������� ���� � ������, ���� �� ���� ������� ������� ������� � �� ��� ������ ���������� � ���������. ��������� ������� ������ ����� ��� ����� � ��� �� ��� ��� ����� ������� ����� ����������� � ������ ������ � ���������. �������� ��������� ��� ��������� �������� ������������ �����, ����� ���������, ���� ��������, �������� ������� � ���������� ����."
-      },
-      {
-        "-title": "Pyramids of Giza (historical preserve)",
-        "-title_nt": "??????? ?????? (????????? ??????)",
-        "-title_ru": "�������� ���� (������������ ����)",
-        "-mc_name": "EG-GZ",
-        "-id": "giza",
-        "-lat": "29.9766887",
-        "-long": "31.1334653",
-        "-img": "eg_gizaa.jpg",
-        "description": "�������� ������� ���������� �� ����� ���� � ��������� �����, ����������� ������� ������. ��������� �� ���������� ����� 8 �� �� ����������� � ����� ��������� ������� �� ������� ������ ���� �� ���� ���, �������� � 25 �� � ���-������ �� ������ �����. ������� �������, ��� ��������� ���� ������� � ������� ������� �������� ������ �� ����� ��������� IV�VI �������� (XXVI�XXIII ���� �� �. �.). �������� ������ (����) �������� ������������ ���������� ���������� �� ���� ����� �������� ����. ����� �������� ������������ ���������� ������."
-      },
-      {
-        "-title": "Alexandria",
-        "-title_nt": "??????????",
-        "-title_ru": "�����������",
-        "-mc_name": "EG-ALX",
-        "-id": "alexandria",
-        "-lat": "31.19874",
-        "-long": "29.91926",
-        "-img": "eg_iskan.jpg",
-        "description": "������ ������� ������, ����� � ������� ��������� ������ ����� �� ����� ������ ����. ��� ����� �������� ���������� ������ ������, � �������� ��������� �� ��������� ����� ������. �� ������ �� ������� ������� ��� �� ��� �� ����� ������������ ���� ������� ����� ����������, ������ ����� �������� �������� ���������� �� ������� ������� ������. ��� ���� ����� ���� ����-��� ������������ �� ����� ���������������� �����, ������� ����������, ������� ����."
-      },
-      {
-        "-title": "Luxor",
-        "-title_nt": "???????????",
-        "-title_ru": "������",
-        "-mc_name": "EG-LX",
-        "-id": "luxor",
-        "-lat": "25.67374",
-        "-long": "32.65536",
-        "-img": "eg_lukso.jpg",
-        "description": "����� ������, ����� ������� � ����� �����. ������ ��� ������ ����� ��� �������� ����� ��������� �������� �����������. ��� �������� ������ ���� ��� ��� ����: �������� ��������� ������ � ������, ������ �����, ������ �����, ��������, ���� ���������."
-      },
-      {
-        "-title": "Hurghada",
-        "-title_nt": "???????",
-        "-title_ru": "�������",
-        "-mc_name": "EG-BA",
-        "-id": "hurgada",
-        "-lat": "27.2578377",
-        "-long": "33.818721",
-        "-img": "eg_hurga.jpg",
-        "description": "����� ������ � ������� ���� ����� ���������� �� ���������� ���� �������� ���� � ���������."
-      },
+    {"country_id": "MK","region_id": "MK-01","name": "Aerodrom","name_ru": "Аэродром","active": "Y"},
+    {"country_id": "MK","region_id": "MK-02","name": "Aračinovo","name_ru": "Арачиново","active": "Y"},
+    {"country_id": "MK","region_id": "MK-03","name": "Berovo","name_ru": "Берово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-04","name": "Bitola","name_ru": "Битола","active": "Y"},
+    {"country_id": "MK","region_id": "MK-05","name": "Bogdanci","name_ru": "Богданци","active": "Y"},
+    {"country_id": "MK","region_id": "MK-06","name": "Bogovinje","name_ru": "Боговинье","active": "Y"},
+    {"country_id": "MK","region_id": "MK-07","name": "Bosilovo","name_ru": "Босилово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-08","name": "Brvenica","name_ru": "Брвеница","active": "Y"},
+    {"country_id": "MK","region_id": "MK-09","name": "Butel","name_ru": "Бутел","active": "Y"},
+    {"country_id": "MK","region_id": "MK-10","name": "Valandovo","name_ru": "Валандово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-11","name": "Vasilevo","name_ru": "Василево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-12","name": "Vevčani","name_ru": "Вевчани","active": "Y"},
+    {"country_id": "MK","region_id": "MK-13","name": "Veles","name_ru": "Велес","active": "Y"},
+    {"country_id": "MK","region_id": "MK-14","name": "Vinica","name_ru": "Виница","active": "Y"},
+    {"country_id": "MK","region_id": "MK-15","name": "Vraneštica","name_ru": "Вранештица","active": "Y"},
+    {"country_id": "MK","region_id": "MK-16","name": "Vrapčište","name_ru": "Врапчиште","active": "Y"},
+    {"country_id": "MK","region_id": "MK-17","name": "Gazi Baba","name_ru": "Гази-Баба","active": "Y"},
+    {"country_id": "MK","region_id": "MK-18","name": "Gevgelija","name_ru": "Гевгелия","active": "Y"},
+    {"country_id": "MK","region_id": "MK-19","name": "Gostivar","name_ru": "Гостивар","active": "Y"},
+    {"country_id": "MK","region_id": "MK-20","name": "Gradsko","name_ru": "Градско","active": "Y"},
+    {"country_id": "MK","region_id": "MK-21","name": "Debar","name_ru": "Дебар","active": "Y"},
+    {"country_id": "MK","region_id": "MK-22","name": "Debarca","name_ru": "Дебарца","active": "Y"},
+    {"country_id": "MK","region_id": "MK-23","name": "Delčevo","name_ru": "Делчево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-24","name": "Demir Kapija","name_ru": "Демир-Капия","active": "Y"},
+    {"country_id": "MK","region_id": "MK-25","name": "Demir Hisar","name_ru": "Демир-Хисар","active": "Y"},
+    {"country_id": "MK","region_id": "MK-26","name": "Dojran","name_ru": "Дойран","active": "Y"},
+    {"country_id": "MK","region_id": "MK-27","name": "Dolneni","name_ru": "Долнени","active": "Y"},
+    {"country_id": "MK","region_id": "MK-28","name": "Drugovo","name_ru": "Другово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-29","name": "Gjorče Petrov","name_ru": "Гёрче-Петров","active": "Y"},
+    {"country_id": "MK","region_id": "MK-30","name": "Želino","name_ru": "Желино","active": "Y"},
+    {"country_id": "MK","region_id": "MK-31","name": "Zajas","name_ru": "Заяс","active": "Y"},
+    {"country_id": "MK","region_id": "MK-32","name": "Zelenikovo","name_ru": "Зелениково","active": "Y"},
+    {"country_id": "MK","region_id": "MK-33","name": "Zrnovci","name_ru": "Зрновци","active": "Y"},
+    {"country_id": "MK","region_id": "MK-34","name": "Ilinden","name_ru": "Илинден","active": "Y"},
+    {"country_id": "MK","region_id": "MK-35","name": "Jegunovce","name_ru": "Егуновце","active": "Y"},
+    {"country_id": "MK","region_id": "MK-36","name": "Kavadarci","name_ru": "Кавадарци","active": "Y"},
+    {"country_id": "MK","region_id": "MK-37","name": "Karbinci","name_ru": "Карбинци","active": "Y"},
+    {"country_id": "MK","region_id": "MK-38","name": "Karpoš","name_ru": "Карпош","active": "Y"},
+    {"country_id": "MK","region_id": "MK-39","name": "Kisela Voda","name_ru": "Кисела-Вода","active": "Y"},
+    {"country_id": "MK","region_id": "MK-40","name": "Kičevo","name_ru": "Кичево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-41","name": "Konče","name_ru": "Конче","active": "Y"},
+    {"country_id": "MK","region_id": "MK-42","name": "Kočani","name_ru": "Кочани","active": "Y"},
+    {"country_id": "MK","region_id": "MK-43","name": "Kratovo","name_ru": "Кратово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-44","name": "Kriva Palanka","name_ru": "Крива-Паланка","active": "Y"},
+    {"country_id": "MK","region_id": "MK-45","name": "Krivogaštani","name_ru": "Кривогаштани","active": "Y"},
+    {"country_id": "MK","region_id": "MK-46","name": "Kruševo","name_ru": "Крушево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-47","name": "Kumanovo","name_ru": "Куманово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-48","name": "Lipkovo","name_ru": "Липково","active": "Y"},
+    {"country_id": "MK","region_id": "MK-49","name": "Lozovo","name_ru": "Лозово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-50","name": "Mavrovo i Rostuša","name_ru": "Маврово и Ростуша","active": "Y"},
+    {"country_id": "MK","region_id": "MK-51","name": "Makedonska Kamenica","name_ru": "Македонска-Каменица","active": "Y"},
+    {"country_id": "MK","region_id": "MK-52","name": "Makedonski Brod","name_ru": "Македонски-Брод","active": "Y"},
+    {"country_id": "MK","region_id": "MK-53","name": "Mogila","name_ru": "Могила","active": "Y"},
+    {"country_id": "MK","region_id": "MK-54","name": "Negotino","name_ru": "Неготино","active": "Y"},
+    {"country_id": "MK","region_id": "MK-55","name": "Novaci","name_ru": "Новаци","active": "Y"},
+    {"country_id": "MK","region_id": "MK-56","name": "Novo Selo","name_ru": "Ново-Село","active": "Y"},
+    {"country_id": "MK","region_id": "MK-57","name": "Oslomej","name_ru": "Осломей","active": "Y"},
+    {"country_id": "MK","region_id": "MK-58","name": "Ohrid","name_ru": "Охрид","active": "Y"},
+    {"country_id": "MK","region_id": "MK-59","name": "Petrovec","name_ru": "Петровец","active": "Y"},
+    {"country_id": "MK","region_id": "MK-60","name": "Pehčevo","name_ru": "Пехчево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-61","name": "Plasnica","name_ru": "Пласница","active": "Y"},
+    {"country_id": "MK","region_id": "MK-62","name": "Prilep","name_ru": "Прилеп","active": "Y"},
+    {"country_id": "MK","region_id": "MK-63","name": "Probištip","name_ru": "Пробиштип","active": "Y"},
+    {"country_id": "MK","region_id": "MK-64","name": "Radoviš","name_ru": "Радовиш","active": "Y"},
+    {"country_id": "MK","region_id": "MK-65","name": "Rankovce","name_ru": "Ранковце","active": "Y"},
+    {"country_id": "MK","region_id": "MK-66","name": "Resen","name_ru": "Ресен","active": "Y"},
+    {"country_id": "MK","region_id": "MK-67","name": "Rosoman","name_ru": "Росоман","active": "Y"},
+    {"country_id": "MK","region_id": "MK-68","name": "Saraj","name_ru": "Сарай","active": "Y"},
+    {"country_id": "MK","region_id": "MK-69","name": "Sveti Nikole","name_ru": "Свети-Николе","active": "Y"},
+    {"country_id": "MK","region_id": "MK-70","name": "Sopište","name_ru": "Сопиште","active": "Y"},
+    {"country_id": "MK","region_id": "MK-71","name": "Staro Nagoričane","name_ru": "Старо-Нагоричане","active": "Y"},
+    {"country_id": "MK","region_id": "MK-72","name": "Struga","name_ru": "Струга","active": "Y"},
+    {"country_id": "MK","region_id": "MK-73","name": "Strumica","name_ru": "Струмица","active": "Y"},
+    {"country_id": "MK","region_id": "MK-74","name": "Studeničani","name_ru": "Студеничани","active": "Y"},
+    {"country_id": "MK","region_id": "MK-75","name": "Tearce","name_ru": "Теарце","active": "Y"},
+    {"country_id": "MK","region_id": "MK-76","name": "Tetovo","name_ru": "Тетово","active": "Y"},
+    {"country_id": "MK","region_id": "MK-77","name": "Centar","name_ru": "Центр","active": "Y"},
+    {"country_id": "MK","region_id": "MK-78","name": "Centar Župa","name_ru": "Центар-Жупа","active": "Y"},
+    {"country_id": "MK","region_id": "MK-79","name": "Čair","name_ru": "Чаир","active": "Y"},
+    {"country_id": "MK","region_id": "MK-80","name": "Čaška","name_ru": "Чашка","active": "Y"},
+    {"country_id": "MK","region_id": "MK-81","name": "Češinovo-Obleševo","name_ru": "Чешиново-Облешево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-82","name": "Čučer Sandevo","name_ru": "Чучер-Сандево","active": "Y"},
+    {"country_id": "MK","region_id": "MK-83","name": "Štip","name_ru": "Штип","active": "Y"},
+    {"country_id": "MK","region_id": "MK-84","name": "Šuto Orizari","name_ru": "Чучер-Сандево","active": "Y"},
+
+    {"country_id": "VA","region_id": "VA","name": "Vatican City","name_ru": "Ватикан","active": "Y"},
+
+    {"country_id": "MC","region_id": "MC","name": "Monaco","name_ru": "Монако","active": "Y"},
+
+    {"country_id": "UZ","region_id": "UZ-AN","name": "Andijon viloyati","name_ru": "Андижанская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-BU","name": "Buxoro viloyati","name_ru": "Бухарская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-FA","name": "Farg’ona viloyati","name_ru": "Ферганская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-JI","name": "Jizzah viloyati","name_ru": "	Джизакская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-QR","name": "Qoraqalpog’iston Respublikasi","name_ru": "Республика Каракалпакстан","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-QA","name": "Qashqadaryo viloyati","name_ru": "Кашкадарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-NG","name": "Namangan viloyati","name_ru": "Наманганская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-NW","name": "Navoiy viloyati","name_ru": "Навоийская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SA","name": "Samarqand viloyati","name_ru": "Самаркандская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SI","name": "Sirdaryo viloyati","name_ru": "Сырдарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SU","name": "Surxondaryo viloyati","name_ru": "Сурхандарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-TO","name": "Toshkent viloyati","name_ru": "Ташкентская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-TK","name": "Toshkent","name_ru": "Город Ташкент","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-XO","name": "Xorazm viloyati","name_ru": "Хорезмская область","active": "Y"},
+    {"country_id": "UZ","region_id": "TJ-SU","name": "Sarvan (Sughd Province, Tajikistan)","name_ru": "","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-AS","name": "Aral Sea","name_ru": "","active": "Y"},
+
+    {"country_id": "LT","region_id": "LT-AL","name": "Alytus","name_ru": "Алитусский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-KU","name": "Kaunas","name_ru": "Каунасский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-KL","name": "Klaipėda","name_ru": "Клайпедский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-MR","name": "Marijampolė","name_ru": "Мариямпольский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-PN","name": "Panevėžys","name_ru": "Паневежский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-SA","name": "Šiauliai","name_ru": "Шяуляйский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-TA","name": "Tauragė","name_ru": "Таурагский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-TE","name": "Telšiai","name_ru": "Тельшяйский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-UT","name": "Utena","name_ru": "Утенский уезд","active": "Y"},
+    {"country_id": "LT","region_id": "LT-VL","name": "Vilnius","name_ru": "Вильнюсский уезд","active": "Y"}
+  ],
+  "city": [
+    {
+      "name": "Cairo (Al Qāhirah)",
+      "name_nt": "القاهرة",
+      "name_ru": "Каир",
+      "city_id": "cairo",
+      "region_id": "EG-C",
+      "capital": "true",
+      "lat": "30.0412863",
+      "long": "31.2409477",
+      "image": "eg_cairo.jpg",
+    "description": "Cтолица Египта, крупнейший город арабского мира и Африки, один из пяти великих городов Востока и на мой взгляд обязателен к посещению. Множество народов прошло через эту землю и тут до сих пор можно увидеть места относящиеся к разным эпохам и культурам. Наиболее интересны для посещения Каирский исторический музей, рынок АльХалили, форт Саладина, Коптский квартал и набережная Нила."
+    },
+    {
+      "_title": "Pyramids of Giza (historical preserve)",
+      "_title_nt": "أهرامات الجيزة (التاريخية الحفاظ)",
+      "_title_ru": "Пирамиды Гизы (исторический парк)",
+      "_mc_name": "EG-GZ",
+      "_id": "giza",
+      "_lat": "29.9766887",
+      "_long": "31.1334653",
+      "_img": "eg_gizaa.jpg",
+      "description": "Комплекс древних памятников на плато Гиза в пригороде Каира, современной столицы Египта. Находится на расстоянии около 8 км по направлению в центр Ливийской пустыни от старого города Гиза на реке Нил, примерно в 25 км к юго-западу от центра Каира. Принято считать, что постройки были созданы в Древнем царстве Древнего Египта во время правления IV—VI династий (XXVI—XXIII века до н. э.). Пирамида Хеопса (Хуфу) является единственным оставшимся памятником из семи чудес древнего мира. Также является национальным достоянием Египта."
+    },
+    {
+      "_title": "Alexandria",
+      "_title_nt": "الإسكندرية",
+      "_title_ru": "Александрия",
+      "_mc_name": "EG-ALX",
+      "_id": "alexandria",
+      "_lat": "31.19874",
+      "_long": "29.91926",
+      "_img": "eg_iskan.jpg",
+      "description": "Летняя столица страны, город в который стремятся жители Каира во время летней жары. Это место является египетской частью Европы, и выглядит непохожим на остальную часть страны. Не смотря на древнюю историю тут не так уж много исторических мест которые можно посмотреть, однако город обладает красивой набережной по которой приятно гулять. Тут есть также форт Кайт-Бей расположеный на месте Александрийского маяка, Великая Библиотека, Монтаза парк."
+    },
+    {
+      "_title": "Luxor",
+      "_title_nt": "أَلْأُقْصُر",
+      "_title_ru": "Луксор",
+      "_mc_name": "EG-LX",
+      "_id": "luxor",
+      "_lat": "25.67374",
+      "_long": "32.65536",
+      "_img": "eg_lukso.jpg",
+      "description": "Город храмов, город мертвых и город живых. Сейчас это просто музей под открытым небом посещение которого обязательно. Вот неполный список того что там есть: Храмовые комплексы Луксор и Карнак, долина царей, долина цариц, Рамзесум, храм Хатшепсут."
+    },
+    {
+      "_title": "Hurghada",
+      "_title_nt": "الغردقة",
+      "_title_ru": "Хургада",
+      "_mc_name": "EG-BA",
+      "_id": "hurgada",
+      "_lat": "27.2578377",
+      "_long": "33.818721",
+      "_img": "eg_hurga.jpg",
+      "description": "Город курорт в который едут чтобы посмотреть на коралловые рифы Красного моря и отдохнуть."
+    },
+
       {
         "-title": "Sukhum",
         "-title_nt": "��?�",
