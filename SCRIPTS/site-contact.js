@@ -13,10 +13,10 @@ function HTML_CreatorOfContactPage (){
 function HTML_CreatorOfAboutPage () {
     document.getElementById("someElement").innerHTML = "<div class='well'>" +
           "<h2><b> О проекте </b></h2>" +
-          "<p><b>Version</b>: 7.0.1</p>" +
+          "<p><b>Version</b>: 8.0.1</p>" +
           "<p><b>Compatibility Google Chrome</b>: 1.0+ </p>" +
           "<p><b>Compatibility Internet Explorer</b>: 8.0+</p>" +
-          "<p><b>Technologies</b>: HTML, XML, JScript, <a href='http://www.amcharts.com/javascript-maps/' target='_blank'>AMMAP (maps)</a>," +
+          "<p><b>Technologies</b>: HTML, CSS, XML, Json, JScript, <a href='http://www.amcharts.com/javascript-maps/' target='_blank'>AMMAP (maps)</a>," +
           " <a href='http://getbootstrap.com/' target='_blank'>Bootstrap (themes)</a>.</p>" +
           "<p>Здравствуйте. Мое имя Славутский Алексей и это мой личный сайт. Существует множество подобных сайтов, но этот мой! " +
           "Здесь собрана вся информация о моих путешествиях. Тут вы можете найти фотографии, отчеты о поездках, список посещенных мною территорий и еще многое о моем увлечении туризмом. " +
@@ -29,6 +29,6 @@ function HTML_CreatorOfAboutPage () {
 //10. SignIn Page
 //10.01 Navigation to SignIn page
 function HTML_SignInPage () {	
-	var url = "settings.php";
+	var url = "settings.html";
 	location.href = url;
 }
