@@ -1,0 +1,12 @@
+{
+  "level": [
+  {"level_id": "1","name_ru": "Континент","name": "Continent"},
+  {"level_id": "2","name_ru": "Страна","name": "Country"},
+  {"level_id": "3","name_ru": "Земля","name": "Land"},
+  {"level_id": "4","name_ru": "Регион","name": "County"},
+  {"level_id": "5","name_ru": "Район","name": "District"},
+  {"level_id": "6","name_ru": "Населенный пункт","name": "Location"},
+  {"level_id": "7","name_ru": "Природный объект","name": "Nature"},
+  {"level_id": "8","name_ru": "Достопримечательност","name": "Sight"}
+]
+}
