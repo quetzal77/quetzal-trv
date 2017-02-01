@@ -1225,22 +1225,6 @@
 
     {"country_id": "MC","region_id": "MC","name": "Monaco","name_ru": "Монако","active": "Y"},
 
-    {"country_id": "UZ","region_id": "UZ-AN","name": "Andijon viloyati","name_ru": "Андижанская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-BU","name": "Buxoro viloyati","name_ru": "Бухарская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-FA","name": "Farg’ona viloyati","name_ru": "Ферганская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-JI","name": "Jizzah viloyati","name_ru": "	Джизакская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-QR","name": "Qoraqalpog’iston Respublikasi","name_ru": "Республика Каракалпакстан","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-QA","name": "Qashqadaryo viloyati","name_ru": "Кашкадарьинская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-NG","name": "Namangan viloyati","name_ru": "Наманганская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-NW","name": "Navoiy viloyati","name_ru": "Навоийская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-SA","name": "Samarqand viloyati","name_ru": "Самаркандская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-SI","name": "Sirdaryo viloyati","name_ru": "Сырдарьинская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-SU","name": "Surxondaryo viloyati","name_ru": "Сурхандарьинская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-TO","name": "Toshkent viloyati","name_ru": "Ташкентская область","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-TK","name": "Toshkent","name_ru": "Город Ташкент","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-XO","name": "Xorazm viloyati","name_ru": "Хорезмская область","active": "Y"},
-    {"country_id": "UZ","region_id": "TJ-SU","name": "Sarvan (Sughd Province, Tajikistan)","name_ru": "","active": "Y"},
-    {"country_id": "UZ","region_id": "UZ-AS","name": "Aral Sea","name_ru": "","active": "Y"},
 
     {"country_id": "LT","region_id": "LT-AL","name": "Alytus","name_ru": "Алитусский уезд","active": "Y"},
     {"country_id": "LT","region_id": "LT-KU","name": "Kaunas","name_ru": "Каунасский уезд","active": "Y"},
@@ -1251,7 +1235,24 @@
     {"country_id": "LT","region_id": "LT-TA","name": "Tauragė","name_ru": "Таурагский уезд","active": "Y"},
     {"country_id": "LT","region_id": "LT-TE","name": "Telšiai","name_ru": "Тельшяйский уезд","active": "Y"},
     {"country_id": "LT","region_id": "LT-UT","name": "Utena","name_ru": "Утенский уезд","active": "Y"},
-    {"country_id": "LT","region_id": "LT-VL","name": "Vilnius","name_ru": "Вильнюсский уезд","active": "Y"}
+    {"country_id": "LT","region_id": "LT-VL","name": "Vilnius","name_ru": "Вильнюсский уезд","active": "Y"},
+
+    {"country_id": "UZ","region_id": "UZ-AN","name": "Andijon viloyati","name_ru": "Андижанская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-BU","name": "Buxoro viloyati","name_ru": "Бухарская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-FA","name": "Farg’ona viloyati","name_ru": "Ферганская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-JI","name": "Jizzah viloyati","name_ru": "Джизакская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-QR","name": "Qoraqalpog’iston Respublikasi","name_ru": "Республика Каракалпакстан","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-QA","name": "Qashqadaryo viloyati","name_ru": "Кашкадарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-NG","name": "Namangan viloyati","name_ru": "Наманганская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-NW","name": "Navoiy viloyati","name_ru": "Навоийская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SA","name": "Samarqand viloyati","name_ru": "Самаркандская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SI","name": "Sirdaryo viloyati","name_ru": "Сырдарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-SU","name": "Surxondaryo viloyati","name_ru": "Сурхандарьинская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-TO","name": "Toshkent viloyati","name_ru": "Ташкентская область","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-TK","name": "Toshkent","name_ru": "Город Ташкент","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-XO","name": "Xorazm viloyati","name_ru": "Хорезмская область","active": "Y"},
+    {"country_id": "UZ","region_id": "TJ-SU","name": "Sarvan (Sughd Province, Tajikistan)","name_ru": "Сарвакский эксклав (Таджикистан)","active": "Y"},
+    {"country_id": "UZ","region_id": "UZ-AS","name": "Aral Sea","name_ru": "Аральское море","active": "Y"}
   ],
 
   "city": [

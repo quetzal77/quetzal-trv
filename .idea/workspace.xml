@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60a9dcaa-5a33-40b2-875a-2de7eac4f261" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/areas.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/continents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/countries.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/DATA/levels.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATA/globaldb.json" afterPath="$PROJECT_DIR$/DATA/globaldb.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATA/globaldb.xml" afterPath="$PROJECT_DIR$/DATA/globaldb.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCRIPTS/main_onload.js" afterPath="$PROJECT_DIR$/SCRIPTS/main_onload.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SCRIPTS/service-methods.js" afterPath="$PROJECT_DIR$/SCRIPTS/service-methods.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/default2.html" afterPath="$PROJECT_DIR$/default2.html" />
     </list>
     <ignored path="quetzal-trv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,43 +32,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="globaldb.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
+      <file leaf-file-name="site-onload.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SCRIPTS/site-onload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
-              <folding>
-                <element signature="e#13#537#0" expanded="false" />
-                <element signature="e#555#1200#0" expanded="false" />
-                <element signature="e#1216#8058#0" expanded="false" />
-                <element signature="e#8071#131558#0" expanded="false" />
-                <element signature="e#131571#486815#0" expanded="false" />
-                <element signature="e#469495#469873#0" expanded="false" />
-                <element signature="e#469880#470488#0" expanded="false" />
-                <element signature="e#470494#470980#0" expanded="false" />
-                <element signature="e#470986#471561#0" expanded="false" />
-                <element signature="e#471567#471910#0" expanded="false" />
-                <element signature="e#471916#472249#0" expanded="false" />
-                <element signature="e#472256#473394#0" expanded="false" />
-                <element signature="e#473401#474581#0" expanded="false" />
-                <element signature="e#474588#475496#0" expanded="false" />
-                <element signature="e#475502#476135#0" expanded="false" />
-                <element signature="e#476142#476706#0" expanded="false" />
-                <element signature="e#476713#477662#0" expanded="false" />
-                <element signature="e#477668#478615#0" expanded="false" />
-                <element signature="e#478621#479233#0" expanded="false" />
-                <element signature="e#479240#483798#0" expanded="false" />
-                <element signature="e#486829#516311#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="425">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="59" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globaldb.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
+      <file leaf-file-name="main_onload.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SCRIPTS/main_onload.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="806" column="141" selection-start-line="806" selection-start-column="141" selection-end-line="806" selection-end-column="141" />
+            <state relative-caret-position="258">
+              <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="service-arrays.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SCRIPTS/service-arrays.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -87,25 +81,29 @@
         <option value="$PROJECT_DIR$/default.html" />
         <option value="$PROJECT_DIR$/SCRIPTS/site-contact.js" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/default2.html" />
         <option value="$PROJECT_DIR$/1.json" />
         <option value="$PROJECT_DIR$/globaldb.json" />
         <option value="$PROJECT_DIR$/DATA/levels.json" />
         <option value="$PROJECT_DIR$/DATA/continents.json" />
         <option value="$PROJECT_DIR$/DATA/countries.json" />
         <option value="$PROJECT_DIR$/DATA/areas.json" />
-        <option value="$PROJECT_DIR$/SCRIPTS/main_onload.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/DATA/globaldb.xml" />
+        <option value="$PROJECT_DIR$/DATA/jsons/cities.json" />
+        <option value="$PROJECT_DIR$/DATA/jsons/visits.json" />
+        <option value="$PROJECT_DIR$/DATA/jsons/a2.json" />
+        <option value="$PROJECT_DIR$/DATA/jsons/a1.json" />
+        <option value="$PROJECT_DIR$/DATA/jsons/areas.json" />
         <option value="$PROJECT_DIR$/DATA/globaldb.json" />
+        <option value="$PROJECT_DIR$/default2.html" />
+        <option value="$PROJECT_DIR$/SCRIPTS/service-methods.js" />
+        <option value="$PROJECT_DIR$/SCRIPTS/main_onload.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1600" />
+    <option name="height" value="860" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -132,9 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,8 +148,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quetzal-trv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quetzal-trv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SCRIPTS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quetzal-trv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quetzal-trv" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DATA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,12 +190,13 @@
     <property name="editor.config.accepted" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\GENERAL\TEXT\Travels\My Project\quetzal-trv\DATA" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\GENERAL\TEXT\Travels\My Project\quetzal-trv" />
       <recent name="D:\PRIVATE\quetzal-trv" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PRIVATE\quetzal-trv\DATA\jsons" />
+      <recent name="D:\GENERAL\TEXT\Travels\My Project\quetzal-trv\DATA" />
     </key>
   </component>
   <component name="RunManager">
@@ -473,7 +500,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="0" y="0" width="1600" height="860" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -486,7 +513,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14203085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1435065" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -502,7 +530,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -526,44 +553,7 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/default2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42619">
-          <caret line="2507" column="37" selection-start-line="2507" selection-start-column="37" selection-end-line="2507" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29376">
-          <caret line="5981" column="6" selection-start-line="5981" selection-start-column="6" selection-end-line="5981" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26996">
@@ -579,7 +569,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35666">
@@ -595,7 +585,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2074">
@@ -611,7 +601,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
@@ -635,7 +625,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -686,14 +676,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json" />
-    <entry file="file://$PROJECT_DIR$/SCRIPTS/service-arrays.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json" />
     <entry file="file://$PROJECT_DIR$/settings.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-357">
@@ -712,13 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -771,60 +747,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SCRIPTS/site-world.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="98" column="35" selection-start-line="98" selection-start-column="26" selection-end-line="98" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/globaldb.json" />
-    <entry file="file://$PROJECT_DIR$/DATA/levels.json">
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/levels.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="8" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/continents.json">
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/continents.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="8" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/countries.json">
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/countries.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="10" selection-start-line="1" selection-start-column="3" selection-end-line="1" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/areas.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1151">
-          <caret line="1177" column="3" selection-start-line="1177" selection-start-column="3" selection-end-line="1177" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCRIPTS/main_onload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SCRIPTS/site-onload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -836,40 +777,135 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="806" column="141" selection-start-line="806" selection-start-column="141" selection-end-line="806" selection-end-column="141" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/cities.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/visits.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="2" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/a2.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="6" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/a1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="1161" column="0" selection-start-line="1161" selection-start-column="0" selection-end-line="1176" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DATA/jsons/areas.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="1162" column="0" selection-start-line="1162" selection-start-column="0" selection-end-line="1177" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCRIPTS/site-world.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="99" column="73" selection-start-line="99" selection-start-column="73" selection-end-line="99" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="117">
           <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding>
             <element signature="e#13#537#0" expanded="false" />
             <element signature="e#555#1200#0" expanded="false" />
             <element signature="e#1216#8058#0" expanded="false" />
-            <element signature="e#8071#131558#0" expanded="false" />
-            <element signature="e#131571#486815#0" expanded="false" />
-            <element signature="e#469495#469873#0" expanded="false" />
-            <element signature="e#469880#470488#0" expanded="false" />
-            <element signature="e#470494#470980#0" expanded="false" />
-            <element signature="e#470986#471561#0" expanded="false" />
-            <element signature="e#471567#471910#0" expanded="false" />
-            <element signature="e#471916#472249#0" expanded="false" />
-            <element signature="e#472256#473394#0" expanded="false" />
-            <element signature="e#473401#474581#0" expanded="false" />
-            <element signature="e#474588#475496#0" expanded="false" />
-            <element signature="e#475502#476135#0" expanded="false" />
-            <element signature="e#476142#476706#0" expanded="false" />
-            <element signature="e#476713#477662#0" expanded="false" />
-            <element signature="e#477668#478615#0" expanded="false" />
-            <element signature="e#478621#479233#0" expanded="false" />
-            <element signature="e#479240#483798#0" expanded="false" />
-            <element signature="e#486829#516311#0" expanded="false" />
+            <element signature="e#8071#131604#0" expanded="false" />
+            <element signature="e#131617#486861#0" expanded="false" />
+            <element signature="e#469541#469919#0" expanded="false" />
+            <element signature="e#469926#470534#0" expanded="false" />
+            <element signature="e#470540#471026#0" expanded="false" />
+            <element signature="e#471032#471607#0" expanded="false" />
+            <element signature="e#471613#471956#0" expanded="false" />
+            <element signature="e#471962#472295#0" expanded="false" />
+            <element signature="e#472302#473440#0" expanded="false" />
+            <element signature="e#473447#474627#0" expanded="false" />
+            <element signature="e#474634#475542#0" expanded="false" />
+            <element signature="e#475548#476181#0" expanded="false" />
+            <element signature="e#476188#476752#0" expanded="false" />
+            <element signature="e#476759#477708#0" expanded="false" />
+            <element signature="e#477714#478661#0" expanded="false" />
+            <element signature="e#478667#479279#0" expanded="false" />
+            <element signature="e#479286#483844#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
+    <entry file="file://$PROJECT_DIR$/SCRIPTS/site-onload.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="806" column="141" selection-start-line="806" selection-start-column="141" selection-end-line="806" selection-end-column="141" />
+        <state relative-caret-position="425">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCRIPTS/service-methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4301">
+          <caret line="253" column="18" selection-start-line="253" selection-start-column="18" selection-end-line="253" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCRIPTS/service-arrays.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SCRIPTS/main_onload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="23" column="37" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding />
         </state>
       </provider>

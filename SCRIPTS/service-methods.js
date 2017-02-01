@@ -13,7 +13,7 @@
     }
 
 //04.02 Return last digit of number so then it's possible to create russian words correctly
-function NumberProcessor (number ) {
+function NumberProcessor (number) {
 
     var result;
     if (number >20) {
@@ -31,7 +31,7 @@ function NumberProcessor (number ) {
 function wordParser (word, end1, end234, endrest, number){
     var result = "";
     var endOfWord= endrest;
-    var newNumber = NumberProcessor  (number)
+    var newNumber = NumberProcessor (number)
 
     if (newNumber == 1){
         endOfWord = end1;
@@ -116,6 +116,7 @@ function HTML_SelectorListOfCountries(){
     result += "</select>";
     return result;
 }
+
 //04.10 This method creates selector of cities
 function HTML_SelectorListOfCities(){
     var result = "";
@@ -201,7 +202,7 @@ function HTML_FullCountryName(countryName) {
     return result;
 }
 
-//4.13.1 Short country name
+//4.13 Short country name
 function HTML_ShortCountryName(countryName) {
     for (var i = 0; i < ArrayOfVisitedCountries.length; i++) {
         if (ArrayOfVisitedCountries[i].countryName == countryName) {
@@ -211,8 +212,6 @@ function HTML_ShortCountryName(countryName) {
     }
     return result;
 }
-
-//4.13.2 Short country name
 
 //4.14 Full Region name
 function HTML_FullRegionName(regionId, regionName) {
