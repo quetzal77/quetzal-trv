@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60a9dcaa-5a33-40b2-875a-2de7eac4f261" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATA/globaldb.json" afterPath="$PROJECT_DIR$/DATA/globaldb.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DATA/globaldb.xml" afterPath="$PROJECT_DIR$/DATA/globaldb.xml" />
     </list>
     <ignored path="quetzal-trv.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,49 +29,40 @@
       <file leaf-file-name="globaldb.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="7345" column="122" selection-start-line="7345" selection-start-column="122" selection-end-line="7345" selection-end-column="122" />
+            <state relative-caret-position="119">
+              <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
               <folding>
                 <element signature="e#13#537#0" expanded="false" />
                 <element signature="e#555#1200#0" expanded="false" />
                 <element signature="e#1216#8058#0" expanded="false" />
                 <element signature="e#8071#131558#0" expanded="false" />
-                <element signature="e#131571#486740#0" expanded="false" />
-                <element signature="e#469420#469798#0" expanded="false" />
-                <element signature="e#469805#470413#0" expanded="false" />
-                <element signature="e#470419#470905#0" expanded="false" />
-                <element signature="e#470911#471486#0" expanded="false" />
-                <element signature="e#471492#471835#0" expanded="false" />
-                <element signature="e#471841#472174#0" expanded="false" />
-                <element signature="e#472181#473319#0" expanded="false" />
-                <element signature="e#473326#474506#0" expanded="false" />
-                <element signature="e#474513#475421#0" expanded="false" />
-                <element signature="e#475427#476060#0" expanded="false" />
-                <element signature="e#476067#476631#0" expanded="false" />
-                <element signature="e#476638#477587#0" expanded="false" />
-                <element signature="e#477593#478540#0" expanded="false" />
-                <element signature="e#478546#479158#0" expanded="false" />
-                <element signature="e#479165#483723#0" expanded="false" />
+                <element signature="e#131571#486815#0" expanded="false" />
+                <element signature="e#469495#469873#0" expanded="false" />
+                <element signature="e#469880#470488#0" expanded="false" />
+                <element signature="e#470494#470980#0" expanded="false" />
+                <element signature="e#470986#471561#0" expanded="false" />
+                <element signature="e#471567#471910#0" expanded="false" />
+                <element signature="e#471916#472249#0" expanded="false" />
+                <element signature="e#472256#473394#0" expanded="false" />
+                <element signature="e#473401#474581#0" expanded="false" />
+                <element signature="e#474588#475496#0" expanded="false" />
+                <element signature="e#475502#476135#0" expanded="false" />
+                <element signature="e#476142#476706#0" expanded="false" />
+                <element signature="e#476713#477662#0" expanded="false" />
+                <element signature="e#477668#478615#0" expanded="false" />
+                <element signature="e#478621#479233#0" expanded="false" />
+                <element signature="e#479240#483798#0" expanded="false" />
+                <element signature="e#486829#516311#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="globaldb.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="globaldb.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+            <state relative-caret-position="424">
+              <caret line="806" column="141" selection-start-line="806" selection-start-column="141" selection-end-line="806" selection-end-column="141" />
               <folding />
             </state>
           </provider>
@@ -97,14 +90,14 @@
         <option value="$PROJECT_DIR$/default2.html" />
         <option value="$PROJECT_DIR$/1.json" />
         <option value="$PROJECT_DIR$/globaldb.json" />
-        <option value="$PROJECT_DIR$/DATA/globaldb.json" />
         <option value="$PROJECT_DIR$/DATA/levels.json" />
         <option value="$PROJECT_DIR$/DATA/continents.json" />
         <option value="$PROJECT_DIR$/DATA/countries.json" />
         <option value="$PROJECT_DIR$/DATA/areas.json" />
         <option value="$PROJECT_DIR$/SCRIPTS/main_onload.js" />
-        <option value="$PROJECT_DIR$/DATA/globaldb.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/DATA/globaldb.xml" />
+        <option value="$PROJECT_DIR$/DATA/globaldb.json" />
       </list>
     </option>
   </component>
@@ -139,6 +132,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -159,9 +155,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -835,47 +828,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="7345" column="122" selection-start-line="7345" selection-start-column="122" selection-end-line="7345" selection-end-column="122" />
+        <state relative-caret-position="119">
+          <caret line="78" column="10" selection-start-line="78" selection-start-column="10" selection-end-line="78" selection-end-column="10" />
           <folding>
             <element signature="e#13#537#0" expanded="false" />
             <element signature="e#555#1200#0" expanded="false" />
             <element signature="e#1216#8058#0" expanded="false" />
             <element signature="e#8071#131558#0" expanded="false" />
-            <element signature="e#131571#486740#0" expanded="false" />
-            <element signature="e#469420#469798#0" expanded="false" />
-            <element signature="e#469805#470413#0" expanded="false" />
-            <element signature="e#470419#470905#0" expanded="false" />
-            <element signature="e#470911#471486#0" expanded="false" />
-            <element signature="e#471492#471835#0" expanded="false" />
-            <element signature="e#471841#472174#0" expanded="false" />
-            <element signature="e#472181#473319#0" expanded="false" />
-            <element signature="e#473326#474506#0" expanded="false" />
-            <element signature="e#474513#475421#0" expanded="false" />
-            <element signature="e#475427#476060#0" expanded="false" />
-            <element signature="e#476067#476631#0" expanded="false" />
-            <element signature="e#476638#477587#0" expanded="false" />
-            <element signature="e#477593#478540#0" expanded="false" />
-            <element signature="e#478546#479158#0" expanded="false" />
-            <element signature="e#479165#483723#0" expanded="false" />
+            <element signature="e#131571#486815#0" expanded="false" />
+            <element signature="e#469495#469873#0" expanded="false" />
+            <element signature="e#469880#470488#0" expanded="false" />
+            <element signature="e#470494#470980#0" expanded="false" />
+            <element signature="e#470986#471561#0" expanded="false" />
+            <element signature="e#471567#471910#0" expanded="false" />
+            <element signature="e#471916#472249#0" expanded="false" />
+            <element signature="e#472256#473394#0" expanded="false" />
+            <element signature="e#473401#474581#0" expanded="false" />
+            <element signature="e#474588#475496#0" expanded="false" />
+            <element signature="e#475502#476135#0" expanded="false" />
+            <element signature="e#476142#476706#0" expanded="false" />
+            <element signature="e#476713#477662#0" expanded="false" />
+            <element signature="e#477668#478615#0" expanded="false" />
+            <element signature="e#478621#479233#0" expanded="false" />
+            <element signature="e#479240#483798#0" expanded="false" />
+            <element signature="e#486829#516311#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DATA/globaldb.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="117" column="42" selection-start-line="117" selection-start-column="42" selection-end-line="117" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+        <state relative-caret-position="424">
+          <caret line="806" column="141" selection-start-line="806" selection-start-column="141" selection-end-line="806" selection-end-column="141" />
           <folding />
         </state>
       </provider>
