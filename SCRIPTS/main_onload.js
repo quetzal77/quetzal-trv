@@ -1,46 +1,46 @@
 //00.01 Run function on load of World page
 //This is jQuery object that take data from xml and transform them to some collections
 window.onload = function() {
-     $.getJSON( "DATA/globaldb.json", processMyJson);
+     $.getJSON( "DATA/v.json", processMyJson);
  };
 
  var processMyJson = function(result){
     data = result;
     //List of unique IDs of visited countries
-    countriesVisitedIDs = createArrayOfIDsVisitedCountries();
+    //countriesVisitedIDs = createArrayOfIDsVisitedCountries();
     //List of unique Visited Countries
     //visitedCountriesFull = createArrayOfVisitedCountries();
     //Array of visits sorted descendently and with dates in DATETIME format
-    visitsSorted = createArrayOfVisites();
+    //visitsSorted = createArrayOfVisites();
  }
 
 //00.02 List of unique IDs of visited countries
- function createArrayOfIDsVisitedCountries() {
-     result = [];
-     var distinctIds = {};
-     var distinctCities = {};
-     for (var i = 0; i < data.visit.length; i++) {
-         if (data.visit[i].country_id && data.visit[i].city){
-             var arrayOfCountries = {};
-             var cities = data.visit[i].city.split(" ");
-             if (!distinctIds[data.visit[i].country_id]) {
-                 arrayOfCountries.ID = data.visit[i].country_id;
-                 distinctIds[data.visit[i].country_id] = true;
-                     for (var j = 0; j < cities.length; j++){
-                         if (!distinctCities[cities[j]] && cities[j] != undefined){
-                             arrayOfCountries.cities.push(cities[j]);
-                             distinctCities[cities[j]];
-                         }
-                     }
-                 result.push(arrayOfCountries)
-             }
-//             else{
-//
+// function createArrayOfIDsVisitedCountries() {
+//     result = [];
+//     var distinctIds = {};
+//     var distinctCities = {};
+//     for (var i = 0; i < data.visit.length; i++) {
+//         if (data.visit[i].country_id && data.visit[i].city){
+//             var arrayOfCountries = {};
+//             var cities = data.visit[i].city.split(" ");
+//             if (!distinctIds[data.visit[i].country_id]) {
+//                 arrayOfCountries.ID = data.visit[i].country_id;
+//                 distinctIds[data.visit[i].country_id] = true;
+//                     for (var j = 0; j < cities.length; j++){
+//                         if (!distinctCities[cities[j]] && cities[j] != undefined){
+//                             arrayOfCountries.cities.push(cities[j]);
+//                             distinctCities[cities[j]];
+//                         }
+//                     }
+//                 result.push(arrayOfCountries)
 //             }
-         }
-     }
-     return result;
- }
+////             else{
+////
+////             }
+//         }
+//     }
+//     return result;
+// }
 
 //00.03 Object that contain list if visited countries with their attributes like continent etc so we will be able create html code to display them
 //function createArrayOfVisitedCountries() {
@@ -99,33 +99,27 @@ window.onload = function() {
 //}
 
 //00.04 Array of visits sorted descendently and with dates in DATETIME format
- function createArrayOfVisites() {
-     result = [];
-     var distinctIds = {};
-     for (var i = 0; i < data.visit.length; i++) {
-         if (data.visit[i].start_date != undefined && data.visit[i].end_date != undefined && data.visit[i].country_id != undefined && data.visit[i].city != undefined){
-             var arrayOfVisits = {};
-             arrayOfVisits.country_id = data.visit[i].country_id;
-             arrayOfVisits.photos = data.visit[i].photos;
-             arrayOfVisits.story = data.visit[i].story;
-             arrayOfVisits.city = data.visit[i].city.split(" ");
-
-             var starVisit = data.visit[i].start_date.split(".");
-             arrayOfVisits.start_date = new Date(starVisit[2],starVisit[1]-1,starVisit[0]);
-
-             var endVisit = data.visit[i].end_date.split(".");
-             arrayOfVisits.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
-
-             result.push(arrayOfVisits);
-         }
-//         if (data.visit[i].country_id && !distinctIds[data.visit[i].country_id]) {
-//             var arrayOfUniqueIDs = {};
-//             arrayOfUniqueIDs.ID = data.visit[i].country_id;
-//             distinctIds[data.visit[i].country_id] = true;
-//             result.push(arrayOfUniqueIDs);
+// function createArrayOfVisites() {
+//     result = [];
+//     var distinctIds = {};
+//     for (var i = 0; i < data.visit.length; i++) {
+//         if (data.visit[i].start_date != undefined && data.visit[i].end_date != undefined && data.visit[i].country_id != undefined && data.visit[i].city != undefined){
+//             var arrayOfVisits = {};
+//             arrayOfVisits.country_id = data.visit[i].country_id;
+//             arrayOfVisits.photos = data.visit[i].photos;
+//             arrayOfVisits.story = data.visit[i].story;
+//             arrayOfVisits.city = data.visit[i].city.split(" ");
+//
+//             var starVisit = data.visit[i].start_date.split(".");
+//             arrayOfVisits.start_date = new Date(starVisit[2],starVisit[1]-1,starVisit[0]);
+//
+//             var endVisit = data.visit[i].end_date.split(".");
+//             arrayOfVisits.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
+//
+//             result.push(arrayOfVisits);
 //         }
-     }
-     result.sort(dynamicSort("start_date"));
-     result.reverse();
-     return result
- }
+//     }
+//     result.sort(dynamicSort("start_date"));
+//     result.reverse();
+//     return result
+// }

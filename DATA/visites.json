@@ -1,0 +1,897 @@
+{
+  "visit": [
+    {
+      "start_date": "04.02.2017",
+      "end_date": "07.02.2017",
+      "city": ["vilnius", "trakai", "kaunas"],
+      "photos": ""
+    },
+    {
+      "start_date": "27.01.2017",
+      "end_date": "30.01.2017",
+      "city": ["hanover","braunschweig","goslar","magdeburg","celle"],
+      "photos": ""
+    },
+
+    {
+      "start_date": "25.11.2016",
+      "end_date": "29.11.2016",
+      "city": ["centar","ohrid","pristina","nuremberg","ulm"],
+      "photos": "http://quetzal.io.ua/album807463"
+    },
+    {
+      "start_date": "02.04.2016",
+      "end_date": "03.04.2016",
+      "city": ["przemysl"]
+    },
+    {
+      "start_date": "25.03.2016",
+      "end_date": "28.03.2016",
+      "city": ["tallinn","helsinki","turku","gdansk"],
+      "photos": "http://quetzal.io.ua/album783397"
+    },
+    {
+      "start_date": "20.02.2016",
+      "end_date": "21.02.2016",
+      "city": ["sychrov","liberec","frydlant"],
+      "photos": "http://quetzal.io.ua/album768238"
+    },
+    {
+      "start_date": "13.02.2016",
+      "end_date": "13.02.2016",
+      "city": ["przemysl"]
+    },
+    {
+      "start_date": "13.01.2016",
+      "end_date": "22.01.2016",
+      "city": ["torremolinos","lalinea","gibraltar","cordoba","granada","seville","malaga"],
+      "photos": "http://quetzal.io.ua/album764878"
+    },
+
+    {
+      "start_date": "04.12.2015",
+      "end_date": "07.12.2015",
+      "city": ["bautzen","dresden","weimar ","erfurt","leipzig","gorlitz"],
+      "photos": "http://quetzal.io.ua/album759589"
+    },
+    {
+      "start_date": "07.11.2015",
+      "end_date": "07.11.2015",
+      "city": ["checiny","kielce"]
+    },
+    {
+      "start_date": "09.10.2015",
+      "end_date": "11.10.2015",
+      "city": ["uppsala","stockholm"],
+      "photos": "http://quetzal.io.ua/album752460"
+    },
+    {
+      "start_date": "03.10.2015",
+      "end_date": "03.10.2015",
+      "city": ["lodz"]
+    },
+    {
+      "start_date": "04.09.2015",
+      "end_date": "13.09.2015",
+      "city": ["pohorelice","graz","grado","verona","venice","aquileia","zagreb","rovinj","szombathely","vienna"],
+      "photos": "http://quetzal.io.ua/album749993"
+    },
+    {
+      "start_date": "15.08.2015",
+      "end_date": "19.08.2015",
+      "city": ["saint_julians","sliema","valletta","rabat_mdina","victoria_rabat"],
+      "photos": "http://quetzal.io.ua/album744361"
+    },
+    {
+      "start_date": "24.07.2015",
+      "end_date": "26.07.2015",
+      "city": ["brno","telc","ceske_budejovice","cesky_krumlov","olomouc"],
+      "photos": "http://quetzal.io.ua/album741044"
+    },
+    {
+      "start_date": "10.07.2015",
+      "end_date": "19.07.2015",
+      "city": ["katowice","wroclaw","swidnica","ksiaz","opole"]
+    },
+    {
+      "start_date": "10.07.2015",
+      "end_date": "10.07.2015",
+      "city": ["tarnow","rzeszov"]
+    },
+    {
+      "start_date": "04.07.2015",
+      "end_date": "04.07.2015",
+      "city": ["ojcow"]
+    },
+    {
+      "start_date": "11.06.2015",
+      "end_date": "13.06.2015",
+      "city": ["palma","canpastila"],
+      "photos": "http://quetzal.io.ua/album735153"
+    },
+    {
+      "start_date": "28.04.2015",
+      "end_date": "07.05.2015",
+      "city": ["pavoa","porto","villaconde","coimbra","lisbon","sintra","santarem","bergamo"],
+      "photos": "http://quetzal.io.ua/album729259"
+    },
+    {
+      "start_date": "21.03.2015",
+      "end_date": "24.03.2015",
+      "city": ["naples","matera","bari","lecce","naples","pompei"],
+      "photos": "http://quetzal.io.ua/album721125"
+    },
+    {
+      "start_date": "27.02.2015",
+      "end_date": "27.02.2015",
+      "city": ["malmo","copenhagen","elsinore"],
+      "photos": "http://quetzal.io.ua/album716395"
+    },
+
+    {
+      "start_date": "18.10.2014",
+      "end_date": "31.10.2014",
+      "city": ["oslo","zurich","wallisellen","mulhouse","besanson","dijon","lyon","zurich","piacenza","parma","modena","bologna","rimini","sanmarino","ferrara","treviso"],
+      "photos": "http://quetzal.io.ua/album702408"
+    },
+    {
+      "start_date": "20.09.2014",
+      "end_date": "23.09.2014",
+      "city": ["rostock","schwerin","bremen","hamburg","lubeck"],
+      "photos": "http://quetzal.io.ua/album694491"
+    },
+    {
+      "start_date": "20.08.2014",
+      "end_date": "31.08.2014",
+      "city": ["calella","barcelona","blanes","pinedademar","andorralavella","zaragoza","girona"],
+      "photos": "http://quetzal.io.ua/album691626"
+    },
+    {
+      "start_date": "13.05.2014",
+      "end_date": "22.05.2014",
+      "city": ["larnaka","nicosia","lefkosha","lefkosha","gazimagus","girne","limassol","paphos"],
+      "photos": "http://quetzal.io.ua/album676126"
+    },
+    {
+      "start_date": "07.03.2014",
+      "end_date": "26.03.2014",
+      "city": ["bonn","cologne","aachen","maastricht","liege","koblenz","mannheim","karlsruhe","zurich","colmar","strasbourg","zug","zurich","vienna","graz","maribor","ljubljana","koper","piran","trieste","udine","treviso"],
+      "photos": "http://quetzal.io.ua/album669333"
+    },
+
+    {
+      "start_date": "24.08.2013",
+      "end_date": "10.09.2013",
+      "city": ["geneva","lausanne","zurich","schaffhausen","neuhausen","lugano","milan","turin","zurich","luxembourg","brussel","ghent","bruges","antwerp","amsterdam","rotterdam","brussel"],
+      "photos": "http://quetzal.io.ua/album642340"
+    },
+    {
+      "start_date": "24.02.2013",
+      "end_date": "09.03.2013",
+      "city": ["zurich","rapperswil","berlin","zurich","stuttgart","nuremberg","munich","salzburg"],
+      "photos": "http://quetzal.io.ua/album602234"
+    },
+
+    {
+      "start_date": "02.10.2012",
+      "end_date": "20.10.2012",
+      "city": ["zurich","opfikon","embrach","basel","baden","sargans","vaduz","lucerne","bern","solothurn"],
+      "photos": "http://quetzal.io.ua/album569093"
+    },
+    {
+      "start_date": "25.08.2012",
+      "end_date": "01.09.2012",
+      "city": ["budva","sveti_stefan","bar","petrovac","tirana","durres","shkoder","dubrovnik","kotor","cetinje","podgorica"],
+      "photos": "http://quetzal.io.ua/album558954"
+    },
+    {
+      "start_date": "02.05.2012",
+      "end_date": "02.05.2012",
+      "city": ["baturin"],
+      "photos": "http://quetzal.io.ua/album539565"
+    },
+    {
+      "start_date": "14.04.2012",
+      "end_date": "14.04.2012",
+      "city": ["ukrainka","tripillia"],
+      "photos": "http://quetzal.io.ua/album528272"
+    },
+    {
+      "start_date": "22.01.2012",
+      "end_date": "29.01.2012",
+      "city": ["jerusalem","tel_aviv","haifa","ein_bokek"],
+      "photos": "http://quetzal.io.ua/album509567",
+      "story": "y"
+    },
+
+    {
+      "start_date": "11.12.2011",
+      "end_date": "11.12.2011",
+      "city": ["vishgorog"]
+    },
+    {
+      "start_date": "15.11.2011",
+      "end_date": "15.11.2011",
+      "city": ["gatne"]
+    },
+    {
+      "start_date": "05.11.2011",
+      "end_date": "05.11.2011",
+      "city": ["piriatin","beresova_rudka"],
+      "photos": "http://quetzal.io.ua/album488836"
+    },
+    {
+      "start_date": "27.08.2011",
+      "end_date": "27.08.2011",
+      "city": ["bohuslav"],
+      "photos": "http://quetzal.io.ua/album475939"
+    },
+    {
+      "start_date": "28.05.2011",
+      "end_date": "04.06.2011",
+      "city": ["abu_dhabi","dubai"],
+      "photos": "http://quetzal.io.ua/album454227"
+    },
+    {
+      "start_date": "26.01.2011",
+      "end_date": "04.06.2011",
+      "city": ["vishneve"]
+    },
+
+    {
+      "start_date": "25.10.2010",
+      "end_date": "25.10.2010",
+      "city": ["kharkiv"]
+    },
+    {
+      "start_date": "01.10.2010",
+      "end_date": "03.10.2010",
+      "city": ["lviv","zhovkva","krehiv"],
+      "photos": "http://quetzal.io.ua/album391026"
+    },
+    {
+      "start_date": "25.09.2010",
+      "end_date": "25.09.2010",
+      "city": ["korosten"]
+    },
+    {
+      "start_date": "18.09.2010",
+      "end_date": "18.09.2010",
+      "city": ["chernihiv"]
+    },
+    {
+      "start_date": "08.09.2010",
+      "end_date": "09.09.2010",
+      "city": ["kryvyi_rih"],
+      "photos": "http://quetzal.io.ua/album386878"
+    },
+    {
+      "start_date": "21.08.2010",
+      "end_date": "23.08.2010",
+      "city": ["kamianets-podilsky","khotyn","chernivtsi"],
+      "photos": "http://quetzal.io.ua/album379963"
+    },
+    {
+      "start_date": "31.07.2010",
+      "end_date": "31.07.2010",
+      "city": ["pilipcha"]
+    },
+    {
+      "start_date": "15.07.2010",
+      "end_date": "15.07.2010",
+      "city": ["boyarka"]
+    },
+    {
+      "start_date": "03.03.2010",
+      "end_date": "03.03.2010",
+      "city": ["slavutich"],
+      "photos": "http://quetzal.io.ua/album351771"
+    },
+    {
+      "start_date": "28.02.2010",
+      "end_date": "13.03.2010",
+      "city": ["beijing","simatai","luoyang","shaolin","xian","bingma_yong","shanghai","hangzhou","suzhou","taian","taishan"],
+      "photos": "http://quetzal.io.ua/album350415",
+      "story": "y"
+    },
+    {
+      "start_date": "05.02.2010",
+      "end_date": "05.02.2010",
+      "city": ["zaporizhzhya"],
+      "photos": "http://quetzal.io.ua/album342119"
+    },
+    {
+      "start_date": "28.01.2010",
+      "end_date": "28.01.2010",
+      "city": ["lubny","mgar"],
+      "photos": "http://quetzal.io.ua/album342117"
+    },
+
+    {
+      "start_date": "29.12.2009",
+      "end_date": "01.01.2010",
+      "city": ["krakow","prague","vienna"],
+      "photos": "http://quetzal.io.ua/album335590"
+    },
+    {
+      "start_date": "24.10.2009",
+      "end_date": "24.10.2009",
+      "city": ["korsun-shevchenkivskiy"],
+      "photos": "http://quetzal.io.ua/album305520"
+    },
+    {
+      "start_date": "10.10.2009",
+      "end_date": "11.10.2009",
+      "city": ["chisinau","mileshti_mich"],
+      "photos": "http://quetzal.io.ua/album299433"
+    },
+    {
+      "start_date": "19.09.2009",
+      "end_date": "21.09.2009",
+      "city": ["big_kanion","ay_petri"],
+      "photos": "http://quetzal.io.ua/album299450"
+    },
+    {
+      "start_date": "24.07.2009",
+      "end_date": "31.07.2009",
+      "city": ["large_sevulia_mountain","low_sevulia_mountain","black_kleva_mountain","nadvirna","maniava"],
+      "photos": "http://quetzal.io.ua/album270035"
+    },
+    {
+      "start_date": "04.07.2009",
+      "end_date": "04.07.2009",
+      "city": ["kaniv"],
+      "photos": "http://quetzal.io.ua/album254256"
+    },
+    {
+      "start_date": "20.06.2009",
+      "end_date": "20.06.2009",
+      "city": ["kirovohrad","rozumivka","kamianka","smila","horodische"],
+      "photos": "http://quetzal.io.ua/album249352"
+    },
+    {
+      "start_date": "13.06.2009",
+      "end_date": "13.06.2009",
+      "city": ["zhitomir","denishi","trigiria"],
+      "photos": "http://quetzal.io.ua/album246342"
+    },
+    {
+      "start_date": "09.05.2009",
+      "end_date": "09.05.2009",
+      "city": ["khmelnik"],
+      "photos": "http://quetzal.io.ua/album233951"
+    },
+    {
+      "start_date": "14.03.2009",
+      "end_date": "28.03.2009",
+      "city": ["new_delhi","agra","fatehpur_sikri","gwalior","mahoba","khajuraho","orcha","aurangabad","daulatabad","ellora","mumbai","agonda","jaipur","new_delhi"],
+      "photos": "http://quetzal.io.ua/album226504",
+      "story": "y"
+    },
+    {
+      "start_date": "07.03.2009",
+      "end_date": "07.03.2009",
+      "city": ["bila_tserkva"]
+    },
+    {
+      "start_date": "01.02.2009",
+      "end_date": "01.02.2009",
+      "city": ["ovruch"],
+      "photos": "http://quetzal.io.ua/album195099"
+    },
+    {
+      "start_date": "23.01.2009",
+      "end_date": "24.01.2009",
+      "city": ["palianitsa"]
+    },
+    {
+      "start_date": "11.01.2009",
+      "end_date": "11.01.2009",
+      "city": ["zhmerenka","shargorod"],
+      "photos": "http://quetzal.io.ua/album188323"
+    },
+
+    {
+      "start_date": "31.12.2008",
+      "end_date": "03.01.2009",
+      "city": ["donetsk","dokucharvsk"]
+    },
+    {
+      "start_date": "18.10.2008",
+      "end_date": "18.10.2008",
+      "city": ["kozelets","nizhin","kachanivka"],
+      "photos": "http://quetzal.io.ua/album163978"
+    },
+    {
+      "start_date": "11.10.2008",
+      "end_date": "12.10.2008",
+      "city": ["chisinau","old_orhei"],
+      "photos": "http://quetzal.io.ua/album162531"
+    },
+    {
+      "start_date": "29.09.2008",
+      "end_date": "29.09.2008",
+      "city": ["korosten"],
+      "photos": "http://quetzal.io.ua/album159730"
+    },
+    {
+      "start_date": "23.08.2008",
+      "end_date": "25.08.2008",
+      "city": ["odesa","beresan_island"],
+      "photos": "http://quetzal.io.ua/album163975"
+    },
+    {
+      "start_date": "10.08.2008",
+      "end_date": "10.08.2008",
+      "city": ["radomishl"],
+      "photos": "http://quetzal.io.ua/album159730"
+    },
+    {
+      "start_date": "11.07.2008",
+      "end_date": "13.07.2008",
+      "city": ["melitopol","stone_tomb","kirilivka"],
+      "photos": "http://quetzal.io.ua/album148038"
+    },
+    {
+      "start_date": "28.06.2008",
+      "end_date": "30.06.2008",
+      "city": ["chernogora_massif"],
+      "photos": "http://quetzal.io.ua/album148032"
+    },
+    {
+      "start_date": "14.06.2008",
+      "end_date": "15.06.2008",
+      "city": ["donuzlav_lake","popivka","evpatoria"]
+    },
+    {
+      "start_date": "26.04.2008",
+      "end_date": "13.05.2008",
+      "city": ["istanbul","edirne","gelibolu","eceabat","canakkale","troy","balikesir","ankara","goreme","derinkuyu","cavusin","goreme_park","ortahisar","ihlara","belisirma","selime","antalya","perge","olympos","demre","bodrum","fethiye","izmir","bergama","selcuk","ephesus","denizli","pamukkale","istanbul"],
+      "photos": "http://quetzal.io.ua/album120579",
+      "story": "y"
+    },
+    {
+      "start_date": "12.04.2008",
+      "end_date": "13.04.2008",
+      "city": ["luhansk","severodonetsk","kreminna","svatove","kupyansk","chuhuiv","lubotin","rakitne","kharkiv"],
+      "photos": "http://quetzal.io.ua/album120184"
+    },
+    {
+      "start_date": "08.03.2008",
+      "end_date": "10.03.2008",
+      "city": ["palianitsa","nadvirna","kalush","ivano-frankivsk"],
+      "photos": "http://quetzal.io.ua/album106224"
+    },
+    {
+      "start_date": "23.02.2008",
+      "end_date": "24.02.2008",
+      "city": ["popovichi","mostiska","sudova_vishnia","gorodok","lviv","slavuta","iziaslav","shepetivka"],
+      "photos": "http://quetzal.io.ua/album105855"
+    },
+    {
+      "start_date": "10.01.2008",
+      "end_date": "10.01.2008",
+      "city": ["skvira","shamraivka"]
+    },
+
+    {
+      "start_date": "30.12.2007",
+      "end_date": "02.01.2008",
+      "city": ["dobromil","hiriv","stara_sil","sambir","lviv","chervonohrad","sokal","belz","rava_ruska","lviv","mmykolaiv","dubrova","stilsko","zaklad"],
+      "photos": "http://quetzal.io.ua/album89703"
+    },
+    {
+      "start_date": "23.12.2007",
+      "end_date": "23.12.2007",
+      "city": ["andrushivka","chervone","stara_kotelnia","ivnitsa"],
+      "photos": "http://quetzal.io.ua/album87048"
+    },
+    {
+      "start_date": "08.12.2007",
+      "end_date": "08.12.2007",
+      "city": ["novograd_volinskiy","gulsk"],
+      "photos": "http://quetzal.io.ua/album83697"
+    },
+    {
+      "start_date": "28.10.2007",
+      "end_date": "28.10.2007",
+      "city": ["gorenka"],
+      "photos": "http://quetzal.io.ua/album77553"
+    },
+    {
+      "start_date": "20.10.2007",
+      "end_date": "21.10.2007",
+      "city": ["priluki","gustinia","sokirintsy","trostyanets","kachanivka"],
+      "photos": "http://quetzal.io.ua/album68488"
+    },
+    {
+      "start_date": "13.10.2007",
+      "end_date": "14.10.2007",
+      "city": ["chisinau","soroca","ta-bender","ta-tiraspol"],
+      "photos": "http://quetzal.io.ua/album69336",
+      "story": "http://quetzalpapalotl.livejournal.com/6373.html"
+    },
+    {
+      "start_date": "30.08.2007",
+      "end_date": "02.09.2007",
+      "city": ["krakow","auschwitz_birkenau_concentration_camp","zamosc","kovel"],
+      "photos": "http://quetzal.io.ua/album56770"
+    },
+    {
+      "start_date": "24.08.2007",
+      "end_date": "26.08.2007",
+      "city": ["izmail","vilcove","dunai","zatoka","odesa"],
+      "photos": "http://quetzal.io.ua/album58041"
+    },
+    {
+      "start_date": "20.08.2007",
+      "end_date": "20.08.2007",
+      "city": ["poltava","dikanka","gogolove","veliki_sorochentsi"],
+      "photos": "http://quetzal.io.ua/album57996"
+    },
+    {
+      "start_date": "04.08.2007",
+      "end_date": "05.08.2007",
+      "city": ["lutsk","volodimir_volinskiy","zimne","olika","klevan","rivne","korets"],
+      "photos": "http://quetzal.io.ua/album51235"
+    },
+    {
+      "start_date": "22.07.2007",
+      "end_date": "22.07.2007",
+      "city": ["bila_tserkva","parhomivka"],
+      "photos": "http://quetzal.io.ua/album50333"
+    },
+    {
+      "start_date": "28.06.2007",
+      "end_date": "01.07.2007",
+      "city": ["feodosia","schelkine","kazantip","kerch"],
+      "photos": "http://quetzal.io.ua/album46916"
+    },
+    {
+      "start_date": "26.05.2007",
+      "end_date": "27.05.2007",
+      "city": ["donetsk","soledar","sviatogirsk","izyum"],
+      "photos": "http://quetzal.io.ua/album41141"
+    },
+    {
+      "start_date": "29.04.2007",
+      "end_date": "05.05.2007",
+      "city": ["kvasi","petros_mountain","chernogora_massif","rahiv","solotvine","tiachiv","oleksandrivka","danilove","kraynikove","sokirnitsa","hust","kireshi","sunevir","verh_bistriy","pilipets","volovets"],
+      "photos": "http://quetzal.io.ua/album39996"
+    },
+    {
+      "start_date": "20.04.2007",
+      "end_date": "21.04.2007",
+      "city": ["ochakiv","olvia","mykolayiv"],
+      "photos": "http://quetzal.io.ua/album36276"
+    },
+    {
+      "start_date": "07.04.2007",
+      "end_date": "09.04.2007",
+      "city": ["brest","mir","nyasvizh","minsk"],
+      "photos": "http://quetzal.io.ua/album35235",
+      "story": "y"
+    },
+    {
+      "start_date": "17.03.2007",
+      "end_date": "24.03.2007",
+      "city": ["cairo","giza","alexandria","luxor","hurgada"],
+      "photos": "http://quetzal.io.ua/album32619",
+      "story": "y"
+    },
+    {
+      "start_date": "10.03.2007",
+      "end_date": "10.03.2007",
+      "city": ["novgorod-siverskiy","shostka","hluhiv","putivl","konotop"],
+      "photos": "http://quetzal.io.ua/album30180",
+      "story": "y"
+    },
+    {
+      "start_date": "09.02.2007",
+      "end_date": "09.02.2007",
+      "city": ["trostianets","ohtirka","sumy","romny"],
+      "photos": "http://quetzal.io.ua/album27343"
+    },
+
+    {
+      "start_date": "30.12.2006",
+      "end_date": "07.01.2007",
+      "city": ["svaty_kriz","liptovsky_mikulash","banska_stiavnica","zvolen","banska_bystrica","oravsky_podzamok","jasna"],
+      "photos": "http://quetzal.io.ua/album24956",
+      "story": "y"
+    },
+    {
+      "start_date": "12.12.2006",
+      "end_date": "12.12.2006",
+      "city": ["vinnitsa","strizhavka"],
+      "photos": "http://quetzal.io.ua/album22771",
+      "story": "y"
+    },
+    {
+      "start_date": "28.10.2006",
+      "end_date": "31.10.2006",
+      "city": ["siret","suceava","brasov","rasnov","bran","sinaia","bucharest","suceava"],
+      "photos": "http://quetzal.io.ua/album20452",
+      "story": "y"
+    },
+    {
+      "start_date": "21.10.2006",
+      "end_date": "21.10.2006",
+      "city": ["uman"]
+    },
+    {
+      "start_date": "23.09.2006",
+      "end_date": "24.09.2006",
+      "city": ["cherkasy","chihirin","subotiv"],
+      "photos": "http://quetzal.io.ua/album20380"
+    },
+    {
+      "start_date": "24.08.2006",
+      "end_date": "03.09.2006",
+      "city": ["chop","kosice","spisske_podhradie","levocha","banska_bystrica","bratislava","krakow","wroclaw","poznan","torun","gdansk","malbork","warsaw","lublin"],
+      "photos": "http://quetzal.io.ua/album20371",
+      "story": "y"
+    },
+    {
+      "start_date": "12.08.2006",
+      "end_date": "13.08.2006",
+      "city": ["kherson","askania_nova","bilshovik"],
+      "photos": "http://quetzal.io.ua/album20190"
+    },
+    {
+      "start_date": "24.06.2006",
+      "end_date": "24.06.2006",
+      "city": ["nizhin"],
+      "photos": "http://quetzal.io.ua/album20188"
+    },
+    {
+      "start_date": "20.05.2006",
+      "end_date": "21.05.2006",
+      "city": ["khmelnytskyi","kamianets-podilsky","khotyn","chernivtsi"],
+      "photos": "http://quetzal.io.ua/album20186"
+    },
+    {
+      "start_date": "23.04.2006",
+      "end_date": "30.04.2006",
+      "city": ["tuapse","kalezh","mamedova_schel","lazarevskoe","golovinka","sochi_waterfalls","sochi","lake_ritsa_and_blue_lake","gagra","new_athos","sukhum","adler"],
+      "photos": "http://quetzal.io.ua/album20185"
+    },
+    {
+      "start_date": "01.04.2006",
+      "end_date": "02.04.2006",
+      "city": ["odesa","belgorog-dnistrovskiy"],
+      "photos": "http://quetzal.io.ua/album20136"
+    },
+    {
+      "start_date": "12.03.2006",
+      "end_date": "12.03.2006",
+      "city": ["berdichiv"],
+      "photos": "http://quetzal.io.ua/album20135"
+    },
+    {
+      "start_date": "04.03.2006",
+      "end_date": "05.03.2006",
+      "city": ["dnipropetrovsk"],
+      "photos": "http://quetzal.io.ua/album20133"
+    },
+    {
+      "start_date": "01.01.2006",
+      "end_date": "09.01.2006",
+      "city": ["vishka","uzhgorod","shenborn_castle","mukacheve"],
+      "photos": "http://quetzal.io.ua/album20132"
+    },
+
+    {
+      "start_date": "17.12.2005",
+      "end_date": "17.12.2005",
+      "city": ["bila_tserkva","kovalivka","fastiv"]
+    },
+    {
+      "start_date": "26.11.2005",
+      "end_date": "27.11.2005",
+      "city": ["lviv","olesko","pidgirtsy","pidkamin"],
+      "photos": "http://quetzal.io.ua/album20123"
+    },
+    {
+      "start_date": "29.10.2005",
+      "end_date": "30.10.2005",
+      "city": ["ternopil","zbarazh","kremenets","pochaiv","mezhirich","ostrog","rivne","dubno","ternopil"],
+      "photos": "http://quetzal.io.ua/album20122"
+    },
+    {
+      "start_date": "01.10.2005",
+      "end_date": "02.10.2005",
+      "city": ["zaporizhzhya"],
+      "photos": "http://quetzal.io.ua/album20121"
+    },
+    {
+      "start_date": "17.09.2005",
+      "end_date": "18.09.2005",
+      "city": ["ternopil","zalissia"],
+      "photos": "http://quetzal.io.ua/album20120"
+    },
+    {
+      "start_date": "03.09.2005",
+      "end_date": "09.09.2005",
+      "city": ["bakhchisaray","sokoline","big_kanion","bohatir","mangup_kale","laspi_bay"],
+      "photos": "http://quetzal.io.ua/album26159"
+    },
+    {
+      "start_date": "21.08.2005",
+      "end_date": "21.08.2005",
+      "city": ["zhitomir"],
+      "photos": "http://quetzal.io.ua/album20119"
+    },
+    {
+      "start_date": "20.08.2005",
+      "end_date": "20.08.2005",
+      "city": ["yurivka"],
+      "photos": "http://quetzal.io.ua/album20118"
+    },
+    {
+      "start_date": "23.07.2005",
+      "end_date": "24.07.2005",
+      "city": ["psel_river"],
+      "photos": "http://quetzal.io.ua/album20113"
+    },
+    {
+      "start_date": "16.07.2005",
+      "end_date": "16.07.2005",
+      "city": ["chernihiv"],
+      "photos": "http://quetzal.io.ua/album20111"
+    },
+    {
+      "start_date": "09.07.2005",
+      "end_date": "10.07.2005",
+      "city": ["desna_river"],
+      "photos": "http://quetzal.io.ua/album20066"
+    },
+    {
+      "start_date": "25.06.2005",
+      "end_date": "27.06.2005",
+      "city": ["volovets","pilipets","sunevir","verh_bistriy","ivano-frankivsk"],
+      "photos": "http://quetzal.io.ua/album20046"
+    },
+    {
+      "start_date": "18.06.2005",
+      "end_date": "20.06.2005",
+      "city": ["dilove","goverla_mountain"],
+      "photos": "http://quetzal.io.ua/album20043"
+    },
+    {
+      "start_date": "12.06.2005",
+      "end_date": "12.06.2005",
+      "city": ["yurivka"],
+      "photos": "http://quetzal.io.ua/album20042"
+    },
+    {
+      "start_date": "11.06.2005",
+      "end_date": "11.06.2005",
+      "city": ["kruglik"],
+      "photos": "http://quetzal.io.ua/album20042"
+    },
+    {
+      "start_date": "04.06.2005",
+      "end_date": "04.06.2005",
+      "city": ["kruglik","kremenische","hodosovka"],
+      "photos": "http://quetzal.io.ua/album20042"
+    },
+    {
+      "start_date": "22.05.2005",
+      "end_date": "22.05.2005",
+      "city": ["vasilkiv"],
+      "photos": "http://quetzal.io.ua/album20041"
+    },
+    {
+      "start_date": "30.04.2005",
+      "end_date": "08.05.2005",
+      "city": ["simferopol","red_grote","djur-djur_waterfall","demerdji_mountain","alushta","noviy_svit","sudak","meganom_cape"],
+      "photos": "http://quetzal.io.ua/album20040"
+    },
+    {
+      "start_date": "26.03.2005",
+      "end_date": "26.03.2005",
+      "city": ["obuhiv"]
+    },
+    {
+      "start_date": "26.02.2005",
+      "end_date": "27.02.2005",
+      "city": ["kharkiv"],
+      "photos": "http://quetzal.io.ua/album20038"
+    },
+
+    {
+      "start_date": "31.12.2004",
+      "end_date": "05.01.2005",
+      "city": ["yablunitsa","yaremche","palianitsa","ivano-frankivsk"],
+      "photos": "http://quetzal.io.ua/album20037"
+    },
+    {
+      "start_date": "21.08.2004",
+      "end_date": "28.08.2004",
+      "city": ["black_river_kanion","laspi_bay"],
+      "photos": "http://quetzal.io.ua/album20034"
+    },
+    {
+      "start_date": "15.05.2004",
+      "end_date": "15.05.2004",
+      "city": ["brovary"]
+    },
+    {
+      "start_date": "05.05.2004",
+      "end_date": "05.05.2004",
+      "city": ["borispil"]
+    },
+
+    {
+      "start_date": "28.11.2003",
+      "end_date": "07.12.2003",
+      "city": ["prague","plzen","karlovy_vary","kutna_hora"],
+      "photos": "http://quetzal.io.ua/album20031"
+    },
+    {
+      "start_date": "05.07.2003",
+      "end_date": "05.07.2003",
+      "city": ["pereyslav-khmelnitskiy"],
+      "photos": "http://quetzal.io.ua/album60772"
+    },
+
+    {
+      "start_date": "09.11.2002",
+      "end_date": "10.11.2002",
+      "city": ["lviv"]
+    },
+    {
+      "start_date": "05.10.2002",
+      "end_date": "05.10.2002",
+      "city": ["uman"]
+    },
+    {
+      "start_date": "15.09.2002",
+      "end_date": "15.09.2002",
+      "city": ["chabany"]
+    },
+    {
+      "start_date": "05.08.2002",
+      "end_date": "12.08.2002",
+      "city": ["simeiz","alupka","gaspra","ay_petri","yalta","sevastopol","foros_church","bakhchisaray"],
+      "photos": "http://quetzal.io.ua/album26705"
+    },
+
+    {
+      "start_date": "29.10.2001",
+      "end_date": "04.11.2001",
+      "city": ["budapest","szentendre"],
+      "photos": "http://quetzal.io.ua/album21952"
+    },
+
+    {
+      "start_date": "15.09.1994",
+      "end_date": "22.09.1994",
+      "city": ["riga"]
+    },
+    {
+      "start_date": "15.06.1994",
+      "end_date": "20.06.1994",
+      "city": ["truskavets"]
+    },
+
+    {
+      "start_date": "15.10.1993",
+      "end_date": "22.10.1993",
+      "city": ["st_petersburg","finland_gulf"]
+    },
+
+    {
+      "start_date": "01.06.1978",
+      "end_date": "01.06.1978",
+      "city": ["yasnogorodka"]
+    },
+
+    {
+      "start_date": "01.12.1977",
+      "end_date": "01.12.1977",
+      "city": ["kyiv"]
+    }
+  ]
+}
