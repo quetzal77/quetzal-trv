@@ -31,9 +31,9 @@ function CollectVisitedCountries() {
     result = [];
     var distinctIds = {};
     for (var i = 0; i < visites.length; i++) {
-            if (visites[i].id && !distinctIds[visites[i].id]) {
-                result.push(visites[i].id)
-                distinctIds[visites[i].id] = true;
+        if (visites[i].id && !distinctIds[visites[i].id]) {
+            result.push(visites[i].id)
+            distinctIds[visites[i].id] = true;
         }
     }
     return result;
