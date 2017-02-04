@@ -115,12 +115,12 @@
     	<country cont="EU" id="UA" ident="ukraine" nameru="Украина" nament="Україна" nameen="Ukraine" zoomLvl="20" zoomLat="48.5" zoomLong="31"></country>	
 	
     <!-- 2017t -->
-	<visit id="DE"><date>27.01.2017</date><enddate>30.01.2017</enddate><place>hanover braunschweig goslar magdeburg celle</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
+	<visit id="DE"><date>27.01.2017</date><enddate>30.01.2017</enddate><place>hanover braunschweig goslar magdeburg celle</place><image>no</image><photos>http://quetzal.io.ua/album812486</photos><story></story><story2></story2><description>no</description></visit>
 
     <!-- 2016 -->
-	<visit id="DE"><date>28.11.2016</date><enddate>29.11.2016</enddate><place>nuremberg ulm</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
-	<visit id="XK"><date>26.11.2016</date><enddate>26.11.2016</enddate><place>pristina</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
-	<visit id="MK"><date>25.11.2016</date><enddate>28.11.2016</enddate><place>centar ohrid</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
+	<visit id="DE"><date>28.11.2016</date><enddate>29.11.2016</enddate><place>nuremberg ulm</place><image>no</image><photos>http://quetzal.io.ua/album807463</photos><story></story><story2></story2><description>no</description></visit>
+	<visit id="XK"><date>26.11.2016</date><enddate>26.11.2016</enddate><place>pristina</place><image>no</image><photos>http://quetzal.io.ua/album807463</photos><story></story><story2></story2><description>no</description></visit>
+	<visit id="MK"><date>25.11.2016</date><enddate>28.11.2016</enddate><place>centar ohrid</place><image>no</image><photos>http://quetzal.io.ua/album807463</photos><story></story><story2></story2><description>no</description></visit>
 	<visit id="PL"><date>02.04.2016</date><enddate>03.04.2016</enddate><place>przemysl</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
 	<visit id="PL"><date>28.03.2016</date><enddate>28.03.2016</enddate><place>gdansk</place><image>no</image><photos>http://quetzal.io.ua/album783397</photos><story></story><story2></story2><description>no</description></visit>
     <visit id="FI"><date>27.03.2016</date><enddate>27.03.2016</enddate><place>helsinki turku</place><image>no</image><photos>http://quetzal.io.ua/album783397</photos><story></story><story2></story2><description>no</description></visit>
