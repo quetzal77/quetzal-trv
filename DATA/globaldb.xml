@@ -115,7 +115,7 @@
     	<country cont="EU" id="UA" ident="ukraine" nameru="Украина" nament="Україна" nameen="Ukraine" zoomLvl="20" zoomLat="48.5" zoomLong="31"></country>	
 	
     <!-- 2017t -->
-    <visit id="LT"><date>04.02.2017</date><enddate>07.02.2017</enddate><place>vilnius trakai kaunas</place><image>no</image><photos></photos><story></story><story2></story2><description>no</description></visit>
+    <visit id="LT"><date>04.02.2017</date><enddate>07.02.2017</enddate><place>vilnius trakai kaunas</place><image>no</image><photos>http://quetzal.io.ua/album812930</photos><story></story><story2></story2><description>no</description></visit>
     <visit id="DE"><date>27.01.2017</date><enddate>30.01.2017</enddate><place>hanover braunschweig goslar magdeburg celle</place><image>no</image><photos>http://quetzal.io.ua/album812486</photos><story></story><story2></story2><description>no</description></visit>
     <!-- 2016 -->
 	<visit id="DE"><date>28.11.2016</date><enddate>29.11.2016</enddate><place>nuremberg ulm</place><image>no</image><photos>http://quetzal.io.ua/album807463</photos><story></story><story2></story2><description>no</description></visit>
