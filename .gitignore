@@ -40,7 +40,7 @@ nbactions.xml
 *.iml
 *.ipr
 *.iws
-*.idea
+*.idea/
 
 # Log files
 *.log
