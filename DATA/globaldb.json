@@ -952,7 +952,7 @@
       "country_id": "CN",
       "region_id": "CN-11",
       "name": "Beijing",
-      "name_ru": "город Пекин",
+      "name_ru": "Пекин (город)",
       "active": "Y"
     },
     {
@@ -1106,7 +1106,7 @@
       "country_id": "CN",
       "region_id": "CN-31",
       "name": "Shanghai",
-      "name_ru": "город Шанхай",
+      "name_ru": "Шанхай (город)",
       "active": "Y"
     },
     {
@@ -1393,7 +1393,7 @@
       "country_id": "CZ",
       "region_id": "CZ-PR",
       "name": "Prague (Praha)",
-      "name_ru": "город Прага",
+      "name_ru": "Прага (город)",
       "active": "Y"
     },
     {
@@ -1680,7 +1680,7 @@
       "country_id": "TA",
       "region_id": "TA-BD",
       "name": "Bender",
-      "name_ru": "город Бендеры",
+      "name_ru": "Бендеры (город)",
       "active": "Y"
     },
     {
@@ -5726,14 +5726,14 @@
       "country_id": "UA",
       "region_id": "UA-40",
       "name": "Sevastpol' City",
-      "name_ru": "город Севастополь",
+      "name_ru": "Севастополь (город)",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-30",
       "name": "Kyiv City",
-      "name_ru": "город Киев",
+      "name_ru": "Киев (город)",
       "active": "Y"
     },
     {
@@ -7252,7 +7252,7 @@
       "country_id": "MT",
       "region_id": "MT_GO",
       "name": "Gozo Region",
-      "name_ru": "острова Гоцо и Комино",
+      "name_ru": "Гоцо и Комино (острова)",
       "active": "Y"
     },
     {
@@ -14457,7 +14457,7 @@
       "city": [
         "bautzen",
         "dresden",
-        "weimar ",
+        "weimar",
         "erfurt",
         "leipzig",
         "gorlitz"
@@ -14610,7 +14610,7 @@
         "zurich",
         "wallisellen",
         "mulhouse",
-        "besanson",
+        "besanсon",
         "dijon",
         "lyon",
         "zurich",
@@ -14659,7 +14659,7 @@
         "nicosia",
         "lefkosha",
         "lefkosha",
-        "gazimagus",
+        "gazimagusa",
         "girne",
         "limassol",
         "paphos"
@@ -14709,13 +14709,13 @@
         "turin",
         "zurich",
         "luxembourg",
-        "brussel",
+        "brussels",
         "ghent",
         "bruges",
         "antwerp",
         "amsterdam",
         "rotterdam",
-        "brussel"
+        "brussels"
       ],
       "photos": "http://quetzal.io.ua/album642340"
     },

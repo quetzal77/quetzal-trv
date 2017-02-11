@@ -44,7 +44,7 @@ window.onload = function() {
             distinctIds[citiesVisited[i].region_id] = true;
         }
     }
-    //regionsVisited.sort(dynamicSort("name_ru"));
+    regionsVisited.sort(dynamicSort("name_ru"));
 
     countriesVisited = [];
     var distinctIds_2 = {};
