@@ -1,7 +1,30 @@
-//00.01 Run function on load of World page
+//00.00 Run function on load of World page
 //This is jQuery object that take data from xml and transform them to some collections
 window.onload = function() {
      $.getJSON( "DATA/globaldb.json", processMyJson);
+
+     var location = window.location.search.substring(1, window.location.search.length);
+     if (location != ""){
+        var detailsOfRequest = location.split("=");
+
+        switch (detailsOfRequest[0]) {
+            case "country":
+                day = "Sunday";
+                break;
+            case "city":
+                day = "Monday";
+                break;
+            case "story":
+                day = "Tuesday";
+                break;
+        }
+     }
+     else {
+        HTML_CreatorOfWorldPage();
+     }
+
+
+
  };
 
  var processMyJson = function(result){
@@ -12,6 +35,9 @@ window.onload = function() {
     //Array of Visited Countries, Regions and Cities
     createArrayOfVisitedCountriesAndRegions();
  }
+
+//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
+ var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
 
 //00.02 Array of visits sorted descendingly and with dates in DATETIME format
  function createArrayOfVisitesAndArrayOfCitiesVisited() {
@@ -140,8 +166,3 @@ window.onload = function() {
       var endVisit = end_date.split(".");
       this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
   }
-
- //Questions for Oleg:
- //1. Is it necessary to add real name to visits&
- //2. Is it really necessary to add real name to unique city name array?
- //3. Clarify objects inheritage so how better to get country from city. Maybe better to add getCountry to city object as well?
