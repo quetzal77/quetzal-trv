@@ -13,97 +13,97 @@
     }
 
 //04.02 Return last digit of number so then it's possible to create russian words correctly
-//function NumberProcessor (number) {
-//    var result;
-//    if (number >20) {
-//        var x = number.toString()
-//        result = x[x.length-1]*1;
-//    }
-//    else{
-//        result = number
-//    }
-//    return result
-//}
+function processEntityNumber (number) {
+    var result;
+    if (number >20) {
+        var x = number.toString()
+        result = x[x.length-1]*1;
+    }
+    else{
+        result = number
+    }
+    return result
+}
 
 //04.03 Return correctly created string like "31 страна"
-//function wordParser (word, end1, end234, endrest, number){
-//    var result = "";
-//    var endOfWord= endrest;
-//    var newNumber = NumberProcessor (number)
-//
-//    if (newNumber == 1){
-//        endOfWord = end1;
-//    }
-//    else {
-//        if (newNumber == 2 || newNumber == 3 || newNumber == 4){
-//            endOfWord = end234;
-//        }
-//    }
-//    result += number + " "+ word + endOfWord
-//    return result
-//}
+function parseWord (word, end1, end234, endrest, number){
+    var result = "";
+    var endOfWord= endrest;
+    var newNumber = processEntityNumber (number)
+
+    if (newNumber == 1){
+        endOfWord = end1;
+    }
+    else {
+        if (newNumber == 2 || newNumber == 3 || newNumber == 4){
+            endOfWord = end234;
+        }
+    }
+    result += word + endOfWord
+    return result
+}
 
 //04.04 Return russian word "country" with correct end
-//function EndOfCountryWord (number) {
-//    var word = "стран";
-//    var end1 = "а";
-//    var end234 = "ы";
-//    var endrest = "";
-//    var newNumber = NumberProcessor  (number)
-//
-//    var result = wordParser (word, end1, end234, endrest, number)
-//    return result
-//}
+function setCountriesNumberWithCorrectEnd (number) {
+    var wordBody = "стран";
+    var end1 = "а";
+    var end234 = "ы";
+    var endrest = "";
+    var newNumber = processEntityNumber  (number)
+
+    var result = number + " " + parseWord (wordBody, end1, end234, endrest, number)
+    return result
+}
 
 //04.05 Return russian word "location" with correct end
-//function EndOfLocationWord (number) {
-//    var word = "локаци";
-//    var end1 = "я";
-//    var end234 = "и";
-//    var endrest = "й";
-//    var newNumber = NumberProcessor  (number)
-//
-//    var result = wordParser (word, end1, end234, endrest, number)
-//    return result
-//}
+function setLocationNumberWithCorrectEnd (number) {
+    var wordBody = "локаци";
+    var end1 = "я";
+    var end234 = "и";
+    var endrest = "й";
+    var newNumber = processEntityNumber  (number)
+
+    var result = number + " " + parseWord (wordBody, end1, end234, endrest, number)
+    return result
+}
 
 //04.06 Return russian word "region" with correct end
 //function EndOfRegionWord (number) {
-//    var word = "регион";
+//    var wordBody = "регион";
 //    var end1 = "";
 //    var end234 = "а";
 //    var endrest = "ов";
-//    var newNumber = NumberProcessor  (number)
+//    var newNumber = processEntityNumber  (number)
 //
-//    var result = wordParser (word, end1, end234, endrest, number)
+//    var result = parseWord (wordBody, end1, end234, endrest, number)
 //    return result
 //}
 
 //04.07 Return russian word "photoalbum" with correct end
 //function EndOfPhotoalbumWord(number) {
-//    var word = "фотоальбом";
+//    var wordBody = "фотоальбом";
 //    var end1 = "";
 //    var end234 = "а";
 //    var endrest = "ов";
-//    var newNumber = NumberProcessor(number)
+//    var newNumber = processEntityNumber(number)
 //
-//    var result = wordParser(word, end1, end234, endrest, number)
+//    var result = parseWord(wordBody, end1, end234, endrest, number)
 //    return result
 //}
 
 //04.08 Return russian month name
-//function russianMonth (number) {
-//    var result;
-//    var monthSList = {0: "января", 1: "февраля", 2: "марта", 3: "апреля", 4: "мая", 5: "июня", 6: "июля", 7: "августа", 8: "сентября", 9: "октября", 10: "ноября", 11: "декабря"};
-//    var MonthKeys = Object.keys(monthSList);
-//    for (var d = 0; d < MonthKeys.length; d++){
-//        if (MonthKeys[d] == number){
-//            result = monthSList[d];
-//            break;
-//        }
-//    }
-//    return result
-//}
+function getRusMonthName (number) {
+    var result;
+    var monthSList = {0: "января", 1: "февраля", 2: "марта", 3: "апреля", 4: "мая", 5: "июня", 6: "июля", 7: "августа", 8: "сентября", 9: "октября", 10: "ноября", 11: "декабря"};
+    var MonthKeys = Object.keys(monthSList);
+    for (var d = 0; d < MonthKeys.length; d++){
+        if (MonthKeys[d] == number){
+            result = monthSList[d];
+            break;
+        }
+    }
+    return result
+}
 
 //04.09 This method creates selector of countries
 //function HTML_SelectorListOfCountries(){
@@ -197,16 +197,16 @@
 //    return result;
 //}
 
-//4.13 Short country name
-//function HTML_ShortCountryName(countryName) {
-//    for (var i = 0; i < ArrayOfVisitedCountries.length; i++) {
-//        if (ArrayOfVisitedCountries[i].countryName == countryName) {
-//            var result = ArrayOfVisitedCountries[i].nameRu;
-//            break;
-//        }
-//    }
-//    return result;
-//}
+//4.13 Get russian country name
+function getRusCountryName(countryId) {
+    for (var i = 0; i < countriesVisited.length; i++) {
+        if (countriesVisited[i].country_id == countryId) {
+            var result = countriesVisited[i].name_ru;
+            break;
+        }
+    }
+    return result;
+}
 
 //4.14 Full Region name
 //function HTML_FullRegionName(regionId, regionName) {
@@ -221,20 +221,20 @@
 
 //4.15 Get full Location name
 function getFullLocationName(locationId) {
-    for (var i = 0; i < data.city.length; i++) {
-        if (data.city[i].city_id == locationId) {
-            var result = data.city[i].name_ru + " - " + data.city[i].name_nt + " - " + data.city[i].name;
+    for (var i = 0; i < citiesVisited.length; i++) {
+        if (citiesVisited[i].city_id == locationId) {
+            var result = citiesVisited[i].name_ru + " - " + citiesVisited[i].name_nt + " - " + citiesVisited[i].name;
             break;
         }
     }
     return result;
 }
 
-//4.16 Short Location name
+//4.16 Get russian Location name
 function getRusLocationName(locationId) {
-    for (var i = 0; i < data.city.length; i++) {
-        if (data.city[i].city_id == locationId) {
-            var result = data.city[i].name_ru;
+    for (var i = 0; i < citiesVisited.length; i++) {
+        if (citiesVisited[i].city_id == locationId) {
+            var result = citiesVisited[i].name_ru;
             break;
         }
     }

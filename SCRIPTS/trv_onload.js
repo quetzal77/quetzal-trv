@@ -2,11 +2,25 @@
 //This is jQuery object that take data from xml and transform them to some collections
 window.onload = function() {
      $.getJSON( "DATA/globaldb.json", processMyJson);
+ };
 
-     var location = window.location.search.substring(1, window.location.search.length);
-     if (location != ""){
+//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
+ var data
+ var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
+
+//00.02 This method creates all collections we need to populate list of countries
+ var processMyJson = function(result){
+    data = result;
+    //Array of visits sorted descendently and with dates in DATETIME format
+    //Plus array of all unique visited locations
+    createArrayOfVisitesAndArrayOfCitiesVisited();
+    //Array of Visited Countries, Regions and Cities
+    createArrayOfVisitedCountriesAndRegions();
+
+    //Create page content depend on type of selected location (world, country or city)
+    var location = window.location.search.substring(1, window.location.search.length);
+    if (location != ""){
         var detailsOfRequest = location.split("=");
-
         switch (detailsOfRequest[0]) {
             case "country":
                 day = "Sunday";
@@ -18,28 +32,13 @@ window.onload = function() {
                 day = "Tuesday";
                 break;
         }
-     }
-     else {
-        HTML_CreatorOfWorldPage();
-     }
-
-
-
- };
-
- var processMyJson = function(result){
-    data = result;
-    //Array of visits sorted descendently and with dates in DATETIME format
-    //Plus array of all unique visited locations
-    createArrayOfVisitesAndArrayOfCitiesVisited();
-    //Array of Visited Countries, Regions and Cities
-    createArrayOfVisitedCountriesAndRegions();
+    }
+    else {
+        createWorldPage_HTML();
+    }
  }
 
-//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
- var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
-
-//00.02 Array of visits sorted descendingly and with dates in DATETIME format
+//00.03 Array of visits sorted descendingly and with dates in DATETIME format
  function createArrayOfVisitesAndArrayOfCitiesVisited() {
      visitsSorted = []; //Array to be used for storing all of them visites happened
      citiesVisited = []; //Array to be used for storing all of the unique places so it would be possible to create array of visited countries
@@ -60,7 +59,7 @@ window.onload = function() {
      citiesVisited.sort(dynamicSort("name_ru"))
  }
 
- //00.03 Array of Visited Countries and Regions
+ //00.04 Array of Visited Countries and Regions
  function createArrayOfVisitedCountriesAndRegions(){
     regionsVisited = [];
     var distinctIds = {};
@@ -83,7 +82,7 @@ window.onload = function() {
     countriesVisited.sort(dynamicSort("name_ru"));
  }
 
- //00.04 City Object definition
+ //00.05 City Object definition
  function CityObj(city_id) {
      for (var i = 0; i < data.city.length; i++) {
          if (data.city[i].city_id == city_id) {
@@ -109,7 +108,7 @@ window.onload = function() {
      }
  }
 
-//00.05 Region Object definition
+//00.06 Region Object definition
  function RegionObj(region_id) {
      for (var i = 0; i < data.area.length; i++) {
          if (data.area[i].region_id == region_id) {
@@ -124,12 +123,21 @@ window.onload = function() {
              this.getCountry = function () {
                 return new CountryObj(data.area[i].country_id);
              }
+             this.getNumberOfVisitedCities = function () {
+                 var result = 0;
+                 for (var i = 0; i < citiesVisited.length; i++){
+                     if (citiesVisited[i].region_id == this.region_id) {
+                          result += 1;
+                     }
+                 }
+                 return result;
+             }
          break;
          }
      }
  }
 
-//00.06 Country Object definition
+//00.07 Country Object definition
  function CountryObj(country_id) {
      for (var i = 0; i < data.country.length; i++) {
          if (data.country[i].country_id == country_id) {
@@ -141,10 +149,19 @@ window.onload = function() {
              this.continent_id = data.country[i].continent_id;
              this.getContinentName = function () {
                  for (var i = 0; i < data.continent.length; i++){
-                     if (data.continent[i].continent_id == this.continent_id) {
-                     return this.name_ru;
+                     if (data.continent[i].country_id == this.continent_id) {
+                         return this.name_ru;
                      }
                  }
+             }
+             this.getNumberOfVisitedCities = function () {
+                 var result = 0;
+                 for (var i = 0; i < regionsVisited.length; i++){
+                     if (regionsVisited[i].country_id == this.country_id) {
+                          result += regionsVisited[i].getNumberOfVisitedCities();
+                     }
+                 }
+                 return result;
              }
              this.setFullCountryName = function () {
                  return this.name_ru + " - " + this.name_nt + " - " + this.name;
@@ -154,7 +171,7 @@ window.onload = function() {
      }
  }
 
-  //00.07 Visit Object definition
+  //00.08 Visit Object definition
   function VisitObj(start_date, end_date, city, photos, story) {
       this.cities = city;
       this.photos = photos;
