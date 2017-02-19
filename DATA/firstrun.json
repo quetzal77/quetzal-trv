@@ -1,0 +1,43 @@
+{
+  "continent": [
+    {
+      "continent_id": "AS",
+      "name_ru": "Азия"
+    },
+    {
+      "continent_id": "AF",
+      "name_ru": "Африка"
+    },
+    {
+      "continent_id": "EU",
+      "name_ru": "Европа"
+    }
+  ],
+  "country": [
+    {
+      "country_id": "ABH",
+      "continent_id": "AS",
+      "name_full": "Абхазия - Апсны - Abkhazia"
+    },
+    {
+      "country_id": "AT",
+      "continent_id": "EU",
+      "name_full": "Австрия - Österreich - Austria"
+    },
+    {
+      "country_id": "AL",
+      "continent_id": "EU",
+      "name_full": "Албания - Shqipëria - Albania"
+    },
+    {
+      "country_id": "AD",
+      "continent_id": "EU",
+      "name_full": "Андорра - Andorra - Andorra"
+    },
+    {
+      "country_id": "EG",
+      "continent_id": "AF",
+      "name_full": "Египет - جمهورية مصر العربية - Egypt"
+    }
+  ]
+}
