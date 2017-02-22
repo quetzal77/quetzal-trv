@@ -1,0 +1,253 @@
+{
+  "continent": [
+    {
+      "continent_id": "AS",
+      "name_ru": "Азия"
+    },
+    {
+      "continent_id": "AF",
+      "name_ru": "Африка"
+    },
+    {
+      "continent_id": "EU",
+      "name_ru": "Европа"
+    }
+  ],
+  "country": [
+    {
+      "country_id": "AB",
+      "continent_id": "AS",
+      "name_full": "Абхазия - Апсны - Abkhazia"
+    },
+    {
+      "country_id": "AT",
+      "continent_id": "EU",
+      "name_full": "Австрия - Österreich - Austria"
+    },
+    {
+      "country_id": "AL",
+      "continent_id": "EU",
+      "name_full": "Албания - Shqipëria - Albania"
+    },
+    {
+      "country_id": "AD",
+      "continent_id": "EU",
+      "name_full": "Андорра - Andorra - Andorra"
+    },
+    {
+      "country_id": "BY",
+      "continent_id": "EU",
+      "name_full": "Беларусь - Беларусь - Belarus"
+    },
+    {
+      "country_id": "BE",
+      "continent_id": "EU",
+      "name_full": "Бельгия - België - Belgium"
+    },
+    {
+      "country_id": "HU",
+      "continent_id": "EU",
+      "name_full": "Венгрия - Magyar Köztársaság - Hungary"
+    },
+    {
+      "country_id": "DE",
+      "continent_id": "EU",
+      "name_full": "Германия - Deutschland - Germany"
+    },
+    {
+      "country_id": "GI",
+      "continent_id": "EU",
+      "name_full": "Гибралтар - Gibraltar - Gibraltar"
+    },
+    {
+      "country_id": "DK",
+      "continent_id": "EU",
+      "name_full": "Дания - Danmark - Denmark"
+    },
+    {
+      "country_id": "EG",
+      "continent_id": "AF",
+      "name_full": "Египет - جمهورية مصر العربية - Egypt"
+    },
+    {
+      "country_id": "IL",
+      "continent_id": "AS",
+      "name_full": "Израиль - לארשי תנידמ - Israel"
+    },
+    {
+      "country_id": "IN",
+      "continent_id": "AS",
+      "name_full": "Индия - भारत - India"
+    },
+    {
+      "country_id": "ES",
+      "continent_id": "EU",
+      "name_full": "Испания - España - Spain"
+    },
+    {
+      "country_id": "IT",
+      "continent_id": "EU",
+      "name_full": "Италия - Italia - Italy"
+    },
+    {
+      "country_id": "CY",
+      "continent_id": "AS",
+      "name_full": "Кипр - Κύπρος - Cyprus"
+    },
+    {
+      "country_id": "CN",
+      "continent_id": "AS",
+      "name_full": "Китай - 中國 - China"
+    },
+    {
+      "country_id": "XK",
+      "continent_id": "EU",
+      "name_full": "Косово - Kosova - Kosovo"
+    },
+    {
+      "country_id": "LV",
+      "continent_id": "EU",
+      "name_full": "Латвия - Latvija - Latvia"
+    },
+    {
+      "country_id": "LT",
+      "continent_id": "EU",
+      "name_full": "Литва - Lietuva - Lithuania"
+    },
+    {
+      "country_id": "LI",
+      "continent_id": "EU",
+      "name_full": "Лихтенштейн - Fürstentum Liechtenstein - Liechtenstein"
+    },
+    {
+      "country_id": "LU",
+      "continent_id": "EU",
+      "name_full": "Люксембург - Groussherzogtum Lëtzebuerg - Luxembourg"
+    },
+    {
+      "country_id": "MK",
+      "continent_id": "EU",
+      "name_full": "Македония - Македонија - Macedonia"
+    },
+    {
+      "country_id": "MT",
+      "continent_id": "EU",
+      "name_full": "Мальта - Malta - Malta"
+    },
+    {
+      "country_id": "MD",
+      "continent_id": "EU",
+      "name_full": "Молдо́ва - Moldova - Moldova"
+    },
+    {
+      "country_id": "NL",
+      "continent_id": "EU",
+      "name_full": "Нидерланды - Nederland - Netherlands"
+    },
+    {
+      "country_id": "NO",
+      "continent_id": "EU",
+      "name_full": "Норвегия - Norge - Norway"
+    },
+    {
+      "country_id": "AE",
+      "continent_id": "AS",
+      "name_full": "Объединенные Арабские Эмираты - الإمارات العربية المتحدة - United Arabian Emirates"
+    },
+    {
+      "country_id": "PL",
+      "continent_id": "EU",
+      "name_full": "Польша - Rzeczpospolita Polska - Poland"
+    },
+    {
+      "country_id": "PT",
+      "continent_id": "EU",
+      "name_full": "Португалия - Portugal - Portugal"
+    },
+    {
+      "country_id": "TA",
+      "continent_id": "EU",
+      "name_full": "Приднестровье - Нистрения - Transnistria"
+    },
+    {
+      "country_id": "RU",
+      "continent_id": "EU",
+      "name_full": "Россия - Росія - Russia"
+    },
+    {
+      "country_id": "RO",
+      "continent_id": "EU",
+      "name_full": "Румыния - România - Romania"
+    },
+    {
+      "country_id": "SM",
+      "continent_id": "EU",
+      "name_full": "Сан-Марино - San Marino - San Marino"
+    },
+    {
+      "country_id": "CT",
+      "continent_id": "AS",
+      "name_full": "Северный Кипр - Kuzey Kıbrıs - Northern Cyprus"
+    },
+    {
+      "country_id": "SK",
+      "continent_id": "EU",
+      "name_full": "Словакия - Slovenská - Slovakia"
+    },
+    {
+      "country_id": "SI",
+      "continent_id": "EU",
+      "name_full": "Словения - Slovenija - Slovenia"
+    },
+    {
+      "country_id": "TR",
+      "continent_id": "AS",
+      "name_full": "Турция - Türkiye - Turkey"
+    },
+    {
+      "country_id": "UA",
+      "continent_id": "EU",
+      "name_full": "Украина - Україна - Ukraine"
+    },
+    {
+      "country_id": "FI",
+      "continent_id": "EU",
+      "name_full": "Финляндия - Suomi - Finland"
+    },
+    {
+      "country_id": "FR",
+      "continent_id": "EU",
+      "name_full": "Франция - République française - France"
+    },
+    {
+      "country_id": "HR",
+      "continent_id": "EU",
+      "name_full": "Хорватия - Hrvatska - Croatia"
+    },
+    {
+      "country_id": "ME",
+      "continent_id": "EU",
+      "name_full": "Черногория - Црна Гора - Montenegro"
+    },
+    {
+      "country_id": "CZ",
+      "continent_id": "EU",
+      "name_full": "Чехия - Česká - Czech"
+    },
+    {
+      "country_id": "CH",
+      "continent_id": "EU",
+      "name_full": "Швейцария - Schweizerische Eidgenossenschaft - Switzerland"
+    },
+    {
+      "country_id": "SE",
+      "continent_id": "EU",
+      "name_full": "Швеция - Sverige - Sweden"
+    },
+    {
+      "country_id": "EE",
+      "continent_id": "EU",
+      "name_full": "Эстония - Eesti - Estonia"
+    }
+  ]
+}

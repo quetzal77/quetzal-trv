@@ -1,44 +1,15 @@
 //00.00 Run function on load of World page
 //This is jQuery object that take data from xml and transform them to some collections
 window.onload = function() {
-    $.getJSON( "DATA/firstrun.json", processMyJson);
-    //$.getJSON( "DATA/globaldb.json", processMyJson2);
+     $.getJSON( "DATA/globaldb.json", processMyJson);
  };
 
 //00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
- var data, data2
+ var data
  var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
 
 //00.02 This method creates all collections we need to populate list of countries
  var processMyJson = function(result){
-    data2 = result;
-    //Array of visits sorted descendently and with dates in DATETIME format
-    //Plus array of all unique visited locations
-    //createArrayOfVisitesAndArrayOfCitiesVisited();
-    //Array of Visited Countries, Regions and Cities
-    //createArrayOfVisitedCountriesAndRegions();
-
-    //Create page content depend on type of selected location (world, country or city)
-    var location = window.location.search.substring(1, window.location.search.length);
-    if (location != ""){
-        var detailsOfRequest = location.split("=");
-        switch (detailsOfRequest[0]) {
-            case "country":
-                day = "Sunday";
-                break;
-            case "city":
-                day = "Monday";
-                break;
-            case "story":
-                day = "Tuesday";
-                break;
-        }
-    }
-    else {
-        createWorldPage_HTML2();
-    }
- }
- var processMyJson2 = function(result){
     data = result;
     //Array of visits sorted descendently and with dates in DATETIME format
     //Plus array of all unique visited locations
@@ -63,7 +34,7 @@ window.onload = function() {
         }
     }
     else {
-        //createWorldPage_HTML();
+        createWorldPage_HTML();
     }
  }
 

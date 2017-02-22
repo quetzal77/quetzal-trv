@@ -21,27 +21,6 @@ function createWorldPage_HTML () {
     CreateMap("none");
 }
 
-function createWorldPage_HTML2 () {
-    //Creation of Country Selector
-    //document.getElementById("ContentBody_CountryList").innerHTML = HTML_SelectorListOfCountries();
-    //Creation of City Selector
-    //document.getElementById("ContentBody_CityList").innerHTML = HTML_SelectorListOfCities();
-	//Creation of Story Selector
-    //document.getElementById("ContentBody_StoryList").innerHTML = HTML_SelectorListOfStories();
-
-    //Add script for map creation
-    $('<script src="SCRIPTS/MAPS/worldLow.js" type="text/javascript"></script>').appendTo("body");
-
-    document.getElementById("someElement").innerHTML = "<div id='mapdiv' class='map'></div>" +
-        "<div id='countryToVisitSelector'>" +
-		"<div class='switchlink_l float_l'>Мои страны...</div>" +
-        "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-        "<br><br>" +
-        "<div class='clear' />" + createWorldPageFrontView2() + "</div>";
-
-    CreateMap("none");
-}
-
 //03.02 This method creates hidden list of countries which will be used to create JS world map
 function createWorldMap_HTML() {
     //EXAMPLE: <div id="countryList" style="display:none;">world,ABH,AD,AE,</div><div id="cityList" style="display:none;">world;</div></div>
@@ -52,53 +31,14 @@ function createWorldMap_HTML() {
     result += "</div><div id='cityList' style='display:none;'>world;</div></div>";
     return result;
 }
-function createWorldMap_HTML2() {
-    //EXAMPLE: <div id="countryList" style="display:none;">world,ABH,AD,AE,</div><div id="cityList" style="display:none;">world;</div></div>
-    var result = "<div id='countryList' style='display:none;'>world,";
-    for (var i = 0; i < data2.country.length; i++) {
-        result += data2.country[i].country_id + ",";
-    }
-    result += "</div><div id='cityList' style='display:none;'>world;</div></div>";
-    return result;
-}
-
 
 //03.03 This method creates content for World page
-function createWorldPageFrontView2() {
-    var result = "<div id='MainContainer'>";
-
-    //List of visited countries splited per continents
-    for (var i = 0; i < data2.continent.length; i++) {
-        if (undefined != data2.continent[i].name_ru) {
-            var countriesPerContinentNumber = 0;
-            var citiesPerContryNumber = 0;
-            var listOfCountries = "";
-
-            for (var j = 0; j < data2.country.length; j++) {
-                if (data2.country[j].continent_id == data2.continent[i].continent_id) {
-                    countriesPerContinentNumber += 1;
-                    citiesPerContryNumber += 2;
-                    listOfCountries += "<a id='" + data2.country[j].country_id +
-                    "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'><img src='IMG/flag_n_emblem/small_flags/" +
-					data2.country[j].country_id + ".png' title='" + data2.country[j].name_full + " - " +
-                    setLocationNumberWithCorrectEnd(2) + "' class='countflag' /></a>"
-                }
-            }
-            if (countriesPerContinentNumber > 0) {
-                result += "<div class='my_countries'><div><b>" + data2.continent[i].name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + " (" + setLocationNumberWithCorrectEnd(citiesPerContryNumber) + ")</div>" + listOfCountries + "</div>";
-            }
-        }
-    }
-    result += createWorldMap_HTML2();
-    result += "<div class='countryhead'>Всего: " + setCountriesNumberWithCorrectEnd(data2.country.length) + " (" + setLocationNumberWithCorrectEnd(4) + ")</div></div>";
-    return result;
-}
 function createWorldPageFrontView() {
     var result = "<div id='MainContainer'>";
 
     //List of visited countries splited per continents
-    for (var i = 0; i < data2.continent.length; i++) {
-        if (undefined != data2.continent[i].name_ru) {
+    for (var i = 0; i < data.continent.length; i++) {
+        if (undefined != data.continent[i].name_ru) {
             var countriesPerContinentNumber = 0;
             var citiesPerContryNumber = 0;
             var listOfCountries = "";
