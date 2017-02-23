@@ -1,4 +1,7 @@
-//03.04 This method creates list of worlds visits
+//05. World page
+//Scripts for creation of Visits section
+
+//05.01 This method creates list of worlds visits
 function createWorldPageListOfAllVisits() {
     //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
     //         <div class="secondcell float_l"><a href="countries.aspx?country=poland" id="25,52,19.5;Katowice,50.2599736,19.0284561;Wroclaw,51.122489,17.026062;Swidnica,50.8403152,16.4935923;Ksiaz,50.8440566,16.2897844;Opole,50.6780534,17.9175784;" onmouseover="CreateMap(this.id)" onmouseout="CreateMap('none')">Катовице, Вроцлав, Свидница, Кщёнж, Ополе (Польша)</a></div>

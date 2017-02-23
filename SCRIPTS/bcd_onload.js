@@ -1,13 +1,16 @@
-//00.00 Run function on load of World page (Home page)
+//00.00 On Load fucntions
+//This page is first one loaded, and depend on its logic we dynamically build appropriate pages
+
+//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
+ var initial_data
+
+//00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
 window.onload = function() {
     $.getJSON( "DATA/onload.json", processMyJson);
  };
 
-//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
- var initial_data
-
-//00.02 This method creates initial collection we need to populate world page
+//00.03 This method creates initial collection we need to populate world page
 //Also it contains logic of loading
  var processMyJson = function(result){
     initial_data = result;
@@ -31,11 +34,13 @@ window.onload = function() {
         }
     }
     else {
+        $('<script src="SCRIPTS/bcd_services.js" type="text/javascript"></script>').appendTo("body");
         $('<script src="SCRIPTS/trv_world.js" type="text/javascript"></script>').appendTo("body");
         createWorldPage_HTML(initial_data.continent, initial_data.country);
         $('<script src="SCRIPTS/MAPS/ammap.js" type="text/javascript"></script>').appendTo("body");
         $('<script src="SCRIPTS/MAPS/custommap.js" type="text/javascript"></script>').appendTo("body");
         $('<script src="SCRIPTS/MAPS/worldLow.js" type="text/javascript"></script>').appendTo("body");
         CreateMap("none");
+        $('<script src="SCRIPTS/trv_bcfunc.js" type="text/javascript"></script>').appendTo("body");
     }
  }

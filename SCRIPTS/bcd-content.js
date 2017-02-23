@@ -1,9 +1,12 @@
+//01.00 Content
+//These functions have to create all the object with content data
+
+//01.01 ARRAYS USED FOR CREATION OF WORLD PAGE
+  var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
+
 function() {
     $.getJSON( "DATA/globaldb.json", processMyJson);
  };
-
-//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
-  var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
 
   var processMyJson = function(result){
      content = result;
@@ -14,7 +17,7 @@ function() {
      createArrayOfVisitedCountriesAndRegions();
   }
 
-  //00.03 Array of visits sorted descendingly and with dates in DATETIME format
+  //01.03 Array of visits sorted descendingly and with dates in DATETIME format
    function createArrayOfVisitesAndArrayOfCitiesVisited() {
        visitsSorted = []; //Array to be used for storing all of them visites happened
        citiesVisited = []; //Array to be used for storing all of the unique places so it would be possible to create array of visited countries
@@ -35,7 +38,7 @@ function() {
        citiesVisited.sort(dynamicSort("name_ru"))
    }
 
-   //00.04 Array of Visited Countries and Regions
+   //01.04 Array of Visited Countries and Regions
    function createArrayOfVisitedCountriesAndRegions(){
       regionsVisited = [];
       var distinctIds = {};
@@ -58,7 +61,7 @@ function() {
       countriesVisited.sort(dynamicSort("name_ru"));
    }
 
-   //00.05 City Object definition
+   //01.05 City Object definition
    function CityObj(city_id) {
        for (var i = 0; i < data.city.length; i++) {
            if (data.city[i].city_id == city_id) {
@@ -84,7 +87,7 @@ function() {
        }
    }
 
-  //00.06 Region Object definition
+  //01.06 Region Object definition
    function RegionObj(region_id) {
        for (var i = 0; i < data.area.length; i++) {
            if (data.area[i].region_id == region_id) {
@@ -113,7 +116,7 @@ function() {
        }
    }
 
-  //00.07 Country Object definition
+  //01.07 Country Object definition
    function CountryObj(country_id) {
        for (var i = 0; i < data.country.length; i++) {
            if (data.country[i].country_id == country_id) {
@@ -147,7 +150,7 @@ function() {
        }
    }
 
-    //00.08 Visit Object definition
+    //01.08 Visit Object definition
     function VisitObj(start_date, end_date, city, photos, story) {
         this.cities = city;
         this.photos = photos;

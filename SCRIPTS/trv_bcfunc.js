@@ -1,5 +1,7 @@
-﻿//08. Contacts
-//08.01 Creator of Contact page
+﻿//03.00 Basic functions
+//Here are page objects that used for each page shown
+
+//03.01 Creator of Contact page
 function HTML_CreatorOfContactPage (){
     document.getElementById("someElement").innerHTML = "<div class='jumbotron'>" +
         "<h2><b> Контакты </b></h2>" +
@@ -8,8 +10,8 @@ function HTML_CreatorOfContactPage (){
         "<p> Skype: slavutskyy </p>" +
         "</div>";
 }
-//09. Contacts
-//09.01 Creator of About page
+
+//03.02 Creator of About page
 function HTML_CreatorOfAboutPage () {
     document.getElementById("someElement").innerHTML = "<div class='well'>" +
           "<h2><b> О проекте </b></h2>" +
@@ -26,8 +28,7 @@ function HTML_CreatorOfAboutPage () {
           "<p>Приятного просмотра!</p></div>";
 }
 
-//10. SignIn Page
-//10.01 Navigation to SignIn page
+//03.03 Navigation to SignIn page
 function HTML_SignInPage () {	
 	var url = "settings.html";
 	location.href = url;
