@@ -23,6 +23,10 @@ function createWorldPageFrontView(countinents, countries) {
         var citiesPerContryNumber = "...";
         var listOfCountries = "";
 
+//        result += $.grep (countries (function( n, i ) {
+//            return (n.continent_id == countinents[i].continent_id)
+//        });
+
         for (var j = 0; j < countries.length; j++) {
             if (countries[j].continent_id == countinents[i].continent_id) {
                 countriesPerContinentNumber += 1;
@@ -45,9 +49,9 @@ function createWorldPageFrontView(countinents, countries) {
 function createWorldMap_HTML(countries) {
     //EXAMPLE: <div id="countryList" style="display:none;">world,ABH,AD,AE,</div><div id="cityList" style="display:none;">world;</div></div>
     var result = "<div id='countryList' style='display:none;'>world,";
-    for (var i = 0; i < countries.length; i++) {
-        result += countries[i].country_id + ",";
-    }
+    $.each( countries, function( i, val ){
+        result += val.country_id + ",";
+    });
     result += "</div><div id='cityList' style='display:none;'>world;</div></div>";
     return result;
 }

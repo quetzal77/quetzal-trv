@@ -16,21 +16,13 @@
 
 //02.02 Return last digit of number so then it's possible to create russian words correctly
 function processEntityNumber (number) {
-    var result;
-    if (number >20) {
-        var x = number.toString()
-        result = x[x.length-1]*1;
-    }
-    else{
-        result = number
-    }
-    return result
+    return (number >20) ? number.toString()[number.toString().length-1]*1 : number;
 }
 
 //02.03 Return correctly created string like "31 страна"
 function parseWord (word, end1, end234, endrest, number){
     var result = "";
-    var endOfWord= endrest;
+    var endOfWord = endrest;
     var newNumber = processEntityNumber (number)
 
     if (newNumber == 1){
@@ -52,9 +44,7 @@ function setCountriesNumberWithCorrectEnd (number) {
     var end234 = "ы";
     var endrest = "";
     var newNumber = processEntityNumber  (number)
-
-    var result = number + " " + parseWord (wordBody, end1, end234, endrest, number)
-    return result
+    return number + " " + parseWord (wordBody, end1, end234, endrest, number)
 }
 
 //02.05 Return russian word "location" with correct end
@@ -64,43 +54,28 @@ function setLocationNumberWithCorrectEnd (number) {
     var end234 = "и";
     var endrest = "й";
     var newNumber = processEntityNumber  (number)
-
-    var result = number + " " + parseWord (wordBody, end1, end234, endrest, number)
-    return result
+    return number + " " + parseWord (wordBody, end1, end234, endrest, number)
 }
 
 //02.08 Return russian month name
 function getRusMonthName (number) {
-    var result;
     var monthSList = {0: "января", 1: "февраля", 2: "марта", 3: "апреля", 4: "мая", 5: "июня", 6: "июля", 7: "августа", 8: "сентября", 9: "октября", 10: "ноября", 11: "декабря"};
     var MonthKeys = Object.keys(monthSList);
-    for (var d = 0; d < MonthKeys.length; d++){
-        if (MonthKeys[d] == number){
-            result = monthSList[d];
-            break;
-        }
-    }
-    return result
+    return $.grep (MonthKeys, function( n, i ) {return (n == number)});
 }
 
 //2.13 Get russian country name
 function getRusCountryName(countryId) {
-    for (var i = 0; i < countriesVisited.length; i++) {
-        if (countriesVisited[i].country_id == countryId) {
-            var result = countriesVisited[i].name_ru;
-            break;
-        }
-    }
-    return result;
+    result = $.grep (countriesVisited, function( n, i ) {
+                return (n.country_id == countryId)
+            });
+    return result.name_ru;
 }
 
 //2.16 Get russian Location name
 function getRusLocationName(locationId) {
-    for (var i = 0; i < citiesVisited.length; i++) {
-        if (citiesVisited[i].city_id == locationId) {
-            var result = citiesVisited[i].name_ru;
-            break;
-        }
-    }
-    return result;
+    result = $.grep (citiesVisited, function( n, i ) {
+                return (n.city_id == locationId)
+            });
+    return result.name_ru;
 }
