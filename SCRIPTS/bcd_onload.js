@@ -1,7 +1,7 @@
 //00.00 On Load fucntions
 //This page is first one loaded, and depend on its logic we dynamically build appropriate pages
 
-//00.01 ARRAYS USED FOR CREATION OF WORLD PAGE
+//00.01 ARRAY USED FOR CREATION OF WORLD PAGE
  var initial_data
 
 //00.02 Run function on load of World page (Home page)

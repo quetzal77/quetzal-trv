@@ -20,7 +20,6 @@ function createWorldPageFrontView(countinents, countries) {
     //List of visited countries splited per continents
     for (var i = 0; i < countinents.length; i++) {
         var countriesPerContinentNumber = 0;
-        var citiesPerContryNumber = "...";
         var listOfCountries = "";
 
 //        result += $.grep (countries (function( n, i ) {
@@ -58,16 +57,16 @@ function createWorldMap_HTML(countries) {
 
 //04.04 World page with list of Visits
 function OpenListOfWorldVisits() {
-    var result = "<div class='switchlink_l float_l'><a title='Перейти к списку стран' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мои страны</a></div>" +
+    document.getElementById("countryToVisitSelector").innerHTML =
+        "<div class='switchlink_l float_l'><a title='Перейти к списку стран' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мои страны</a></div>" +
         "<div class='switchlink float_l'>Мои визиты...</div>" +
         "<br><br>" + createWorldPageListOfAllVisits();
-    document.getElementById("countryToVisitSelector").innerHTML = result;
 }
 
 //04.05 World page with list of Visits
 function OpenListOfWorldCountries() {
-    var result = "<div class='switchlink_l float_l'>Мои страны...</div>" +
+    document.getElementById("countryToVisitSelector").innerHTML =
+        "<div class='switchlink_l float_l'>Мои страны...</div>" +
         "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
         "<br><br>" + createWorldPageFrontView();
-    document.getElementById("countryToVisitSelector").innerHTML = result;
 }

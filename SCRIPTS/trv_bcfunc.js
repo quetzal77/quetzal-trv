@@ -3,7 +3,7 @@
 
 //03.01 Creator of Contact page
 function HTML_CreatorOfContactPage (){
-    document.getElementById("someElement").innerHTML = "<div class='jumbotron'>" +
+    document.getElementById("mainSection").innerHTML = "<div class='jumbotron'>" +
         "<h2><b> Контакты </b></h2>" +
         "<p> Location: Kyiv, Ukraine </p>" +
         "<p> Email: <a href='mailto:coatls77@gmail.com'>coatls77@gmail.com</a></p>" +
@@ -13,7 +13,7 @@ function HTML_CreatorOfContactPage (){
 
 //03.02 Creator of About page
 function HTML_CreatorOfAboutPage () {
-    document.getElementById("someElement").innerHTML = "<div class='well'>" +
+    document.getElementById("mainSection").innerHTML = "<div class='well'>" +
           "<h2><b> О проекте </b></h2>" +
           "<p><b>Version</b>: 8.0.1</p>" +
           "<p><b>Compatibility Google Chrome</b>: 1.0+ </p>" +
