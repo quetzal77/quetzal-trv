@@ -18,27 +18,21 @@ function createWorldPageFrontView(countinents, countries) {
     var result = "<div id='MainContainer'>";
 
     //List of visited countries splited per continents
-    for (var i = 0; i < countinents.length; i++) {
+    $.each( countinents, function( i, cont ){
         var countriesPerContinentNumber = 0;
         var listOfCountries = "";
 
-//        result += $.grep (countries (function( n, i ) {
-//            return (n.continent_id == countinents[i].continent_id)
-//        });
-
-        for (var j = 0; j < countries.length; j++) {
-            if (countries[j].continent_id == countinents[i].continent_id) {
+        $.each( countries, function( j, country ){
+            if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
-                listOfCountries += "<a id='" + countries[j].country_id +
+                listOfCountries += "<a id='" + country.country_id +
                 "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'><img src='IMG/flag_n_emblem/small_flags/" +
-                countries[j].country_id + ".png' title='" + countries[j].name_full + "' class='countflag' /></a>"
+                country.country_id + ".png' title='" + country.name_full + "' class='countflag' /></a>"
             }
-        }
-        if (countriesPerContinentNumber > 0) {
-            result += "<div class='my_countries'><div><b>" + countinents[i].name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) +
-                        "</div>" + listOfCountries + "</div>";
-        }
-    }
+        });
+        result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) +
+                  "</div>" + listOfCountries + "</div>";
+    });
     result += createWorldMap_HTML(countries);
     result += "<div class='countryhead'>Всего: " + setCountriesNumberWithCorrectEnd(countries.length) + "</div></div>";
     return result;
