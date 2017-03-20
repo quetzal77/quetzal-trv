@@ -483,6 +483,14 @@
       "name_ru": "Косово",
       "name_nt": "Kosova",
       "short_name": "kosovo"
+    },
+    {
+      "country_id": "AZ",
+      "continent_id": "AS",
+      "name": "Azerbaijan",
+      "name_ru": "Азербайджан",
+      "name_nt": "Azərbaycan",
+      "short_name": "azerbaijan"
     }
   ],
   "area": [
@@ -8353,6 +8361,545 @@
       "name": "Aral Sea",
       "name_ru": "Аральское море",
       "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AM-GR",
+      "name": "Geġark'unik",
+      "name_ru": "",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ABS",
+      "name": "Abşeron rayonu",
+      "name_ru": "Апшеронский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AGA",
+      "name": "Ağstafa rayonu",
+      "name_ru": "Агстафинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AGC",
+      "name": "Ağcabədi rayonu",
+      "name_ru": "Агджабединский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AGM",
+      "name": "Ağdam rayonu",
+      "name_ru": "Агдамский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AGS",
+      "name": "Ağdaş rayonu",
+      "name_ru": "Агдашский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AGU",
+      "name": "Ağsu rayonu",
+      "name_ru": "Ахсуйский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-AST",
+      "name": "Astara rayonu",
+      "name_ru": "Астаринский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BA",
+      "name": "Bakı",
+      "name_ru": "Баку",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BAB",
+      "name": "Babək rayonu",
+      "name_ru": "Бабекский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BAL",
+      "name": "Balakən rayonu",
+      "name_ru": "Балакенский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BAR",
+      "name": "Bərdə rayonu",
+      "name_ru": "Бардинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BEY",
+      "name": "Beyləqan rayonu",
+      "name_ru": "Бейлаганский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-BIL",
+      "name": "Biləsuvar rayonu",
+      "name_ru": "Билясуварский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-CAB",
+      "name": "Cəbrayıl rayonu",
+      "name_ru": "Джебраильский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-CAL",
+      "name": "Cəlilabad rayonu",
+      "name_ru": "Джалилабадский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-CUL",
+      "name": "Culfa rayonu",
+      "name_ru": "Джульфинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-DAS",
+      "name": "Daşkəsən rayonu",
+      "name_ru": "Дашкесанский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-FUZ",
+      "name": "Füzuli rayonu",
+      "name_ru": "Физулинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-GA",
+      "name": "Gəncə",
+      "name_ru": "Гянджа",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-GAD",
+      "name": "Gədəbəy rayonu",
+      "name_ru": "Кедабекский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-GOR",
+      "name": "Goranboy rayonu",
+      "name_ru": "Геранбойский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-GOY",
+      "name": "Göyçay rayonu",
+      "name_ru": "Геокчайский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-GYG",
+      "name": "Göygöl rayonu",
+      "name_ru": "Гёйгёльский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-HAC",
+      "name": "Hacıqabul rayonu",
+      "name_ru": "Аджигабульский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-IMI",
+      "name": "İmişli rayonu",
+      "name_ru": "Имишлинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ISM",
+      "name": "İsmayıllı rayonu",
+      "name_ru": "Исмаиллинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-KAL",
+      "name": "Kəlbəcər rayonu",
+      "name_ru": "Кельбаджарский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-KAN",
+      "name": "Kəngərli rayonu",
+      "name_ru": "Кенгерлинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-KUR",
+      "name": "Kürdəmir rayonu",
+      "name_ru": "Кюрдамирский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-LA",
+      "name": "Lənkəran",
+      "name_ru": "Ленкорань",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-LAC",
+      "name": "Laçın rayonu",
+      "name_ru": "Лачинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-LAN",
+      "name": "Lənkəran rayonu",
+      "name_ru": "Ленкоранский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-LER",
+      "name": "Lerik rayonu",
+      "name_ru": "Лерикский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-MAS",
+      "name": "Masallı rayonu",
+      "name_ru": "Масаллинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-MI",
+      "name": "Mingəçevir",
+      "name_ru": "Мингечевир",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-NA",
+      "name": "Naftalan",
+      "name_ru": "Нафталан",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-NEF",
+      "name": "Neftçala rayonu",
+      "name_ru": "Нефтечалинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-NV",
+      "name": "Naxçıvan",
+      "name_ru": "Нахичевань",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-OGU",
+      "name": "Oğuz rayonu",
+      "name_ru": "Огузский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ORD",
+      "name": "Ordubad rayonu",
+      "name_ru": "Ордубадский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QAB",
+      "name": "Qəbələ rayonu",
+      "name_ru": "Габалинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QAX",
+      "name": "Qax rayonu",
+      "name_ru": "Гахский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QAZ",
+      "name": "Qazaxı rayonu",
+      "name_ru": "Газахский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QBA",
+      "name": "Quba rayonu",
+      "name_ru": "Губинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QBI",
+      "name": "Qubadlı rayonu",
+      "name_ru": "Губадлинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QOB",
+      "name": "Qobustan rayonu",
+      "name_ru": "Гобустанский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-QUS",
+      "name": "Qusar rayonu",
+      "name_ru": "Гусарский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SA",
+      "name": "Şəki",
+      "name_ru": "Шеки",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAB",
+      "name": "Sabirabad rayonu",
+      "name_ru": "Сабирабадский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAD",
+      "name": "Sədərək rayonu",
+      "name_ru": "Садаракский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAH",
+      "name": "Şahbuz rayonu",
+      "name_ru": "Шахбузский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAK",
+      "name": "Şəki rayonu",
+      "name_ru": "Шекинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAL",
+      "name": "Salyan rayonu",
+      "name_ru": "Салянский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAR",
+      "name": "Şərur rayonu",
+      "name_ru": "Шарурский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SAT",
+      "name": "Saatlı rayonu",
+      "name_ru": "Саатлинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SBN",
+      "name": "Şabran rayonu",
+      "name_ru": "Шабранский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SIY",
+      "name": "Siyəzən rayonu",
+      "name_ru": "Сиазаньский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SKR",
+      "name": "Şəmkir rayonu",
+      "name_ru": "Шамкирский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SM",
+      "name": "Sumqayıt",
+      "name_ru": "Сумгаит",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SMI",
+      "name": "Şamaxı rayonu",
+      "name_ru": "Шемахинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SMX",
+      "name": "Samux rayonu",
+      "name_ru": "Самухский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SR",
+      "name": "Şirvan",
+      "name_ru": "Ширван",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-SUS",
+      "name": "Şuşa rayonu",
+      "name_ru": "Шушинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-TAR",
+      "name": "Tərtər rayonu",
+      "name_ru": "Тертерский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-TOV",
+      "name": "Tovuz rayonu",
+      "name_ru": "Товузский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-UCA",
+      "name": "Ucar rayonu",
+      "name_ru": "Уджарский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-XAC",
+      "name": "Xaçmaz rayonu",
+      "name_ru": "Хачмазский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-XCI",
+      "name": "Xocalı rayonu",
+      "name_ru": "Ходжалинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-XIZ",
+      "name": "Xızı rayonu",
+      "name_ru": "Хызинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-XVD",
+      "name": "Xocavənd rayonu",
+      "name_ru": "Ходжавендский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-YAR",
+      "name": "Yardımlı rayonu",
+      "name_ru": "Ярдымлинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-YE",
+      "name": "Yevlax",
+      "name_ru": "Евлах",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-YEV",
+      "name": "Yevlax rayonu",
+      "name_ru": "Евлахский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ZAN",
+      "name": "Zəngilan rayonu",
+      "name_ru": "Зангеланский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ZAQ",
+      "name": "Zaqatala rayonu",
+      "name_ru": "Загатальский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "AZ",
+      "region_id": "AZ-ZAR",
+      "name": "Zərdab rayonu",
+      "name_ru": "Зердабский район",
+      "active": "Y"
     }
   ],
   "city": [
@@ -14363,6 +14910,18 @@
       "city_id": "tashkent",
       "lat": "41.305222",
       "long": "69.268959",
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "Baku",
+      "name_nt": "Bakı",
+      "name_ru": "Баку",
+      "capital": "true",
+      "region_id": "AZ-BA",
+      "city_id": "baku",
+      "lat": "40.3981852",
+      "long": "49.8512466",
       "image": "",
       "description": ""
     }

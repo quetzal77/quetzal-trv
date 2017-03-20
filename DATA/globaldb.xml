@@ -41,7 +41,7 @@
 		    <!-- South Osetia -->
 		    <!-- Georgia -->
 		    <!-- Armenia -->
-		    <!-- Azerbaijan -->
+            <country cont="AS" id="AZ" ident="azerbaijan" nameru="Азербайджан" nament="Azərbaycan" nameen="Azerbaijan" zoomLvl="35" zoomLat="42" zoomLong="43"></country>
 		    <!-- Nagorno-Karabakh -->
             <country cont="AS" id="ABH" ident="abhazia" nameru="Абхазия" nament="Апсны" nameen="Abkhazia" zoomLvl="35" zoomLat="42" zoomLong="43"></country>	
 	
@@ -2718,4 +2718,89 @@
     <!-- Uzbekistan cities-->
     <city title="Tashkent" title_nt="Toshkent" title_ru="Ташкент" capital_city="true" mc_name="UZ-TK" id="tashkent" lat="41.305222" long="69.268959" img="">
         <description></description></city>
+
+    <!-- Azerbaijan areas-->
+    <area id="AZ" mc_name="AM-GR" title="Geġark'unik'" title_ru=""></area>
+    <area id="AZ" mc_name="AZ-ABS" title="Abşeron rayonu" title_ru="Апшеронский район"></area>
+    <area id="AZ" mc_name="AZ-AGA" title="Ağstafa rayonu" title_ru="Агстафинский район"></area>
+    <area id="AZ" mc_name="AZ-AGC" title="Ağcabədi rayonu" title_ru="Агджабединский район"></area>
+    <area id="AZ" mc_name="AZ-AGM" title="Ağdam rayonu" title_ru="Агдамский район"></area>
+    <area id="AZ" mc_name="AZ-AGS" title="Ağdaş rayonu" title_ru="Агдашский район"></area>
+    <area id="AZ" mc_name="AZ-AGU" title="Ağsu rayonu" title_ru="Ахсуйский район"></area>
+    <area id="AZ" mc_name="AZ-AST" title="Astara rayonu" title_ru="Астаринский район"></area>
+    <area id="AZ" mc_name="AZ-BA" title="Bakı" title_ru="Баку"></area>
+    <area id="AZ" mc_name="AZ-BAB" title="Babək rayonu" title_ru="Бабекский район"></area>
+    <area id="AZ" mc_name="AZ-BAL" title="Balakən rayonu" title_ru="Балакенский район"></area>
+    <area id="AZ" mc_name="AZ-BAR" title="Bərdə rayonu" title_ru="Бардинский район"></area>
+    <area id="AZ" mc_name="AZ-BEY" title="Beyləqan rayonu" title_ru="Бейлаганский район"></area>
+    <area id="AZ" mc_name="AZ-BIL" title="Biləsuvar rayonu" title_ru="Билясуварский район"></area>
+    <area id="AZ" mc_name="AZ-CAB" title="Cəbrayıl rayonu" title_ru="Джебраильский район"></area>
+    <area id="AZ" mc_name="AZ-CAL" title="Cəlilabad rayonu" title_ru="Джалилабадский район"></area>
+    <area id="AZ" mc_name="AZ-CUL" title="Culfa rayonu" title_ru="Джульфинский район"></area>
+    <area id="AZ" mc_name="AZ-DAS" title="Daşkəsən rayonu" title_ru="Дашкесанский район"></area>
+    <area id="AZ" mc_name="AZ-FUZ" title="Füzuli rayonu" title_ru="Физулинский район"></area>
+    <area id="AZ" mc_name="AZ-GA" title="Gəncə" title_ru="Гянджа"></area>
+    <area id="AZ" mc_name="AZ-GAD" title="Gədəbəy rayonu" title_ru="Кедабекский район"></area>
+    <area id="AZ" mc_name="AZ-GOR" title="Goranboy rayonu" title_ru="Геранбойский район"></area>
+    <area id="AZ" mc_name="AZ-GOY" title="Göyçay rayonu" title_ru="Геокчайский район"></area>
+    <area id="AZ" mc_name="AZ-GYG" title="Göygöl rayonu" title_ru="Гёйгёльский район"></area>
+    <area id="AZ" mc_name="AZ-HAC" title="Hacıqabul rayonu" title_ru="Аджигабульский район"></area>
+    <area id="AZ" mc_name="AZ-IMI" title="İmişli rayonu" title_ru="Имишлинский район"></area>
+    <area id="AZ" mc_name="AZ-ISM" title="İsmayıllı rayonu" title_ru="Исмаиллинский район"></area>
+    <area id="AZ" mc_name="AZ-KAL" title="Kəlbəcər rayonu" title_ru="Кельбаджарский район"></area>
+    <area id="AZ" mc_name="AZ-KAN" title="Kəngərli rayonu" title_ru="Кенгерлинский район"></area>
+    <area id="AZ" mc_name="AZ-KUR" title="Kürdəmir rayonu" title_ru="Кюрдамирский район"></area>
+    <area id="AZ" mc_name="AZ-LA" title="Lənkəran" title_ru="Ленкорань"></area>
+    <area id="AZ" mc_name="AZ-LAC" title="Laçın rayonu" title_ru="Лачинский район"></area>
+    <area id="AZ" mc_name="AZ-LAN" title="Lənkəran rayonu" title_ru="Ленкоранский район"></area>
+    <area id="AZ" mc_name="AZ-LER" title="Lerik rayonu" title_ru="Лерикский район"></area>
+    <area id="AZ" mc_name="AZ-MAS" title="Masallı rayonu" title_ru="Масаллинский район"></area>
+    <area id="AZ" mc_name="AZ-MI" title="Mingəçevir" title_ru="Мингечевир"></area>
+    <area id="AZ" mc_name="AZ-NA" title="Naftalan" title_ru="Нафталан"></area>
+    <area id="AZ" mc_name="AZ-NEF" title="Neftçala rayonu" title_ru="Нефтечалинский район"></area>
+    <area id="AZ" mc_name="AZ-NV" title="Naxçıvan" title_ru="Нахичевань"></area>
+    <area id="AZ" mc_name="AZ-OGU" title="Oğuz rayonu" title_ru="Огузский район"></area>
+    <area id="AZ" mc_name="AZ-ORD" title="Ordubad rayonu" title_ru="Ордубадский район"></area>
+    <area id="AZ" mc_name="AZ-QAB" title="Qəbələ rayonu" title_ru="Габалинский район"></area>
+    <area id="AZ" mc_name="AZ-QAX" title="Qax rayonu" title_ru="Гахский район"></area>
+    <area id="AZ" mc_name="AZ-QAZ" title="Qazaxı rayonu" title_ru="Газахский район"></area>
+    <area id="AZ" mc_name="AZ-QBA" title="Quba rayonu" title_ru="Губинский район"></area>
+    <area id="AZ" mc_name="AZ-QBI" title="Qubadlı rayonu" title_ru="Губадлинский район"></area>
+    <area id="AZ" mc_name="AZ-QOB" title="Qobustan rayonu" title_ru="Гобустанский район"></area>
+    <area id="AZ" mc_name="AZ-QUS" title="Qusar rayonu" title_ru="Гусарский район"></area>
+    <area id="AZ" mc_name="AZ-SA" title="Şəki" title_ru="Шеки"></area>
+    <area id="AZ" mc_name="AZ-SAB" title="Sabirabad rayonu" title_ru="Сабирабадский район"></area>
+    <area id="AZ" mc_name="AZ-SAD" title="Sədərək rayonu" title_ru="Садаракский район"></area>
+    <area id="AZ" mc_name="AZ-SAH" title="Şahbuz rayonu" title_ru="Шахбузский район"></area>
+    <area id="AZ" mc_name="AZ-SAK" title="Şəki rayonu" title_ru="Шекинский район"></area>
+    <area id="AZ" mc_name="AZ-SAL" title="Salyan rayonu" title_ru="Салянский район"></area>
+    <area id="AZ" mc_name="AZ-SAR" title="Şərur rayonu" title_ru="Шарурский район"></area>
+    <area id="AZ" mc_name="AZ-SAT" title="Saatlı rayonu" title_ru="Саатлинский район"></area>
+    <area id="AZ" mc_name="AZ-SBN" title="Şabran rayonu" title_ru="Шабранский район"></area>
+    <area id="AZ" mc_name="AZ-SIY" title="Siyəzən rayonu" title_ru="Сиазаньский район"></area>
+    <area id="AZ" mc_name="AZ-SKR" title="Şəmkir rayonu" title_ru="Шамкирский район"></area>
+    <area id="AZ" mc_name="AZ-SM" title="Sumqayıt" title_ru="Сумгаит"></area>
+    <area id="AZ" mc_name="AZ-SMI" title="Şamaxı rayonu" title_ru="Шемахинский район"></area>
+    <area id="AZ" mc_name="AZ-SMX" title="Samux rayonu" title_ru="Самухский район"></area>
+    <area id="AZ" mc_name="AZ-SR" title="Şirvan" title_ru="Ширван"></area>
+    <area id="AZ" mc_name="AZ-SUS" title="Şuşa rayonu" title_ru="Шушинский район"></area>
+    <area id="AZ" mc_name="AZ-TAR" title="Tərtər rayonu" title_ru="Тертерский район"></area>
+    <area id="AZ" mc_name="AZ-TOV" title="Tovuz rayonu" title_ru="Товузский район"></area>
+    <area id="AZ" mc_name="AZ-UCA" title="Ucar rayonu" title_ru="Уджарский район"></area>
+    <area id="AZ" mc_name="AZ-XAC" title="Xaçmaz rayonu" title_ru="Хачмазский район"></area>
+    <area id="AZ" mc_name="AZ-XCI" title="Xocalı rayonu" title_ru="Ходжалинский район"></area>
+    <area id="AZ" mc_name="AZ-XIZ" title="Xızı rayonu" title_ru="Хызинский район"></area>
+    <area id="AZ" mc_name="AZ-XVD" title="Xocavənd rayonu" title_ru="Ходжавендский район"></area>
+    <area id="AZ" mc_name="AZ-YAR" title="Yardımlı rayonu" title_ru="Ярдымлинский район"></area>
+    <area id="AZ" mc_name="AZ-YE" title="Yevlax" title_ru="Евлах"></area>
+    <area id="AZ" mc_name="AZ-YEV" title="Yevlax rayonu" title_ru="Евлахский район"></area>
+    <area id="AZ" mc_name="AZ-ZAN" title="Zəngilan rayonu" title_ru="Зангеланский район"></area>
+    <area id="AZ" mc_name="AZ-ZAQ" title="Zaqatala rayonu" title_ru="Загатальский район"></area>
+    <area id="AZ" mc_name="AZ-ZAR" title="Zərdab rayonu" title_ru="Зердабский район"></area>
+    <!-- Azerbaijan cities-->
+    <city title="Baku" title_nt="Bakı" title_ru="Баку" capital_city="true" mc_name="AZ-BA" id="baku" lat="40.3981852" long="49.8512466" img="">
+        <description></description></city>
+
+
+
 </DataBase>
