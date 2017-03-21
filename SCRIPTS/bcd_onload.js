@@ -34,15 +34,20 @@ window.onload = function() {
         }
     }
     else {
-     $('<script src="SCRIPTS/bcd_services.js" type="text/javascript"></script>').appendTo("body");
-     $('<script src="SCRIPTS/trv_world.js" type="text/javascript"></script>').appendTo("body");
-     createWorldPage_HTML(initial_data.continent, initial_data.country);
-     $('<script src="SCRIPTS/MAPS/ammap.js" type="text/javascript"></script>').appendTo("body");
-     $('<script src="SCRIPTS/MAPS/custommap.js" type="text/javascript"></script>').appendTo("body");
-     $('<script src="SCRIPTS/MAPS/worldLow.js" type="text/javascript"></script>').appendTo("body");
-     CreateMap("none");
-     $('<script src="SCRIPTS/trv_bcfunc.js" type="text/javascript"></script>').appendTo("body");
+        $.getScript("SCRIPTS/bcd_services.js");
+        $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(initial_data.continent, initial_data.country, drawMap) });
     }
+ }
+
+ var drawMap = function(){
+     $.getScript("SCRIPTS/MAPS/ammap.js");
+     $.getScript("SCRIPTS/MAPS/custommap.js");
+     $.getScript("SCRIPTS/MAPS/worldLow.js", function(){
+         CreateMap("none")
+         $('#mapdiv').css('background', '');
+     });
+
+     $.getScript("SCRIPTS/trv_bcfunc.js");
  }
 
 

@@ -2,15 +2,17 @@
 //Scripts for creation of World page
 
 //04.01 Creator of page
-function createWorldPage_HTML (continents, countries) {
+function createWorldPage_HTML (continents, countries, callback) {
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =
-        "<div id='mapdiv' class='map'></div>" +
+        "<div id='mapdiv' class='map' style='background: url(img/loading.gif) no-repeat center;'>&nbsp;</div>" +
         "<div id='countryToVisitSelector'>" +
 		    "<div class='switchlink_l float_l'>Мои страны...</div>" +
             "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
             "<br><br>" +
             "<div class='clear' />" + createWorldPageFrontView(continents, countries) + "</div>";
+
+    callback();
 }
 
 //04.02 This method creates content for World page
