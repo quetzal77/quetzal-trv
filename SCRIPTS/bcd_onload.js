@@ -38,10 +38,9 @@ var processMyJson = function (result){
     else {
         var country = initial_data.country[1]
         var country_ident = country.name_full.split(" - ");
-        local = "world";
         $.getScript("SCRIPTS/bcd_services.js");
         $.getScript("SCRIPTS/trv_bcfunc.js");
-        $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(initial_data.continent, initial_data.country, drawMap) });
+        $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(drawMap) });
 
     }
  }

@@ -2,7 +2,11 @@
 //Scripts for creation of World page
 
 //04.01 Creator of page
-function createWorldPage_HTML (continents, countries, callback) {
+function createWorldPage_HTML (callback) {
+    var continents = initial_data.continent;
+    var countries = initial_data.country;
+    local = "world";
+
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =
         "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
