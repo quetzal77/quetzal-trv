@@ -5,6 +5,8 @@ body {background: #FFFFFF; padding-top: 70px; padding-bottom: 30px;}
 a, a:visited {margin: 0px; text-decoration: none; color: #483D8B;}
 a:hover {text-decoration: none; color: #696969;}
 
+.loading {background: url(/IMG/icon/loading.gif) no-repeat center;}
+
 .float_l {float: left;}
 
 .float_r {float: right;}

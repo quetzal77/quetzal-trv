@@ -5,7 +5,7 @@
 function createWorldPage_HTML (continents, countries, callback) {
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =
-        "<div id='mapdiv' class='map' style='background: url(img/loading.gif) no-repeat center;'>&nbsp;</div>" +
+        "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
         "<div id='countryToVisitSelector'>" +
 		    "<div class='switchlink_l float_l'>Мои страны...</div>" +
             "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
@@ -27,9 +27,10 @@ function createWorldPageFrontView(countinents, countries) {
         $.each( countries, function( j, country ){
             if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
+                var country_ident = country.name_full.split(" - ");
                 listOfCountries += "<a id='" + country.country_id +
                 "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'><img src='IMG/flag_n_emblem/small_flags/" +
-                country.country_id + ".png' title='" + country.name_full + "' class='countflag' /></a>"
+                country_ident[2].toLowerCase() + ".png' title='" + country.name_full + "' class='countflag' /></a>"
             }
         });
         result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) +
