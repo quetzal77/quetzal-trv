@@ -3,6 +3,7 @@
 
 //00.01 ARRAY USED FOR CREATION OF WORLD PAGE
  var initial_data;
+ var local;
 
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
@@ -12,7 +13,7 @@ window.onload = function() {
 
 //00.03 This method creates initial collection we need to populate world page
 //Also it contains logic of loading
- var processMyJson = function(result){
+var processMyJson = function (result){
     initial_data = result;
 
     //Create page content depend on type of selected location (world, country or city)
@@ -21,29 +22,32 @@ window.onload = function() {
 
     if (location != ""){
         var detailsOfRequest = location.split("=");
+        local = detailsOfRequest[1];
         switch (detailsOfRequest[0]) {
             case "country":
-                day = "Sunday";
+//                $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, local)) });
                 break;
             case "city":
-                day = "Monday";
+//                $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(initial_data.continent, initial_data.country) });
                 break;
             case "story":
-                day = "Tuesday";
+//                $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(initial_data.continent, initial_data.country) });
                 break;
         }
     }
     else {
+        local = "world";
         $.getScript("SCRIPTS/bcd_services.js");
         $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(initial_data.continent, initial_data.country, drawMap) });
     }
  }
 
- var drawMap = function(){
+var drawMap = function (){
      $.getScript("SCRIPTS/MAPS/ammap.js");
      $.getScript("SCRIPTS/MAPS/custommap.js");
-     $.getScript("SCRIPTS/MAPS/worldLow.js", function(){
-         CreateMap("none")
+     $.getScript("SCRIPTS/MAPS/" + local + "Low.js", function(){
+         if (local == "world") {local = "none"};
+         CreateMap(local);
          $('#mapdiv').css('background', '');
      });
 
