@@ -19,29 +19,21 @@ var processMyJson = function (result){
     //Create page content depend on type of selected location (world, country or city)
     var url = "http://localhost:63342/quetzal-trv/index.html";
     var location = window.location.href.substring(url.length, window.location.href.length);
-
-    if (location != ""){
-        var detailsOfRequest = location.split("=");
-        local = detailsOfRequest[1];
-        switch (detailsOfRequest[0]) {
-            case "country":
-//                $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, local)) });
-                break;
-            case "city":
+    var detailsOfRequest = location.split("=");
+    switch (detailsOfRequest[0]) {
+        case "country":
+//                $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, detailsOfRequest[1])) });
+            break;
+        case "city":
 //                $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(initial_data.continent, initial_data.country) });
-                break;
-            case "story":
+            break;
+        case "story":
 //                $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(initial_data.continent, initial_data.country) });
-                break;
-        }
-    }
-    else {
-        var country = initial_data.country[1]
-        var country_ident = country.name_full.split(" - ");
-        $.getScript("SCRIPTS/bcd_services.js");
-        $.getScript("SCRIPTS/trv_bcfunc.js");
-        $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(drawMap) });
-
+            break;
+        default:
+            $.getScript("SCRIPTS/bcd_services.js");
+            $.getScript("SCRIPTS/trv_bcfunc.js");
+            $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML(drawMap) });
     }
  }
 
