@@ -4,12 +4,12 @@
 //01.01 ARRAYS USED FOR CREATION OF WORLD PAGE
   var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
 
-function() {
+function populateContent() {
     $.getJSON( "DATA/globaldb.json", processMyJson);
  };
 
   var processMyJson = function(result){
-     content = result;
+     data = result;
      //Array of visits sorted descendently and with dates in DATETIME format
      //Plus array of all unique visited locations
      createArrayOfVisitesAndArrayOfCitiesVisited();

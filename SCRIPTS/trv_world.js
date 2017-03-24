@@ -2,9 +2,8 @@
 //Scripts for creation of World page
 
 //04.01 Creator of page
-function createWorldPage_HTML (callback) {
-    var continents = initial_data.continent;
-    var countries = initial_data.country;
+function createWorldPage_HTML () {
+    // Set global variable with type of map to be opened
     local = "world";
 
     //Add script for map creation
@@ -14,9 +13,10 @@ function createWorldPage_HTML (callback) {
 		    "<div class='switchlink_l float_l'>Мои страны...</div>" +
             "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
             "<br><br>" +
-            "<div class='clear' />" + createWorldPageFrontView(continents, countries) + "</div>";
+            "<div class='clear' />" + createWorldPageFrontView(initial_data.continent, initial_data.country) + "</div>";
 
-    callback();
+    //Creation of world map
+    drawMap();
 }
 
 //04.02 This method creates content for World page
