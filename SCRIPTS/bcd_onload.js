@@ -20,9 +20,6 @@ var processMyJson = function (result){
 
     //Create page content depend on type of selected location (world, country or city)
     (initial_data) ? getPage() : getWorldPage();
-
-    //Create arrays with all the traveler's data
-    $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent() });
  }
 
  function getPage(){
@@ -45,6 +42,10 @@ var processMyJson = function (result){
  }
 
   function getWorldPage(){
+  //Create world page
       $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML() });
+
+  //Create arrays with all the traveler's data
+  $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent() });
   }
 

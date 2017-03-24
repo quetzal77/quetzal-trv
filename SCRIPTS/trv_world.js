@@ -13,14 +13,16 @@ function createWorldPage_HTML () {
 		    "<div class='switchlink_l float_l'>Мои страны...</div>" +
             "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
             "<br><br>" +
-            "<div class='clear' />" + createWorldPageFrontView(initial_data.continent, initial_data.country) + "</div>";
+            "<div class='clear' />" + createWorldPageFrontView() + "</div>";
 
     //Creation of world map
     drawMap();
 }
 
 //04.02 This method creates content for World page
-function createWorldPageFrontView(countinents, countries) {
+function createWorldPageFrontView() {
+    var countinents = initial_data.continent
+    var countries = initial_data.country
     var result = "<div id='MainContainer'>";
 
     //List of visited countries splited per continents
@@ -61,7 +63,7 @@ function OpenListOfWorldVisits() {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'><a title='Перейти к списку стран' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мои страны</a></div>" +
         "<div class='switchlink float_l'>Мои визиты...</div>" +
-        "<br><br>" + createWorldPageListOfAllVisits();
+        "<br><br>" + createListOfVisites();
 }
 
 //04.05 World page with list of Visits
