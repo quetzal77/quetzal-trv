@@ -699,56 +699,56 @@
     },
     {
       "country_id": "ABH",
-      "region_id": "GE-AB",
+      "region_id": "ABH-AB",
       "name": "Abhazia",
       "name_ru": "Абхазия",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_SU",
+      "region_id": "ABH_SU",
       "name": "Sukhumi District",
       "name_ru": "Сухумский район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_GA",
+      "region_id": "ABH_GA",
       "name": "Gagra District",
       "name_ru": "Гагрский район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_GU",
+      "region_id": "ABH_GU",
       "name": "Gudauta District",
       "name_ru": "Гудаутский район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_GL",
+      "region_id": "ABH_GL",
       "name": "Gulripsh District",
       "name_ru": "Гулрыпшский район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_OC",
+      "region_id": "ABH_OC",
       "name": "Ochamchira District",
       "name_ru": "Очамчырский район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_TQ",
+      "region_id": "ABH_TQ",
       "name": "Tquarchal District",
       "name_ru": "Ткварчельский (Ткуарчалский) район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
-      "region_id": "GE_GI",
+      "region_id": "ABH_GI",
       "name": "Gali District",
       "name_ru": "Гальский (Галский) район",
       "active": "Y"
@@ -7251,35 +7251,35 @@
     },
     {
       "country_id": "MT",
-      "region_id": "MT_CE",
+      "region_id": "MT-CE",
       "name": "Central Region",
       "name_ru": "Центральный регион",
       "active": "Y"
     },
     {
       "country_id": "MT",
-      "region_id": "MT_GO",
+      "region_id": "MT-GO",
       "name": "Gozo Region",
       "name_ru": "Гоцо и Комино (острова)",
       "active": "Y"
     },
     {
       "country_id": "MT",
-      "region_id": "MT_NO",
+      "region_id": "MT-NO",
       "name": "Northern Region",
       "name_ru": "Северный регион",
       "active": "Y"
     },
     {
       "country_id": "MT",
-      "region_id": "MT_SE",
+      "region_id": "MT-SE",
       "name": "South Eastern Region",
       "name_ru": "Юго-Восточный регион",
       "active": "Y"
     },
     {
       "country_id": "MT",
-      "region_id": "MT_SO",
+      "region_id": "MT-SO",
       "name": "Southern Region",
       "name_ru": "Южный регион",
       "active": "Y"
@@ -8168,14 +8168,14 @@
     },
     {
       "country_id": "VA",
-      "region_id": "VA",
+      "region_id": "VA-1",
       "name": "Vatican City",
       "name_ru": "Ватикан",
       "active": "Y"
     },
     {
       "country_id": "MC",
-      "region_id": "MC",
+      "region_id": "MC-1",
       "name": "Monaco",
       "name_ru": "Монако",
       "active": "Y"
@@ -8963,7 +8963,7 @@
       "name": "Sukhum",
       "name_nt": "Акәа",
       "name_ru": "Сухуми",
-      "region_id": "GE-AB",
+      "region_id": "ABH-AB",
       "capital": "true",
       "city_id": "sukhum",
       "lat": "42.7704499",
@@ -8975,7 +8975,7 @@
       "name": "Gagra",
       "name_nt": "Гагра",
       "name_ru": "Гагра",
-      "region_id": "GE-AB",
+      "region_id": "ABH-AB",
       "city_id": "gagra",
       "lat": "43.2192419",
       "long": "40.3460745",
@@ -8986,7 +8986,7 @@
       "name": "New Athos",
       "name_nt": "Афон Еыц",
       "name_ru": "Новый Афон",
-      "region_id": "GE-AB",
+      "region_id": "ABH-AB",
       "city_id": "new_athos",
       "lat": "42.886052",
       "long": "41.1567403",
@@ -8997,7 +8997,7 @@
       "name": "Ritsa (lake)",
       "name_nt": "Рица (озеро)",
       "name_ru": "Рица (озеро)",
-      "region_id": "GE-AB",
+      "region_id": "ABH-AB",
       "city_id": "lake_ritsa_and_blue_lake",
       "lat": "43.4169399",
       "long": "40.6577452",
@@ -14698,7 +14698,7 @@
       "name_nt": "Belt Valletta",
       "name_ru": "Валлетта",
       "capital": "true",
-      "region_id": "MT_SO",
+      "region_id": "MT-SO",
       "city_id": "valletta",
       "lat": "35.8978",
       "long": "14.5125",
@@ -14709,7 +14709,7 @@
       "name": "Victoria",
       "name_nt": "Victoria",
       "name_ru": "Виктория",
-      "region_id": "MT_GO",
+      "region_id": "MT-GO",
       "city_id": "victoria_rabat",
       "lat": "36.04509",
       "long": "14.239244",
@@ -14720,7 +14720,7 @@
       "name": "Rabat",
       "name_nt": "Rabat",
       "name_ru": "Рабат",
-      "region_id": "MT_NO",
+      "region_id": "MT-NO",
       "city_id": "rabat_mdina",
       "lat": "35.883668",
       "long": "14.402092",
@@ -14731,7 +14731,7 @@
       "name": "Sliema",
       "name_nt": "Tas-Sliema",
       "name_ru": "Слима",
-      "region_id": "MT_CE",
+      "region_id": "MT-CE",
       "city_id": "sliema",
       "lat": "35.9125",
       "long": "14.501804",
@@ -14742,7 +14742,7 @@
       "name": "Saint Julian's",
       "name_nt": "San Ġiljan",
       "name_ru": "Сент-Джулианс",
-      "region_id": "MT_CE",
+      "region_id": "MT-CE",
       "city_id": "saint_julians",
       "lat": "35.9233168",
       "long": "14.4900714",
@@ -14882,7 +14882,7 @@
       "name_nt": "Status Civitatis Vaticanæ",
       "name_ru": "Ватикан",
       "capital": "true",
-      "region_id": "VA",
+      "region_id": "VA-1",
       "city_id": "vatican",
       "lat": "41.9028305",
       "long": "12.4560291",
@@ -14894,7 +14894,7 @@
       "name_nt": "Monaco",
       "name_ru": "Монако",
       "capital": "true",
-      "region_id": "MC",
+      "region_id": "MC-1",
       "city_id": "monaco",
       "lat": "43.735135",
       "long": "7.420921",

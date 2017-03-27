@@ -24,13 +24,21 @@ function populateContent() {
        var distinctIds = {};
        for (var i = 0; i < data.visit.length; i++) {
            if (data.visit[i].start_date != undefined && data.visit[i].end_date != undefined && data.visit[i].city != undefined){
-               visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, data.visit[i].city, data.visit[i].photos, data.visit[i].story));
+               var cities = []; //This variable is used to store arrays of cities with country identifier which will be stored in Visits array
+
                for (var j = 0; j < data.visit[i].city.length; j++) {
-                  if (!distinctIds[data.visit[i].city[j]]) {
-                      citiesVisited.push(new CityObj(data.visit[i].city[j]));
-                      distinctIds[data.visit[i].city[j]] = true;
-                  }
+                    var city = {};
+                    var cityObj = new CityObj(data.visit[i].city[j]);
+                    city [ data.visit[i].city[j] ] = cityObj.getCountryId();
+                    cities.push(city)
+
+                    if (!distinctIds[data.visit[i].city[j]]) {
+                        citiesVisited.push(cityObj);
+                        distinctIds[data.visit[i].city[j]] = true;
+                    }
                }
+
+               visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story));
            }
        }
        visitsSorted.sort(dynamicSort("start_date"));
@@ -79,6 +87,10 @@ function populateContent() {
                this.setFullCityName = function () {
                    return this.name_ru + " - " + this.name_nt + " - " + this.name;
                }
+               this.getCountryId = function () {
+                  var regionSplited = this.region_id.split("-");
+                  return regionSplited[0];
+              }
                this.getRegion = function () {
                   return new RegionObj(data.city[i].region_id);
                }
