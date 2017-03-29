@@ -29,7 +29,9 @@ function populateContent() {
                for (var j = 0; j < data.visit[i].city.length; j++) {
                     var city = {};
                     var cityObj = new CityObj(data.visit[i].city[j]);
-                    city [ data.visit[i].city[j] ] = cityObj.getCountryId();
+
+                    city [ "city_id" ] = data.visit[i].city[j];
+                    city [ "country_id" ] = cityObj.getCountryId();
                     cities.push(city)
 
                     if (!distinctIds[data.visit[i].city[j]]) {
@@ -89,7 +91,10 @@ function populateContent() {
                }
                this.getCountryId = function () {
                   var regionSplited = this.region_id.split("-");
-                  return regionSplited[0];
+                  var country = $.grep (data.country, function( n, i ){
+                      return (n.country_id == regionSplited[0])
+                  });
+                  return country[0].short_name;
               }
                this.getRegion = function () {
                   return new RegionObj(data.city[i].region_id);
@@ -169,8 +174,8 @@ function populateContent() {
         this.story = story;
 
         var startVisit = start_date.split(".");
-        this.start_date = new Date(startVisit[2],startVisit[1] - 1,startVisit[0]);
+        this.start_date = new Date(startVisit[2],startVisit[1],startVisit[0]);
 
         var endVisit = end_date.split(".");
-        this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
+        this.end_date = new Date(endVisit[2], endVisit[1], endVisit[0]);
     }

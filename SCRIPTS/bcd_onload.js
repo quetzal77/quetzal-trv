@@ -24,11 +24,11 @@ var processMyJson = function (result){
 
  function getPage(){
      var location = window.location.href.substring(url.length, window.location.href.length);
-     var detailsOfRequest = location.split("=");
+     var local = location.split("=");
 
-     switch (detailsOfRequest[0]) {
+     switch (local[0]) {
          case "country":
- //            $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, detailsOfRequest[1])) });
+ //            $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, local[1])) });
              break;
          case "city":
  //            $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(initial_data.continent, initial_data.country) });

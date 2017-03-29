@@ -5,67 +5,87 @@
 function drawMap(){
      $.getScript("SCRIPTS/MAPS/ammap.js");
      $.getScript("SCRIPTS/MAPS/custommap.js");
-     $.getScript("SCRIPTS/MAPS/" + local + "Low.js", function(){
-         if (local == "world") {local = "none"};
-         $('#mapdiv').removeClass('loading');
-         CreateMap(local);
+     $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function(){
+     $('#mapdiv').removeClass('loading');
+     CreateMap(local[1]);
      });
  }
 
- //02.02 This method creates list of worlds visits
+ //02.02 This method creates list of visits
  function createListOfVisites(){
+      var result = "";
+
+      switch (local[0]) {
+          case "world":
+              result = createCustomListOfVisites(visitsSorted);
+              break;
+          case "country":
+//              visitesList = $.grep (visitsSorted, function( n, i ) {
+//                 return (n.country_id == countryId)
+//              });
+              break;
+          case "city":
+              break;
+      }
+
+      return result;
+ }
+
+ //02.03 This method creates CUSTOM list of visits
+ function createCustomListOfVisites(visitesList){
      //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
      //         <div class="secondcell float_l"><a href="countries.aspx?country=poland" id="25,52,19.5;Katowice,50.2599736,19.0284561;Wroclaw,51.122489,17.026062;Swidnica,50.8403152,16.4935923;Ksiaz,50.8440566,16.2897844;Opole,50.6780534,17.9175784;" onmouseover="CreateMap(this.id)" onmouseout="CreateMap('none')">Катовице, Вроцлав, Свидница, Кщёнж, Ополе (Польша)</a></div>
      //         <br class="clear">
      var result = "";
 
-     for (var a = 0; a < visitsSorted.length; a++) {
+     $.each (visitesList, function( i, visit ) {
          //This section sets year
-         result += "<div class='visityear clear'>" + visitsSorted[a].start_date.getFullYear() + "</div>";
+         var VisitYear;
+
+         if (visit.start_date.getFullYear() != VisitYear) {
+             result += "<div class='visityear clear'>" + visit.start_date.getFullYear() + "</div>";
+             VisitYear = visit.start_date.getFullYear();
+         }
 
          //This section is responsible to create date section
          //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
-         if (visitsSorted[a].start_date.toDateString() == visitsSorted[a].end_date.toDateString()) {
-             result += "<div class='firstcell float_l'>" + visitsSorted[a].start_date.getDate() + " " +
-                       getRusMonthName(visitsSorted[a].start_date.getMonth()) + "</div>"
+         if (visit.start_date.toDateString() == visit.end_date.toDateString()) {
+             result += "<div class='firstcell float_l'>" + visit.start_date.getDate() + " " +
+                       getRusMonthName(visit.start_date.getMonth()) + "</div>"
          }
          else {
-             result += "<div class='firstcell float_l'>" + visitsSorted[a].start_date.getDate() + " " + getRusMonthName(visitsSorted[a].start_date.getMonth()) + " - " +
-                       visitsSorted[a].end_date.getDate() + " " + getRusMonthName(visitsSorted[a].end_date.getMonth()) + "</div>"
+             result += "<div class='firstcell float_l'>" + visit.start_date.getDate() + " " + getRusMonthName(visit.start_date.getMonth()) + " - " +
+                       visit.end_date.getDate() + " " + getRusMonthName(visit.end_date.getMonth()) + "</div>"
          }
 
          //This section is responsible for displaying list of visited cities and countries
          var citiesLink = "";
          var countryLink = "";
          var distinctIds = {};
-         for (var b = 0; b < visitsSorted[a].cities.length; b++) {
+         $.each (visit.cities, function( j, city ) {
              for (var c = 0; c < citiesVisited.length; c++) {
-                 if (citiesVisited[c].city_id == visitsSorted[a].cities[b]) {
-                     citiesLink += "<a id='" + visitsSorted[a].cities[b] + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                   getRusLocationName(citiesVisited[c].name_ru) + "</a>" + ", ";
-
-                     for (var d = 0; d < regionsVisited.length; d++){
-                         if (regionsVisited[d].region_id == citiesVisited[c].region_id && !distinctIds[regionsVisited[d].country_id]){
-                             countryLink += "<a id='" + regionsVisited[d].country_id + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                             getRusCountryName(regionsVisited[d].country_id) + "</a>" + ", ";
-                             distinctIds[regionsVisited[d].country_id] = true;
-                         }
-                         break;
+                 if (citiesVisited[c].city_id == city.city_id) {
+                     citiesLink += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                                   citiesVisited[c].name_ru + "</a>" + ", ";
+                     if (!distinctIds[regionsVisited[d].country_id]){
+                         countryLink += "<a id='" + citiesVisited[c].country_id + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                                         getRusCountryName(citiesVisited[c].country_id) + "</a>" + ", ";
+                         distinctIds[citiesVisited[c].country_id] = true;
                      }
-                     break;
+                 break;
                  }
              }
-         }
+         });
 
          result += "<div class='secondcell float_l'>" + citiesLink.slice(0, -2) + " (" + countryLink.slice(0, -2) + " )</div>";
          //Can be added to display a city on the map: onmouseover='CreateMap(this.id)' onmouseout=\"CreateMap('none')\"
          //"' id='" + zoomLat + "," + zoomLong + "," + zoomLvl + ";" + citiesCoordinates +
          result += "<br class='clear'>";
-     }
+     });
      return result;
   }
 
-//02.03 Sorting of objects in array by attribute
+//02.04 Sorting of objects in array by attribute
     function dynamicSort(property) {
         var sortOrder = 1;
         if(property[0] === "-") {
@@ -78,7 +98,7 @@ function drawMap(){
         }
     }
 
-//02.04 Return correctly created string like "31 страна"
+//02.05 Return correctly created string like "31 страна"
 function parseWord (word, end1, end234, endrest, number){
     var endOfWord = endrest;
     //Returns last digit of number so then it's possible to create russian words correctly
@@ -93,7 +113,7 @@ function parseWord (word, end1, end234, endrest, number){
     return word + endOfWord;
 }
 
-//02.05 Return russian word "country" with correct end
+//02.06 Return russian word "country" with correct end
 function setCountriesNumberWithCorrectEnd (number) {
     var wordBody = "стран";
     var end1 = "а";
@@ -102,7 +122,7 @@ function setCountriesNumberWithCorrectEnd (number) {
     return number + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
-//02.06 Return russian word "location" with correct end
+//02.07 Return russian word "location" with correct end
 function setLocationNumberWithCorrectEnd (number) {
     var wordBody = "локаци";
     var end1 = "я";
@@ -111,22 +131,21 @@ function setLocationNumberWithCorrectEnd (number) {
     return number + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
-//02.07 Return russian month name
+//02.08 Return russian month name
 function getRusMonthName (number) {
-    var monthSList = {0: "января", 1: "февраля", 2: "марта", 3: "апреля", 4: "мая", 5: "июня", 6: "июля", 7: "августа", 8: "сентября", 9: "октября", 10: "ноября", 11: "декабря"};
-    var MonthKeys = Object.keys(monthSList);
-    return $.grep (MonthKeys, function( n, i ) {return (n == number)});
+    var monthSList = {1: "января", 2: "февраля", 3: "марта", 4: "апреля", 5: "мая", 6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря"};
+    return monthSList[number];
 }
 
-//2.08 Get russian country name
+//2.09 Get russian country name
 function getRusCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
-                return (n.country_id == countryId)
+                return (n.short_name == countryId)
             });
     return result.name_ru;
 }
 
-//2.09 Get russian Location name
+//2.10 Get russian Location name
 function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)

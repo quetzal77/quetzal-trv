@@ -4,7 +4,8 @@
 //04.01 Creator of page
 function createWorldPage_HTML () {
     // Set global variable with type of map to be opened
-    local = "world";
+    local = [];
+    local.push("world", "none");
 
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =
