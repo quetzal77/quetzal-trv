@@ -43,8 +43,8 @@ function drawMap(){
          var VisitYear;
 
          if (visit.start_date.getFullYear() != VisitYear) {
-             result += "<div class='visityear clear'>" + visit.start_date.getFullYear() + "</div>";
              VisitYear = visit.start_date.getFullYear();
+             result += "<div class='visityear clear'>" + VisitYear + "</div>";
          }
 
          //This section is responsible to create date section
@@ -63,17 +63,13 @@ function drawMap(){
          var countryLink = "";
          var distinctIds = {};
          $.each (visit.cities, function( j, city ) {
-             for (var c = 0; c < citiesVisited.length; c++) {
-                 if (citiesVisited[c].city_id == city.city_id) {
-                     citiesLink += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                   citiesVisited[c].name_ru + "</a>" + ", ";
-                     if (!distinctIds[regionsVisited[d].country_id]){
-                         countryLink += "<a id='" + citiesVisited[c].country_id + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                         getRusCountryName(citiesVisited[c].country_id) + "</a>" + ", ";
-                         distinctIds[citiesVisited[c].country_id] = true;
-                     }
-                 break;
-                 }
+             citiesLink += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                           getRusLocationName(city.city_id) + "</a>" + ", ";
+
+             if (!distinctIds[city.country_id]){
+                 countryLink += "<a id='" + city.country_id + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                           getRusCountryName(city.country_id) + "</a>" + ", ";
+                 distinctIds[city.country_id] = true;
              }
          });
 
@@ -142,7 +138,7 @@ function getRusCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
-    return result.name_ru;
+    return result[0].name_ru;
 }
 
 //2.10 Get russian Location name
@@ -150,7 +146,7 @@ function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
-    return result.name_ru;
+    return result[0].name_ru;
 }
 
 //03.00 Basic functions
