@@ -37,15 +37,27 @@ var processMyJson = function (result){
  //            $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(initial_data.continent, initial_data.country) });
              break;
          default:
-             getWorldPage();
+             getWorldPage(headerMenu);
+
      }
  }
 
-  function getWorldPage(){
+  function getWorldPage( callback ){
   //Create world page
       $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML() });
 
   //Create arrays with all the traveler's data
-  $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent() });
+      $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent() });
+
+      callback();
   }
+
+var headerMenu = function populateHeaderMenu(){
+    //Creation of Country Selector
+    document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();
+    //Creation of City Selector
+    document.getElementById("ContentBody_CityList").innerHTML = getSelectorOfListOfCities_HTML();
+	//Creation of Story Selector
+//    document.getElementById("ContentBody_StoryList").innerHTML = HTML_SelectorListOfStories();
+    }
 

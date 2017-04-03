@@ -149,6 +149,79 @@ function getRusLocationName(locationId) {
     return result[0].name_ru;
 }
 
+//02.11 This method creates selector of countries
+function getSelectorOfListOfCountries_HTML () {
+    var result = "";
+    $.each (countriesVisited, function( i, country ) {
+        result += "<li><a id='" + country.short_name + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
+    });
+    result += "</select>";
+    return result;
+}
+
+//02.12 This method creates selector of cities
+function getSelectorOfListOfCities_HTML(){
+    var result = "";
+    $.each (countriesVisited, function( i, country ){
+        result += "<li class='dropdown-header'>" + country.name_ru + "</li>";
+
+        var citiesList = $.grep (citiesVisited, function( n, i ) {
+                                         return (n.getCountryId() == country.short_name)
+                                     });
+
+        $.each (citiesList, function( i, city ){
+            result += "<li><a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ru + "</a></li>";
+        });
+    });
+    return result;
+}
+
+//02.13 This method creates selector of stories
+function HTML_SelectorListOfStories(){
+    var result = "";
+    var storiesArrayList = [];
+    var storiesTextList = "пусто";
+    var ListOfStories;
+    for (var s = 0; s < visites.length; s++) {
+        if (visites[s].story != "" && visites[s].story != null) {
+            var storyDate = visites[s].date.split(".")
+            var storyMonth = storyDate[1]-1;
+
+            if (storyDate[1].charAt(0) == 0) {
+                storyMonth = storyDate[1].substring(1, 2)-1;
+            }
+
+            if (visites[s].story == 1) {
+                storiesTextList += "<li><a title='Перейти к истории' id='" + visites[s].id + visites[s].date +
+						           "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
+                                   storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
+            }
+			else {
+			    if (visites[s].story != 2) {
+                storiesTextList += "<li><a title='Перейти к истории' href='" + visites[s].story + "' target='_blank'>" +
+                                   storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
+                }
+			}
+            //else {
+            //    storiesTextList += "<li><a title='Перейти к истории' id='" + visites[s].story2 +
+			//			           "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
+            //                       storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
+            //}
+
+
+        }
+    }
+
+    if (storiesTextList.length > 5) {
+        ListOfStories = storiesTextList.substring(5, storiesTextList.length);
+    }
+    else {
+        ListOfStories = storiesTextList;
+    }
+
+    return result += ListOfStories;
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 
