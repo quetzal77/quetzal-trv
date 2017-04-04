@@ -31,6 +31,8 @@ function drawMap(){
       return result;
  }
 
+var VisitYear;
+
  //02.03 This method creates CUSTOM list of visits
  function createCustomListOfVisites(visitesList){
      //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
@@ -40,7 +42,6 @@ function drawMap(){
 
      $.each (visitesList, function( i, visit ) {
          //This section sets year
-         var VisitYear;
 
          if (visit.start_date.getFullYear() != VisitYear) {
              VisitYear = visit.start_date.getFullYear();
@@ -54,8 +55,11 @@ function drawMap(){
                        getRusMonthName(visit.start_date.getMonth()) + "</div>"
          }
          else {
-             result += "<div class='firstcell float_l'>" + visit.start_date.getDate() + " " + getRusMonthName(visit.start_date.getMonth()) + " - " +
-                       visit.end_date.getDate() + " " + getRusMonthName(visit.end_date.getMonth()) + "</div>"
+             result += "<div class='firstcell float_l'>" +
+                 visit.start_date.getDate() + " " +
+                 getRusMonthName(visit.start_date.getMonth() + 1) + " - " +
+                 visit.end_date.getDate() + " " +
+                 getRusMonthName(visit.end_date.getMonth() + 1) + "</div>"
          }
 
          //This section is responsible for displaying list of visited cities and countries

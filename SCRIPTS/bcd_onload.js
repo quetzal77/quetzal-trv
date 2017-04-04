@@ -16,10 +16,11 @@ var processMyJson = function (result){
     initial_data = result;
 
     //Add all the services used among all the classes
-    $.getScript("SCRIPTS/bcd_services.js");
-
-    //Create page content depend on type of selected location (world, country or city)
-    (initial_data) ? getPage() : getWorldPage();
+    $.getScript("SCRIPTS/bcd_services.js", function()
+    {
+        //Create page content depend on type of selected location (world, country or city)
+        (initial_data) ? getPage() : getWorldPage();
+    });
  }
 
  function getPage(){
@@ -47,12 +48,13 @@ var processMyJson = function (result){
       $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML() });
 
   //Create arrays with all the traveler's data
-      $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent() });
+      $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
 
-      callback();
+
   }
 
 var headerMenu = function populateHeaderMenu(){
+
     //Creation of Country Selector
     document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();
     //Creation of City Selector
