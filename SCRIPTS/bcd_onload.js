@@ -49,12 +49,9 @@ var processMyJson = function (result){
 
   //Create arrays with all the traveler's data
       $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
-
-
   }
 
 var headerMenu = function populateHeaderMenu(){
-
     //Creation of Country Selector
     document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();
     //Creation of City Selector

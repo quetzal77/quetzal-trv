@@ -31,7 +31,7 @@ function drawMap(){
       return result;
  }
 
-var VisitYear;
+ var VisitYear;
 
  //02.03 This method creates CUSTOM list of visits
  function createCustomListOfVisites(visitesList){

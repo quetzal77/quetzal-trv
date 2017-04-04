@@ -187,7 +187,7 @@ function populateContent(callback) {
         this.story = story;
 
         var startVisit = start_date.split(".");
-        this.start_date = new Date(startVisit[2],startVisit[1] - 1,startVisit[0]);
+        this.start_date = new Date(startVisit[2], startVisit[1] - 1, startVisit[0]);
         var endVisit = end_date.split(".");
         this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
     }
