@@ -78,5 +78,9 @@ p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; marg
 ----------------------------------------------------------*/
 #thalign {text-align: left;}
 
+/* SMALL COUNTRY FLAGS
+----------------------------------------------------------*/
+#andorra {width: 25px; height: 25px; background: url('/IMG/flag_n_emblem/small_flags/smallFlags.png') 0 0;}
+
 /* THE END
 ----------------------------------------------------------*/

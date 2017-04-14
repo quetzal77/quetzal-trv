@@ -52,7 +52,7 @@ function drawMap(){
          //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
          if (visit.start_date.toDateString() == visit.end_date.toDateString()) {
              result += "<div class='firstcell float_l'>" + visit.start_date.getDate() + " " +
-                       getRusMonthName(visit.start_date.getMonth()) + "</div>"
+                       getRusMonthName(visit.start_date.getMonth() + 1) + "</div>"
          }
          else {
              result += "<div class='firstcell float_l'>" +
