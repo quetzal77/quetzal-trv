@@ -491,6 +491,14 @@
       "name_ru": "Азербайджан",
       "name_nt": "Azərbaycan",
       "short_name": "azerbaijan"
+    },
+    {
+      "country_id": "US",
+      "continent_id": "NA",
+      "name": "United States of America",
+      "name_ru": "Соединённые Штаты Америки",
+      "name_nt": "",
+      "short_name": "unitedStatesOfAmerica"
     }
   ],
   "area": [
@@ -8900,6 +8908,363 @@
       "name": "Zərdab rayonu",
       "name_ru": "Зердабский район",
       "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-AK",
+      "name": "State of Alaska",
+      "name_ru": "Аляска",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-AL",
+      "name": "State of Alabama",
+      "name_ru": "Алабама",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-AR",
+      "name": "State of Arkansas",
+      "name_ru": "Арканзас",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-AZ",
+      "name": "State of Arizona",
+      "name_ru": "Аризона",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-CA",
+      "name": "State of California",
+      "name_ru": "Калифорния",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-CO",
+      "name": "State of Colorado",
+      "name_ru": "Колорадо",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-CT",
+      "name": "State of Connecticut",
+      "name_ru": "Коннектикут",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-DC",
+      "name": "Washington, D.C.",
+      "name_ru": "округ Колумбия",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-DE",
+      "name": "State of Delaware",
+      "name_ru": "Делавэр",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-FL",
+      "name": "State of Florida",
+      "name_ru": "Флорида",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-GA",
+      "name": "State of Georgia",
+      "name_ru": "Джорджия",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-HI",
+      "name": "State of Hawai`i",
+      "name_ru": "Гавайи",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-IA",
+      "name": "State of Iowa",
+      "name_ru": "Айова",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-ID",
+      "name": "State of Idaho",
+      "name_ru": "Айдахо",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-IL",
+      "name": "State of Illinois",
+      "name_ru": "Иллинойс",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-IN",
+      "name": "State of Indiana",
+      "name_ru": "Индиана",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-KS",
+      "name": "State of Kansas",
+      "name_ru": "Канзас",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-KY",
+      "name": "Commonwealth of Kentucky",
+      "name_ru": "Кентукки",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-LA",
+      "name": "State of Louisiana",
+      "name_ru": "Луизиана",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MA",
+      "name": "Commonwealth of Massachusetts",
+      "name_ru": "Массачусетс",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MD",
+      "name": "State of Maryland",
+      "name_ru": "Мэриленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-ME",
+      "name": "State of Maine",
+      "name_ru": "Мэн",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MI",
+      "name": "State of Michigan",
+      "name_ru": "Мичиган",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MN",
+      "name": "State of Minnesota",
+      "name_ru": "Миннесота",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MO",
+      "name": "State of Missouri",
+      "name_ru": "Миссури",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MS",
+      "name": "State of Mississippi",
+      "name_ru": "Миссисипи",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-MT",
+      "name": "State of Montana",
+      "name_ru": "Монтана",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NC",
+      "name": "State of North Carolina",
+      "name_ru": "Северная Каролина",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-ND",
+      "name": "State of North Dakota",
+      "name_ru": "Северная Дакота",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NE",
+      "name": "State of Nebraska",
+      "name_ru": "Небраска",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NH",
+      "name": "State of New Hampshire",
+      "name_ru": "Нью-Гэмпшир",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NJ",
+      "name": "State of New Jersey",
+      "name_ru": "Нью-Джерси",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NM",
+      "name": "State of New Mexico",
+      "name_ru": "Нью-Мексико",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NV",
+      "name": "State of Nevada",
+      "name_ru": "Невада",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-NY",
+      "name": "State of New York",
+      "name_ru": "Нью-Йорк",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-OH",
+      "name": "State of Ohio",
+      "name_ru": "Огайо",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-OK",
+      "name": "State of Oklahoma",
+      "name_ru": "Оклахома",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-OR",
+      "name": "State of Oregon",
+      "name_ru": "Орегон",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-PA",
+      "name": "Commonwealth of Pennsylvania",
+      "name_ru": "Пенсильвания",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-RI",
+      "name": "State of Rhode Island and Providence Plantations",
+      "name_ru": "Род-Айленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-SC",
+      "name": "State of South Carolina",
+      "name_ru": "Южная Каролина",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-SD",
+      "name": "State of South Dakota",
+      "name_ru": "Южная Дакота",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-TN",
+      "name": "State of Tennessee",
+      "name_ru": "Теннесси",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-TX",
+      "name": "State of Texas",
+      "name_ru": "Техас",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-UT",
+      "name": "State of Utah",
+      "name_ru": "Юта",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-VA",
+      "name": "Commonwealth of Virginia",
+      "name_ru": "Виргиния",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-VT",
+      "name": "State of Vermont",
+      "name_ru": "Вермонт",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-WA",
+      "name": "State of Washington",
+      "name_ru": "Вашингтон",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-WI",
+      "name": "State of Wisconsin",
+      "name_ru": "Висконсин",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-WV",
+      "name": "State of West Virginia",
+      "name_ru": "Западная Виргиния",
+      "active": "Y"
+    },
+    {
+      "country_id": "US",
+      "region_id": "US-WY",
+      "name": "State of Wyoming",
+      "name_ru": "Вайоминг",
+      "active": "Y"
     }
   ],
   "city": [
@@ -14922,6 +15287,18 @@
       "city_id": "baku",
       "lat": "40.3981852",
       "long": "49.8512466",
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "Washington, D.C.",
+      "name_nt": "",
+      "name_ru": "Вашингтон",
+      "capital": "true",
+      "region_id": "US-DC",
+      "city_id": "washington",
+      "lat": "38.896987",
+      "long": "-77.0363596",
       "image": "",
       "description": ""
     }

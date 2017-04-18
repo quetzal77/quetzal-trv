@@ -37,7 +37,7 @@ function createWorldPageFrontView() {
                 var country_ident = country.name_full.split(" - ");
                 listOfCountries += "<a href='index.html?country=" + country_ident[2].toLowerCase() + "' onmouseover='' style='cursor: pointer;'>" +
 //                "<img src='IMG/flag_n_emblem/small_flags/" + country_ident[2].toLowerCase() + ".png' title='" + country.name_full + "' class='countflag' /></a>"
-                "<img id='" + country_ident[2].toLowerCase() + "' src='img_trans.gif' title='" + country.name_full + "' class='countflag' /></a>"
+                "<img id='" + country_ident[2].toLowerCase() + "' src='/img/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
             }
         });
         result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) +
