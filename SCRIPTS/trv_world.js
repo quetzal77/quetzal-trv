@@ -35,9 +35,10 @@ function createWorldPageFrontView() {
             if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
                 var country_ident = country.name_full.split(" - ");
-                listOfCountries += "<a href='index.html?country=" + country_ident[2].toLowerCase() + "' onmouseover='' style='cursor: pointer;'>" +
-//                "<img src='IMG/flag_n_emblem/small_flags/" + country_ident[2].toLowerCase() + ".png' title='" + country.name_full + "' class='countflag' /></a>"
-                "<img id='" + country_ident[2].toLowerCase() + "' src='/img/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
+                var country_custom_id = country_ident[2].toLowerCase();
+                listOfCountries += "<a href='index.html?country=" + country_custom_id.replace(/\s/g, "") + "' onmouseover='' style='cursor: pointer;'>" +
+//                "<img src='IMG/flag_n_emblem/small_flags/" + country_custom_id + ".png' title='" + country.name_full + "' class='countflag' /></a>"
+                "<img id='" + country_custom_id.replace(/\s/g, "") + "' src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
             }
         });
         result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) +

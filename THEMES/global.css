@@ -5,7 +5,7 @@ body {background: #FFFFFF; padding-top: 70px; padding-bottom: 30px;}
 a, a:visited {margin: 0px; text-decoration: none; color: #483D8B;}
 a:hover {text-decoration: none; color: #696969;}
 
-.loading {background: url(/IMG/icon/loading.gif) no-repeat center;}
+.loading {background: url(../IMG/icon/loading.gif) no-repeat center;}
 
 .float_l {float: left;}
 
@@ -27,12 +27,10 @@ div.map {width: 700px; height: 480px; margin-left: 20%;}
 div.countryhead {width: 900px; height: 50px;  text-align:left; font-weight:bold; font-size: 14px; padding: 15px 0px 5px 0px; margin-left: 15%;}
 div.my_countries {width: 830px; font-weight: normal; padding: 5px 0px 5px 0px; margin-left: 15%; margin-right: 15%; text-align: left;}
 
-img.countflag {width: 25px; height: 25px; border: solid #c1d4cc 1px; border-radius: 3px; padding: 1px; margin: 3px;
-    background-image: url(/img/icon/smallclean.png);
+img.countflag {width: 35px; height: 35px; border: solid #c1d4cc 1px; border-radius: 3px; padding: 1px; margin: 3px;
+    background-image: url('../IMG/icon/smallClean35x35.png');
     background-repeat: no-repeat;
 }
-
-img#china { background-position: -100px -100px; }
 
 div.visityear {width: 200px; font-weight:bold;  padding: 0px 0px 0px 145px; text-align: left; margin-left: 20%}
 div.firstcell {width: 200px; text-align:right; padding: 0px 10px 0px 25px; margin-left: 20%;}
@@ -85,7 +83,48 @@ p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; marg
 
 /* SMALL COUNTRY FLAGS
 ----------------------------------------------------------*/
-#andorra {width: 25px; height: 25px; background: url('/IMG/flag_n_emblem/small_flags/smallFlags.png') 0 0;}
+img#abkhazia { background-position: -391px -741px; }
+img#albania { background-position: -197px -3px; }
+img#andorra { background-position: -3px -3px; }
+img#austria { background-position: -430px -3px; }
+img#azerbaijan { background-position: -585px -3px; }
+img#belarus { background-position: -42px -108px; }
+img#belgium { background-position: -80px -55px; }
+img#china { background-position: -508px -108px; }
+img#cyprus { background-position: -120px -161px; }
+img#czech { background-position: -158px -161px; }
+img#denmark { background-position: -275px -161px; }
+img#egypt { background-position: -508px -161px; }
+img#estonia { background-position: -469px -161px; }
+img#finland { background-position: -42px -214px; }
+img#france { background-position: -236px -214px; }
+img#gibraltar { background-position: -546px -216px; }
+img#germany { background-position: -197px -161px; }
+img#hungary { background-position: -546px -266px; }
+img#israel { background-position: -3px -319px; }
+img#india { background-position: -80px -319px; }
+img#italy { background-position: -275px -319px; }
+img#kosovo { background-position: -508px -741px; }
+img#latvia { background-position: -585px -372px; }
+img#lithuania { background-position: -508px -372px; }
+img#liechtenstein { background-position: -352px -372px; }
+img#luxembourg { background-position: -546px -372px; }
+img#netherlands { background-position: -469px -477px; }
+img#northerncyprus { background-position: -430px -741px; }
+img#norway { background-position: -508px -477px; }
+img#macedonia { background-position: -275px -424px; }
+img#malta { background-position: -624px -424px; }
+img#moldova { background-position: -80px -424px; }
+img#monaco { background-position: -42px -424px; }
+img#montenegro { background-position: -119px -424px; }
+img#spain { background-position: -624px -161px; }
+img#switzerland { background-position: -313px -108px; }
+img#transnistria { background-position: -469px -741px; }
+img#turkey { background-position: -81px -688px; }
+img#unitedarabianemirates { background-position: -42px -3px; }
+img#unitedstatesofamerica { background-position: -391px -688px; }
+img#uzbekistan { background-position: -468px -688px; }
+img#vatican { background-position: -508px -688px; }
 
 /* THE END
 ----------------------------------------------------------*/
