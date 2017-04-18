@@ -24,12 +24,12 @@ var processMyJson = function (result){
  }
 
  function getPage(){
-     var location = window.location.href.substring(url.length, window.location.href.length);
+     var location = window.location.href.substring(url.length+1, window.location.href.length);
      var local = location.split("=");
 
      switch (local[0]) {
          case "country":
- //            $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(initial_data.continent, initial_data.country, local[1])) });
+             $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(local[1]) });
              break;
          case "city":
  //            $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(initial_data.continent, initial_data.country) });

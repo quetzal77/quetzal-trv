@@ -145,6 +145,14 @@ function getRusCountryName(countryId) {
     return result[0].name_ru;
 }
 
+//2.10 Get full country name
+function getFullCountryName(countryId) {
+    result = $.grep (countriesVisited, function( n, i ) {
+                return (n.short_name == countryId)
+            });
+    return result[0].setFullCountryName();
+}
+
 //2.10 Get russian Location name
 function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
@@ -157,7 +165,7 @@ function getRusLocationName(locationId) {
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
     $.each (countriesVisited, function( i, country ) {
-        result += "<li><a id='" + country.short_name + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
+        result += "<li><a href='index.html?country=" + country.short_name + "' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
     });
     result += "</select>";
     return result;
