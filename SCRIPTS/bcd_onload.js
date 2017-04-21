@@ -53,6 +53,7 @@ var processMyJson = function (result){
 
   function getCountryPage( country_id ){
   //Create country page
+      window.history.pushState("object or string", "Title", "index.html?country="+country_id);
       $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
   }
 
