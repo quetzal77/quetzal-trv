@@ -51,6 +51,11 @@ var processMyJson = function (result){
       $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
   }
 
+  function getCountryPage( country_id ){
+  //Create country page
+      $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
+  }
+
 var headerMenu = function populateHeaderMenu(){
     //Creation of Country Selector
     document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();

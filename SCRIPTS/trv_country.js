@@ -3,7 +3,8 @@
 //05.01 Creator of page
 function createCountryPage_HTML(countryId) {
     //Add Country main content
-    document.getElementById("someElement").innerHTML = getFullCountryName_HTML(countryId) +
+    document.getElementById("mainSection").innerHTML = //getFullCountryName_HTML(countryId) +
+   "<div class='countrylabel'>XXX - XXX - XXX</div>"
    "<div id='mapdiv'></div>";
 //    "<div id='countryToVisitSelector'>" +
 //    "<div class='switchlink_l float_l'>Мои локации...</div>" +
