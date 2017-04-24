@@ -1,6 +1,6 @@
 ﻿// (c) ammap.com | SVG (in JSON format) map of Cyprus - Northern Cyprus - Low
 // areas: {id:"CY-01"},{id:"CY-02"},{id:"CY-03"},{id:"CY-04"},{id:"CY-05"},{id:"CT-GA"},{id:"CT-GI"},{id:"CT-GU"},{id:"CT-IS"},{id:"CT-LE"},{id:"UN-BZ"},{id:"GB-AX"},{id:"GB-DX"}
-AmCharts.maps.kibrisLow={
+AmCharts.maps.northerncyprusLow={
 	"svg": {
 		"defs": {
 			"amcharts:ammap": {

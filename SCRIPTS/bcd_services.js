@@ -7,6 +7,7 @@ function drawMap(){
      $.getScript("SCRIPTS/MAPS/custommap.js");
      $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function(){
      $('#mapdiv').removeClass('loading');
+     $('#mapdiv').addClass('map');
      CreateMap(local[1]);
      });
  }
@@ -131,13 +132,22 @@ function setLocationNumberWithCorrectEnd (number) {
     return number + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
-//02.08 Return russian month name
+//02.08 Return russian word "region" with correct end
+function setRegionsNumberWithCorrectEnd (number) {
+    var word = "регион";
+    var end1 = "";
+    var end234 = "а";
+    var endrest = "ов";
+    return number + " " + parseWord  (word, end1, end234, endrest, number);
+}
+
+//02.09 Return russian month name
 function getRusMonthName (number) {
     var monthSList = {1: "января", 2: "февраля", 3: "марта", 4: "апреля", 5: "мая", 6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря"};
     return monthSList[number];
 }
 
-//2.09 Get russian country name
+//2.10 Get russian country name
 function getRusCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
@@ -145,7 +155,7 @@ function getRusCountryName(countryId) {
     return result[0].name_ru;
 }
 
-//2.10 Get full country name
+//2.11 Get full country name
 function getFullCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
@@ -153,7 +163,7 @@ function getFullCountryName(countryId) {
     return result[0].setFullCountryName();
 }
 
-//2.10 Get russian Location name
+//2.12 Get russian Location name
 function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
@@ -161,17 +171,17 @@ function getRusLocationName(locationId) {
     return result[0].name_ru;
 }
 
-//02.11 This method creates selector of countries
+//02.13 This method creates selector of countries
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
     $.each (countriesVisited, function( i, country ) {
-        result += "<li><a href='index.html?country=" + country.short_name + "' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
+        result += "<li><a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
     });
     result += "</select>";
     return result;
 }
 
-//02.12 This method creates selector of cities
+//02.14 This method creates selector of cities
 function getSelectorOfListOfCities_HTML(){
     var result = "";
     $.each (countriesVisited, function( i, country ){
@@ -188,7 +198,7 @@ function getSelectorOfListOfCities_HTML(){
     return result;
 }
 
-//02.13 This method creates selector of stories
+//02.15 This method creates selector of stories
 function HTML_SelectorListOfStories(){
     var result = "";
     var storiesArrayList = [];

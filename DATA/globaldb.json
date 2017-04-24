@@ -98,7 +98,7 @@
       "name": "Abkhazia",
       "name_ru": "Абхазия",
       "name_nt": "Апсны",
-      "short_name": "abhazia"
+      "short_name": "abkhazia"
     },
     {
       "country_id": "AE",
@@ -106,7 +106,7 @@
       "name": "United Arabian Emirates",
       "name_ru": "Объединенные Арабские Эмираты",
       "name_nt": "الإمارات العربية المتحدة",
-      "short_name": "unitedArabEmirates"
+      "short_name": "unitedarabianemirates"
     },
     {
       "country_id": "CN",
@@ -122,7 +122,7 @@
       "name": "Northern Cyprus",
       "name_ru": "Северный Кипр",
       "name_nt": "Kuzey Kıbrıs",
-      "short_name": "kibris"
+      "short_name": "northerncyprus"
     },
     {
       "country_id": "CY",

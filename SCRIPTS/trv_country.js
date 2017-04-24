@@ -2,53 +2,56 @@
 
 //05.01 Creator of page
 function createCountryPage_HTML(countryId) {
+    // Set global variable with type of map to be opened
+    local = [];
+    local.push(countryId, "country");
+
     //Add Country main content
     document.getElementById("mainSection").innerHTML = getFullCountryName_HTML(countryId) +
-//   "<div class='countrylabel'>XXX - " + countryId + " - XXX</div>"
-   "<div id='mapdiv'></div>";
-//    "<div id='countryToVisitSelector'>" +
-//    "<div class='switchlink_l float_l'>Мои локации...</div>" +
-//    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-//    "<div class='clear' />" + HTMLListOfCities(countryId) + ListOfRegionsAndCities(countryId) + "</div>" +
-//   HTML_FlagEmblem(countryId);
-//
-//    //Add script for map creation
-//    var map_path = 'SCRIPTS/MAPS/' + countryId + 'Low.js';
-//    console.log("Append map ", map_path);
-//
-//    $.getScript(map_path, function(){
-//        console.log("Map appended");
-//        //Add country map to page
-//        $('#mapdiv').addClass('map');
-//		CreateMap(countryId);
-//    });
-    //Add name, flag and emblem of country
-    //document.getElementById("left_block").innerHTML = HTML_CountryName(countryId) + HTML_FlagEmblem(countryId);
+   "<div id='mapdiv'></div>" +
+    "<div id='countryToVisitSelector'>" +
+    "<div class='switchlink_l float_l'>Мои локации...</div>" +
+    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+    "<div class='clear' />" +
+    getListOfCities_HTML(countryId) + // ListOfRegionsAndCities(countryId) + "</div>" +
+    getFlagEmblem_HTML(countryId);
+
+    //Creation of world map
+    drawMap();
 }
 
-//function HTML_CreatorOfCountryPage(countryId) {
-//    //Add script for map creation
-//    $('<script src="SCRIPTS/MAPS/' + countryId + 'Low.js" type="text/javascript"></script>').appendTo("body");
+//05.02 This method creates content for Country page
+function getListOfCities_HTML(countryId) {
+    var result = "";
 
-//    //Add name, flag and emblem of country
-//    //document.getElementById("left_block").innerHTML = HTML_CountryName(countryId) + HTML_FlagEmblem(countryId);
+    var country = $.grep (countriesVisited, function( n, i ) {
+                        return (n.short_name == countryId)
+                  });
+    //01. Total number of visited cities
+    result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country[0].getNumberOfVisitedCities()) +
+              " (" + setRegionsNumberWithCorrectEnd(country[0].getNumberOfVisitedRegions()) + ")</div>";
 
-//    //Add Country main content
-//    document.getElementById("someElement").innerHTML = HTML_CountryName(countryId) +
-//	  "<div id='mapdiv' class='map'></div>" +
-//    "<div id='countryToVisitSelector'>" +
-//    "<div class='switchlink_l float_l'>Мои локации...</div>" +
-//    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-//    "<div class='clear' />" + HTMLListOfCities(countryId) + ListOfRegionsAndCities(countryId) + "</div>" +
-//	HTML_FlagEmblem(countryId);
+    //02. Total number and link to stories
+    var storiesArrayList = [];
+    var storiesTextList = "нет";
+    var ListOfStories;
 
-//    //Add country map to page
-//    CreateMap(countryId);
-//}
+    //03. Link to photos
 
-////05.02 This method creates content for Country page
-//function HTMLListOfCities(countryId) {
-//    var result = "";
+    //04. Link to technical information
+    var techinfo_1 = country[0].short_name + "," + country[0].getListOfVisitedRegions();
+
+    var techinfo_2 = country[0].short_name + ";";
+    $.each (citiesVisited, function( j, city ){
+        if (city.getCountryId() == country[0].short_name) {
+            techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
+        }
+    });
+
+    result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
+    "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
+    "</div>";
+
 //    for (var a = 0; a < ArrayOfVisitedCountries.length; a++) {
 //        if (ArrayOfVisitedCountries[a].countryName == countryId) {
 //            //01. Total number of visited cities
@@ -163,8 +166,8 @@ function createCountryPage_HTML(countryId) {
 //            break;
 //        }
 //    }
-//    return result;
-//}
+    return result;
+}
 
 //05.03 Creation of Name section
 function getFullCountryName_HTML(countryId) {
@@ -172,16 +175,16 @@ function getFullCountryName_HTML(countryId) {
     return result;
 }
 
-////05.04 Creation of Flag and Emblem section
-//function HTML_FlagEmblem(countryId) {
-//    var result = "<div class='countryEmbFlag'>&nbsp;</div>" +
-//	"<div class='countryEmbFlag'><img alt='emb of the " + countryId + "' title='emb of the " + countryId +
-//    "' src='IMG/flag_n_emblem/" + countryId + "_emb.png' class='country_emb' />" +
-//	"<img alt='flag of the " + countryId + "' title='flag of the " + countryId +
-//    "' src='IMG/flag_n_emblem/" + countryId + "_flag.png' class='country_flag' /></div>";
-//    return result;
-//}
-//
+//05.04 Creation of Flag and Emblem section
+function getFlagEmblem_HTML(countryId) {
+    var result = "<div class='countryEmbFlag'>&nbsp;</div>" +
+	"<div class='countryEmbFlag'><img alt='emb of the " + countryId + "' title='emb of the " + countryId +
+    "' src='IMG/flag_n_emblem/" + countryId + "_emb.png' class='country_emb' />" +
+	"<img alt='flag of the " + countryId + "' title='flag of the " + countryId +
+    "' src='IMG/flag_n_emblem/" + countryId + "_flag.png' class='country_flag' /></div>";
+    return result;
+}
+
 ////05.05 Country page with list of Visits
 //function OpenListOfCountryVisits(countryId) {
 //    var result = "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +

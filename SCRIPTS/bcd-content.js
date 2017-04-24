@@ -172,6 +172,24 @@ function populateContent(callback) {
                    }
                    return result;
                }
+               this.getNumberOfVisitedRegions = function () {
+                   var result = 0;
+                   for (var i = 0; i < regionsVisited.length; i++){
+                       if (regionsVisited[i].country_id == this.country_id) {
+                            result = result + 1;
+                       }
+                   }
+                   return result;
+               }
+               this.getListOfVisitedRegions = function () {
+                   var result = "";
+                   for (var i = 0; i < regionsVisited.length; i++){
+                       if (regionsVisited[i].country_id == this.country_id) {
+                            result += regionsVisited[i].region_id + ",";
+                       }
+                   }
+                   return result;
+               }
                this.setFullCountryName = function () {
                    return this.name_ru + " - " + this.name_nt + " - " + this.name;
                }
