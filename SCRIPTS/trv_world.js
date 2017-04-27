@@ -7,6 +7,9 @@ function createWorldPage_HTML () {
     local = [];
     local.push("world", "none");
 
+    // Set url
+    window.history.pushState("object or string", "Title", "index.html");
+
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =
         "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
@@ -35,7 +38,8 @@ function createWorldPageFrontView() {
             if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
                 var country_ident = country.name_full.split(" - ");
-                var country_custom_id = country_ident[2].toLowerCase();
+                var country_custom_id = (country_ident.length>2) ? country_ident[2].toLowerCase() : country_ident[1].toLowerCase();
+
                 listOfCountries += "<a id='" + country_custom_id.replace(/\s/g, "") + "' title='Перейти к информации о стране' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
 //                "<a href='index.html?country=" + country_custom_id.replace(/\s/g, "") + "' onmouseover='' style='cursor: pointer;'>" +
                 "<img id='" + country_custom_id.replace(/\s/g, "") + "' src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
@@ -68,7 +72,7 @@ function OpenListOfWorldVisits() {
         "<br><br>" + createListOfVisites();
 }
 
-//04.05 World page with list of Visits
+//04.05 World page with list of Countries
 function OpenListOfWorldCountries() {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'>Мои страны...</div>" +

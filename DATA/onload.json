@@ -11,6 +11,10 @@
     {
       "continent_id": "EU",
       "name_ru": "Европа"
+    },
+    {
+      "continent_id": "NA",
+      "name_ru": "Северная Америка"
     }
   ],
   "country": [
@@ -198,6 +202,11 @@
       "country_id": "SI",
       "continent_id": "EU",
       "name_full": "Словения - Slovenija - Slovenia"
+    },
+    {
+      "country_id": "US",
+      "continent_id": "NA",
+      "name_full": "Соединённые Штаты Америки - United States of America"
     },
     {
       "country_id": "TR",

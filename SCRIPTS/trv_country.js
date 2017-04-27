@@ -6,14 +6,16 @@ function createCountryPage_HTML(countryId) {
     local = [];
     local.push(countryId, "country");
 
+    // Set url
+    window.history.pushState("object or string", "Title", "index.html?country="+countryId);
+
     //Add Country main content
     document.getElementById("mainSection").innerHTML = getFullCountryName_HTML(countryId) +
    "<div id='mapdiv'></div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
     "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-    "<div class='clear' />" +
-    getListOfCities_HTML(countryId) + // ListOfRegionsAndCities(countryId) + "</div>" +
+    "<div class='clear' />" + getCountryDetails_HTML(countryId) + getCitiesAndRegionsList_HTML(countryId) + "</div>" +
     getFlagEmblem_HTML(countryId);
 
     //Creation of world map
@@ -21,46 +23,21 @@ function createCountryPage_HTML(countryId) {
 }
 
 //05.02 This method creates content for Country page
-function getListOfCities_HTML(countryId) {
+function getCountryDetails_HTML(countryId) {
     var result = "";
 
     var country = $.grep (countriesVisited, function( n, i ) {
-                        return (n.short_name == countryId)
-                  });
+        return (n.short_name == countryId)
+   });
+
     //01. Total number of visited cities
     result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country[0].getNumberOfVisitedCities()) +
               " (" + setRegionsNumberWithCorrectEnd(country[0].getNumberOfVisitedRegions()) + ")</div>";
 
     //02. Total number and link to stories
-    var storiesArrayList = [];
-    var storiesTextList = "нет";
-    var ListOfStories;
-
-    //03. Link to photos
-
-    //04. Link to technical information
-    var techinfo_1 = country[0].short_name + "," + country[0].getListOfVisitedRegions();
-
-    var techinfo_2 = country[0].short_name + ";";
-    $.each (citiesVisited, function( j, city ){
-        if (city.getCountryId() == country[0].short_name) {
-            techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
-        }
-    });
-
-    result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
-    "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
-    "</div>";
-
-//    for (var a = 0; a < ArrayOfVisitedCountries.length; a++) {
-//        if (ArrayOfVisitedCountries[a].countryName == countryId) {
-//            //01. Total number of visited cities
-//            result += "<div class='countrydetail'><b>Всего посещено:</b> " + EndOfLocationWord(ArrayOfVisitedCountries[a].visitedCitiesList.length) + " (" + EndOfRegionWord(ArrayOfVisitedCountries[a].visitedRegionsList.length) + ")</div>"
-//
-//            //02. Total number and link to stories
 //            var storiesArrayList = [];
 //            var storiesTextList = "нет";
-//            var ListOfStories;
+    var ListOfStories = "";
 //            for (var s = 0; s < visites.length; s++) {
 //                if (visites[s].id == ArrayOfVisitedCountries[a].id && visites[s].story != "") {
 //                    var storyDate = visites[s].date.split(".")
@@ -102,70 +79,56 @@ function getListOfCities_HTML(countryId) {
 //                ListOfStories = storiesTextList;
 //            }
 //
-//            result += "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>"
-//
-//            //03. Link to photos
-//            var photoAlbumsNum = 0;
-//            var photoAlbumLink = "";
-//            for (var s = 0; s < ArrayOfVisitsSorted.length; s++) {
-//                if (ArrayOfVisitsSorted[s].id == ArrayOfVisitedCountries[a].id && ArrayOfVisitsSorted[s].photos != "") {
-//                    photoAlbumsNum += 1;
-//                    var VisitedCities = ArrayOfVisitsSorted[s].place.split(" ");
-//                    var VisitedCitiesText = "";
-//                    for (var r = 0; r < VisitedCities.length; r++) {
-//                        for (var t = 0; t < cities.length; t++) {
-//                            if (cities[t].id == VisitedCities[r]) {
-//                                VisitedCitiesText += cities[t].title_ru + ", ";
-//                            }
-//                        }
-//                    }
-//
-//                    var VisitDateToShow = "";
-//                    if (ArrayOfVisitsSorted[s].date.toDateString() == ArrayOfVisitsSorted[s].enddate.toDateString()) {
-//                        var Day = ArrayOfVisitsSorted[s].date.getDate();
-//                        var Month = ArrayOfVisitsSorted[s].date.getMonth();
-//                        var Year = ArrayOfVisitsSorted[s].date.getFullYear();
-//                        VisitDateToShow += Day + " " + russianMonth(Month) + "." + Year;
-//                    }
-//                    else {
-//                        var StartDay = ArrayOfVisitsSorted[s].date.getDate();
-//                        var StartMonth = ArrayOfVisitsSorted[s].date.getMonth();
-//                        var EndDay = ArrayOfVisitsSorted[s].enddate.getDate();
-//                        var EndMonth = ArrayOfVisitsSorted[s].enddate.getMonth();
-//                        var EndYear = ArrayOfVisitsSorted[s].enddate.getFullYear();
-//                        VisitDateToShow = StartDay + " " + russianMonth(StartMonth) + " - " + EndDay + " " + russianMonth(EndMonth) + "." + EndYear;
-//                    }
-//
-//                    var ListOfCitiesToShow = VisitedCitiesText.substring(0, VisitedCitiesText.length - 2);
-//                    photoAlbumLink += "<a href='" + ArrayOfVisitsSorted[s].photos + "' title='" + ListOfCitiesToShow + "' target='_blank'>" + VisitDateToShow + "; </a>";
-//                }
-//            }
-//
-//            result += "<div class='countrydetail'><b>Фото:</b> " + EndOfPhotoalbumWord(photoAlbumsNum) + "; " + photoAlbumLink + "</div>";
-//            //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
-//
-//            //04. Link to technical information
-//            var techinfo_1 = ArrayOfVisitedCountries[a].countryName + ",";
-//            for (var x = 0; x < ArrayOfVisitedCountries[a].visitedRegionsList.length; x++) {
-//                techinfo_1 += ArrayOfVisitedCountries[a].visitedRegionsList[x] + ",";
-//            }
-//
-//            var techinfo_2 = ArrayOfVisitedCountries[a].countryName + ";";
-//            for (var m = 0; m < ArrayOfVisitedCountries[a].visitedCitiesList.length; m++) {
-//                for (var t = 0; t < cities.length; t++) {
-//                    if (cities[t].id == ArrayOfVisitedCountries[a].visitedCitiesList[m]) {
-//                        techinfo_2 += cities[t].title + "," + cities[t].lat + "," + cities[t].long + ";";
-//                        break;
-//                    }
-//                }
-//            }
-//
-//            result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
-//            "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
-//            "</div>";
-//            break;
-//        }
-//    }
+            result += "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>"
+
+    //03. Link to photos
+    var photoAlbumLinks = "";
+    $.each (visitsSorted, function( i, visit ){
+        var citiesShownInPhotoAlbum = "";
+        var VisitDateToShow = "";
+        var StartDay = visit.start_date.getDate();
+        var StartMonth = visit.start_date.getMonth() + 1;
+        var StartYear = visit.start_date.getFullYear();
+        var EndDay = visit.end_date.getDate();
+        var EndMonth = visit.end_date.getMonth() + 1;
+        var EndYear = visit.end_date.getFullYear();
+            if (visit.start_date == visit.end_date) {
+                VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear;
+            }
+            else if (StartYear == EndYear) {
+                VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
+            }
+            else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;}
+
+        $.each (visit.cities, function( i, city ){
+            if (city.country_id == country[0].short_name && visit.photos != undefined) {
+                citiesShownInPhotoAlbum += getRusLocationName(city.city_id) + ", " ;
+            }
+        });
+
+        if (citiesShownInPhotoAlbum != ""){
+            photoAlbumLinks += "<a href='" + visit.photos + "' title='" + citiesShownInPhotoAlbum.substring(0, citiesShownInPhotoAlbum.length-2) + "' target='_blank'>" + VisitDateToShow + "; </a>";
+        }
+
+    });
+
+    result += "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>";
+    //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
+
+    //04. Link to technical information
+    var techinfo_1 = country[0].short_name + "," + country[0].getListOfVisitedRegions();
+
+    var techinfo_2 = country[0].short_name + ";";
+    $.each (citiesVisited, function( j, city ){
+        if (city.getCountryId() == country[0].short_name) {
+            techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
+        }
+    });
+
+    result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
+    "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
+    "</div>";
+
     return result;
 }
 
@@ -185,61 +148,50 @@ function getFlagEmblem_HTML(countryId) {
     return result;
 }
 
-////05.05 Country page with list of Visits
-//function OpenListOfCountryVisits(countryId) {
-//    var result = "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +
-//        "<div class='switchlink float_l'>Мои визиты...</div><div class='clear' />" +
-//        HTMLListOfWCountryVisits(countryId);
-//    document.getElementById("countryToVisitSelector").innerHTML = result;
-//}
-//
-////05.06 World page with list of Visits
-//function OpenListOfCountryCities(countryId) {
-//    var result = "<div class='switchlink_l float_l'>Мои локации...</div>" +
-//        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-//        "<div class='clear' />" + HTMLListOfCities(countryId) + ListOfRegionsAndCities(countryId);
-//    document.getElementById("countryToVisitSelector").innerHTML = result;
-//}
-//
-////05.07 List of regions and cities
-//function ListOfRegionsAndCities(countryId) {
-//    var result = "<div class='countrydetail'><b>Полный список посещенных регионов и локаций:</b></div>";
-//    var listOfRegionAccended = [];
-//
-//    for (var x = 0; x < ArrayOfVisitedCountries.length; x++) {
-//        if (ArrayOfVisitedCountries[x].countryName == countryId) {
-//            for (var c = 0; c < ArrayOfVisitedCountries[x].visitedRegionsList.length; c++) {
-//                if (ArrayOfVisitedCountries[x].visitedRegionsList[c] != undefined) {
-//                    var regionObject = {}
-//                    regionObject.id = ArrayOfVisitedCountries[x].visitedRegionsList[c];
-//                    regionObject.text = HTML_FullRegionName(ArrayOfVisitedCountries[x].id, ArrayOfVisitedCountries[x].visitedRegionsList[c]);
-//                    listOfRegionAccended.push(regionObject);
-//                }
-//            }
-//
-//            listOfRegionAccended.sort(dynamicSort("text"));
-//
-//            for (var l = 0; l < listOfRegionAccended.length; l++) {
-//                result += "<div class='clear countryregion'><b>Регион:</b> " + listOfRegionAccended[l].text + "</div>";
-//                result += "<div class='cityrow'>&#8226; <b>Локации: </b>";
-//                var ListOfLocations = "";
-//                for (var v = 0; v < ArrayOfVisitedCountries[x].visitedCitiesList.length; v++) {
-//                    for (var b = 0; b < cities.length; b++) {
-//                        if (ArrayOfVisitedCountries[x].visitedCitiesList[v] == cities[b].id && listOfRegionAccended[l].id == cities[b].mc_name) {
-//                            ListOfLocations += "<a title='Перейти к информации о локации' id='" + ArrayOfVisitedCountries[x].visitedCitiesList[v] +
-//							"' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-//                            HTML_ShortLocationName(ArrayOfVisitedCountries[x].visitedCitiesList[v]) + "</a>, ";
-//                        }
-//                    }
-//                }
-//                result += ListOfLocations.substring(0, ListOfLocations.length - 2) + "</div>"
-//            }
-//        }
-//    }
-//
-//    return result
-//}
-//
+//05.05 Country page with list of Visits
+function OpenListOfCountryVisits(countryId) {
+    document.getElementById("countryToVisitSelector").innerHTML =
+        "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +
+        "<div class='switchlink float_l'>Мои визиты...</div><div class='clear' />" +
+        createListOfVisites();
+}
+
+//05.06 Cpountrie page with list of Cities
+function OpenListOfCountryCities(countryId) {
+    document.getElementById("countryToVisitSelector").innerHTML =
+        "<div class='switchlink_l float_l'>Мои локации...</div>" +
+        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+        "<div class='clear' />" + getCountryDetails_HTML(countryId) + getCitiesAndRegionsList_HTML(countryId);
+    ;
+}
+
+//05.07 List of regions and cities
+function getCitiesAndRegionsList_HTML (countryId) {
+    var country = $.grep (countriesVisited, function( n, i ) {
+        return (n.short_name == countryId)
+   });
+
+    var result = "<div class='countrydetail'><b>Полный список посещенных регионов и локаций:</b></div>";
+
+    $.each (regionsVisited, function( i, region ){
+        if (region.country_id == country[0].country_id) {
+            result += "<div class='clear countryregion'><b>Регион:</b> " + region.setFullRegionName() + "</div>";
+            result += "<div class='cityrow'>&#8226; <b>Локации: </b>";
+            var ListOfLocations = "";
+            $.each (citiesVisited, function( i, city ){
+                    if (region.region_id == city.region_id) {
+                        ListOfLocations += "<a title='Перейти к информации о локации' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
+                                           " onmouseover='' style='cursor: pointer;'>" + city.name_ru + "</a>, ";
+                    }
+
+                });
+            result += ListOfLocations.substring(0, ListOfLocations.length - 2) + "</div>";
+        }
+    });
+
+    return result
+}
+
 ////05.08 This method creates list of country visits
 //function HTMLListOfWCountryVisits(countryName) {
 //    var CountryId = CountryIdReturner(countryName);

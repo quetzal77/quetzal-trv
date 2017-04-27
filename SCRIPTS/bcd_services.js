@@ -21,9 +21,7 @@ function drawMap(){
               result = createCustomListOfVisites(visitsSorted);
               break;
           case "country":
-//              visitesList = $.grep (visitsSorted, function( n, i ) {
-//                 return (n.country_id == countryId)
-//              });
+              result = createCustomListOfVisites(visitsSorted);
               break;
           case "city":
               break;

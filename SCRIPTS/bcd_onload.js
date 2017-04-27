@@ -46,14 +46,17 @@ var processMyJson = function (result){
   function getWorldPage( callback ){
   //Create world page
       $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML() });
-
   //Create arrays with all the traveler's data
       $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
   }
 
   function getCountryPage( country_id ){
   //Create country page
-      window.history.pushState("object or string", "Title", "index.html?country="+country_id);
+      $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
+  }
+
+  function getCityPage( country_id ){
+  //Create country page
       $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
   }
 
