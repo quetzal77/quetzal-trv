@@ -36,8 +36,8 @@ div.visityear {width: 200px; font-weight:bold;  padding: 0px 0px 0px 145px; text
 div.firstcell {width: 200px; text-align:right; padding: 0px 10px 0px 25px; margin-left: 20%;}
 div.secondcell {text-align:left; width: 550px;}
 
-div.switchlink_l {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 15px; margin-left: 20%;}
-div.switchlink {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 15px;}
+div.switchlink_l {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 16px; margin-left: 20%;}
+div.switchlink {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 16px; padding: 0px 0px 0px 0px;}
 
 /* COUNTRIES PAGE (COUNTRY)
 ----------------------------------------------------------*/
@@ -48,7 +48,6 @@ div.countryEmbFlag {width: 100%;}
 img.country_emb {width: 150px; height: 150px; margin-right: 75px; margin-left: 25%}
 img.country_flag {width: 300px; height: 150px; border: 2px solid; margin-left: 75px;}
 
-div.switchlink {min-width: 370px; height: 30px; text-align:center; padding: 0px 0px 0px 0px; font-weight:bold; font-size: 16px;}
 a.link {text-decoration: underline;}
 
 div.countryregion {text-align:left; font-size: 12px; padding: 0px 45px 0px 65px; margin-left: 20%}

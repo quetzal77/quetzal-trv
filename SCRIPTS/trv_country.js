@@ -10,12 +10,17 @@ function createCountryPage_HTML(countryId) {
     window.history.pushState("object or string", "Title", "index.html?country="+countryId);
 
     //Add Country main content
-    document.getElementById("mainSection").innerHTML = getFullCountryName_HTML(countryId) +
-   "<div id='mapdiv'></div>" +
+    var country = $.grep (countriesVisited, function( n, i ) {
+        return (n.short_name == countryId)
+    });
+
+    document.getElementById("mainSection").innerHTML =
+    "<div class='countrylabel'>" + country[0].setFullCountryName() + "</div>" +
+    "<div id='mapdiv'></div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
     "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-    "<div class='clear' />" + getCountryDetails_HTML(countryId) + getCitiesAndRegionsList_HTML(countryId) + "</div>" +
+    "<div class='clear' />" + getCountryDetails_HTML(country) + getCitiesAndRegionsList_HTML(country) + "</div>" +
     getFlagEmblem_HTML(countryId);
 
     //Creation of world map
@@ -23,12 +28,8 @@ function createCountryPage_HTML(countryId) {
 }
 
 //05.02 This method creates content for Country page
-function getCountryDetails_HTML(countryId) {
+function getCountryDetails_HTML(country) {
     var result = "";
-
-    var country = $.grep (countriesVisited, function( n, i ) {
-        return (n.short_name == countryId)
-   });
 
     //01. Total number of visited cities
     result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country[0].getNumberOfVisitedCities()) +
@@ -81,7 +82,7 @@ function getCountryDetails_HTML(countryId) {
 //
             result += "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>"
 
-    //03. Link to photos
+    //03. Link of photos
     var photoAlbumLinks = "";
     $.each (visitsSorted, function( i, visit ){
         var citiesShownInPhotoAlbum = "";
@@ -112,7 +113,7 @@ function getCountryDetails_HTML(countryId) {
 
     });
 
-    result += "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>";
+    result += (photoAlbumLinks != "") ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
     //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
 
     //04. Link to technical information
@@ -132,13 +133,7 @@ function getCountryDetails_HTML(countryId) {
     return result;
 }
 
-//05.03 Creation of Name section
-function getFullCountryName_HTML(countryId) {
-    var result = "<div class='countrylabel'>" + getFullCountryName(countryId) + "</div>";
-    return result;
-}
-
-//05.04 Creation of Flag and Emblem section
+//05.03 Creation of Flag and Emblem section
 function getFlagEmblem_HTML(countryId) {
     var result = "<div class='countryEmbFlag'>&nbsp;</div>" +
 	"<div class='countryEmbFlag'><img alt='emb of the " + countryId + "' title='emb of the " + countryId +
@@ -148,7 +143,7 @@ function getFlagEmblem_HTML(countryId) {
     return result;
 }
 
-//05.05 Country page with list of Visits
+//05.04 Country page with list of Visits
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +
@@ -156,7 +151,7 @@ function OpenListOfCountryVisits(countryId) {
         createListOfVisites();
 }
 
-//05.06 Cpountrie page with list of Cities
+//05.05 Country page with list of Cities
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'>Мои локации...</div>" +
@@ -165,12 +160,8 @@ function OpenListOfCountryCities(countryId) {
     ;
 }
 
-//05.07 List of regions and cities
-function getCitiesAndRegionsList_HTML (countryId) {
-    var country = $.grep (countriesVisited, function( n, i ) {
-        return (n.short_name == countryId)
-   });
-
+//05.06 List of regions and cities
+function getCitiesAndRegionsList_HTML (country) {
     var result = "<div class='countrydetail'><b>Полный список посещенных регионов и локаций:</b></div>";
 
     $.each (regionsVisited, function( i, region ){
@@ -192,7 +183,7 @@ function getCitiesAndRegionsList_HTML (countryId) {
     return result
 }
 
-////05.08 This method creates list of country visits
+////05.07 This method creates list of country visits
 //function HTMLListOfWCountryVisits(countryName) {
 //    var CountryId = CountryIdReturner(countryName);
 //    var ArrayOfCountryVisits = [];

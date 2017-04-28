@@ -191,7 +191,20 @@ function populateContent(callback) {
                    return result;
                }
                this.setFullCountryName = function () {
-                   return this.name_ru + " - " + this.name_nt + " - " + this.name;
+                   var result;
+                   if (this.name_nt == "") {
+                        result = this.name_ru + " - " + this.name;
+                   }
+                   else if (this.name_ru == "") {
+                        result = this.name_nt + " - " + this.name;
+                   }
+                   else if (this.name == "") {
+                        result = this.name_ru + " - " + this.name_nt;
+                   }
+                   else {
+                        result = this.name_ru + " - " + this.name_nt + " - " + this.name;
+                   }
+                   return result;
                }
                break;
            }

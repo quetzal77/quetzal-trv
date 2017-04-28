@@ -70,7 +70,7 @@ function drawMap(){
                            getRusLocationName(city.city_id) + "</a>" + ", ";
 
              if (!distinctIds[city.country_id]){
-                 countryLink += "<a id='" + city.country_id + "' onclick='javascript:HTML_CreatorOfCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                 countryLink += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
                            getRusCountryName(city.country_id) + "</a>" + ", ";
                  distinctIds[city.country_id] = true;
              }
@@ -153,15 +153,7 @@ function getRusCountryName(countryId) {
     return result[0].name_ru;
 }
 
-//2.11 Get full country name
-function getFullCountryName(countryId) {
-    result = $.grep (countriesVisited, function( n, i ) {
-                return (n.short_name == countryId)
-            });
-    return result[0].setFullCountryName();
-}
-
-//2.12 Get russian Location name
+//2.11 Get russian Location name
 function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
@@ -169,7 +161,7 @@ function getRusLocationName(locationId) {
     return result[0].name_ru;
 }
 
-//02.13 This method creates selector of countries
+//02.12 This method creates selector of countries
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
     $.each (countriesVisited, function( i, country ) {
@@ -179,7 +171,7 @@ function getSelectorOfListOfCountries_HTML () {
     return result;
 }
 
-//02.14 This method creates selector of cities
+//02.13 This method creates selector of cities
 function getSelectorOfListOfCities_HTML(){
     var result = "";
     $.each (countriesVisited, function( i, country ){
@@ -196,7 +188,7 @@ function getSelectorOfListOfCities_HTML(){
     return result;
 }
 
-//02.15 This method creates selector of stories
+//02.14 This method creates selector of stories
 function HTML_SelectorListOfStories(){
     var result = "";
     var storiesArrayList = [];

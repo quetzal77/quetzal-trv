@@ -89,7 +89,7 @@
                        longitude: citydata_array[2],
                        color: "#FAAC58",
                        fixedSize: false,
-                       scale: 0.3
+                       scale: 0.5
                    });
            }
 
