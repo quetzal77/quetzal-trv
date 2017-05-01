@@ -82,6 +82,7 @@ function populateContent(callback) {
    function CityObj(city_id) {
        for (var i = 0; i < data.city.length; i++) {
            if (data.city[i].city_id == city_id) {
+               this.type = "city";
                this.city_id = data.city[i].city_id;
                this.capital = (data.city[i].capital === "true") ? true : false;
                this.description = data.city[i].description;
@@ -121,6 +122,7 @@ function populateContent(callback) {
    function RegionObj(region_id) {
        for (var i = 0; i < data.area.length; i++) {
            if (data.area[i].region_id == region_id) {
+               this.type = "region";
                this.region_id = data.area[i].region_id;
                this.active = (data.area[i].active === "Y") ? true : false;
                this.name = data.area[i].name;
@@ -150,6 +152,7 @@ function populateContent(callback) {
    function CountryObj(country_id) {
        for (var i = 0; i < data.country.length; i++) {
            if (data.country[i].country_id == country_id) {
+               this.type = "country";
                this.country_id = data.country[i].country_id;
                this.short_name = data.country[i].short_name;
                this.name = data.country[i].name;

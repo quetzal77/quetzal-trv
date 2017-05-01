@@ -2,25 +2,25 @@
 
 //05.01 Creator of page
 function createCountryPage_HTML(countryId) {
+    var country = $.grep (countriesVisited, function( n, i ) {
+        return (n.short_name == countryId)
+    });
+
     // Set global variable with type of map to be opened
     local = [];
-    local.push(countryId, "country");
+    local.push(countryId, country[0]);
 
     // Set url
     window.history.pushState("object or string", "Title", "index.html?country="+countryId);
 
     //Add Country main content
-    var country = $.grep (countriesVisited, function( n, i ) {
-        return (n.short_name == countryId)
-    });
-
     document.getElementById("mainSection").innerHTML =
-    "<div class='countrylabel'>" + country[0].setFullCountryName() + "</div>" +
+    "<div class='countrylabel'>" + local[1].setFullCountryName() + "</div>" +
     "<div id='mapdiv'></div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
     "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-    "<div class='clear' />" + getCountryDetails_HTML(country) + getCitiesAndRegionsList_HTML(country) + "</div>" +
+    "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(countryId);
 
     //Creation of world map
@@ -28,12 +28,13 @@ function createCountryPage_HTML(countryId) {
 }
 
 //05.02 This method creates content for Country page
-function getCountryDetails_HTML(country) {
+function getCountryDetails_HTML() {
     var result = "";
+    var country = local[1];
 
     //01. Total number of visited cities
-    result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country[0].getNumberOfVisitedCities()) +
-              " (" + setRegionsNumberWithCorrectEnd(country[0].getNumberOfVisitedRegions()) + ")</div>";
+    result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()) +
+              " (" + setRegionsNumberWithCorrectEnd(country.getNumberOfVisitedRegions()) + ")</div>";
 
     //02. Total number and link to stories
 //            var storiesArrayList = [];
@@ -86,23 +87,10 @@ function getCountryDetails_HTML(country) {
     var photoAlbumLinks = "";
     $.each (visitsSorted, function( i, visit ){
         var citiesShownInPhotoAlbum = "";
-        var VisitDateToShow = "";
-        var StartDay = visit.start_date.getDate();
-        var StartMonth = visit.start_date.getMonth() + 1;
-        var StartYear = visit.start_date.getFullYear();
-        var EndDay = visit.end_date.getDate();
-        var EndMonth = visit.end_date.getMonth() + 1;
-        var EndYear = visit.end_date.getFullYear();
-            if (visit.start_date == visit.end_date) {
-                VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear;
-            }
-            else if (StartYear == EndYear) {
-                VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
-            }
-            else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;}
+        var VisitDateToShow = getVisitDate (visit.start_date, visit.end_date);
 
         $.each (visit.cities, function( i, city ){
-            if (city.country_id == country[0].short_name && visit.photos != undefined) {
+            if (city.country_id == country.short_name && visit.photos != undefined) {
                 citiesShownInPhotoAlbum += getRusLocationName(city.city_id) + ", " ;
             }
         });
@@ -117,11 +105,11 @@ function getCountryDetails_HTML(country) {
     //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
 
     //04. Link to technical information
-    var techinfo_1 = country[0].short_name + "," + country[0].getListOfVisitedRegions();
+    var techinfo_1 = country.short_name + "," + country.getListOfVisitedRegions();
 
-    var techinfo_2 = country[0].short_name + ";";
+    var techinfo_2 = country.short_name + ";";
     $.each (citiesVisited, function( j, city ){
-        if (city.getCountryId() == country[0].short_name) {
+        if (city.getCountryId() == country.short_name) {
             techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
         }
     });
@@ -156,16 +144,17 @@ function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'>Мои локации...</div>" +
         "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
-        "<div class='clear' />" + getCountryDetails_HTML(countryId) + getCitiesAndRegionsList_HTML(countryId);
+        "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
     ;
 }
 
 //05.06 List of regions and cities
-function getCitiesAndRegionsList_HTML (country) {
+function getCitiesAndRegionsList_HTML () {
+    var country = local[1];
     var result = "<div class='countrydetail'><b>Полный список посещенных регионов и локаций:</b></div>";
 
     $.each (regionsVisited, function( i, region ){
-        if (region.country_id == country[0].country_id) {
+        if (region.country_id == country.country_id) {
             result += "<div class='clear countryregion'><b>Регион:</b> " + region.setFullRegionName() + "</div>";
             result += "<div class='cityrow'>&#8226; <b>Локации: </b>";
             var ListOfLocations = "";

@@ -8,81 +8,88 @@ function drawMap(){
      $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function(){
      $('#mapdiv').removeClass('loading');
      $('#mapdiv').addClass('map');
-     CreateMap(local[1]);
+     CreateMap();
      });
  }
 
- //02.02 This method creates list of visits
+ //02.02 This method creates CUSTOM list of visits
  function createListOfVisites(){
-      var result = "";
-
-      switch (local[0]) {
-          case "world":
-              result = createCustomListOfVisites(visitsSorted);
-              break;
-          case "country":
-              result = createCustomListOfVisites(visitsSorted);
-              break;
-          case "city":
-              break;
-      }
-
-      return result;
- }
-
- var VisitYear;
-
- //02.03 This method creates CUSTOM list of visits
- function createCustomListOfVisites(visitesList){
      //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
      //         <div class="secondcell float_l"><a href="countries.aspx?country=poland" id="25,52,19.5;Katowice,50.2599736,19.0284561;Wroclaw,51.122489,17.026062;Swidnica,50.8403152,16.4935923;Ksiaz,50.8440566,16.2897844;Opole,50.6780534,17.9175784;" onmouseover="CreateMap(this.id)" onmouseout="CreateMap('none')">Катовице, Вроцлав, Свидница, Кщёнж, Ополе (Польша)</a></div>
      //         <br class="clear">
      var result = "";
+     var VisitYear;
 
-     $.each (visitesList, function( i, visit ) {
+     $.each (visitsSorted, function( i, visit ) {
          //This section sets year
-
          if (visit.start_date.getFullYear() != VisitYear) {
-             VisitYear = visit.start_date.getFullYear();
+             VisitYear = visit.start_date.getFullYear()
              result += "<div class='visityear clear'>" + VisitYear + "</div>";
          }
 
          //This section is responsible to create date section
-         //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
-         if (visit.start_date.toDateString() == visit.end_date.toDateString()) {
-             result += "<div class='firstcell float_l'>" + visit.start_date.getDate() + " " +
-                       getRusMonthName(visit.start_date.getMonth() + 1) + "</div>"
-         }
-         else {
-             result += "<div class='firstcell float_l'>" +
-                 visit.start_date.getDate() + " " +
-                 getRusMonthName(visit.start_date.getMonth() + 1) + " - " +
-                 visit.end_date.getDate() + " " +
-                 getRusMonthName(visit.end_date.getMonth() + 1) + "</div>"
-         }
+         var VisitDate = "<div class='firstcell float_l'>" + getVisitDate (visit.start_date, visit.end_date) + "</div>";
 
          //This section is responsible for displaying list of visited cities and countries
-         var citiesLink = "";
-         var countryLink = "";
-         var distinctIds = {};
-         $.each (visit.cities, function( j, city ) {
-             citiesLink += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                           getRusLocationName(city.city_id) + "</a>" + ", ";
+         switch (local[1].type) {
+             case "country":
+                 var citiesToReturn = "";
+                 $.each (visit.cities, function( i, city ){
+                     if (city.country_id == local[1].short_name) {
+                         citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                                           getRusLocationName(city.city_id) + "</a>" + ", "
+                     }
+                 });
 
-             if (!distinctIds[city.country_id]){
-                 countryLink += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                           getRusCountryName(city.country_id) + "</a>" + ", ";
-                 distinctIds[city.country_id] = true;
-             }
-         });
+                 if (citiesToReturn != "") {
+                    result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + "</div>";
+                 }
+                 break;
+             case "city":
+                 break;
+             default:
+                 var citiesToReturn = "";
+                 var countriesToReturn = "";
+                 var distinctIds = {};
+                 $.each (visit.cities, function( i, city ){
+                     citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                                      getRusLocationName(city.city_id) + "</a>" + ", ";
+                     if (!distinctIds[city.country_id]){
+                         countriesToReturn += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                                      getRusCountryName(city.country_id) + "</a>" + ", ";
+                         distinctIds[city.country_id] = true;
+                     }
+                 });
+                 result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + " (" + countriesToReturn.slice(0, -2) + ")</div>";
+           }
 
-         result += "<div class='secondcell float_l'>" + citiesLink.slice(0, -2) + " (" + countryLink.slice(0, -2) + ")</div>";
          //Can be added to display a city on the map: onmouseover='CreateMap(this.id)' onmouseout=\"CreateMap('none')\"
          //"' id='" + zoomLat + "," + zoomLong + "," + zoomLvl + ";" + citiesCoordinates +
-         result += "<br class='clear'>";
+            result += "<br class='clear'>";
      });
      return result;
   }
+
+//02.03 Get Visit date
+    function getVisitDate(start_date, end_date){
+        var VisitDateToShow = "";
+        var StartDay = start_date.getDate();
+        var StartMonth = start_date.getMonth() + 1;
+        var StartYear = start_date.getFullYear();
+        var EndDay = end_date.getDate();
+        var EndMonth = end_date.getMonth() + 1;
+        var EndYear = end_date.getFullYear();
+
+        if (start_date == end_date) {
+            VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear;
+        }
+        else if (StartYear == EndYear) {
+            VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
+        }
+        else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;}
+
+        return VisitDateToShow;
+    }
 
 //02.04 Sorting of objects in array by attribute
     function dynamicSort(property) {
@@ -219,8 +226,6 @@ function HTML_SelectorListOfStories(){
 			//			           "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
             //                       storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
             //}
-
-
         }
     }
 

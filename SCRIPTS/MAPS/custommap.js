@@ -1,4 +1,4 @@
-   function CreateMap (zoom) 
+   function CreateMap ()
    {
       var map;
       var worldDataProvider;
@@ -18,7 +18,7 @@
 
       MapSelection(worldDataProvider,  AmCharts); //This function selects the appropriate map to work with
       CountryList(worldDataProvider); //This function colour the area(countries I have visited)
-      ZoomToVisit(zoom, worldDataProvider); //This function works onmouseover for visit links
+      //ZoomToVisit(zoom, worldDataProvider); //This function works onmouseover for visit links
       CityList(worldDataProvider); //This function populate country map with cities once the map is loaded
 		
       map.dataProvider = worldDataProvider;
