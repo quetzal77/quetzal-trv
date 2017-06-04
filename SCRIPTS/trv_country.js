@@ -16,7 +16,7 @@ function createCountryPage_HTML(countryId) {
     //Add Country main content
     document.getElementById("mainSection").innerHTML =
     "<div class='countrylabel'>" + local[1].setFullCountryName() + "</div>" +
-    "<div id='mapdiv'></div>" +
+    "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
     "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
