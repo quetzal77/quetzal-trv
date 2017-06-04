@@ -15,6 +15,8 @@ function populateContent(callback) {
      createArrayOfVisitesAndArrayOfCitiesVisited();
      //Array of Visited Countries, Regions and Cities
      createArrayOfVisitedCountriesAndRegions();
+     //Calculate number of location visited and add them to front page
+     getNumberOfLocation();
   }
 
   //01.03 Array of visits sorted descendingly and with dates in DATETIME format
@@ -224,4 +226,19 @@ function populateContent(callback) {
         this.start_date = new Date(startVisit[2], startVisit[1] - 1, startVisit[0]);
         var endVisit = end_date.split(".");
         this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
+    }
+
+    //01.09 Calculate number of locations visited
+    function getNumberOfLocation() {
+        $.each(initial_data.continent, function( i, cont ){
+            var numberOfCities = 0;
+            $.each( countriesVisited, function( j, country ){
+                if (country.continent_id == cont.continent_id) {
+                    document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
+                    numberOfCities = numberOfCities + country.getNumberOfVisitedCities();
+                }
+            });
+            document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " (" + setLocationNumberWithCorrectEnd(numberOfCities) + ")";
+        });
+        document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";
     }

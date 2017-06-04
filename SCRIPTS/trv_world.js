@@ -45,11 +45,11 @@ function createWorldPageFrontView() {
                 "<img id='" + country_custom_id.replace(/\s/g, "") + "' src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
             }
         });
-        result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + "<span id='citiesNumberPerContinent'></span>" +
+        result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
                   "</div>" + listOfCountries + "</div>";
     });
     result += createWorldMap_HTML(countries);
-    result += "<div class='countryhead'>Всего: " + setCountriesNumberWithCorrectEnd(countries.length) + "</div></div>";
+    result += "<div class='countryhead'>Всего: " + setCountriesNumberWithCorrectEnd(countries.length) + "<span id='totalCitiesNum'></span></div></div>";
     return result;
 }
 
