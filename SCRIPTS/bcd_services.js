@@ -253,7 +253,11 @@ function getNumberOfLocation() {
         var numberOfCities = 0;
         $.each( countriesVisited, function( j, country ){
             if (country.continent_id == cont.continent_id) {
-                document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
+                //document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
+
+                var countryElem = $("a#" + country.short_name).last().get(0);
+
+                countryElem.firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
                 numberOfCities = numberOfCities + country.getNumberOfVisitedCities();
             }
         });
