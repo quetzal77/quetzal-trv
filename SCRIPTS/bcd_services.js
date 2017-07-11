@@ -19,12 +19,13 @@ function drawMap(){
      //         <br class="clear">
      var result = "";
      var VisitYear;
+     var VisitYear_HTML = "";
 
      $.each (visitsSorted, function( i, visit ) {
          //This section sets year
          if (visit.start_date.getFullYear() != VisitYear) {
-             VisitYear = visit.start_date.getFullYear()
-             result += "<div class='visityear clear'>" + VisitYear + "</div>";
+            VisitYear = visit.start_date.getFullYear();
+            VisitYear_HTML = "<div class='visityear clear'>" + VisitYear + "</div>";
          }
 
          //This section is responsible to create date section
@@ -41,9 +42,13 @@ function drawMap(){
                      }
                  });
 
+
                  if (citiesToReturn != "") {
-                    result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + "</div>";
+                    result += VisitYear_HTML;
+                    result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + "</div><br class='clear'>";
+                    VisitYear_HTML = "";
                  }
+
                  break;
              case "city":
                  break;
@@ -51,6 +56,9 @@ function drawMap(){
                  var citiesToReturn = "";
                  var countriesToReturn = "";
                  var distinctIds = {};
+
+                 result += VisitYear_HTML ;
+
                  $.each (visit.cities, function( i, city ){
                      citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
                                       getRusLocationName(city.city_id) + "</a>" + ", ";
@@ -60,12 +68,12 @@ function drawMap(){
                          distinctIds[city.country_id] = true;
                      }
                  });
-                 result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + " (" + countriesToReturn.slice(0, -2) + ")</div>";
-           }
+                 result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + " (" + countriesToReturn.slice(0, -2) + ")</div><br class='clear'>";
+                 VisitYear_HTML = "";
+         }
 
          //Can be added to display a city on the map: onmouseover='CreateMap(this.id)' onmouseout=\"CreateMap('none')\"
          //"' id='" + zoomLat + "," + zoomLong + "," + zoomLvl + ";" + citiesCoordinates +
-            result += "<br class='clear'>";
      });
      return result;
   }
