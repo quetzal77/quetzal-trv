@@ -239,6 +239,21 @@ function HTML_SelectorListOfStories(){
     return result += ListOfStories;
 }
 
+//02.15 Calculate number of locations visited
+function getNumberOfLocation() {
+    $.each(initial_data.continent, function( i, cont ){
+        var numberOfCities = 0;
+        $.each( countriesVisited, function( j, country ){
+            if (country.continent_id == cont.continent_id) {
+                document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
+                numberOfCities = numberOfCities + country.getNumberOfVisitedCities();
+            }
+        });
+        document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " (" + setLocationNumberWithCorrectEnd(numberOfCities) + ")";
+    });
+    document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 
