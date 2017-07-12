@@ -41,14 +41,11 @@ function drawMap(){
                                            getRusLocationName(city.city_id) + "</a>" + ", "
                      }
                  });
-
-
                  if (citiesToReturn != "") {
                     result += VisitYear_HTML;
                     result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + "</div><br class='clear'>";
                     VisitYear_HTML = "";
                  }
-
                  break;
              case "city":
                  break;
@@ -79,22 +76,28 @@ function drawMap(){
   }
 
 //02.03 Get Visit date
-    function getVisitDate(start_date, end_date){
+
+    function getVisitDate(start_date, end_date, year){
         var VisitDateToShow = "";
         var StartDay = start_date.getDate();
         var StartMonth = start_date.getMonth() + 1;
-        var StartYear = start_date.getFullYear();
+        var StartYear = "";
         var EndDay = end_date.getDate();
         var EndMonth = end_date.getMonth() + 1;
-        var EndYear = end_date.getFullYear();
+        var EndYear = "";
+
+        if (year) {
+            StartYear = start_date.getFullYear();
+            EndYear = end_date.getFullYear();
+        }
 
         if (start_date == end_date) {
-            VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear;
+            VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear;
         }
         else if (StartYear == EndYear) {
             VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
         }
-        else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;}
+        else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear}
 
         return VisitDateToShow;
     }

@@ -87,7 +87,7 @@ function getCountryDetails_HTML() {
     var photoAlbumLinks = "";
     $.each (visitsSorted, function( i, visit ){
         var citiesShownInPhotoAlbum = "";
-        var VisitDateToShow = getVisitDate (visit.start_date, visit.end_date);
+        var VisitDateToShow = getVisitDate (visit.start_date, visit.end_date, true);
 
         $.each (visit.cities, function( i, city ){
             if (city.country_id == country.short_name && visit.photos != undefined) {
