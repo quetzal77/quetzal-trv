@@ -10,10 +10,10 @@ function drawMap(){
      $('#mapdiv').addClass('map');
      CreateMap();
      });
- }
+}
 
- //02.02 This method creates CUSTOM list of visits
- function createListOfVisites(){
+//02.02 This method creates CUSTOM list of visits
+function createListOfVisites(){
      //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
      //         <div class="secondcell float_l"><a href="countries.aspx?country=poland" id="25,52,19.5;Katowice,50.2599736,19.0284561;Wroclaw,51.122489,17.026062;Swidnica,50.8403152,16.4935923;Ksiaz,50.8440566,16.2897844;Opole,50.6780534,17.9175784;" onmouseover="CreateMap(this.id)" onmouseout="CreateMap('none')">Катовице, Вроцлав, Свидница, Кщёнж, Ополе (Польша)</a></div>
      //         <br class="clear">
@@ -73,47 +73,47 @@ function drawMap(){
          //"' id='" + zoomLat + "," + zoomLong + "," + zoomLvl + ";" + citiesCoordinates +
      });
      return result;
-  }
+}
 
 //02.03 Get Visit date
 
-    function getVisitDate(start_date, end_date, year){
-        var VisitDateToShow = "";
-        var StartDay = start_date.getDate();
-        var StartMonth = start_date.getMonth() + 1;
-        var StartYear = "";
-        var EndDay = end_date.getDate();
-        var EndMonth = end_date.getMonth() + 1;
-        var EndYear = "";
+function getVisitDate(start_date, end_date, year){
+    var VisitDateToShow = "";
+    var StartDay = start_date.getDate();
+    var StartMonth = start_date.getMonth() + 1;
+    var StartYear = "";
+    var EndDay = end_date.getDate();
+    var EndMonth = end_date.getMonth() + 1;
+    var EndYear = "";
 
-        if (year) {
-            StartYear = start_date.getFullYear();
-            EndYear = end_date.getFullYear();
-        }
-
-        if (start_date == end_date) {
-            VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear;
-        }
-        else if (StartYear == EndYear) {
-            VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
-        }
-        else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear}
-
-        return VisitDateToShow;
+    if (year) {
+        StartYear = start_date.getFullYear();
+        EndYear = end_date.getFullYear();
     }
+
+    if (start_date == end_date) {
+        VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear;
+    }
+    else if (StartYear == EndYear) {
+        VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
+    }
+    else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear}
+
+    return VisitDateToShow;
+}
 
 //02.04 Sorting of objects in array by attribute
-    function dynamicSort(property) {
-        var sortOrder = 1;
-        if(property[0] === "-") {
-            sortOrder = -1;
-            property = property.substr(1);
-        }
-        return function (a,b) {
-            var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-            return result * sortOrder;
-        }
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
     }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+}
 
 //02.05 Return correctly created string like "31 страна"
 function parseWord (word, end1, end234, endrest, number){

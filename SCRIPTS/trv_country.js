@@ -39,7 +39,7 @@ function getCountryDetails_HTML() {
     //02. Total number and link to stories
 //            var storiesArrayList = [];
 //            var storiesTextList = "нет";
-    var ListOfStories = "";
+              var ListOfStories = "";
 //            for (var s = 0; s < visites.length; s++) {
 //                if (visites[s].id == ArrayOfVisitedCountries[a].id && visites[s].story != "") {
 //                    var storyDate = visites[s].date.split(".")
@@ -171,63 +171,3 @@ function getCitiesAndRegionsList_HTML () {
 
     return result
 }
-
-////05.07 This method creates list of country visits
-//function HTMLListOfWCountryVisits(countryName) {
-//    var CountryId = CountryIdReturner(countryName);
-//    var ArrayOfCountryVisits = [];
-//    for (var a = 0; a < ArrayOfVisitsSorted.length; a++) {
-//        if (ArrayOfVisitsSorted[a].id == CountryId) {
-//            ArrayOfCountryVisits.push(ArrayOfVisitsSorted[a]);
-//        }
-//    }
-//
-//    var result = "";
-//    var VisitYear = ArrayOfCountryVisits[0].date.getFullYear();
-//    for (var a = 0; a < ArrayOfCountryVisits.length; a++) {
-//        if (a == 0) {
-//            result += "<div class='visityear clear'>" + ArrayOfCountryVisits[a].date.getFullYear() + "</div>";
-//        }
-//        else {
-//            if (ArrayOfCountryVisits[a].date.getFullYear() != VisitYear) {
-//                result += "<div class='visityear clear'>" + ArrayOfCountryVisits[a].date.getFullYear() + "</div>";
-//                VisitYear = ArrayOfCountryVisits[a].date.getFullYear();
-//            }
-//        }
-//
-//        if (ArrayOfCountryVisits[a].date.toDateString() == ArrayOfCountryVisits[a].enddate.toDateString()) {
-//            var Day = ArrayOfCountryVisits[a].date.getDate();
-//            var Month = ArrayOfCountryVisits[a].date.getMonth();
-//            //var Year = ArrayOfCountryVisits[a].date.getYear();
-//            var startDate = Day + " " + russianMonth(Month);
-//            result += "<div class='firstcell float_l'>" + startDate + "</div>";
-//        }
-//        else {
-//            var StartDay = ArrayOfCountryVisits[a].date.getDate();
-//            var StartMonth = ArrayOfCountryVisits[a].date.getMonth();
-//            var EndDay = ArrayOfCountryVisits[a].enddate.getDate();
-//            var EndMonth = ArrayOfCountryVisits[a].enddate.getMonth();
-//            var startEndDate = StartDay + " " + russianMonth(StartMonth) + " - " + EndDay + " " + russianMonth(EndMonth);
-//            result += "<div class='firstcell float_l'>" + startEndDate + "</div>";
-//        }
-//
-//        var citiesVisited = ArrayOfCountryVisits[a].place.split(" ");
-//        var cityLinks = "";
-//        for (var c = 0; c < citiesVisited.length; c++) {
-//            for (var d = 0; d < cities.length; d++) {
-//                if (citiesVisited[c] == cities[d].id) {
-//                    cityLinks += "<a id='" + cities[d].id +
-//                    //Can be added to display a city on the map: onmouseover='CreateMap(this.id)' onmouseout=\"CreateMap('none')\"
-//                    //"' id='" + cities[d].title + "," + cities[d].lat + "," + cities[d].long + ";" +
-//                    "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + cities[d].title_ru + "</a>, ";
-//                    break;
-//                }
-//            }
-//        }
-//        cityLinks = cityLinks.slice(0, -2)
-//
-//        result += "<div class='secondcell float_l'>" + cityLinks + "</div>";
-//        result += "<br class='clear'>";
-//    }
-//    return result;
-//}
