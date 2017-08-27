@@ -26,7 +26,7 @@
                     $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(local[1]) });
                 break;
                 case "city":
-                    //$.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(initial_data.continent, initial_data.country) });
+                    $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(local[1]) });
                 break;
                 case "story":
                     //$.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(initial_data.continent, initial_data.country) });
@@ -58,8 +58,8 @@
         $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
     }
 
-    function getCityPage( country_id ){
+    function getCityPage( city_id ){
         //Create country page
-        $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(country_id) });
+        $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(city_id) });
     }
 

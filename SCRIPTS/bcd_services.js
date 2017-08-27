@@ -37,7 +37,7 @@ function createListOfVisites(){
                  var citiesToReturn = "";
                  $.each (visit.cities, function( i, city ){
                      if (city.country_id == local[1].short_name) {
-                         citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                         citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
                                            getRusLocationName(city.city_id) + "</a>" + ", "
                      }
                  });
@@ -57,7 +57,7 @@ function createListOfVisites(){
                  result += VisitYear_HTML ;
 
                  $.each (visit.cities, function( i, city ){
-                     citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                     citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
                                       getRusLocationName(city.city_id) + "</a>" + ", ";
                      if (!distinctIds[city.country_id]){
                          countriesToReturn += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
@@ -76,7 +76,6 @@ function createListOfVisites(){
 }
 
 //02.03 Get Visit date
-
 function getVisitDate(start_date, end_date, year){
     var VisitDateToShow = "";
     var StartDay = start_date.getDate();
@@ -200,7 +199,7 @@ function getSelectorOfListOfCities_HTML(){
                                      });
 
         $.each (citiesList, function( i, city ){
-            result += "<li><a id='" + city.city_id + "' onclick='javascript:HTML_CreatorOfCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ru + "</a></li>";
+            result += "<li><a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ru + "</a></li>";
         });
     });
     return result;
