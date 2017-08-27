@@ -39,9 +39,7 @@ function HTML_CityDetais(cityId) {
     result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
 
     //Date of city visit
-//    result += "<div class='countrydetail'><b>Дата посещения:</b> " + visitsList + "</div>" +
-//			//Create list of dates of visit
-//			var visitsList = "";
+    var visitsList = "";
 //			for (var d = 0; d < ArrayOfVisitsSorted.length; d++) {
 //                if (ArrayOfVisitsSorted[d].id == countryId && ArrayOfVisitsSorted[d].place.indexOf(cityId) > -1) {
 //				    var Day = ArrayOfVisitsSorted[d].date.getDate();
@@ -51,17 +49,17 @@ function HTML_CityDetais(cityId) {
 //				    visitsList += VisitDateToShow + "; "
 //				}
 //			}
+    result += "<div class='countrydetail'><b>Дата посещения:</b> " + visitsList + "</div>";
 
     //Create list of pictures
-//    result += "<div class='countrydetail'>" + imagesList + "</div>";
-//			var imagesList = "";
-//			if (cities[a].img != ""){
-//			    var imagesArray = cities[a].img.split(",");
-//				imagesList += "<b>Фото:</b><br>";
-//			    for (var c = 0; c < imagesArray.length; c++) {
-//                    imagesList += "<img src='IMG/" + imagesArray[c] + "' class='city_photo img-thumbnail' />"
-//			    }
-//			}
+    var imagesList = "";
+    if (city.image != ""){
+        imagesList += "<b>Фото:</b><br>";
+        $.each (city.image.split(","), function( i, image ){
+            imagesList += "<img src='IMG/" + image + "' class='city_photo img-thumbnail' />"
+        });
+    }
+    result += "<div class='countrydetail'>" + imagesList + "</div>";
 
     return result;
 }
