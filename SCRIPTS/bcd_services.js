@@ -170,7 +170,29 @@ function getRusCountryName(countryId) {
     return result[0].name_ru;
 }
 
-//2.11 Get russian Location name
+//2.11 Get full russian country name
+function getFullRusCountryName(countryId) {
+    result = $.grep (countriesVisited, function( n, i ) {
+                return (n.short_name == countryId)
+            });
+
+    if (result[0].name_nt == "") {
+        result = result[0].name_ru + " - " + result[0].name;
+    }
+    else if (result[0].name_ru == "") {
+        result = result[0].name_nt + " - " + result[0].name;
+    }
+    else if (result[0].name == "") {
+        result = result[0].name_ru + " - " + result[0].name_nt;
+    }
+    else {
+        result = result[0].name_ru + " - " + result[0].name_nt + " - " + result[0].name;
+    }
+
+    return result;
+}
+
+//2.12 Get russian Location name
 function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
@@ -178,7 +200,7 @@ function getRusLocationName(locationId) {
     return result[0].name_ru;
 }
 
-//02.12 This method creates selector of countries
+//02.13 This method creates selector of countries
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
     $.each (countriesVisited, function( i, country ) {
@@ -188,7 +210,7 @@ function getSelectorOfListOfCountries_HTML () {
     return result;
 }
 
-//02.13 This method creates selector of cities
+//02.14 This method creates selector of cities
 function getSelectorOfListOfCities_HTML(){
     var result = "";
     $.each (countriesVisited, function( i, country ){
@@ -205,7 +227,7 @@ function getSelectorOfListOfCities_HTML(){
     return result;
 }
 
-//02.14 This method creates selector of stories
+//02.15 This method creates selector of stories
 function HTML_SelectorListOfStories(){
     var result = "";
     var storiesArrayList = [];
@@ -249,7 +271,7 @@ function HTML_SelectorListOfStories(){
     return result += ListOfStories;
 }
 
-//02.15 Calculate number of locations visited
+//02.16 Calculate number of locations visited
 function getNumberOfLocation() {
     $.each(initial_data.continent, function( i, cont ){
         var numberOfCities = 0;
