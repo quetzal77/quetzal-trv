@@ -39,21 +39,11 @@ function HTML_CityDetais(cityId) {
     result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
 
     //Date of city visit
-    var visitsList = "";
-//			for (var d = 0; d < ArrayOfVisitsSorted.length; d++) {
-//                if (ArrayOfVisitsSorted[d].id == countryId && ArrayOfVisitsSorted[d].place.indexOf(cityId) > -1) {
-//				    var Day = ArrayOfVisitsSorted[d].date.getDate();
-//                    var Month = ArrayOfVisitsSorted[d].date.getMonth();
-//                    var Year = ArrayOfVisitsSorted[d].date.getFullYear();
-//                    var VisitDateToShow = Day + " " + russianMonth(Month) + " " + Year;
-//				    visitsList += VisitDateToShow + "; "
-//				}
-//			}
-    result += "<div class='countrydetail'><b>Дата посещения:</b> " + visitsList + "</div>";
+    result += "<div class='countrydetail'><b>Дата посещения:</b> " + createListOfVisites() + "</div>";
 
     //Create list of pictures
     var imagesList = "";
-    if (city.image != ""){
+    if (city.image != "" && city.image != null){
         imagesList += "<b>Фото:</b><br>";
         $.each (city.image.split(","), function( i, image ){
             imagesList += "<img src='IMG/" + image + "' class='city_photo img-thumbnail' />"

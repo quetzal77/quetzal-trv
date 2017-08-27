@@ -29,7 +29,7 @@ function createListOfVisites(){
          }
 
          //This section is responsible to create date section
-         var VisitDate = "<div class='firstcell float_l'>" + getVisitDate (visit.start_date, visit.end_date) + "</div>";
+         var VisitDate = "<div class='firstcell float_l'>" + getVisitDate (visit.start_date, visit.end_date).slice(0, -3) + "</div>";
 
          //This section is responsible for displaying list of visited cities and countries
          switch (local[1].type) {
@@ -48,6 +48,12 @@ function createListOfVisites(){
                  }
                  break;
              case "city":
+                 var citiesToReturn = "";
+                 $.each (visit.cities, function( i, city ){
+                    if (city.city_id == local[1].city_id) {
+                        result += getVisitDate (visit.start_date, visit.end_date, "year");
+                    }
+                 });
                  break;
              default:
                  var citiesToReturn = "";
@@ -91,12 +97,12 @@ function getVisitDate(start_date, end_date, year){
     }
 
     if (start_date == end_date) {
-        VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear;
+        VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear + "; ";
     }
     else if (StartYear == EndYear) {
-        VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear;
+        VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear + "; ";
     }
-    else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear}
+    else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear + "; "}
 
     return VisitDateToShow;
 }
