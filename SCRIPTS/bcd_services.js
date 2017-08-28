@@ -49,9 +49,14 @@ function createListOfVisites(){
                  break;
              case "city":
                  var citiesToReturn = "";
+                 var distinctIds = {};
                  $.each (visit.cities, function( i, city ){
                     if (city.city_id == local[1].city_id) {
-                        result += getVisitDate (visit.start_date, visit.end_date, "year");
+                        var date = getVisitDate (visit.start_date, visit.end_date, "year");
+                        if (!distinctIds[date]){
+                            result += date;
+                            distinctIds[date] = true;
+                        }
                     }
                  });
                  break;

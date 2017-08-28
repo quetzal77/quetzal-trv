@@ -91,6 +91,12 @@ function populateContent(callback) {
                this.image = data.city[i].image;
                this.lat = data.city[i].lat;
                this.long = data.city[i].long;
+
+               if (data.city[i].lat_2) {
+                   this.lat_2 = data.city[i].lat_2;
+                   this.long_2 = data.city[i].long_2;
+               }
+
                this.name = data.city[i].name;
                this.name_nt = data.city[i].name_nt;
                this.name_ru = data.city[i].name_ru;

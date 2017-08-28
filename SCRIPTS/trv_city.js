@@ -32,8 +32,14 @@ function HTML_CityDetais(cityId) {
     if (city.capital == true) {result += "<div class='countrydetail'><b>Столица:</b> <img src='IMG/icon/crown.png' class='crown' /></div>"}
 
     //Link to google map
-    result += "<div class='countrydetail'><b>Координаты:</b> <a title='Посмотреть на карте' href='https://www.google.com/maps/@" + city.lat + "," + city.long + ",12z' target='_blank'>" +
-              				city.lat + " с.ш. " + city.long + " в.д.</a></div>";
+    var lat = city.lat;
+    var long = city.long;
+    if (city.lat_2){
+        lat = city.lat_2;
+        long = city.long_2;
+    }
+    result += "<div class='countrydetail'><b>Координаты:</b> <a title='Посмотреть на карте' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
+              				lat + " с.ш. " + long + " в.д.</a></div>";
 
     //City description
     result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
