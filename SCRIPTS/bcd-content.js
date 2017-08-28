@@ -103,7 +103,20 @@ function populateContent(callback) {
                this.region_id = data.city[i].region_id;
 
                this.setFullCityName = function () {
-                   return this.name_ru + " - " + this.name_nt + " - " + this.name;
+                  var result;
+                  if (this.name_nt == "") {
+                       result = this.name_ru + " - " + this.name;
+                  }
+                  else if (this.name_ru == "") {
+                       result = this.name_nt + " - " + this.name;
+                  }
+                  else if (this.name == "") {
+                       result = this.name_ru + " - " + this.name_nt;
+                  }
+                  else {
+                       result = this.name_ru + " - " + this.name_nt + " - " + this.name;
+                  }
+                  return result;
                }
                this.getCountryId = function () {
                   var regionSplited = this.region_id.split("-");
