@@ -259,8 +259,9 @@ function getSelectorOfListOfStories_HTML(){
 
             var url = (visit.story == true) ? "id='" + visit.start_date.getFullYear() + StartMonth + visit.start_date.getDate() + countriesIDToReturn + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'"
                                             : "href='" + visit.story + "' target='_blank'";
+            var text = (countriesToReturn.length > 27) ? countriesToReturn.slice(0, 25) + "..." : countriesToReturn.slice(0, -2);
 
-            result += "<li><a " + url + ">" + getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2) + " - " + " " + countriesToReturn.slice(0, -2) + "</a></li>";
+            result += "<li><a " + url + ">" + getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2) + " - " + " " + text + "</a></li>";
         }
     });
 
