@@ -29,7 +29,7 @@
                     $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(local[1]) });
                 break;
                 case "story":
-                    //$.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(initial_data.continent, initial_data.country) });
+                    $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(local[1]) });
                 break;
                 default:
                     getWorldPage(headerMenu);
@@ -43,7 +43,7 @@
         //Creation of City Selector
         document.getElementById("ContentBody_CityList").innerHTML = getSelectorOfListOfCities_HTML();
         //Creation of Story Selector
-        //document.getElementById("ContentBody_StoryList").innerHTML = HTML_SelectorListOfStories();
+        document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
     }
 
     function getWorldPage( callback ){
@@ -61,5 +61,10 @@
     function getCityPage( city_id ){
         //Create country page
         $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(city_id) });
+    }
+
+    function getStoryPage( story_id ){
+        //Create story page
+        $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(story_id) });
     }
 

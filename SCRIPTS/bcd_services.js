@@ -239,47 +239,32 @@ function getSelectorOfListOfCities_HTML(){
 }
 
 //02.15 This method creates selector of stories
-function HTML_SelectorListOfStories(){
+function getSelectorOfListOfStories_HTML(){
     var result = "";
-    var storiesArrayList = [];
-    var storiesTextList = "пусто";
-    var ListOfStories;
-    for (var s = 0; s < visites.length; s++) {
-        if (visites[s].story != "" && visites[s].story != null) {
-            var storyDate = visites[s].date.split(".")
-            var storyMonth = storyDate[1]-1;
 
-            if (storyDate[1].charAt(0) == 0) {
-                storyMonth = storyDate[1].substring(1, 2)-1;
-            }
+    $.each (visitsSorted, function( i, visit ){
+        var countriesToReturn = "";
+        var countriesIDToReturn = "";
+        var distinctIds = {};
 
-            if (visites[s].story == 1) {
-                storiesTextList += "<li><a title='Перейти к истории' id='" + visites[s].id + visites[s].date +
-						           "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
-                                   storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
-            }
-			else {
-			    if (visites[s].story != 2) {
-                storiesTextList += "<li><a title='Перейти к истории' href='" + visites[s].story + "' target='_blank'>" +
-                                   storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
+        if (visit.story != "" && visit.story != null && visit.story != undefined){
+            $.each (visit.cities, function( i, city ){
+                if (!distinctIds[city.country_id]){
+                 countriesToReturn += getRusCountryName(city.country_id) + ", ";
+                 countriesIDToReturn += city.country_id;
+                 distinctIds[city.country_id] = true;
                 }
-			}
-            //else {
-            //    storiesTextList += "<li><a title='Перейти к истории' id='" + visites[s].story2 +
-			//			           "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
-            //                       storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + HTML_ShortCountryName(CountryNameReturner(visites[s].id)) + "</a></li>";
-            //}
+            });
+            var StartMonth = visit.start_date.getMonth() + 1;
+
+            var url = (visit.story == true) ? "id='" + visit.start_date.getFullYear() + StartMonth + visit.start_date.getDate() + countriesIDToReturn + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'"
+                                            : "href='" + visit.story + "' target='_blank'";
+
+            result += "<li><a " + url + ">" + getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2) + " - " + " " + countriesToReturn.slice(0, -2) + "</a></li>";
         }
-    }
+    });
 
-    if (storiesTextList.length > 5) {
-        ListOfStories = storiesTextList.substring(5, storiesTextList.length);
-    }
-    else {
-        ListOfStories = storiesTextList;
-    }
-
-    return result += ListOfStories;
+    return result;
 }
 
 //02.16 Calculate number of locations visited

@@ -36,72 +36,50 @@ function getCountryDetails_HTML() {
     result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()) +
               " (" + setRegionsNumberWithCorrectEnd(country.getNumberOfVisitedRegions()) + ")</div>";
 
-    //02. Total number and link to stories
-//            var storiesArrayList = [];
-//            var storiesTextList = "нет";
-              var ListOfStories = "";
-//            for (var s = 0; s < visites.length; s++) {
-//                if (visites[s].id == ArrayOfVisitedCountries[a].id && visites[s].story != "") {
-//                    var storyDate = visites[s].date.split(".")
-//                    var storyMonth = storyDate[1]-1;
-//
-//                    if (storyDate[1].charAt(0) == 0) {
-//                          storyMonth = storyDate[1].substring(1, 2)-1;
-//                     }
-//
-//					switch(visites[s].story) {
-//			            case "1":
-//                            storiesTextList += "<a title='Перейти к истории' id='" + visites[s].id + visites[s].date +
-//						                     "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
-//                                             storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + "</a>, ";
-//			            break;
-//				        case "2":
-//				            if (visites[s].story2.length == 12) {
-//                                storiesTextList += "<a title='Перейти к истории' id='" + visites[s].story2 +
-//						                     "' onmouseover='' style='cursor: pointer;' onclick='javascript:HTML_CreatorOfStoryPage(this.id)'>" +
-//                                             storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + "</a>, ";
-//                            }
-//                            else {
-//							    var visitUrl = visites[s].story2.substring(4, visites[s].story2.length);
-//                                storiesTextList += "<a title='Перейти к истории' href='" + visitUrl + "' target='_blank'>" +
-//                                            storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + "</a>, ";
-//							}
-//				        break;
-//				        default:
-//				            storiesTextList += "<a title='Перейти к истории' href='" + visites[s].story + "' target='_blank'>" +
-//                                            storyDate[0] + " " + russianMonth(storyMonth) + " " + storyDate[2] + " " + "</a>, ";
-//					}
-//                }
-//            }
-//
-//            if (storiesTextList.length > 3) {
-//                ListOfStories = storiesTextList.substring(3, storiesTextList.length - 2);
-//            }
-//            else {
-//                ListOfStories = storiesTextList;
-//            }
-//
-            result += "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>"
-
-    //03. Link of photos
+    //02.-03. Stories and Photos
+    var ListOfStories = "";
     var photoAlbumLinks = "";
+
     $.each (visitsSorted, function( i, visit ){
+        var countriesIDToReturn = "";
+        var distinctIds = {};
+
         var citiesShownInPhotoAlbum = "";
         var VisitDateToShow = getVisitDate (visit.start_date, visit.end_date, true);
 
-        $.each (visit.cities, function( i, city ){
-            if (city.country_id == country.short_name && visit.photos != undefined) {
-                citiesShownInPhotoAlbum += getRusLocationName(city.city_id) + ", " ;
-            }
-        });
+        //02. Total number and link to stories
+        if (visit.story != "" && visit.story != null && visit.story != undefined){
+            $.each (visit.cities, function( i, city ){
+                if (!distinctIds[city.country_id]){
+                    countriesIDToReturn += city.country_id;
+                    distinctIds[city.country_id] = true;
+                }
+            });
 
-        if (citiesShownInPhotoAlbum != ""){
-            photoAlbumLinks += "<a href='" + visit.photos + "' title='" + citiesShownInPhotoAlbum.substring(0, citiesShownInPhotoAlbum.length-2) + "' target='_blank'>" + VisitDateToShow + "; </a>";
+            if (distinctIds[country.short_name]){
+                var StartMonth = visit.start_date.getMonth() + 1;
+
+                var url = (visit.story == true) ? "id='" + visit.start_date.getFullYear() + StartMonth + visit.start_date.getDate() + countriesIDToReturn + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'"
+                                                : "href='" + visit.story + "' target='_blank'";
+
+                ListOfStories += "<a " + url + ">" + VisitDateToShow.slice(0, -2) + ", " + "</a>";
+            }
         }
 
+        //03. Link of photos
+        if (visit.photos != "" && visit.photos != null && visit.photos != undefined){
+            $.each (visit.cities, function( i, city ){
+                    citiesShownInPhotoAlbum += (city.country_id == country.short_name) ? getRusLocationName(city.city_id) + ", " : "" ;
+            });
+
+            photoAlbumLinks += (citiesShownInPhotoAlbum != "") ? "<a href='" + visit.photos + "' title='" + citiesShownInPhotoAlbum.substring(0, citiesShownInPhotoAlbum.length-2) +
+                                   "' target='_blank'>" + VisitDateToShow.slice(0, -2) + "; </a>" : "";
+        }
     });
 
-    result += (photoAlbumLinks != "") ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
+    result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>" : "";
+
+    result += (photoAlbumLinks.length > 0) ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
     //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
 
     //04. Link to technical information
