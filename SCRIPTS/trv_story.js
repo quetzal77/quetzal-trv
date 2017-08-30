@@ -200,7 +200,10 @@ function HTML_StoryPage() {
         "<tr><td>" + summary[0].title + "</td></tr>";
     }
 
-        result += "</tbody></table>";
+    result += "</tbody></table>";
+
+   //06.04.final Return to country button
+    result += getCountryName();
     return result
 }
 
@@ -270,4 +273,28 @@ function arrayToArray(array) {
 //06.07 Set parameters for definition of unique values in array
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
+}
+
+//06.08 Create array of countries described in story
+function getCountryName() {
+    var result = "";
+    var countryId = [];
+    $.each (countriesVisited, function( i, country ){
+        if (local[0].includes(country.short_name)){
+            countryId.push(country.short_name);
+        }
+    });
+
+    if (countryId.length > 1) {
+        result += "<ul class='back2country'>";
+        $.each (countryId, function( i, country ){
+            result += "<li><a id='" + country + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getRusCountryName(country) + "</a></li>"
+        });
+        result += "</ul>";
+    }
+    else {
+        result = "<div><a id='" + countryId[0] + "' class='back2country' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>Back to country</a></div>";
+    }
+
+    return result;
 }

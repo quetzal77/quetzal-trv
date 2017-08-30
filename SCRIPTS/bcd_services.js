@@ -317,8 +317,17 @@ function HTML_CreatorOfAboutPage () {
           "<p>Приятного просмотра!</p></div>";
 }
 
-//03.03 Navigation to SignIn page
-function HTML_SignInPage () {
-	var url = "settings.html";
-	location.href = url;
-}
+//03.03 // When the user scrolls down 20px from the top of the document, show the button
+    function scrollFunction() {
+        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+            document.getElementById("back").style.display = "block";
+        } else {
+            document.getElementById("back").style.display = "none";
+        }
+    }
+
+//03.04 When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }

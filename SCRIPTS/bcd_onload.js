@@ -9,32 +9,15 @@
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
     window.onload = function() {$.getJSON( "DATA/onload.json", processMyJson)};
+// When the user scrolls down from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
 
 //00.03 This method creates initial collection we need to populate world page
 //Also it contains logic of loading
     var processMyJson = function (result){
         initial_data = result;
         //Add all the services used among all the classes
-        $.getScript("SCRIPTS/bcd_services.js", function()
-        {
-            //Create page content depend on type of selected location (world, country or city)
-            var location = window.location.href.substring(url.length+1, window.location.href.length);
-            var local = location.split("=");
-
-            switch (local[0]) {
-                case "country":
-                    $.getScript("SCRIPTS/trv_country.js", function(){ createCountryPage_HTML(local[1]) });
-                break;
-                case "city":
-                    $.getScript("SCRIPTS/trv_city.js", function(){ createCityPage_HTML(local[1]) });
-                break;
-                case "story":
-                    $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(local[1]) });
-                break;
-                default:
-                    getWorldPage(headerMenu);
-            }
-        });
+        $.getScript("SCRIPTS/bcd_services.js", function(){ getWorldPage(headerMenu); });
     }
 
     var headerMenu = function populateHeaderMenu(){
