@@ -19,6 +19,8 @@ a:hover {text-decoration: none; color: #696969;}
 
 ul.dropdown-menu {max-height: 300px; overflow-y: auto;}
 
+a.docs-top {position: fixed; right: 20px; bottom: 20px; display: block; padding: 6px 12px; font-size: 14px; color: #fff; background-color: #868e96; border-color: #868e96; border: 1px solid transparent; border-radius: 3px; text-decoration: none;}
+
 /* COUNTRIES PAGE (WORLD)
 ----------------------------------------------------------*/
 div.mainsection {font-size: 12px;}
