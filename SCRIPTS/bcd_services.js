@@ -101,7 +101,7 @@ function getVisitDate(start_date, end_date, year){
         EndYear = end_date.getFullYear();
     }
 
-    if (start_date == end_date) {
+    if (StartDay+StartMonth == EndDay+EndMonth) {
         VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear + "; ";
     }
     else if (StartYear == EndYear) {
