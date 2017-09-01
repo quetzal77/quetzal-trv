@@ -51,3 +51,13 @@
         $.getScript("SCRIPTS/trv_story.js", function(){ createStoryPage_HTML(story_id) });
     }
 
+    function getSettingsOverviewPage( setting_type ){
+        //Create settings-overview page
+        $.getScript("SCRIPTS/set_overview.js", function(){ createSettingsPage_HTML(setting_type) });
+    }
+
+    function createSettingsContinentTab(){
+        //Create settings-continent tab
+        $.getScript("SCRIPTS/set_continent.js", function(){ createSettingsContinentTab_HTML() });
+    }
+

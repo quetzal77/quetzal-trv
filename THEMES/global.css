@@ -33,22 +33,6 @@ a.back2top {position: fixed;
             border-radius: 3px;
             text-decoration: none;}
 
-.back2country {position: fixed;
-            right: 20px;
-            top: 60px;
-            display: block;
-            z-index: 99;
-            padding: 6px 12px;
-            font-size: 14px;
-            color: #fff;
-            background-color: #868e96;
-            border-color: #868e96;
-            border: 1px solid transparent;
-            border-radius: 3px;
-            text-decoration: none;}
-.back2country:hover {color:#fff;}
-.back2country:visited {color:#fff;}
-
 /* COUNTRIES PAGE (WORLD)
 ----------------------------------------------------------*/
 div.mainsection {font-size: 12px;}
@@ -105,6 +89,22 @@ img.crown {width: 23px; height:12px;}
 p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; margin-right: 20px; margin-left: 20px;} 
 .reg_header {font-weight: bold; margin-bottom: 0px;}
 .reg_header_impr {padding: 8px;}
+
+.back2country {position: fixed;
+            right: 20px;
+            top: 60px;
+            display: block;
+            z-index: 99;
+            padding: 6px 12px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #868e96;
+            border-color: #868e96;
+            border: 1px solid transparent;
+            border-radius: 3px;
+            text-decoration: none;}
+.back2country:hover {color:#fff;}
+.back2country:visited {color:#fff;}
 
 /* Overview settings  PAGE
 ----------------------------------------------------------*/

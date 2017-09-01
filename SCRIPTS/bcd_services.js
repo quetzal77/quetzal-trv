@@ -287,6 +287,22 @@ function getNumberOfLocation() {
     document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";
 }
 
+//2.17 Remove all attributes by name
+function removeAllAttributesByName(attrType, attrName) {
+    var mylist=document.getElementsByClassName(attrName);
+    for (j=0; j<mylist.length; j++) {
+        mylist[j].removeAttribute(attrType);
+    }
+}
+
+//2.18 Remove all child nodes
+function removeAllChildNodes(attrId) {
+    var list = document.getElementById(attrId);
+    while (list.hasChildNodes()) {
+        list.removeChild(list.firstChild);
+    };
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 
