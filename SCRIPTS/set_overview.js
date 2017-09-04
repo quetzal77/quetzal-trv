@@ -1,5 +1,5 @@
-//11. Settings Page
-//11.01 Creator of main page
+//08. Settings Page
+//08.01 Creator of main page
 function createSettingsPage_HTML(setting_type) {
     // Set global variable with type of map to be opened
     local = [];
@@ -21,7 +21,7 @@ function createSettingsPage_HTML(setting_type) {
     createSettingsOverviewTab_HTML();
 }
 
-//11.02 Creator of left menu
+//08.02 Creator of left menu
 function HTML_Settings_LeftPanel() {
     var result =
         '<div class="col-sm-3 col-md-2 sidebar">' +
@@ -45,7 +45,7 @@ function HTML_Settings_LeftPanel() {
     return result;
 }
 
-//11.03 Creator of overview section
+//08.03 Creator of overview section
 function createSettingsOverviewTab_HTML() {
     removeAllAttributesByName("class", "active");
     document.getElementById("overview").setAttribute("class", "active")

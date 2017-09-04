@@ -1,6 +1,6 @@
-//12. Settings Page - Continents
+//09. Settings Page - Continents
 
-//12.01 Creation of main Continents add, edit, removal section
+//09.01 Creation of main Continents add, edit, removal section
 function createSettingsContinentTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"continent");
@@ -37,7 +37,7 @@ function createSettingsContinentTab_HTML() {
             '<div id="AddEditRemoveSection"></div>';
 }
 
-//12.02 Creation of section to be able to add new, edit or removal of continent
+//09.02 Creation of section to be able to add new, edit or removal of continent
 function addEditRemoveContinents(itemId) {
     var removeButton = "";
     var contValue = "";
@@ -46,6 +46,7 @@ function addEditRemoveContinents(itemId) {
     var submitStatus = "add";
     var name = "";
     var name_ru = "";
+    var editIdField = "";
 
     if (itemId != "addnew"){
         var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == itemId)});
@@ -55,10 +56,10 @@ function addEditRemoveContinents(itemId) {
         submitStatus = "edit";
         name = continent[0].name;
         name_ru = continent[0].name_ru
-
         removeButton = '<button type="submit" class="btn btn-default" onclick="javascript:RemoveContinent()">Remove selected item</button>' +
                 '<span id="remove"></span>' +
                 '<hr>';
+        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
@@ -67,18 +68,19 @@ function addEditRemoveContinents(itemId) {
         '<form>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + ' >' +
+                '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + ' required>' +
+                editIdField +
             '</div>' +
             '<span id="alert"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent" >' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent" required>' +
             '</div>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent" >' +
+                '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent" required>' +
             '</div>' +
         '<hr>' +
         '<button type="submit" id="' + submitStatus + '" class="btn btn-default" onclick="javascript:SubmitChanges(this.id)">Submit changes</button>' +
@@ -86,27 +88,28 @@ function addEditRemoveContinents(itemId) {
 
 }
 
-//12.03 Submit changes for Add new of edit event
+//09.03 Submit changes for Add new of edit event
 function SubmitChanges(status) {
-    var newID = document.getElementById('newId').value;
-    var newEngName = document.getElementById('newEngName').value;
-    var newRusName = document.getElementById('newRusName').value;
+    var continentObj = {
+                         continent_id: document.getElementById("newId").value,
+                         name_ru: document.getElementById("newEngName").value,
+                         name: document.getElementById("newRusName").value
+                       };
 
     removeAllChildNodes("alert");
     removeAllChildNodes("success");
 
     if (status == "add") {
-        var z = 0;
-        $.each (data.continent, function( i, continent ){
-            if (continents.continent_id == newID){
-                alertOfDuplicateFailure(continents.continent_id);
-                z = 1;
+        var z = true;
+        for (var i = 0; i < data.continent.length; i++) {
+            if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+                alertOfDuplicateFailure(data.continent[i].continent_id);
+                z = false;
                 break;
             }
-        });
-        if (z == 0) {
-            //Here must be method for add new item to DB
-            //After changes are applied to json (new files generated), then we have ro refresh all the arrays
+        }
+        if (z) {
+            $.getScript("SCRIPTS/set_content.js", function(){ addElementOfGlobalDataArray(continentObj)});
             alertOfSuccess()
         }
     }
@@ -118,11 +121,9 @@ function SubmitChanges(status) {
     }
 }
 
-//12.04 Remove item event handler
+//09.04 Remove item event handler
 function RemoveContinent() {
     var newID = document.getElementById('newId').value;
-    var newEngName = document.getElementById('newEngName').value;
-    var newRusName = document.getElementById('newRusName').value;
     var contToRemoveArray = $.grep (data.country, function( n, i ) {return (n.continent_id == newID)});;
 
     removeAllChildNodes("alert");
@@ -139,26 +140,24 @@ function RemoveContinent() {
             '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some country. Change continent id (or remove country) for following countries: ' +
             countriesLinkedToCont.slice(0, -2) + '.' +
             '</div>';
-        //TBD - I need to find another solution, to be able to handle issue wo direct switch to Country tab
     }
     else {
-        //Here must be method for DB item removal
-        //After changes are applied to json (new files generated), then we have ro refresh all the arrays
-        alertOfSuccess()
+        $.getScript("SCRIPTS/set_content.js", function(){ removeElementOfGlobalData4DefinedArray ("continent_id", newID) });
+        alertOfSuccess();
     }
 }
 
-//12.05 Success flag for any event successfully applied
+//09.05 Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
     document.getElementById("success").innerHTML =
         '<div class="alert alert-success fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Success!</strong> Your changes are successfully applied. Check list of continents to see changes added.' +
+        '<strong>Success!</strong> Your changes are successfully applied. Check list of Continents to see changes added.' +
         '</div>';
 }
 
-//12.06 Failure flag for not unique ID applied
+//09.06 Failure flag for not unique ID applied
 function alertOfDuplicateFailure(id) {
     removeAllChildNodes("alert");
     document.getElementById("alert").innerHTML =

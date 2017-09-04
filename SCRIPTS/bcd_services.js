@@ -303,6 +303,21 @@ function removeAllChildNodes(attrId) {
     };
 }
 
+//2.19 Remove readoly attribute from Input field
+function unblockReadonlyField(id){
+    $("#" + id).removeAttr("readonly");
+}
+
+//2.20 Remove element from Array
+function removeElementOfGlobalDataArray (arr, attr, value){
+    var i = arr.length;
+    while(i--){
+       if( arr[i] && arr[i].hasOwnProperty(attr) && (arguments.length > 2 && arr[i][attr] === value ) ){
+           arr.splice(i,1);
+       }
+    }
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 
