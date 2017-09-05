@@ -103,8 +103,9 @@ p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; marg
             border: 1px solid transparent;
             border-radius: 3px;
             text-decoration: none;}
-.back2country:hover {color:#fff;}
-.back2country:visited {color:#fff;}
+.back2country a,
+.back2country a:hover,
+.back2country a:visited {color:#fff;}
 
 /* Overview settings  PAGE
 ----------------------------------------------------------*/
