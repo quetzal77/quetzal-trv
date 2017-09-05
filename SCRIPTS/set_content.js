@@ -8,7 +8,7 @@ function addElementOfGlobalDataArray(entityObj) {
             break;
         case 'continent':
             data.continent.push(entityObj);
-            createSettingsContinentTab();
+            //createSettingsContinentTab();
             break;
         case 'country':
             // ...
@@ -39,7 +39,6 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
             break;
         case 'continent':
             removeElementOfGlobalDataArray (data.continent, attr, value);
-            createSettingsContinentTab();
             break;
         case 'country':
 //            removeElementOfGlobalDataArray (data.country, attr, value);

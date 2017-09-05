@@ -56,7 +56,7 @@ function addEditRemoveContinents(itemId) {
         submitStatus = "edit";
         name = continent[0].name;
         name_ru = continent[0].name_ru
-        removeButton = '<button type="submit" class="btn btn-default" onclick="javascript:RemoveContinent()">Remove selected item</button>' +
+        removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
@@ -64,8 +64,8 @@ function addEditRemoveContinents(itemId) {
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' continent</h2>' +
-        removeButton +
         '<form>' +
+            removeButton +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + ' required>' +
@@ -83,7 +83,7 @@ function addEditRemoveContinents(itemId) {
                 '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent" required>' +
             '</div>' +
         '<hr>' +
-        '<button type="submit" id="' + submitStatus + '" class="btn btn-default" onclick="javascript:SubmitChanges(this.id)">Submit changes</button>' +
+        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
 
 }
@@ -91,10 +91,15 @@ function addEditRemoveContinents(itemId) {
 //09.03 Submit changes for Add new of edit event
 function SubmitChanges(status) {
     var continentObj = {
-                         continent_id: document.getElementById("newId").value,
-                         name_ru: document.getElementById("newEngName").value,
-                         name: document.getElementById("newRusName").value
+                         continent_id: document.getElementById("newId").value.trim(),
+                         name_ru: document.getElementById("newEngName").value.trim(),
+                         name: document.getElementById("newRusName").value.trim()
                        };
+
+    if (continentObj.continent_id == '' || continentObj.name_ru == '' || continentObj.name == '')
+    {
+        return;
+    }
 
     removeAllChildNodes("alert");
     removeAllChildNodes("success");
@@ -108,17 +113,23 @@ function SubmitChanges(status) {
                 break;
             }
         }
+
         if (z) {
-            $.getScript("SCRIPTS/set_content.js", function(){ addElementOfGlobalDataArray(continentObj)});
-            alertOfSuccess()
+            $.getScript("SCRIPTS/set_content.js", function(){
+                addElementOfGlobalDataArray(continentObj);
+                createSettingsContinentTab_HTML();
+                alertOfSuccess();
+            });
         }
     }
     else {
         //Here must be method for DB update.
         //In case of change ID we have to change it for all the countries that hold it.
         //After changes are applied to json (new files generated), then we have ro refresh all the arrays
-        alertOfSuccess()
+        createSettingsContinentTab_HTML();
+        alertOfSuccess();
     }
+    return false;
 }
 
 //09.04 Remove item event handler
@@ -142,8 +153,11 @@ function RemoveContinent() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){ removeElementOfGlobalData4DefinedArray ("continent_id", newID) });
-        alertOfSuccess();
+        $.getScript("SCRIPTS/set_content.js", function(){
+            removeElementOfGlobalData4DefinedArray ("continent_id", newID);
+            createSettingsContinentTab_HTML();
+            alertOfSuccess();
+        });
     }
 }
 

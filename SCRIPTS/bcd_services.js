@@ -298,6 +298,9 @@ function removeAllAttributesByName(attrType, attrName) {
 //2.18 Remove all child nodes
 function removeAllChildNodes(attrId) {
     var list = document.getElementById(attrId);
+
+    if (list == null) return;
+
     while (list.hasChildNodes()) {
         list.removeChild(list.firstChild);
     };
