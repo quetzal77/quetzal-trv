@@ -80,16 +80,23 @@ function createSettingsOverviewTab_HTML() {
 function HTML_VisitesPerCountryTale() {
     var num = 1;
     var table = "";
-    countriesVisited.sort(dynamicSort("name"));
+    data.country.sort(dynamicSort("name"));
 
-    $.each(countriesVisited, function( i, country ){
+    $.each(data.country, function( i, country ){
+        var countryObj = $.grep (countriesVisited, function( n, i ){
+            return (n.country_id == country.country_id)
+        });
+
+        var xxx = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedRegions() : 0 ;
+        var ccc = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedCities() : 0 ;
+
         table +=
         '<tr>' +
             '<td id="thalign">' + num + '</td>' +
             '<td id="thalign">' + country.name + '</td>' +
-            '<td id="thalign">' + country.getNumberOfVisitedRegions() + '</td>' +
-            '<td id="thalign">' + country.getNumberOfVisitedCities() + '</td>' +
-            '<td id="thalign">' + country.getNumberOfVisits() + '</td>' +
+            '<td id="thalign">' + xxx + '</td>' +
+            '<td id="thalign">' + ccc + '</td>' +
+            '<td id="thalign">' + "3" + '</td>' +
         '</tr>';
         num = num + 1;
     });
