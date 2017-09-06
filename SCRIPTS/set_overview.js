@@ -87,7 +87,7 @@ function HTML_VisitesPerCountryTale() {
             return (n.country_id == country.country_id)
         });
 
-        var countryToVisit = (countryObj[0] != undefined) ? "" : " <span class="glyphicon glyphicon-unchecked"></span>" ;
+        var countryToVisit = (countryObj[0] != undefined) ? "" : " <span class='glyphicon glyphicon-unchecked'></span>" ;
         var regionsVisitedNum = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedRegions() : 0 ;
         var citiesVisitedNum = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedCities() : 0 ;
 
