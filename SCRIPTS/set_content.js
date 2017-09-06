@@ -8,7 +8,7 @@ function addElementOfGlobalDataArray(entityObj) {
             break;
         case 'continent':
             data.continent.push(entityObj);
-            //createSettingsContinentTab();
+            data.continent.sort(dynamicSort("name_ru"));
             break;
         case 'country':
             // ...

@@ -87,14 +87,15 @@ function HTML_VisitesPerCountryTale() {
             return (n.country_id == country.country_id)
         });
 
-        var countryToVisit = (countryObj[0] != undefined) ? "" : " <span class='glyphicon glyphicon-unchecked'></span>" ;
+        var countryToVisit = (countryObj[0] != undefined) ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name + "</a>"
+                                                          : country.name + " <span class='glyphicon glyphicon-remove'></span>" ;
         var regionsVisitedNum = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedRegions() : 0 ;
         var citiesVisitedNum = (countryObj[0] != undefined) ? countryObj[0].getNumberOfVisitedCities() : 0 ;
 
         table +=
         '<tr>' +
             '<td id="thalign">' + num + '</td>' +
-            '<td id="thalign">' + country.name + countryToVisit + '</td>' +
+            '<td id="thalign">' + countryToVisit + '</td>' +
             '<td id="thalign">' + regionsVisitedNum + '</td>' +
             '<td id="thalign">' + citiesVisitedNum + '</td>' +
             '<td id="thalign">' + "3" + '</td>' +

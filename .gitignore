@@ -46,6 +46,7 @@ nbactions.xml
 *.log
 
 README.html
+web.config
 
 # Python
 

@@ -68,20 +68,22 @@ function addEditRemoveContinents(itemId) {
             removeButton +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + ' required>' +
+                '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + '>' +
                 editIdField +
             '</div>' +
-            '<span id="alert"></span>' +
+            '<span id="alert1"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent" required>' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter russian name of continent">' +
             '</div>' +
+            '<span id="alert2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent" required>' +
+                '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter english name of continent">' +
             '</div>' +
+            '<span id="alert3"></span>' +
         '<hr>' +
         '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
@@ -96,25 +98,13 @@ function SubmitChanges(status) {
                          name: document.getElementById("newRusName").value.trim()
                        };
 
-    if (continentObj.continent_id == '' || continentObj.name_ru == '' || continentObj.name == '')
-    {
-        return;
-    }
-
-    removeAllChildNodes("alert");
+    removeAllChildNodes("alert1");
+    removeAllChildNodes("alert2");
+    removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
     if (status == "add") {
-        var z = true;
-        for (var i = 0; i < data.continent.length; i++) {
-            if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id);
-                z = false;
-                break;
-            }
-        }
-
-        if (z) {
+        if (checkRules4AddUpdate(continentObj)) {
             $.getScript("SCRIPTS/set_content.js", function(){
                 addElementOfGlobalDataArray(continentObj);
                 createSettingsContinentTab_HTML();
@@ -123,11 +113,15 @@ function SubmitChanges(status) {
         }
     }
     else {
-        //Here must be method for DB update.
-        //In case of change ID we have to change it for all the countries that hold it.
-        //After changes are applied to json (new files generated), then we have ro refresh all the arrays
-        createSettingsContinentTab_HTML();
-        alertOfSuccess();
+        if (checkRules4AddUpdate(continentObj)) {
+            $.getScript("SCRIPTS/set_content.js", function(){
+                //Here must be method for DB update.
+                //In case of change ID we have to change it for all the countries that hold it.
+                //After changes are applied to json (new files generated), then we have ro refresh all the arrays
+                createSettingsContinentTab_HTML();
+                alertOfSuccess();
+            });
+        }
     }
     return false;
 }
@@ -137,7 +131,9 @@ function RemoveContinent() {
     var newID = document.getElementById('newId').value;
     var contToRemoveArray = $.grep (data.country, function( n, i ) {return (n.continent_id == newID)});;
 
-    removeAllChildNodes("alert");
+    removeAllChildNodes("alert1");
+    removeAllChildNodes("alert2");
+    removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
     if (contToRemoveArray.length > 0) {
@@ -161,6 +157,21 @@ function RemoveContinent() {
     }
 }
 
+//09.05 Verification for Add/Update fields
+function checkRules4AddUpdate(continentObj) {
+    var result = true;
+    for (var i = 0; i < data.continent.length; i++) {
+        if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+            alertOfDuplicateFailure(data.continent[i].continent_id);
+            result = false;
+        }
+        if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
+        if (continentObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
+        if (continentObj.name == ''){ alertOfEmptyMandatoryField("alert3"); result = false; }
+    }
+    return result;
+}
+
 //09.05 Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
@@ -173,10 +184,20 @@ function alertOfSuccess() {
 
 //09.06 Failure flag for not unique ID applied
 function alertOfDuplicateFailure(id) {
-    removeAllChildNodes("alert");
-    document.getElementById("alert").innerHTML =
+    removeAllChildNodes("success");
+    document.getElementById("alert1").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id + '</b>. Try to use another id!' +
+        '</div>';
+}
+
+//09.07 Failure flag for empty mandatory field
+function alertOfEmptyMandatoryField(alertId) {
+    removeAllChildNodes("success");
+    document.getElementById(alertId).innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
         '</div>';
 }
