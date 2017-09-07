@@ -47,6 +47,7 @@ function addEditRemoveContinents(itemId) {
     var name = "";
     var name_ru = "";
     var editIdField = "";
+    local[0] = itemId;
 
     if (itemId != "addnew"){
         var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == itemId)});
@@ -54,8 +55,13 @@ function addEditRemoveContinents(itemId) {
         readonly = "readonly";
         header = "Edit";
         submitStatus = "edit";
+        name_ru = continent[0].name_ru;
         name = continent[0].name;
-        name_ru = continent[0].name_ru
+        local[0] = {
+            continent_id: itemId,
+            name_ru: continent[0].name_ru,
+            name: continent[0].name
+        };
         removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
@@ -75,13 +81,13 @@ function addEditRemoveContinents(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter russian name of continent">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent">' +
             '</div>' +
             '<span id="alert2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter english name of continent">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
             '</div>' +
             '<span id="alert3"></span>' +
         '<hr>' +
@@ -115,9 +121,7 @@ function SubmitChanges(status) {
     else {
         if (checkRules4AddUpdate(continentObj)) {
             $.getScript("SCRIPTS/set_content.js", function(){
-                //Here must be method for DB update.
-                //In case of change ID we have to change it for all the countries that hold it.
-                //After changes are applied to json (new files generated), then we have ro refresh all the arrays
+                updateElementOfGlobalDataArray(continentObj);
                 createSettingsContinentTab_HTML();
                 alertOfSuccess();
             });
@@ -160,8 +164,9 @@ function RemoveContinent() {
 //09.05 Verification for Add/Update fields
 function checkRules4AddUpdate(continentObj) {
     var result = true;
+    var initialContinentObj = local[0];
     for (var i = 0; i < data.continent.length; i++) {
-        if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+        if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
             alertOfDuplicateFailure(data.continent[i].continent_id);
             result = false;
         }
