@@ -36,6 +36,9 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  break;
              case 'continent':
                  updateElementOfContinentArray (initialEntityObj, newEntityObj);
+                 data.continent.sort(dynamicSort("name_ru"));
+                 initial_data.continent.sort(dynamicSort("name_ru"));
+                 processMyJson(data);
                  break;
              case 'country':
      //            removeElementOfGlobalDataArray (data.country, attr, value);
@@ -87,14 +90,39 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
 
 //10.04 Update Continent and Country array with new data
 function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
-    // Update Country Array with new ID
-    if (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) {
+    continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
+    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+
+    // Update Global Country Array with new ID
+    if (continent_id) {
         $.each (data.country, function( i, country ){
             if (country.continent_id == initialEntityObj.continent_id){
                 country.continent_id = newEntityObj.continent_id;
             }
         });
     }
-    // Update Continent array with new data
-
+    // Update Global Continent array with new data
+    $.each (data.continent, function( i, continent ){
+        if (continent.continent_id == initialEntityObj.continent_id) {
+            if (continent_id){ continent.continent_id = newEntityObj.continent_id; }
+            if (name_ru){ continent.name_ru = newEntityObj.name_ru; }
+            if (name){ continent.name = newEntityObj.name; }
+        }
+    });
+    // Update Onload Country Array with new ID
+    if (continent_id) {
+        $.each (initial_data.country, function( i, country ){
+            if (country.continent_id == initialEntityObj.continent_id){
+                country.continent_id = newEntityObj.continent_id;
+            }
+        });
+    }
+    // Update Onload Continent array with new data
+    $.each (initial_data.continent, function( i, continent ){
+        if (continent.continent_id == initialEntityObj.continent_id) {
+            if (continent_id){ continent.continent_id = newEntityObj.continent_id; }
+            if (name_ru){ continent.name_ru = newEntityObj.name_ru; }
+        }
+    });
 }
