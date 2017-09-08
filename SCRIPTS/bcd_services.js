@@ -321,6 +321,18 @@ function removeElementOfGlobalDataArray (arr, attr, value){
     }
 }
 
+//2.21 Reprocess all custom arrays and refresh scrolles
+function refreshAllTheArrays (){
+    //Reprocess all custom arrays
+    processMyJson(data);
+    //Creation of Country Selector
+    document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();
+    //Creation of City Selector
+    document.getElementById("ContentBody_CityList").innerHTML = getSelectorOfListOfCities_HTML();
+    //Creation of Story Selector
+    document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 

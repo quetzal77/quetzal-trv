@@ -86,6 +86,17 @@ function HTML_VisitesPerCountryTale() {
         var countryObj = $.grep (countriesVisited, function( n, i ){
             return (n.country_id == country.country_id)
         });
+        debugger;
+        var numberCountryVisites = 0;
+        if (countryObj[0] != undefined) {
+            $.each(visitsSorted, function( i, visit ){
+                var ifVisited = false;
+                $.each(visit.cities, function( i, city ){
+                    if (city.country_id == countryObj[0].short_name) {ifVisited = true;}
+                });
+                if (ifVisited) {numberCountryVisites = numberCountryVisites + 1;}
+            });
+        }
 
         var countryToVisit = (countryObj[0] != undefined) ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name + "</a>"
                                                           : country.name + " <span class='glyphicon glyphicon-remove'></span>" ;
@@ -98,7 +109,7 @@ function HTML_VisitesPerCountryTale() {
             '<td id="thalign">' + countryToVisit + '</td>' +
             '<td id="thalign">' + regionsVisitedNum + '</td>' +
             '<td id="thalign">' + citiesVisitedNum + '</td>' +
-            '<td id="thalign">' + "3" + '</td>' +
+            '<td id="thalign">' + numberCountryVisites + '</td>' +
         '</tr>';
         num = num + 1;
     });

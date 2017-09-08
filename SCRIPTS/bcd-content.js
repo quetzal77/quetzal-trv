@@ -16,7 +16,9 @@ function populateContent(callback) {
      //Array of Visited Countries, Regions and Cities
      createArrayOfVisitedCountriesAndRegions();
      //Calculate number of location visited and add them to front page
-     getNumberOfLocation();
+     if (local[0] == "world"){
+        getNumberOfLocation();
+     }
   }
 
   //01.03 Array of visits sorted descendingly and with dates in DATETIME format

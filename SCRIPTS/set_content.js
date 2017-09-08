@@ -38,7 +38,7 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  updateElementOfContinentArray (initialEntityObj, newEntityObj);
                  data.continent.sort(dynamicSort("name_ru"));
                  initial_data.continent.sort(dynamicSort("name_ru"));
-                 processMyJson(data);
+                 refreshAllTheArrays ();
                  break;
              case 'country':
      //            removeElementOfGlobalDataArray (data.country, attr, value);

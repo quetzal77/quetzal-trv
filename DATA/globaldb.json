@@ -10522,7 +10522,7 @@
     },
     {
       "name": "Golovinka",
-      "name_nt": "Головинка",
+      "name_nt": "",
       "name_ru": "Головинка",
       "region_id": "RU-KDA",
       "city_id": "golovinka",
@@ -10533,7 +10533,7 @@
     },
     {
       "name": "St. Petersburg",
-      "name_nt": "Санкт-Петербург",
+      "name_nt": "",
       "name_ru": "Санкт-Петербург",
       "image": "ru_piter.jpg",
       "region_id": "RU-SPE",
@@ -10544,7 +10544,7 @@
     },
     {
       "name": "Finland (gulf)",
-      "name_nt": "Финский (залив)",
+      "name_nt": "",
       "name_ru": "Финский (залив)",
       "region_id": "RU-LEN",
       "city_id": "finland_gulf",
@@ -10555,7 +10555,7 @@
     },
     {
       "name": "Sochi",
-      "name_nt": "Сочи",
+      "name_nt": "",
       "name_ru": "Сочи",
       "region_id": "RU-KDA",
       "city_id": "sochi",
@@ -10566,7 +10566,7 @@
     },
     {
       "name": "Tuapse",
-      "name_nt": "Туапсе",
+      "name_nt": "",
       "name_ru": "Туапсе",
       "region_id": "RU-KDA",
       "city_id": "tuapse",
@@ -10577,7 +10577,7 @@
     },
     {
       "name": "Adler",
-      "name_nt": "Адлер",
+      "name_nt": "",
       "name_ru": "Адлер",
       "region_id": "RU-KDA",
       "city_id": "adler",
@@ -10588,7 +10588,7 @@
     },
     {
       "name": "Lazarevskoe",
-      "name_nt": "Лазаревское",
+      "name_nt": "",
       "name_ru": "Лазаревское",
       "region_id": "RU-KDA",
       "city_id": "lazarevskoe",
@@ -10599,7 +10599,7 @@
     },
     {
       "name": "Kalezh",
-      "name_nt": "Калеж",
+      "name_nt": "",
       "name_ru": "Калеж",
       "region_id": "RU-KDA",
       "city_id": "kalezh",
@@ -10610,7 +10610,7 @@
     },
     {
       "name": "Thirty Three waterfalls (natural preserve)",
-      "name_nt": "Тридцать Три водопада (природный парк)",
+      "name_nt": "",
       "name_ru": "Тридцать Три водопада (природный парк)",
       "region_id": "RU-KDA",
       "city_id": "sochi_waterfalls",
@@ -10621,7 +10621,7 @@
     },
     {
       "name": "Mamedova schel",
-      "name_nt": "Мамедова щель",
+      "name_nt": "",
       "name_ru": "Мамедова щель",
       "region_id": "RU-KDA",
       "city_id": "mamedova_schel",
