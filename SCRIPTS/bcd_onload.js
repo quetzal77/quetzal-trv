@@ -61,3 +61,8 @@
         $.getScript("SCRIPTS/set_continent.js", function(){ createSettingsContinentTab_HTML() });
     }
 
+    function createSettingsTypeTab(){
+        //Create settings-continent tab
+        $.getScript("SCRIPTS/set_type.js", function(){ createSettingsTypeTab_HTML() });
+    }
+

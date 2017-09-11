@@ -3,8 +3,9 @@
 //10.01 Add data in Global Data Array
 function addElementOfGlobalDataArray(entityObj) {
     switch(local[1]) {
-        case 'level':
-            // ...
+        case 'type':
+            data.type.push(entityObj);
+            data.type.sort(dynamicSort("name_ru"));
             break;
         case 'continent':
             data.continent.push(entityObj);
@@ -30,7 +31,7 @@ function updateElementOfGlobalDataArray(newEntityObj) {
      var initialEntityObj = local[0];
 
          switch(local[1]) {
-             case 'level':
+             case 'type':
      //            removeElementOfGlobalDataArray (data.level, attr, value);
      //            //TBD - check and refresh initial_data array
                  break;
@@ -62,9 +63,8 @@ function updateElementOfGlobalDataArray(newEntityObj) {
 //10.03 Remove data from Global Data Arrays
 function removeElementOfGlobalData4DefinedArray(attr, value) {
     switch(local[1]) {
-        case 'level':
-//            removeElementOfGlobalDataArray (data.level, attr, value);
-//            //TBD - check and refresh initial_data array
+        case 'type':
+            removeElementOfGlobalDataArray (data.type, attr, value);
             break;
         case 'continent':
             removeElementOfGlobalDataArray (data.continent, attr, value);

@@ -93,15 +93,16 @@ function populateContent(callback) {
                this.image = data.city[i].image;
                this.lat = data.city[i].lat;
                this.long = data.city[i].long;
+               this.city_type = data.city[i].type;
 
                if (data.city[i].lat_2) {
                    this.lat_2 = data.city[i].lat_2;
                    this.long_2 = data.city[i].long_2;
                }
 
-               this.name = data.city[i].name;
+               this.name = (data.city[i].type) ? getCityNameUpdatedEn(data.city[i].name, data.city[i].type) : data.city[i].name;
                this.name_nt = data.city[i].name_nt;
-               this.name_ru = data.city[i].name_ru;
+               this.name_ru = (data.city[i].type) ? getCityNameUpdatedRu(data.city[i].name_ru, data.city[i].type) : data.city[i].name_ru;
                this.region_id = data.city[i].region_id;
 
                this.setFullCityName = function () {
@@ -256,4 +257,22 @@ function populateContent(callback) {
         this.start_date = new Date(startVisit[2], startVisit[1] - 1, startVisit[0]);
         var endVisit = end_date.split(".");
         this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
+    }
+
+    //01.09 Get updated city EN name when it has type defined
+    function getCityNameUpdatedEn(name, type_id) {
+    var result;
+        $.each(data.type, function( i, type ){
+            if (type.type_id == type_id){result = (name.toLowerCase().includes(type.name)) ? name : name + " (" + type.name + ").";}
+        });
+    return result;
+    }
+
+    //01.10 Get updated city RU name when it has type defined
+    function getCityNameUpdatedRu(name_ru, type_id) {
+    var result;
+        $.each(data.type, function( i, type ){
+            if (type.type_id == type_id){result = (name_ru.toLowerCase().includes(type.name_ru)) ?  name_ru : name_ru + " (" + type.name_ru + ")";}
+        });
+    return result;
     }

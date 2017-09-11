@@ -30,7 +30,7 @@ function HTML_Settings_LeftPanel() {
                 '<li id="export"><a href="#">Export</a></li>' +
             '</ul>' +
             '<ul class="nav nav-sidebar">' +
-                '<li id="entites"><a href="">Levels</a></li>' +
+                '<li id="types"><a onclick="javascript:createSettingsTypeTab()" onmouseover="" style="cursor: pointer;">Entity types</a></li>' +
                 '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">Continents</a></li>' +
                 '<li id="countries"><a href="">Countries</a></li>' +
                 '<li id="regions"><a href="">Regions</a></li>' +
@@ -86,7 +86,6 @@ function HTML_VisitesPerCountryTale() {
         var countryObj = $.grep (countriesVisited, function( n, i ){
             return (n.country_id == country.country_id)
         });
-        debugger;
         var numberCountryVisites = 0;
         if (countryObj[0] != undefined) {
             $.each(visitsSorted, function( i, visit ){

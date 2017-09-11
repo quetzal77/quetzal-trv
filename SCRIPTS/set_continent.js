@@ -166,9 +166,11 @@ function checkRules4AddUpdate(continentObj) {
     var result = true;
     var initialContinentObj = local[0];
     for (var i = 0; i < data.continent.length; i++) {
-        if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-            alertOfDuplicateFailure(data.continent[i].continent_id);
-            result = false;
+        if (initialContinentObj != "addnew") {
+            if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+                alertOfDuplicateFailure(data.continent[i].continent_id);
+                result = false;
+            }
         }
         if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
         if (continentObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
