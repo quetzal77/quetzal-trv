@@ -32,13 +32,13 @@ function updateElementOfGlobalDataArray(newEntityObj) {
 
          switch(local[1]) {
              case 'type':
-     //            removeElementOfGlobalDataArray (data.level, attr, value);
-     //            //TBD - check and refresh initial_data array
+                 updateElementOfTypeArray(initialEntityObj, newEntityObj)
+                 data.type.sort(dynamicSort("name_ru"));
+                 refreshAllTheArrays ();
                  break;
              case 'continent':
                  updateElementOfContinentArray (initialEntityObj, newEntityObj);
                  data.continent.sort(dynamicSort("name_ru"));
-                 initial_data.continent.sort(dynamicSort("name_ru"));
                  refreshAllTheArrays ();
                  break;
              case 'country':
@@ -55,6 +55,8 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  break;
              case 'visit':
      //            removeElementOfGlobalDataArray (data.visit, attr, value);
+//                        data.continent.sort(dynamicSort("name_ru"));
+//                      initial_data.continent.sort(dynamicSort("name_ru"));
      //            //TBD - check and refresh initial_data array
                  break;
          }
@@ -123,6 +125,30 @@ function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
         if (continent.continent_id == initialEntityObj.continent_id) {
             if (continent_id){ continent.continent_id = newEntityObj.continent_id; }
             if (name_ru){ continent.name_ru = newEntityObj.name_ru; }
+        }
+    });
+}
+
+//10.05 Update Type and City arrays with new data
+function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
+    type_id = (initialEntityObj.type_id.toUpperCase() != newEntityObj.type_id.toUpperCase()) ? true : false;
+    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+
+    // Update Global City Array with new ID
+    if (type_id) {
+        $.each (data.city, function( i, city ){
+            if (city.type == initialEntityObj.type_id){
+                city.type = newEntityObj.type_id;
+            }
+        });
+    }
+    // Update Global Type array with new data
+    $.each (data.type, function( i, type ){
+        if (type.type_id == initialEntityObj.type_id) {
+            if (type_id){ type.type_id = newEntityObj.type_id; }
+            if (name_ru){ type.name_ru = newEntityObj.name_ru; }
+            if (name){ type.name = newEntityObj.name; }
         }
     });
 }

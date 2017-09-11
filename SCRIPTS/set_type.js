@@ -69,7 +69,7 @@ function addEditRemoveLocationTypes(itemId) {
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' continent</h2>' +
+        '<h2 class="sub-header">' + header + ' location type</h2>' +
         '<form>' +
             removeButton +
             '<div class="input-group">' +
@@ -121,7 +121,7 @@ function SubmitChanges(status) {
     else {
         if (checkRules4AddUpdate(typeObj)) {
             $.getScript("SCRIPTS/set_content.js", function(){
-                //updateElementOfGlobalDataArray(typeObj);
+                updateElementOfGlobalDataArray(typeObj);
                 createSettingsTypeTab_HTML();
                 alertOfSuccess();
             });
@@ -167,9 +167,11 @@ function checkRules4AddUpdate(typeObj) {
     var initialTypeObj = local[0];
         debugger;
     for (var i = 0; i < data.type.length; i++) {
-        if (initialTypeObj.type_id.toUpperCase() != typeObj.type_id.toUpperCase() && data.type[i].type_id == typeObj.type_id.toUpperCase()){
-            alertOfDuplicateFailure(data.type[i].type_id, data.type[i].name_ru);
-            result = false;
+        if (initialTypeObj != "addnew") {
+            if (initialTypeObj.type_id.toUpperCase() != typeObj.type_id.toUpperCase() && data.type[i].type_id == typeObj.type_id.toUpperCase()){
+                alertOfDuplicateFailure(data.type[i].type_id, data.type[i].name_ru);
+                result = false;
+            }
         }
         if (typeObj.type_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
         if (typeObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
