@@ -168,13 +168,15 @@ function checkRules4AddUpdate(continentObj) {
     for (var i = 0; i < data.continent.length; i++) {
         if (initialContinentObj != "addnew") {
             if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id);
+                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ru);
                 result = false;
             }
         }
-        else if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-            alertOfDuplicateFailure(data.continent[i].continent_id);
-            result = false;
+        else {
+            if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ru);
+                result = false;
+            }
         }
         if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
         if (continentObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
@@ -194,12 +196,12 @@ function alertOfSuccess() {
 }
 
 //09.06 Failure flag for not unique ID applied
-function alertOfDuplicateFailure(id) {
+function alertOfDuplicateFailure(id, name_ru) {
     removeAllChildNodes("success");
     document.getElementById("alert1").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id + '</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
         '</div>';
 }
 
