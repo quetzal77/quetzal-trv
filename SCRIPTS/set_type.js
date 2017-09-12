@@ -165,13 +165,16 @@ function RemoveLocationType() {
 function checkRules4AddUpdate(typeObj) {
     var result = true;
     var initialTypeObj = local[0];
-        debugger;
     for (var i = 0; i < data.type.length; i++) {
         if (initialTypeObj != "addnew") {
             if (initialTypeObj.type_id.toUpperCase() != typeObj.type_id.toUpperCase() && data.type[i].type_id == typeObj.type_id.toUpperCase()){
                 alertOfDuplicateFailure(data.type[i].type_id, data.type[i].name_ru);
                 result = false;
             }
+        }
+        else if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+            alertOfDuplicateFailure(data.continent[i].continent_id);
+            result = false;
         }
         if (typeObj.type_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
         if (typeObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }

@@ -62,7 +62,12 @@
     }
 
     function createSettingsTypeTab(){
-        //Create settings-continent tab
+        //Create settings-location_type tab
         $.getScript("SCRIPTS/set_type.js", function(){ createSettingsTypeTab_HTML() });
+    }
+
+    function createSettingsCityTab(){
+        //Create settings-city tab
+        $.getScript("SCRIPTS/set_city.js", function(){ createSettingsCityTab_HTML() });
     }
 

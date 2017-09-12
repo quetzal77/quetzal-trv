@@ -172,6 +172,10 @@ function checkRules4AddUpdate(continentObj) {
                 result = false;
             }
         }
+        else if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+            alertOfDuplicateFailure(data.continent[i].continent_id);
+            result = false;
+        }
         if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
         if (continentObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
         if (continentObj.name == ''){ alertOfEmptyMandatoryField("alert3"); result = false; }

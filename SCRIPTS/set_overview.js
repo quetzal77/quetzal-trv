@@ -34,7 +34,7 @@ function HTML_Settings_LeftPanel() {
                 '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">Continents</a></li>' +
                 '<li id="countries"><a href="">Countries</a></li>' +
                 '<li id="regions"><a href="">Regions</a></li>' +
-                '<li id="cities"><a href="">Cities</a></li>' +
+                '<li id="cities"><a onclick="javascript:createSettingsCityTab()" onmouseover="" style="cursor: pointer;">Cities</a></li>' +
             '</ul>' +
             '<ul class="nav nav-sidebar">' +
                 '<li id="visits"><a href="">Visits</a></li>' +
