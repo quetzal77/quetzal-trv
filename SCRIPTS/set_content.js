@@ -80,8 +80,7 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
 //            //TBD - check and refresh initial_data array
             break;
         case 'city':
-//            removeElementOfGlobalDataArray (data.city, attr, value);
-//            //TBD - check and refresh initial_data array
+            removeElementOfGlobalDataArray (data.city, attr, value);
             break;
         case 'visit':
 //            removeElementOfGlobalDataArray (data.visit, attr, value);

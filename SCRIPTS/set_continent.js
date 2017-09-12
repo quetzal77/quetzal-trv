@@ -133,7 +133,7 @@ function SubmitChanges(status) {
 //09.04 Remove item event handler
 function RemoveContinent() {
     var newID = document.getElementById('newId').value;
-    var contToRemoveArray = $.grep (data.country, function( n, i ) {return (n.continent_id == newID)});;
+    var contToRemoveArray = $.grep (data.country, function( n, i ) {return (n.continent_id == newID)});
 
     removeAllChildNodes("alert1");
     removeAllChildNodes("alert2");

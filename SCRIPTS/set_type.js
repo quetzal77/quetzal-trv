@@ -133,7 +133,7 @@ function SubmitChanges(status) {
 //10.04 Remove item event handler
 function RemoveLocationType() {
     var newID = document.getElementById('newId').value;
-    var cityToRemoveArray = $.grep (data.city, function( n, i ) {return (n.type == newID)});;
+    var cityToRemoveArray = $.grep (data.city, function( n, i ) {return (n.type == newID)});
 
     removeAllChildNodes("alert1");
     removeAllChildNodes("alert2");

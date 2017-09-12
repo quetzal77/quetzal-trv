@@ -38,14 +38,14 @@ function createSettingsCityTab_HTML() {
             '<div id="AddEditRemoveSection"></div>';
 }
 
-//11.01 Creation of main Continents add, edit, removal section
+//11.02 Second city drop down
 function showAllTheCitiesOfSelectedCountry(id) {
     var listOfCities = '';
     $.each (data.city.sort(dynamicSort("name_ru")), function( i, city ){
         var cityObj = new CityObj(city.city_id);
         var cityName = (city.type) ? getCityNameUpdatedRu(city.name_ru, city.type) : city.name_ru;
         if (cityObj.getCountryId() == id){
-            listOfCities += '<li><a id="' + city.city_id + '" onclick="javascript:addEditRemoveLocationTypes(this.id)" onmouseover="" style="cursor: pointer;">' + cityName + '</a></li>';
+            listOfCities += '<li><a id="' + city.city_id + '" onclick="javascript:addEditRemoveCity(this.id)" onmouseover="" style="cursor: pointer;">' + cityName + '</a></li>';
         }
     });
 
@@ -62,4 +62,113 @@ function showAllTheCitiesOfSelectedCountry(id) {
                     '</ul>' +
                 '</div>' +
             '</div>';
+    document.getElementById("AddEditRemoveSection").innerHTML = "";
+}
+
+//11.03 Creation of section to be able to add new, edit or removal of continent
+function addEditRemoveCity(itemId) {
+    var removeButton = "";
+    var contValue = "";
+    var readonly = "";
+    var header = "Add new";
+    var submitStatus = "add";
+    var name = "";
+    var name_ru = "";
+    var editIdField = "";
+    local[0] = itemId;
+
+    if (itemId != "addnew"){
+        var city = $.grep (data.city, function( n, i ) {return (n.city_id == itemId)});
+        contValue = 'value="' + itemId + '" ';
+        readonly = "readonly";
+        header = "Edit";
+        submitStatus = "edit";
+        name_ru = city[0].name_ru;
+        name = city[0].name;
+        local[0] = {
+            city_id: itemId,
+            name_ru: city[0].name_ru,
+            name: city[0].name
+        };
+        removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveCity();return false" value="Remove selected item"/>' +
+                '<span id="remove"></span>' +
+                '<hr>';
+        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+    }
+
+    document.getElementById("AddEditRemoveSection").innerHTML =
+        '<h2 class="sub-header">' + header + ' continent</h2>' +
+        '<form>' +
+            removeButton +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                '<input id="newId" type="text" class="form-control" placeholder="Enter unique city Id" ' + contValue + readonly + '>' +
+                editIdField +
+            '</div>' +
+            '<span id="alert1"></span>' +
+            '<br>' +
+//            '<div class="input-group">' +
+//                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+//                '<input id="newEngName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent">' +
+//            '</div>' +
+//            '<span id="alert2"></span>' +
+//            '<br>' +
+//            '<div class="input-group">' +
+//                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+//                '<input id="newRusName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
+//            '</div>' +
+//            '<span id="alert3"></span>' +
+//        '<hr>' +
+//        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
+        '</form>';
+}
+
+//11.04 Remove item entity handler
+function RemoveCity() {
+    var newID = document.getElementById('newId').value;
+    var distinctIds = {};
+    var visitToRemoveArray = [];
+    $.each (visitsSorted, function( i, visit ) {
+        $.each (visit.cities, function( i, city ) {
+            if (city.city_id == newID && !distinctIds[visit.start_date]){
+                visitToRemoveArray.push(visit);
+                distinctIds[visit.start_date] = true;
+            }
+        });
+    });
+
+    removeAllChildNodes("alert1");
+    removeAllChildNodes("alert2");
+    removeAllChildNodes("alert3");
+    removeAllChildNodes("success");
+
+    if (visitToRemoveArray.length > 0) {
+        var visitesLinkedToCity = "";
+        $.each (visitToRemoveArray, function( i, visit ){
+            visitesLinkedToCity += '<b>' + getVisitDate(visit.start_date, visit.end_date, true) + '</b>, ';
+        });
+        document.getElementById("remove").innerHTML =
+            '<div class="alert alert-danger fade in">' +
+            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some visit. Change city id (or remove visit) for following visites: ' +
+            visitesLinkedToCity.slice(0, -2) + '.' +
+            '</div>';
+    }
+    else {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            removeElementOfGlobalData4DefinedArray ("city_id", newID);
+            createSettingsCityTab_HTML();
+            alertOfSuccess();
+        });
+    }
+}
+
+//11.06 Success flag for any event successfully applied
+function alertOfSuccess() {
+    removeAllChildNodes("alert");
+    document.getElementById("success").innerHTML =
+        '<div class="alert alert-success fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Success!</strong> Your changes are successfully applied. Check list of Cities to see changes added.' +
+        '</div>';
 }
