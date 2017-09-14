@@ -19,9 +19,12 @@ function createSettingsCityTab_HTML() {
             '<h1 class="page-header">Cities</h1>' +
             '<span id="success"></span>' +
                 '<div class="well">' +
+                    '<p><b>TIPS:</b></p>' +
                     '<p>This section gives you possible to <b>ADD</b>, <b>EDIT</b> or <b>REMOVE</b> \"city\" entity.</p>' +
                     '<p>Select \"Add new\" option to add new \"city\" or choose some particular entity that gonna be either edited or removed.</p>' +
                     '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +
+                    '<p><b>Pencil</b> is shown for all the non mandatory fields.</p>' +
+                    '<p>For <b>image</b> there is a possibility to add more than one picture, you can add as many images as possible just split them with comma like "one.jpg,two.jpg".</p>' +
                     '<hr>' +
                     '<p><b>Select country</b> that city you gonna to add/edit/remove belongs to. It has to reduce list of cities shown and makes it more userfriendly.</p>' +
                     '<div id="countryDropdown" class="btn-toolbar">' +
@@ -67,29 +70,35 @@ function showAllTheCitiesOfSelectedCountry(id) {
 
 //11.03 Creation of section to be able to add new, edit or removal of continent
 function addEditRemoveCity(itemId) {
-    var removeButton = "";
-    var contValue = "";
-    var readonly = "";
-    var header = "Add new";
-    var submitStatus = "add";
-    var name = "";
-    var name_ru = "";
-    var editIdField = "";
-    local[0] = itemId;
+    var removeButton = ""; var contValue = ""; var readonly = ""; var editIdField = ""; var types = "";
+    var header = "Add new"; var submitStatus = "add";
+    var city = (itemId != "addnew") ? $.grep (data.city, function( n, i ) {return ( n.city_id == itemId )}) : "newcity";
+    local[0] = {
+        city_id: itemId,
+        name_ru: (itemId != "addnew") ? city[0].name_ru : "",
+        name: (itemId != "addnew") ? city[0].name : "",
+        name_nt: (itemId != "addnew") ? (city[0].name_nt != undefined) ? city[0].name_nt: "" : "",
+        image: (itemId != "addnew") ? (city[0].image != undefined) ? city[0].image: "" : "",
+        capital: (city[0].capital == "true") ? "checked" : "",
+        type: (itemId != "addnew") ? (city[0].type != undefined) ? city[0].type: "" : "",
+        region_id: (itemId != "addnew") ? city[0].region_id : "",
+        lat: (itemId != "addnew") ? (city[0].lat != undefined) ? city[0].lat: "" : "",
+        lat_2: (itemId != "addnew") ? (city[0].lat_2 != undefined) ? city[0].lat_2: "" : "",
+        long: (itemId != "addnew") ? (city[0].long != undefined) ? city[0].long: "" : "",
+        long_2: (itemId != "addnew") ? (city[0].long_2 != undefined) ? city[0].long_2: "" : "",
+        description: (itemId != "addnew") ? (city[0].description != undefined) ? city[0].description: "" : ""
+    };
+    //        var regions = $.grep (data.area, function( n, i ) {return ( n.country_id == city[0]. )});
+    $.each (data.type.sort(dynamicSort("name_ru")), function( i, type ) {
+        var selected = (type.type_id == city[0].type) ? " selected" : "";
+        types += "<option" + selected + ">" + type.name_ru + "</option>";
+    });
 
     if (itemId != "addnew"){
-        var city = $.grep (data.city, function( n, i ) {return (n.city_id == itemId)});
         contValue = 'value="' + itemId + '" ';
         readonly = "readonly";
         header = "Edit";
         submitStatus = "edit";
-        name_ru = city[0].name_ru;
-        name = city[0].name;
-        local[0] = {
-            city_id: itemId,
-            name_ru: city[0].name_ru,
-            name: city[0].name
-        };
         removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveCity();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
@@ -105,21 +114,76 @@ function addEditRemoveCity(itemId) {
                 '<input id="newId" type="text" class="form-control" placeholder="Enter unique city Id" ' + contValue + readonly + '>' +
                 editIdField +
             '</div>' +
-            '<span id="alert1"></span>' +
+            '<span id="alert_id"></span>' +
             '<br>' +
-//            '<div class="input-group">' +
-//                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-//                '<input id="newEngName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent">' +
-//            '</div>' +
-//            '<span id="alert2"></span>' +
-//            '<br>' +
-//            '<div class="input-group">' +
-//                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-//                '<input id="newRusName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
-//            '</div>' +
-//            '<span id="alert3"></span>' +
-//        '<hr>' +
-//        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of city">' +
+            '</div>' +
+            '<span id="alert_name_ru"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of city">' +
+            '</div>' +
+            '<span id="alert_name"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newNtName" type="text" class="form-control" value="' + local[0].name_nt + '" placeholder="Enter native name of city (use language of main nation)">' +
+            '</div>' +
+            '<span id="alert_name_nt"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+            '<label class="checkbox-inline"><input type="checkbox" value="" ' + local[0].capital + '>Capital identifier</label>' +
+            '</div>' +
+            '<span id="alert_capital"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newImage" type="text" class="form-control" value="' + local[0].image + '" placeholder="Enter either image name of few of them">' +
+            '</div>' +
+            '<span id="alert_image"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<select id="newType" class="form-control">' +
+                    '<option>Default type. Select type that your city belongs to or leave it as is in case its default one.</option>' +
+                    types +
+                '</select>' +
+            '</div>' +
+            '<span id="alert_type"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newLat" type="text" class="form-control" value="' + local[0].lat + '" placeholder="Enter latitude of your city">' +
+            '</div>' +
+            '<span id="alert_lat"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newLat_2" type="text" class="form-control" value="' + local[0].lat_2 + '" placeholder="Enter second latitude of your city">' +
+            '</div>' +
+            '<span id="alert_lat_2"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newLong" type="text" class="form-control" value="' + local[0].long + '" placeholder="Enter longitude of your city">' +
+            '</div>' +
+            '<span id="alert_long"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newLong_2" type="text" class="form-control" value="' + local[0].long_2 + '" placeholder="Enter second longitude of your city">' +
+            '</div>' +
+            '<span id="alert_long_2"></span>' +
+            '<br>' +
+            '<div class="form-group">' +
+                '<textarea id="newDescription" class="form-control" rows="5" placeholder="Enter description of city with listing of sights.">' + local[0].description + '</textarea>' +
+            '</div>' +
+            '<span id="alert_description"></span>' +
+        '<hr>' +
+        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
 }
 
@@ -137,9 +201,9 @@ function RemoveCity() {
         });
     });
 
-    removeAllChildNodes("alert1");
-    removeAllChildNodes("alert2");
-    removeAllChildNodes("alert3");
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
     removeAllChildNodes("success");
 
     if (visitToRemoveArray.length > 0) {
