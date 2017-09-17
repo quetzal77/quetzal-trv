@@ -167,7 +167,7 @@ function checkRules4AddUpdate(typeObj) {
     var initialTypeObj = local[0];
     for (var i = 0; i < data.type.length; i++) {
         if (initialTypeObj != "addnew") {
-            if (initialTypeObj.type_id.toUpperCase() != typeObj.type_id.toUpperCase() && data.type[i].type_id == typeObj.type_id.toUpperCase()){
+            if (initialTypeObj.type_id != typeObj.type_id && data.type[i].type_id == typeObj.type_id){
                 alertOfDuplicateFailure(data.type[i].type_id, data.type[i].name_ru);
                 result = false;
             }

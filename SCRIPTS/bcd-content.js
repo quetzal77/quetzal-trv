@@ -135,7 +135,7 @@ function populateContent(callback) {
                   return country[0].short_name;
               }
                this.getRegion = function () {
-                  return new RegionObj(data.city[i].region_id);
+                  return new RegionObj(this.region_id);
                }
            break;
            }

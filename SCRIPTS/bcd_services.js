@@ -306,7 +306,7 @@ function removeAllChildNodes(attrId) {
     };
 }
 
-//2.19 Remove readoly attribute from Input field
+//2.19 Remove readonly attribute from Input field
 function unblockReadonlyField(id){
     $("#" + id).removeAttr("readonly");
 }
@@ -331,6 +331,14 @@ function refreshAllTheArrays (){
     document.getElementById("ContentBody_CityList").innerHTML = getSelectorOfListOfCities_HTML();
     //Creation of Story Selector
     document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
+}
+
+//2.22 Get country id instead of short name
+function getCountryId(short_name) {
+    result = $.grep (data.country, function( n, i ) {
+                return (n.short_name == short_name)
+            });
+    return result[0].country_id;
 }
 
 //03.00 Basic functions

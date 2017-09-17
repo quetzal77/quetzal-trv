@@ -44,6 +44,7 @@ function createSettingsCityTab_HTML() {
 //11.02 Second city drop down
 function showAllTheCitiesOfSelectedCountry(id) {
     var listOfCities = '';
+    local[2] = id;
     $.each (data.city.sort(dynamicSort("name_ru")), function( i, city ){
         var cityObj = new CityObj(city.city_id);
         var cityName = (city.type) ? getCityNameUpdatedRu(city.name_ru, city.type) : city.name_ru;
@@ -70,7 +71,7 @@ function showAllTheCitiesOfSelectedCountry(id) {
 
 //11.03 Creation of section to be able to add new, edit or removal of continent
 function addEditRemoveCity(itemId) {
-    var removeButton = ""; var contValue = ""; var readonly = ""; var editIdField = ""; var types = "";
+    var removeButton = ""; var contValue = ""; var readonly = ""; var editIdField = ""; var types = ""; var regions = "";
     var header = "Add new"; var submitStatus = "add";
     var city = (itemId != "addnew") ? $.grep (data.city, function( n, i ) {return ( n.city_id == itemId )}) : "newcity";
     local[0] = {
@@ -88,10 +89,17 @@ function addEditRemoveCity(itemId) {
         long_2: (itemId != "addnew") ? (city[0].long_2 != undefined) ? city[0].long_2: "" : "",
         description: (itemId != "addnew") ? (city[0].description != undefined) ? city[0].description: "" : ""
     };
-    //        var regions = $.grep (data.area, function( n, i ) {return ( n.country_id == city[0]. )});
+
+    $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ) {
+        if ( region.country_id == getCountryId(local[2]) ) {
+            var selected = (region.region_id == city[0].region_id) ? " selected" : "";
+            regions += "<option value='" + region.region_id + "' " + selected + ">" + region.name_ru + "</option>";
+        }
+    });
+
     $.each (data.type.sort(dynamicSort("name_ru")), function( i, type ) {
         var selected = (type.type_id == city[0].type) ? " selected" : "";
-        types += "<option" + selected + ">" + type.name_ru + "</option>";
+        types += "<option value='" + type.type_id + "' " + selected + ">" + type.name_ru + "</option>";
     });
 
     if (itemId != "addnew"){
@@ -106,7 +114,7 @@ function addEditRemoveCity(itemId) {
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' continent</h2>' +
+        '<h2 class="sub-header">' + header + ' city</h2>' +
         '<form>' +
             removeButton +
             '<div class="input-group">' +
@@ -135,9 +143,18 @@ function addEditRemoveCity(itemId) {
             '<span id="alert_name_nt"></span>' +
             '<br>' +
             '<div class="input-group">' +
-            '<label class="checkbox-inline"><input type="checkbox" value="" ' + local[0].capital + '>Capital identifier</label>' +
+            '<label class="checkbox-inline"><input type="checkbox"  id="newCapital" value="" ' + local[0].capital + '>Capital identifier</label>' +
             '</div>' +
             '<span id="alert_capital"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                '<select id="newRegion" class="form-control">' +
+                    '<option value="0">Select region that city belongs to.</option>' +
+                    regions +
+                '</select>' +
+            '</div>' +
+            '<span id="alert_region"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
@@ -148,7 +165,7 @@ function addEditRemoveCity(itemId) {
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                 '<select id="newType" class="form-control">' +
-                    '<option>Default type. Select type that your city belongs to or leave it as is in case its default one.</option>' +
+                    '<option value="0">Default type. Select type that your city belongs to or leave it as is in case its default one.</option>' +
                     types +
                 '</select>' +
             '</div>' +
@@ -162,15 +179,15 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newLat_2" type="text" class="form-control" value="' + local[0].lat_2 + '" placeholder="Enter second latitude of your city">' +
-            '</div>' +
-            '<span id="alert_lat_2"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                 '<input id="newLong" type="text" class="form-control" value="' + local[0].long + '" placeholder="Enter longitude of your city">' +
             '</div>' +
             '<span id="alert_long"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newLat_2" type="text" class="form-control" value="' + local[0].lat_2 + '" placeholder="Enter second latitude of your city">' +
+            '</div>' +
+            '<span id="alert_lat_2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
@@ -204,6 +221,7 @@ function RemoveCity() {
     removeAllChildNodes("alert_id");
     removeAllChildNodes("alert_name_ru");
     removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_region");
     removeAllChildNodes("success");
 
     if (visitToRemoveArray.length > 0) {
@@ -227,12 +245,105 @@ function RemoveCity() {
     }
 }
 
-//11.06 Success flag for any event successfully applied
+//11.05 Submit changes for Add new of edit event
+function SubmitChanges(status) {
+    var newCityObj = {
+                     city_id: document.getElementById("newId").value.trim(),
+                     name: document.getElementById("newRusName").value.trim(),
+                     name_nt: document.getElementById("newNtName").value.trim(),
+                     name_ru: document.getElementById("newEngName").value.trim()
+                   };
+
+    if (document.getElementById("newRegion").value != "0") { newCityObj["region_id"] = document.getElementById("newRegion").value; }
+    if (document.getElementById("newType").value != "0") { newCityObj["type"] = document.getElementById("newType").value; }
+    if (document.getElementById('newCapital').checked) { newCityObj["capital"] = "true"; }
+    if (document.getElementById("newLat").value.trim() != "") { newCityObj["lat"] = document.getElementById("newLat").value.trim(); }
+    if (document.getElementById("newLat_2").value.trim() != "") { newCityObj["lat_2"] = document.getElementById("newLat_2").value.trim(); }
+    if (document.getElementById("newLong").value.trim() != "") { newCityObj["long"] = document.getElementById("newLong").value.trim(); }
+    if (document.getElementById("newLong_2").value.trim() != "") { newCityObj["long_2"] = document.getElementById("newLong_2").value.trim(); }
+    if (document.getElementById("newImage").value.trim() != "") { newCityObj["image"] = document.getElementById("newImage").value.trim(); }
+    if (document.getElementById("newDescription").value.trim() != "") { newCityObj["description"] = document.getElementById("newDescription").value.trim(); }
+
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_region");
+    removeAllChildNodes("success");
+
+    if (status == "add") {
+        if (checkRules4AddUpdate(newCityObj)) {
+            $.getScript("SCRIPTS/set_content.js", function(){
+                addElementOfGlobalDataArray(newCityObj);
+                createSettingsCityTab_HTML();
+                alertOfSuccess();
+            });
+        }
+    }
+    else {
+        if (checkRules4AddUpdate(newCityObj)) {
+            $.getScript("SCRIPTS/set_content.js", function(){
+                updateElementOfGlobalDataArray(newCityObj);
+                createSettingsCityTab_HTML();
+                alertOfSuccess();
+            });
+        }
+    }
+    return false;
+}
+
+//11.06 Verification for Add/Update fields
+function checkRules4AddUpdate(cityObj) {
+    var result = true;
+    var initialCityObj = local[0];
+    for (var i = 0; i < data.city.length; i++) {
+        if (initialCityObj.city_id != "addnew") {
+            if (initialCityObj.city_id.toLowerCase() != cityObj.city_id.toLowerCase() && data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
+                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ru);
+                result = false;
+            }
+        }
+        else {
+            if (data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
+                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ru);
+                result = false;
+            }
+        }
+        debugger;
+        if (cityObj.city_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
+        if (cityObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (cityObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
+        if (cityObj.region_id == undefined){ alertOfEmptyMandatoryField("alert_region"); result = false; }
+    }
+    return result;
+}
+
+
+//11.07 Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
     document.getElementById("success").innerHTML =
         '<div class="alert alert-success fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Success!</strong> Your changes are successfully applied. Check list of Cities to see changes added.' +
+        '</div>';
+}
+
+//11.08 Failure flag for not unique ID applied
+function alertOfDuplicateFailure(id, name_ru) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_id").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '</div>';
+}
+
+//11.09 Failure flag for empty mandatory field
+function alertOfEmptyMandatoryField(alertId) {
+    removeAllChildNodes("success");
+    document.getElementById(alertId).innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
         '</div>';
 }

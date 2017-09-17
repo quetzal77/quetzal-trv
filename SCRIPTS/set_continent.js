@@ -167,7 +167,7 @@ function checkRules4AddUpdate(continentObj) {
     var initialContinentObj = local[0];
     for (var i = 0; i < data.continent.length; i++) {
         if (initialContinentObj != "addnew") {
-            if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
+            if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id.toUpperCase() == continentObj.continent_id.toUpperCase()){
                 alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ru);
                 result = false;
             }
