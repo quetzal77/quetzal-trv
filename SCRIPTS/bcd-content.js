@@ -126,7 +126,6 @@ function populateContent(callback) {
                   var country = $.grep (data.country, function( n, i ){
                       return (n.country_id == regionSplited[0])
                   });
-
                    if(typeof country[0] == "undefined")
                    {
                        return "";

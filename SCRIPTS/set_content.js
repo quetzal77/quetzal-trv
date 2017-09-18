@@ -20,7 +20,6 @@ function addElementOfGlobalDataArray(entityObj) {
         case 'city':
             data.city.push(entityObj);
             data.city.sort(dynamicSort("name_ru"));
-            data.city.sort(dynamicSort("region_id"));
             break;
         case 'visit':
             // ...
@@ -54,7 +53,6 @@ function updateElementOfGlobalDataArray(newEntityObj) {
              case 'city':
                  updateElementOfCityArray (initialEntityObj, newEntityObj);
                  data.city.sort(dynamicSort("name_ru"));
-                 data.city.sort(dynamicSort("region_id"));
                  refreshAllTheArrays ();
                  break;
              case 'visit':
@@ -191,14 +189,14 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
             if (name){ city.name = newEntityObj.name; }
             if (name_nt){ city.name_nt = newEntityObj.name_nt; }
             if (region_id){ city.region_id = newEntityObj.region_id; }
-            if (type){ city.type = newEntityObj.type; }
-            if (image){ city.image = newEntityObj.image; }
-            if (description){ city.description = newEntityObj.description; }
-            if (lat){ city.lat = newEntityObj.lat; }
-            if (lat_2){ city.lat_2 = newEntityObj.lat_2; }
-            if (long){ city.long = newEntityObj.long; }
-            if (long_2){ city.long_2 = newEntityObj.long_2; }
-            if (capital){ city.capital = newEntityObj.capital; }
+            if (type){ if (newEntityObj.type != undefined) {city.type = newEntityObj.type;} else {delete city['type'];} }
+            if (image){ if (newEntityObj.image != undefined) {city.image = newEntityObj.image;} else {delete city['image'];} }
+            if (description){ if (newEntityObj.description != undefined) {city.description = newEntityObj.description;} else {delete city['description'];} }
+            if (lat){ if (newEntityObj.lat != undefined) {city.lat = newEntityObj.lat;} else {delete city['lat'];} }
+            if (lat_2){ if (newEntityObj.lat_2 != undefined) {city.lat_2 = newEntityObj.lat_2;} else {delete city['lat_2'];} }
+            if (long){ if (newEntityObj.long != undefined) {city.long = newEntityObj.long;} else {delete city['long'];} }
+            if (long_2){ if (newEntityObj.long_2 != undefined) {city.long_2 = newEntityObj.long_2;} else {delete city['long_2'];} }
+            if (capital){ if (newEntityObj.capital != undefined) {city.capital = newEntityObj.capital;} else {delete city['capital'];} }
         }
     });
 }
