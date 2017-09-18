@@ -158,14 +158,14 @@ function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
 
 //10.05 Update City and Visit arrays with new data
 function updateElementOfCityArray(initialEntityObj, newEntityObj) {
-debugger;
+
     city_id = (initialEntityObj.city_id.toLowerCase() != newEntityObj.city_id.toLowerCase()) ? true : false;
     name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
     name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
     region_id = (initialEntityObj.region_id != newEntityObj.region_id) ? true : false;
     type = (initialEntityObj.type != newEntityObj.type) ? true : false;
-//    capital =
+    capital = (initialEntityObj.capital != newEntityObj.capital) ? true : false;
     lat = (initialEntityObj.lat != newEntityObj.lat) ? true : false;
     lat_2 = (initialEntityObj.lat_2 != newEntityObj.lat_2) ? true : false;
     long = (initialEntityObj.long != newEntityObj.long) ? true : false;
@@ -198,6 +198,7 @@ debugger;
             if (lat_2){ city.lat_2 = newEntityObj.lat_2; }
             if (long){ city.long = newEntityObj.long; }
             if (long_2){ city.long_2 = newEntityObj.long_2; }
+            if (capital){ city.capital = newEntityObj.capital; }
         }
     });
 }
