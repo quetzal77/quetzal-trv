@@ -156,7 +156,7 @@ function populateContent(callback) {
                    return this.name_ru + " - " + this.name;
                }
                this.getCountry = function () {
-                  return new CountryObj(data.area[i].country_id);
+                  return new CountryObj(this.country_id);
                }
                this.getNumberOfVisitedCities = function () {
                    var result = 0;

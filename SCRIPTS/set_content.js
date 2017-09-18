@@ -52,8 +52,10 @@ function updateElementOfGlobalDataArray(newEntityObj) {
      //            //TBD - check and refresh initial_data array
                  break;
              case 'city':
-     //            removeElementOfGlobalDataArray (data.city, attr, value);
-     //            //TBD - check and refresh initial_data array
+                 updateElementOfCityArray (initialEntityObj, newEntityObj);
+                 data.city.sort(dynamicSort("name_ru"));
+                 data.city.sort(dynamicSort("region_id"));
+                 refreshAllTheArrays ();
                  break;
              case 'visit':
      //            removeElementOfGlobalDataArray (data.visit, attr, value);
@@ -150,6 +152,52 @@ function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
             if (type_id){ type.type_id = newEntityObj.type_id; }
             if (name_ru){ type.name_ru = newEntityObj.name_ru; }
             if (name){ type.name = newEntityObj.name; }
+        }
+    });
+}
+
+//10.05 Update City and Visit arrays with new data
+function updateElementOfCityArray(initialEntityObj, newEntityObj) {
+debugger;
+    city_id = (initialEntityObj.city_id.toLowerCase() != newEntityObj.city_id.toLowerCase()) ? true : false;
+    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
+    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    region_id = (initialEntityObj.region_id != newEntityObj.region_id) ? true : false;
+    type = (initialEntityObj.type != newEntityObj.type) ? true : false;
+//    capital =
+    lat = (initialEntityObj.lat != newEntityObj.lat) ? true : false;
+    lat_2 = (initialEntityObj.lat_2 != newEntityObj.lat_2) ? true : false;
+    long = (initialEntityObj.long != newEntityObj.long) ? true : false;
+    long_2 = (initialEntityObj.long_2 != newEntityObj.long_2) ? true : false;
+    image = (initialEntityObj.image != newEntityObj.image) ? true : false;
+    description = (initialEntityObj.description != newEntityObj.description) ? true : false;
+
+    // Update Global Visit Array with new ID
+    if (city_id) {
+        $.each (data.visit, function( i, visit ){
+            $.each (visit.city, function( i, city ){
+                if (city == initialEntityObj.city_id){
+                    city = newEntityObj.city_id;
+                }
+            });
+        });
+    }
+    // Update Global City array with new data
+    $.each (data.city, function( i, city ){
+        if (city.city_id == initialEntityObj.city_id) {
+            if (city_id){ city.city_id = newEntityObj.city_id; }
+            if (name_ru){ city.name_ru = newEntityObj.name_ru; }
+            if (name){ city.name = newEntityObj.name; }
+            if (name_nt){ city.name_nt = newEntityObj.name_nt; }
+            if (region_id){ city.region_id = newEntityObj.region_id; }
+            if (type){ city.type = newEntityObj.type; }
+            if (image){ city.image = newEntityObj.image; }
+            if (description){ city.description = newEntityObj.description; }
+            if (lat){ city.lat = newEntityObj.lat; }
+            if (lat_2){ city.lat_2 = newEntityObj.lat_2; }
+            if (long){ city.long = newEntityObj.long; }
+            if (long_2){ city.long_2 = newEntityObj.long_2; }
         }
     });
 }

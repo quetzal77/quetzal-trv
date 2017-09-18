@@ -79,16 +79,24 @@ function addEditRemoveCity(itemId) {
         name_ru: (itemId != "addnew") ? city[0].name_ru : "",
         name: (itemId != "addnew") ? city[0].name : "",
         name_nt: (itemId != "addnew") ? (city[0].name_nt != undefined) ? city[0].name_nt: "" : "",
-        image: (itemId != "addnew") ? (city[0].image != undefined) ? city[0].image: "" : "",
-        capital: (city[0].capital == "true") ? "checked" : "",
-        type: (itemId != "addnew") ? (city[0].type != undefined) ? city[0].type: "" : "",
-        region_id: (itemId != "addnew") ? city[0].region_id : "",
-        lat: (itemId != "addnew") ? (city[0].lat != undefined) ? city[0].lat: "" : "",
-        lat_2: (itemId != "addnew") ? (city[0].lat_2 != undefined) ? city[0].lat_2: "" : "",
-        long: (itemId != "addnew") ? (city[0].long != undefined) ? city[0].long: "" : "",
-        long_2: (itemId != "addnew") ? (city[0].long_2 != undefined) ? city[0].long_2: "" : "",
-        description: (itemId != "addnew") ? (city[0].description != undefined) ? city[0].description: "" : ""
+        region_id: (itemId != "addnew") ? city[0].region_id : ""
     };
+
+    if (itemId != "addnew" && city[0].capital != undefined) { local[0].capital = city[0].capital; }
+    var capital = (local[0].capital == "true") ? "checked" : "";
+    if (itemId != "addnew" && city[0].type != undefined) { local[0].type = city[0].type; }
+    if (itemId != "addnew" && city[0].image != undefined) { local[0].image = city[0].image; }
+    var image = (local[0].image != undefined) ? local[0].image : "";
+    if (itemId != "addnew" && city[0].lat != undefined) { local[0].lat = city[0].lat; }
+    var lat = (local[0].lat != undefined) ? local[0].lat : "";
+    if (itemId != "addnew" && city[0].lat_2 != undefined) { local[0].lat_2 = city[0].lat_2; }
+    var lat_2 = (local[0].lat_2 != undefined) ? local[0].lat_2 : "";
+    if (itemId != "addnew" && city[0].long != undefined) { local[0].long = city[0].long; }
+    var long = (local[0].long != undefined) ? local[0].long : "";
+    if (itemId != "addnew" && city[0].long_2 != undefined) { local[0].long_2 = city[0].long_2; }
+    var long_2 = (local[0].long_2 != undefined) ? local[0].long_2 : "";
+    if (itemId != "addnew" && city[0].description != undefined) { local[0].description = city[0].description; }
+    var description = (local[0].description != undefined) ? local[0].description : "";
 
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ) {
         if ( region.country_id == getCountryId(local[2]) ) {
@@ -143,7 +151,7 @@ function addEditRemoveCity(itemId) {
             '<span id="alert_name_nt"></span>' +
             '<br>' +
             '<div class="input-group">' +
-            '<label class="checkbox-inline"><input type="checkbox"  id="newCapital" value="" ' + local[0].capital + '>Capital identifier</label>' +
+            '<label class="checkbox-inline"><input type="checkbox"  id="newCapital" value="" ' + capital + '>Capital identifier</label>' +
             '</div>' +
             '<span id="alert_capital"></span>' +
             '<br>' +
@@ -158,7 +166,7 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newImage" type="text" class="form-control" value="' + local[0].image + '" placeholder="Enter either image name of few of them">' +
+                '<input id="newImage" type="text" class="form-control" value="' + image + '" placeholder="Enter either image name of few of them">' +
             '</div>' +
             '<span id="alert_image"></span>' +
             '<br>' +
@@ -173,30 +181,30 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newLat" type="text" class="form-control" value="' + local[0].lat + '" placeholder="Enter latitude of your city">' +
+                '<input id="newLat" type="text" class="form-control" value="' + lat + '" placeholder="Enter latitude of your city">' +
             '</div>' +
             '<span id="alert_lat"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newLong" type="text" class="form-control" value="' + local[0].long + '" placeholder="Enter longitude of your city">' +
+                '<input id="newLong" type="text" class="form-control" value="' + long + '" placeholder="Enter longitude of your city">' +
             '</div>' +
             '<span id="alert_long"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newLat_2" type="text" class="form-control" value="' + local[0].lat_2 + '" placeholder="Enter second latitude of your city">' +
+                '<input id="newLat_2" type="text" class="form-control" value="' + lat_2 + '" placeholder="Enter second latitude of your city">' +
             '</div>' +
             '<span id="alert_lat_2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newLong_2" type="text" class="form-control" value="' + local[0].long_2 + '" placeholder="Enter second longitude of your city">' +
+                '<input id="newLong_2" type="text" class="form-control" value="' + long_2 + '" placeholder="Enter second longitude of your city">' +
             '</div>' +
             '<span id="alert_long_2"></span>' +
             '<br>' +
             '<div class="form-group">' +
-                '<textarea id="newDescription" class="form-control" rows="5" placeholder="Enter description of city with listing of sights.">' + local[0].description + '</textarea>' +
+                '<textarea id="newDescription" class="form-control" rows="5" placeholder="Enter description of city with listing of sights.">' + description + '</textarea>' +
             '</div>' +
             '<span id="alert_description"></span>' +
         '<hr>' +
@@ -248,10 +256,10 @@ function RemoveCity() {
 //11.05 Submit changes for Add new of edit event
 function SubmitChanges(status) {
     var newCityObj = {
-                     city_id: document.getElementById("newId").value.trim(),
                      name: document.getElementById("newRusName").value.trim(),
                      name_nt: document.getElementById("newNtName").value.trim(),
-                     name_ru: document.getElementById("newEngName").value.trim()
+                     name_ru: document.getElementById("newEngName").value.trim(),
+                     city_id: document.getElementById("newId").value.trim()
                    };
 
     if (document.getElementById("newRegion").value != "0") { newCityObj["region_id"] = document.getElementById("newRegion").value; }
@@ -308,7 +316,6 @@ function checkRules4AddUpdate(cityObj) {
                 result = false;
             }
         }
-        debugger;
         if (cityObj.city_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
         if (cityObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
         if (cityObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
