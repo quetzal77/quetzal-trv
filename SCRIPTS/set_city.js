@@ -115,7 +115,7 @@ function addEditRemoveCity(itemId) {
         readonly = "readonly";
         header = "Edit";
         submitStatus = "edit";
-        removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveCity();return false" value="Remove selected item"/>' +
+        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveCity();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
@@ -192,6 +192,12 @@ function addEditRemoveCity(itemId) {
             '<span id="alert_long"></span>' +
             '<br>' +
             '<div class="input-group">' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<button type="button" class="btn btn-default active" onclick="openGoogleMap();return false">Check Google Map</button>&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<button type="button" class="btn btn-default disabled" onclick="openCountryMap();return false">Check Country Map</button>' +
+            '</div>' +
+            '<br>' +
+            '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                 '<input id="newLat_2" type="text" class="form-control" value="' + lat_2 + '" placeholder="Enter second latitude of your city">' +
             '</div>' +
@@ -203,12 +209,17 @@ function addEditRemoveCity(itemId) {
             '</div>' +
             '<span id="alert_long_2"></span>' +
             '<br>' +
+            '<div class="input-group">' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<button type="button" class="btn btn-default active" onclick="openSecondGoogleMap();return false">Check Google Map</button>&nbsp;&nbsp;&nbsp;&nbsp;' +
+            '</div>' +
+            '<br>' +
             '<div class="form-group">' +
                 '<textarea id="newDescription" class="form-control" rows="5" placeholder="Enter description of city with listing of sights.">' + description + '</textarea>' +
             '</div>' +
             '<span id="alert_description"></span>' +
         '<hr>' +
-        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
+        '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
 }
 
@@ -353,4 +364,42 @@ function alertOfEmptyMandatoryField(alertId) {
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
         '</div>';
+}
+
+//11.10 Open Google map for lat and long coordinates
+function openGoogleMap() {
+    removeAllChildNodes("alert_lat");
+    removeAllChildNodes("alert_long");
+    var lat = document.getElementById("newLat").value.trim();
+    var long = document.getElementById("newLong").value.trim();
+
+    if (lat != "" && long != "") {
+        window.open("https://www.google.com/maps/@" + lat + "," + long + ",12z",'_blank');
+    }
+    else {
+        (lat == "") ? alertOfEmptyMandatoryField("alert_lat") : alertOfEmptyMandatoryField("alert_long");
+    }
+}
+
+//11.11 Open Country map for lat and long coordinates
+function openSecondGoogleMap() {
+    removeAllChildNodes("alert_lat_2");
+    removeAllChildNodes("alert_long_2");
+    var lat_2 = document.getElementById("newLat_2").value.trim();
+    var long_2 = document.getElementById("newLong_2").value.trim();
+
+    if (lat_2 != "" && long_2 != "") {
+        window.open("https://www.google.com/maps/@" + lat_2 + "," + long_2 + ",12z",'_blank');
+    }
+    else {
+        (lat_2 == "") ? alertOfEmptyMandatoryField("alert_lat_2") : alertOfEmptyMandatoryField("alert_long_2");
+    }
+}
+
+//11.11 Open Country map for lat and long coordinates
+function openCountryMap() {
+    var lat = document.getElementById("newLat").value.trim();
+    var long = document.getElementById("newLong").value.trim();
+
+    window.open("https://www.google.com/maps/@43.0010979,41.0144408,12z",'_blank');
 }

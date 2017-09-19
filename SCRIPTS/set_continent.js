@@ -62,7 +62,7 @@ function addEditRemoveContinents(itemId) {
             name_ru: continent[0].name_ru,
             name: continent[0].name
         };
-        removeButton = '<input type="submit" class="btn btn-default" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
+        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
@@ -91,7 +91,7 @@ function addEditRemoveContinents(itemId) {
             '</div>' +
             '<span id="alert3"></span>' +
         '<hr>' +
-        '<input type="submit" class="btn btn-default" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
+        '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
 
 }
