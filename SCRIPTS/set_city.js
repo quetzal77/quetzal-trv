@@ -194,7 +194,7 @@ function addEditRemoveCity(itemId) {
             '<div class="input-group">' +
                 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                 '<button type="button" class="btn btn-default active" onclick="openGoogleMap();return false">Check Google Map</button>&nbsp;&nbsp;&nbsp;&nbsp;' +
-                '<button type="button" class="btn btn-default disabled" onclick="openCountryMap();return false">Check Country Map</button>' +
+                '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Country Map</button>' +
             '</div>' +
             '<br>' +
             '<div class="input-group">' +
@@ -401,5 +401,18 @@ function openCountryMap() {
     var lat = document.getElementById("newLat").value.trim();
     var long = document.getElementById("newLong").value.trim();
 
-    window.open("https://www.google.com/maps/@43.0010979,41.0144408,12z",'_blank');
+    var page = window.open("",'_blank');
+    page.document.write(
+        "<html>" +
+            "<head>" +
+                "<title>Country Map</title>" +
+                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
+            "</head>" +
+            "<body>" +
+                "<div id='mapdiv' class='map'>&nbsp;</div>" +
+                "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+            "</body>" +
+        "</html>");
 }
