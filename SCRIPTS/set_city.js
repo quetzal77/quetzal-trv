@@ -39,6 +39,10 @@ function createSettingsCityTab_HTML() {
                 '</div>' +
             '<div id="CityListSection"></div>' +
             '<div id="AddEditRemoveSection"></div>';
+
+    //Remove copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "";
+    document.getElementById("hr_bottom").innerHTML = "";
 }
 
 //11.02 Second city drop down

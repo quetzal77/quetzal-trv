@@ -35,6 +35,10 @@ function createSettingsTypeTab_HTML() {
                     '</div>' +
                 '</div>' +
             '<div id="AddEditRemoveSection"></div>';
+
+    //Remove copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "";
+    document.getElementById("hr_bottom").innerHTML = "";
 }
 
 //10.02 Creation of section to be able to add new, edit or removal of continent

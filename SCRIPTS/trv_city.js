@@ -12,8 +12,12 @@ function createCityPage_HTML(cityId) {
     window.history.pushState("object or string", "Title", "index.html?cityId="+cityId);
 
     //Add Country main content
-    document.getElementById("mainSection").innerHTML = "<div class='countrylabel'>" + local[1].setFullCityName() + "</div>" +
+    document.getElementById("mainSection").innerHTML = "<div class='countrylabel h3'>" + local[1].setFullCityName() + "</div>" +
                                                          HTML_CityDetais(cityId)
+
+    //Add copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
 //07.02 Creation of

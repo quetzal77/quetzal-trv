@@ -21,6 +21,10 @@ function createWorldPage_HTML () {
 
     //Creation of world map
     drawMap();
+
+    //Add copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
 //04.02 This method creates content for World page

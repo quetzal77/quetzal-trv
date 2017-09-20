@@ -9,6 +9,10 @@ function createStoryPage_HTML(storyId) {
 
     var storyFileUrl = "DATA/stories/" + storyId + ".xml";
     $.get(storyFileUrl, processMyStory, 'xml');
+
+    //Add copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
 //06.02 This method creates all collections we need to populate story page

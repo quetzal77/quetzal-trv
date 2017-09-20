@@ -19,6 +19,10 @@ function createSettingsPage_HTML(setting_type) {
         '</div> <!-- /container -->';
 
     createSettingsOverviewTab_HTML();
+
+    //Remove copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "";
+    document.getElementById("hr_bottom").innerHTML = "";
 }
 
 //08.02 Creator of left menu

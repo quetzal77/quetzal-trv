@@ -15,7 +15,7 @@ function createCountryPage_HTML(countryId) {
 
     //Add Country main content
     document.getElementById("mainSection").innerHTML =
-    "<div class='countrylabel'>" + local[1].setFullCountryName() + "</div>" +
+    "<div class='countrylabel h3'>" + local[1].setFullCountryName() + "</div>" +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
@@ -25,6 +25,10 @@ function createCountryPage_HTML(countryId) {
 
     //Creation of world map
     drawMap();
+
+    //Add copy marker and bottom line
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
 //05.02 This method creates content for Country page
