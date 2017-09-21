@@ -171,27 +171,11 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
     image = (initialEntityObj.image != newEntityObj.image) ? true : false;
     description = (initialEntityObj.description != newEntityObj.description) ? true : false;
 
-    // Update Global Visit Array with new ID
-    /*if (city_id) {
-        $.each (data.visit, function( i, visit ){
-            $.each (visit.city, function( j, city ){
-                if (city == initialEntityObj.city_id){
-                    city = newEntityObj.city_id;
-                }
-            });
-        });
-    }*/
-
-    if (city_id)
-    {
-        for (var i = 0; i < data.visit.length; i ++)
-        {
-            var visit = data.visit[i];
-            for (var j = 0 ; j < visit.city.length; j ++)
-            {
-                if (visit.city[j] == initialEntityObj.city_id)
-                {
-                    visit.city[j] = newEntityObj.city_id;
+    if (city_id) {
+        for (var i = 0; i < data.visit.length; i ++) {
+            for (var j = 0 ; j < data.visit[i].city.length; j ++) {
+                if (data.visit[i].city[j] == initialEntityObj.city_id) {
+                    data.visit[i].city[j] = newEntityObj.city_id;
                 }
             }
         }
