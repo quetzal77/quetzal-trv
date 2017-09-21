@@ -72,7 +72,7 @@ function showAllTheCitiesOfSelectedCountry(id) {
     document.getElementById("AddEditRemoveSection").innerHTML = "";
 }
 
-//11.03 Creation of section to be able to add new, edit or removal of continent
+//11.03 Creation of section to be able to add new, edit or removal of city
 function addEditRemoveCity(itemId) {
     var removeButton = ""; var contValue = ""; var readonly = ""; var editIdField = ""; var types = ""; var regions = "";
     var header = "Add new"; var submitStatus = "add";
