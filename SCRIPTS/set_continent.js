@@ -4,9 +4,9 @@
 function createSettingsContinentTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"continent");
-
     local[1] = "continent";
 
+    // Set menu marker
     removeAllAttributesByName("class", "active");
     document.getElementById("continents").setAttribute("class", "active")
 

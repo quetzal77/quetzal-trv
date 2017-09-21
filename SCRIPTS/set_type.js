@@ -1,12 +1,12 @@
 //10. Settings Page - Location Types
 
-//10.01 Creation of main Continents add, edit, removal section
+//10.01 Creation of main Location Type add, edit, removal section
 function createSettingsTypeTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"type");
-
     local[1] = "type";
 
+    // Set menu marker
     removeAllAttributesByName("class", "active");
     document.getElementById("types").setAttribute("class", "active")
 

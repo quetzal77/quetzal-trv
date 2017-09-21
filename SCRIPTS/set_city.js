@@ -1,12 +1,12 @@
-//11. Settings Page - Location Types
+//11. Settings Page - City
 
-//11.01 Creation of main Continents add, edit, removal section
+//11.01 Creation of main City add, edit, removal section
 function createSettingsCityTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"city");
-
     local[1] = "city";
 
+    // Set menu marker
     removeAllAttributesByName("class", "active");
     document.getElementById("cities").setAttribute("class", "active")
 
@@ -19,7 +19,6 @@ function createSettingsCityTab_HTML() {
             '<h1 class="page-header">Cities</h1>' +
             '<span id="success"></span>' +
                 '<div class="well">' +
-                    '<p><b>TIPS:</b></p>' +
                     '<p>This section gives you possible to <b>ADD</b>, <b>EDIT</b> or <b>REMOVE</b> \"city\" entity.</p>' +
                     '<p>Select \"Add new\" option to add new \"city\" or choose some particular entity that gonna be either edited or removed.</p>' +
                     '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +

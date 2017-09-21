@@ -71,3 +71,28 @@
         $.getScript("SCRIPTS/set_city.js", function(){ createSettingsCityTab_HTML() });
     }
 
+    function createSettingsCountryTab(){
+        //Create settings-country tab
+        $.getScript("SCRIPTS/set_country.js", function(){ createSettingsCountryTab_HTML() });
+    }
+
+    function createSettingsRegionTab(){
+        //Create settings-region tab
+        $.getScript("SCRIPTS/set_region.js", function(){ createSettingsRegionTab_HTML() });
+    }
+
+    function createSettingsVisitTab(){
+        //Create settings-visit tab
+        $.getScript("SCRIPTS/set_visit.js", function(){ createSettingsVisitTab_HTML() });
+    }
+
+    function createSettingsStoryTab(){
+        //Create settings-story tab
+        $.getScript("SCRIPTS/set_story.js", function(){ createSettingsStoryTab_HTML() });
+    }
+
+    function createSettingsExportTab(){
+        //Create settings-export tab
+        $.getScript("SCRIPTS/set_export.js", function(){ createSettingsExportTab_HTML() });
+    }
+
