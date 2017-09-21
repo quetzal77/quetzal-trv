@@ -172,15 +172,31 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
     description = (initialEntityObj.description != newEntityObj.description) ? true : false;
 
     // Update Global Visit Array with new ID
-    if (city_id) {
+    /*if (city_id) {
         $.each (data.visit, function( i, visit ){
-            $.each (visit.city, function( i, city ){
+            $.each (visit.city, function( j, city ){
                 if (city == initialEntityObj.city_id){
                     city = newEntityObj.city_id;
                 }
             });
         });
+    }*/
+
+    if (city_id)
+    {
+        for (var i = 0; i < data.visit.length; i ++)
+        {
+            var visit = data.visit[i];
+            for (var j = 0 ; j < visit.city.length; j ++)
+            {
+                if (visit.city[j] == initialEntityObj.city_id)
+                {
+                    visit.city[j] = newEntityObj.city_id;
+                }
+            }
+        }
     }
+
     // Update Global City array with new data
     $.each (data.city, function( i, city ){
         if (city.city_id == initialEntityObj.city_id) {
