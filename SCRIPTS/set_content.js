@@ -12,7 +12,9 @@ function addElementOfGlobalDataArray(entityObj) {
             data.continent.sort(dynamicSort("name_ru"));
             break;
         case 'country':
-            // ...
+            data.country.push(entityObj);
+            data.country.sort(dynamicSort("name_ru"));
+            break;
             break;
         case 'area':
             // ...
@@ -43,8 +45,9 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  refreshAllTheArrays ();
                  break;
              case 'country':
-     //            removeElementOfGlobalDataArray (data.country, attr, value);
-     //            //TBD - check and refresh initial_data array
+                 updateElementOfCountryArray (initialEntityObj, newEntityObj);
+                 data.country.sort(dynamicSort("name_ru"));
+                 refreshAllTheArrays ();
                  break;
              case 'area':
      //            removeElementOfGlobalDataArray (data.area, attr, value);
@@ -74,8 +77,7 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
             removeElementOfGlobalDataArray (data.continent, attr, value);
             break;
         case 'country':
-//            removeElementOfGlobalDataArray (data.country, attr, value);
-//            //TBD - check and refresh initial_data array
+            removeElementOfGlobalDataArray (data.country, attr, value);
             break;
         case 'area':
 //            removeElementOfGlobalDataArray (data.area, attr, value);
@@ -93,9 +95,9 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
 
 //10.04 Update Continent and Country array with new data
 function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
-    continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
-    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
-    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    var continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
+    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
 
     // Update Global Country Array with new ID
     if (continent_id) {
@@ -132,9 +134,9 @@ function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
 
 //10.05 Update Type and City arrays with new data
 function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
-    type_id = (initialEntityObj.type_id.toUpperCase() != newEntityObj.type_id.toUpperCase()) ? true : false;
-    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
-    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    var type_id = (initialEntityObj.type_id.toUpperCase() != newEntityObj.type_id.toUpperCase()) ? true : false;
+    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
 
     // Update Global City Array with new ID
     if (type_id) {
@@ -156,20 +158,19 @@ function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
 
 //10.05 Update City and Visit arrays with new data
 function updateElementOfCityArray(initialEntityObj, newEntityObj) {
-
-    city_id = (initialEntityObj.city_id.toLowerCase() != newEntityObj.city_id.toLowerCase()) ? true : false;
-    name = (initialEntityObj.name != newEntityObj.name) ? true : false;
-    name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
-    name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
-    region_id = (initialEntityObj.region_id != newEntityObj.region_id) ? true : false;
-    type = (initialEntityObj.type != newEntityObj.type) ? true : false;
-    capital = (initialEntityObj.capital != newEntityObj.capital) ? true : false;
-    lat = (initialEntityObj.lat != newEntityObj.lat) ? true : false;
-    lat_2 = (initialEntityObj.lat_2 != newEntityObj.lat_2) ? true : false;
-    long = (initialEntityObj.long != newEntityObj.long) ? true : false;
-    long_2 = (initialEntityObj.long_2 != newEntityObj.long_2) ? true : false;
-    image = (initialEntityObj.image != newEntityObj.image) ? true : false;
-    description = (initialEntityObj.description != newEntityObj.description) ? true : false;
+    var city_id = (initialEntityObj.city_id.toLowerCase() != newEntityObj.city_id.toLowerCase()) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
+    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var region_id = (initialEntityObj.region_id != newEntityObj.region_id) ? true : false;
+    var type = (initialEntityObj.type != newEntityObj.type) ? true : false;
+    var capital = (initialEntityObj.capital != newEntityObj.capital) ? true : false;
+    var lat = (initialEntityObj.lat != newEntityObj.lat) ? true : false;
+    var lat_2 = (initialEntityObj.lat_2 != newEntityObj.lat_2) ? true : false;
+    var long = (initialEntityObj.long != newEntityObj.long) ? true : false;
+    var long_2 = (initialEntityObj.long_2 != newEntityObj.long_2) ? true : false;
+    var image = (initialEntityObj.image != newEntityObj.image) ? true : false;
+    var description = (initialEntityObj.description != newEntityObj.description) ? true : false;
 
     if (city_id) {
         for (var i = 0; i < data.visit.length; i ++) {
@@ -197,6 +198,46 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
             if (long){ if (newEntityObj.long != undefined) {city.long = newEntityObj.long;} else {delete city['long'];} }
             if (long_2){ if (newEntityObj.long_2 != undefined) {city.long_2 = newEntityObj.long_2;} else {delete city['long_2'];} }
             if (capital){ if (newEntityObj.capital != undefined) {city.capital = newEntityObj.capital;} else {delete city['capital'];} }
+        }
+    });
+}
+
+//10.06 Update Country and Region array with new data
+function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
+    var country_id = (initialEntityObj.country_id.toLowerCase() != newEntityObj.country_id.toLowerCase()) ? true : false;
+    var short_name = (initialEntityObj.short_name.toLowerCase() != newEntityObj.short_name.toLowerCase()) ? true : false;
+    var continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
+    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
+    var name_nt_text = (name_nt) ? " - " + newEntityObj.name_nt + " - " : " - ";
+    var full_name = (name || name_ru || name_nt) ? newEntityObj.name_ru + name_nt_text + newEntityObj.name : false;
+
+    // Update Global Region Array with new ID
+    if (country_id) {
+        $.each (data.area, function( i, region ){
+            if (region.country_id == initialEntityObj.country_id){
+                region.country_id = newEntityObj.country_id;
+            }
+        });
+    }
+    // Update Global Country array with new data
+    $.each (data.country, function( i, country ){
+        if (country.country_id == initialEntityObj.country_id) {
+            if (country_id){ country.country_id = newEntityObj.country_id; }
+            if (continent_id){ country.continent_id = newEntityObj.continent_id; }
+            if (name_ru){ country.name_ru = newEntityObj.name_ru; }
+            if (name){ country.name = newEntityObj.name; }
+            if (name_nt){ country.name_nt = newEntityObj.name_nt; }
+            if (short_name){ country.short_name = newEntityObj.short_name; }
+        }
+    });
+    // Update Onload Country array with new data
+    $.each (initial_data.country, function( i, country ){
+        if (country.country_id == initialEntityObj.country_id) {
+            if (country_id){ country.country_id = newEntityObj.country_id; }
+            if (continent_id){ country.continent_id = newEntityObj.continent_id; }
+            if (full_name){ country.name_full = full_name; }
         }
     });
 }

@@ -112,14 +112,163 @@ function addEditRemoveCountry(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<select id="newRegion" class="form-control">' +
+                '<select id="newContinent" class="form-control">' +
                     '<option value="0">Select continent that country belongs to.</option>' +
                     continents +
                 '</select>' +
             '</div>' +
-            '<span id="alert_region"></span>' +
+            '<span id="alert_continent"></span>' +
             '<br>' +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
+}
+
+//12.03 Submit changes for Add new of edit event
+function SubmitChanges(status) {
+    var newCountryObj = {
+                     country_id: document.getElementById("newId").value.trim(),
+                     continent_id: document.getElementById("newContinent").value.trim(),
+                     name: document.getElementById("newRusName").value.trim(),
+                     name_ru: document.getElementById("newEngName").value.trim(),
+                     short_name: document.getElementById("newShortName").value.trim()
+                   };
+
+    if (document.getElementById("newNtName").value.trim() != "") { newCountryObj["name_nt"] = document.getElementById("newNtName").value.trim(); }
+
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_short_name");
+    removeAllChildNodes("alert_continent");
+    removeAllChildNodes("success");
+
+    if (status == "add") {
+        if (checkRules4AddUpdate(newCountryObj)) {
+            $.getScript("SCRIPTS/set_content.js", function(){
+                addElementOfGlobalDataArray(newCountryObj);
+                createSettingsCountryTab_HTML();
+                alertOfSuccess();
+            });
+        }
+    }
+    else {
+        if (checkRules4AddUpdate(newCountryObj)) {
+            $.getScript("SCRIPTS/set_content.js", function(){
+                updateElementOfGlobalDataArray(newCountryObj);
+                createSettingsCountryTab_HTML();
+                alertOfSuccess();
+            });
+        }
+    }
+    return false;
+}
+
+//12.04 Remove item entity handler
+function RemoveCountry() {
+    var newID = document.getElementById('newId').value;
+    var distinctIds = {};
+    var regionsToRemoveArray = $.grep (data.area, function( n, i ) {return (n.country_id == newID)});
+
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_short_name");
+    removeAllChildNodes("alert_continent");
+    removeAllChildNodes("success");
+
+    if (regionsToRemoveArray.length > 0) {
+        var regionsLinkedToCountry = "";
+        $.each (regionsToRemoveArray, function( i, region ){
+            regionsLinkedToCountry += '<b>' + region.name_ru + '</b>, ';
+        });
+        document.getElementById("remove").innerHTML =
+            '<div class="alert alert-danger fade in">' +
+            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some region. Change country id (or remove region) for following regions: ' +
+            regionsLinkedToCountry.slice(0, -2) + '.' +
+            '</div>';
+    }
+    else {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            removeElementOfGlobalData4DefinedArray ("country_id", newID);
+            createSettingsCountryTab_HTML();
+            alertOfSuccess();
+        });
+    }
+}
+
+//12.05 Verification for Add/Update fields
+function checkRules4AddUpdate(countryObj) {
+    var result = true;
+    var initialCountryObj = local[0];
+    for (var i = 0; i < data.country.length; i++) {
+        if (initialCountryObj.short_name != "addnew") {
+            if (initialCountryObj.country_id.toLowerCase() != countryObj.country_id.toLowerCase() && data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
+                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ru);
+                result = false;
+            }
+            if (initialCountryObj.short_name.toLowerCase() != countryObj.short_name.toLowerCase() && data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
+                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ru);
+                result = false;
+            }
+        }
+        else {
+            if (data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
+                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ru);
+                result = false;
+            }
+            if (data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
+                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ru);
+                result = false;
+            }
+        }
+        if (countryObj.country_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
+        if (countryObj.short_name == ''){ alertOfEmptyMandatoryField("alert_short_name"); result = false; }
+        if (countryObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (countryObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
+        if (countryObj.continent_id == '0'){ alertOfEmptyMandatoryField("alert_continent"); result = false; }
+    }
+    return result;
+}
+
+
+//12.06 Success flag for any event successfully applied
+function alertOfSuccess() {
+    removeAllChildNodes("alert");
+    document.getElementById("success").innerHTML =
+        '<div class="alert alert-success fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Success!</strong> Your changes are successfully applied. Check list of Cities to see changes added.' +
+        '</div>';
+}
+
+//12.07 Failure flag for not unique ID applied
+function alertOfDuplicateIDFailure(id, name_ru) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_id").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '</div>';
+}
+
+//12.08 Failure flag for not unique ShortName applied
+function alertOfDuplicateSNFailure(id, name_ru) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_short_name").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '</div>';
+}
+
+//12.09 Failure flag for empty mandatory field
+function alertOfEmptyMandatoryField(alertId) {
+    removeAllChildNodes("success");
+    document.getElementById(alertId).innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
+        '</div>';
 }
