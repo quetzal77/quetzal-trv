@@ -3,12 +3,14 @@
 
 //02.01 Create new AMMAP's map
 function drawMap(){
-     $.getScript("SCRIPTS/MAPS/ammap.js");
-     $.getScript("SCRIPTS/MAPS/custommap.js");
-     $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function(){
-     $('#mapdiv').removeClass('loading');
-     $('#mapdiv').addClass('map');
-     CreateMap();
+     $.getScript("SCRIPTS/MAPS/ammap.js", function() {
+         $.getScript("SCRIPTS/MAPS/custommap.js", function() {
+             $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function() {
+                 $('#mapdiv').removeClass('loading');
+                 $('#mapdiv').addClass('map');
+                 CreateMap();
+             });
+         });
      });
 }
 
