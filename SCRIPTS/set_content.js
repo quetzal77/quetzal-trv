@@ -240,4 +240,17 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
             if (full_name){ country.name_full = full_name; }
         }
     });
+
+    // Update Onload Continent array with new data
+    debugger;
+    var initial_continent = $.grep (initial_data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
+    var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
+    if (initial_continent[0] == undefined){
+        var entityObj = {
+            continent_id: continent[0].continent_id,
+            name_ru: continent[0].name_ru
+        }
+        initial_data.continent.push(entityObj);
+        initial_data.continent.sort(dynamicSort("name_ru"));
+    }
 }
