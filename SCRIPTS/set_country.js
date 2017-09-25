@@ -74,7 +74,7 @@ function addEditRemoveCountry(itemId) {
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
-        editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:checkSmallFlag()">Check flag</button></span>';
+        editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newSmallFlagCheck" onclick="javascript:checkSmallFlag()">Check flag</button></span>';
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' country</h2>' +
@@ -287,7 +287,7 @@ function alertOfEmptyMandatoryField(alertId) {
         '</div>';
 }
 
-//12.09 Failure flag for empty mandatory field
+//12.10 Add image to verify if it looks good
 function checkSmallFlag() {
     var flagCoordinates = document.getElementById("newSmallImg").value.trim()
 

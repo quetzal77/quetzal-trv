@@ -170,6 +170,7 @@ function addEditRemoveCity(itemId) {
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                 '<input id="newImage" type="text" class="form-control" value="' + image + '" placeholder="Enter either image name of few of them">' +
+                '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newImageCheck" onclick="javascript:checkImage()">Check image</button></span>' +
             '</div>' +
             '<span id="alert_image"></span>' +
             '<br>' +
@@ -221,6 +222,7 @@ function addEditRemoveCity(itemId) {
                 '<textarea id="newDescription" class="form-control" rows="5" placeholder="Enter description of city with listing of sights.">' + description + '</textarea>' +
             '</div>' +
             '<span id="alert_description"></span>' +
+        '<span id="checkFlags"></span>' +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
@@ -418,4 +420,21 @@ function openCountryMap() {
                 "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
             "</body>" +
         "</html>");
+}
+
+//11.12 Add image to verify if it looks good
+function checkImage() {
+    var images = document.getElementById("newImage").value.trim();
+    var html = "";
+    $.each (images.split(","), function( i, image ){
+        html += '<img src="IMG/' + image + '" class="city_photo img-thumbnail">';
+    });
+
+    if (images != "") {
+        document.getElementById("checkFlags").innerHTML = '<hr>' + html;
+    }
+    else {
+        alertOfEmptyMandatoryField("alert_image");
+    }
+
 }
