@@ -145,7 +145,11 @@
       "name": "Egypt",
       "name_ru": "Египет",
       "name_nt": "جمهورية مصر العربية",
-      "short_name": "egypt"
+      "short_name": "egypt",
+      "small_flag_img": "-508px -161px",
+      "flag_img": "egypt_flag.png",
+      "emb_img": "egypt_emb.png",
+      "map_img": "egyptLow.js"
     },
     {
       "country_id": "ABH",
@@ -153,7 +157,11 @@
       "name": "Abkhazia",
       "name_ru": "Абхазия",
       "name_nt": "Апсны",
-      "short_name": "abkhazia"
+      "short_name": "abkhazia",
+      "small_flag_img": "-391px -741px",
+      "flag_img": "abkhazia_flag.png",
+      "emb_img": "abkhazia_emb.png",
+      "map_img": "abkhaziaLow.js"
     },
     {
       "country_id": "AE",
@@ -161,7 +169,11 @@
       "name": "United Arabian Emirates",
       "name_ru": "Объединенные Арабские Эмираты",
       "name_nt": "الإمارات العربية المتحدة",
-      "short_name": "unitedarabianemirates"
+      "short_name": "unitedarabianemirates",
+      "small_flag_img": "-42px -3px",
+      "flag_img": "unitedarabianemirates_flag.png",
+      "emb_img": "unitedarabianemirates_emb.png",
+      "map_img": "unitedarabianemiratesLow.js"
     },
     {
       "country_id": "CN",
@@ -169,7 +181,11 @@
       "name": "China",
       "name_ru": "Китай",
       "name_nt": "中國",
-      "short_name": "china"
+      "short_name": "china",
+      "small_flag_img": "-508px -108px",
+      "flag_img": "china_flag.png",
+      "emb_img": "china_emb.png",
+      "map_img": "chinaLow.js"
     },
     {
       "country_id": "CT",
@@ -177,7 +193,11 @@
       "name": "Northern Cyprus",
       "name_ru": "Северный Кипр",
       "name_nt": "Kuzey Kıbrıs",
-      "short_name": "northerncyprus"
+      "short_name": "northerncyprus",
+      "small_flag_img": "-430px -741px",
+      "flag_img": "northerncyprus_flag.png",
+      "emb_img": "northerncyprus_emb.png",
+      "map_img": "northerncyprusLow.js"
     },
     {
       "country_id": "CY",
@@ -185,7 +205,11 @@
       "name": "Cyprus",
       "name_ru": "Кипр",
       "name_nt": "Κύπρος",
-      "short_name": "cyprus"
+      "short_name": "cyprus",
+      "small_flag_img": "-120px -161px",
+      "flag_img": "cyprus_flag.ng",
+      "emb_img": "cyprus_emb.png",
+      "map_img": "cyprusLow.js"
     },
     {
       "country_id": "IL",
@@ -193,7 +217,11 @@
       "name": "Israel",
       "name_ru": "Израиль",
       "name_nt": "לארשי תנידמ",
-      "short_name": "israel"
+      "short_name": "israel",
+      "small_flag_img": "-3px -319px",
+      "flag_img": "israel_flag.png",
+      "emb_img": "israel_emb.png",
+      "map_img": "israelLow.js"
     },
     {
       "country_id": "IN",
@@ -201,7 +229,11 @@
       "name": "India",
       "name_ru": "Индия",
       "name_nt": "भारत",
-      "short_name": "india"
+      "short_name": "india",
+      "small_flag_img": "-80px -319px",
+      "flag_img": "india_flag.png",
+      "emb_img": "india_emb.png",
+      "map_img": "indiaLow.js"
     },
     {
       "country_id": "TR",
@@ -209,7 +241,11 @@
       "name": "Turkey",
       "name_ru": "Турция",
       "name_nt": "Türkiye",
-      "short_name": "turkey"
+      "short_name": "turkey",
+      "small_flag_img": "-81px -688px",
+      "flag_img": "turkey_flag.png",
+      "emb_img": "turkey_emb.png",
+      "map_img": "turkeyLow.js"
     },
     {
       "country_id": "UZ",
@@ -217,7 +253,11 @@
       "name": "Uzbekistan",
       "name_ru": "Узбекистан",
       "name_nt": "Ozbekiston",
-      "short_name": "uzbekistan"
+      "short_name": "uzbekistan",
+      "small_flag_img": "-468px -688p",
+      "flag_img": "uzbekistan_flag.png",
+      "emb_img": "uzbekistan_emb.png",
+      "map_img": "uzbekistanLow.js"
     },
     {
       "country_id": "AD",
@@ -225,7 +265,11 @@
       "name": "Andorra",
       "name_ru": "Андорра",
       "name_nt": "Andorra",
-      "short_name": "andorra"
+      "short_name": "andorra",
+      "small_flag_img": "-3px -3px",
+      "flag_img": "andorra_flag.png",
+      "emb_img": "andorra_emb.png",
+      "map_img": "andorraLow.js"
     },
     {
       "country_id": "AL",
@@ -233,7 +277,11 @@
       "name": "Albania",
       "name_ru": "Албания",
       "name_nt": "Shqipëria",
-      "short_name": "albania"
+      "short_name": "albania",
+      "small_flag_img": "-197px -3px",
+      "flag_img": "albania_flag.png",
+      "emb_img": "albania_emb.png",
+      "map_img": "albaniaLow.js"
     },
     {
       "country_id": "AT",
@@ -241,7 +289,11 @@
       "name": "Austria",
       "name_ru": "Австрия",
       "name_nt": "Österreich",
-      "short_name": "austria"
+      "short_name": "austria",
+      "small_flag_img": "-430px -3px",
+      "flag_img": "austria_flag.png",
+      "emb_img": "austria_emb.png",
+      "map_img": "austriaLow.js"
     },
     {
       "country_id": "BE",
@@ -249,7 +301,11 @@
       "name": "Belgium",
       "name_ru": "Бельгия",
       "name_nt": "België",
-      "short_name": "belgium"
+      "short_name": "belgium",
+      "small_flag_img": "-80px -55px",
+      "flag_img": "belgium_flag.png",
+      "emb_img": "belgium_emb.png",
+      "map_img": "belgiumLow.js"
     },
     {
       "country_id": "BY",
@@ -257,7 +313,11 @@
       "name": "Belarus",
       "name_ru": "Беларусь",
       "name_nt": "Беларусь",
-      "short_name": "belarus"
+      "short_name": "belarus",
+      "small_flag_img": "-42px -108px",
+      "flag_img": "belarus_flag.png",
+      "emb_img": "belarus_emb.png",
+      "map_img": "belarusLow.js"
     },
     {
       "country_id": "CH",
@@ -265,7 +325,11 @@
       "name": "Switzerland",
       "name_ru": "Швейцария",
       "name_nt": "Schweizerische Eidgenossenschaft",
-      "short_name": "switzerland"
+      "short_name": "switzerland",
+      "small_flag_img": "-313px -108px",
+      "flag_img": "switzerland_flag.png",
+      "emb_img": "switzerland_emb.png",
+      "map_img": "switzerlandLow.js"
     },
     {
       "country_id": "CZ",
@@ -273,7 +337,11 @@
       "name": "Czech",
       "name_ru": "Чехия",
       "name_nt": "Česká",
-      "short_name": "czech"
+      "short_name": "czech",
+      "small_flag_img": "-158px -161px",
+      "flag_img": "czech_flag.png",
+      "emb_img": "czech_emb.png",
+      "map_img": "czechLow.js"
     },
     {
       "country_id": "DE",
@@ -281,7 +349,11 @@
       "name": "Germany",
       "name_ru": "Германия",
       "name_nt": "Deutschland",
-      "short_name": "germany"
+      "short_name": "germany",
+      "small_flag_img": "-197px -161px",
+      "flag_img": "germany_flag.png",
+      "emb_img": "germany_emb.png",
+      "map_img": "germanyLow.js"
     },
     {
       "country_id": "DK",
@@ -289,7 +361,11 @@
       "name": "Denmark",
       "name_ru": "Дания",
       "name_nt": "Danmark",
-      "short_name": "denmark"
+      "short_name": "denmark",
+      "small_flag_img": "-275px -161px",
+      "flag_img": "denmark_flag.png",
+      "emb_img": "denmark_emb.png",
+      "map_img": "denmarkLow.js"
     },
     {
       "country_id": "EE",
@@ -297,7 +373,11 @@
       "name": "Estonia",
       "name_ru": "Эстония",
       "name_nt": "Eesti",
-      "short_name": "estonia"
+      "short_name": "estonia",
+      "small_flag_img": "-469px -161px",
+      "flag_img": "estonia_flag.png",
+      "emb_img": "estonia_emb.png",
+      "map_img": "estoniaLow.js"
     },
     {
       "country_id": "ES",
@@ -305,7 +385,11 @@
       "name": "Spain",
       "name_ru": "Испания",
       "name_nt": "España",
-      "short_name": "spain"
+      "short_name": "spain",
+      "small_flag_img": "-624px -161px",
+      "flag_img": "spain_flag.png",
+      "emb_img": "spain_emb.png",
+      "map_img": "spainLow.js"
     },
     {
       "country_id": "FI",
@@ -313,7 +397,11 @@
       "name": "Finland",
       "name_ru": "Финляндия",
       "name_nt": "Suomi",
-      "short_name": "finland"
+      "short_name": "finland",
+      "small_flag_img": "-42px -214px",
+      "flag_img": "finland_flag.png",
+      "emb_img": "finland_emb.png",
+      "map_img": "finlandLow.js"
     },
     {
       "country_id": "FR",
@@ -321,7 +409,11 @@
       "name": "France",
       "name_ru": "Франция",
       "name_nt": "République française",
-      "short_name": "france"
+      "short_name": "france",
+      "small_flag_img": "-236px -214px",
+      "flag_img": "france_flag.png",
+      "emb_img": "france_emb.png",
+      "map_img": "franceLow.js"
     },
     {
       "country_id": "GI",
@@ -329,7 +421,11 @@
       "name": "Gibraltar",
       "name_ru": "Гибралтар",
       "name_nt": "Gibraltar",
-      "short_name": "gibraltar"
+      "short_name": "gibraltar",
+      "small_flag_img": "-546px -216px",
+      "flag_img": "gibraltar_flag.png",
+      "emb_img": "gibraltar_emb.png",
+      "map_img": "gibraltarLow.js"
     },
     {
       "country_id": "HR",
@@ -337,7 +433,11 @@
       "name": "Croatia",
       "name_ru": "Хорватия",
       "name_nt": "Hrvatska",
-      "short_name": "croatia"
+      "short_name": "croatia",
+      "small_flag_img": "-469px -266px",
+      "flag_img": "croatia_flag.png",
+      "emb_img": "croatia_emb.png",
+      "map_img": "croatiaLow.js"
     },
     {
       "country_id": "HU",
@@ -345,7 +445,11 @@
       "name": "Hungary",
       "name_ru": "Венгрия",
       "name_nt": "Magyar Köztársaság",
-      "short_name": "hungary"
+      "short_name": "hungary",
+      "small_flag_img": "-546px -266px",
+      "flag_img": "hungary_flag.png",
+      "emb_img": "hungary_emb.png",
+      "map_img": "hungaryLow.js"
     },
     {
       "country_id": "IT",
@@ -353,7 +457,11 @@
       "name": "Italy",
       "name_ru": "Италия",
       "name_nt": "Italia",
-      "short_name": "italy"
+      "short_name": "italy",
+      "small_flag_img": "-275px -319px",
+      "flag_img": "italy_flag.png",
+      "emb_img": "italy_emb.png",
+      "map_img": "italyLow.js"
     },
     {
       "country_id": "LI",
@@ -361,7 +469,11 @@
       "name": "Liechtenstein",
       "name_ru": "Лихтенштейн",
       "name_nt": "Fürstentum Liechtenstein",
-      "short_name": "liechtenstein"
+      "short_name": "liechtenstein",
+      "small_flag_img": "-352px -372px",
+      "flag_img": "liechtenstein_flag.png",
+      "emb_img": "liechtenstein_emb.png",
+      "map_img": "liechtensteinLow.js"
     },
     {
       "country_id": "LT",
@@ -369,7 +481,11 @@
       "name": "Lithuania",
       "name_ru": "Литва",
       "name_nt": "Lietuva",
-      "short_name": "lithuania"
+      "short_name": "lithuania",
+      "small_flag_img": "-508px -372px",
+      "flag_img": "lithuania_flag.png",
+      "emb_img": "lithuania_emb.png",
+      "map_img": "lithuaniaLow.js"
     },
     {
       "country_id": "LU",
@@ -377,7 +493,11 @@
       "name": "Luxembourg",
       "name_ru": "Люксембург",
       "name_nt": "Groussherzogtum Lëtzebuerg",
-      "short_name": "luxembourg"
+      "short_name": "luxembourg",
+      "small_flag_img": "-546px -372px",
+      "flag_img": "luxembourg_flag.png",
+      "emb_img": "luxembourg_emb.png",
+      "map_img": "luxembourgLow.js"
     },
     {
       "country_id": "LV",
@@ -385,7 +505,11 @@
       "name": "Latvia",
       "name_ru": "Латвия",
       "name_nt": "Latvija",
-      "short_name": "latvia"
+      "short_name": "latvia",
+      "small_flag_img": "-585px -372px",
+      "flag_img": "latvia_flag.png",
+      "emb_img": "latvia_emb.png",
+      "map_img": "latviaLow.js"
     },
     {
       "country_id": "MC",
@@ -393,7 +517,11 @@
       "name": "Monaco",
       "name_ru": "Монако",
       "name_nt": "Monaco",
-      "short_name": "monaco"
+      "short_name": "monaco",
+      "small_flag_img": "-42px -424px",
+      "flag_img": "monaco_flag.png",
+      "emb_img": "monaco_emb.png",
+      "map_img": "monacoLow.js"
     },
     {
       "country_id": "MD",
@@ -401,7 +529,11 @@
       "name": "Moldova",
       "name_ru": "Молдо́ва",
       "name_nt": "Moldova",
-      "short_name": "moldova"
+      "short_name": "moldova",
+      "small_flag_img": "-80px -424px",
+      "flag_img": "moldova_flag.png",
+      "emb_img": "moldova_emb.png",
+      "map_img": "moldovaLow.js"
     },
     {
       "country_id": "ME",
@@ -409,7 +541,11 @@
       "name": "Montenegro",
       "name_ru": "Черногория",
       "name_nt": "Црна Гора",
-      "short_name": "montenegro"
+      "short_name": "montenegro",
+      "small_flag_img": "-119px -424px",
+      "flag_img": "montenegro_flag.png",
+      "emb_img": "montenegro_emb.png",
+      "map_img": "montenegroLow.js"
     },
     {
       "country_id": "MK",
@@ -417,7 +553,11 @@
       "name": "Macedonia",
       "name_ru": "Македония",
       "name_nt": "Македонија",
-      "short_name": "macedonia"
+      "short_name": "macedonia",
+      "small_flag_img": "-275px -424px",
+      "flag_img": "macedonia_flag.png",
+      "emb_img": "macedonia_emb.png",
+      "map_img": "macedoniaLow.js"
     },
     {
       "country_id": "MT",
@@ -425,7 +565,11 @@
       "name": "Malta",
       "name_ru": "Мальта",
       "name_nt": "Malta",
-      "short_name": "malta"
+      "short_name": "malta",
+      "small_flag_img": "-624px -424px",
+      "flag_img": "malta_flag.png",
+      "emb_img": "malta_emb.png",
+      "map_img": "maltaLow.js"
     },
     {
       "country_id": "NL",
@@ -433,7 +577,11 @@
       "name": "Netherlands",
       "name_ru": "Нидерланды",
       "name_nt": "Nederland",
-      "short_name": "netherlands"
+      "short_name": "netherlands",
+      "small_flag_img": "-469px -477px",
+      "flag_img": "netherlands_flag.png",
+      "emb_img": "netherlands_emb.png",
+      "map_img": "netherlandsLow.js"
     },
     {
       "country_id": "NO",
@@ -441,7 +589,11 @@
       "name": "Norway",
       "name_ru": "Норвегия",
       "name_nt": "Norge",
-      "short_name": "norway"
+      "short_name": "norway",
+      "small_flag_img": "-508px -477px",
+      "flag_img": "norway_flag.png",
+      "emb_img": "norway_emb.png",
+      "map_img": "norwayLow.js"
     },
     {
       "country_id": "PL",
@@ -449,7 +601,11 @@
       "name": "Poland",
       "name_ru": "Польша",
       "name_nt": "Rzeczpospolita Polska",
-      "short_name": "poland"
+      "short_name": "poland",
+      "small_flag_img": "-314px -530px",
+      "flag_img": "poland_flag.png",
+      "emb_img": "poland_emb.png",
+      "map_img": "polandLow.js"
     },
     {
       "country_id": "PT",
@@ -457,7 +613,11 @@
       "name": "Portugal",
       "name_ru": "Португалия",
       "name_nt": "Portugal",
-      "short_name": "portugal"
+      "short_name": "portugal",
+      "small_flag_img": "-507px -530px",
+      "flag_img": "portugal_flag.png",
+      "emb_img": "portugal_emb.png",
+      "map_img": "portugalLow.js"
     },
     {
       "country_id": "RO",
@@ -465,7 +625,11 @@
       "name": "Romania",
       "name_ru": "Румыния",
       "name_nt": "România",
-      "short_name": "romania"
+      "short_name": "romania",
+      "small_flag_img": "-42px -583px",
+      "flag_img": "romania_flag.png",
+      "emb_img": "romania_emb.png",
+      "map_img": "romaniaLow.js"
     },
     {
       "country_id": "RU",
@@ -473,7 +637,11 @@
       "name": "Russia",
       "name_ru": "Россия",
       "name_nt": "Росія",
-      "short_name": "russia"
+      "short_name": "russia",
+      "small_flag_img": "-119px -583px",
+      "flag_img": "russia_flag.png",
+      "emb_img": "russia_emb.png",
+      "map_img": "russiaLow.js"
     },
     {
       "country_id": "SE",
@@ -481,7 +649,11 @@
       "name": "Sweden",
       "name_ru": "Швеция",
       "name_nt": "Sverige",
-      "short_name": "sweden"
+      "short_name": "sweden",
+      "small_flag_img": "-352px -583px",
+      "flag_img": "sweden_flag.png",
+      "emb_img": "sweden_emb.png",
+      "map_img": "swedenLow.js"
     },
     {
       "country_id": "SI",
@@ -489,7 +661,11 @@
       "name": "Slovenia",
       "name_ru": "Словения",
       "name_nt": "Slovenija",
-      "short_name": "slovenia"
+      "short_name": "slovenia",
+      "small_flag_img": "-469px -583px",
+      "flag_img": "slovenia_flag.png",
+      "emb_img": "slovenia_emb.png",
+      "map_img": "sloveniaLow.js"
     },
     {
       "country_id": "SK",
@@ -497,7 +673,11 @@
       "name": "Slovakia",
       "name_ru": "Словакия",
       "name_nt": "Slovenská",
-      "short_name": "slovakia"
+      "short_name": "slovakia",
+      "small_flag_img": "-546px -583px",
+      "flag_img": "slovakia_flag.png",
+      "emb_img": "slovakia_emb.png",
+      "map_img": "slovakiaLow.js"
     },
     {
       "country_id": "SM",
@@ -505,7 +685,11 @@
       "name": "San Marino",
       "name_ru": "Сан-Марино",
       "name_nt": "San Marino",
-      "short_name": "sanmarino"
+      "short_name": "sanmarino",
+      "small_flag_img": "-624px -583px",
+      "flag_img": "sanmarino_flag.png",
+      "emb_img": "sanmarino_emb.png",
+      "map_img": "sanmarinoLow.js"
     },
     {
       "country_id": "TA",
@@ -513,7 +697,11 @@
       "name": "Transnistria",
       "name_ru": "Приднестровье",
       "name_nt": "Нистрения",
-      "short_name": "transnistria"
+      "short_name": "transnistria",
+      "small_flag_img": "-469px -741px",
+      "flag_img": "transnistria_flag.png",
+      "emb_img": "transnistria_emb.png",
+      "map_img": "transnistriaLow.js"
     },
     {
       "country_id": "UA",
@@ -521,7 +709,11 @@
       "name": "Ukraine",
       "name_ru": "Украина",
       "name_nt": "Україна",
-      "short_name": "ukraine"
+      "short_name": "ukraine",
+      "small_flag_img": "-275px -688px",
+      "flag_img": "ukraine_flag.png",
+      "emb_img": "ukraine_emb.png",
+      "map_img": "ukraineLow.js"
     },
     {
       "country_id": "VA",
@@ -529,7 +721,11 @@
       "name": "Vatican City State",
       "name_ru": "Ватикан",
       "name_nt": "Status Civitatis Vaticanae",
-      "short_name": "vatican"
+      "short_name": "vatican",
+      "small_flag_img": "-508px -688px",
+      "flag_img": "vatican_flag.png",
+      "emb_img": "vatican_emb.png",
+      "map_img": "vaticanLow.js"
     },
     {
       "country_id": "XK",
@@ -537,7 +733,11 @@
       "name": "Kosovo",
       "name_ru": "Косово",
       "name_nt": "Kosova",
-      "short_name": "kosovo"
+      "short_name": "kosovo",
+      "small_flag_img": "-508px -741px",
+      "flag_img": "kosovo_flag.png",
+      "emb_img": "kosovo_emb.png",
+      "map_img": "kosovoLow.js"
     },
     {
       "country_id": "AZ",
@@ -545,7 +745,11 @@
       "name": "Azerbaijan",
       "name_ru": "Азербайджан",
       "name_nt": "Azərbaycan",
-      "short_name": "azerbaijan"
+      "short_name": "azerbaijan",
+      "small_flag_img": "-585px -3px",
+      "flag_img": "azerbaijan_flag.png",
+      "emb_img": "azerbaijan_emb.png",
+      "map_img": "azerbaijanLow.js"
     },
     {
       "country_id": "US",
@@ -553,7 +757,11 @@
       "name": "United States of America",
       "name_ru": "Соединённые Штаты Америки",
       "name_nt": "",
-      "short_name": "unitedstatesofamerica"
+      "short_name": "unitedstatesofamerica",
+      "small_flag_img": "-391px -688px",
+      "flag_img": "unitedstatesofamerica_flag.png",
+      "emb_img": "unitedstatesofamerica_emb.png",
+      "map_img": "unitedstatesofamericaLow.js"
     }
   ],
   "area": [

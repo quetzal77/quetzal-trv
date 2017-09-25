@@ -53,6 +53,7 @@ function addEditRemoveCountry(itemId) {
         name: (itemId != "addnew") ? country[0].name : "",
         name_ru: (itemId != "addnew") ? country[0].name_ru : "",
         name_nt: (itemId != "addnew") ? (country[0].name_nt != undefined) ? country[0].name_nt: "" : "",
+        small_flag_img: (itemId != "addnew") ? (country[0].small_flag_img != undefined) ? country[0].small_flag_img: "" : "",
         short_name: itemId
     };
 
@@ -73,6 +74,7 @@ function addEditRemoveCountry(itemId) {
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
+        editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:checkSmallFlag()">Check flag</button></span>';
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' country</h2>' +
@@ -80,33 +82,33 @@ function addEditRemoveCountry(itemId) {
             removeButton +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique city Id" ' + contIdValue + readonly + '>' +
+                '<input id="newId" type="text" class="form-control" placeholder="Enter unique country Id" ' + contIdValue + readonly + '>' +
                 editIdField +
             '</div>' +
             '<span id="alert_id"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newShortName" type="text" class="form-control" placeholder="Enter unique city Short Name" ' + contSNValue + readonly + '>' +
+                '<input id="newShortName" type="text" class="form-control" placeholder="Enter unique country Short Name" ' + contSNValue + readonly + '>' +
                 editIdField_2 +
             '</div>' +
             '<span id="alert_short_name"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of city">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of country">' +
             '</div>' +
             '<span id="alert_name_ru"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of city">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of country">' +
             '</div>' +
             '<span id="alert_name"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newNtName" type="text" class="form-control" value="' + local[0].name_nt + '" placeholder="Enter native name of city (use language of main nation)">' +
+                '<input id="newNtName" type="text" class="form-control" value="' + local[0].name_nt + '" placeholder="Enter native name of country (use language of main nation)">' +
             '</div>' +
             '<span id="alert_name_nt"></span>' +
             '<br>' +
@@ -119,6 +121,14 @@ function addEditRemoveCountry(itemId) {
             '</div>' +
             '<span id="alert_continent"></span>' +
             '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                '<input id="newSmallImg" type="text" class="form-control" value="' + local[0].small_flag_img + '" placeholder="Enter coordanates of small flag of your country">' +
+                editIdField_3 +
+            '</div>' +
+            '<span id="alert_small_img"></span>' +
+            '<br>' +
+        '<span id="checkFlags"></span>' +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
@@ -131,7 +141,8 @@ function SubmitChanges(status) {
                      continent_id: document.getElementById("newContinent").value.trim(),
                      name: document.getElementById("newRusName").value.trim(),
                      name_ru: document.getElementById("newEngName").value.trim(),
-                     short_name: document.getElementById("newShortName").value.trim()
+                     short_name: document.getElementById("newShortName").value.trim(),
+                     small_flag_img: document.getElementById("newSmallImg").value.trim()
                    };
 
     if (document.getElementById("newNtName").value.trim() != "") { newCountryObj["name_nt"] = document.getElementById("newNtName").value.trim(); }
@@ -141,6 +152,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_short_name");
     removeAllChildNodes("alert_continent");
+    removeAllChildNodes("alert_small_img");
     removeAllChildNodes("success");
 
     if (status == "add") {
@@ -176,6 +188,7 @@ function RemoveCountry() {
     removeAllChildNodes("alert_short_name");
     removeAllChildNodes("alert_continent");
     removeAllChildNodes("success");
+    removeAllChildNodes("alert_small_img");
 
     if (regionsToRemoveArray.length > 0) {
         var regionsLinkedToCountry = "";
@@ -228,6 +241,7 @@ function checkRules4AddUpdate(countryObj) {
         if (countryObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
         if (countryObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
         if (countryObj.continent_id == '0'){ alertOfEmptyMandatoryField("alert_continent"); result = false; }
+        if (countryObj.small_flag_img == ''){ alertOfEmptyMandatoryField("alert_small_img"); result = false; }
     }
     return result;
 }
@@ -271,4 +285,19 @@ function alertOfEmptyMandatoryField(alertId) {
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
         '</div>';
+}
+
+//12.09 Failure flag for empty mandatory field
+function checkSmallFlag() {
+    var flagCoordinates = document.getElementById("newSmallImg").value.trim()
+
+    if (flagCoordinates != "") {
+        document.getElementById("checkFlags").innerHTML =
+                '<hr>' +
+                '<img src="IMG/icon/x.gif" class="countflag" style="background-position:' + flagCoordinates + '" />';
+    }
+    else {
+        alertOfEmptyMandatoryField("alert_small_img");
+    }
+
 }

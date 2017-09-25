@@ -113,7 +113,7 @@ p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; marg
 
 /* SMALL COUNTRY FLAGS
 ----------------------------------------------------------*/
-img#abkhazia { background-position: -391px -741px; }
+/*img#abkhazia { background-position: -391px -741px; }
 img#albania { background-position: -197px -3px; }
 img#andorra { background-position: -3px -3px; }
 img#austria { background-position: -430px -3px; }
@@ -157,14 +157,14 @@ img#slovakia { background-position: -546px -583px; }
 img#slovenia { background-position: -469px -583px; }
 img#spain { background-position: -624px -161px; }
 img#sweden { background-position: -352px -583px; }
-img#switzerland { background-position: -313px -108px; }
-img#transnistria { background-position: -469px -741px; }
+img#switzerland { background-position: -313px -108-469px -741pxpx; }
+img#transnistria { background-position: ; }
 img#turkey { background-position: -81px -688px; }
 img#ukraine { background-position: -275px -688px; }
 img#unitedarabianemirates { background-position: -42px -3px; }
 img#unitedstatesofamerica { background-position: -391px -688px; }
 img#uzbekistan { background-position: -468px -688px; }
-img#vatican { background-position: -508px -688px; }
+img#vatican { background-position: -508px -688px; }*/
 
 /* THE END
 ----------------------------------------------------------*/

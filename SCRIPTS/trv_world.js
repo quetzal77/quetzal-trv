@@ -41,12 +41,10 @@ function createWorldPageFrontView() {
         $.each( countries, function( j, country ){
             if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
-                var country_ident = country.name_full.split(" - ");
-                var country_custom_id = (country_ident.length>2) ? country_ident[2].toLowerCase() : country_ident[1].toLowerCase();
 
-                listOfCountries += "<a id='" + country_custom_id.replace(/\s/g, "") + "' title='Перейти к информации о стране' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-//                "<a href='index.html?country=" + country_custom_id.replace(/\s/g, "") + "' onmouseover='' style='cursor: pointer;'>" +
-                "<img id='" + country_custom_id.replace(/\s/g, "") + "' src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' /></a>"
+                listOfCountries += "<a id='" + country.short_name + "' title='Перейти к информации о стране' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+//                "<a href='index.html?country=" + country.short_name + "' onmouseover='' style='cursor: pointer;'>" +
+                "<img src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' style='background-position:" + country.small_flag_img + "' /></a>"
             }
         });
         result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
