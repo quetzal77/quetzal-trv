@@ -3,15 +3,16 @@
 
 //02.01 Create new AMMAP's map
 function drawMap(){
-     $.getScript("SCRIPTS/MAPS/ammap.js", function() {
-         $.getScript("SCRIPTS/MAPS/custommap.js", function() {
-             $.getScript("SCRIPTS/MAPS/" + local[0] + "Low.js", function() {
-                 $('#mapdiv').removeClass('loading');
-                 $('#mapdiv').addClass('map');
-                 CreateMap();
-             });
-         });
-     });
+    var url = (local[1].map_img != undefined) ? local[1].map_img : "worldLow.js" ;
+    $.getScript("SCRIPTS/MAPS/ammap.js", function() {
+        $.getScript("SCRIPTS/MAPS/custommap.js", function() {
+            $.getScript("SCRIPTS/MAPS/" + url, function() {
+                $('#mapdiv').removeClass('loading');
+                $('#mapdiv').addClass('map');
+                CreateMap();
+            });
+        });
+    });
 }
 
 //02.02 This method creates CUSTOM list of visits
