@@ -352,18 +352,22 @@ function checkSmallFlag(id) {
 
 //12.11 Open Country map for lat and long coordinates
 function openCountryMap() {
-    var page = window.open("",'_blank');
-    page.document.write(
-        "<html>" +
-            "<head>" +
-                "<title>Country Map</title>" +
-                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/" + local[0].map_img + "' type='text/javascript'></script>" +
-            "</head>" +
-            "<body>" +
-                "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
-            "</body>" +
-        "</html>");
+    var map = document.getElementById("newMap").value.trim();
+    if (map != ""){
+        var page = window.open("",'_blank');
+        page.document.write(
+            "<html>" +
+                "<head>" +
+                    "<title>Country Map</title>" +
+                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+                    "<script src='SCRIPTS/MAPS/" + map + "' type='text/javascript'></script>" +
+                "</head>" +
+                "<body>" +
+                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
+                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+                "</body>" +
+            "</html>");
+    }
+    else {alertOfEmptyMandatoryField("alert_map");}
 }

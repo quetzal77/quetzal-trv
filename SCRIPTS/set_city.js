@@ -406,20 +406,26 @@ function openCountryMap() {
     var lat = document.getElementById("newLat").value.trim();
     var long = document.getElementById("newLong").value.trim();
 
-    var page = window.open("",'_blank');
-    page.document.write(
-        "<html>" +
-            "<head>" +
-                "<title>Country Map</title>" +
-                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
-            "</head>" +
-            "<body>" +
-                "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
-            "</body>" +
-        "</html>");
+    if (lat != "" && long != ""){
+        var page = window.open("",'_blank');
+        page.document.write(
+            "<html>" +
+                "<head>" +
+                    "<title>Country Map</title>" +
+                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+                    "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
+                "</head>" +
+                "<body>" +
+                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
+                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+                "</body>" +
+            "</html>");
+    }
+    else {
+        if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}
+        if (long != ""){alertOfEmptyMandatoryField("alert_long");}
+    }
 }
 
 //11.12 Add image to verify if it looks good
