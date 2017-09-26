@@ -107,11 +107,11 @@ function getCountryDetails_HTML() {
 function getFlagEmblem_HTML(country) {
     var result = "<div class='countryEmbFlag'>&nbsp;</div><div class='countryEmbFlag'>";
 
-    if (country.emb_img != "" || country.emb_img != undefined ){
+    if (country.emb_img != "" && country.emb_img != undefined ){
         result += "<img alt='emb of the " + country.short_name + "' title='emb of the " + country.short_name +
         "' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";
     }
-    if (country.flag_img != "" || country.flag_img != undefined ){
+    if (country.flag_img != "" && country.flag_img != undefined ){
         result += "<img alt='flag of the " + country.short_name + "' title='flag of the " + country.short_name +
         "' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' />";
     }
