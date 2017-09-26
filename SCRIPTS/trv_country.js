@@ -21,7 +21,7 @@ function createCountryPage_HTML(countryId) {
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
     "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
     "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
-    getFlagEmblem_HTML(countryId);
+    getFlagEmblem_HTML(country[0]);
 
     //Creation of world map
     drawMap();
@@ -104,12 +104,18 @@ function getCountryDetails_HTML() {
 }
 
 //05.03 Creation of Flag and Emblem section
-function getFlagEmblem_HTML(countryId) {
-    var result = "<div class='countryEmbFlag'>&nbsp;</div>" +
-	"<div class='countryEmbFlag'><img alt='emb of the " + countryId + "' title='emb of the " + countryId +
-    "' src='IMG/flag_n_emblem/" + countryId + "_emb.png' class='country_emb' />" +
-	"<img alt='flag of the " + countryId + "' title='flag of the " + countryId +
-    "' src='IMG/flag_n_emblem/" + countryId + "_flag.png' class='country_flag' /></div>";
+function getFlagEmblem_HTML(country) {
+    var result = "<div class='countryEmbFlag'>&nbsp;</div><div class='countryEmbFlag'>";
+
+    if (country.emb_img != "" || country.emb_img != undefined ){
+        result += "<img alt='emb of the " + country.short_name + "' title='emb of the " + country.short_name +
+        "' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";
+    }
+    if (country.flag_img != "" || country.flag_img != undefined ){
+        result += "<img alt='flag of the " + country.short_name + "' title='flag of the " + country.short_name +
+        "' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' />";
+    }
+    result += "</div>";
     return result;
 }
 

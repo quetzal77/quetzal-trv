@@ -54,6 +54,9 @@ function addEditRemoveCountry(itemId) {
         name_ru: (itemId != "addnew") ? country[0].name_ru : "",
         name_nt: (itemId != "addnew") ? (country[0].name_nt != undefined) ? country[0].name_nt: "" : "",
         small_flag_img: (itemId != "addnew") ? (country[0].small_flag_img != undefined) ? country[0].small_flag_img: "" : "",
+        flag_img: (itemId != "addnew") ? (country[0].flag_img != undefined) ? country[0].flag_img: "" : "",
+        emb_img: (itemId != "addnew") ? (country[0].emb_img != undefined) ? country[0].emb_img: "" : "",
+        map_img: (itemId != "addnew") ? (country[0].map_img != undefined) ? country[0].map_img: "" : "",
         short_name: itemId
     };
 
@@ -74,7 +77,10 @@ function addEditRemoveCountry(itemId) {
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
-        editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newSmallFlagCheck" onclick="javascript:checkSmallFlag()">Check flag</button></span>';
+        editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newSmallImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
+        editIdField_4 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newFlagImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
+        editIdField_5 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newEmbImg" onclick="javascript:checkSmallFlag(this.value)">Check enblem</button></span>';
+        editIdField_6 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" onclick="javascript:openCountryMap()">Check map</button></span>';
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' country</h2>' +
@@ -128,6 +134,27 @@ function addEditRemoveCountry(itemId) {
             '</div>' +
             '<span id="alert_small_img"></span>' +
             '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newFlagImg" type="text" class="form-control" value="' + local[0].flag_img + '" placeholder="Enter image name of flag of your country. Image dimensions: 400 * 200">' +
+                editIdField_4 +
+            '</div>' +
+            '<span id="alert_flag_img"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newEmbImg" type="text" class="form-control" value="' + local[0].emb_img + '" placeholder="Enter image name of emblem of your country. Image dimensions: 200 * 200">' +
+                editIdField_5 +
+            '</div>' +
+            '<span id="alert_emb_img"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<input id="newMap" type="text" class="form-control" value="' + local[0].map_img + '" placeholder="Enter map name of your country">' +
+                editIdField_6 +
+            '</div>' +
+            '<span id="alert_map"></span>' +
+            '<br>' +
         '<span id="checkFlags"></span>' +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
@@ -146,6 +173,9 @@ function SubmitChanges(status) {
                    };
 
     if (document.getElementById("newNtName").value.trim() != "") { newCountryObj["name_nt"] = document.getElementById("newNtName").value.trim(); }
+    if (document.getElementById("newFlagImg").value.trim() != "") { newCountryObj["flag_img"] = document.getElementById("newFlagImg").value.trim(); }
+    if (document.getElementById("newEmbImg").value.trim() != "") { newCountryObj["emb_img"] = document.getElementById("newEmbImg").value.trim(); }
+    if (document.getElementById("newMap").value.trim() != "") { newCountryObj["map_img"] = document.getElementById("newMap").value.trim(); }
 
     removeAllChildNodes("alert_id");
     removeAllChildNodes("alert_name_ru");
@@ -288,16 +318,52 @@ function alertOfEmptyMandatoryField(alertId) {
 }
 
 //12.10 Add image to verify if it looks good
-function checkSmallFlag() {
-    var flagCoordinates = document.getElementById("newSmallImg").value.trim()
+function checkSmallFlag(id) {
+    var image = document.getElementById(id).value.trim()
 
-    if (flagCoordinates != "") {
-        document.getElementById("checkFlags").innerHTML =
-                '<hr>' +
-                '<img src="IMG/icon/x.gif" class="countflag" style="background-position:' + flagCoordinates + '" />';
+    if (image != "") {
+        switch(id) {
+            case "newSmallImg":
+                document.getElementById("checkFlags").innerHTML = '<hr><img src="IMG/icon/x.gif" class="countflag" style="background-position:' + image + '" />';
+                break;
+            case "newFlagImg":
+                document.getElementById("checkFlags").innerHTML = '<hr><img alt="flag of the country" title="flag of the country" src="IMG/flag_n_emblem/' + image + '" class="country_flag">';
+                break;
+            case "newEmbImg":
+                document.getElementById("checkFlags").innerHTML = '<hr><img alt="emb of the country" title="emb of the country" src="IMG/flag_n_emblem/' + image + '" class="country_emb">';
+                break;
+        }
     }
     else {
-        alertOfEmptyMandatoryField("alert_small_img");
+        switch(id) {
+            case "newSmallImg":
+                alertOfEmptyMandatoryField("alert_small_img");
+                break;
+            case "newFlagImg":
+                alertOfEmptyMandatoryField("alert_flag_img");
+                break;
+            case "newEmbImg":
+                alertOfEmptyMandatoryField("alert_emb_img");
+                break;
+        }
     }
 
+}
+
+//12.11 Open Country map for lat and long coordinates
+function openCountryMap() {
+    var page = window.open("",'_blank');
+    page.document.write(
+        "<html>" +
+            "<head>" +
+                "<title>Country Map</title>" +
+                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/" + local[0].map_img + "' type='text/javascript'></script>" +
+            "</head>" +
+            "<body>" +
+                "<div id='mapdiv' class='map'>&nbsp;</div>" +
+                "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+            "</body>" +
+        "</html>");
 }

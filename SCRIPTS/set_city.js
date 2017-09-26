@@ -169,7 +169,7 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<input id="newImage" type="text" class="form-control" value="' + image + '" placeholder="Enter either image name of few of them">' +
+                '<input id="newImage" type="text" class="form-control" value="' + image + '" placeholder="Enter either image name of few of them. Image dimensions: 300 * 225">' +
                 '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newImageCheck" onclick="javascript:checkImage()">Check image</button></span>' +
             '</div>' +
             '<span id="alert_image"></span>' +
