@@ -46,7 +46,7 @@
    {
        var country_list = document.getElementById('countryList').innerHTML;
        var country_array = country_list.split(",")
-       var option = country_array[0] + "Low";
+       var option = country_array[0];
        var mapObject = worldDataProvider.getMap(option);
            worldDataProvider.mapVar = mapObject; 
    }

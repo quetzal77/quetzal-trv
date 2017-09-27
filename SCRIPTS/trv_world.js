@@ -58,7 +58,7 @@ function createWorldPageFrontView() {
 //04.03 This method creates hidden list of countries which will be used to create JS world map
 function createWorldMap_HTML(countries) {
     //EXAMPLE: <div id="countryList" style="display:none;">world,ABH,AD,AE,</div><div id="cityList" style="display:none;">world;</div></div>
-    var result = "<div id='countryList' style='display:none;'>world,";
+    var result = "<div id='countryList' style='display:none;'>worldLow,";
     $.each( countries, function( i, val ){
         result += val.country_id + ",";
     });
