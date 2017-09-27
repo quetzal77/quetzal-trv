@@ -23,6 +23,7 @@ function createSettingsCountryTab_HTML() {
                         '<p>Select \"Add new\" option to add new \"country\" or choose some particular entity that gonna be either edited or removed.</p>' +
                         '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +
                         '<p><b>Pencil</b> is shown for all the non mandatory fields.</p>' +
+                        '<p><b>Country ID</b> should be changed only manually because it depend on map ID and region ID prefix which also must be changed.</p>' +
                         '<div id="countryDropdown" class="btn-toolbar">' +
                             '<div class="btn-group">' +
                                 '<button type="button" class="btn btn-info btn-default">List of existing Countries</button>' +
@@ -74,7 +75,7 @@ function addEditRemoveCountry(itemId) {
         removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveCountry();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
-        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+//        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
         editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newSmallImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
@@ -89,7 +90,7 @@ function addEditRemoveCountry(itemId) {
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newId" type="text" class="form-control" placeholder="Enter unique country Id" ' + contIdValue + readonly + '>' +
-                editIdField +
+//                editIdField +
             '</div>' +
             '<span id="alert_id"></span>' +
             '<br>' +
@@ -247,6 +248,7 @@ function checkRules4AddUpdate(countryObj) {
     var initialCountryObj = local[0];
     for (var i = 0; i < data.country.length; i++) {
         if (initialCountryObj.short_name != "addnew") {
+            //This code id deprecated because I decided that country id must be changed only manually but lets leave this code here for future needs
             if (initialCountryObj.country_id.toLowerCase() != countryObj.country_id.toLowerCase() && data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
                 alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ru);
                 result = false;
