@@ -84,7 +84,7 @@ function addEditRemoveCountry(itemId) {
         $.each (data.country, function( i, country ) {
             distinctIds[country.country_id] = true;
         });
-        debugger;
+
         $.getScript("SCRIPTS/MAPS/worldLow.js", function() { AmCharts.maps.worldLow });
         $.each (AmCharts.maps.worldLow.svg.g.path, function( i, newcountry ) {
             if (!distinctIds[newcountry.id]) {
