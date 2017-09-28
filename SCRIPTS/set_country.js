@@ -46,7 +46,7 @@ function createSettingsCountryTab_HTML() {
 //12.02 Creation of section to be able to add new, edit or removal of country
 function addEditRemoveCountry(itemId) {
     var removeButton = ""; var contIdValue = ""; var contSNValue = ""; var readonly = ""; var editIdField = ""; var editIdField_2 = "";
-    var header = "Add new"; var submitStatus = "add"; var continents = '';
+    var header = "Add new"; var submitStatus = "add"; var continents = ''; var listOfNotYetAddedCountries = "";
     var country = (itemId != "addnew") ? $.grep (data.country, function( n, i ) {return ( n.short_name == itemId )}) : "newcountry";
     local[0] = {
         country_id: (itemId != "addnew") ? country[0].country_id : "",
@@ -78,6 +78,30 @@ function addEditRemoveCountry(itemId) {
 //        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
+    else {
+        var countryOptions = "";
+        var distinctIds = {};
+        $.each (data.country, function( i, country ) {
+            distinctIds[country.country_id] = true;
+        });
+        debugger;
+        $.getScript("SCRIPTS/MAPS/worldLow.js", function() { AmCharts.maps.worldLow });
+        $.each (AmCharts.maps.worldLow.svg.g.path, function( i, newcountry ) {
+            if (!distinctIds[newcountry.id]) {
+                countryOptions += '<option value="' + newcountry.id + '">' + newcountry.title + '</option>'
+            }
+        });
+
+        listOfNotYetAddedCountries =
+                        '<div class="input-group">' +
+                            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                            '<select id="newNotAddedMap" class="form-control" onchange="populateForm(this.value)">' +
+                                '<option value="0">Select country that not yet added to base among existing on world map or skip this step and add your own variant.</option>' +
+                                countryOptions +
+                            '</select>' +
+                        '</div>' +
+                        '<hr>';
+    }
         editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newSmallImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
         editIdField_4 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newFlagImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
         editIdField_5 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newEmbImg" onclick="javascript:checkSmallFlag(this.value)">Check enblem</button></span>';
@@ -87,6 +111,7 @@ function addEditRemoveCountry(itemId) {
         '<h2 class="sub-header">' + header + ' country</h2>' +
         '<form>' +
             removeButton +
+            listOfNotYetAddedCountries +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newId" type="text" class="form-control" placeholder="Enter unique country Id" ' + contIdValue + readonly + '>' +
@@ -103,13 +128,13 @@ function addEditRemoveCountry(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of country">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of country">' +
             '</div>' +
             '<span id="alert_name_ru"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of country">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of country">' +
             '</div>' +
             '<span id="alert_name"></span>' +
             '<br>' +
@@ -167,8 +192,8 @@ function SubmitChanges(status) {
     var newCountryObj = {
                      country_id: document.getElementById("newId").value.trim(),
                      continent_id: document.getElementById("newContinent").value.trim(),
-                     name: document.getElementById("newRusName").value.trim(),
-                     name_ru: document.getElementById("newEngName").value.trim(),
+                     name: document.getElementById("newEngName").value.trim(),
+                     name_ru: document.getElementById("newRusName").value.trim(),
                      short_name: document.getElementById("newShortName").value.trim(),
                      small_flag_img: document.getElementById("newSmallImg").value.trim()
                    };
@@ -366,10 +391,23 @@ function openCountryMap() {
                     "<script src='SCRIPTS/MAPS/" + map + "' type='text/javascript'></script>" +
                 "</head>" +
                 "<body>" +
+                    "<header>Here is map of country you selected.</header>" +
+//                    "<div id='main'></div>" +
+//                    "<script> var main = document.getElementById('main');" +
+//                        "for (var i = 0; i < 500; i++) {main.innerText += new Date();}</script>" +
                     "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+                    "<script>var xxx = document.getElementById('mapdiv').innerHTML = 'Test test test'; var xxx = CreateMap(); </script>" +
+                    "<div id='coufunction codeAddress()ntryList' style='display:none;'>" + map.slice(0, -3) + ",AT-9,AT-5,AT-6,</div>" +
                 "</body>" +
             "</html>");
     }
     else {alertOfEmptyMandatoryField("alert_map");}
+}
+
+//12.12 Populate add new country fields
+function populateForm(id) {
+    document.getElementById("newId").value = id;
+
+    var e = document.getElementById("newNotAddedMap");
+    document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
 }
