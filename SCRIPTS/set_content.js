@@ -15,9 +15,9 @@ function addElementOfGlobalDataArray(entityObj) {
             data.country.push(entityObj);
             data.country.sort(dynamicSort("name_ru"));
             break;
-            break;
         case 'region':
-            // ...
+            data.area.push(entityObj);
+            data.area.sort(dynamicSort("name_ru"));
             break;
         case 'city':
             data.city.push(entityObj);

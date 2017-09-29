@@ -49,6 +49,7 @@ function showAllTheRegionsOfSelectedCountry(id) {
     var listOfRegions = '';
     var country = new CountryObj(id)
     local[2] = country.map_img;
+    local[3] = id;
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ){
         var regionObj = new RegionObj(region.region_id);
         if (regionObj.country_id == id){
@@ -75,7 +76,7 @@ function showAllTheRegionsOfSelectedCountry(id) {
 //14.03 Creation of section to be able to add new, edit or removal of region
 function addEditRemoveRegion(itemId) {
     var removeButton = ""; var regIdValue = ""; var readonly = ""; var editIdField = ""; var countries = '';
-    var header = "Add new"; var submitStatus = "add";var listOfNotYetAddedRegions = "";
+    var header = "Add new"; var submitStatus = "add";var listOfNotYetAddedRegions = ""; var disabled = '';
     var country_map_url = local[2];
     var region = (itemId != "addnew") ? $.grep (data.area, function( n, i ) {return ( n.region_id == itemId )}) : "newregion";
     local[0] = {
@@ -88,7 +89,7 @@ function addEditRemoveRegion(itemId) {
     var active = (local[0].active == "Y") ? "checked" : "";
 
     $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ) {
-        var selected = (country.country_id == region[0].country_id) ? " selected" : "";
+        var selected = (country.country_id == local[3]) ? " selected" : "";
         countries += "<option value='" + country.country_id + "' " + selected + ">" + country.name_ru + "</option>";
     });
 
@@ -102,6 +103,7 @@ function addEditRemoveRegion(itemId) {
                 '<hr>';
     }
     else {
+        disabled = 'disabled="disabled"';
         var regionOptions = "";
         var distinctIds = {};
         $.each (data.area, function( i, region ) {
@@ -159,7 +161,7 @@ function addEditRemoveRegion(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<select id="newContinent" class="form-control">' +
+                '<select id="newCountry" class="form-control" ' + disabled + '>' +
                     '<option value="0">Select country that region belongs to.</option>' +
                     countries +
                 '</select>' +
@@ -178,7 +180,6 @@ function addEditRemoveRegion(itemId) {
 
 //14.04 Remove item entity handler
 function RemoveRegion() {
-debugger;
     var newID = document.getElementById('newId').value;
     var citiesToRemoveArray = $.grep (data.city, function( n, i ) {return (n.region_id == newID)});
 
@@ -210,6 +211,59 @@ debugger;
     }
 }
 
+//14.05 Submit changes for Add new of edit event
+function SubmitChanges(status) {
+    var newRegionObj = {
+                     country_id: document.getElementById("newCountry").value.trim(),
+                     region_id: document.getElementById("newId").value.trim(),
+                     name: document.getElementById("newEngName").value.trim(),
+                     name_ru: document.getElementById("newRusName").value.trim(),
+                     active: (document.getElementById("newActive").checked) ? "Y" : "N"
+                   };
+
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_active");
+    removeAllChildNodes("alert_country");
+    removeAllChildNodes("success");
+
+    if (checkRules4AddUpdate(newRegionObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(newRegionObj): updateElementOfGlobalDataArray(newRegionObj);
+            createSettingsRegionTab_HTML();
+            alertOfSuccess();
+        });
+    }
+    return false;
+}
+
+//14.06 Verification for Add/Update fields
+function checkRules4AddUpdate(regionObj) {
+    var result = true;
+    var initialRegionObj = local[0];
+    for (var i = 0; i < data.area.length; i++) {
+        if (initialRegionObj.region_id != "addnew") {
+            //This code id deprecated because I decided that country id must be changed only manually but lets leave this code here for future needs
+            if (initialRegionObj.region_id.toLowerCase() != regionObj.region_id.toLowerCase() && data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
+                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ru);
+                result = false;
+            }
+        }
+        else {
+            if (data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
+                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ru);
+                result = false;
+            }
+        }
+        if (regionObj.country_id == '0'){ alertOfEmptyMandatoryField("alert_country"); result = false; }
+        if (regionObj.region_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
+        if (regionObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (regionObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
+    }
+    return result;
+}
+
 //14.xx Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
@@ -217,6 +271,26 @@ function alertOfSuccess() {
         '<div class="alert alert-success fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Success!</strong> Your changes are successfully applied. Check list of Regions to see changes added.' +
+        '</div>';
+}
+
+//14.xx Failure flag for empty mandatory field
+function alertOfEmptyMandatoryField(alertId) {
+    removeAllChildNodes("success");
+    document.getElementById(alertId).innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
+        '</div>';
+}
+
+//14.xx Failure flag for not unique ID applied
+function alertOfDuplicateIDFailure(id, name_ru) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_id").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
         '</div>';
 }
 
