@@ -85,6 +85,7 @@ function addEditRemoveRegion(itemId) {
         name_ru: (itemId != "addnew") ? region[0].name_ru : "",
         active: (itemId != "addnew") ? (region[0].active != undefined) ? region[0].active: "" : ""
     };
+    var active = (local[0].active == "Y") ? "checked" : "";
 
     $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ) {
         var selected = (country.country_id == region[0].country_id) ? " selected" : "";
@@ -109,12 +110,12 @@ function addEditRemoveRegion(itemId) {
             }
         });
 
-        $.getScript("SCRIPTS/MAPS/" + country_map_url, function() { AmCharts.maps.country_map_url.slice(0, -3) });
-        $.each (AmCharts.maps.country_map_url.slice(0, -3).svg.g.path, function( i, newregion ) {
-            if (!distinctIds[newregion.id]) {
-                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
-            }
-        });
+//        $.getScript("SCRIPTS/MAPS/" + country_map_url, function() { AmCharts.maps.country_map_url.slice(0, -3) });
+//        $.each (AmCharts.maps.country_map_url.slice(0, -3).svg.g.path, function( i, newregion ) {
+//            if (!distinctIds[newregion.id]) {
+//                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
+//            }
+//        });
 
         listOfNotYetAddedRegions =
                         '<div class="input-group">' +
@@ -128,7 +129,7 @@ function addEditRemoveRegion(itemId) {
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' country</h2>' +
+        '<h2 class="sub-header">' + header + ' region</h2>' +
         '<form>' +
             removeButton +
             listOfNotYetAddedRegions +
@@ -152,17 +153,71 @@ function addEditRemoveRegion(itemId) {
             '<span id="alert_name"></span>' +
             '<br>' +
             '<div class="input-group">' +
+                '<label class="checkbox-inline"><input type="checkbox"  id="newActive" value="" ' + active + '>Identifier if region can be shown for country.</label>' +
+            '</div>' +
+            '<span id="alert_active"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<select id="newContinent" class="form-control">' +
                     '<option value="0">Select country that region belongs to.</option>' +
                     countries +
                 '</select>' +
             '</div>' +
-            '<span id="alert_continent"></span>' +
+            '<span id="alert_country"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
+                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Region on Country Map</button>' +
+            '</div>' +
             '<br>' +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
+}
+
+//14.04 Remove item entity handler
+function RemoveRegion() {
+debugger;
+    var newID = document.getElementById('newId').value;
+    var citiesToRemoveArray = $.grep (data.city, function( n, i ) {return (n.region_id == newID)});
+
+    removeAllChildNodes("alert_id");
+    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name");
+    removeAllChildNodes("alert_active");
+    removeAllChildNodes("alert_country");
+    removeAllChildNodes("success");
+
+    if (citiesToRemoveArray.length > 0) {
+        var citiesLinkedToCountry = "";
+        $.each (citiesToRemoveArray, function( i, region ){
+            citiesLinkedToCountry += '<b>' + region.name_ru + '</b>, ';
+        });
+        document.getElementById("remove").innerHTML =
+            '<div class="alert alert-danger fade in">' +
+            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some city. Change region id (or remove region) for following cities: ' +
+            citiesLinkedToCountry.slice(0, -2) + '.' +
+            '</div>';
+    }
+    else {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            removeElementOfGlobalData4DefinedArray ("region_id", newID);
+            createSettingsRegionTab_HTML();
+            alertOfSuccess();
+        });
+    }
+}
+
+//14.xx Success flag for any event successfully applied
+function alertOfSuccess() {
+    removeAllChildNodes("alert");
+    document.getElementById("success").innerHTML =
+        '<div class="alert alert-success fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Success!</strong> Your changes are successfully applied. Check list of Regions to see changes added.' +
+        '</div>';
 }
 
 //14.xx Populate add new region fields
@@ -171,4 +226,29 @@ function populateForm(id) {
 
     var e = document.getElementById("newNotAddedRegion");
     document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
+}
+
+//14.xx Open Country map for region
+function openCountryMap() {
+    var region = document.getElementById("newId").value;
+
+//    if (lat != "" && long != ""){
+//        var page = window.open("",'_blank');
+//        page.document.write(
+//            "<html>" +
+//                "<head>" +
+//                    "<title>Country Map</title>" +
+//                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+//                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+//                    "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
+//                "</head>" +
+//                "<body>" +
+//                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
+//                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+//                "</body>" +
+//            "</html>");
+//    }
+//    else {
+//        if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}
+//    }
 }

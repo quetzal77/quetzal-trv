@@ -235,7 +235,6 @@ function SubmitChanges(status) {
 //12.04 Remove item entity handler
 function RemoveCountry() {
     var newID = document.getElementById('newId').value;
-    var distinctIds = {};
     var regionsToRemoveArray = $.grep (data.area, function( n, i ) {return (n.country_id == newID)});
 
     removeAllChildNodes("alert_id");

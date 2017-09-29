@@ -16,7 +16,7 @@ function addElementOfGlobalDataArray(entityObj) {
             data.country.sort(dynamicSort("name_ru"));
             break;
             break;
-        case 'area':
+        case 'region':
             // ...
             break;
         case 'city':
@@ -49,7 +49,7 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  data.country.sort(dynamicSort("name_ru"));
                  refreshAllTheArrays ();
                  break;
-             case 'area':
+             case 'region':
      //            removeElementOfGlobalDataArray (data.area, attr, value);
      //            //TBD - check and refresh initial_data array
                  break;
@@ -79,16 +79,14 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
         case 'country':
             removeElementOfGlobalDataArray (data.country, attr, value);
             break;
-        case 'area':
-//            removeElementOfGlobalDataArray (data.area, attr, value);
-//            //TBD - check and refresh initial_data array
+        case 'region':
+            removeElementOfGlobalDataArray (data.area, attr, value);
             break;
         case 'city':
             removeElementOfGlobalDataArray (data.city, attr, value);
             break;
         case 'visit':
 //            removeElementOfGlobalDataArray (data.visit, attr, value);
-//            //TBD - check and refresh initial_data array
             break;
     }
 }
