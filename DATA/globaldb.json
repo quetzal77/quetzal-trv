@@ -3154,63 +3154,63 @@
     },
     {
       "country_id": "LV",
-      "region_id": "LV-DGV-2",
+      "region_id": "LV-DGV",
       "name": "Daugavpils",
       "name_ru": "Даугавпилс",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JEL-2",
+      "region_id": "LV-JEL",
       "name": "Jelgava",
       "name_ru": "Елгава",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JKB-2",
+      "region_id": "LV-JKB",
       "name": "Jēkabpils",
       "name_ru": "Екабпилс",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JUR-2",
+      "region_id": "LV-JUR",
       "name": "Jūrmala",
       "name_ru": "Юрмала",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-LPX-2",
+      "region_id": "LV-LPX",
       "name": "Liepāja",
       "name_ru": "Лиепая",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-REZ-2",
+      "region_id": "LV-REZ",
       "name": "Rēzekne",
       "name_ru": "Резекне",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-RIX-2",
+      "region_id": "LV-RIX",
       "name": "Riga",
       "name_ru": "Рига",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VMR-2",
+      "region_id": "LV-VMR",
       "name": "Valmiera",
       "name_ru": "Валмиера",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VEN-2",
+      "region_id": "LV-VEN",
       "name": "Ventspils",
       "name_ru": "Вентспилс",
       "active": "Y"
