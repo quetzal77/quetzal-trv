@@ -122,14 +122,15 @@ function populateContent(callback) {
                   return result;
                }
                this.getCountryId = function () {
-                  var regionSplited = this.region_id.split("-");
+                var region;
+                for (var j = 0; j < data.area.length; j++) {
+                    if (data.area[j].region_id == this.region_id)
+                        {region = data.area[j];}
+                }
+                   if(typeof region == "undefined") { return ""; }
                   var country = $.grep (data.country, function( n, i ){
-                      return (n.country_id == regionSplited[0])
+                      return (n.country_id == region.country_id)
                   });
-                   if(typeof country[0] == "undefined")
-                   {
-                       return "";
-                   }
 
                   return country[0].short_name;
               }
