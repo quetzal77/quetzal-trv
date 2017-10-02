@@ -211,23 +211,12 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert_small_img");
     removeAllChildNodes("success");
 
-    if (status == "add") {
-        if (checkRules4AddUpdate(newCountryObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                addElementOfGlobalDataArray(newCountryObj);
-                createSettingsCountryTab_HTML();
-                alertOfSuccess();
-            });
-        }
-    }
-    else {
-        if (checkRules4AddUpdate(newCountryObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                updateElementOfGlobalDataArray(newCountryObj);
-                createSettingsCountryTab_HTML();
-                alertOfSuccess();
-            });
-        }
+    if (checkRules4AddUpdate(newCountryObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(newCountryObj): updateElementOfGlobalDataArray(newCountryObj);
+            createSettingsCountryTab_HTML();
+            alertOfSuccess();
+        });
     }
     return false;
 }

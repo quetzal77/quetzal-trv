@@ -113,23 +113,12 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
-    if (status == "add") {
-        if (checkRules4AddUpdate(typeObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                addElementOfGlobalDataArray(typeObj);
-                createSettingsTypeTab_HTML();
-                alertOfSuccess();
-            });
-        }
-    }
-    else {
-        if (checkRules4AddUpdate(typeObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                updateElementOfGlobalDataArray(typeObj);
-                createSettingsTypeTab_HTML();
-                alertOfSuccess();
-            });
-        }
+    if (checkRules4AddUpdate(typeObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(typeObj): updateElementOfGlobalDataArray(typeObj);
+            createSettingsTypeTab_HTML();
+            alertOfSuccess();
+        });
     }
     return false;
 }

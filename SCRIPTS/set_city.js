@@ -294,23 +294,12 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert_region");
     removeAllChildNodes("success");
 
-    if (status == "add") {
-        if (checkRules4AddUpdate(newCityObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                addElementOfGlobalDataArray(newCityObj);
-                createSettingsCityTab_HTML();
-                alertOfSuccess();
-            });
-        }
-    }
-    else {
-        if (checkRules4AddUpdate(newCityObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                updateElementOfGlobalDataArray(newCityObj);
-                createSettingsCityTab_HTML();
-                alertOfSuccess();
-            });
-        }
+    if (checkRules4AddUpdate(newCityObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(newCityObj): updateElementOfGlobalDataArray(newCityObj);
+            createSettingsCityTab_HTML();
+            alertOfSuccess();
+        });
     }
     return false;
 }

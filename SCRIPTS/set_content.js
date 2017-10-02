@@ -50,8 +50,9 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  refreshAllTheArrays ();
                  break;
              case 'region':
-     //            removeElementOfGlobalDataArray (data.area, attr, value);
-     //            //TBD - check and refresh initial_data array
+                 updateElementOfRegionArray (initialEntityObj, newEntityObj);
+                 data.area.sort(dynamicSort("name_ru"));
+                 refreshAllTheArrays ();
                  break;
              case 'city':
                  updateElementOfCityArray (initialEntityObj, newEntityObj);
@@ -260,4 +261,32 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
         initial_data.continent.push(entityObj);
         initial_data.continent.sort(dynamicSort("name_ru"));
     }
+}
+
+//10.07 Update Region and City array with new data
+function updateElementOfRegionArray(initialEntityObj, newEntityObj) {
+    var country_id = (initialEntityObj.country_id.toLowerCase() != newEntityObj.country_id.toLowerCase()) ? true : false;
+    var region_id = (initialEntityObj.region_id.toLowerCase() != newEntityObj.region_id.toLowerCase()) ? true : false;
+    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+    var active = (initialEntityObj.active != newEntityObj.active) ? true : false;
+
+    // Update Global City Array with new ID
+    if (region_id) {
+        $.each (data.city, function( i, city ){
+            if (city.region_id == initialEntityObj.region_id){
+                city.region_id = newEntityObj.region_id;
+            }
+        });
+    }
+    // Update Global Region array with new data
+    $.each (data.area, function( i, region ){
+        if (region.region_id == initialEntityObj.region_id) {
+            if (country_id){ region.country_id = newEntityObj.country_id; }
+            if (region_id){ region.region_id = newEntityObj.region_id; }
+            if (name_ru){ region.name_ru = newEntityObj.name_ru; }
+            if (name){ region.name = newEntityObj.name; }
+            if (active){ region.active = newEntityObj.active; }
+        }
+    });
 }

@@ -113,23 +113,12 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
-    if (status == "add") {
-        if (checkRules4AddUpdate(continentObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                addElementOfGlobalDataArray(continentObj);
-                createSettingsContinentTab_HTML();
-                alertOfSuccess();
-            });
-        }
-    }
-    else {
-        if (checkRules4AddUpdate(continentObj)) {
-            $.getScript("SCRIPTS/set_content.js", function(){
-                updateElementOfGlobalDataArray(continentObj);
-                createSettingsContinentTab_HTML();
-                alertOfSuccess();
-            });
-        }
+    if (checkRules4AddUpdate(continentObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(continentObj): updateElementOfGlobalDataArray(continentObj);
+            createSettingsContinentTab_HTML();
+            alertOfSuccess();
+        });
     }
     return false;
 }
