@@ -145,7 +145,7 @@ function populateContent(callback) {
   //01.06 Region Object definition
    function RegionObj(region_id) {
        for (var i = 0; i < data.area.length; i++) {
-           if (data.area[i].region_id == region_id) {
+           if (data.area[i].region_id == region_id && data.area[i].active != "N") {
                this.type = "region";
                this.region_id = data.area[i].region_id;
                this.active = (data.area[i].active === "Y") ? true : false;

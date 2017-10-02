@@ -2972,245 +2972,245 @@
     },
     {
       "country_id": "LV",
-      "region_id": "LV-AI",
+      "region_id": "LV-AI-2",
       "name": "Aizkraukle",
       "name_ru": "Айзкраукльский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-AL",
+      "region_id": "LV-AL-2",
       "name": "Alūksne",
       "name_ru": "Алуксненский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-BL",
+      "region_id": "LV-BL-2",
       "name": "Balvi",
       "name_ru": "Балвский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-BU",
+      "region_id": "LV-BU-2",
       "name": "Bauska",
       "name_ru": "Бауский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-CE",
+      "region_id": "LV-CE-2",
       "name": "Cēsis",
       "name_ru": "Цесисский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-DA",
+      "region_id": "LV-DA-2",
       "name": "Daugavpils",
       "name_ru": "Даугавпилсский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-DO",
+      "region_id": "LV-DO-2",
       "name": "Dobele",
       "name_ru": "Добельский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-GU",
+      "region_id": "LV-GU-2",
       "name": "Gulbene",
       "name_ru": "Гулбенский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JK",
+      "region_id": "LV-JK-2",
       "name": "Jēkabpils",
       "name_ru": "Екабпилсский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JL",
+      "region_id": "LV-JL-2",
       "name": "Jelgava",
       "name_ru": "Елгавский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-KR",
+      "region_id": "LV-KR-2",
       "name": "Krāslava",
       "name_ru": "Краславский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-KU",
+      "region_id": "LV-KU-2",
       "name": "Kuldīga",
       "name_ru": "Кулдигский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-LE",
+      "region_id": "LV-LE-2",
       "name": "Liepāja",
       "name_ru": "Лиепайский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-LM",
+      "region_id": "LV-LM-2",
       "name": "Limbaži",
       "name_ru": "Лимбажский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-LU",
+      "region_id": "LV-LU-2",
       "name": "Ludza",
       "name_ru": "Лудзенский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-MA",
+      "region_id": "LV-MA-2",
       "name": "Madona",
       "name_ru": "Мадонский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-OG",
+      "region_id": "LV-OG-2",
       "name": "Ogre",
       "name_ru": "Огрский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-PR",
+      "region_id": "LV-PR-2",
       "name": "Preili",
       "name_ru": "Прейльский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-RE",
+      "region_id": "LV-RE-2",
       "name": "Rēzekne",
       "name_ru": "Резекненский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-RI",
+      "region_id": "LV-RI-2",
       "name": "Riga",
       "name_ru": "Рижский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-SA",
+      "region_id": "LV-SA-2",
       "name": "Saldus",
       "name_ru": "Салдусский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-TA",
+      "region_id": "LV-TA-2",
       "name": "Talsi",
       "name_ru": "Талсинский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-TU",
+      "region_id": "LV-TU-2",
       "name": "Tukum",
       "name_ru": "Тукумсский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VK",
+      "region_id": "LV-VK-2",
       "name": "Valka",
       "name_ru": "Валкский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VM",
+      "region_id": "LV-VM-2",
       "name": "Valmiera",
       "name_ru": "Валмиерский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VE",
+      "region_id": "LV-VE-2",
       "name": "Ventspils",
       "name_ru": "Вентспилсский",
       "active": "N"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-DGV",
+      "region_id": "LV-DGV-2",
       "name": "Daugavpils",
       "name_ru": "Даугавпилс",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JEL",
+      "region_id": "LV-JEL-2",
       "name": "Jelgava",
       "name_ru": "Елгава",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JKB",
+      "region_id": "LV-JKB-2",
       "name": "Jēkabpils",
       "name_ru": "Екабпилс",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-JUR",
+      "region_id": "LV-JUR-2",
       "name": "Jūrmala",
       "name_ru": "Юрмала",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-LPX",
+      "region_id": "LV-LPX-2",
       "name": "Liepāja",
       "name_ru": "Лиепая",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-REZ",
+      "region_id": "LV-REZ-2",
       "name": "Rēzekne",
       "name_ru": "Резекне",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-RIX",
+      "region_id": "LV-RIX-2",
       "name": "Riga",
       "name_ru": "Рига",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VMR",
+      "region_id": "LV-VMR-2",
       "name": "Valmiera",
       "name_ru": "Валмиера",
       "active": "Y"
     },
     {
       "country_id": "LV",
-      "region_id": "LV-VEN",
+      "region_id": "LV-VEN-2",
       "name": "Ventspils",
       "name_ru": "Вентспилс",
       "active": "Y"
@@ -6542,154 +6542,154 @@
     },
     {
       "country_id": "FR",
-      "region_id": "FR-A",
+      "region_id": "FR-A-2",
       "name": "Alsace",
       "name_ru": "Эльзас",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-B",
+      "region_id": "FR-B-2",
       "name": "Aquitaine",
       "name_ru": "Аквита́ния",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-C",
+      "region_id": "FR-C-2",
       "name": "Auvergne",
       "name_ru": "Овернь",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-P",
+      "region_id": "FR-P-2",
       "name": "Basse-Normandie (Lower Normandy)",
       "name_ru": "Нижняя Нормандия",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-D",
+      "region_id": "FR-D-2",
       "name": "Bourgogne (Burgundy)",
       "name_ru": "Бургундия",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-E",
+      "region_id": "FR-E-2",
       "name": "Bretagne (Brittany)",
       "name_ru": "Брета́нь",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-F",
+      "region_id": "FR-F-2",
       "name": "Centre",
       "name_ru": "Центр",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-G",
+      "region_id": "FR-G-2",
       "name": "Champagne-Ardenne",
       "name_ru": "Шампань — Арденны",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-H",
+      "region_id": "FR-H-2",
       "name": "Corse (Corsica)",
       "name_ru": "Ко́рсика",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-I",
+      "region_id": "FR-I-2",
       "name": "Franche-Comté",
       "name_ru": "Франш-Конте",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-Q",
+      "region_id": "FR-Q-2",
       "name": "Haute-Normandie (Upper Normandy)",
       "name_ru": "Верхняя Нормандия",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-J",
+      "region_id": "FR-J-2",
       "name": "Île-de-France",
       "name_ru": "Иль-де-Франс",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-K",
+      "region_id": "FR-K-2",
       "name": "Languedoc-Roussillon",
       "name_ru": "Лангедо́к — Руссильо́н",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-L",
+      "region_id": "FR-L-2",
       "name": "Limousin",
       "name_ru": "Лимузен",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-M",
+      "region_id": "FR-M-2",
       "name": "Lorraine",
       "name_ru": "Лотарингия",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-N",
+      "region_id": "FR-N-2",
       "name": "Midi-Pyrénées",
       "name_ru": "Юг — Пиренеи",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-O",
+      "region_id": "FR-O-2",
       "name": "Nord-Pas-de-Calais",
       "name_ru": "Нор — Па-де-Кале",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-R",
+      "region_id": "FR-R-2",
       "name": "Pays-de-la-Loire",
       "name_ru": "Земли Луары",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-S",
+      "region_id": "FR-S-2",
       "name": "Picardie",
       "name_ru": "Пикардия",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-T",
+      "region_id": "FR-T-2",
       "name": "Poitou-Charentes",
       "name_ru": "Пуату — Шаранта",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-U",
+      "region_id": "FR-U-2",
       "name": "Provence-Alpes-Côte d'Azur",
       "name_ru": "Прованс — Альпы — Лазурный Берег",
       "active": "N"
     },
     {
       "country_id": "FR",
-      "region_id": "FR-V",
+      "region_id": "FR-V-2",
       "name": "Rhône-Alpes",
       "name_ru": "Рона — Альпы",
       "active": "N"
