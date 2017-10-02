@@ -103,17 +103,18 @@ function addEditRemoveRegion(itemId) {
                 '<hr>';
     }
     else {
+    debugger;
         disabled = 'disabled="disabled"';
         var regionOptions = "";
         var distinctIds = {};
-        $.each (data.area, function( i, region ) {
-            if (region.country_id == local[0].country_id) {
-                distinctIds[region.region_id] = true;
+        var countryLow = local[2].slice(0, -3);
+        $.each (data.area, function( i, oldregion ) {
+            if (oldregion.country_id == local[3]) {
+                distinctIds[oldregion.region_id] = true;
             }
         });
-
-//        $.getScript("SCRIPTS/MAPS/" + country_map_url, function() { AmCharts.maps.country_map_url.slice(0, -3) });
-//        $.each (AmCharts.maps.country_map_url.slice(0, -3).svg.g.path, function( i, newregion ) {
+//        $.getScript("SCRIPTS/MAPS/" + local[2], function() { AmCharts.maps[maps.countryLow]  });
+//        $.each (AmCharts.maps[maps.countryLow].svg.g.path, function( i, newregion ) {
 //            if (!distinctIds[newregion.id]) {
 //                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
 //            }
