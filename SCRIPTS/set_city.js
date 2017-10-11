@@ -102,7 +102,7 @@ function addEditRemoveCity(itemId) {
     var description = (local[0].description != undefined) ? local[0].description : "";
 
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ) {
-        if ( region.country_id == getCountryId(local[2]) ) {
+        if ( region.country_id == getCountryId(local[2]) && region.active != "N") {
             var selected = (region.region_id == city[0].region_id) ? " selected" : "";
             regions += "<option value='" + region.region_id + "' " + selected + ">" + region.name_ru + "</option>";
         }

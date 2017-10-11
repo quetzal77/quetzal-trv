@@ -50,9 +50,10 @@ function showAllTheRegionsOfSelectedCountry(id) {
     var country = new CountryObj(id)
     local[2] = country.map_img;
     local[3] = id;
+    debugger;
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ){
-        var regionObj = new RegionObj(region.region_id);
-        if (regionObj.country_id == id){
+        if (region.country_id == id && region.active != "N"){
+            var regionObj = new RegionObj(region.region_id);
             listOfRegions += '<li><a id="' + region.region_id + '" onclick="javascript:addEditRemoveRegion(this.id)" onmouseover="" style="cursor: pointer;">' + region.name_ru + '</a></li>';
         }
     });
@@ -103,7 +104,6 @@ function addEditRemoveRegion(itemId) {
                 '<hr>';
     }
     else {
-    debugger;
         disabled = 'disabled="disabled"';
         var regionOptions = "";
         var distinctIds = {};
