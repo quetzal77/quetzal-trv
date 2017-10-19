@@ -1823,17 +1823,10 @@
       "active": "Y"
     },
     {
-      "country_id": "PAL",
-      "region_id": "PS_WE",
-      "name": "Palestinian Territories",
-      "name_ru": "Западный берег реки Иордан",
-      "active": "Y"
-    },
-    {
-      "country_id": "PAL",
-      "region_id": "PS_GZ",
-      "name": "Palestinian Territories",
-      "name_ru": "Сектор Газа",
+      "country_id": "IL",
+      "region_id": "PS",
+      "name": "Palestine",
+      "name_ru": "Палестина",
       "active": "Y"
     },
     {
@@ -2069,7 +2062,7 @@
     },
     {
       "country_id": "MD",
-      "region_id": "MD-DB",
+      "region_id": "MD-DU",
       "name": "Dubăsari",
       "name_ru": "Дубоссарский район",
       "active": "Y"
@@ -4015,7 +4008,7 @@
     },
     {
       "country_id": "RU",
-      "region_id": "RU-AST",
+      "region_id": "RU-ATS",
       "name": "Astrakhan Oblast",
       "name_ru": "Астраханская область",
       "active": "Y"
@@ -4148,7 +4141,7 @@
     },
     {
       "country_id": "RU",
-      "region_id": "RU-KIR",
+      "region_id": "RU-KGN",
       "name": "Kirov Oblast",
       "name_ru": "Кировская область",
       "active": "Y"
@@ -4183,7 +4176,7 @@
     },
     {
       "country_id": "RU",
-      "region_id": "RU-KGN",
+      "region_id": "RU-KU",
       "name": "Kurgan Oblast",
       "name_ru": "Курганская область",
       "active": "Y"
@@ -7000,6 +6993,20 @@
       "region_id": "ES-VC",
       "name": "Valencia",
       "name_ru": "Валенсия",
+      "active": "Y"
+    },
+    {
+      "country_id": "ES",
+      "region_id": "ES-CE",
+      "name": "Ceuta",
+      "name_ru": "Сеута",
+      "active": "Y"
+    },
+    {
+      "country_id": "ES",
+      "region_id": "ES-ML",
+      "name": "Melilla",
+      "name_ru": "Мелилья",
       "active": "Y"
     },
     {

@@ -15,6 +15,7 @@ AmCharts.maps.spainLow={
 			"path":[
 				{
 					"id":"divider",
+					"title":"Devider lines",
 					"d":"M575.79,317.73H422.29l-58.19,98.31h-3.56l58.19,-98.31H285.3v-2.51h290.5V317.73z"
 				},
 				{
