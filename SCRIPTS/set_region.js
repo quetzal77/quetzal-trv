@@ -108,27 +108,35 @@ function addEditRemoveRegion(itemId) {
         var regionOptions = "";
         var distinctIds = {};
         var countryLow = local[2].slice(0, -3);
+
         $.each (data.area, function( i, oldregion ) {
             if (oldregion.country_id == local[3]) {
                 distinctIds[oldregion.region_id] = true;
             }
         });
-//        $.getScript("SCRIPTS/MAPS/" + local[2], function() { AmCharts.maps[maps.countryLow]  });
-//        $.each (AmCharts.maps[maps.countryLow].svg.g.path, function( i, newregion ) {
-//            if (!distinctIds[newregion.id]) {
-//                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
-//            }
-//        });
+
+        $.ajax({
+            async: false,
+            url: "SCRIPTS/MAPS/" + local[2],
+            dataType: "script"
+        });
+
+        var low = eval("AmCharts.maps." + countryLow);
+        $.each (low.svg.g.path, function( i, newregion ) {
+            if (!distinctIds[newregion.id]) {
+                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
+            }
+        });
 
         listOfNotYetAddedRegions =
-                        '<div class="input-group">' +
-                            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                            '<select id="newNotAddedRegion" class="form-control" onchange="populateForm(this.value)">' +
-                                '<option value="0">Select region that not yet added to base among existing on country map or skip this step and add your own variant.</option>' +
-                                regionOptions +
-                            '</select>' +
-                        '</div>' +
-                        '<hr>';
+            '<div class="input-group">' +
+            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+            '<select id="newNotAddedRegion" class="form-control" onchange="populateForm(this.value)">' +
+            '<option value="0">Select region that not yet added to base among existing on country map or skip this step and add your own variant.</option>' +
+            regionOptions +
+            '</select>' +
+            '</div>' +
+            '<hr>';
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =

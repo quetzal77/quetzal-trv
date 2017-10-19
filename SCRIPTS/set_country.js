@@ -85,7 +85,12 @@ function addEditRemoveCountry(itemId) {
             distinctIds[country.country_id] = true;
         });
 
-        $.getScript("SCRIPTS/MAPS/worldLow.js", function() { AmCharts.maps.worldLow });
+        $.ajax({
+            async: false,
+            url: "SCRIPTS/MAPS/worldLow.js",
+            dataType: "script"
+        });
+
         $.each (AmCharts.maps.worldLow.svg.g.path, function( i, newcountry ) {
             if (!distinctIds[newcountry.id]) {
                 countryOptions += '<option value="' + newcountry.id + '">' + newcountry.title + '</option>'
@@ -93,14 +98,14 @@ function addEditRemoveCountry(itemId) {
         });
 
         listOfNotYetAddedCountries =
-                        '<div class="input-group">' +
-                            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                            '<select id="newNotAddedMap" class="form-control" onchange="populateForm(this.value)">' +
-                                '<option value="0">Select country that not yet added to base among existing on world map or skip this step and add your own variant.</option>' +
-                                countryOptions +
-                            '</select>' +
-                        '</div>' +
-                        '<hr>';
+            '<div class="input-group">' +
+            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+            '<select id="newNotAddedMap" class="form-control" onchange="populateForm(this.value)">' +
+            '<option value="0">Select country that not yet added to base among existing on world map or skip this step and add your own variant.</option>' +
+            countryOptions +
+            '</select>' +
+            '</div>' +
+            '<hr>';
     }
         editIdField_3 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newSmallImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
         editIdField_4 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newFlagImg" onclick="javascript:checkSmallFlag(this.value)">Check flag</button></span>';
