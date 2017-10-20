@@ -390,7 +390,9 @@ function openCountryMap() {
 //                        "for (var i = 0; i < 500; i++) {main.innerText += new Date();}</script>" +
                     "<div id='mapdiv' class='map'>&nbsp;</div>" +
                     "<script>var xxx = document.getElementById('mapdiv').innerHTML = 'Test test test'; var xxx = CreateMap(); </script>" +
-                    "<div id='coufunction codeAddress()ntryList' style='display:none;'>" + map.slice(0, -3) + ",AT-9,AT-5,AT-6,</div>" +
+                    "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
+                    "<div id='countryList' style='display:none;'>" + map.slice(0, -3) + ",AT-9,AT-5,AT-6,</div>" +
+                    "<div id='cityList' style='display:none;'>austria;Вена,48.202548,16.368805;Грац,47.0725521,15.4349911;Зальцбург,47.7989766,13.0464988;</div>" +
                 "</body>" +
             "</html>");
     }
