@@ -4,6 +4,7 @@
 function createSettingsRegionTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"region");
+    local = [];
     local[1] = "region";
 
     // Set menu marker
@@ -273,7 +274,7 @@ function checkRules4AddUpdate(regionObj) {
     return result;
 }
 
-//14.xx Success flag for any event successfully applied
+//14.07 Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
     document.getElementById("success").innerHTML =
@@ -283,7 +284,7 @@ function alertOfSuccess() {
         '</div>';
 }
 
-//14.xx Failure flag for empty mandatory field
+//14.08 Failure flag for empty mandatory field
 function alertOfEmptyMandatoryField(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
@@ -293,7 +294,7 @@ function alertOfEmptyMandatoryField(alertId) {
         '</div>';
 }
 
-//14.xx Failure flag for not unique ID applied
+//14.09 Failure flag for not unique ID applied
 function alertOfDuplicateIDFailure(id, name_ru) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
@@ -303,7 +304,7 @@ function alertOfDuplicateIDFailure(id, name_ru) {
         '</div>';
 }
 
-//14.xx Populate add new region fields
+//14.10 Populate add new region fields
 function populateForm(id) {
     document.getElementById("newId").value = id;
 
@@ -311,27 +312,27 @@ function populateForm(id) {
     document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
 }
 
-//14.xx Open Country map for region
+//14.11 Open Country map for region
 function openCountryMap() {
+    var map = local[2];
     var region = document.getElementById("newId").value;
-
-//    if (lat != "" && long != ""){
-//        var page = window.open("",'_blank');
-//        page.document.write(
-//            "<html>" +
-//                "<head>" +
-//                    "<title>Country Map</title>" +
-//                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-//                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-//                    "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
-//                "</head>" +
-//                "<body>" +
-//                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
-//                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
-//                "</body>" +
-//            "</html>");
-//    }
-//    else {
-//        if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}
-//    }
+    var page = window.open("",'_blank');
+    page.document.write(
+        "<html>" +
+            "<head>" +
+                "<title>Country Map</title>" +
+                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
+                "<script src='SCRIPTS/MAPS/" + map + "' type='text/javascript'></script>" +
+                "<link rel='stylesheet' href='THEMES/global.css' type='text/css'>" +
+            "</head>" +
+            "<body>" +
+                "<div class='countrylabel h3'>Here is map of country you selected.</div>" +
+                "<div id='mapdiv' class='map'>&nbsp;</div>" +
+                "<script>var xxx = CreateMap(); </script>" +
+                "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
+                "<div id='countryList' style='display:none;'>" + map.slice(0, -3) + "," + region + ",</div>" +
+                "<div id='cityList' style='display:none;'>" + map.slice(0, -6) + ";</div>" +
+            "</body>" +
+        "</html>");
 }

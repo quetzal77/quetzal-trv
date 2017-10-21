@@ -4,6 +4,7 @@
 function createSettingsVisitTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"visit");
+    local = [];
     local[1] = "visit";
 
     // Set menu marker

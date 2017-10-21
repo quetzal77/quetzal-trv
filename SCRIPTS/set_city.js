@@ -4,6 +4,7 @@
 function createSettingsCityTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"city");
+    local = [];
     local[1] = "city";
 
     // Set menu marker
@@ -137,13 +138,13 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of city">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of city">' +
             '</div>' +
             '<span id="alert_name_ru"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of city">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of city">' +
             '</div>' +
             '<span id="alert_name"></span>' +
             '<br>' +
@@ -394,8 +395,10 @@ function openSecondGoogleMap() {
 function openCountryMap() {
     var lat = document.getElementById("newLat").value.trim();
     var long = document.getElementById("newLong").value.trim();
+    var name = document.getElementById("newRusName").value.trim();
+    var map = $.grep (data.country, function( n, i ) {return (n.short_name == local[2])});
 
-    if (lat != "" && long != ""){
+    if (lat != "" && long != "" && name != ""){
         var page = window.open("",'_blank');
         page.document.write(
             "<html>" +
@@ -403,17 +406,24 @@ function openCountryMap() {
                     "<title>Country Map</title>" +
                     "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
                     "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                    "<script src='SCRIPTS/MAPS/" + local[2] + "Low.js' type='text/javascript'></script>" +
+                    "<script src='SCRIPTS/MAPS/" + map[0].map_img + "' type='text/javascript'></script>" +
+                    "<link rel='stylesheet' href='THEMES/global.css' type='text/css'>" +
                 "</head>" +
                 "<body>" +
+                    "<div class='countrylabel h3'>Here is map of country you selected.</div>" +
                     "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                    "<script>document.getElementById('mapdiv').innerHTML = CreateMap();</script>" +
+                    "<script>var xxx = CreateMap(); </script>" +
+                    "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
+                    "<div id='countryList' style='display:none;'>" + map[0].map_img.slice(0, -3) + ",</div>" +
+                    "<div id='cityList' style='display:none;'>" + map[0].map_img.slice(0, -6) + ";" +
+                        name + "," + lat + "," + long + "," + ";</div>" +
                 "</body>" +
             "</html>");
     }
     else {
         if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}
         if (long != ""){alertOfEmptyMandatoryField("alert_long");}
+        if (name != ""){alertOfEmptyMandatoryField("alert_name_ru");}
     }
 }
 

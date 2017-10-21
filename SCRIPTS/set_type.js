@@ -4,6 +4,7 @@
 function createSettingsTypeTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"type");
+    local = [];
     local[1] = "type";
 
     // Set menu marker

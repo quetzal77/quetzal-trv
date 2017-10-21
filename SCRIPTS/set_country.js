@@ -4,6 +4,7 @@
 function createSettingsCountryTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"country");
+    local = [];
     local[1] = "country";
 
     // Set menu marker
