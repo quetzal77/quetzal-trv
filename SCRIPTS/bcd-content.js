@@ -183,6 +183,7 @@ function populateContent(callback) {
                this.name_nt = data.country[i].name_nt;
                this.name_ru = data.country[i].name_ru;
                this.continent_id = data.country[i].continent_id;
+               this.city_state = (data.country[i].city_state === "true") ? true : false;
                this.small_flag_img = data.country[i].small_flag_img;
                this.flag_img = data.country[i].flag_img;
                this.emb_img = data.country[i].emb_img;

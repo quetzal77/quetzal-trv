@@ -209,6 +209,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
     var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
+    var city_state = (initialEntityObj.city_state != newEntityObj.city_state) ? true : false;
     var small_flag_img = (initialEntityObj.small_flag_img != newEntityObj.small_flag_img) ? true : false;
     var flag_img = (initialEntityObj.flag_img != newEntityObj.flag_img) ? true : false;
     var emb_img = (initialEntityObj.emb_img != newEntityObj.emb_img) ? true : false;
@@ -237,6 +238,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
             if (flag_img){ country.flag_img = newEntityObj.flag_img; }
             if (emb_img){ country.emb_img = newEntityObj.emb_img; }
             if (map_img){ country.map_img = newEntityObj.map_img; }
+            if (city_state){ if (newEntityObj.city_state != undefined) {country.city_state = newEntityObj.city_state;} else {delete country['city_state'];} }
         }
     });
     // Update Onload Country array with new data

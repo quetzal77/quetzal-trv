@@ -1,6 +1,5 @@
    function CreateMap ()
    {
-   debugger;
       var map;
       var worldDataProvider;
 

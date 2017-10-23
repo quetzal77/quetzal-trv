@@ -51,7 +51,6 @@ function showAllTheRegionsOfSelectedCountry(id) {
     var country = new CountryObj(id)
     local[2] = country.map_img;
     local[3] = id;
-    debugger;
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ){
         if (region.country_id == id && region.active != "N"){
             var regionObj = new RegionObj(region.region_id);

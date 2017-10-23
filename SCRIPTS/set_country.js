@@ -62,6 +62,9 @@ function addEditRemoveCountry(itemId) {
         short_name: itemId
     };
 
+    if (itemId != "addnew" && country[0].city_state != undefined) { local[0].city_state = country[0].city_state; }
+        var city_state = (local[0].city_state == "true") ? "checked" : "";
+
     $.each (data.continent.sort(dynamicSort("name_ru")), function( i, continent ) {
         var selected = (continent.continent_id == country[0].continent_id) ? " selected" : "";
         continents += "<option value='" + continent.continent_id + "' " + selected + ">" + continent.name_ru + "</option>";
@@ -160,6 +163,11 @@ function addEditRemoveCountry(itemId) {
             '<span id="alert_continent"></span>' +
             '<br>' +
             '<div class="input-group">' +
+            '<label class="checkbox-inline"><input type="checkbox"  id="newCityState" value="" ' + city_state + '>City-state identifier</label>' +
+            '</div>' +
+            '<span id="alert_city_state"></span>' +
+            '<br>' +
+            '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newSmallImg" type="text" class="form-control" value="' + local[0].small_flag_img + '" placeholder="Enter coordanates of small flag of your country">' +
                 editIdField_3 +
@@ -195,6 +203,7 @@ function addEditRemoveCountry(itemId) {
 
 //12.03 Submit changes for Add new of edit event
 function SubmitChanges(status) {
+debugger;
     var newCountryObj = {
                      country_id: document.getElementById("newId").value.trim(),
                      continent_id: document.getElementById("newContinent").value.trim(),
@@ -208,6 +217,7 @@ function SubmitChanges(status) {
     if (document.getElementById("newFlagImg").value.trim() != "") { newCountryObj["flag_img"] = document.getElementById("newFlagImg").value.trim(); }
     if (document.getElementById("newEmbImg").value.trim() != "") { newCountryObj["emb_img"] = document.getElementById("newEmbImg").value.trim(); }
     if (document.getElementById("newMap").value.trim() != "") { newCountryObj["map_img"] = document.getElementById("newMap").value.trim(); }
+    if (document.getElementById('newCityState').checked) { newCountryObj["city_state"] = "true"; }
 
     removeAllChildNodes("alert_id");
     removeAllChildNodes("alert_name_ru");

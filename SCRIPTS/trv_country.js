@@ -90,11 +90,13 @@ function getCountryDetails_HTML() {
     var techinfo_1 = country.map_img.slice(0, -3) + "," + country.getListOfVisitedRegions();
 
     var techinfo_2 = country.short_name + ";";
-    $.each (citiesVisited, function( j, city ){
-        if (city.getCountryId() == country.short_name) {
-            techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
-        }
-    });
+    if (!country.city_state){
+        $.each (citiesVisited, function( j, city ){
+            if (city.getCountryId() == country.short_name) {
+                techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
+            }
+        });
+    }
 
     result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
     "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
