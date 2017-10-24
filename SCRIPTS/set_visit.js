@@ -49,3 +49,70 @@ function createSettingsVisitTab_HTML() {
     document.getElementById("copy_cert").innerHTML = "";
     document.getElementById("hr_bottom").innerHTML = "";
 }
+
+//15.02 Creation of section to be able to add new, edit or removal of visit
+function addEditRemoveVisits(itemId) {
+    var removeButton = ""; var startDateValue = ""; var endDateValue = ""; var readonly = "";
+    var header = "Add new"; var submitStatus = "add"; var editIdField = ""; var editIdField_2 = "";
+    var visit = (itemId != "addnew") ? $.grep (data.visit, function( n, i ) {return ( n.start_date == itemId )}) : "newvisit";
+    local[0] = {
+            start_date: itemId,
+            end_date: (itemId != "addnew") ? visit[0].end_date : "",
+            city: (itemId != "addnew") ? visit[0].city : ""
+        };
+
+    if (itemId != "addnew" && visit[0].photos != undefined) { local[0].photos = visit[0].photos; }
+        var photos = (local[0].photos != undefined) ? local[0].photos : "";
+    if (itemId != "addnew" && visit[0].story != undefined) { local[0].story = visit[0].story; }
+        var story = (local[0].story != undefined) ? local[0].story : "";
+
+    if (itemId != "addnew"){
+        startDateValue = 'value="' + local[0].start_date + '" ';
+        endDateValue = 'value="' + local[0].end_date + '" ';
+        readonly = "readonly";
+        header = "Edit";
+        submitStatus = "edit";
+        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveVisit();return false" value="Remove selected item"/>' +
+                '<span id="remove"></span>' +
+                '<hr>';
+        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+    }
+
+    document.getElementById("AddEditRemoveSection").innerHTML =
+            '<h2 class="sub-header">' + header + ' visit</h2>' +
+            '<form>' +
+                removeButton +
+                '<div class="input-group">' +
+                    '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                    '<input id="newStartDate" type="text" class="form-control" placeholder="Enter start date of visit <dd.mm.yyyy>" ' + startDateValue + readonly + '>' +
+                        editIdField +
+                '</div>' +
+                '<span id="alert_start_date"></span>' +
+                '<br>' +
+                '<div class="input-group">' +
+                    '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
+                    '<input id="newEndDate" type="text" class="form-control" placeholder="Enter end date of visit <dd.mm.yyyy>" ' + endDateValue + readonly + '>' +
+                        editIdField_2 +
+                '</div>' +
+                '<span id="alert_end_date"></span>' +
+                '<br>' +
+                '<div class="form-group">' +
+                    '<textarea id="newCitiesList" class="form-control" rows="5" placeholder="Enter list of visited cities separated by comma">' + local[0].city + '</textarea>' +
+                '</div>' +
+                '<span id="alert_cities_list"></span>' +
+                '<div class="input-group">' +
+                    '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                    '<input id="newPhotos" type="text" class="form-control" value="' + photos + '" placeholder="Enter link to your photo album">' +
+                '</div>' +
+                '<span id="alert_photos"></span>' +
+                '<br>' +
+                '<div class="input-group">' +
+                    '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                    '<input id="newStory" type="text" class="form-control" value="' + story + '" placeholder="Select story you want to attach to visit">' +
+                '</div>' +
+                '<span id="alert_story"></span>' +
+            '<hr>' +
+            '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
+            '</form>';
+}

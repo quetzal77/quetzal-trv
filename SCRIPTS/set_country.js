@@ -131,7 +131,7 @@ function addEditRemoveCountry(itemId) {
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newShortName" type="text" class="form-control" placeholder="Enter unique country Short Name" ' + contSNValue + readonly + '>' +
-                editIdField_2 +
+//                editIdField_2 +
             '</div>' +
             '<span id="alert_short_name"></span>' +
             '<br>' +
@@ -203,7 +203,6 @@ function addEditRemoveCountry(itemId) {
 
 //12.03 Submit changes for Add new of edit event
 function SubmitChanges(status) {
-debugger;
     var newCountryObj = {
                      country_id: document.getElementById("newId").value.trim(),
                      continent_id: document.getElementById("newContinent").value.trim(),
