@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title>Country Map</title>
+    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>
+    <script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>
+    <link rel='stylesheet' href='THEMES/global.css' type='text/css'>
+    <script type='text/javascript'>
+        $(document).ready(function(){
+            var map = qs('map');
+            $.getScript("SCRIPTS/MAPS/" + map, function(){
+                $('#countryList').html(map.slice(0, -3) + ",");
+                $('#cityList').html(map.slice(0, -6) + ";");
+                CreateMap();
+            });
+        });
+        function qs(key) {
+            key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+            var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+            return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+        }
+    </script>
+    </head>
+<body>
+<div class='countrylabel h3'>Here is map of country you selected.</div>
+<div id='mapdiv' class='map'>&nbsp;</div>
+<div id='countryList' style='display:none;'></div>
+<div id='cityList' style='display:none;'></div>
+</body>
+</html>
