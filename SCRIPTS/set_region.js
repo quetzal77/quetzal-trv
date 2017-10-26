@@ -315,23 +315,8 @@ function populateForm(id) {
 function openCountryMap() {
     var map = local[2];
     var region = document.getElementById("newId").value;
-    var page = window.open("",'_blank');
-    page.document.write(
-        "<html>" +
-            "<head>" +
-                "<title>Country Map</title>" +
-                "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                "<script src='SCRIPTS/MAPS/" + map + "' type='text/javascript'></script>" +
-                "<link rel='stylesheet' href='THEMES/global.css' type='text/css'>" +
-            "</head>" +
-            "<body>" +
-                "<div class='countrylabel h3'>Here is map of country you selected.</div>" +
-                "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                "<script>var xxx = CreateMap(); </script>" +
-                "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
-                "<div id='countryList' style='display:none;'>" + map.slice(0, -3) + "," + region + ",</div>" +
-                "<div id='cityList' style='display:none;'>" + map.slice(0, -6) + ";</div>" +
-            "</body>" +
-        "</html>");
+    if (map != ""){
+        window.open('/map.html?map=' + map + '&region=' + region, '_blank');
+    }
+    else {alertOfEmptyMandatoryField("alert_map");}
 }

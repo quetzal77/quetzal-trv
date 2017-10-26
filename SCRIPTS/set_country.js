@@ -384,28 +384,7 @@ function checkSmallFlag(id) {
 function openCountryMap() {
     var map = document.getElementById("newMap").value.trim();
     if (map != ""){
-        /*var page = */window.open('/openCountryMap.html?map=' + map '_blank');
-        /*page.document.write(
-            "<html>" +
-                "<head>" +
-                    "<title>Country Map</title>" +
-                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                    "<script src='SCRIPTS/MAPS/" + map + "' type='text/javascript'></script>" +
-                    "<link rel='stylesheet' href='THEMES/global.css' type='text/css'>" +
-                    "<script type='text/javascript'>" +
-                    "function init(){alert(1);CreateMap();alert(2);}" +
-                    "</script>" +
-                "</head>" +
-                "<body>" +
-                    "<div class='countrylabel h3'>Here is map of country you selected.</div>" +
-                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                    //"<script>var xxx = CreateMap(); </script>" +
-                    "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
-                    "<div id='countryList' style='display:none;'>" + map.slice(0, -3) + ",</div>" +
-                    "<div id='cityList' style='display:none;'>" + map.slice(0, -6) + ";</div>" +
-                "</body>" +
-            "</html>");*/
+        window.open('/map.html?map=' + map, '_blank');
     }
     else {alertOfEmptyMandatoryField("alert_map");}
 }

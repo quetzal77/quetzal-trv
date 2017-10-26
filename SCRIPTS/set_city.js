@@ -397,28 +397,10 @@ function openCountryMap() {
     var long = document.getElementById("newLong").value.trim();
     var name = document.getElementById("newRusName").value.trim();
     var map = $.grep (data.country, function( n, i ) {return (n.short_name == local[2])});
+    var city = name + "," + lat + "," + long;
 
     if (lat != "" && long != "" && name != ""){
-        var page = window.open("",'_blank');
-        page.document.write(
-            "<html>" +
-                "<head>" +
-                    "<title>Country Map</title>" +
-                    "<script src='SCRIPTS/MAPS/ammap.js' type='text/javascript'></script>" +
-                    "<script src='SCRIPTS/MAPS/custommap.js' type='text/javascript'></script>" +
-                    "<script src='SCRIPTS/MAPS/" + map[0].map_img + "' type='text/javascript'></script>" +
-                    "<link rel='stylesheet' href='THEMES/global.css' type='text/css'>" +
-                "</head>" +
-                "<body>" +
-                    "<div class='countrylabel h3'>Here is map of country you selected.</div>" +
-                    "<div id='mapdiv' class='map'>&nbsp;</div>" +
-                    "<script>var xxx = CreateMap(); </script>" +
-                    "<button type='button' onclick='javascript:CreateMap()'>MAP</button>" +
-                    "<div id='countryList' style='display:none;'>" + map[0].map_img.slice(0, -3) + ",</div>" +
-                    "<div id='cityList' style='display:none;'>" + map[0].map_img.slice(0, -6) + ";" +
-                        name + "," + lat + "," + long + "," + ";</div>" +
-                "</body>" +
-            "</html>");
+        window.open('/map.html?map=' + map[0].map_img + '&city=' + city, '_blank');
     }
     else {
         if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}

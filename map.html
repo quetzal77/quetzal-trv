@@ -8,9 +8,11 @@
     <script type='text/javascript'>
         $(document).ready(function(){
             var map = qs('map');
+            var region = qs('region') + ",";
+            var city = qs('city') + ";";
             $.getScript("SCRIPTS/MAPS/" + map, function(){
-                $('#countryList').html(map.slice(0, -3) + ",");
-                $('#cityList').html(map.slice(0, -6) + ";");
+                $('#countryList').html(map.slice(0, -3) + "," + region);
+                $('#cityList').html(map.slice(0, -6) + ";" + city);
                 CreateMap();
             });
         });
