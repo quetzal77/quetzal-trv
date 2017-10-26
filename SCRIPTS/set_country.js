@@ -384,7 +384,7 @@ function checkSmallFlag(id) {
 function openCountryMap() {
     var map = document.getElementById("newMap").value.trim();
     if (map != ""){
-        /*var page = */window.open('/openCountryMap.html?map=' + map, '_blank');
+        /*var page = */window.open('/openCountryMap.html?map=' + map '_blank');
         /*page.document.write(
             "<html>" +
                 "<head>" +

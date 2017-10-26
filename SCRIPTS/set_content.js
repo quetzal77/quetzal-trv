@@ -24,7 +24,9 @@ function addElementOfGlobalDataArray(entityObj) {
             data.city.sort(dynamicSort("name_ru"));
             break;
         case 'visit':
-            // ...
+            data.visit.push(entityObj);
+//            data.visit.sort(dynamicSort("start_date"));
+            refreshAllTheArrays ();
             break;
     }
  }
@@ -60,10 +62,9 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  refreshAllTheArrays ();
                  break;
              case 'visit':
-     //            removeElementOfGlobalDataArray (data.visit, attr, value);
-//                        data.continent.sort(dynamicSort("name_ru"));
-//                      initial_data.continent.sort(dynamicSort("name_ru"));
-     //            //TBD - check and refresh initial_data array
+                 updateElementOfVisitArray (initialEntityObj, newEntityObj);
+//                 data.city.sort(dynamicSort("start_date"));
+                 refreshAllTheArrays ();
                  break;
          }
  }
@@ -87,7 +88,7 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
             removeElementOfGlobalDataArray (data.city, attr, value);
             break;
         case 'visit':
-//            removeElementOfGlobalDataArray (data.visit, attr, value);
+            removeElementOfGlobalDataArray (data.visit, attr, value);
             break;
     }
 }
@@ -289,6 +290,27 @@ function updateElementOfRegionArray(initialEntityObj, newEntityObj) {
             if (name_ru){ region.name_ru = newEntityObj.name_ru; }
             if (name){ region.name = newEntityObj.name; }
             if (active){ region.active = newEntityObj.active; }
+        }
+    });
+}
+
+//10.08 Update Visit array with new data
+function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
+debugger;
+    var start_date = (initialEntityObj.start_date != newEntityObj.start_date) ? true : false;
+    var end_date = (initialEntityObj.end_date != newEntityObj.end_date) ? true : false;
+    var city = (initialEntityObj.city != newEntityObj.city) ? true : false; //it's always true, but it's not a problem till this attr is mandatory
+    var photos = (initialEntityObj.photos != newEntityObj.photos) ? true : false;
+    var story = (initialEntityObj.story != newEntityObj.story) ? true : false;
+
+    // Update Global Visit array with new data
+    $.each (data.visit, function( i, visit ){
+        if (visit.start_date == initialEntityObj.start_date) {
+            if (start_date){ visit.start_date = newEntityObj.start_date; }
+            if (end_date){ visit.end_date = newEntityObj.end_date; }
+            if (city){ visit.city = newEntityObj.city; }
+            if (photos){ visit.photos = newEntityObj.photos; }
+            if (story){ visit.story = newEntityObj.story; }
         }
     });
 }

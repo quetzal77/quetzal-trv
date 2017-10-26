@@ -75,8 +75,8 @@ function addEditRemoveVisits(itemId) {
         removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveVisit();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
-        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
-        editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newStartDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newEndDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
@@ -115,4 +115,118 @@ function addEditRemoveVisits(itemId) {
             '<hr>' +
             '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
             '</form>';
+}
+
+//15.03 Remove item entity handler
+function RemoveVisit() {
+    var startDate = document.getElementById('newStartDate').value;
+
+    removeAllChildNodes("alert_start_date");
+    removeAllChildNodes("alert_end_date");
+    removeAllChildNodes("alert_cities_list");
+    removeAllChildNodes("success");
+
+    $.getScript("SCRIPTS/set_content.js", function(){
+        removeElementOfGlobalData4DefinedArray ("start_date", startDate);
+        createSettingsVisitTab_HTML();
+        alertOfSuccess();
+    });
+}
+
+//15.04 Submit changes for Add new of edit event
+function SubmitChanges(status) {
+    var newVisitObj = {
+                     start_date: document.getElementById("newStartDate").value.trim(),
+                     end_date: document.getElementById("newEndDate").value.trim(),
+                     city: document.getElementById("newCitiesList").value.split(",")
+                   };
+
+    if (document.getElementById("newPhotos").value.trim() != "") { newVisitObj["photos"] = document.getElementById("newPhotos").value.trim(); }
+    if (document.getElementById("newStory").value.trim() != "") { newVisitObj["story"] = document.getElementById("newStory").value.trim(); }
+
+    removeAllChildNodes("alert_start_date");
+    removeAllChildNodes("alert_end_date");
+    removeAllChildNodes("alert_cities_list");
+    removeAllChildNodes("success");
+
+    if (checkRules4AddUpdate(newVisitObj)) {
+        $.getScript("SCRIPTS/set_content.js", function(){
+            (status == "add") ? addElementOfGlobalDataArray(newVisitObj): updateElementOfGlobalDataArray(newVisitObj);
+            createSettingsVisitTab_HTML();
+            alertOfSuccess();
+        });
+    }
+    return false;
+}
+
+//15.05 Verification for Add/Update fields
+function checkRules4AddUpdate(visitObj) {
+    var result = true;
+    var initialVisitObj = local[0];
+    for (var i = 0; i < data.visit.length; i++) {
+        if (initialVisitObj.start_date != "addnew") {
+            if (initialVisitObj.start_date != visitObj.start_date && data.visit[i].start_date == visitObj.start_date){
+                alertOfDuplicateStartDateFailure(data.visit[i].start_date, data.visit[i].end_date);
+                result = false;
+            }
+            if (initialVisitObj.end_date != visitObj.end_date && data.visit[i].end_date == visitObj.end_date){
+                alertOfDuplicateEndDAteFailure(data.visit[i].start_date, data.visit[i].end_date);
+                result = false;
+            }
+        }
+        else {
+            if (data.visit[i].start_date == visitObj.start_date){
+                alertOfDuplicateStartDateFailure(data.visit[i].start_date, data.visit[i].end_date);
+                result = false;
+            }
+            if (data.visit[i].end_date == visitObj.end_date){
+                alertOfDuplicateEndDAteFailure(data.visit[i].start_date, data.visit[i].end_date);
+                result = false;
+            }
+        }
+        if (visitObj.start_date == ''){ alertOfEmptyMandatoryField("alert_start_date"); result = false; }
+        if (visitObj.end_date == ''){ alertOfEmptyMandatoryField("alert_end_date"); result = false; }
+        if (visitObj.city == ''){ alertOfEmptyMandatoryField("alert_cities_list"); result = false; }
+    }
+    return result;
+}
+
+//15.06 Success flag for any event successfully applied
+function alertOfSuccess() {
+    removeAllChildNodes("alert");
+    document.getElementById("success").innerHTML =
+        '<div class="alert alert-success fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Success!</strong> Your changes are successfully applied. Check list of Visits to see changes.' +
+        '</div>';
+}
+
+//15.07 Failure flag for not unique ID applied
+function alertOfDuplicateStartDateFailure(start_date, end_date) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_start_date").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Start date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + ')</b>. Try to use another start date!' +
+        '</div>';
+}
+
+//15.08 Failure flag for not unique ID applied
+function alertOfDuplicateEndDAteFailure(start_date, end_date) {
+    removeAllChildNodes("success");
+    document.getElementById("alert_end_date").innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> End date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + ')</b>. Try to use another end date   !' +
+        '</div>';
+}
+
+//15.09 Failure flag for empty mandatory field
+function alertOfEmptyMandatoryField(alertId) {
+    removeAllChildNodes("success");
+    document.getElementById(alertId).innerHTML =
+        '<div class="alert alert-danger fade in">' +
+        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
+        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
+        '</div>';
 }
