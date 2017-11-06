@@ -214,7 +214,15 @@ function getRusLocationName(locationId) {
     return result[0].name_ru;
 }
 
-//02.13 This method creates selector of countries
+//2.13 Get english Location name
+function getEngLocationName(locationId) {
+    result = $.grep (citiesVisited, function( n, i ) {
+                return (n.city_id == locationId)
+            });
+    return result[0].name;
+}
+
+//02.14 This method creates selector of countries
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
     $.each (countriesVisited, function( i, country ) {
@@ -224,7 +232,7 @@ function getSelectorOfListOfCountries_HTML () {
     return result;
 }
 
-//02.14 This method creates selector of cities
+//02.15 This method creates selector of cities
 function getSelectorOfListOfCities_HTML(){
     var result = "";
     $.each (countriesVisited, function( i, country ){
@@ -241,7 +249,7 @@ function getSelectorOfListOfCities_HTML(){
     return result;
 }
 
-//02.15 This method creates selector of stories
+//02.16 This method creates selector of stories
 function getSelectorOfListOfStories_HTML(){
     var result = "";
 
@@ -271,7 +279,7 @@ function getSelectorOfListOfStories_HTML(){
     return result;
 }
 
-//02.16 Calculate number of locations visited
+//02.17 Calculate number of locations visited
 function getNumberOfLocation() {
     $.each(initial_data.continent, function( i, cont ){
         var numberOfCities = 0;
@@ -290,7 +298,7 @@ function getNumberOfLocation() {
     document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";
 }
 
-//2.17 Remove all attributes by name
+//2.18 Remove all attributes by name
 function removeAllAttributesByName(attrType, attrName) {
     var mylist=document.getElementsByClassName(attrName);
     for (j=0; j<mylist.length; j++) {
@@ -298,7 +306,7 @@ function removeAllAttributesByName(attrType, attrName) {
     }
 }
 
-//2.18 Remove all child nodes
+//2.19 Remove all child nodes
 function removeAllChildNodes(attrId) {
     var list = document.getElementById(attrId);
 
@@ -309,12 +317,12 @@ function removeAllChildNodes(attrId) {
     };
 }
 
-//2.19 Remove readonly attribute from Input field
+//2.20 Remove readonly attribute from Input field
 function unblockReadonlyField(id){
     $("#" + id).removeAttr("readonly");
 }
 
-//2.20 Remove element from Array
+//2.21 Remove element from Array
 function removeElementOfGlobalDataArray (arr, attr, value){
     var i = arr.length;
     while(i--){
@@ -324,7 +332,7 @@ function removeElementOfGlobalDataArray (arr, attr, value){
     }
 }
 
-//2.21 Reprocess all custom arrays and refresh scrolles
+//2.22 Reprocess all custom arrays and refresh scrolles
 function refreshAllTheArrays (){
     //Reprocess all custom arrays
     processMyJson(data);
@@ -336,7 +344,7 @@ function refreshAllTheArrays (){
     document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
 }
 
-//2.22 Get country id instead of short name
+//2.23 Get country id instead of short name
 function getCountryId(short_name) {
     result = $.grep (data.country, function( n, i ) {
                 return (n.short_name == short_name)

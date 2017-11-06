@@ -296,7 +296,6 @@ function updateElementOfRegionArray(initialEntityObj, newEntityObj) {
 
 //10.08 Update Visit array with new data
 function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
-debugger;
     var start_date = (initialEntityObj.start_date != newEntityObj.start_date) ? true : false;
     var end_date = (initialEntityObj.end_date != newEntityObj.end_date) ? true : false;
     var city = (initialEntityObj.city != newEntityObj.city) ? true : false; //it's always true, but it's not a problem till this attr is mandatory

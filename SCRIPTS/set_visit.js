@@ -52,8 +52,9 @@ function createSettingsVisitTab_HTML() {
 
 //15.02 Creation of section to be able to add new, edit or removal of visit
 function addEditRemoveVisits(itemId) {
-    var removeButton = ""; var startDateValue = ""; var endDateValue = ""; var readonly = "";
-    var header = "Add new"; var submitStatus = "add"; var editIdField = ""; var editIdField_2 = "";
+    var removeButton = ""; var startDateValue = ""; var endDateValue = ""; var readonly = ""; var citiesToBeSelected = "";
+    var header = "Add new"; var submitStatus = "add"; var editIdField = ""; var editIdField_2 = ""; var citySelected = "";
+    var firstSlice = ""; var secondSlice = "";
     var visit = (itemId != "addnew") ? $.grep (data.visit, function( n, i ) {return ( n.start_date == itemId )}) : "newvisit";
     local[0] = {
             start_date: itemId,
@@ -77,7 +78,25 @@ function addEditRemoveVisits(itemId) {
                 '<hr>';
         editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newStartDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newEndDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        //I want to keep order of visited cities, so gather them before rest of list
+        debugger;
+        $.each (local[0].city, function( i, city ){
+            firstSlice += '<option value="' + city + '" class="selected" selected>' + getEngLocationName(city) + '-' + getRusLocationName(city) + '</option>';
+        });
     }
+
+    // Creation list of visited cities for selector
+    var distinctIds = {};
+    $.each (local[0].city, function( i, city ){
+        distinctIds[city] = true;
+    });
+
+    $.each (data.city, function( i, city ){
+        if (!distinctIds[city.city_id]){
+            secondSlice += '<option value="' + city.city_id + '">' + city.name + '-' + city.name_ru + '</option>';
+        }
+    });
+    citiesToBeSelected += firstSlice + secondSlice;
 
     document.getElementById("AddEditRemoveSection").innerHTML =
             '<h2 class="sub-header">' + header + ' visit</h2>' +
@@ -97,10 +116,12 @@ function addEditRemoveVisits(itemId) {
                 '</div>' +
                 '<span id="alert_end_date"></span>' +
                 '<br>' +
-                '<div class="form-group">' +
-                    '<textarea id="newCitiesList" class="form-control" rows="5" placeholder="Enter list of visited cities separated by comma">' + local[0].city + '</textarea>' +
-                '</div>' +
+                '<label for="select3">Enter all places visited during this trip. </label>' +
+                '<select id="select3" name="select3">' +
+                    citiesToBeSelected +
+                '</select>' +
                 '<span id="alert_cities_list"></span>' +
+                '<br>' +
                 '<div class="input-group">' +
                     '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                     '<input id="newPhotos" type="text" class="form-control" value="' + photos + '" placeholder="Enter link to your photo album">' +
@@ -115,6 +136,9 @@ function addEditRemoveVisits(itemId) {
             '<hr>' +
             '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
             '</form>';
+
+    // This method creates Multiple Selection Widget for adding cities visited
+    runMultipleSelectWidget();
 }
 
 //15.03 Remove item entity handler
@@ -138,9 +162,9 @@ function SubmitChanges(status) {
     var newVisitObj = {
                      start_date: document.getElementById("newStartDate").value.trim(),
                      end_date: document.getElementById("newEndDate").value.trim(),
-                     city: document.getElementById("newCitiesList").value.split(",")
                    };
 
+    if ($('#select3').val() != "") { newVisitObj["city"] = $('#select3').val(); }
     if (document.getElementById("newPhotos").value.trim() != "") { newVisitObj["photos"] = document.getElementById("newPhotos").value.trim(); }
     if (document.getElementById("newStory").value.trim() != "") { newVisitObj["story"] = document.getElementById("newStory").value.trim(); }
 
@@ -229,4 +253,21 @@ function alertOfEmptyMandatoryField(alertId) {
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
         '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
         '</div>';
+}
+
+function runMultipleSelectWidget() {
+    $("#select3").fcbkcomplete({
+        width:'100%', // - element width (by default 512px)
+//        json_url: "data.txt",
+//        addontab: true,
+//        maxitems: 10,
+//        input_min_size: 0,
+        height: 10, // - maximum number of element shown before scroll will apear
+        cache: true, // - use cache
+        newel: false, // - show typed text like a element
+        filter_case: false, //- case sensitive filter
+        filter_selected: false, // - filter selected items from list (remove selected items from selection)
+//        select_all_text: "select", // - text for select all link
+    });
+//    $("#select3").fcbkcomplete();
 }
