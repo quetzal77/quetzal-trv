@@ -110,6 +110,7 @@ p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; marg
 /* Overview settings  PAGE
 ----------------------------------------------------------*/
 #thalign {text-align: left;}
+.asteriskField {color: red;}
 
 /* SMALL COUNTRY FLAGS
 ----------------------------------------------------------*/

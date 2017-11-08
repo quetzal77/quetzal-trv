@@ -68,22 +68,19 @@ function addEditRemoveVisits(itemId) {
         var story = (local[0].story != undefined) ? local[0].story : "";
 
     if (itemId != "addnew"){
-        startDateValue = 'value="' + local[0].start_date + '" ';
-        endDateValue = 'value="' + local[0].end_date + '" ';
-        readonly = "readonly";
+        startDateValue = 'value="' + local[0].start_date.replace(/\./g, "/") + '" ';
+        endDateValue = 'value="' + local[0].end_date.replace(/\./g, "/") + '" ';
         header = "Edit";
         submitStatus = "edit";
         removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveVisit();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
-        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newStartDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
-        editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newEndDate" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
         //I want to keep order of visited cities, so gather them before rest of list
-        debugger;
         $.each (local[0].city, function( i, city ){
             firstSlice += '<option value="' + city + '" class="selected" selected>' + getEngLocationName(city) + '-' + getRusLocationName(city) + '</option>';
         });
     }
+    editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newPhoto" onclick="javascript:checkPhotoAlbum(this.value)">Check album</button></span>';
 
     // Creation list of visited cities for selector
     var distinctIds = {};
@@ -102,32 +99,29 @@ function addEditRemoveVisits(itemId) {
             '<h2 class="sub-header">' + header + ' visit</h2>' +
             '<form>' +
                 removeButton +
-                '<div class="input-group">' +
-                    '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                    '<input id="newStartDate" type="text" class="form-control" placeholder="Enter start date of visit <dd.mm.yyyy>" ' + startDateValue + readonly + '>' +
-                        editIdField +
+                '<label>Enter Start Date<span class="asteriskField">*</span> and End Date<span class="asteriskField">*</span> of visit.</label>' +
+                '<div class="input-group input-daterange">' +
+                '<input id="dateStart" type="text" class="form-control" name="date" ' + startDateValue + ' placeholder="DD/MM/YYY">' +
+                '<div class="input-group-addon">to</div>' +
+                '<input id="dateEnd" type="text" class="form-control" name="date" ' + endDateValue + ' placeholder="DD/MM/YYY">' +
                 '</div>' +
-                '<span id="alert_start_date"></span>' +
+                '<span id="alert_date"></span>' +
                 '<br>' +
-                '<div class="input-group">' +
-                    '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                    '<input id="newEndDate" type="text" class="form-control" placeholder="Enter end date of visit <dd.mm.yyyy>" ' + endDateValue + readonly + '>' +
-                        editIdField_2 +
-                '</div>' +
-                '<span id="alert_end_date"></span>' +
-                '<br>' +
-                '<label for="select3">Enter all places visited during this trip. </label>' +
+                '<label for="select3">Enter all places visited during this trip<span class="asteriskField">*</span>.</label>' +
                 '<select id="select3" name="select3">' +
                     citiesToBeSelected +
                 '</select>' +
                 '<span id="alert_cities_list"></span>' +
                 '<br>' +
+                '<label for="select3">Enter url of a photo-album with photos of this trip.</label>' +
                 '<div class="input-group">' +
                     '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                     '<input id="newPhotos" type="text" class="form-control" value="' + photos + '" placeholder="Enter link to your photo album">' +
+                    editIdField +
                 '</div>' +
                 '<span id="alert_photos"></span>' +
                 '<br>' +
+                '<label for="select3">Select story describing this travel.</label>' +
                 '<div class="input-group">' +
                     '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
                     '<input id="newStory" type="text" class="form-control" value="' + story + '" placeholder="Select story you want to attach to visit">' +
@@ -139,14 +133,15 @@ function addEditRemoveVisits(itemId) {
 
     // This method creates Multiple Selection Widget for adding cities visited
     runMultipleSelectWidget();
+    // This method creates DatePicker Widget
+    runDatePickerWidget()
 }
 
 //15.03 Remove item entity handler
 function RemoveVisit() {
     var startDate = document.getElementById('newStartDate').value;
 
-    removeAllChildNodes("alert_start_date");
-    removeAllChildNodes("alert_end_date");
+    removeAllChildNodes("alert_date");
     removeAllChildNodes("alert_cities_list");
     removeAllChildNodes("success");
 
@@ -160,16 +155,15 @@ function RemoveVisit() {
 //15.04 Submit changes for Add new of edit event
 function SubmitChanges(status) {
     var newVisitObj = {
-                     start_date: document.getElementById("newStartDate").value.trim(),
-                     end_date: document.getElementById("newEndDate").value.trim(),
+                     start_date: $('#dateStart').val().replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, "."),
+                     end_date: $('#dateEnd').val().replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, ".")
                    };
 
     if ($('#select3').val() != "") { newVisitObj["city"] = $('#select3').val(); }
     if (document.getElementById("newPhotos").value.trim() != "") { newVisitObj["photos"] = document.getElementById("newPhotos").value.trim(); }
     if (document.getElementById("newStory").value.trim() != "") { newVisitObj["story"] = document.getElementById("newStory").value.trim(); }
 
-    removeAllChildNodes("alert_start_date");
-    removeAllChildNodes("alert_end_date");
+    removeAllChildNodes("alert_date");
     removeAllChildNodes("alert_cities_list");
     removeAllChildNodes("success");
 
@@ -187,6 +181,7 @@ function SubmitChanges(status) {
 function checkRules4AddUpdate(visitObj) {
     var result = true;
     var initialVisitObj = local[0];
+    debugger;
     for (var i = 0; i < data.visit.length; i++) {
         if (initialVisitObj.start_date != "addnew") {
             if (initialVisitObj.start_date != visitObj.start_date && data.visit[i].start_date == visitObj.start_date){
@@ -208,9 +203,9 @@ function checkRules4AddUpdate(visitObj) {
                 result = false;
             }
         }
-        if (visitObj.start_date == ''){ alertOfEmptyMandatoryField("alert_start_date"); result = false; }
-        if (visitObj.end_date == ''){ alertOfEmptyMandatoryField("alert_end_date"); result = false; }
-        if (visitObj.city == ''){ alertOfEmptyMandatoryField("alert_cities_list"); result = false; }
+        if (visitObj.start_date == ''){ alertOfEmptyMandatoryField("alert_date"); result = false; }
+        if (visitObj.end_date == ''){ alertOfEmptyMandatoryField("alert_date"); result = false; }
+        if (visitObj.city == undefined){ alertOfEmptyMandatoryField("alert_cities_list"); result = false; }
     }
     return result;
 }
@@ -228,20 +223,20 @@ function alertOfSuccess() {
 //15.07 Failure flag for not unique ID applied
 function alertOfDuplicateStartDateFailure(start_date, end_date) {
     removeAllChildNodes("success");
-    document.getElementById("alert_start_date").innerHTML =
+    document.getElementById("alert_date").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Start date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + ')</b>. Try to use another start date!' +
+        '<strong>Error!</strong> Start date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another START date!' +
         '</div>';
 }
 
 //15.08 Failure flag for not unique ID applied
 function alertOfDuplicateEndDAteFailure(start_date, end_date) {
     removeAllChildNodes("success");
-    document.getElementById("alert_end_date").innerHTML =
+    document.getElementById("alert_date").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> End date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + ')</b>. Try to use another end date   !' +
+        '<strong>Error!</strong> End date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another END date   !' +
         '</div>';
 }
 
@@ -255,6 +250,7 @@ function alertOfEmptyMandatoryField(alertId) {
         '</div>';
 }
 
+//15.10 Run multiselect Widget
 function runMultipleSelectWidget() {
     $("#select3").fcbkcomplete({
         width:'100%', // - element width (by default 512px)
@@ -269,5 +265,27 @@ function runMultipleSelectWidget() {
         filter_selected: false, // - filter selected items from list (remove selected items from selection)
 //        select_all_text: "select", // - text for select all link
     });
-//    $("#select3").fcbkcomplete();
+}
+
+//15.11 Run DatePicker Widget
+function runDatePickerWidget() {
+    var date_input=$('input[name="date"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    var options={
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+        clearBtn: true
+    };
+    date_input.datepicker(options);
+}
+
+//15.12 Open photo album for visit
+function checkPhotoAlbum() {
+    var map = document.getElementById("newPhotos").value.trim();
+    if (map != ""){
+        window.open(map, '_blank');
+    }
+    else {alertOfEmptyMandatoryField("alert_photos");}
 }

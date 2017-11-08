@@ -63,7 +63,7 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  break;
              case 'visit':
                  updateElementOfVisitArray (initialEntityObj, newEntityObj);
-//                 data.city.sort(dynamicSort("start_date"));
+//                 data.city.sort(dynamicSort("start_date")); //TBD
                  refreshAllTheArrays ();
                  break;
          }
