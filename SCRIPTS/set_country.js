@@ -131,7 +131,7 @@ function addEditRemoveCountry(itemId) {
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
                 '<input id="newShortName" type="text" class="form-control" placeholder="Enter unique country Short Name" ' + contSNValue + readonly + '>' +
-//                editIdField_2 +
+                editIdField_2 +
             '</div>' +
             '<span id="alert_short_name"></span>' +
             '<br>' +
@@ -163,7 +163,7 @@ function addEditRemoveCountry(itemId) {
             '<span id="alert_continent"></span>' +
             '<br>' +
             '<div class="input-group">' +
-            '<label class="checkbox-inline"><input type="checkbox"  id="newCityState" value="" ' + city_state + '>City-state identifier</label>' +
+            '<label class="checkbox-inline"><input type="checkbox"  id="newCityState" value="" ' + city_state + '>City-state identifier (for very small country which more city than real state)</label>' +
             '</div>' +
             '<span id="alert_city_state"></span>' +
             '<br>' +
@@ -395,4 +395,6 @@ function populateForm(id) {
 
     var e = document.getElementById("newNotAddedMap");
     document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
+
+    document.getElementById("newId").readOnly = true;
 }

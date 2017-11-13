@@ -91,6 +91,11 @@
       "name": "natural preserve"
     },
     {
+      "type_id": "19",
+      "name_ru": "горнолыжный курорт",
+      "name": "ski resort"
+    },
+    {
       "type_id": "20",
       "name_ru": "бухта",
       "name": "bay"
