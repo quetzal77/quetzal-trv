@@ -49,7 +49,7 @@ function createSettingsRegionTab_HTML() {
 function showAllTheRegionsOfSelectedCountry(id) {
     var listOfRegions = '';
     var country = new CountryObj(id)
-    local[2] = country.map_img;
+    local[2] = (country.map_img != undefined) ? country.map_img : country.short_name + "Low.js" ;
     local[3] = id;
     $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ){
         if (region.country_id == id && region.active != "N"){
@@ -81,7 +81,7 @@ function addEditRemoveRegion(itemId) {
     var country_map_url = local[2];
     var region = (itemId != "addnew") ? $.grep (data.area, function( n, i ) {return ( n.region_id == itemId )}) : "newregion";
     local[0] = {
-        country_id: (itemId != "addnew") ? region[0].country_id : "",
+        country_id: local[3],
         region_id: itemId,
         name: (itemId != "addnew") ? region[0].name : "",
         name_ru: (itemId != "addnew") ? region[0].name_ru : "",
@@ -115,29 +115,36 @@ function addEditRemoveRegion(itemId) {
             }
         });
 
+        var error = false;
         $.ajax({
             async: false,
             url: "SCRIPTS/MAPS/" + local[2],
-            dataType: "script"
+            dataType: "script",
+            error: function (err) {
+                    error = true;
+                }
         });
 
-        var low = eval("AmCharts.maps." + countryLow);
-        $.each (low.svg.g.path, function( i, newregion ) {
-            if (!distinctIds[newregion.id]) {
-                regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
-            }
-        });
+        if (!error) {
+            var low = eval("AmCharts.maps." + countryLow);
+            $.each (low.svg.g.path, function( i, newregion ) {
+                if (!distinctIds[newregion.id]) {
+                    regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
+                }
+            });
 
-        listOfNotYetAddedRegions =
-            '<div class="input-group">' +
-            '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-            '<select id="newNotAddedRegion" class="form-control" onchange="populateForm(this.value)">' +
-            '<option value="0">Select region that not yet added to base among existing on country map or skip this step and add your own variant.</option>' +
-            regionOptions +
-            '</select>' +
-            '</div>' +
-            '<hr>';
+            listOfNotYetAddedRegions =
+                '<div class="input-group">' +
+                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
+                '<select id="newNotAddedRegion" class="form-control" onchange="populateForm(this.value)">' +
+                '<option value="0">Select region that not yet added to base among existing on country map or skip this step and add your own variant.</option>' +
+                regionOptions +
+                '</select>' +
+                '</div>' +
+                '<hr>';
+        }
     }
+
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' region</h2>' +
@@ -309,6 +316,8 @@ function populateForm(id) {
 
     var e = document.getElementById("newNotAddedRegion");
     document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
+
+    document.getElementById("newId").readOnly = true;
 }
 
 //14.11 Open Country map for region
