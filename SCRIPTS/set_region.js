@@ -77,7 +77,8 @@ function showAllTheRegionsOfSelectedCountry(id) {
 //14.03 Creation of section to be able to add new, edit or removal of region
 function addEditRemoveRegion(itemId) {
     var removeButton = ""; var regIdValue = ""; var readonly = ""; var editIdField = ""; var countries = '';
-    var header = "Add new"; var submitStatus = "add";var listOfNotYetAddedRegions = ""; var disabled = '';
+    var header = "Add new"; var submitStatus = "add";var listOfNotYetAddedRegions = ""; var disabled = ''; var checkReionOnCountryMapButton = '';
+    var error = false; // error status for situation when country js map doesnt exist
     var country_map_url = local[2];
     var region = (itemId != "addnew") ? $.grep (data.area, function( n, i ) {return ( n.region_id == itemId )}) : "newregion";
     local[0] = {
@@ -94,6 +95,16 @@ function addEditRemoveRegion(itemId) {
         countries += "<option value='" + country.country_id + "' " + selected + ">" + country.name_ru + "</option>";
     });
 
+    //This method trying to get mapLow.js file for particular country
+    $.ajax({
+        async: false,
+        url: "SCRIPTS/MAPS/" + local[2],
+        dataType: "script",
+        error: function (err) {
+                error = true;
+            }
+    });
+
     if (itemId != "addnew"){
         regIdValue = 'value="' + local[0].region_id + '" ';
         readonly = "readonly";
@@ -105,6 +116,10 @@ function addEditRemoveRegion(itemId) {
     }
     else {
         disabled = 'disabled="disabled"';
+
+        // Start of List of not yet adde Regions -----------------------------------------------------------
+        //This section responsible for drop-down contain list of regions not yet added to dataBase
+        // This list is withdrawn from countryLow.js file
         var regionOptions = "";
         var distinctIds = {};
         var countryLow = local[2].slice(0, -3);
@@ -113,16 +128,6 @@ function addEditRemoveRegion(itemId) {
             if (oldregion.country_id == local[3]) {
                 distinctIds[oldregion.region_id] = true;
             }
-        });
-
-        var error = false;
-        $.ajax({
-            async: false,
-            url: "SCRIPTS/MAPS/" + local[2],
-            dataType: "script",
-            error: function (err) {
-                    error = true;
-                }
         });
 
         if (!error) {
@@ -143,8 +148,17 @@ function addEditRemoveRegion(itemId) {
                 '</div>' +
                 '<hr>';
         }
+        // End ------------------------------------------------------------------
     }
 
+    if (!error) {
+        checkReionOnCountryMapButton =
+                        '<div class="input-group">' +
+                            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
+                            '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Region on Country Map</button>' +
+                        '</div>' +
+                        '<br>';
+    }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
         '<h2 class="sub-header">' + header + ' region</h2>' +
@@ -184,11 +198,7 @@ function addEditRemoveRegion(itemId) {
             '</div>' +
             '<span id="alert_country"></span>' +
             '<br>' +
-            '<div class="input-group">' +
-                '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Region on Country Map</button>' +
-            '</div>' +
-            '<br>' +
+            checkReionOnCountryMapButton +
         '<hr>' +
         '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
         '</form>';
