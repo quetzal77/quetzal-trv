@@ -31,9 +31,12 @@
 
     function getWorldPage( callback ){
         //Create world page
-        $.getScript("SCRIPTS/trv_world.js", function(){ createWorldPage_HTML() });
-        //Create arrays with all the traveler's data
-        $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
+        $.getScript("SCRIPTS/trv_world.js", function(){
+            createWorldPage_HTML();
+            //Create arrays with all the traveler's data
+            $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
+        });
+
     }
 
     function getCountryPage( country_id ){
