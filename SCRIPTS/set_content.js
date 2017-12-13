@@ -253,16 +253,24 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
         }
     });
 
-    // Update Onload Continent array with new data
-    var initial_continent = $.grep (initial_data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
-    var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
-    if (initial_continent[0] == undefined){
-        var entityObj = {
-            continent_id: continent[0].continent_id,
-            name_ru: continent[0].name_ru
+    // Update Onload Continent array with new data - We need it for situation when changing continent for some country
+    if (continent_id){
+        var initial_continent = $.grep (initial_data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
+        var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == newEntityObj.continent_id)});
+        if (initial_continent[0] == undefined){
+            var entityObj = {
+                continent_id: continent[0].continent_id,
+                name_ru: continent[0].name_ru
+            }
+            initial_data.continent.push(entityObj);
+            initial_data.continent.sort(dynamicSort("name_ru"));
         }
-        initial_data.continent.push(entityObj);
-        initial_data.continent.sort(dynamicSort("name_ru"));
+
+        //Remove Continent when country moved from it to another one and it doesnt have countries
+        debugger;
+        createArrayOfVisitedCountriesAndRegions();
+        var countrisForInitialContinent = $.grep (countriesVisited, function( n, i ) {return (n.continent_id == initialEntityObj.continent_id.toUpperCase())});
+        if (countrisForInitialContinent.length == 0) {removeElementOfGlobalDataArray (initial_data.continent, "continent_id", initialEntityObj.continent_id.toUpperCase());}
     }
 }
 

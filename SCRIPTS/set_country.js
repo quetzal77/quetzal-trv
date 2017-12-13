@@ -377,7 +377,6 @@ function checkSmallFlag(id) {
                 break;
         }
     }
-
 }
 
 //12.11 Open Country map for lat and long coordinates
