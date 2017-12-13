@@ -273,9 +273,9 @@ function RemoveCity() {
 //11.05 Submit changes for Add new of edit event
 function SubmitChanges(status) {
     var newCityObj = {
-                     name: document.getElementById("newRusName").value.trim(),
+                     name: document.getElementById("newEngName").value.trim(),
                      name_nt: document.getElementById("newNtName").value.trim(),
-                     name_ru: document.getElementById("newEngName").value.trim(),
+                     name_ru: document.getElementById("newRusName").value.trim(),
                      city_id: document.getElementById("newId").value.trim()
                    };
 

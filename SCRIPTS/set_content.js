@@ -320,4 +320,10 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
             if (story){ visit.story = newEntityObj.story; }
         }
     });
+
+    // Add New Onload Country array with new data
+
+    // Update Onload Country array with new data
+
+    // Update Onload Country array with new data
 }
