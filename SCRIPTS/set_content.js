@@ -25,7 +25,7 @@ function addElementOfGlobalDataArray(entityObj) {
             break;
         case 'visit':
             data.visit.push(entityObj);
-//            data.visit.sort(dynamicSort("start_date"));
+            data.visit.sort(sortDataVisitByStartDayDesc());
             refreshAllTheArrays ();
             break;
     }
@@ -267,7 +267,6 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
         }
 
         //Remove Continent when country moved from it to another one and it doesnt have countries
-        debugger;
         createArrayOfVisitedCountriesAndRegions();
         var countrisForInitialContinent = $.grep (countriesVisited, function( n, i ) {return (n.continent_id == initialEntityObj.continent_id.toUpperCase())});
         if (countrisForInitialContinent.length == 0) {removeElementOfGlobalDataArray (initial_data.continent, "continent_id", initialEntityObj.continent_id.toUpperCase());}
@@ -326,4 +325,20 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     // Update Onload Country array with new data
 
     // Update Onload Country array with new data
+}
+
+//10.09 Sort data.visit array according date
+function sortDataVisitByStartDayDesc() {
+debugger;
+    return function (a,b) {
+        var property = "start_date";
+        var a_date = a[property].split(".");
+        a_date = new Date(a_date[2], a_date[1] - 1, a_date[0]);
+
+        var b_date = b[property].split(".");
+        b_date = new Date(b_date[2], b_date[1] - 1, b_date[0]);
+
+       var result = (a_date < b_date) ? 1 : (a_date > b_date) ? -1 : 0;
+       return result;
+   }
 }

@@ -117,6 +117,7 @@ function getVisitDate(start_date, end_date, year){
 
 //02.04 Sorting of objects in array by attribute
 function dynamicSort(property) {
+//debugger;
     var sortOrder = 1;
     if(property[0] === "-") {
         sortOrder = -1;

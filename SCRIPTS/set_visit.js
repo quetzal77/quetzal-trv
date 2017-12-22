@@ -181,7 +181,7 @@ function SubmitChanges(status) {
 function checkRules4AddUpdate(visitObj) {
     var result = true;
     var initialVisitObj = local[0];
-    debugger;
+
     for (var i = 0; i < data.visit.length; i++) {
         if (initialVisitObj.start_date != "addnew") {
             if (initialVisitObj.start_date != visitObj.start_date && data.visit[i].start_date == visitObj.start_date){
