@@ -25,6 +25,7 @@ function addElementOfGlobalDataArray(entityObj) {
             break;
         case 'visit':
             data.visit.push(entityObj);
+            updateOnloadArrays(entityObj);
             data.visit.sort(sortDataVisitByStartDayDesc());
             refreshAllTheArrays ();
             break;
@@ -88,7 +89,9 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
             removeElementOfGlobalDataArray (data.city, attr, value);
             break;
         case 'visit':
+            var entityObj = $.grep (data.visit, function( n, i ) {return (n[attr] == value)});
             removeElementOfGlobalDataArray (data.visit, attr, value);
+            updateOnloadArrays(entityObj);
             break;
     }
 }
@@ -320,16 +323,19 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
         }
     });
 
-    // Add New Onload Country array with new data
+    // Update Onload Country and Onload Continent arrays with new data
+    updateOnloadArrays(newEntityObj);
+}
 
+//10.09 Sort data.visit array according date
+function updateOnloadArrays(entityObj) {
     // Update Onload Country array with new data
 
     // Update Onload Country array with new data
 }
 
-//10.09 Sort data.visit array according date
+//10.10 Sort data.visit array according date
 function sortDataVisitByStartDayDesc() {
-debugger;
     return function (a,b) {
         var property = "start_date";
         var a_date = a[property].split(".");
