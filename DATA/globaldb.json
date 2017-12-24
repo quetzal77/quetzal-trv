@@ -15766,11 +15766,11 @@
       "description": "Город, центр одноимённого района и одноимённой исторической области. Достопримечательности: Дворец шекинских ханов (XVIII в.); Крепость (XVIII в.); Шекинская ханская мечеть (XVIII в.); Верхний караван-сарай (XVIII в.); Нижний караван-сарай (XVIII в.); Дом Шекихановых (XVIII в.); Минарет мечети Гилейли (XVIII в.)"
     },
     {
-      "name": "Lahıc",
+      "name": "Lahic",
       "name_nt": "Lahıc",
       "name_ru": "Лагич",
       "region_id": "AZ-ISM",
-      "city_id": "lahıc",
+      "city_id": "lahic",
       "lat": "40.849211",
       "long": "48.383734",
       "image": "az_lahich.jpg",
@@ -15931,6 +15931,17 @@
       "city": [
         "vinnitsa"
       ]
+    },
+    {
+      "start_date": "08.12.2017",
+      "end_date": "12.12.2017",
+      "city": [
+        "baku",
+        "shamakhi",
+        "lahic",
+        "shaki"
+      ],
+      "photos": "https://quetzal.io.ua/album856930"
     },
     {
       "start_date": "05.10.2017",

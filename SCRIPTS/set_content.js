@@ -26,6 +26,8 @@ function addElementOfGlobalDataArray(entityObj) {
         case 'visit':
             data.visit.push(entityObj);
             addToOnloadArrayWhenVisitAdded(entityObj);
+            initial_data.country.sort(dynamicSort("name_full"));
+            initial_data.continent.sort(dynamicSort("name_ru"));
             data.visit.sort(sortDataVisitByStartDayDesc());
             refreshAllTheArrays ();
             break;
@@ -348,28 +350,63 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
     debugger;
     var distinctCountries = {};
     var distinctContinents = {};
-    var listOfCountries = [];
-    var listOfContinents = [];
 
     $.each (entityObj.city, function( i, city ){
         var cityObj = new CityObj(city);
         var country_id = getCountryId(cityObj.getCountryId());
         var countryObj = new CountryObj (country_id);
 
-        if (!distinctCountries[cityObj.getCountryId()]){
-            listOfCountries.push(cityObj.getCountryId());
-            distinctCountries[cityObj.getCountryId()] = true;
-        }
+        if (!distinctCountries[cityObj.getCountryId()]){ distinctCountries[cityObj.getCountryId()] = true;}
+        if (!distinctContinents[countryObj.continent_id]){ distinctContinents[countryObj.continent_id] = true;}
+    });
 
-        if (!distinctContinents[countryObj.continent_id]){
-            listOfContinents.push(countryObj.continent_id);
-            distinctContinents[countryObj.continent_id] = true;
+    // Add new item to Onload Country array
+    $.each (initial_data.country, function( i, country ){
+        if (distinctCountries[country.short_name]){
+            distinctCountries[country.short_name] = false;
         }
     });
 
-    // Update Onload Country array with new data
+    var listOfNotAddedCountries = getListOfTrueAttributes(distinctCountries);
 
-    // Update Onload Country array with new data
+    if (listOfNotAddedCountries.length > 0){
+        $.each (listOfNotAddedCountries, function( i, country ){
+            var country_id = getCountryId(country);
+            var countryObj = new CountryObj (country_id);
+
+            var initialCountryObj = {
+                        country_id: country_id,
+                        continent_id: countryObj.continent_id,
+                        short_name: country,
+                        small_flag_img: countryObj.small_flag_img,
+                        name_full: countryObj.setFullCountryName()
+                    };
+
+            initial_data.country.push(initialCountryObj);
+        });
+    }
+
+    // Add new item to Onload Continent array
+    $.each (initial_data.continent, function( i, continent ){
+        if (distinctContinents[continent.continent_id]){
+            distinctContinents[continent.continent_id] = false;
+        }
+    });
+
+    var listOfNotAddedContinents = getListOfTrueAttributes(distinctContinents);
+
+    if (listOfNotAddedContinents.length > 0){
+        $.each (listOfNotAddedContinents, function( i, continent ){
+            var continentObj = $.grep (data.continent, function( n, i ) {return (n.continent_id == continent)});
+
+            var initialContinentObj = {
+                        continent_id: continentObj.continent_id,
+                        name_ru: continentObj.name_ru
+                    };
+
+            initial_data.continent.push(initialContinentObj);
+        });
+    }
 }
 
 //10.11 Add new data to Onload array when new visit is added
@@ -377,4 +414,15 @@ function updateOnloadArrays(entityObj) {
     // Update Onload Country array with new data
 
     // Update Onload Country array with new data
+}
+
+//10.12 Iteration through ja object
+function getListOfTrueAttributes(obj) {
+    var result = [];
+    $.each(obj, function(k, v) {
+        if (v == true) {
+            result.push(k);
+        }
+    });
+    return result;
 }

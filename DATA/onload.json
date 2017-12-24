@@ -33,6 +33,13 @@
       "name_full": "Австрия - Österreich - Austria"
     },
     {
+      "country_id": "AS",
+      "continent_id": "AZ",
+      "short_name": "azerbaijan",
+      "small_flag_img": "-585px -3px",
+      "name_full": "Азербайджан - Azərbaycan - Azerbaijan"
+    },
+    {
       "country_id": "AL",
       "continent_id": "EU",
       "short_name": "albania",
