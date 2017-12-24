@@ -139,7 +139,9 @@ function addEditRemoveVisits(itemId) {
 
 //15.03 Remove item entity handler
 function RemoveVisit() {
-    var startDate = document.getElementById('newStartDate').value;
+    debugger;
+    var startDate = document.getElementById('dateStart').value;
+    startDate = startDate.replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, ".");
 
     removeAllChildNodes("alert_date");
     removeAllChildNodes("alert_cities_list");

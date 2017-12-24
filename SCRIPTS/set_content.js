@@ -66,7 +66,7 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  break;
              case 'visit':
                  updateElementOfVisitArray (initialEntityObj, newEntityObj);
-//                 data.city.sort(dynamicSort("start_date")); //TBD
+                 data.visit.sort(sortDataVisitByStartDayDesc());
                  refreshAllTheArrays ();
                  break;
          }
@@ -93,7 +93,8 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
         case 'visit':
             var entityObj = $.grep (data.visit, function( n, i ) {return (n[attr] == value)});
             removeElementOfGlobalDataArray (data.visit, attr, value);
-            updateOnloadArrays(entityObj);
+            removeFromOnloadArraysWhenVisitRemoved(entityObj);
+            refreshAllTheArrays ();
             break;
     }
 }
@@ -347,7 +348,6 @@ function sortDataVisitByStartDayDesc() {
 
 //10.10 Add new data to Onload array when new visit is added
 function addToOnloadArrayWhenVisitAdded (entityObj) {
-    debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
@@ -410,7 +410,19 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
 }
 
 //10.11 Add new data to Onload array when new visit is added
-function updateOnloadArrays(entityObj) {
+function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
+    var distinctCountries = {};
+    var distinctContinents = {};
+
+    $.each (entityObj.city, function( i, city ){
+        var cityObj = new CityObj(city);
+        var country_id = getCountryId(cityObj.getCountryId());
+        var countryObj = new CountryObj (country_id);
+
+        if (!distinctCountries[cityObj.getCountryId()]){ distinctCountries[cityObj.getCountryId()] = true;}
+        if (!distinctContinents[countryObj.continent_id]){ distinctContinents[countryObj.continent_id] = true;}
+    });
+
     // Update Onload Country array with new data
 
     // Update Onload Country array with new data
