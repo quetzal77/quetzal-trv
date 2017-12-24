@@ -25,7 +25,7 @@ function addElementOfGlobalDataArray(entityObj) {
             break;
         case 'visit':
             data.visit.push(entityObj);
-            updateOnloadArrays(entityObj);
+            addToOnloadArrayWhenVisitAdded(entityObj);
             data.visit.sort(sortDataVisitByStartDayDesc());
             refreshAllTheArrays ();
             break;
@@ -328,13 +328,6 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
 }
 
 //10.09 Sort data.visit array according date
-function updateOnloadArrays(entityObj) {
-    // Update Onload Country array with new data
-
-    // Update Onload Country array with new data
-}
-
-//10.10 Sort data.visit array according date
 function sortDataVisitByStartDayDesc() {
     return function (a,b) {
         var property = "start_date";
@@ -347,4 +340,41 @@ function sortDataVisitByStartDayDesc() {
        var result = (a_date < b_date) ? 1 : (a_date > b_date) ? -1 : 0;
        return result;
    }
+}
+
+
+//10.10 Add new data to Onload array when new visit is added
+function addToOnloadArrayWhenVisitAdded (entityObj) {
+    debugger;
+    var distinctCountries = {};
+    var distinctContinents = {};
+    var listOfCountries = [];
+    var listOfContinents = [];
+
+    $.each (entityObj.city, function( i, city ){
+        var cityObj = new CityObj(city);
+        var country_id = getCountryId(cityObj.getCountryId());
+        var countryObj = new CountryObj (country_id);
+
+        if (!distinctCountries[cityObj.getCountryId()]){
+            listOfCountries.push(cityObj.getCountryId());
+            distinctCountries[cityObj.getCountryId()] = true;
+        }
+
+        if (!distinctContinents[countryObj.continent_id]){
+            listOfContinents.push(countryObj.continent_id);
+            distinctContinents[countryObj.continent_id] = true;
+        }
+    });
+
+    // Update Onload Country array with new data
+
+    // Update Onload Country array with new data
+}
+
+//10.11 Add new data to Onload array when new visit is added
+function updateOnloadArrays(entityObj) {
+    // Update Onload Country array with new data
+
+    // Update Onload Country array with new data
 }
