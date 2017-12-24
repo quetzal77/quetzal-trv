@@ -139,7 +139,6 @@ function addEditRemoveVisits(itemId) {
 
 //15.03 Remove item entity handler
 function RemoveVisit() {
-    debugger;
     var startDate = document.getElementById('dateStart').value;
     startDate = startDate.replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, ".");
 

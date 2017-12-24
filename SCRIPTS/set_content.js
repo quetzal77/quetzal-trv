@@ -93,8 +93,9 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
         case 'visit':
             var entityObj = $.grep (data.visit, function( n, i ) {return (n[attr] == value)});
             removeElementOfGlobalDataArray (data.visit, attr, value);
+            refreshAllTheArrays();
             removeFromOnloadArraysWhenVisitRemoved(entityObj);
-            refreshAllTheArrays ();
+            refreshAllTheArrays();
             break;
     }
 }
@@ -411,10 +412,11 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
 
 //10.11 Add new data to Onload array when new visit is added
 function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
+    debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
-    $.each (entityObj.city, function( i, city ){
+    $.each (entityObj[0].city, function( i, city ){
         var cityObj = new CityObj(city);
         var country_id = getCountryId(cityObj.getCountryId());
         var countryObj = new CountryObj (country_id);
@@ -423,9 +425,32 @@ function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
         if (!distinctContinents[countryObj.continent_id]){ distinctContinents[countryObj.continent_id] = true;}
     });
 
-    // Update Onload Country array with new data
+    // Remove item from Onload Country array
+    $.each (countriesVisited, function( i, country ){
+        if (distinctCountries[country.short_name]){
+            distinctCountries[country.short_name] = false;
+        }
+        if (distinctContinents[country.continent_id]){
+            distinctContinents[country.continent_id] = false;
+        }
+    });
 
-    // Update Onload Country array with new data
+    var listOfNotAddedCountries = getListOfTrueAttributes(distinctCountries);
+
+    if (listOfNotAddedCountries.length > 0){
+        $.each (listOfNotAddedCountries, function( i, country ){
+            removeElementOfGlobalDataArray (initial_data.country, "short_name", country);
+        });
+    }
+
+    // Remove item from Onload Continent array
+    var listOfNotAddedContinents = getListOfTrueAttributes(distinctContinents);
+
+    if (listOfNotAddedContinents.length > 0){
+        $.each (listOfNotAddedContinents, function( i, continent ){
+            removeElementOfGlobalDataArray (initial_data.continent, "continent_id", continent);
+        });
+    }
 }
 
 //10.12 Iteration through ja object
