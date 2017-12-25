@@ -325,6 +325,8 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
         }
     });
 
+    refreshAllTheArrays(); //We need to refresh arrays to be able to remove Onload countries and continents
+
     // Update Onload Country and Onload Continent arrays with new data
     var distinctInitialCities = {}; //All the cities with true in this object should be removed from Onload Country/Continent list
     var distinctNewCities = {}; //All the cities with true in this object should be added to Onload Country/Continent list
@@ -432,7 +434,6 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
 
 //10.10 Remove data from Onload array when visit is removed
 function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
-debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 

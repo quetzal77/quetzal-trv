@@ -42,11 +42,16 @@ function HTML_CityDetais(cityId) {
         lat = city.lat_2;
         long = city.long_2;
     }
-    result += "<div class='countrydetail'><b>Координаты:</b> <a title='Посмотреть на карте' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
+
+    if (lat != undefined){
+        result += "<div class='countrydetail'><b>Координаты:</b> <a title='Посмотреть на карте' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
               				lat + " с.ш. " + long + " в.д.</a></div>";
+    }
 
     //City description
-    result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
+    if (city.description != undefined){
+        result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
+    }
 
     //Date of city visit
     result += "<div class='countrydetail'><b>Дата посещения:</b> " + createListOfVisites() + "</div>";

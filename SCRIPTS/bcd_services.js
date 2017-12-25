@@ -186,17 +186,18 @@ function getRusCountryName(countryId) {
 
 //2.11 Get full russian country name
 function getFullRusCountryName(countryId) {
+debugger;
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
 
-    if (result[0].name_nt == "") {
+    if (result[0].name_nt == "" && result[0].name_nt == undefined) {
         result = result[0].name_ru + " - " + result[0].name;
     }
-    else if (result[0].name_ru == "") {
+    else if (result[0].name_ru == "" && result[0].name_ru == undefined) {
         result = result[0].name_nt + " - " + result[0].name;
     }
-    else if (result[0].name == "") {
+    else if (result[0].name == "" && result[0].name == undefined) {
         result = result[0].name_ru + " - " + result[0].name_nt;
     }
     else {
