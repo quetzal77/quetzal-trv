@@ -186,7 +186,6 @@ function getRusCountryName(countryId) {
 
 //2.11 Get full russian country name
 function getFullRusCountryName(countryId) {
-debugger;
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });

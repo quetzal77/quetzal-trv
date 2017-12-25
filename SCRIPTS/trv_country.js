@@ -87,7 +87,11 @@ function getCountryDetails_HTML() {
     //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
 
     //04. Link to technical information
-    var techinfo_1 = country.map_img.slice(0, -3) + "," + country.getListOfVisitedRegions();
+    var techinfo_1 = "";
+    if (country.map_img != undefined) {
+        techinfo_1 = country.map_img.slice(0, -3) + "," + country.getListOfVisitedRegions();
+    }
+
 
     var techinfo_2 = country.short_name + ";";
     if (!country.city_state){

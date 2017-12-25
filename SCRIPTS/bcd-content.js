@@ -232,7 +232,6 @@ function populateContent(callback) {
                    return result;
                }
                this.setFullCountryName = function () {
-               debugger;
                    var result;
                    if (this.name_nt == "" || this.name_nt == undefined) {
                         result = this.name_ru + " - " + this.name;
