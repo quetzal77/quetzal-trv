@@ -26,8 +26,6 @@ function addElementOfGlobalDataArray(entityObj) {
         case 'visit':
             data.visit.push(entityObj);
             addToOnloadArrayWhenVisitAdded(entityObj);
-            initial_data.country.sort(dynamicSort("name_full"));
-            initial_data.continent.sort(dynamicSort("name_ru"));
             data.visit.sort(sortDataVisitByStartDayDesc());
             refreshAllTheArrays ();
             break;
@@ -328,7 +326,6 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     });
 
     // Update Onload Country and Onload Continent arrays with new data
-    debugger;
     var distinctInitialCities = {}; //All the cities with true in this object should be removed from Onload Country/Continent list
     var distinctNewCities = {}; //All the cities with true in this object should be added to Onload Country/Continent list
 
@@ -352,15 +349,23 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
         }
     });
 
-    var listOfCitiesToBeRemoved = { city: getListOfTrueAttributes(distinctInitialCities) }
-    var listOfCitiesToBeAdded = { city: getListOfTrueAttributes(distinctNewCities) }
+    var listOfCitiesToBeRemoved = getListOfTrueAttributes(distinctInitialCities);
+    var listOfCitiesToBeAdded = getListOfTrueAttributes(distinctNewCities);
 
-    addToOnloadArrayWhenVisitAdded (listOfCitiesToBeAdded);
-    removeFromOnloadArraysWhenVisitRemoved(listOfCitiesToBeRemoved);
+    if (listOfCitiesToBeAdded.length > 0){
+        var toBeAdded = {city: listOfCitiesToBeAdded};
+        addToOnloadArrayWhenVisitAdded(toBeAdded);
+    }
+
+    if (listOfCitiesToBeRemoved.length > 0){
+        var toBeRemoved = {city: listOfCitiesToBeRemoved};
+        removeFromOnloadArraysWhenVisitRemoved(toBeRemoved);
+    }
 }
 
 //10.09 Add new data to Onload array when new visit is added
 function addToOnloadArrayWhenVisitAdded (entityObj) {
+debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
@@ -413,13 +418,16 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
             var continentObj = $.grep (data.continent, function( n, i ) {return (n.continent_id == continent)});
 
             var initialContinentObj = {
-                        continent_id: continentObj.continent_id,
-                        name_ru: continentObj.name_ru
+                        continent_id: continentObj[0].continent_id,
+                        name_ru: continentObj[0].name_ru
                     };
 
             initial_data.continent.push(initialContinentObj);
         });
     }
+
+    initial_data.country.sort(dynamicSort("name_full"));
+    initial_data.continent.sort(dynamicSort("name_ru"));
 }
 
 //10.10 Remove data from Onload array when visit is removed
