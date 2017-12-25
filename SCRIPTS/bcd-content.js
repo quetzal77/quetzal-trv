@@ -232,14 +232,15 @@ function populateContent(callback) {
                    return result;
                }
                this.setFullCountryName = function () {
+               debugger;
                    var result;
-                   if (this.name_nt == "") {
+                   if (this.name_nt == "" || this.name_nt == undefined) {
                         result = this.name_ru + " - " + this.name;
                    }
-                   else if (this.name_ru == "") {
+                   else if (this.name_ru == "" || this.name_ru == undefined) {
                         result = this.name_nt + " - " + this.name;
                    }
-                   else if (this.name == "") {
+                   else if (this.name == "" || this.name == undefined) {
                         result = this.name_ru + " - " + this.name_nt;
                    }
                    else {

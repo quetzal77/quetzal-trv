@@ -191,13 +191,13 @@ debugger;
                 return (n.short_name == countryId)
             });
 
-    if (result[0].name_nt == "" && result[0].name_nt == undefined) {
+    if (result[0].name_nt == "" || result[0].name_nt == undefined) {
         result = result[0].name_ru + " - " + result[0].name;
     }
-    else if (result[0].name_ru == "" && result[0].name_ru == undefined) {
+    else if (result[0].name_ru == "" || result[0].name_ru == undefined) {
         result = result[0].name_nt + " - " + result[0].name;
     }
-    else if (result[0].name == "" && result[0].name == undefined) {
+    else if (result[0].name == "" || result[0].name == undefined) {
         result = result[0].name_ru + " - " + result[0].name_nt;
     }
     else {
