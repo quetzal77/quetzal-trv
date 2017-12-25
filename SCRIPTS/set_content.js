@@ -358,14 +358,14 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     }
 
     if (listOfCitiesToBeRemoved.length > 0){
-        var toBeRemoved = {city: listOfCitiesToBeRemoved};
+        var cityOgj = {city: listOfCitiesToBeRemoved};
+        var toBeRemoved = [cityOgj];
         removeFromOnloadArraysWhenVisitRemoved(toBeRemoved);
     }
 }
 
 //10.09 Add new data to Onload array when new visit is added
 function addToOnloadArrayWhenVisitAdded (entityObj) {
-debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
@@ -432,6 +432,7 @@ debugger;
 
 //10.10 Remove data from Onload array when visit is removed
 function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
+debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
