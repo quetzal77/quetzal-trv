@@ -328,26 +328,38 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     });
 
     // Update Onload Country and Onload Continent arrays with new data
-    updateOnloadArrays(newEntityObj);
+    debugger;
+    var distinctInitialCities = {}; //All the cities with true in this object should be removed from Onload Country/Continent list
+    var distinctNewCities = {}; //All the cities with true in this object should be added to Onload Country/Continent list
+
+    $.each (initialEntityObj.city, function( i, cityOld ) {
+        for (i=0; i<newEntityObj.city.length; i++){
+            if (cityOld == newEntityObj.city[i]){
+                distinctInitialCities[cityOld] = false;
+                break;
+            }
+            else { distinctInitialCities[cityOld] = true; }
+        }
+    });
+
+    $.each (newEntityObj.city, function( i, cityNew ) {
+        for (j=0; j<initialEntityObj.city.length; j++){
+            if (cityNew == initialEntityObj.city[j]){
+                distinctNewCities[cityNew] = false;
+                break;
+            }
+            else { distinctNewCities[cityNew] = true; }
+        }
+    });
+
+    var listOfCitiesToBeRemoved = { city: getListOfTrueAttributes(distinctInitialCities) }
+    var listOfCitiesToBeAdded = { city: getListOfTrueAttributes(distinctNewCities) }
+
+    addToOnloadArrayWhenVisitAdded (listOfCitiesToBeAdded);
+    removeFromOnloadArraysWhenVisitRemoved(listOfCitiesToBeRemoved);
 }
 
-//10.09 Sort data.visit array according date
-function sortDataVisitByStartDayDesc() {
-    return function (a,b) {
-        var property = "start_date";
-        var a_date = a[property].split(".");
-        a_date = new Date(a_date[2], a_date[1] - 1, a_date[0]);
-
-        var b_date = b[property].split(".");
-        b_date = new Date(b_date[2], b_date[1] - 1, b_date[0]);
-
-       var result = (a_date < b_date) ? 1 : (a_date > b_date) ? -1 : 0;
-       return result;
-   }
-}
-
-
-//10.10 Add new data to Onload array when new visit is added
+//10.09 Add new data to Onload array when new visit is added
 function addToOnloadArrayWhenVisitAdded (entityObj) {
     var distinctCountries = {};
     var distinctContinents = {};
@@ -410,9 +422,8 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
     }
 }
 
-//10.11 Add new data to Onload array when new visit is added
+//10.10 Remove data from Onload array when visit is removed
 function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
-    debugger;
     var distinctCountries = {};
     var distinctContinents = {};
 
@@ -453,7 +464,7 @@ function removeFromOnloadArraysWhenVisitRemoved(entityObj) {
     }
 }
 
-//10.12 Iteration through ja object
+//10.11 Iteration through ja object
 function getListOfTrueAttributes(obj) {
     var result = [];
     $.each(obj, function(k, v) {
@@ -462,4 +473,19 @@ function getListOfTrueAttributes(obj) {
         }
     });
     return result;
+}
+
+//10.12 Sort data.visit array according date
+function sortDataVisitByStartDayDesc() {
+    return function (a,b) {
+        var property = "start_date";
+        var a_date = a[property].split(".");
+        a_date = new Date(a_date[2], a_date[1] - 1, a_date[0]);
+
+        var b_date = b[property].split(".");
+        b_date = new Date(b_date[2], b_date[1] - 1, b_date[0]);
+
+       var result = (a_date < b_date) ? 1 : (a_date > b_date) ? -1 : 0;
+       return result;
+   }
 }
