@@ -770,6 +770,18 @@
       "flag_img": "unitedstatesofamerica_flag.png",
       "emb_img": "unitedstatesofamerica_emb.png",
       "map_img": "unitedstatesofamericaLow.js"
+    },
+    {
+      "country_id": "BA",
+      "continent_id": "EU",
+      "name": "Bosnia and Herzegovina",
+      "name_ru": "Босния и Герцеговина",
+      "name_nt": "Bosna i Hercegovina",
+      "short_name": "bosniaherzegovina",
+      "small_flag_img": "-624px -3px",
+      "flag_img": "bosnia_flag.png",
+      "emb_img": "bosnia_emb.png",
+      "map_img": "bosniaherzegovinaLow.js"
     }
   ],
   "area": [
@@ -9543,6 +9555,132 @@
       "name": "State of Wyoming",
       "name_ru": "Вайоминг",
       "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-01",
+      "name": "Unsko-sanski kanton",
+      "name_ru": "Унско-Санский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-02",
+      "name": "Posavski kanton",
+      "name_ru": "Посавский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-03",
+      "name": "Tuzlanski kanton",
+      "name_ru": "Тузланский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-04",
+      "name": "Zeničko-dobojski kanton",
+      "name_ru": "Зеницко-Добойский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-05",
+      "name": "Bosansko-podrinjski kanton",
+      "name_ru": "Боснийско-Подринский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-06",
+      "name": "Srednjobosanski kanton",
+      "name_ru": "Среднебоснийский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-07",
+      "name": "Hercegovačko-neretvanski kanton",
+      "name_ru": "Герцеговино-Неретвенский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-08",
+      "name": "Zapadnohercegovački kanton",
+      "name_ru": "Западногерцеговинский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-09",
+      "name": "Kanton Sarajevo",
+      "name_ru": "Сараевский кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-10",
+      "name": "Kanton br. 10",
+      "name_ru": "Герцегбосански кантон",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-BR-BR",
+      "name": "Brčko",
+      "name_ru": "Округ Брчко",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-BI",
+      "name": "Bijeljina",
+      "name_ru": "Биелина",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-BJ",
+      "name": "Banja-Luka",
+      "name_ru": "Баня-Лука",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-DO",
+      "name": "Doboj",
+      "name_ru": "Добой",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-FO",
+      "name": "Foca",
+      "name_ru": "Фоча",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-SR",
+      "name": "Sarajevo-Romanija",
+      "name_ru": "Источно-Сараево",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-TR",
+      "name": "Trebinje",
+      "name_ru": "Требине",
+      "active": "Y"
+    },
+    {
+      "country_id": "BA",
+      "region_id": "BA-SR-VL",
+      "name": "Vlasenica",
+      "name_ru": "Власеница",
+      "active": "Y"
     }
   ],
   "city": [
@@ -15922,6 +16060,19 @@
       "long_2": "-117.153745",
       "image": "us_sandiego.jpg",
       "description": "Город на юго-западе США на берегу Тихого океана близ границы с Мексикой. В городе расположена основная база ВМС США на Тихом океане. Среди основных достопримечательностей - громадный Зоопарк Сан-Диего, Парк диких животных (Wild Animal Park), Парк Морской Мир (SeaWorld), Бальбоа Парк (Balboa Park), район Ла Хойя (La Jolla), Квартал газовых фонарей, остров Коронадо и другие."
+    },
+    {
+      "name": "Sarajevo",
+      "name_nt": "Sarajevo",
+      "name_ru": "Сараево",
+      "region_id": "BA-09",
+      "city_id": "sarajevo",
+      "lat": "43.860045",
+      "lat_2": "",
+      "long": "18.414618",
+      "long_2": "",
+      "image": "",
+      "description": ""
     }
   ],
   "visit": [
