@@ -68,6 +68,13 @@
       "name_full": "Бельгия - België - Belgium"
     },
     {
+      "country_id": "BA",
+      "continent_id": "EU",
+      "short_name": "bosniaherzegovina",
+      "small_flag_img": "-624px -3px",
+      "name_full": "Босния и Герцеговина - Bosna i Hercegovina - Bosnia and Herzegovina"
+    },
+    {
       "country_id": "HU",
       "continent_id": "EU",
       "short_name": "hungary",
