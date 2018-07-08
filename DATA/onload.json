@@ -208,6 +208,13 @@
       "name_full": "Молдо́ва - Moldova - Moldova"
     },
     {
+      "country_id": "MC",
+      "continent_id": "EU",
+      "short_name": "monaco",
+      "small_flag_img": "-42px -424px",
+      "name_full": "Монако - Monaco - Monaco"
+    },
+    {
       "country_id": "NL",
       "continent_id": "EU",
       "short_name": "netherlands",
