@@ -80,4 +80,9 @@ function OpenListOfWorldCountries() {
         "<div class='switchlink_l float_l'>Мои страны...</div>" +
         "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
         "<br><br>" + createWorldPageFrontView();
-}
+        
+     //Calculate number of location visited and add them to front page
+     if (local[0] == "world"){
+        getNumberOfLocation();
+     }
+    }
