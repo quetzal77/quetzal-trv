@@ -804,6 +804,18 @@
       "flag_img": "bulgaria_flag.png",
       "emb_img": "bulgaria_emb.png",
       "map_img": "bulgariaLow.js"
+    },
+    {
+      "country_id": "LB",
+      "continent_id": "AS",
+      "name": "Lebanon",
+      "name_ru": "Ливан",
+      "name_nt": "لبنان",
+      "short_name": "lebanon",
+      "small_flag_img": "-275px -372px",
+      "flag_img": "lebanon_flag.png",
+      "emb_img": "lebanon_emb.png",
+      "map_img": "lebanonLow.js"
     }
   ],
   "area": [
@@ -9899,8 +9911,49 @@
       "name": "Област Ямбол",
       "name_ru": "Ямболская область",
       "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-JA",
+      "name": "‎الجنوب — el-Jenūb",
+      "name_ru": "Южный Ливан",
+      "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-NA",
+      "name": "‎النبطية — en-Nebatīye",
+      "name_ru": "Эн-Набатия",
+      "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-JL",
+      "name": "‎جبل لبنان - Mount Lebanon‎",
+      "name_ru": "Горный Ливан",
+      "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-BA",
+      "name": "‎محافظة بيروت - Beirut",
+      "name_ru": "Бейрут",
+      "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-AS",
+      "name": "‎الشمال - Aš Šamāl",
+      "name_ru": "Северный Ливан",
+      "active": "Y"
+    },
+    {
+      "country_id": "LB",
+      "region_id": "LB-BI",
+      "name": "‎البقاع - Al-Biqā'",
+      "name_ru": "Бекаа",
+      "active": "Y"
     }
-
   ],
   "city": [
     {
@@ -16865,6 +16918,19 @@
       "long": "27.6482513",
       "long_2": "",
       "description": "Небольшой курортный поселок возле берега моря."
+    },
+    {
+      "name": "Beirut",
+      "name_nt": "‎بيروت - Bayrūt",
+      "name_ru": "Бейрут",
+      "region_id": "LB-BA",
+      "city_id": "beirut",
+      "lat": "33.8907361",
+      "lat_2": "",
+      "long": "35.4993091",
+      "long_2": "",
+      "image": "",
+      "description": "Столица и крупнейший город Ливана. Расположенный на полуострове, в середине ливанского побережья Средиземного моря, он является крупнейшим и главным морским портом страны. ДОСТОПРИМЕЧАТЕЛЬНОСТИ БЕЙРУТА: Площадь Мучеников(аль-Бурдж), Площадь Этуаль (площадь Звезды), Мечеть Омара, Набережная Бейрута."
     }
   ],
   "visit": [
