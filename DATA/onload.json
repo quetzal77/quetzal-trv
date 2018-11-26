@@ -82,6 +82,13 @@
       "name_full": "Босния и Герцеговина - Bosna i Hercegovina - Bosnia and Herzegovina"
     },
     {
+      "country_id": "VA",
+      "continent_id": "EU",
+      "short_name": "vatican",
+      "small_flag_img": "-508px -688px",
+      "name_full": "Ватикан - Status Civitatis Vaticanae - Vatican City State"
+    },
+    {
       "country_id": "HU",
       "continent_id": "EU",
       "short_name": "hungary",
@@ -171,6 +178,13 @@
       "short_name": "latvia",
       "small_flag_img": "-585px -372px",
       "name_full": "Латвия - Latvija - Latvia"
+    },
+    {
+      "country_id": "LB",
+      "continent_id": "AS",
+      "short_name": "lebanon",
+      "small_flag_img": "-275px -372px",
+      "name_full": "Ливан - لبنان - Lebanon"
     },
     {
       "country_id": "LT",
