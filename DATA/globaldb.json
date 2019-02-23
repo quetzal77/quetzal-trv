@@ -816,6 +816,54 @@
       "flag_img": "lebanon_flag.png",
       "emb_img": "lebanon_emb.png",
       "map_img": "lebanonLow.js"
+    },
+    {
+      "country_id": "KG",
+      "continent_id": "AS",
+      "name": "Kyrgyzstan",
+      "name_ru": "Киргизия",
+      "name_nt": "Кыргы́з",
+      "short_name": "kyrgyzstan",
+      "small_flag_img": "-275px -372px",
+      "flag_img": "kyrgyzstan_flag.png",
+      "emb_img": "kyrgyzstan_emb.png",
+      "map_img": "lkyrgyzstanLow.js"
+    },
+    {
+      "country_id": "KZ",
+      "continent_id": "AS",
+      "name": "Kazakhstan",
+      "name_ru": "Казахстан",
+      "name_nt": "Қазақстан",
+      "short_name": "kazakhstan",
+      "small_flag_img": "-275px -372px",
+      "flag_img": "kazakhstan_flag.png",
+      "emb_img": "kazakhstan_emb.png",
+      "map_img": "kazakhstanLow.js"
+    },
+    {
+      "country_id": "JO",
+      "continent_id": "AS",
+      "name": "Jordan",
+      "name_ru": "Иордания",
+      "name_nt": "الأردن",
+      "short_name": "jordan",
+      "small_flag_img": "-275px -372px",
+      "flag_img": "jordan_flag.png",
+      "emb_img": "jordan_emb.png",
+      "map_img": "jordanLow.js"
+    },
+    {
+      "country_id": "GR",
+      "continent_id": "EU",
+      "name": "Greece",
+      "name_ru": "Греция",
+      "name_nt": "Ελλάδα",
+      "short_name": "greece",
+      "small_flag_img": "-275px -372px",
+      "flag_img": "greece_flag.png",
+      "emb_img": "greece_emb.png",
+      "map_img": "greeceLow.js"
     }
   ],
   "area": [
