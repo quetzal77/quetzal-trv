@@ -10001,6 +10001,55 @@
       "name": "‎البقاع - Al-Biqā'",
       "name_ru": "Бекаа",
       "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-B",
+      "name": "‎Баткен облусу",
+      "name_ru": "Баткенская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-C",
+      "name": "‎Чүй облусу",
+      "name_ru": "Чуйская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-J",
+      "name": "‎Жалалабат облусу",
+      "name_ru": "Джалал-Абадская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-N",
+      "name": "‎Нарын облусу",
+      "name_ru": "Нарынская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-O",
+      "name": "Ош областы‎",
+      "name_ru": "Ошская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-T",
+      "name": "‎Талас облусу",
+      "name_ru": "Таласская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KG",
+      "region_id": "KG-Y",
+      "name": "Ысык-Көл областы‎",
+      "name_ru": "Иссык-Кульская область",
+      "active": "Y"
     }
   ],
   "city": [
