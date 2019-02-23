@@ -567,9 +567,9 @@
     {
       "country_id": "MK",
       "continent_id": "EU",
-      "name": "Macedonia",
-      "name_ru": "Македония",
-      "name_nt": "Македонија",
+      "name": "North Macedonia",
+      "name_ru": "Северная Македония",
+      "name_nt": "Северна Македонија",
       "short_name": "macedonia",
       "small_flag_img": "-275px -424px",
       "flag_img": "macedonia_flag.png",
