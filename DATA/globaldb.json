@@ -824,10 +824,10 @@
       "name_ru": "Киргизия",
       "name_nt": "Кыргы́з",
       "short_name": "kyrgyzstan",
-      "small_flag_img": "-275px -372px",
+      "small_flag_img": "-508px -319px",
       "flag_img": "kyrgyzstan_flag.png",
       "emb_img": "kyrgyzstan_emb.png",
-      "map_img": "lkyrgyzstanLow.js"
+      "map_img": "kyrgyzstanLow.js"
     },
     {
       "country_id": "KZ",
@@ -836,7 +836,7 @@
       "name_ru": "Казахстан",
       "name_nt": "Қазақстан",
       "short_name": "kazakhstan",
-      "small_flag_img": "-275px -372px",
+      "small_flag_img": "-197px -372px",
       "flag_img": "kazakhstan_flag.png",
       "emb_img": "kazakhstan_emb.png",
       "map_img": "kazakhstanLow.js"
@@ -848,7 +848,7 @@
       "name_ru": "Иордания",
       "name_nt": "الأردن",
       "short_name": "jordan",
-      "small_flag_img": "-275px -372px",
+      "small_flag_img": "-391px -319px",
       "flag_img": "jordan_flag.png",
       "emb_img": "jordan_emb.png",
       "map_img": "jordanLow.js"
@@ -860,7 +860,7 @@
       "name_ru": "Греция",
       "name_nt": "Ελλάδα",
       "short_name": "greece",
-      "small_flag_img": "-275px -372px",
+      "small_flag_img": "-120px -266px",
       "flag_img": "greece_flag.png",
       "emb_img": "greece_emb.png",
       "map_img": "greeceLow.js"
@@ -10049,6 +10049,104 @@
       "region_id": "KG-Y",
       "name": "Ысык-Көл областы‎",
       "name_ru": "Иссык-Кульская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-A",
+      "name": "Eastern Macedonia and Thrace",
+      "name_ru": "Восточная Македония и Фракия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-B",
+      "name": "Central Macedonia",
+      "name_ru": "Центральная Македония",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-C",
+      "name": "Western Macedonia",
+      "name_ru": "Западная Македония",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-D",
+      "name": "Epirus",
+      "name_ru": "Эпир",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-E",
+      "name": "Thessaly",
+      "name_ru": "Фессалия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-F",
+      "name": "Ionian Islands",
+      "name_ru": "Ионические острова",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-G",
+      "name": "Western Greece",
+      "name_ru": "Западная Греция",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-H",
+      "name": "Central Greece",
+      "name_ru": "Центральная Греция",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-I",
+      "name": "Attica",
+      "name_ru": "Аттика",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-J",
+      "name": "Peloponnese",
+      "name_ru": "Пелопоннес",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-K",
+      "name": "North Aegean",
+      "name_ru": "Северные Эгейские острова",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-L",
+      "name": "South Aegean",
+      "name_ru": "Южные Эгейские острова",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-M",
+      "name": "Crete",
+      "name_ru": "Крит",
+      "active": "Y"
+    },
+    {
+      "country_id": "GR",
+      "region_id": "GR-69",
+      "name": "Mount Athos",
+      "name_ru": "Афон",
       "active": "Y"
     }
   ],
