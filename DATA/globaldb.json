@@ -10148,6 +10148,188 @@
       "name": "Mount Athos",
       "name_ru": "Афон",
       "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-AKM",
+      "name": "Akmola Region",
+      "name_ru": "Акмолинская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-AKT",
+      "name": "Aktobe Region",
+      "name_ru": "Актюбинская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-ALM",
+      "name": "Almaty Region",
+      "name_ru": "Алматинская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-ATY",
+      "name": "Atyrau Region",
+      "name_ru": "Атырауская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-KAR",
+      "name": "Karaganda Region",
+      "name_ru": "Карагандинская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-KUS",
+      "name": "Kostanay Region",
+      "name_ru": "Костанайская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-KZY",
+      "name": "Kyzylorda Region",
+      "name_ru": "Кызылординская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-MAN",
+      "name": "Mangystau Region",
+      "name_ru": "Мангистауская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-PAV",
+      "name": "Pavlodar Region",
+      "name_ru": "Павлодарская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-SEV",
+      "name": "North Kazakhstan Region",
+      "name_ru": "Северо-Казахстанская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-VOS",
+      "name": "East Kazakhstan Region",
+      "name_ru": "Восточно-Казахстанская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-YUZ",
+      "name": "Turkistan Region",
+      "name_ru": "Туркестанская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-ZAP",
+      "name": "West Kazakhstan Region",
+      "name_ru": "Западно-Казахстанская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "KZ",
+      "region_id": "KZ-ZHA",
+      "name": "Jambyl Region",
+      "name_ru": "Жамбылская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-AZ",
+      "name": "Zarqa Governorate",
+      "name_ru": "Эз-Зарка",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-KA",
+      "name": "Karak Governorate",
+      "name_ru": "Эль-Карак",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-MD",
+      "name": "Madaba Governorate",
+      "name_ru": "Мадаба",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-BA",
+      "name": "Balqa Governorate",
+      "name_ru": "Эль-Балка",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-JA",
+      "name": "Jerash Governorate",
+      "name_ru": "Джараш",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-AJ",
+      "name": "Ajloun Governorate",
+      "name_ru": "Аджлун",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-IR",
+      "name": "Irbid Governorate",
+      "name_ru": "Ирбид",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-MN",
+      "name": "Ma'an Governorate",
+      "name_ru": "Маан",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-AT",
+      "name": "Tafilah Governorate",
+      "name_ru": "Эт-Тафила",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-AM",
+      "name": "Amman Governorate",
+      "name_ru": "Амман",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-MA",
+      "name": "Mafraq Governorate",
+      "name_ru": "Эль-Мафрак",
+      "active": "Y"
+    },
+    {
+      "country_id": "JO",
+      "region_id": "JO-AQ",
+      "name": "Aqaba Governorate",
+      "name_ru": "Акаба",
+      "active": "Y"
     }
   ],
   "city": [
