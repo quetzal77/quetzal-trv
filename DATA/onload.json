@@ -110,6 +110,13 @@
       "name_full": "Гибралтар - Gibraltar - Gibraltar"
     },
     {
+      "country_id": "GR",
+      "continent_id": "EU",
+      "short_name": "greece",
+      "small_flag_img": "-120px -266px",
+      "name_full": "Греция - Ελλάδα - Greece"
+    },
+    {
       "country_id": "DK",
       "continent_id": "EU",
       "short_name": "denmark",
