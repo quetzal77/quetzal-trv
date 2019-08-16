@@ -159,11 +159,25 @@
       "name_full": "Италия - Italia - Italy"
     },
     {
+      "country_id": "KZ",
+      "continent_id": "AS",
+      "short_name": "kazakhstan",
+      "small_flag_img": "-197px -372px",
+      "name_full": "Казахстан - Қазақстан - Kazakhstan"
+    },
+    {
       "country_id": "CY",
       "continent_id": "AS",
       "short_name": "cyprus",
       "small_flag_img": "-120px -161px",
       "name_full": "Кипр - Κύπρος - Cyprus"
+    },
+    {
+      "country_id": "KG",
+      "continent_id": "AS",
+      "short_name": "kyrgyzstan",
+      "small_flag_img": "-508px -319px",
+      "name_full": "Киргизия - Кыргы́з - Kyrgyzstan"
     },
     {
       "country_id": "CN",
