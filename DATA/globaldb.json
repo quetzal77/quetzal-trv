@@ -14755,7 +14755,6 @@
       "city_id": "danivskiiconvent",
       "lat": "50.8763712",
       "long": "31.1791903",
-      "image": "ua_danivskiiconvent.jpg",
       "description": "Женский монастырь Черниговской епархии Украинской православной церкви Московского Патриархата, расположенный в селе Даневка Козелецкого района Черниговской области."
     },
     {
@@ -18084,7 +18083,8 @@
         "shymbulak",
         "almaty",
         "bigalmatylake"
-      ]
+      ],
+      "photos": "https://quetzal.io.ua/album892054"
     },
     {
       "start_date": "20.07.2019",
