@@ -145,6 +145,13 @@
       "name_full": "Индия - भारत - India"
     },
     {
+      "country_id": "JO",
+      "continent_id": "AS",
+      "short_name": "jordan",
+      "small_flag_img": "-391px -319px",
+      "name_full": "Иордания - الأردن - Jordan"
+    },
+    {
       "country_id": "ES",
       "continent_id": "EU",
       "short_name": "spain",
