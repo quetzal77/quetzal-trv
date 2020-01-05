@@ -864,6 +864,90 @@
       "flag_img": "greece_flag.png",
       "emb_img": "greece_emb.png",
       "map_img": "greeceLow.js"
+    },
+    {
+      "country_id": "CU",
+      "continent_id": "NA",
+      "name": "Cuba",
+      "name_ru": "Куба",
+      "name_nt": "Cuba",
+      "short_name": "cuba",
+      "small_flag_img": "-624px -108px",
+      "flag_img": "cuba_flag.png",
+      "emb_img": "cuba_emb.png",
+      "map_img": "cubaLow.js"
+    },
+    {
+      "country_id": "MX",
+      "continent_id": "NA",
+      "name": "Mexico",
+      "name_ru": "Мексика",
+      "name_nt": "Mexico",
+      "short_name": "mexico",
+      "small_flag_img": "-119px -477px",
+      "flag_img": "mexico_flag.png",
+      "emb_img": "mexico_emb.png",
+      "map_img": "mexicoLow.js"
+    },
+    {
+      "country_id": "BZ",
+      "continent_id": "NA",
+      "name": "Belize",
+      "name_ru": "Белиз",
+      "name_nt": "Belize",
+      "short_name": "belize",
+      "small_flag_img": "-80px -108px",
+      "flag_img": "belize_flag.png",
+      "emb_img": "belize_emb.png",
+      "map_img": "belizeLow.js"
+    },
+    {
+      "country_id": "AM",
+      "continent_id": "AS",
+      "name": "Armenia",
+      "name_ru": "Армения",
+      "name_nt": "Հայաստան",
+      "short_name": "armenia",
+      "small_flag_img": "-236px -3px",
+      "flag_img": "armenia_flag.png",
+      "emb_img": "armenia_emb.png",
+      "map_img": "armeniaLow.js"
+    },
+    {
+      "country_id": "GE",
+      "continent_id": "AS",
+      "name": "Georgia",
+      "name_ru": "Грузия",
+      "name_nt": "საქართველო",
+      "short_name": "georgia",
+      "small_flag_img": "-80px -108px",
+      "flag_img": "georgia_flag.png",
+      "emb_img": "georgia_emb.png",
+      "map_img": "georgiaLow.js"
+    },
+    {
+      "country_id": "RS",
+      "continent_id": "EU",
+      "name": "Serbia",
+      "name_ru": "Сербия",
+      "name_nt": "Ср̀бија",
+      "short_name": "serbia",
+      "small_flag_img": "-80px -583px",
+      "flag_img": "serbia_flag.png",
+      "emb_img": "serbia_emb.png",
+      "map_img": "serbiaLow.js"
+    },
+    {
+      "country_id": "TN",
+      "continent_id": "AF",
+      "name": "Tunisia",
+      "name_ru": "Тунис",
+      "name_nt": "تونس",
+      "short_name": "tunisia",
+      "small_flag_img": "-3px -688px",
+      "flag_img": "tunisia_flag.png",
+      "emb_img": "tunisia_emb.png",
+      "map_img": "tunisiaLow.js"
     }
   ],
   "area": [
