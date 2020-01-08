@@ -11121,6 +11121,216 @@
       "name": "Tataouine Governorate",
       "name_ru": "Татавин",
       "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-00",
+      "name": "City of Belgrade",
+      "name_ru": "Белград",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-01",
+      "name": "North Bačka District",
+      "name_ru": "Северно-Бачский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-02",
+      "name": "Central Banat District",
+      "name_ru": "Средне-Банатский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-03",
+      "name": "North Banat District",
+      "name_ru": "Северно-Банатский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-04",
+      "name": "South Banat District",
+      "name_ru": "Южно-Банатский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-05",
+      "name": "West Bačka District",
+      "name_ru": "Западно-Бачский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-06",
+      "name": "South Bačka District",
+      "name_ru": "Южно-Бачский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-07",
+      "name": "Srem District",
+      "name_ru": "Сремский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-08",
+      "name": "Mačva District",
+      "name_ru": "Мачванский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-09",
+      "name": "Kolubara District",
+      "name_ru": "Колубарский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-10",
+      "name": "Podunavlje District",
+      "name_ru": "Подунайский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-11",
+      "name": "Braničevo District",
+      "name_ru": "Браничевский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-12",
+      "name": "Šumadija District",
+      "name_ru": "Шумадийский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-13",
+      "name": "Pomoravlje District",
+      "name_ru": "Поморавский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-14",
+      "name": "Bor District",
+      "name_ru": "Борский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-15",
+      "name": "Zaječar District",
+      "name_ru": "Заечарский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-16",
+      "name": "Zlatibor District",
+      "name_ru": "Златиборский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-17",
+      "name": "Moravica District",
+      "name_ru": "Моравичский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-18",
+      "name": "Raška District",
+      "name_ru": "Рашский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-19",
+      "name": "Rasina District",
+      "name_ru": "Расинский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-20",
+      "name": "Nišava District",
+      "name_ru": "Нишавский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-21",
+      "name": "Toplica District",
+      "name_ru": "Топличский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-22",
+      "name": "Pirot District",
+      "name_ru": "Пиротский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-23",
+      "name": "Jablanica District",
+      "name_ru": "Ябланичский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-24",
+      "name": "Pčinja District",
+      "name_ru": "Пчиньский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-25",
+      "name": "Kosovo District",
+      "name_ru": "Косовский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-26",
+      "name": "Peć District",
+      "name_ru": "Печский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-27",
+      "name": "Prizren District",
+      "name_ru": "Призренский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-28",
+      "name": "District of Mitrovica",
+      "name_ru": "Косовско-Митровицкий округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "RS",
+      "region_id": "RS-29",
+      "name": "Kosovo-Pomoravlje District",
+      "name_ru": "Косовско-Поморавский округ",
+      "active": "Y"
     }
   ],
   "city": [
