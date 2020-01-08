@@ -10953,6 +10953,174 @@
       "name": "Tbilisi",
       "name_ru": "Тбилиси",
       "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-11",
+      "name": "Tunis Governorate",
+      "name_ru": "Тунис",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-12",
+      "name": "Ariana Governorate",
+      "name_ru": "Арьяна",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-13",
+      "name": "Ben Arous Governorate",
+      "name_ru": "Бен-Арус",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-14",
+      "name": "Manouba Governorate",
+      "name_ru": "Мануба",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-21",
+      "name": "Nabeul Governorate",
+      "name_ru": "Набуль",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-22",
+      "name": "Zaghouan Governorate",
+      "name_ru": "Загван",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-23",
+      "name": "Bizerte Governorate",
+      "name_ru": "Бизерта",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-31",
+      "name": "Béja Governorate",
+      "name_ru": "Беджа",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-32",
+      "name": "Jendouba Governorate",
+      "name_ru": "Джендуба",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-33",
+      "name": "Kef Governorate",
+      "name_ru": "Эль-Кеф",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-34",
+      "name": "Siliana Governorate",
+      "name_ru": "Сильяна",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-41",
+      "name": "Kairouan Governorate",
+      "name_ru": "Кайруан",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-42",
+      "name": "Kasserine Governorate",
+      "name_ru": "Кассерин",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-43",
+      "name": "Sidi Bouzid Governorate",
+      "name_ru": "Сиди-Бу-Зид",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-51",
+      "name": "Sousse Governorate",
+      "name_ru": "Сус",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-52",
+      "name": "Monastir Governorate",
+      "name_ru": "Монастир",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-53",
+      "name": "Mahdia Governorate",
+      "name_ru": "Махдия",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-61",
+      "name": "Sfax Governorate",
+      "name_ru": "Сфакс",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-71",
+      "name": "Gafsa Governorate",
+      "name_ru": "Гафса",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-72",
+      "name": "Tozeur Governorate",
+      "name_ru": "Таузар",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-73",
+      "name": "Kebili Governorate",
+      "name_ru": "Кебили",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-81",
+      "name": "Gabès Governorate",
+      "name_ru": "Габес",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-82",
+      "name": "Medenine Governorate",
+      "name_ru": "Меденин",
+      "active": "Y"
+    },
+    {
+      "country_id": "TN",
+      "region_id": "TN-83",
+      "name": "Tataouine Governorate",
+      "name_ru": "Татавин",
+      "active": "Y"
     }
   ],
   "city": [
