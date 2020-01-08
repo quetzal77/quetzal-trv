@@ -10792,6 +10792,167 @@
       "name": "Zacatecas",
       "name_ru": "Сакатекас",
       "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-AG",
+      "name": "Aragatsotn Province",
+      "name_ru": "Арагацотнская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-AR",
+      "name": "Ararat Province",
+      "name_ru": "Араратская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-AV",
+      "name": "Armavir Province",
+      "name_ru": "Армавирская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-ER",
+      "name": "Yerevan",
+      "name_ru": "Ереван",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-GR",
+      "name": "Gegharkunik Province",
+      "name_ru": "Гехаркуникская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-KT",
+      "name": "Kotayk Province",
+      "name_ru": "Котайкская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-LO",
+      "name": "Lori Province",
+      "name_ru": "Лорийская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-SH",
+      "name": "Shirak Province",
+      "name_ru": "Ширакская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-SU",
+      "name": "Syunik Province",
+      "name_ru": "Сюникская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-TV",
+      "name": "Tavush Province",
+      "name_ru": "Тавушская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "AM",
+      "region_id": "AM-VD",
+      "name": "Vayots Dzor Province",
+      "name_ru": "Вайоцдзорская область",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-AB",
+      "name": "Autonomous Republic of Abkhazia",
+      "name_ru": "Абхазская Автономная Республика",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-AJ",
+      "name": "Autonomous Republic of Adjara",
+      "name_ru": "Аджа́рская Автоно́мная Респу́блика",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-GU",
+      "name": "Guria",
+      "name_ru": "Гурия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-IM",
+      "name": "Imereti",
+      "name_ru": "Имеретия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-KA",
+      "name": "Kakheti",
+      "name_ru": "Кахетия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-KK",
+      "name": "Kvemo Kartli",
+      "name_ru": "Квемо-Картли",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-MM",
+      "name": "Mtskheta-Mtianeti",
+      "name_ru": "Мцхета-Мтианети",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-RL",
+      "name": "Racha-Lechkhumi and Kvemo Svaneti",
+      "name_ru": "Рача-Лечхуми и Нижняя Сванетия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-SJ",
+      "name": "Samtskhe–Javakheti",
+      "name_ru": "Самцхе-Джавахети",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-SK",
+      "name": "Shida Kartli",
+      "name_ru": "Шида-Картли",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-SZ",
+      "name": "Samegrelo-Zemo Svaneti",
+      "name_ru": "Самегрело-Верхняя Сванетия",
+      "active": "Y"
+    },
+    {
+      "country_id": "GE",
+      "region_id": "GE-TB",
+      "name": "Tbilisi",
+      "name_ru": "Тбилиси",
+      "active": "Y"
     }
   ],
   "city": [
