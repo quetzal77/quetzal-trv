@@ -948,6 +948,18 @@
       "flag_img": "tunisia_flag.png",
       "emb_img": "tunisia_emb.png",
       "map_img": "tunisiaLow.js"
+    },
+    {
+      "country_id": "NGK",
+      "continent_id": "AS",
+      "name": "Artsakh",
+      "name_ru": "Нагорный Карабах",
+      "name_nt": "Լեռնային Ղարաբաղ",
+      "short_name": "artsakh",
+      "small_flag_img": "-3px -688px",
+      "flag_img": "",
+      "emb_img": "",
+      "map_img": ""
     }
   ],
   "area": [
