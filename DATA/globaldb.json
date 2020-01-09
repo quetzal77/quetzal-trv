@@ -956,9 +956,9 @@
       "name_ru": "Нагорный Карабах",
       "name_nt": "Լեռնային Ղարաբաղ",
       "short_name": "artsakh",
-      "small_flag_img": "-3px -688px",
-      "flag_img": "",
-      "emb_img": "",
+      "small_flag_img": "-587px -741px",
+      "flag_img": "artsakh_flag.png",
+      "emb_img": "artsakh_emb.png",
       "map_img": ""
     }
   ],
@@ -11342,6 +11342,62 @@
       "region_id": "RS-29",
       "name": "Kosovo-Pomoravlje District",
       "name_ru": "Косовско-Поморавский округ",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-1",
+      "name": "Stepanakert",
+      "name_ru": "Степанакерт",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-2",
+      "name": "Askeran Province",
+      "name_ru": "Аскеранский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-3",
+      "name": "Hadrut Province",
+      "name_ru": "Гадрутский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-4",
+      "name": "Martakert Province",
+      "name_ru": "Мартакертский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-5",
+      "name": "Martuni Province",
+      "name_ru": "Мартунинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-6",
+      "name": "Shahumyan Province",
+      "name_ru": "Шаумяновский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-7",
+      "name": "Shushi Province",
+      "name_ru": "Шушинский район",
+      "active": "Y"
+    },
+    {
+      "country_id": "NGK",
+      "region_id": "NGK-8",
+      "name": "Kashatagh Province",
+      "name_ru": "Кашатагский район",
       "active": "Y"
     }
   ],
