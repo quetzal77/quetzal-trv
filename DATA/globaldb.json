@@ -19510,6 +19510,18 @@
   ],
   "visit": [
   {
+    "start_date": "09.04.2020",
+    "end_date": "11.04.2020",
+    "city": [
+      "kovel",
+      "volodimir_volinskiy",
+	  "lutsk",
+	  "dubno",
+      "klevan",
+      "rivne",
+    ]
+  },  
+  {
     "start_date": "03.04.2020",
     "end_date": "03.04.2020",
     "city": [
