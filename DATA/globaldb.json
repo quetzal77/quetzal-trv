@@ -15418,6 +15418,16 @@
       "description": "Село, входит в Фастовский район Киевской области Украины. В селе сохранилась бывшая усадьба Хоецких. Дворец был построен в 1903—1910 годах"
     },
     {
+      "name": "Vytachiv",
+      "name_nt": "Витачів",
+      "name_ru": "Витачов",
+      "region_id": "UA-KV",
+      "city_id": "vitachev",
+      "lat": "50.1131801",
+      "long": "30.8784792",
+      "description": "Вважається одним з найдревніших поселень Полянського князівства та Київської Русі. Засноване приблизно в IV ст. н. е. (за даними археологічних досліджень). Перша літописна згадка про Витачів датується 949 роком у творі «Управління імперією» візантійського імператора Костянтина VII Багрянородного, де він описує древній Витичів як могутній порт на Дніпрі у південному передмісті Києва. Витачів має багатовікову та драматичну історію. Це поселення є одним з найдавніших в Україні.Витачів, як древньоруське містечко та одне з найстаріших поселень України є одним з унікальних туристичних центрів Київщини. За кількістю пам'ятних знаків, пам'яток історії, меморіальних комплексів, та об'ємом історичної спадщини Витачів немає собі рівних в Обухівському районі. В селі величезна кількість пам'ятників, монументів та пам'ятних дощок."
+    },
+    {
       "name": "Ternopil",
       "name_nt": "Тернопіль",
       "name_ru": "Тернополь",
@@ -15472,6 +15482,26 @@
       "long": "25.891342",
       "image": "ua_mlink.jpg",
       "description": "Млынки — одна из самых больших горизонтальных пещер в Украине. Протяженность около 35 км."
+    },
+    {
+      "name": "Bilokrynytsya",
+      "name_nt": "Білокриниця",
+      "name_ru": "Белокриница",
+      "region_id": "UA-TP",
+      "city_id": "bilokrinitsa",
+      "lat": "50.144383",
+      "long": "25.7413052",
+      "description": "Білокриницький палац — пам'ятка архітектури місцевого значення в селі Білокриниця (Кременецький район, Тернопільська область). Зараз у приміщенні палацу розташований Кременецький лісотехнічний коледж. Палац споруджено у англо-готичному стилі, з елемантами ренесансу. На готичний стиль вказують 2 вежі із невеликими зубцями по кутах та унікальне неоготична в'їзна брама. Інтер'єр від графського палацу мало зберігся, але в коридорах можна побачити готичні арки.\n\nНа сьогодні збереглись фрагменти рову навколо замку.\n\nПоруч із палацом розташований Білокриницький дендропарк."
+    },
+    {
+      "name": "Vyshnivets",
+      "name_nt": "Вишнівець",
+      "name_ru": "Вишневец",
+      "region_id": "UA-TP",
+      "city_id": "vishnivets",
+      "lat": "49.9068043",
+      "long": "25.7497094",
+      "description": "Архітектурні пам'ятки - Замок XV ст., Палац і парк XVIII ст. князів Вишневецьких, Церква Архістратига Михаїла (1726, реконструкція у 1768, 1840), Церква Вознесіння (1530, реконструкція 1872, відбудова 1992), Келії монастиря кармелітів босих (костел фундації Єремії Вишневецького зруйнували під час Хмельниччини), Костел святого Станіслава (1757, руїна)"
     },
     {
       "name": "Uzhgorod",
@@ -16747,6 +16777,16 @@
       "description": "Село в Украине, находится в Житомирском районе Житомирской области. Известно Тригорским монастырём (XIX век)."
     },
     {
+      "name": "Korostyshiv",
+      "name_nt": "Коростишів",
+      "name_ru": "Коростышев",
+      "region_id": "UA-ZT",
+      "city_id": "korostishiv",
+      "lat": "50.3192546",
+      "long": "29.0601376",
+      "description": "Пам'ятки - Коростишівський парк — або Олізарівський парк, Костел Різдва Пресвятої Діви Марії, Коростишівський кар'єр."
+    },
+    {
       "name": "Simferopol",
       "name_nt": "Сімферополь",
       "name_ru": "Симферополь",
@@ -18020,7 +18060,7 @@
       "image": "cy_papho.jpg",
       "description": "Город-курорт в юго-западной части острова Кипр. Согласно мифологии, Пафос является родиной греческой богини любви Афродиты. Апостол Павел проповедовал в Пафосе слово Божье. В 51 г. до н.э. в городе жил известный оратор Марк Туллий Цицерон, являвшийся проконсулом Кипра. Пафос входит в список Всемирного культурного и природного наследия ЮНЕСКО. В Пафосе остались следы древнегреческой цивилизации, датируемые примерно 300 годом до н.э.. В Пафосе располагается большой древнегреческий некрополь под названием Царские гробницы. В Пафосе сохранилось много византийских церквей. В центральной части Като Пафоса на небольшой скале стоит Церковь Панагия Теоскепасти, основанная в X веке и восстановленная в 1923 году. Недалеко от неё расположена Церковь Агиа Кириаки (Панагия Хрисополитисса), построенная в XIII веке на месте ранневизантийской базилики IV века, в ареале которой находится столб, к которому во время бичевания римлянами был привязан апостол Павел. Чуть западнее Агиа Кириаки расположены древнегреческие катакомбы, в которых позже скрывались от римских властей первые христиане. На западной стороне гавани Пафос находится основная городская достопримечательность — Пафосский замок, основанный византийцами и несколько раз перестраивавшийся Лузиньянами, венецианцами и турками."
     },
-	    {
+    {
       "name": "Protaras",
       "name_nt": "Πρωταράς",
       "name_ru": "Протарас",
@@ -19992,127 +20032,194 @@
     }
   ],
   "visit": [
-  {
-    "start_date": "21.08.2020",
-    "end_date": "05.09.2020",
-    "city": [
-      "poltava",
-      "krasnohrad",
-      "novomoskovsk",
-      "orliwschtschyna",
-      "zaporizhzhya",
-      "vasylivka",
-      "terpinnia",
-      "stone_tomb",
-      "melitopol",
-      "shchaslyvtseve",
-      "lemurialake",
-      "strohaniwka",
-      "henichesk",
-      "strilkove",
-      "syvash",
-      "pryozerne",
-      "berdyansk",
-      "stonegraves",
-      "mariupol",
-      "solone",
-      "petrykivka",
-      "kytaihorod",
-      "komendantivka",
-      "kozelshchyna"
-    ]
-  },
-  {
-    "start_date": "08.08.2020",
-    "end_date": "09.08.2020",
-    "city": [
-      "poltava"
-    ]
-  },
-  {
-    "start_date": "26.06.2020",
-    "end_date": "11.07.2020",
-    "city": [
-      "kherson",
-      "skadovsk",
-      "oleshkysands",
-      "oleshky",
-      "zelenikhutorytavrii",
-      "holaprystan",
-      "lazurne",
-      "kamkyanskasich",
-      "beryslav",
-      "kakhovka",
-      "novakakhovka",
-      "lazurne",
-      "mykolayiv",
-      "pelahiivka",
-      "khutirnadiia",
-      "kropyvnytskyi"
-    ]
-  },
-  {
-    "start_date": "20.06.2020",
-    "end_date": "21.06.2020",
-    "city": [
-      "nizhin",
-      "hanninapustin",
-      "vyshenky",
-      "baturin"
-    ]
-  },
-  {
-    "start_date": "6.06.2020",
-    "end_date": "8.06.2020",
-    "city": [
-      "korsun-shevchenkivskiy",
-      "kornilivka",
-      "moshny",
-      "cherkasy",
-      "chihirin",
-      "chyhyrynska_aes",
-      "subotiv",
-      "motronynskiy_monastery",
-      "buda",
-      "shevchenkove",
-      "budyshche",
-      "moryntsi",
-      "talne",
-      "uman"
-    ]
-  },
-  {
-    "start_date": "31.05.2020",
-    "end_date": "31.05.2020",
-    "city": [
-      "kopyliv",
-      "tomashivka",
-      "fastiv",
-      "vasilkiv"
-    ]
-  },
-  {
-    "start_date": "09.05.2020",
-    "end_date": "11.05.2020",
-    "city": [
-      "sarny",
-      "kovel",
-      "svitiaz",
-      "volodimir_volinskiy",
-	  "lutsk",
-      "tarakaniv_fort",
-	  "dubno_city",
-      "klevan",
-      "rivne"
-    ]
-  },  
-  {
-    "start_date": "03.04.2020",
-    "end_date": "03.04.2020",
-    "city": [
-      "sulymivka"
-    ]
-  },
+    {
+      "start_date": "24.10.2020",
+      "end_date": "30.10.2020",
+      "city": [
+        "ostrog_city",
+        "mezhirich",
+        "bilokrinitsa",
+        "kremenets",
+        "vishnivets",
+        "zbarazh",
+        "ternopil",
+        "berezhany-!!!",
+        "pomoriany-!!!",
+        "zolochiv-!!!",
+        "chortkiv-!!!",
+        "khreschatik-!!!",
+        "zalischiki-!!!",
+        "chervonogorod-!!!",
+        "nagorianka-!!!",
+        "dolina-!!!",
+        "budanov-!!!",
+        "terebovlia-!!!",
+        "podgora-!!!",
+        "mikulintsi-!!!",
+        "zarvanitsa-!!!",
+        "pidzamochok-!!!",
+        "buchach-!!!",
+        "yazlovets-!!!",
+        "zolotyipotik-!!!",
+        "koropets-!!!",
+        "ivano-frankivsk",
+        "kosov-!!!",
+        "kolomiya-!!!",
+        "krilos-!!!",
+        "galich-!!!",
+        "shebchenkove-!!!",
+        "rogatin-!!!",
+        "svirzh-!!!",
+        "univ-!!!",
+        "zolochiv-!!!",
+        "olesko",
+        "brody-!!!",
+        "pliasheva-!!!",
+        "berestechko-!!!"
+      ]
+    },
+    {
+      "start_date": "14.10.2020",
+      "end_date": "14.10.2020",
+      "city": [
+        "vitachev"
+      ]
+    },
+    {
+      "start_date": "04.10.2020",
+      "end_date": "04.10.2020",
+      "city": [
+        "yasnogorodka"
+      ]
+    },
+    {
+      "start_date": "26.09.2020",
+      "end_date": "26.09.2020",
+      "city": [
+        "korostishiv"
+      ]
+    },
+    {
+      "start_date": "21.08.2020",
+      "end_date": "05.09.2020",
+      "city": [
+        "poltava",
+        "krasnohrad",
+        "novomoskovsk",
+        "orliwschtschyna",
+        "zaporizhzhya",
+        "vasylivka",
+        "terpinnia",
+        "stone_tomb",
+        "melitopol",
+        "shchaslyvtseve",
+        "lemurialake",
+        "strohaniwka",
+        "henichesk",
+        "strilkove",
+        "syvash",
+        "pryozerne",
+        "berdyansk",
+        "stonegraves",
+        "mariupol",
+        "solone",
+        "petrykivka",
+        "kytaihorod",
+        "komendantivka",
+        "kozelshchyna"
+      ]
+    },
+    {
+      "start_date": "08.08.2020",
+      "end_date": "09.08.2020",
+      "city": [
+        "poltava"
+      ]
+    },
+    {
+      "start_date": "26.06.2020",
+      "end_date": "11.07.2020",
+      "city": [
+        "kherson",
+        "skadovsk",
+        "oleshkysands",
+        "oleshky",
+        "zelenikhutorytavrii",
+        "holaprystan",
+        "lazurne",
+        "kamkyanskasich",
+        "beryslav",
+        "kakhovka",
+        "novakakhovka",
+        "lazurne",
+        "mykolayiv",
+        "pelahiivka",
+        "khutirnadiia",
+        "kropyvnytskyi"
+      ]
+    },
+    {
+      "start_date": "20.06.2020",
+      "end_date": "21.06.2020",
+      "city": [
+        "nizhin",
+        "hanninapustin",
+        "vyshenky",
+        "baturin"
+      ]
+    },
+    {
+      "start_date": "6.06.2020",
+      "end_date": "8.06.2020",
+      "city": [
+        "korsun-shevchenkivskiy",
+        "kornilivka",
+        "moshny",
+        "cherkasy",
+        "chihirin",
+        "chyhyrynska_aes",
+        "subotiv",
+        "motronynskiy_monastery",
+        "buda",
+        "shevchenkove",
+        "budyshche",
+        "moryntsi",
+        "talne",
+        "uman"
+      ]
+    },
+    {
+      "start_date": "31.05.2020",
+      "end_date": "31.05.2020",
+      "city": [
+        "kopyliv",
+        "tomashivka",
+        "fastiv",
+        "vasilkiv"
+      ]
+    },
+    {
+      "start_date": "09.05.2020",
+      "end_date": "11.05.2020",
+      "city": [
+        "sarny",
+        "kovel",
+        "svitiaz",
+        "volodimir_volinskiy",
+        "lutsk",
+        "tarakaniv_fort",
+        "dubno_city",
+        "klevan",
+        "rivne"
+      ]
+    },
+    {
+      "start_date": "03.04.2020",
+      "end_date": "03.04.2020",
+      "city": [
+        "sulymivka"
+      ]
+    },
     {
       "start_date": "02.04.2020",
       "end_date": "02.04.2020",
@@ -20120,31 +20227,31 @@
         "oster"
       ]
     },
-  {
-    "start_date": "02.02.2020",
-    "end_date": "18.02.2020",
-    "city": [
-      "havana",
-      "vinalesvalley",
-      "cayojutía",
-      "trinidad",
-      "elnichowaterfalls",
-      "varadero",
-      "valladolid",
-      "chichenitza",
-      "cenotesanlorenzooxman",
-      "ekbalam",
-      "cenotexcanche",
-      "lascoloradas",
-      "rialagartos",
-      "belizecity",
-      "bacalar",
-      "mexico",
-      "teotihuacan"
-    ],
-    "photos": "https://quetzal.io.ua/album899300"
-  },
-  {
+    {
+      "start_date": "02.02.2020",
+      "end_date": "18.02.2020",
+      "city": [
+        "havana",
+        "vinalesvalley",
+        "cayojutía",
+        "trinidad",
+        "elnichowaterfalls",
+        "varadero",
+        "valladolid",
+        "chichenitza",
+        "cenotesanlorenzooxman",
+        "ekbalam",
+        "cenotexcanche",
+        "lascoloradas",
+        "rialagartos",
+        "belizecity",
+        "bacalar",
+        "mexico",
+        "teotihuacan"
+      ],
+      "photos": "https://quetzal.io.ua/album899300"
+    },
+    {
       "start_date": "13.11.2019",
       "end_date": "17.11.2019",
       "city": [
