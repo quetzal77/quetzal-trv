@@ -20333,6 +20333,17 @@
   ],
   "visit": [
     {
+      "start_date": "01.05.2021",
+      "end_date": "10.05.2021",
+      "city": [
+        "svitiaz",
+        "zimne",
+        "sokal",
+        "zhovkva",
+        "lviv"
+      ]
+    },
+    {
       "start_date": "24.10.2020",
       "end_date": "30.10.2020",
       "city": [
