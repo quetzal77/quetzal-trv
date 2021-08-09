@@ -124,6 +124,13 @@
       "name_full": "Греция - Ελλάδα - Greece"
     },
     {
+      "country_id": "GE",
+      "continent_id": "AS",
+      "short_name": "georgia",
+      "small_flag_img": "-547px -741px",
+      "name_full": "Грузия - საქართველო - Georgia"
+    },
+    {
       "country_id": "DK",
       "continent_id": "EU",
       "short_name": "denmark",
