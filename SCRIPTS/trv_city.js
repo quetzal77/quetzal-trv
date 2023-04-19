@@ -26,14 +26,14 @@ function HTML_CityDetais(cityId) {
     var city = local[1];
 
     //Country name that this city belongs to
-    result = "<div class='countrydetail'><b>Страна:</b> <a id='" + city.getCountryId() + "' title='Перейти к информации о стране' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+    result = "<div class='countrydetail'><b>Країна:</b> <a id='" + city.getCountryId() + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
              			     getFullRusCountryName(city.getCountryId()) + "</a></div>";
 
     //Country name that this city belongs to
-    result += "<div class='countrydetail'><b>Регион:</b> " + city.getRegion().setFullRegionName() + "</div>";
+    result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";
 
     //Capital identificator
-    if (city.capital == true) {result += "<div class='countrydetail'><b>Столица:</b> <img src='IMG/icon/crown.png' class='crown' /></div>"}
+    if (city.capital == true) {result += "<div class='countrydetail'><b>Столиця:</b> <img src='IMG/icon/crown.png' class='crown' /></div>"}
 
     //Link to google map
     var lat = city.lat;
@@ -44,17 +44,17 @@ function HTML_CityDetais(cityId) {
     }
 
     if (lat != undefined){
-        result += "<div class='countrydetail'><b>Координаты:</b> <a title='Посмотреть на карте' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
+        result += "<div class='countrydetail'><b>Координати:</b> <a title='Подивитись на мапі' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
               				lat + " с.ш. " + long + " в.д.</a></div>";
     }
 
     //City description
     if (city.description != undefined){
-        result += "<div class='countrydetail'><b>Описаниие:</b> " + city.description + "</div>";
+        result += "<div class='countrydetail'><b>Опис:</b> " + city.description + "</div>";
     }
 
     //Date of city visit
-    result += "<div class='countrydetail'><b>Дата посещения:</b> " + createListOfVisites() + "</div>";
+    result += "<div class='countrydetail'><b>Дата візитів:</b> " + createListOfVisites() + "</div>";
 
     //Create list of pictures
     var imagesList = "";

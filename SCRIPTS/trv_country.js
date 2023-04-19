@@ -18,8 +18,8 @@ function createCountryPage_HTML(countryId) {
     "<div class='countrylabel h3'>" + local[1].setFullCountryName() + "</div>" +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
-    "<div class='switchlink_l float_l'>Мои локации...</div>" +
-    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+    "<div class='switchlink_l float_l'>Мої локації...</div>" +
+    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
     "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(country[0]);
 
@@ -37,7 +37,7 @@ function getCountryDetails_HTML() {
     var country = local[1];
 
     //01. Total number of visited cities
-    result += "<div class='countrydetail'><b>Всего посещено:</b> " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()) +
+    result += "<div class='countrydetail'><b>Усього відвідано:</b> " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()) +
               " (" + setRegionsNumberWithCorrectEnd(country.getNumberOfVisitedRegions()) + ")</div>";
 
     //02.-03. Stories and Photos
@@ -81,7 +81,7 @@ function getCountryDetails_HTML() {
         }
     });
 
-    result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>Отчеты:</b> " + ListOfStories + "</div>" : "";
+    result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>Звіти:</b> " + ListOfStories + "</div>" : "";
 
     result += (photoAlbumLinks.length > 0) ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
     //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
@@ -128,7 +128,7 @@ function getFlagEmblem_HTML(country) {
 //05.04 Country page with list of Visits
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +
+        "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти до списку локації' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локації</a></div>" +
         "<div class='switchlink float_l'>Мої візити...</div><div class='clear' />" +
         createListOfVisites();
 }
@@ -136,8 +136,8 @@ function OpenListOfCountryVisits(countryId) {
 //05.05 Country page with list of Cities
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'>Мои локации...</div>" +
-        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+        "<div class='switchlink_l float_l'>Мої локації...</div>" +
+        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
         "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
     ;
 }
@@ -145,16 +145,16 @@ function OpenListOfCountryCities(countryId) {
 //05.06 List of regions and cities
 function getCitiesAndRegionsList_HTML () {
     var country = local[1];
-    var result = "<div class='countrydetail'><b>Полный список посещенных регионов и локаций:</b></div>";
+    var result = "<div class='countrydetail'><b>Повний список відвіданих регіонів та локацій:</b></div>";
 
     $.each (regionsVisited, function( i, region ){
         if (region.country_id == country.country_id) {
-            result += "<div class='clear countryregion'><b>Регион:</b> " + region.setFullRegionName() + "</div>";
-            result += "<div class='cityrow'>&#8226; <b>Локации: </b>";
+            result += "<div class='clear countryregion'><b>Регіон:</b> " + region.setFullRegionName() + "</div>";
+            result += "<div class='cityrow'>&#8226; <b>Локації: </b>";
             var ListOfLocations = "";
             $.each (citiesVisited, function( i, city ){
                     if (region.region_id == city.region_id) {
-                        ListOfLocations += "<a title='Перейти к информации о локации' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
+                        ListOfLocations += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
                                            " onmouseover='' style='cursor: pointer;'>" + city.name_ru + "</a>, ";
                     }
 
