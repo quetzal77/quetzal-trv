@@ -2,7 +2,7 @@
   "continent": [
     {
       "continent_id": "AS",
-      "name_ru": "Азия"
+      "name_ru": "Азія"
     },
     {
       "continent_id": "AF",
@@ -10,11 +10,11 @@
     },
     {
       "continent_id": "EU",
-      "name_ru": "Европа"
+      "name_ru": "Європа"
     },
     {
       "continent_id": "NA",
-      "name_ru": "Северная Америка"
+      "name_ru": "Північна Америка"
     }
   ],
   "country": [
@@ -23,14 +23,14 @@
       "continent_id": "AS",
       "short_name": "abkhazia",
       "small_flag_img": "-391px -741px",
-      "name_full": "Абхазия - Апсны - Abkhazia"
+      "name_full": "Абхазія - Апсны - Abkhazia"
     },
     {
       "country_id": "AT",
       "continent_id": "EU",
       "short_name": "austria",
       "small_flag_img": "-430px -3px",
-      "name_full": "Австрия - Österreich - Austria"
+      "name_full": "Австрія - Österreich - Austria"
     },
     {
       "country_id": "AZ",
@@ -44,7 +44,7 @@
       "continent_id": "EU",
       "short_name": "albania",
       "small_flag_img": "-197px -3px",
-      "name_full": "Албания - Shqipëria - Albania"
+      "name_full": "Албанія - Shqipëria - Albania"
     },
     {
       "country_id": "AD",
@@ -58,126 +58,126 @@
       "continent_id": "EU",
       "short_name": "belarus",
       "small_flag_img": "-42px -108px",
-      "name_full": "Беларусь - Беларусь - Belarus"
+      "name_full": "Білорусь - Беларусь - Belarus"
     },
     {
       "country_id": "BZ",
       "continent_id": "NA",
       "short_name": "belize",
       "small_flag_img": "-80px -108px",
-      "name_full": "Белиз - Belize - Belize"
+      "name_full": "Беліз - Belize - Belize"
     },
     {
       "country_id": "BE",
       "continent_id": "EU",
       "short_name": "belgium",
       "small_flag_img": "-80px -55px",
-      "name_full": "Бельгия - België - Belgium"
+      "name_full": "Бельгія - België - Belgium"
     },
     {
       "country_id": "BG",
       "continent_id": "EU",
       "short_name": "bulgaria",
       "small_flag_img": "-158px -55px",
-      "name_full": "Болгария - България - Bulgaria"
+      "name_full": "Болгарія - България - Bulgaria"
     },
     {
       "country_id": "BA",
       "continent_id": "EU",
       "short_name": "bosniaherzegovina",
       "small_flag_img": "-624px -3px",
-      "name_full": "Босния и Герцеговина - Bosna i Hercegovina - Bosnia and Herzegovina"
+      "name_full": "Боснія і Герцеговина - Bosna i Hercegovina - Bosnia and Herzegovina"
     },
     {
       "country_id": "VA",
       "continent_id": "EU",
       "short_name": "vatican",
       "small_flag_img": "-508px -688px",
-      "name_full": "Ватикан - Status Civitatis Vaticanae - Vatican City State"
+      "name_full": "Ватікан - Status Civitatis Vaticanae - Vatican City State"
     },
     {
       "country_id": "HU",
       "continent_id": "EU",
       "short_name": "hungary",
       "small_flag_img": "-546px -266px",
-      "name_full": "Венгрия - Magyar Köztársaság - Hungary"
+      "name_full": "Угорщина - Magyar Köztársaság - Hungary"
     },
     {
       "country_id": "DE",
       "continent_id": "EU",
       "short_name": "germany",
       "small_flag_img": "-197px -161px",
-      "name_full": "Германия - Deutschland - Germany"
+      "name_full": "Німеччина - Deutschland - Germany"
     },
     {
       "country_id": "GI",
       "continent_id": "EU",
       "short_name": "gibraltar",
       "small_flag_img": "-546px -216px",
-      "name_full": "Гибралтар - Gibraltar - Gibraltar"
+      "name_full": "Гібралтар - Gibraltar - Gibraltar"
     },
     {
       "country_id": "GR",
       "continent_id": "EU",
       "short_name": "greece",
       "small_flag_img": "-120px -266px",
-      "name_full": "Греция - Ελλάδα - Greece"
+      "name_full": "Греція - Ελλάδα - Greece"
     },
     {
       "country_id": "GE",
       "continent_id": "AS",
       "short_name": "georgia",
       "small_flag_img": "-547px -741px",
-      "name_full": "Грузия - საქართველო - Georgia"
+      "name_full": "Грузія - საქართველო - Georgia"
     },
     {
       "country_id": "DK",
       "continent_id": "EU",
       "short_name": "denmark",
       "small_flag_img": "-275px -161px",
-      "name_full": "Дания - Danmark - Denmark"
+      "name_full": "Данія - Danmark - Denmark"
     },
     {
       "country_id": "EG",
       "continent_id": "AF",
       "short_name": "egypt",
       "small_flag_img": "-508px -161px",
-      "name_full": "Египет - جمهورية مصر العربية - Egypt"
+      "name_full": "Єгипет - جمهورية مصر العربية - Egypt"
     },
     {
       "country_id": "IL",
       "continent_id": "AS",
       "short_name": "israel",
       "small_flag_img": "-3px -319px",
-      "name_full": "Израиль - לארשי תנידמ - Israel"
+      "name_full": "Ізраїль - לארשי תנידמ - Israel"
     },
     {
       "country_id": "IN",
       "continent_id": "AS",
       "short_name": "india",
       "small_flag_img": "-80px -319px",
-      "name_full": "Индия - भारत - India"
+      "name_full": "Індія - भारत - India"
     },
     {
       "country_id": "JO",
       "continent_id": "AS",
       "short_name": "jordan",
       "small_flag_img": "-391px -319px",
-      "name_full": "Иордания - الأردن - Jordan"
+      "name_full": "Йорданія - الأردن - Jordan"
     },
     {
       "country_id": "ES",
       "continent_id": "EU",
       "short_name": "spain",
       "small_flag_img": "-624px -161px",
-      "name_full": "Испания - España - Spain"
+      "name_full": "Іспанія - España - Spain"
     },
     {
       "country_id": "IT",
       "continent_id": "EU",
       "short_name": "italy",
       "small_flag_img": "-275px -319px",
-      "name_full": "Италия - Italia - Italy"
+      "name_full": "Італія - Italia - Italy"
     },
     {
       "country_id": "KZ",
@@ -191,14 +191,14 @@
       "continent_id": "AS",
       "short_name": "cyprus",
       "small_flag_img": "-120px -161px",
-      "name_full": "Кипр - Κύπρος - Cyprus"
+      "name_full": "Кіпр - Κύπρος - Cyprus"
     },
     {
       "country_id": "KG",
       "continent_id": "AS",
       "short_name": "kyrgyzstan",
       "small_flag_img": "-508px -319px",
-      "name_full": "Киргизия - Кыргы́з - Kyrgyzstan"
+      "name_full": "Киргизстан - Кыргы́з - Kyrgyzstan"
     },
     {
       "country_id": "CN",
@@ -226,14 +226,14 @@
       "continent_id": "EU",
       "short_name": "latvia",
       "small_flag_img": "-585px -372px",
-      "name_full": "Латвия - Latvija - Latvia"
+      "name_full": "Латвія - Latvija - Latvia"
     },
     {
       "country_id": "LB",
       "continent_id": "AS",
       "short_name": "lebanon",
       "small_flag_img": "-275px -372px",
-      "name_full": "Ливан - لبنان - Lebanon"
+      "name_full": "Ліван - لبنان - Lebanon"
     },
     {
       "country_id": "LT",
@@ -247,7 +247,7 @@
       "continent_id": "EU",
       "short_name": "liechtenstein",
       "small_flag_img": "-352px -372px",
-      "name_full": "Лихтенштейн - Fürstentum Liechtenstein - Liechtenstein"
+      "name_full": "Ліхтенштейн - Fürstentum Liechtenstein - Liechtenstein"
     },
     {
       "country_id": "LU",
@@ -261,7 +261,7 @@
       "continent_id": "EU",
       "short_name": "macedonia",
       "small_flag_img": "-275px -424px",
-      "name_full": "Северная Македония - Северна Македонија - North Macedonia"
+      "name_full": "Північна Македонія - Северна Македонија - North Macedonia"
     },
     {
       "country_id": "MT",
@@ -296,56 +296,56 @@
       "continent_id": "EU",
       "short_name": "netherlands",
       "small_flag_img": "-469px -477px",
-      "name_full": "Нидерланды - Nederland - Netherlands"
+      "name_full": "Нідерланди - Nederland - Netherlands"
     },
     {
       "country_id": "NO",
       "continent_id": "EU",
       "short_name": "norway",
       "small_flag_img": "-508px -477px",
-      "name_full": "Норвегия - Norge - Norway"
+      "name_full": "Норвегія - Norge - Norway"
     },
     {
       "country_id": "AE",
       "continent_id": "AS",
       "short_name": "unitedarabianemirates",
       "small_flag_img": "-42px -3px",
-      "name_full": "Объединенные Арабские Эмираты - الإمارات العربية المتحدة - United Arabian Emirates"
+      "name_full": "Об'єднані Арабські Емірати - الإمارات العربية المتحدة - United Arabian Emirates"
     },
     {
       "country_id": "PL",
       "continent_id": "EU",
       "short_name": "poland",
       "small_flag_img": "-314px -530px",
-      "name_full": "Польша - Rzeczpospolita Polska - Poland"
+      "name_full": "Польща - Rzeczpospolita Polska - Poland"
     },
     {
       "country_id": "PT",
       "continent_id": "EU",
       "short_name": "portugal",
       "small_flag_img": "-507px -530px",
-      "name_full": "Португалия - Portugal - Portugal"
+      "name_full": "Португалія - Portugal - Portugal"
     },
     {
       "country_id": "TA",
       "continent_id": "EU",
       "short_name": "transnistria",
       "small_flag_img": "-469px -741px",
-      "name_full": "Приднестровье - Нистрения - Transnistria"
+      "name_full": "Придністровья - Нистрения - Transnistria"
     },
     {
       "country_id": "RU",
       "continent_id": "EU",
       "short_name": "russia",
       "small_flag_img": "-119px -583px",
-      "name_full": "Россия - Росія - Russia"
+      "name_full": "Росія - Россия - Russia"
     },
     {
       "country_id": "RO",
       "continent_id": "EU",
       "short_name": "romania",
       "small_flag_img": "-42px -583px",
-      "name_full": "Румыния - România - Romania"
+      "name_full": "Румунія - România - Romania"
     },
     {
       "country_id": "SM",
@@ -359,98 +359,98 @@
       "continent_id": "AS",
       "short_name": "northerncyprus",
       "small_flag_img": "-430px -741px",
-      "name_full": "Северный Кипр - Kuzey Kıbrıs - Northern Cyprus"
+      "name_full": "Північний Кіпр - Kuzey Kıbrıs - Northern Cyprus"
     },
     {
       "country_id": "SK",
       "continent_id": "EU",
       "short_name": "slovakia",
       "small_flag_img": "-546px -583px",
-      "name_full": "Словакия - Slovenská - Slovakia"
+      "name_full": "Словаччина - Slovenská - Slovakia"
     },
     {
       "country_id": "SI",
       "continent_id": "EU",
       "short_name": "slovenia",
       "small_flag_img": "-469px -583px",
-      "name_full": "Словения - Slovenija - Slovenia"
+      "name_full": "Словенія - Slovenija - Slovenia"
     },
     {
       "country_id": "US",
       "continent_id": "NA",
       "short_name": "unitedstatesofamerica",
       "small_flag_img": "-391px -688px",
-      "name_full": "Соединённые Штаты Америки - United States of America"
+      "name_full": "Сполучені Штати Америки - United States of America"
     },
     {
       "country_id": "TR",
       "continent_id": "AS",
       "short_name": "turkey",
       "small_flag_img": "-81px -688px",
-      "name_full": "Турция - Türkiye - Turkey"
+      "name_full": "Турція - Türkiye - Turkey"
     },
     {
       "country_id": "UA",
       "continent_id": "EU",
       "short_name": "ukraine",
       "small_flag_img": "-275px -688px",
-      "name_full": "Украина - Україна - Ukraine"
+      "name_full": "Україна - Україна - Ukraine"
     },
     {
       "country_id": "FI",
       "continent_id": "EU",
       "short_name": "finland",
       "small_flag_img": "-42px -214px",
-      "name_full": "Финляндия - Suomi - Finland"
+      "name_full": "Фінляндія - Suomi - Finland"
     },
     {
       "country_id": "FR",
       "continent_id": "EU",
       "short_name": "france",
       "small_flag_img": "-236px -214px",
-      "name_full": "Франция - République française - France"
+      "name_full": "Франція - République française - France"
     },
     {
       "country_id": "HR",
       "continent_id": "EU",
       "short_name": "croatia",
       "small_flag_img": "-469px -266px",
-      "name_full": "Хорватия - Hrvatska - Croatia"
+      "name_full": "Хорватія - Hrvatska - Croatia"
     },
     {
       "country_id": "ME",
       "continent_id": "EU",
       "short_name": "montenegro",
       "small_flag_img": "-119px -424px",
-      "name_full": "Черногория - Црна Гора - Montenegro"
+      "name_full": "Чорногорія - Црна Гора - Montenegro"
     },
     {
       "country_id": "CZ",
       "continent_id": "EU",
       "short_name": "czech",
       "small_flag_img": "-158px -161px",
-      "name_full": "Чехия - Česká - Czech"
+      "name_full": "Чехія - Česká - Czech"
     },
     {
       "country_id": "CH",
       "continent_id": "EU",
       "short_name": "switzerland",
       "small_flag_img": "-313px -108px",
-      "name_full": "Швейцария - Schweizerische Eidgenossenschaft - Switzerland"
+      "name_full": "Швейцарія - Schweizerische Eidgenossenschaft - Switzerland"
     },
     {
       "country_id": "SE",
       "continent_id": "EU",
       "short_name": "sweden",
       "small_flag_img": "-352px -583px",
-      "name_full": "Швеция - Sverige - Sweden"
+      "name_full": "Швеція - Sverige - Sweden"
     },
     {
       "country_id": "EE",
       "continent_id": "EU",
       "short_name": "estonia",
       "small_flag_img": "-469px -161px",
-      "name_full": "Эстония - Eesti - Estonia"
+      "name_full": "Естонія - Eesti - Estonia"
     }
   ]
 }

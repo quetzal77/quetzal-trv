@@ -19,7 +19,7 @@ function createCountryPage_HTML(countryId) {
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l float_l'>Мои локации...</div>" +
-    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
     "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(country[0]);
 
@@ -27,7 +27,7 @@ function createCountryPage_HTML(countryId) {
     drawMap();
 
     //Add copy marker and bottom line
-    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2023, Slavutskyy Oleksiy";
     document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
@@ -129,7 +129,7 @@ function getFlagEmblem_HTML(country) {
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локации</a></div>" +
-        "<div class='switchlink float_l'>Мои визиты...</div><div class='clear' />" +
+        "<div class='switchlink float_l'>Мої візити...</div><div class='clear' />" +
         createListOfVisites();
 }
 
@@ -137,7 +137,7 @@ function OpenListOfCountryVisits(countryId) {
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
         "<div class='switchlink_l float_l'>Мои локации...</div>" +
-        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти к списку визитов' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
         "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
     ;
 }

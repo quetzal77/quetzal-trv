@@ -172,7 +172,7 @@ function setRegionsNumberWithCorrectEnd (number) {
 
 //02.09 Return russian month name
 function getRusMonthName (number) {
-    var monthSList = {1: "января", 2: "февраля", 3: "марта", 4: "апреля", 5: "мая", 6: "июня", 7: "июля", 8: "августа", 9: "сентября", 10: "октября", 11: "ноября", 12: "декабря"};
+    var monthSList = {1: "січня", 2: "лютого", 3: "березня", 4: "квітня", 5: "травня", 6: "червня", 7: "липня", 8: "серпня", 9: "вересня", 10: "жовтня", 11: "листопада", 12: "грудня"};
     return monthSList[number];
 }
 

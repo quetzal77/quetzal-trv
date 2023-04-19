@@ -16,7 +16,7 @@ function createCityPage_HTML(cityId) {
                                                          HTML_CityDetais(cityId)
 
     //Add copy marker and bottom line
-    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2023, Slavutskyy Oleksiy";
     document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 

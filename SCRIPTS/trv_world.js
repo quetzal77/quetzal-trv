@@ -14,8 +14,8 @@ function createWorldPage_HTML () {
     document.getElementById("mainSection").innerHTML =
         "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
         "<div id='countryToVisitSelector'>" +
-		    "<div class='switchlink_l float_l'>Мои страны...</div>" +
-            "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+		    "<div class='switchlink_l float_l'>Мої країни...</div>" +
+            "<div class='switchlink float_l'><a title='Перейти до списку візитів' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
             "<br><br>" +
             "<div class='clear' />" + createWorldPageFrontView() + "</div>";
 
@@ -23,7 +23,7 @@ function createWorldPage_HTML () {
     drawMap();
 
     //Add copy marker and bottom line
-    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2017, Slavutskyy Oleksiy";
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2023, Slavutskyy Oleksiy";
     document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 
@@ -42,7 +42,7 @@ function createWorldPageFrontView() {
             if (country.continent_id == cont.continent_id) {
                 countriesPerContinentNumber += 1;
 
-                listOfCountries += "<a id='" + country.short_name + "' title='Перейти к информации о стране' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                listOfCountries += "<a id='" + country.short_name + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
 //                "<a href='index.html?country=" + country.short_name + "' onmouseover='' style='cursor: pointer;'>" +
                 "<img src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' style='background-position:" + country.small_flag_img + "' /></a>"
             }
@@ -69,16 +69,16 @@ function createWorldMap_HTML(countries) {
 //04.04 World page with list of Visits
 function OpenListOfWorldVisits() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'><a title='Перейти к списку стран' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мои страны</a></div>" +
-        "<div class='switchlink float_l'>Мои визиты...</div>" +
+        "<div class='switchlink_l float_l'><a title='Перейти до списку країн' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мої країни</a></div>" +
+        "<div class='switchlink float_l'>Мої візити...</div>" +
         "<br><br>" + createListOfVisites();
 }
 
 //04.05 World page with list of Countries
 function OpenListOfWorldCountries() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'>Мои страны...</div>" +
-        "<div class='switchlink float_l'><a title='Перейти к списку визитов' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мои визиты</a></div>" +
+        "<div class='switchlink_l float_l'>Мої країни...</div>" +
+        "<div class='switchlink float_l'><a title='Перейти до списку візитів' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
         "<br><br>" + createWorldPageFrontView();
 
      //Calculate number of location visited and add them to front page
