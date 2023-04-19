@@ -7,27 +7,27 @@
     },
     {
       "type_id": "2",
-      "name_ru": "река",
+      "name_ru": "річка",
       "name": "river"
     },
     {
       "type_id": "3",
-      "name_ru": "водопад",
+      "name_ru": "водоспад",
       "name": "waterfall"
     },
     {
       "type_id": "4",
-      "name_ru": "залив",
+      "name_ru": "затока",
       "name": "gulf"
     },
     {
       "type_id": "5",
-      "name_ru": "мыс",
+      "name_ru": "мис",
       "name": "cape"
     },
     {
       "type_id": "6",
-      "name_ru": "дамба",
+      "name_ru": "плотина",
       "name": "dam"
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       "type_id": "9",
-      "name_ru": "пещера",
+      "name_ru": "печера",
       "name": "cave"
     },
     {
@@ -52,12 +52,12 @@
     },
     {
       "type_id": "11",
-      "name_ru": "катакомбы",
+      "name_ru": "катакомби",
       "name": "catacombs"
     },
     {
       "type_id": "12",
-      "name_ru": "каньон",
+      "name_ru": "каньйон",
       "name": "canyon"
     },
     {
@@ -67,7 +67,7 @@
     },
     {
       "type_id": "14",
-      "name_ru": "церковь",
+      "name_ru": "церква",
       "name": "church"
     },
     {
@@ -77,32 +77,32 @@
     },
     {
       "type_id": "16",
-      "name_ru": "исторический парк",
+      "name_ru": "історичний парк",
       "name": "historical preserve"
     },
     {
       "type_id": "17",
-      "name_ru": "историко-природный парк",
+      "name_ru": "історико-природний парк",
       "name": "historical-natural preserve"
     },
     {
       "type_id": "18",
-      "name_ru": "природный парк",
+      "name_ru": "природний парк",
       "name": "natural preserve"
     },
     {
       "type_id": "19",
-      "name_ru": "горнолыжный курорт",
+      "name_ru": "гірськолижний курорт",
       "name": "ski resort"
     },
     {
       "type_id": "20",
-      "name_ru": "бухта",
+      "name_ru": "затока",
       "name": "bay"
     },
     {
       "type_id": "21",
-      "name_ru": "мемориал",
+      "name_ru": "меморіал",
       "name": "memorial"
     },
     {
@@ -967,14 +967,14 @@
       "country_id": "EG",
       "region_id": "EG-DK",
       "name": "Ad Daqahlīyah",
-      "name_ru": "Дакахлия",
+      "name_ru": "Дакахлія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-BA",
       "name": "Al Bahr al Ahmar",
-      "name_ru": "Красное Море",
+      "name_ru": "Червоне Море",
       "active": "Y"
     },
     {
@@ -988,63 +988,63 @@
       "country_id": "EG",
       "region_id": "EG-FYM",
       "name": "Al Fayyūm",
-      "name_ru": "Файюм",
+      "name_ru": "Фаюм",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-GH",
       "name": "Al Gharbīyah",
-      "name_ru": "Гарбия",
+      "name_ru": "Гарбія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-ALX",
       "name": "Al Iskandarīyah",
-      "name_ru": "Александрия",
+      "name_ru": "Александрія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-IS",
       "name": "Al Ismā`īlīyah",
-      "name_ru": "Исмаилия",
+      "name_ru": "Ісмаїлія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-GZ",
       "name": "Al Jīzah",
-      "name_ru": "Гиза",
+      "name_ru": "Гіза",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-MNF",
       "name": "Al Minūfīyah",
-      "name_ru": "Минуфия",
+      "name_ru": "Мінуфія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-MN",
       "name": "Al Minyā",
-      "name_ru": "Минья",
+      "name_ru": "Міня",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-C",
       "name": "Al Qāhirah",
-      "name_ru": "Каир",
+      "name_ru": "Каїр",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-KB",
       "name": "Al Qalyūbīyah",
-      "name_ru": "Кальюбия",
+      "name_ru": "Кальюбія",
       "active": "Y"
     },
     {
@@ -1058,7 +1058,7 @@
       "country_id": "EG",
       "region_id": "EG-WAD",
       "name": "Al Wādī al Jadīd",
-      "name_ru": "Новая Долина",
+      "name_ru": "Нова Долина",
       "active": "Y"
     },
     {
@@ -1121,7 +1121,7 @@
       "country_id": "EG",
       "region_id": "EG-KFS",
       "name": "Kafr ash Shaykh",
-      "name_ru": "Кафр-эш-Шейх",
+      "name_ru": "Кафр-еш-Шейх",
       "active": "Y"
     },
     {
@@ -1142,7 +1142,7 @@
       "country_id": "EG",
       "region_id": "EG-SIN",
       "name": "Shamal Sīnā'",
-      "name_ru": "Северный Синай",
+      "name_ru": "Північний Синай",
       "active": "Y"
     },
     {
@@ -1156,14 +1156,14 @@
       "country_id": "EG",
       "region_id": "EG-HT",
       "name": "Hala'Ib Triangle",
-      "name_ru": "Треугольник Халаиба",
+      "name_ru": "Трикутник Халаїба",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-TER",
       "name": "Disputed Territory",
-      "name_ru": "Спорные территории",
+      "name_ru": "Спірні території",
       "active": "Y"
     },
     {

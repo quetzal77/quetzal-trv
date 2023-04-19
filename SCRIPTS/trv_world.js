@@ -51,7 +51,7 @@ function createWorldPageFrontView() {
                   "</div>" + listOfCountries + "</div>";
     });
     result += createWorldMap_HTML(countries);
-    result += "<div class='countryhead'>Всего: " + setCountriesNumberWithCorrectEnd(countries.length) + "<span id='totalCitiesNum'></span></div></div>";
+    result += "<div class='countryhead'>Усього: " + setCountriesNumberWithCorrectEnd(countries.length) + "<span id='totalCitiesNum'></span></div></div>";
     return result;
 }
 
