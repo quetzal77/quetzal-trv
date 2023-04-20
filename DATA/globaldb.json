@@ -1065,14 +1065,14 @@
       "country_id": "EG",
       "region_id": "EG-SHR",
       "name": "Ash Sharqīyah",
-      "name_ru": "Шаркия",
+      "name_ru": "Шаркія",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-SUZ",
       "name": "As Suways",
-      "name_ru": "Суэц",
+      "name_ru": "Ас-Сувейс",
       "active": "Y"
     },
     {
@@ -1093,35 +1093,35 @@
       "country_id": "EG",
       "region_id": "EG-BNS",
       "name": "Banī Suwayf",
-      "name_ru": "Бени-Суэйф",
+      "name_ru": "Бені-Сувейф",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-PTS",
       "name": "Būr Sa`īd",
-      "name_ru": "Порт-Саид",
+      "name_ru": "Порт-Саїд",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-DT",
       "name": "Dumyāt",
-      "name_ru": "Думьят",
+      "name_ru": "Дум'ят",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-JS",
       "name": "Janūb Sīnā'",
-      "name_ru": "Южный Синай",
+      "name_ru": "Південний Синай",
       "active": "Y"
     },
     {
       "country_id": "EG",
       "region_id": "EG-KFS",
       "name": "Kafr ash Shaykh",
-      "name_ru": "Кафр-еш-Шейх",
+      "name_ru": "Кафр-аш-Шейх",
       "active": "Y"
     },
     {
@@ -1135,7 +1135,7 @@
       "country_id": "EG",
       "region_id": "EG-KN",
       "name": "Qinā",
-      "name_ru": "Кена",
+      "name_ru": "Кіна",
       "active": "Y"
     },
     {
@@ -1170,56 +1170,56 @@
       "country_id": "ABH",
       "region_id": "ABH-AB",
       "name": "Abkhazia",
-      "name_ru": "Абхазия",
+      "name_ru": "Абхазія",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_SU",
       "name": "Sukhumi District",
-      "name_ru": "Сухумский район",
+      "name_ru": "Сухумський район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GA",
       "name": "Gagra District",
-      "name_ru": "Гагрский район",
+      "name_ru": "Ґагрський район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GU",
       "name": "Gudauta District",
-      "name_ru": "Гудаутский район",
+      "name_ru": "Гудаутський район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GL",
       "name": "Gulripsh District",
-      "name_ru": "Гулрыпшский район",
+      "name_ru": "Ґулрипшський район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_OC",
       "name": "Ochamchira District",
-      "name_ru": "Очамчырский район",
+      "name_ru": "Очамчирський район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_TQ",
       "name": "Tquarchal District",
-      "name_ru": "Ткварчельский (Ткуарчалский) район",
+      "name_ru": "Ткварчельський (Ткуарчалський) район",
       "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GI",
       "name": "Gali District",
-      "name_ru": "Гальский (Галский) район",
+      "name_ru": "Гальський (Галський) район",
       "active": "Y"
     },
     {
@@ -1233,7 +1233,7 @@
       "country_id": "AL",
       "region_id": "AL-09",
       "name": "Dibër",
-      "name_ru": "Дибра",
+      "name_ru": "Дібер",
       "active": "Y"
     },
     {
@@ -1247,21 +1247,21 @@
       "country_id": "AL",
       "region_id": "AL-03",
       "name": "Elbasan",
-      "name_ru": "Эльбасан",
+      "name_ru": "Ельбасан",
       "active": "Y"
     },
     {
       "country_id": "AL",
       "region_id": "AL-04",
       "name": "Fier",
-      "name_ru": "Фиери",
+      "name_ru": "Фїєри",
       "active": "Y"
     },
     {
       "country_id": "AL",
       "region_id": "AL-05",
       "name": "Gjirokastër",
-      "name_ru": "Гирокастра",
+      "name_ru": "Гірокастра",
       "active": "Y"
     },
     {
@@ -1296,14 +1296,14 @@
       "country_id": "AL",
       "region_id": "AL-11",
       "name": "Tiranë",
-      "name_ru": "Тирана",
+      "name_ru": "Тірана",
       "active": "Y"
     },
     {
       "country_id": "AL",
       "region_id": "AL-12",
       "name": "Vlorë",
-      "name_ru": "Влёра",
+      "name_ru": "Вльора",
       "active": "Y"
     },
     {
@@ -1317,21 +1317,21 @@
       "country_id": "AT",
       "region_id": "AT-2",
       "name": "Carinthia (Karnten)",
-      "name_ru": "Каринтия",
+      "name_ru": "Каринтія",
       "active": "Y"
     },
     {
       "country_id": "AT",
       "region_id": "AT-3",
       "name": "Lower Austria (Niederosterreich)",
-      "name_ru": "Нижняя Австрия",
+      "name_ru": "Нижня Австрія",
       "active": "Y"
     },
     {
       "country_id": "AT",
       "region_id": "AT-4",
       "name": "Upper Austria (Oberosterreich)",
-      "name_ru": "Верхняя Австрия",
+      "name_ru": "Верхня Австрія",
       "active": "Y"
     },
     {
@@ -1345,14 +1345,14 @@
       "country_id": "AT",
       "region_id": "AT-6",
       "name": "Styria (Steiermark)",
-      "name_ru": "Штирия",
+      "name_ru": "Штирія",
       "active": "Y"
     },
     {
       "country_id": "AT",
       "region_id": "AT-7",
       "name": "Tyrol (Tirol)",
-      "name_ru": "Тироль",
+      "name_ru": "Тіроль",
       "active": "Y"
     },
     {
@@ -1366,287 +1366,287 @@
       "country_id": "AT",
       "region_id": "AT-9",
       "name": "Vienna (Wien)",
-      "name_ru": "Вена",
+      "name_ru": "Відень",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-BR",
       "name": "Brest oblast",
-      "name_ru": "Брестская область",
+      "name_ru": "Брестська область",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-HO",
       "name": "Homyel oblast",
-      "name_ru": "Гомельская область",
+      "name_ru": "Гомельська область",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-HM",
       "name": "Minsk City",
-      "name_ru": "Город Минск",
+      "name_ru": "Місто Мінськ",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-HR",
       "name": "Hrodna oblast",
-      "name_ru": "Гродненская область",
+      "name_ru": "Гродненська область",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-MA",
       "name": "Mahilyow oblast",
-      "name_ru": "Могилевская область",
+      "name_ru": "Могильовська область",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-MI",
       "name": "Minsk oblast",
-      "name_ru": "Минская область",
+      "name_ru": "Мінська область",
       "active": "Y"
     },
     {
       "country_id": "BY",
       "region_id": "BY-VI",
       "name": "Vitsyebsk oblast",
-      "name_ru": "Витебская область",
+      "name_ru": "Вітебська область",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-34",
       "name": "Anhui",
-      "name_ru": "Провинция Аньхой",
+      "name_ru": "Провінція Аньхой",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-11",
       "name": "Beijing",
-      "name_ru": "Пекин (город)",
+      "name_ru": "Пекін (місто)",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-50",
       "name": "Chongqing",
-      "name_ru": "город Чунцин",
+      "name_ru": "місто Чунцін",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-35",
       "name": "Fujian",
-      "name_ru": "Провинция Фуцзянь",
+      "name_ru": "Провінція Фуцзянь",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-62",
       "name": "Gansu",
-      "name_ru": "Провинция Ганьсу",
+      "name_ru": "Провінція Ганьсу",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-44",
       "name": "Guangdong",
-      "name_ru": "Провинция Гуандун",
+      "name_ru": "Провінція Гуандун",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-45",
       "name": "Guangxi Zhuang",
-      "name_ru": "Гуанси-Чжуанский автономный район",
+      "name_ru": "Гуансі-Чжуанський автономний район",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-52",
       "name": "Guizhou",
-      "name_ru": "Провинция Гуйчжоу",
+      "name_ru": "Провінція Гуйчжоу",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-46",
       "name": "Hainan",
-      "name_ru": "Провинция Хайнань",
+      "name_ru": "Провінція Хайнань",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-13",
       "name": "Hebei",
-      "name_ru": "Провинция Хэбэй",
+      "name_ru": "Провінція Хебей",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-23",
       "name": "Heilongjiang",
-      "name_ru": "Провинция Хэйлунцзян",
+      "name_ru": "Провінція Хейлунцзян",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-41",
       "name": "Henan",
-      "name_ru": "Провинция Хэнань",
+      "name_ru": "Провінція Хенань",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-42",
       "name": "Hubei",
-      "name_ru": "Провинция Хубэй",
+      "name_ru": "Провінція Хубей",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-43",
       "name": "Hunan",
-      "name_ru": "Провинция Хунань",
+      "name_ru": "Провінція Хунань",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-15",
       "name": "Inner Mongolia (Nei Mongol)",
-      "name_ru": "Автономный район Внутренняя Монголия",
+      "name_ru": "Автономний район Внутрішня Монголія",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-32",
       "name": "Jiangsu",
-      "name_ru": "Провинция Цзянсу",
+      "name_ru": "Провінція Цзянсу",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-36",
       "name": "Jiangxi",
-      "name_ru": "Провинция Цзянси",
+      "name_ru": "Провінція Цзянсі",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-22",
       "name": "Jilin",
-      "name_ru": "Провинция Гирин",
+      "name_ru": "Провінція Гірин",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-21",
       "name": "Liaoning",
-      "name_ru": "Провинция Ляонин",
+      "name_ru": "Провінція Ляонін",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-64",
       "name": "Ningxia Hui",
-      "name_ru": "Нинся-Хуэйский автономный район",
+      "name_ru": "Нінся-Хуэйський автономний район",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-63",
-      "name": "Quinghai",
-      "name_ru": "Провинция Цинхай",
+      "name": "Qinghai",
+      "name_ru": "Провінція Цінхай",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-61",
       "name": "Shaanxi",
-      "name_ru": "Провинция Шэньси",
+      "name_ru": "Провінція Шеньсі",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-37",
       "name": "Shandong",
-      "name_ru": "Провинция Шаньдун",
+      "name_ru": "Провінція Шаньдун",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-31",
       "name": "Shanghai",
-      "name_ru": "Шанхай (город)",
+      "name_ru": "Шанхай (місто)",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-14",
       "name": "Shanxi",
-      "name_ru": "Провинция Шаньси",
+      "name_ru": "Провінція Шаньсі",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-51",
       "name": "Sichuan",
-      "name_ru": "Провинция Сычуань",
+      "name_ru": "Провінція Сичуань",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-12",
       "name": "Tianjin",
-      "name_ru": "город Тяньцзинь",
+      "name_ru": "місто Тяньцзінь",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-54",
       "name": "Tibet (Xizang)",
-      "name_ru": "Тибетский автономный район",
+      "name_ru": "Тибетський автономний район",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-65",
       "name": "Xinjiang Uygur",
-      "name_ru": "Синьцзян-Уйгурский автономный район",
+      "name_ru": "Сіньцзян-Уйгурський автономний район",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-53",
       "name": "Yunnan",
-      "name_ru": "Провинция Юньнань",
+      "name_ru": "Провінція Юньнань",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-33",
       "name": "Zhejiang",
-      "name_ru": "Провинция Чжэцзян",
+      "name_ru": "Провінція Чжэцзян",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-91",
       "name": "Hong Kong",
-      "name_ru": "Специальный административный район Гонконг (Сянган)",
+      "name_ru": "Спеціальний адміністративний район Гонконг (Сянган)",
       "active": "Y"
     },
     {
       "country_id": "CN",
       "region_id": "CN-92",
       "name": "Macau (Macao)",
-      "name_ru": "Специальный административный район Макао (Аомынь)",
+      "name_ru": "Спеціальний адміністративний район Макао (Аоминь)",
       "active": "Y"
     },
     {
@@ -1660,21 +1660,21 @@
       "country_id": "HR",
       "region_id": "HR-07",
       "name": "Bjelovarska-Bilogorska",
-      "name_ru": "Беловарско-Билогорская жупания",
+      "name_ru": "Бєловарсько-Білогорська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-12",
       "name": "Brodsko-Posavska",
-      "name_ru": "Бродско-Посавская жупания",
+      "name_ru": "Бродсько-Посавська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-19",
       "name": "Dubrovačko-Neretvanska",
-      "name_ru": "Дубровницко-Неретванская жупания",
+      "name_ru": "Дубровницько-Неретванська жупанія",
       "active": "Y"
     },
     {
@@ -1688,224 +1688,224 @@
       "country_id": "HR",
       "region_id": "HR-18",
       "name": "Istarska",
-      "name_ru": "Истрийская жупания",
+      "name_ru": "Істрійська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-04",
       "name": "Karlovačka",
-      "name_ru": "Карловацкая жупания",
+      "name_ru": "Карловацька жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-06",
       "name": "Koprivničko-Križevačka",
-      "name_ru": "Копривницко-Крижевацкая жупания",
+      "name_ru": "Копривницько-Крижевацька жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-02",
       "name": "Krapinsko-Zagorska",
-      "name_ru": "Крапинско-Загорская жупания",
+      "name_ru": "Крапінсько-Загорська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-09",
       "name": "Ličko-Senjska",
-      "name_ru": "Лицко-Сеньская жупания",
+      "name_ru": "Ліцько-Сеньська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-20",
       "name": "Međimurska",
-      "name_ru": "Меджимурская жупания",
+      "name_ru": "Меджимурська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-14",
       "name": "Osječko-Baranjska",
-      "name_ru": "Осиецко-Бараньская жупания",
+      "name_ru": "Осєчко-Баранська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-11",
       "name": "Požeško-Slavonska",
-      "name_ru": "Пожежско-Славонская жупания",
+      "name_ru": "Пожежсько-Славонська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-08",
       "name": "Primorsko-Goranska",
-      "name_ru": "Приморско-Горанская жупания",
+      "name_ru": "Приморсько-Горанська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-15",
       "name": "Šibensko-Kninska",
-      "name_ru": "Шибенско-Книнская жупания",
+      "name_ru": "Шибенсько-Книнська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-03",
       "name": "Sisačko-Moslavačka",
-      "name_ru": "Сисацко-Мославинская жупания",
+      "name_ru": "Сисацько-Мославінська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-17",
       "name": "Splitsko-Dalmatinska",
-      "name_ru": "Сплитско-Далматинская жупания",
+      "name_ru": "Сплітсько-Далматинська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-05",
       "name": "Varaždinska",
-      "name_ru": "Вараждинская жупания",
+      "name_ru": "Вараждинська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-10",
       "name": "Virovitičko-Podravska",
-      "name_ru": "Вировитицко-Подравская жупания",
+      "name_ru": "Віровитицько-Подравська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-16",
       "name": "Vukovarsko-Srijemska",
-      "name_ru": "Вуковарско-Сремская жупания",
+      "name_ru": "Вуковарсько-Сремська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-13",
       "name": "Zadarska",
-      "name_ru": "Задарская жупания",
+      "name_ru": "Задарська жупанія",
       "active": "Y"
     },
     {
       "country_id": "HR",
       "region_id": "HR-01",
       "name": "Zagrebačka",
-      "name_ru": "Загребская жупания",
+      "name_ru": "Загребська жупанія",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-JC",
       "name": "Jihočeský",
-      "name_ru": "Южночешский край",
+      "name_ru": "Південночеський край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-JM",
       "name": "Jihomoravský",
-      "name_ru": "Южноморавский край",
+      "name_ru": "Південноморавський край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-KA",
       "name": "Karlovarský",
-      "name_ru": "Карловарский край",
+      "name_ru": "Карловарський край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-KR",
       "name": "Královéhradecký",
-      "name_ru": "Краловеградецкий край",
+      "name_ru": "Краловоградецький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-LI",
       "name": "Liberecký",
-      "name_ru": "Либерецкий край",
+      "name_ru": "Ліберецький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-MO",
       "name": "Moravskoslezský",
-      "name_ru": "Моравскосилезский край",
+      "name_ru": "Моравсько-Сілезький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-OL",
       "name": "Olomoucký",
-      "name_ru": "Оломоуцкий край",
+      "name_ru": "Оломоуцький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-PA",
       "name": "Pardubický",
-      "name_ru": "Пардубицкий край",
+      "name_ru": "Пардубицький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-PL",
       "name": "Plzeňský",
-      "name_ru": "Пльзенский край",
+      "name_ru": "Пльзенський край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-PR",
       "name": "Prague (Praha)",
-      "name_ru": "Прага (город)",
+      "name_ru": "Прага (місто)",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-ST",
       "name": "Středočeský",
-      "name_ru": "Среднечешский край",
+      "name_ru": "Середньочеський край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-US",
       "name": "Ústecký",
-      "name_ru": "Устецкий край",
+      "name_ru": "Устецький край",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-VY",
       "name": "Vysočina",
-      "name_ru": "Высочина",
+      "name_ru": "Височина",
       "active": "Y"
     },
     {
       "country_id": "CZ",
       "region_id": "CZ-ZL",
       "name": "Zlínský",
-      "name_ru": "Злинский край",
+      "name_ru": "Злінський край",
       "active": "Y"
     },
     {
       "country_id": "AE",
       "region_id": "AE-AZ",
       "name": "Abu Dhabi",
-      "name_ru": "Эмират Абу-Даби",
+      "name_ru": "Емірат Абу-Дабі",
       "active": "Y"
     },
     {
@@ -1919,7 +1919,7 @@
       "country_id": "AE",
       "region_id": "AE-DU",
       "name": "Dubai",
-      "name_ru": "Эмират Дубай",
+      "name_ru": "Емірат Дубай",
       "active": "Y"
     },
     {
@@ -1933,21 +1933,21 @@
       "country_id": "AE",
       "region_id": "AE-NZ1",
       "name": "Neutral Zone 1",
-      "name_ru": "Нейтральная территория",
+      "name_ru": "Нейтральна територія",
       "active": "Y"
     },
     {
       "country_id": "AE",
       "region_id": "AE-NZ2",
       "name": "Neutral Zone 2",
-      "name_ru": "Нейтральная территория",
+      "name_ru": "Нейтральна територія",
       "active": "Y"
     },
     {
       "country_id": "AE",
       "region_id": "AE-RK",
       "name": "Ras Al Khaymah",
-      "name_ru": "Рас эль-Хайма",
+      "name_ru": "Рас ель-Хайма",
       "active": "Y"
     },
     {
@@ -1961,14 +1961,14 @@
       "country_id": "AE",
       "region_id": "AE-UQ",
       "name": "Umm Al Qaywayn",
-      "name_ru": "Умм эль-Кайвайн",
+      "name_ru": "Умм ель-Кайвайн",
       "active": "Y"
     },
     {
       "country_id": "AE",
       "region_id": "OM-MU",
       "name": "Musandam, Oman",
-      "name_ru": "Территория Омана",
+      "name_ru": "Територія Оману",
       "active": "Y"
     },
     {
@@ -13154,6 +13154,56 @@
       "description": "Місто в південно-західній Угорщини, розташоване в північно-східній частині Балатону. Найбільший населений пункт північного берега озера, відомий курорт. На центральній площі Балатонфюреда, яка називається площа Дьйодь (площа здоров'я), в 1800 році був побудований питний бювет імені Лайоша Кошута, у якому до цих пір п'ють воду курортники. Найстаріші джерела зосереджені біля Державної кардіологічної клініки. Одне з джерел неподалік від клініки досі носить назву сироватки — його воду змішували з молоком овець і використовували для лікування захворювань органів дихання. Уздовж узбережжя Балатону тягнеться алея Рабіндраната Тагора, названа на честь індійського поета, після того як він в 1926 р посадив липу у променади Колос. На алеї також знаходяться скульптури і меморіальні дошки на честь інших іменитих курортників. Майже всі будинки Старого міста знаходяться під охороною як пам'ятки архітектури (бароко, класика). Старовинні маєтки і вілли, численні скульптури в парках і безліч квітів — своєрідна візитна картка цього міста. Будинок родини Хорват. Знаходиться на площі Дьйодь, побудований в XVIII столітті в стилі пізнього бароко. Вілла Луїзи Блаха. Луїза Блаха — знаменита співачка та акторка жила в Балатонфюреді з 1893 по 1916 рік. Музей Мора Йокаї. Розташовується в віллі кінця XIX століття, присвячений письменнику Мору Йокаї."
     },
     {
+      "name": "Szigetvar",
+      "name_nt": "Szigetvár",
+      "name_ru": "Сігетвар",
+      "region_id": "HU-BA",
+      "city_id": "szigetvar",
+      "lat": "46.0499217",
+      "long": "17.7962199",
+      "description": "У місті помер султан Османської імперії Сулейман Великий. Пам'ятки - Замок, У 1561 році Міклош Зріні став обер-капітаном в результаті модернізації, керованої його попередником, Марком Горватом Станчичем, на чолі фортеці, яка вважалася одним із найсучасніших і найміцніших замків епохи. 7 вересня 1566 року стотисячна армія султана Сулеймана лише після тривалої облоги змогла зайняти замок. Приблизно за три кілометри на північний схід від центру міста, в Турбекпусті, яка зберігає пам’ять про колишню могилу Сулеймана Надя, стоїть церква, присвячена Богоматері Помочі, місце прощання після відвоювання замку та міста від турків. Парафіяльна церква Szent Rókus, розташована в південній частині Zrínyi tér, набула свого теперішнього вигляду завдяки багаторазовій реконструкції мечеті, яка була побудована за кошти благодійного фонду Müezzinzáde Pasha Ali Pasha, який загинув у морській битві біля Лепанто як командувач турецького флоту."
+    },
+    {
+      "name": "Harkany",
+      "name_nt": "Harkány",
+      "name_ru": "Харкань",
+      "region_id": "HU-BA",
+      "city_id": "harkany",
+      "lat": "45.8534489",
+      "long": "18.2346184",
+      "description": "Харкань - бальнеотерапевтичний курорт лісостепової зони на висоті 201 м, біля підніжжя гори Тенкеш , розташований за 250 км від Будапешта і 25 км на південь від м. Печ, за 8 км від кордону з Хорватією . Ця територія на південь від Балатона  - Південно-Задунайський край славиться м'яким кліматом. Славу курорту принесли сірчисті води та одна з відомих лікувальних купалень."
+    },
+    {
+      "name": "Siklos",
+      "name_nt": "Siklós",
+      "name_ru": "Шиклош",
+      "region_id": "HU-BA",
+      "city_id": "siklos",
+      "lat": "45.8548612",
+      "long": "18.2972538",
+      "description": "Місто знамените замком, який вперше згадується в історичних джерелах у 1294 році."
+    },
+    {
+      "name": "Pecs",
+      "name_nt": "Pécs",
+      "name_ru": "Печ",
+      "region_id": "HU-PS",
+      "city_id": "pecs",
+      "lat": "46.0737576",
+      "long": "18.2309764",
+      "description": "Печ - місто в південно-західній частині Угорщини та столиця мідь Баранья. Відомий своїм ранньохристиянським некрополем, включеним до списку об'єктів Всесвітньої спадщини ЮНЕСКО. Печ - одне з найбільших та найдавніших міст Угорщини, засноване близько 2000 років тому римлянами. Це дивовижне місце, де можна познайомитися з трьома культурами (давньоримської, османської та угорської) і доторкнутися до історії. Кафедральний собор - значний сакральний пам'ятник, заснований в 11 столітті і побудований на фундаменті ранньохристиянської базиліки 4-го століття. Будівля має романську, готичну, ренесансну та неороманську архітектуру, а також елементи османської архітектури, коли її використовували як мечеть.Музей Жолнай присвячений знаменитій кераміці та розташований у найстарішому будинку в Печі, що датується 14 століттям.\n\nНа схід від історичного центру, навколо фабрики «Жолнай», було збудовано цілий культурно-розважальний район. Площа Сечені – центральна площа Печа та одне з найпопулярніших місць міста. На її південній стороні знаходиться гарний фонтан, подарований сім'єю Жолнай. Також на площі збудовано османську мечеть 16 століття, засновану Пашу Газі Касимом. У 19 столітті мечеть використовувалася як християнська церква, у її архітектурі поєднується османська і християнська архітектура."
+    },
+    {
+      "name": "Mohács Historical Memorial Site",
+      "name_nt": "Mohácsi Nemzeti Emlékhely",
+      "name_ru": "Меморіал битви під Мохачем",
+      "region_id": "HU-BA",
+      "city_id": "mohacsmemorial",
+      "lat": "45.9417358",
+      "long": "18.6473052",
+      "description": "Мохач розглядається багатьма угорцями як вирішальний поворотний пункт в історії країни, національна травма , яка зберігається в народній пам’яті нації . Щоб вказати на масштаби невдачі, угорці досі кажуть: «Більше втрачено під Мохачем». Угорці вважають Мохач символом кінця Угорщини як незалежної та могутньої європейської держави. Хоча Мохач був вирішальною втратою, саме його наслідки поклали кінець повній незалежній Угорщині. Подальші двісті років майже постійної війни між двома імперіями, Габсбургами та Османською, перетворили Угорщину на вічне поле битви, а її території були розділені на три частини. Сільська місцевість регулярно спустошувалась арміями, які рухалися туди-сюди, у свою чергу спустошуючи населення. Лише в 19 столітті Угорщина відновила свої колишні кордони ; з повною незалежністю від правління Габсбургів настає лише після Першої світової війни . Поле бою біля села Шаторхей, став офіційним національним історичним меморіалом у 1976 році до 450-ї річниці битви. Меморіал спроектував архітектор Дьєрдь Вадаш. Новий зал прийомів і виставкова будівля, також спроектовані Vadász і частково профінансовані Європейським Союзом , були завершені в 2011 році."
+    },
+    {
       "name": "Bucharest",
       "name_nt": "Bucuresti",
       "name_ru": "Бухарест",
@@ -21531,6 +21581,11 @@
         "dios",
         "virovitica",
         "batinabattle",
+        "szigetvar",
+        "harkany",
+        "siklos",
+        "pecs",
+        "mohacsmemorial",
         "osijek",
         "valpovo",
         "donjimiholjac",
