@@ -1975,14 +1975,14 @@
       "country_id": "IL",
       "region_id": "IL-GH",
       "name": "Golan",
-      "name_ru": "Голандские высоты",
+      "name_ru": "Голанські височини",
       "active": "Y"
     },
     {
       "country_id": "IL",
       "region_id": "IL-D",
       "name": "South",
-      "name_ru": "Южный округ",
+      "name_ru": "Південний округ",
       "active": "Y"
     },
     {
@@ -1996,28 +1996,28 @@
       "country_id": "IL",
       "region_id": "IL-M",
       "name": "Center",
-      "name_ru": "Центральный округ",
+      "name_ru": "Центральний округ",
       "active": "Y"
     },
     {
       "country_id": "IL",
       "region_id": "IL-Z",
       "name": "North",
-      "name_ru": "Северный округ",
+      "name_ru": "Північний округ",
       "active": "Y"
     },
     {
       "country_id": "IL",
       "region_id": "IL-JM",
       "name": "Jerusalem",
-      "name_ru": "Округ Иерусалим",
+      "name_ru": "Округ Єрусалим",
       "active": "Y"
     },
     {
       "country_id": "IL",
       "region_id": "IL-TA",
       "name": "Tel Aviv",
-      "name_ru": "Округ Тель Авив",
+      "name_ru": "Округ Тель-Авів",
       "active": "Y"
     },
     {
@@ -2038,14 +2038,14 @@
       "country_id": "LI",
       "region_id": "LI-02",
       "name": "Eschen",
-      "name_ru": "Эшен",
+      "name_ru": "Ешен",
       "active": "Y"
     },
     {
       "country_id": "LI",
       "region_id": "LI-03",
       "name": "Gamprin",
-      "name_ru": "Гамприн",
+      "name_ru": "Гампрін",
       "active": "Y"
     },
     {
@@ -2087,14 +2087,14 @@
       "country_id": "LI",
       "region_id": "LI-09",
       "name": "Triesen",
-      "name_ru": "Тризен",
+      "name_ru": "Трізен",
       "active": "Y"
     },
     {
       "country_id": "LI",
       "region_id": "LI-10",
       "name": "Triesenberg",
-      "name_ru": "Тризенберг",
+      "name_ru": "Трізенберг",
       "active": "Y"
     },
     {
@@ -2108,371 +2108,371 @@
       "country_id": "TA",
       "region_id": "MD_TR",
       "name": "Tiraspol",
-      "name_ru": "город Тирасполь",
+      "name_ru": "місто Тираспіль",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "MD_GR",
       "name": "Grigoriopol",
-      "name_ru": "Григориопольский район",
+      "name_ru": "Григоріопольський район",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "MD_KA",
       "name": "Camenca",
-      "name_ru": "Каменский район",
+      "name_ru": "Каменський район",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "MD_RB",
       "name": "Rîbniţa",
-      "name_ru": "Рыбницкий район",
+      "name_ru": "Рибницький район",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "MD_SL",
       "name": "Slobozia",
-      "name_ru": "Слободзейский район",
+      "name_ru": "Слободзейський район",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA-DU",
       "name": "Dubăsari",
-      "name_ru": "Дубоссарский район",
+      "name_ru": "Дубосарський район",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA-BD",
       "name": "Bender",
-      "name_ru": "Бендеры (город)",
+      "name_ru": "Бендери (місто)",
       "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA-SN",
       "name": "Transnistria",
-      "name_ru": "Приднестровская автономия",
+      "name_ru": "Придністровська автономія",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-AN",
       "name": "Anenii Noi",
-      "name_ru": "Новоаненский район",
+      "name_ru": "Новоаненський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-BA",
       "name": "Bălţi",
-      "name_ru": "Муниципий Бельцы",
+      "name_ru": "Муніципій Бєльці",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-BR",
       "name": "Briceni",
-      "name_ru": "Бричанский район",
+      "name_ru": "Бричанський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-BD",
       "name": "Tighina",
-      "name_ru": "Муниципий Бендеры",
+      "name_ru": "Муніципій Бендери",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-BS",
       "name": "Basarabeasca",
-      "name_ru": "Бессарабский район",
+      "name_ru": "Бессарабський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CA",
       "name": "Cahul",
-      "name_ru": "Кагульский район",
+      "name_ru": "Кагульський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CL",
       "name": "Călăraşi",
-      "name_ru": "Каларашский район",
+      "name_ru": "Каларашський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CM",
       "name": "Cimişlia",
-      "name_ru": "Чимишлийский район",
+      "name_ru": "Чимішлійський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CR",
       "name": "Criuleni",
-      "name_ru": "Криулянский район",
+      "name_ru": "Кріулянський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CS",
       "name": "Căuşeni",
-      "name_ru": "Каушанский район",
+      "name_ru": "Каушанський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CT",
       "name": "Cantemir",
-      "name_ru": "Кантемирский район",
+      "name_ru": "Кантемирський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-CU",
       "name": "Chişinău",
-      "name_ru": "Муниципий Кишинёв",
+      "name_ru": "Муніципій Кишинів",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-DO",
       "name": "Donduşeni",
-      "name_ru": "Дондюшанский район",
+      "name_ru": "Дондюшанський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-DR",
       "name": "Drochia",
-      "name_ru": "Дрокиевский район",
+      "name_ru": "Дрокіївський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-DU",
       "name": "Dubăsari",
-      "name_ru": "Дубоссарский район",
+      "name_ru": "Дубосарський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-ED",
       "name": "Edineţ",
-      "name_ru": "Единецкий район",
+      "name_ru": "Єдинецький район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-FA",
       "name": "Făleşti",
-      "name_ru": "Фалештский район",
+      "name_ru": "Фалештський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-FL",
       "name": "Floreşti",
-      "name_ru": "Флорештский район",
+      "name_ru": "Флорештський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-GA",
       "name": "U.T.A.Găgăuzia",
-      "name_ru": "Гагаузская автономия",
+      "name_ru": "Гагаузька автономія",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-GL",
       "name": "Glodeni",
-      "name_ru": "Глодянский район",
+      "name_ru": "Глодянський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-HI",
       "name": "Hînceşti",
-      "name_ru": "Хынчештский район",
+      "name_ru": "Хинчештський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-IA",
       "name": "Ialoveni",
-      "name_ru": "Яловенский район",
+      "name_ru": "Яловенський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-LE",
       "name": "Leova",
-      "name_ru": "Леовский район",
+      "name_ru": "Леовський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-NI",
       "name": "Nisporeni",
-      "name_ru": "Ниспоренский район",
+      "name_ru": "Ніспоренський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-OC",
       "name": "Ocniţa",
-      "name_ru": "Окницкий район",
+      "name_ru": "Окницький район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-OR",
       "name": "Orhei",
-      "name_ru": "Оргеевский район",
+      "name_ru": "Оргеївський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-RE",
       "name": "Rezina",
-      "name_ru": "Резинский район",
+      "name_ru": "Резинський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-RI",
       "name": "Rîşcani",
-      "name_ru": "Рышканский район",
+      "name_ru": "Ришканський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-SD",
       "name": "Soldăneşti",
-      "name_ru": "Шолданештский район",
+      "name_ru": "Шолданештський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-SI",
       "name": "Sîngerei",
-      "name_ru": "Сынжерейский район",
+      "name_ru": "Синджерейський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-SN",
       "name": "Unitatea Teritorială din Stînga Nistrului",
-      "name_ru": "Административно-территориальные единицы Левобережья Днестра",
+      "name_ru": "Адміністративно-територіальні одиниці Лівобережжя Дністра",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-SO",
       "name": "Soroca",
-      "name_ru": "Сорокский район",
+      "name_ru": "Сороцький район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-ST",
       "name": "Străşeni",
-      "name_ru": "Страшенский район",
+      "name_ru": "Страшенський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-SV",
       "name": "Ştefan Vodă",
-      "name_ru": "Штефан-Водский район",
+      "name_ru": "Штефан-Водський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-TA",
       "name": "Taraclia",
-      "name_ru": "Тараклийский район",
+      "name_ru": "Тараклійський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-TE",
       "name": "Teleneşti",
-      "name_ru": "Теленештский район",
+      "name_ru": "Теленештський район",
       "active": "Y"
     },
     {
       "country_id": "MD",
       "region_id": "MD-UN",
       "name": "Ungheni",
-      "name_ru": "Унгенский район",
+      "name_ru": "Унгенський район",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-BC",
       "name": "Banska Bystrica",
-      "name_ru": "Банскобистрицкий край",
+      "name_ru": "Банськобистрицький край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-BL",
       "name": "Bratislava",
-      "name_ru": "Братиславский край",
+      "name_ru": "Братиславський край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-KI",
       "name": "Kosice",
-      "name_ru": "Кошицкий край",
+      "name_ru": "Кошицький край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-NI",
       "name": "Nitra",
-      "name_ru": "Нитранский край",
+      "name_ru": "Нітранський край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-PV",
       "name": "Presov",
-      "name_ru": "Прешовский край",
+      "name_ru": "Пряшівський край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-TC",
       "name": "Trencin",
-      "name_ru": "Тренчинский край",
+      "name_ru": "Тренчінський край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-TA",
       "name": "Trnava",
-      "name_ru": "Трнавский край",
+      "name_ru": "Трнавський край",
       "active": "Y"
     },
     {
       "country_id": "SK",
       "region_id": "SK-ZI",
       "name": "Zilina",
-      "name_ru": "Жилинский край",
+      "name_ru": "Жилінський край",
       "active": "Y"
     },
     {
@@ -2486,14 +2486,14 @@
       "country_id": "DE",
       "region_id": "DE-BY",
       "name": "Bavaria (Bayern)",
-      "name_ru": "Свободное государство Бавария",
+      "name_ru": "Свободна держава Баварія",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-BE",
       "name": "Berlin",
-      "name_ru": "Берлин",
+      "name_ru": "Берлін",
       "active": "Y"
     },
     {
@@ -2507,14 +2507,14 @@
       "country_id": "DE",
       "region_id": "DE-HB",
       "name": "Bremen",
-      "name_ru": "Свободный ганзейский город Бремен",
+      "name_ru": "Свободне ганзейське місто Бремен",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-HH",
       "name": "Hamburg",
-      "name_ru": "Свободный и ганзейский город Гамбург",
+      "name_ru": "Свободне та ганзейське місто Гамбург",
       "active": "Y"
     },
     {
@@ -2528,21 +2528,21 @@
       "country_id": "DE",
       "region_id": "DE-MV",
       "name": "Mecklenburg-Vorpommern",
-      "name_ru": "Мекленбург-Передняя Померания",
+      "name_ru": "Мекленбург-Передня Померанія",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-NI",
       "name": "Lower Saxony (Niedersachsen)",
-      "name_ru": "Нижняя Саксония",
+      "name_ru": "Нижня Саксонія",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-NW",
       "name": "North Rhine-Westphalia (Nordrhein-Westfalen)",
-      "name_ru": "Северный Рейн-Вестфалия",
+      "name_ru": "Північний Рейн-Вестфалія",
       "active": "Y"
     },
     {
@@ -2563,28 +2563,28 @@
       "country_id": "DE",
       "region_id": "DE-SN",
       "name": "Saxony (Sachsen)",
-      "name_ru": "Свободное государство Саксония",
+      "name_ru": "Свободна держава Саксонія",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-ST",
-      "name": "Saxony-Anhalt (Sachsen-Anhalt)",
-      "name_ru": "Саксония-Анхальт",
+      "name": "Саксонія-Ангальт (Sachsen-Anhalt)",
+      "name_ru": "Саксонія-Ангальт",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-SH",
-      "name": "Schleswig-Holstein",
-      "name_ru": "Шлезвиг-Гольштейн",
+      "name": "Шлезвіг-Гольштейн",
+      "name_ru": "Шлезвіг-Гольштейн",
       "active": "Y"
     },
     {
       "country_id": "DE",
       "region_id": "DE-TH",
-      "name": "Thuringia (Thuringen)",
-      "name_ru": "Свободное государство Тюрингия",
+      "name": "Тюрингія (Thuringen)",
+      "name_ru": "Свободна держава Тюрингія",
       "active": "Y"
     },
     {
@@ -2640,7 +2640,7 @@
       "country_id": "HU",
       "region_id": "HU-DE",
       "name": "Debrecen",
-      "name_ru": "Дебрецен",
+      "name_ru": "Дебречин",
       "active": "Y"
     },
     {
@@ -2654,28 +2654,28 @@
       "country_id": "HU",
       "region_id": "HU-EG",
       "name": "Eger",
-      "name_ru": "Эгер",
+      "name_ru": "Егер",
       "active": "Y"
     },
     {
       "country_id": "HU",
       "region_id": "HU-FE",
       "name": "Fejér",
-      "name_ru": "Фейер",
+      "name_ru": "Феєр",
       "active": "Y"
     },
     {
       "country_id": "HU",
       "region_id": "HU-GY",
       "name": "Győr",
-      "name_ru": "Дьёр",
+      "name_ru": "Ґйор",
       "active": "Y"
     },
     {
       "country_id": "HU",
       "region_id": "HU-GS",
       "name": "Győr-Moson-Sopron",
-      "name_ru": "Дьёр-Мошон-Шопрон",
+      "name_ru": "Дьер-Мошон-Шопрон",
       "active": "Y"
     },
     {
@@ -2696,7 +2696,7 @@
       "country_id": "HU",
       "region_id": "HU-HV",
       "name": "Hódmezővásárhely",
-      "name_ru": "Ходмезёвашархей",
+      "name_ru": "Годмезевашаргей",
       "active": "Y"
     },
     {
@@ -2724,21 +2724,21 @@
       "country_id": "HU",
       "region_id": "HU-KE",
       "name": "Komárom-Esztergom",
-      "name_ru": "Комаром-Эстергом",
+      "name_ru": "Комаром-Естергом",
       "active": "Y"
     },
     {
       "country_id": "HU",
       "region_id": "HU-MI",
       "name": "Miskolc",
-      "name_ru": "Мишкольц",
+      "name_ru": "Мішкольц",
       "active": "Y"
     },
     {
       "country_id": "HU",
       "region_id": "HU-NK",
       "name": "Nagykanizsa",
-      "name_ru": "Надьканижа",
+      "name_ru": "Надьканіжа",
       "active": "Y"
     },
     {
@@ -2752,7 +2752,7 @@
       "country_id": "HU",
       "region_id": "HU-NY",
       "name": "Nyíregyháza",
-      "name_ru": "Ньиредьхаза",
+      "name_ru": "Ньїредьгаза",
       "active": "Y"
     },
     {
@@ -2801,7 +2801,7 @@
       "country_id": "HU",
       "region_id": "HU-SF",
       "name": "Székesfehérvár",
-      "name_ru": "Секешфехервар",
+      "name_ru": "Секешфегервар",
       "active": "Y"
     },
     {
@@ -2864,7 +2864,7 @@
       "country_id": "HU",
       "region_id": "HU-ZE",
       "name": "Zalaegerszeg",
-      "name_ru": "Залаэгерсег",
+      "name_ru": "Залаегерсег",
       "active": "Y"
     },
     {
@@ -2892,28 +2892,28 @@
       "country_id": "RO",
       "region_id": "RO-BC",
       "name": "Bacău",
-      "name_ru": "Бакэу",
+      "name_ru": "Бакеу",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-BH",
       "name": "Bihor",
-      "name_ru": "Бихор",
+      "name_ru": "Біхор",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-BN",
       "name": "Bistriţa-Năsăud",
-      "name_ru": "Бистрица-Нэсэуд",
+      "name_ru": "Бистриця-Наслод",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-BT",
       "name": "Botoşani",
-      "name_ru": "Ботошани",
+      "name_ru": "Ботошані",
       "active": "Y"
     },
     {
@@ -2927,28 +2927,28 @@
       "country_id": "RO",
       "region_id": "RO-BR",
       "name": "Brăila",
-      "name_ru": "Брэила",
+      "name_ru": "Бреїла",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-BZ",
       "name": "Buzău",
-      "name_ru": "Бузэу",
+      "name_ru": "Бузеу",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-CS",
       "name": "Caraş-Severin",
-      "name_ru": "Караш-Северин",
+      "name_ru": "Караш-Северін",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-CL",
       "name": "Călăraşi",
-      "name_ru": "Кэлэраши",
+      "name_ru": "Келераші",
       "active": "Y"
     },
     {
@@ -2976,7 +2976,7 @@
       "country_id": "RO",
       "region_id": "RO-DB",
       "name": "Dâmboviţa",
-      "name_ru": "Дымбовица",
+      "name_ru": "Дамбовица",
       "active": "Y"
     },
     {
@@ -3011,7 +3011,7 @@
       "country_id": "RO",
       "region_id": "RO-HR",
       "name": "Harghita",
-      "name_ru": "Харгита",
+      "name_ru": "Харгіта",
       "active": "Y"
     },
     {
@@ -3025,21 +3025,21 @@
       "country_id": "RO",
       "region_id": "RO-IL",
       "name": "Ialomiţa",
-      "name_ru": "Яломица",
+      "name_ru": "Яломіца",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-IS",
       "name": "Iaşi",
-      "name_ru": "Яссы",
+      "name_ru": "Яси",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-IF",
       "name": "Ilfov",
-      "name_ru": "Илфов",
+      "name_ru": "Ілфов",
       "active": "Y"
     },
     {
@@ -3053,7 +3053,7 @@
       "country_id": "RO",
       "region_id": "RO-MH",
       "name": "Mehedinţi",
-      "name_ru": "Мехединци",
+      "name_ru": "Мехедінць",
       "active": "Y"
     },
     {
@@ -3095,14 +3095,14 @@
       "country_id": "RO",
       "region_id": "RO-SJ",
       "name": "Sălaj",
-      "name_ru": "Сэлаж",
+      "name_ru": "Селаж",
       "active": "Y"
     },
     {
       "country_id": "RO",
       "region_id": "RO-SB",
       "name": "Sibiu",
-      "name_ru": "Сибиу",
+      "name_ru": "Сибіу",
       "active": "Y"
     },
     {
@@ -3123,7 +3123,7 @@
       "country_id": "RO",
       "region_id": "RO-TM",
       "name": "Timiş",
-      "name_ru": "Тимиш",
+      "name_ru": "Тіміш",
       "active": "Y"
     },
     {
@@ -3144,7 +3144,7 @@
       "country_id": "RO",
       "region_id": "RO-VL",
       "name": "Vâlcea",
-      "name_ru": "Вылча",
+      "name_ru": "Вилчя",
       "active": "Y"
     },
     {
@@ -3165,203 +3165,203 @@
       "country_id": "LV",
       "region_id": "LV-AI-2",
       "name": "Aizkraukle",
-      "name_ru": "Айзкраукльский",
+      "name_ru": "Айзкраукле",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-AL-2",
       "name": "Alūksne",
-      "name_ru": "Алуксненский",
+      "name_ru": "Алуксне",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-BL-2",
       "name": "Balvi",
-      "name_ru": "Балвский",
+      "name_ru": "Балві",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-BU-2",
       "name": "Bauska",
-      "name_ru": "Бауский",
+      "name_ru": "Бауський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-CE-2",
       "name": "Cēsis",
-      "name_ru": "Цесисский",
+      "name_ru": "Цезіський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-DA-2",
       "name": "Daugavpils",
-      "name_ru": "Даугавпилсский",
+      "name_ru": "Даугавпілський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-DO-2",
       "name": "Dobele",
-      "name_ru": "Добельский",
+      "name_ru": "Добелеський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-GU-2",
       "name": "Gulbene",
-      "name_ru": "Гулбенский",
+      "name_ru": "Гулбенський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-JK-2",
       "name": "Jēkabpils",
-      "name_ru": "Екабпилсский",
+      "name_ru": "Єкабпілський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-JL-2",
       "name": "Jelgava",
-      "name_ru": "Елгавский",
+      "name_ru": "Єлгавський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-KR-2",
       "name": "Krāslava",
-      "name_ru": "Краславский",
+      "name_ru": "Краславський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-KU-2",
       "name": "Kuldīga",
-      "name_ru": "Кулдигский",
+      "name_ru": "Кулдігський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-LE-2",
       "name": "Liepāja",
-      "name_ru": "Лиепайский",
+      "name_ru": "Ліепайський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-LM-2",
       "name": "Limbaži",
-      "name_ru": "Лимбажский",
+      "name_ru": "Лімбажський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-LU-2",
       "name": "Ludza",
-      "name_ru": "Лудзенский",
+      "name_ru": "Лудзенський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-MA-2",
       "name": "Madona",
-      "name_ru": "Мадонский",
+      "name_ru": "Мадонський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-OG-2",
       "name": "Ogre",
-      "name_ru": "Огрский",
+      "name_ru": "Огрський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-PR-2",
       "name": "Preili",
-      "name_ru": "Прейльский",
+      "name_ru": "Прейльський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-RE-2",
       "name": "Rēzekne",
-      "name_ru": "Резекненский",
+      "name_ru": "Резекненський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-RI-2",
       "name": "Riga",
-      "name_ru": "Рижский",
+      "name_ru": "Ризький",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-SA-2",
       "name": "Saldus",
-      "name_ru": "Салдусский",
+      "name_ru": "Салдуський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-TA-2",
       "name": "Talsi",
-      "name_ru": "Талсинский",
+      "name_ru": "Талський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-TU-2",
       "name": "Tukum",
-      "name_ru": "Тукумсский",
+      "name_ru": "Тукумський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-VK-2",
       "name": "Valka",
-      "name_ru": "Валкский",
+      "name_ru": "Валкський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-VM-2",
       "name": "Valmiera",
-      "name_ru": "Валмиерский",
+      "name_ru": "Валмерський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-VE-2",
       "name": "Ventspils",
-      "name_ru": "Вентспилсский",
+      "name_ru": "Вентспілський",
       "active": "N"
     },
     {
       "country_id": "LV",
       "region_id": "LV-DGV",
       "name": "Daugavpils",
-      "name_ru": "Даугавпилс",
+      "name_ru": "Даугавпілс",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-JEL",
       "name": "Jelgava",
-      "name_ru": "Елгава",
+      "name_ru": "Єлгава",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-JKB",
       "name": "Jēkabpils",
-      "name_ru": "Екабпилс",
+      "name_ru": "Єкабпілс",
       "active": "Y"
     },
     {
@@ -3375,7 +3375,7 @@
       "country_id": "LV",
       "region_id": "LV-LPX",
       "name": "Liepāja",
-      "name_ru": "Лиепая",
+      "name_ru": "Лієпая",
       "active": "Y"
     },
     {
@@ -3396,1022 +3396,1022 @@
       "country_id": "LV",
       "region_id": "LV-VMR",
       "name": "Valmiera",
-      "name_ru": "Валмиера",
+      "name_ru": "Валмиєра",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-VEN",
       "name": "Ventspils",
-      "name_ru": "Вентспилс",
+      "name_ru": "Вентспілс",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-001",
       "name": "Aglonas novads",
-      "name_ru": "Аглонский край",
+      "name_ru": "Аглонський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-002",
       "name": "Aizkraukles novads",
-      "name_ru": "Айзкраукльский край",
+      "name_ru": "Айзкрауклеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-003",
       "name": "Aizputes novads",
-      "name_ru": "Айзпутский край",
+      "name_ru": "Айзпутський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-004",
       "name": "Aknīstes novads",
-      "name_ru": "Акнистский край",
+      "name_ru": "Акністеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-005",
       "name": "Alojas novads",
-      "name_ru": "Алойский край",
+      "name_ru": "Алойський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-006",
       "name": "Alsungas novads",
-      "name_ru": "Алсунгский край",
+      "name_ru": "Алсунгський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-007",
       "name": "Alūksnes novads",
-      "name_ru": "Алуксненский край",
+      "name_ru": "Алукснеский край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-008",
       "name": "Amatas novads",
-      "name_ru": "Аматский край",
+      "name_ru": "Аматський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-009",
       "name": "Apes novads",
-      "name_ru": "Апский край",
+      "name_ru": "Апський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-010",
       "name": "Auces novads",
-      "name_ru": "Ауцский край",
+      "name_ru": "Ауцький край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-011",
       "name": "Ādažu novads",
-      "name_ru": "Адажский край",
+      "name_ru": "Адажський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-012",
       "name": "Babītes novads",
-      "name_ru": "Бабитский край",
+      "name_ru": "Бабитський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-013",
       "name": "Baldones novads",
-      "name_ru": "Балдонский край",
+      "name_ru": "Балдонський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-014",
       "name": "Baltinavas novads",
-      "name_ru": "Балтинавский край",
+      "name_ru": "Балтинавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-015",
       "name": "Balvu novads",
-      "name_ru": "Балвский край",
+      "name_ru": "Балвський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-016",
       "name": "Bauskas novads",
-      "name_ru": "Бауский край",
+      "name_ru": "Бауський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-017",
       "name": "Beverīnas novads",
-      "name_ru": "Беверинский край",
+      "name_ru": "Беверінський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-018",
       "name": "Brocēnu novads",
-      "name_ru": "Броценский край",
+      "name_ru": "Броценський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-019",
       "name": "Burtnieku novads",
-      "name_ru": "Буртниекский край",
+      "name_ru": "Буртніекський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-020",
       "name": "Carnikavas novads",
-      "name_ru": "Царникавский край",
+      "name_ru": "Царниківський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-021",
       "name": "Cesvaines novads",
-      "name_ru": "Цесвайнский край",
+      "name_ru": "Цесвайнський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-022",
       "name": "Cēsu novads",
-      "name_ru": "Цесисский край",
+      "name_ru": "Цесиський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-023",
       "name": "Ciblas novads",
-      "name_ru": "Циблский край",
+      "name_ru": "Цибласький край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-024",
       "name": "Dagdas novads",
-      "name_ru": "Дагдский край",
+      "name_ru": "Дагдаський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-025",
       "name": "Daugavpils novads",
-      "name_ru": "Даугавпилсский край",
+      "name_ru": "Даугавпілський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-026",
       "name": "Dobeles novads",
-      "name_ru": "Добельский край",
+      "name_ru": "Добелеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-027",
       "name": "Dundagas novads",
-      "name_ru": "Дундагский край",
+      "name_ru": "Дундагаський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-028",
       "name": "Durbes novads",
-      "name_ru": "Дурбский край",
+      "name_ru": "Дурбеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-029",
       "name": "Engures novads",
-      "name_ru": "Энгурский край",
+      "name_ru": "Енгурський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-030",
       "name": "Ērgļu novads",
-      "name_ru": "Эргльский край",
+      "name_ru": "Ерглеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-031",
       "name": "Garkalnes novads",
-      "name_ru": "Гаркалнский край",
+      "name_ru": "Гаркальнеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-032",
       "name": "Grobiņas novads",
-      "name_ru": "Гробинский край",
+      "name_ru": "Гробінеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-033",
       "name": "Gulbenes novads",
-      "name_ru": "Гулбенский край",
+      "name_ru": "Гулбенський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-034",
       "name": "Iecavas novads",
-      "name_ru": "Иецавский край",
+      "name_ru": "Єцавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-035",
       "name": "Ikšķiles novads",
-      "name_ru": "Икшкильский край",
+      "name_ru": "Ікшкільський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-036",
       "name": "Inčukalna novads",
-      "name_ru": "Инчукалнский край",
+      "name_ru": "Інчукалнський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-037",
       "name": "Ilūkstes novads",
-      "name_ru": "Илукстский край",
+      "name_ru": "Ілукстський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-038",
       "name": "Jaunjelgavas novads",
-      "name_ru": "Яунелгавский край",
+      "name_ru": "Яунелгавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-039",
       "name": "Jaunpiebalgas novads",
-      "name_ru": "Яунпиебалгский край",
+      "name_ru": "Яунпіебалгський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-040",
       "name": "Jaunpils novads",
-      "name_ru": "Яунпилсский край",
+      "name_ru": "Яунпілсський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-041",
       "name": "Jelgavas novads",
-      "name_ru": "Елгавский край",
+      "name_ru": "Єлгавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-042",
       "name": "Jēkabpils novads",
-      "name_ru": "Екабпилсский край",
+      "name_ru": "Єкабпілський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-043",
       "name": "Kandavas novads",
-      "name_ru": "Кандавский край",
+      "name_ru": "Кандавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-044",
       "name": "Kārsavas novads",
-      "name_ru": "Карсавский край",
+      "name_ru": "Карсавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-045",
       "name": "Kocēnu novads",
-      "name_ru": "Коценский край",
+      "name_ru": "Коценський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-046",
       "name": "Kokneses novads",
-      "name_ru": "Кокнесский край",
+      "name_ru": "Кокнесський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-047",
       "name": "Krāslavas novads",
-      "name_ru": "Краславский край",
+      "name_ru": "Краславський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-048",
       "name": "Krimuldas novads",
-      "name_ru": "Кримулдский край",
+      "name_ru": "Кримулдський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-049",
       "name": "Krustpils novads",
-      "name_ru": "Крустпилсский край",
+      "name_ru": "Крустпілський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-050",
       "name": "Kuldīgas novads",
-      "name_ru": "Кулдигский край",
+      "name_ru": "Кулдігський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-051",
       "name": "Ķeguma novads",
-      "name_ru": "Кегумский край",
+      "name_ru": "Кегумський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-052",
       "name": "Ķekavas novads",
-      "name_ru": "Кекавский край",
+      "name_ru": "Кекавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-053",
       "name": "Lielvārdes novads",
-      "name_ru": "Лиелвардский край",
+      "name_ru": "Лієлвардеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-054",
       "name": "Limbažu novads",
-      "name_ru": "Лимбажский край",
+      "name_ru": "Лімбажський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-055",
       "name": "Līgatnes novads",
-      "name_ru": "Лигатненский край",
+      "name_ru": "Лігатнеський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-056",
       "name": "Līvānu novads",
-      "name_ru": "Ливанский край",
+      "name_ru": "Ліванський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-057",
       "name": "Lubānas novads",
-      "name_ru": "Лубанский край",
+      "name_ru": "Лубанський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-058",
       "name": "Ludzas novads",
-      "name_ru": "Лудзенский край",
+      "name_ru": "Лудзенський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-059",
       "name": "Madonas novads",
-      "name_ru": "Мадонский край",
+      "name_ru": "Мадонський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-060",
       "name": "Mazsalacas novads",
-      "name_ru": "Мазсалацский край",
+      "name_ru": "Мазсалакаський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-061",
       "name": "Mālpils novads",
-      "name_ru": "Малпилсский край",
+      "name_ru": "Малпільський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-062",
       "name": "Mārupes novads",
-      "name_ru": "Марупский край",
+      "name_ru": "Марупський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-063",
       "name": "Mērsraga novads",
-      "name_ru": "Мерсрагский край",
+      "name_ru": "Мерсрагський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-064",
       "name": "Naukšēnu novads",
-      "name_ru": "Наукшенский край",
+      "name_ru": "Наукшенський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-065",
       "name": "Neretas novads",
-      "name_ru": "Неретский край",
+      "name_ru": "Неретський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-066",
       "name": "Nīcas novads",
-      "name_ru": "Ницский край",
+      "name_ru": "Ніцський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-067",
       "name": "Ogres novads",
-      "name_ru": "Огрский край",
+      "name_ru": "Огрський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-068",
       "name": "Olaines novads",
-      "name_ru": "Олайнский край",
+      "name_ru": "Олайнський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-069",
       "name": "Ozolnieku novads",
-      "name_ru": "Озолниекский край",
+      "name_ru": "Озолнєкський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-070",
       "name": "Pārgaujas novads",
-      "name_ru": "Паргауйский край",
+      "name_ru": "Паргауйський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-071",
       "name": "Pāvilostas novads",
-      "name_ru": "Павилостский край",
+      "name_ru": "Павілостський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-072",
       "name": "Pļaviņu novads",
-      "name_ru": "Плявинский край",
+      "name_ru": "Плявінський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-073",
       "name": "Preiļu novads",
-      "name_ru": "Прейльский край",
+      "name_ru": "Прейлський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-074",
       "name": "Priekules novads",
-      "name_ru": "Приекульский край",
+      "name_ru": "Приекулський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-075",
       "name": "Priekuļu novads",
-      "name_ru": "Приекульский край",
+      "name_ru": "Приекулський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-076",
       "name": "Raunas novads",
-      "name_ru": "Раунский край",
+      "name_ru": "Раунський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-077",
       "name": "Rēzeknes novads",
-      "name_ru": "Резекненский край",
+      "name_ru": "Резекнський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-078",
       "name": "Riebiņu novads",
-      "name_ru": "Риебинский край",
+      "name_ru": "Рєбінський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-079",
       "name": "Rojas novads",
-      "name_ru": "Ройский край",
+      "name_ru": "Ройський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-080",
       "name": "Ropažu novads",
-      "name_ru": "Ропажский край",
+      "name_ru": "Ропажський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-081",
       "name": "Rucavas novads",
-      "name_ru": "Руцавский край",
+      "name_ru": "Руцавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-082",
       "name": "Rugāju novads",
-      "name_ru": "Ругайский край",
+      "name_ru": "Ругайський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-083",
       "name": "Rundāles novads",
-      "name_ru": "Рундальский край",
+      "name_ru": "Рундальський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-084",
       "name": "Rūjienas novads",
-      "name_ru": "Руйиенский край",
+      "name_ru": "Руйєнський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-085",
       "name": "Salas novads",
-      "name_ru": "Салский край",
+      "name_ru": "Сальський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-086",
       "name": "Salacgrīvas novads",
-      "name_ru": "Салацгривский край",
+      "name_ru": "Салацигрівський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-087",
       "name": "Salaspils novads",
-      "name_ru": "Саласпилсский край",
+      "name_ru": "Саласпілський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-088",
       "name": "Saldus novads",
-      "name_ru": "Салдусский край",
+      "name_ru": "Салдуський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-089",
       "name": "Saulkrastu novads",
-      "name_ru": "Саулкрастский край",
+      "name_ru": "Саулкрастський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-090",
       "name": "Sējas novads",
-      "name_ru": "Сейский край",
+      "name_ru": "Сейський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-091",
       "name": "Siguldas novads",
-      "name_ru": "Сигулдский край",
+      "name_ru": "Сігулдський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-092",
       "name": "Skrīveru novads",
-      "name_ru": "Скриверский край",
+      "name_ru": "Скриверський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-093",
       "name": "Skrundas novads",
-      "name_ru": "Скрундский край",
+      "name_ru": "Скрундський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-094",
       "name": "Smiltenes novads",
-      "name_ru": "Смилтенский край",
+      "name_ru": "Смільтенський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-095",
       "name": "Stopiņu novads",
-      "name_ru": "Стопинский край",
+      "name_ru": "Стопінський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-096",
       "name": "Strenču novads",
-      "name_ru": "Стренчский край",
+      "name_ru": "Стренчський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-097",
       "name": "Talsu novads",
-      "name_ru": "Талсинский край",
+      "name_ru": "Талський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-098",
       "name": "Tērvetes novads",
-      "name_ru": "Терветский край",
+      "name_ru": "Терветський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-099",
       "name": "Tukuma novads",
-      "name_ru": "Тукумский край",
+      "name_ru": "Тукумський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-100",
       "name": "Vaiņodes novads",
-      "name_ru": "Вайнёдский край",
+      "name_ru": "Вайньодський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-101",
       "name": "Valkas novads",
-      "name_ru": "Валкский край",
+      "name_ru": "Валкський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-102",
       "name": "Varakļānu novads",
-      "name_ru": "Вараклянский край",
+      "name_ru": "Вараклянський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-103",
       "name": "Vārkavas novads",
-      "name_ru": "Варкавский край",
+      "name_ru": "Варкавський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-104",
       "name": "Vecpiebalgas novads",
-      "name_ru": "Вецпиебалгский край",
+      "name_ru": "Вецпиебалгський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-105",
       "name": "Vecumnieku novads",
-      "name_ru": "Вецумниекский край",
+      "name_ru": "Вецумньекський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-106",
       "name": "Ventspils novads",
-      "name_ru": "Вентспилсский край",
+      "name_ru": "Вентспілський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-107",
       "name": "Viesītes novads",
-      "name_ru": "Виеситский край",
+      "name_ru": "Вієсітський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-108",
       "name": "Viļakas novads",
-      "name_ru": "Вилякский край",
+      "name_ru": "Вілякський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-109",
       "name": "Viļānu novads",
-      "name_ru": "Вилянский край",
+      "name_ru": "Вілянський край",
       "active": "Y"
     },
     {
       "country_id": "LV",
       "region_id": "LV-110",
       "name": "Zilupes novads",
-      "name_ru": "Зилупский край",
+      "name_ru": "Зілупський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ALT",
       "name": "Altai Krai",
-      "name_ru": "Алтайский край",
+      "name_ru": "Алтайський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-AL",
       "name": "Altai Republic",
-      "name_ru": "Республика Алтай",
+      "name_ru": "Республіка Алтай",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-AMU",
       "name": "Amur Oblast",
-      "name_ru": "Амурская область",
+      "name_ru": "Амурська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ARK",
       "name": "Arkhangelsk Oblast",
-      "name_ru": "Архангельская область",
+      "name_ru": "Архангельська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ATS",
       "name": "Astrakhan Oblast",
-      "name_ru": "Астраханская область",
+      "name_ru": "Астраханська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-BEL",
       "name": "Belgorod Oblast",
-      "name_ru": "Белгородская область",
+      "name_ru": "Бєлгородська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-BRY",
       "name": "Bryansk Oblast",
-      "name_ru": "Брянская область",
+      "name_ru": "Брянська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-BU",
       "name": "Buryat Republic",
-      "name_ru": "Республика Бурятия",
+      "name_ru": "Республіка Бурятія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-CE",
       "name": "Chechen Republic",
-      "name_ru": "Республика Чечня",
+      "name_ru": "Чеченська Республіка",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-CHE",
       "name": "Chelyabinsk Oblast",
-      "name_ru": "Челябинская область",
+      "name_ru": "Челябінська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-CHU",
       "name": "Chukotka Autonomous Okrug",
-      "name_ru": "Чукотский Автономный округ",
+      "name_ru": "Чукотський автономний округ",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-CU",
       "name": "Chuvash Republic",
-      "name_ru": "Республика Чувашия",
+      "name_ru": "Чуваська Республіка",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-IRK",
       "name": "Irkutsk Oblast",
-      "name_ru": "Иркутская область",
+      "name_ru": "Іркутська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-IVA",
       "name": "Ivanovo Oblast",
-      "name_ru": "Ивановская область",
+      "name_ru": "Іванівська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-YEV",
       "name": "Jewish Autonomous Oblast",
-      "name_ru": "Еврейская Автономная область",
+      "name_ru": "Єврейська автономна область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KB",
       "name": "Kabardino-Balkar Republic",
-      "name_ru": "Кабардино-Балкарская республика",
+      "name_ru": "Кабардино-Балкарська республіка",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KGD",
       "name": "Kaliningrad Oblast",
-      "name_ru": "Калининградская область",
+      "name_ru": "Калінінградська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KLU",
       "name": "Kaluga Oblast",
-      "name_ru": "Калужская область",
+      "name_ru": "Калузька область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KAM",
       "name": "Kamchatka Krai",
-      "name_ru": "Камчатский край",
+      "name_ru": "Камчатський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KC",
       "name": "Karachay-Cherkess Republic",
-      "name_ru": "Карачаево-Черкесская республика",
+      "name_ru": "Карачаєво-Черкеська республіка",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KEM",
       "name": "Kemerovo Oblast",
-      "name_ru": "Кемеровская область",
+      "name_ru": "Кемеровська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KHA",
       "name": "Khabarovsk Krai",
-      "name_ru": "Хабаровский край",
+      "name_ru": "Хабаровський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KHM",
       "name": "Khanty-Mansi Autonomous Oblast",
-      "name_ru": "Ханты-Мансийский Автономный округ — Югра",
+      "name_ru": "Ханти-Мансійський автономний округ - Югра",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KGN",
       "name": "Kirov Oblast",
-      "name_ru": "Кировская область",
+      "name_ru": "Кіровська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KO",
       "name": "Komi Republic",
-      "name_ru": "Республика Коми",
+      "name_ru": "Республіка Комі",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KOS",
       "name": "Kostroma Oblast",
-      "name_ru": "Костромская область",
+      "name_ru": "Костромська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KDA",
       "name": "Krasnodar Krai",
-      "name_ru": "Краснодарский край",
+      "name_ru": "Краснодарський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KYA",
       "name": "Krasnoyarsk Krai",
-      "name_ru": "Красноярский край",
+      "name_ru": "Красноярський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KU",
       "name": "Kurgan Oblast",
-      "name_ru": "Курганская область",
+      "name_ru": "Курганська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KRS",
       "name": "Kursk Oblast",
-      "name_ru": "Курская область",
+      "name_ru": "Курська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-LEN",
       "name": "Leningrad Oblast",
-      "name_ru": "Ленинградская область",
+      "name_ru": "Ленінградська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-LIP",
       "name": "Lipetsk Oblast",
-      "name_ru": "Липецкая область",
+      "name_ru": "Липецька область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-MAG",
       "name": "Magadan Oblast",
-      "name_ru": "Магаданская область",
+      "name_ru": "Магаданська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ME",
       "name": "Mari El Republic",
-      "name_ru": "Республика Марий Эл",
+      "name_ru": "Республіка Марій Ел",
       "active": "Y"
     },
     {
@@ -4425,336 +4425,336 @@
       "country_id": "RU",
       "region_id": "RU-MOS",
       "name": "Moscow Oblast",
-      "name_ru": "Московская область",
+      "name_ru": "Московська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-MUR",
       "name": "Murmansk Oblast",
-      "name_ru": "Мурманская область",
+      "name_ru": "Мурманська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-NEN",
       "name": "Nenets Autonomous Okrug",
-      "name_ru": "Ненецкий Автономный округ",
+      "name_ru": "Ненецький автономний округ",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-NIZ",
       "name": "Nizhny Novgorod Oblast",
-      "name_ru": "Нижегородская область",
+      "name_ru": "Нижньогородська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-NGR",
       "name": "Novgorod Oblast",
-      "name_ru": "Новгородская область",
+      "name_ru": "Новгородська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-NVS",
       "name": "Novosibirsk Oblast",
-      "name_ru": "Новосибирская область",
+      "name_ru": "Новосибірська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-OMS",
       "name": "Omsk Oblast",
-      "name_ru": "Омская область",
+      "name_ru": "Омська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ORE",
       "name": "Orenburg Oblast",
-      "name_ru": "Оренбургская область",
+      "name_ru": "Оренбурзьська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ORL",
       "name": "Oryol Oblast",
-      "name_ru": "Орловская область",
+      "name_ru": "Орловська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-PNZ",
       "name": "Penza Oblast",
-      "name_ru": "Пензенская область",
+      "name_ru": "Пензенська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-PER",
       "name": "Perm Krai",
-      "name_ru": "Пермский край",
+      "name_ru": "Пермський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-PRI",
       "name": "Primorsky Krai",
-      "name_ru": "Приморский край",
+      "name_ru": "Приморський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-PSK",
       "name": "Pskov Oblast",
-      "name_ru": "Псковская область",
+      "name_ru": "Псковська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-AD",
       "name": "Republic of Adygea",
-      "name_ru": "Республика Адыгея",
+      "name_ru": "Республіка Адигея",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-BA",
       "name": "Republic of Bashkortostan",
-      "name_ru": "Республика Башкортостан",
+      "name_ru": "Республіка Башкортостан",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-DA",
       "name": "Republic of Dagestan",
-      "name_ru": "Республика Дагестан",
+      "name_ru": "Республіка Дагестан",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-IN",
       "name": "Republic of Ingushetia",
-      "name_ru": "Республика Ингушетия",
+      "name_ru": "Республіка Інгушетія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KL",
       "name": "Republic of Kalmykia",
-      "name_ru": "Республика Калмыкия",
+      "name_ru": "Республіка Калмикія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KR",
       "name": "Republic of Karelia",
-      "name_ru": "Республика Карелия",
+      "name_ru": "Республіка Карелія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-KK",
       "name": "Republic of Khakassia",
-      "name_ru": "Республика Хакасия",
+      "name_ru": "Республіка Хакасія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-MO",
       "name": "Republic of Mordovia",
-      "name_ru": "Республика Мордовия",
+      "name_ru": "Республіка Мордовія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SE",
       "name": "Republic of North Ossetia-Alania",
-      "name_ru": "Республика Северная Осетия — Алания",
+      "name_ru": "Республіка Північна Осетія - Аланія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TA",
       "name": "Republic of Tatarstan",
-      "name_ru": "Республика Татарстан",
+      "name_ru": "Республіка Татарстан",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ROS",
       "name": "Rostov Oblast",
-      "name_ru": "Ростовская область",
+      "name_ru": "Ростовська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-RYA",
       "name": "Ryazan Oblast",
-      "name_ru": "Рязанская область",
+      "name_ru": "Рязанська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SPE",
       "name": "Saint Petersburg",
-      "name_ru": "Санкт Петербург",
+      "name_ru": "Санкт-Петербург",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SA",
       "name": "Sakha (Yakutia) Republic",
-      "name_ru": "Республика Саха (Якутия)",
+      "name_ru": "Республіка Саха (Якутія)",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SAK",
       "name": "Sakhalin Oblast",
-      "name_ru": "Сахалинская область",
+      "name_ru": "Сахалінська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SAM",
       "name": "Samara Oblast",
-      "name_ru": "Самарская область",
+      "name_ru": "Самарська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SAR",
       "name": "Saratov Oblast",
-      "name_ru": "Саратовская область",
+      "name_ru": "Саратовська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SMO",
       "name": "Smolensk Oblast",
-      "name_ru": "Смоленская область",
+      "name_ru": "Смоленська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-STA",
       "name": "Stavropol Krai",
-      "name_ru": "Ставропольский край",
+      "name_ru": "Ставропольський край",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-SVE",
       "name": "Sverdlovsk Oblast",
-      "name_ru": "Свердловская область",
+      "name_ru": "Область Свердловська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TAM",
       "name": "Tambov Oblast",
-      "name_ru": "Тамбовская область",
+      "name_ru": "Область Тамбовська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TOM",
       "name": "Tomsk Oblast",
-      "name_ru": "Томская область",
+      "name_ru": "Область Томська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TUL",
       "name": "Tula Oblast",
-      "name_ru": "Тульская область",
+      "name_ru": "Область Тульська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TVE",
       "name": "Tver Oblast",
-      "name_ru": "Тверская область",
+      "name_ru": "Область Тверська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TYU",
       "name": "Tyumen Oblast",
-      "name_ru": "Тюменская область",
+      "name_ru": "Область Тюменська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-TY",
       "name": "Tyva Republic",
-      "name_ru": "Республика Тыва (Тува)",
+      "name_ru": "Республіка Тива (Тува)",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-UD",
       "name": "Udmurt Republic",
-      "name_ru": "Республика Удмуртия",
+      "name_ru": "Республіка Удмуртія",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ULY",
       "name": "Ulyanovsk Oblast",
-      "name_ru": "Ульяновская область",
+      "name_ru": "Область Ульянівська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-VLA",
       "name": "Vladimir Oblast",
-      "name_ru": "Владимирская область",
+      "name_ru": "Область Володимирська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-VGG",
       "name": "Volgograd Oblast",
-      "name_ru": "Волгоградская область",
+      "name_ru": "Область Волгоградська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-VLG",
       "name": "Vologda Oblast",
-      "name_ru": "Вологодская область",
+      "name_ru": "Область Вологодська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-VOR",
       "name": "Voronezh Oblast",
-      "name_ru": "Воронежская область",
+      "name_ru": "Область Вороніжська",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-YAN",
-      "name": "Yamalo-Nenets Autonomous Okrug",
-      "name_ru": "Ямало-Ненецкий Автономный округ",
+      "name": "Ямало-Ненецький автономний округ",
+      "name_ru": "Ямало-Ненецький автономний округ",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-YAR",
-      "name": "Yaroslavl Oblast",
-      "name_ru": "Ярославская область",
+      "name": "Ярославська область",
+      "name_ru": "Ярославська область",
       "active": "Y"
     },
     {
       "country_id": "RU",
       "region_id": "RU-ZAB",
-      "name": "Zabaykalsky Krai",
-      "name_ru": "Забайкальский край",
+      "name": "Забайкальський край",
+      "name_ru": "Забайкальський край",
       "active": "Y"
     },
     {
@@ -4768,21 +4768,21 @@
       "country_id": "TR",
       "region_id": "TR-02",
       "name": "Adıyaman",
-      "name_ru": "Адыяман",
+      "name_ru": "Адияман",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-03",
       "name": "Afyonkarahisar (Afyon)",
-      "name_ru": "Афьонкарахисар",
+      "name_ru": "Афьон-Карахісар",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-04",
       "name": "Ağri",
-      "name_ru": "Агры",
+      "name_ru": "Агри",
       "active": "Y"
     },
     {
@@ -4824,28 +4824,28 @@
       "country_id": "TR",
       "region_id": "TR-08",
       "name": "Artvin",
-      "name_ru": "Артвин",
+      "name_ru": "Артвін",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-09",
       "name": "Aydın",
-      "name_ru": "Айдын",
+      "name_ru": "Айдин",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-10",
       "name": "Balıkesir",
-      "name_ru": "Балыкесир",
+      "name_ru": "Баликесір",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-74",
       "name": "Bartın",
-      "name_ru": "Бартын",
+      "name_ru": "Бартин",
       "active": "Y"
     },
     {
@@ -4866,21 +4866,21 @@
       "country_id": "TR",
       "region_id": "TR-11",
       "name": "Bilecik",
-      "name_ru": "Биледжик",
+      "name_ru": "Біледжик",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-12",
       "name": "Bingöl",
-      "name_ru": "Бингёль",
+      "name_ru": "Бінгель",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-13",
       "name": "Bitlis",
-      "name_ru": "Битлис",
+      "name_ru": "Бітліс",
       "active": "Y"
     },
     {
@@ -4915,7 +4915,7 @@
       "country_id": "TR",
       "region_id": "TR-18",
       "name": "Çankırı",
-      "name_ru": "Чанкыры",
+      "name_ru": "Чанкири",
       "active": "Y"
     },
     {
@@ -4929,14 +4929,14 @@
       "country_id": "TR",
       "region_id": "TR-20",
       "name": "Denizli",
-      "name_ru": "Денизли",
+      "name_ru": "Денізлі",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-21",
       "name": "Diyarbakır",
-      "name_ru": "Диярбакыр",
+      "name_ru": "Діярбакир",
       "active": "Y"
     },
     {
@@ -4950,49 +4950,49 @@
       "country_id": "TR",
       "region_id": "TR-22",
       "name": "Edirne",
-      "name_ru": "Эдирне",
+      "name_ru": "Едірне",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-23",
       "name": "Elazığ",
-      "name_ru": "Элязыг",
+      "name_ru": "Елязиг",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-24",
       "name": "Erzincan",
-      "name_ru": "Эрзинджан",
+      "name_ru": "Ерзінджан",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-25",
       "name": "Erzurum",
-      "name_ru": "Эрзурум",
+      "name_ru": "Ерзурум",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-26",
       "name": "Eskişehir",
-      "name_ru": "Эскишехир",
+      "name_ru": "Ескішехір",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-27",
       "name": "Gaziantep",
-      "name_ru": "Газиантеп",
+      "name_ru": "Газіантеп",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-28",
       "name": "Giresun",
-      "name_ru": "Гиресун",
+      "name_ru": "Гіресун",
       "active": "Y"
     },
     {
@@ -5006,7 +5006,7 @@
       "country_id": "TR",
       "region_id": "TR-30",
       "name": "Hakkari",
-      "name_ru": "Хаккяри",
+      "name_ru": "Хаккярі",
       "active": "Y"
     },
     {
@@ -5020,14 +5020,14 @@
       "country_id": "TR",
       "region_id": "TR-76",
       "name": "Iğdir",
-      "name_ru": "Ыгдыр",
+      "name_ru": "Игдир",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-32",
       "name": "Isparta",
-      "name_ru": "Ыспарта",
+      "name_ru": "Іспарта",
       "active": "Y"
     },
     {
@@ -5041,7 +5041,7 @@
       "country_id": "TR",
       "region_id": "TR-35",
       "name": "İzmir",
-      "name_ru": "Измир",
+      "name_ru": "Ізмір",
       "active": "Y"
     },
     {
@@ -5083,42 +5083,42 @@
       "country_id": "TR",
       "region_id": "TR-38",
       "name": "Kayseri",
-      "name_ru": "Кайсери",
+      "name_ru": "Кайсері",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-79",
       "name": "Kilis",
-      "name_ru": "Килис",
+      "name_ru": "Кіліс",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-71",
       "name": "Kırıkkale",
-      "name_ru": "Кырыккале",
+      "name_ru": "Кириккале",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-39",
       "name": "Kırklareli",
-      "name_ru": "Кыркларели",
+      "name_ru": "Киркларелі",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-40",
       "name": "Kırşehir",
-      "name_ru": "Кыршехир",
+      "name_ru": "Киршехір",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-41",
       "name": "Kocaeli",
-      "name_ru": "Коджаэли",
+      "name_ru": "Коджаелі",
       "active": "Y"
     },
     {
@@ -5146,21 +5146,21 @@
       "country_id": "TR",
       "region_id": "TR-45",
       "name": "Manisa",
-      "name_ru": "Маниса",
+      "name_ru": "Маніса",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-47",
       "name": "Mardin",
-      "name_ru": "Мардин",
+      "name_ru": "Мардін",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-33",
       "name": "Mersin",
-      "name_ru": "Мерсин",
+      "name_ru": "Мерсін",
       "active": "Y"
     },
     {
@@ -5181,14 +5181,14 @@
       "country_id": "TR",
       "region_id": "TR-50",
       "name": "Nevşehir",
-      "name_ru": "Невшехир",
+      "name_ru": "Невшехір",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-51",
       "name": "Niğde",
-      "name_ru": "Нигде",
+      "name_ru": "Нігде",
       "active": "Y"
     },
     {
@@ -5202,21 +5202,21 @@
       "country_id": "TR",
       "region_id": "TR-80",
       "name": "Osmaniye",
-      "name_ru": "Османие",
+      "name_ru": "Османіє",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-53",
       "name": "Rize",
-      "name_ru": "Ризе",
+      "name_ru": "Різе",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-54",
       "name": "Sakarya",
-      "name_ru": "Сакарья",
+      "name_ru": "Сакар'я",
       "active": "Y"
     },
     {
@@ -5230,35 +5230,35 @@
       "country_id": "TR",
       "region_id": "TR-63",
       "name": "Şanlıurfa",
-      "name_ru": "Шанлыурфа",
+      "name_ru": "Шанлиурфа",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-56",
       "name": "Siirt",
-      "name_ru": "Сиирт",
+      "name_ru": "Сіїрт",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-57",
       "name": "Sinop",
-      "name_ru": "Синоп",
+      "name_ru": "Сіноп",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-73",
       "name": "Şırnak",
-      "name_ru": "Ширнак",
+      "name_ru": "Шірнак",
       "active": "Y"
     },
     {
       "country_id": "TR",
       "region_id": "TR-58",
       "name": "Sivas",
-      "name_ru": "Сивас",
+      "name_ru": "Сівас",
       "active": "Y"
     },
     {
@@ -5286,7 +5286,7 @@
       "country_id": "TR",
       "region_id": "TR-62",
       "name": "Tunceli",
-      "name_ru": "Тунджели",
+      "name_ru": "Тунджелі",
       "active": "Y"
     },
     {
