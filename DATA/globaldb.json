@@ -5328,7 +5328,7 @@
       "country_id": "IN",
       "region_id": "IN-AN",
       "name": "Andaman and Nicobar Islands",
-      "name_ru": "Андаманские и Никобарские острова",
+      "name_ru": "Андаманські і Нікобарські острови",
       "active": "Y"
     },
     {
@@ -5363,35 +5363,35 @@
       "country_id": "IN",
       "region_id": "IN-CH",
       "name": "Chandigarh",
-      "name_ru": "Чандигарх",
+      "name_ru": "Чандігарх",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-CT",
       "name": "Chhattisgarh",
-      "name_ru": "Чхаттисгарх",
+      "name_ru": "Чхаттісґарх",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-DN",
       "name": "Dadra and Nagar Haveli",
-      "name_ru": "Дадра и Нагар-Хавели",
+      "name_ru": "Дадра і Нагар-Хавелі",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-DD",
       "name": "Daman and Diu",
-      "name_ru": "Даман и Диу",
+      "name_ru": "Даман і Діу",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-DL",
       "name": "Delhi",
-      "name_ru": "Дели",
+      "name_ru": "Делі",
       "active": "Y"
     },
     {
@@ -5412,21 +5412,21 @@
       "country_id": "IN",
       "region_id": "IN-HR",
       "name": "Haryana",
-      "name_ru": "Харьяна",
+      "name_ru": "Хар'яна",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-HP",
       "name": "Himachal Pradesh",
-      "name_ru": "Химачал-Прадеш",
+      "name_ru": "Хіма́чал-Прадеш",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-JK",
       "name": "Jammu and Kashmir",
-      "name_ru": "Джамму и Кашмир",
+      "name_ru": "Джамму і Кашмір",
       "active": "Y"
     },
     {
@@ -5454,14 +5454,14 @@
       "country_id": "IN",
       "region_id": "IN-LD",
       "name": "Lakshadweep",
-      "name_ru": "Лакшадвип",
+      "name_ru": "Лакшадвіп",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-MP",
       "name": "Madhya Pradesh",
-      "name_ru": "Мадхья-Прадеш",
+      "name_ru": "Мадх'я-Прадеш",
       "active": "Y"
     },
     {
@@ -5475,7 +5475,7 @@
       "country_id": "IN",
       "region_id": "IN-MN",
       "name": "Manipur",
-      "name_ru": "Манипур",
+      "name_ru": "Маніпур",
       "active": "Y"
     },
     {
@@ -5489,7 +5489,7 @@
       "country_id": "IN",
       "region_id": "IN-MZ",
       "name": "Mizoram",
-      "name_ru": "Мизорам",
+      "name_ru": "Мізорам",
       "active": "Y"
     },
     {
@@ -5503,14 +5503,14 @@
       "country_id": "IN",
       "region_id": "IN-OR",
       "name": "Orissa",
-      "name_ru": "Орисса",
+      "name_ru": "Орісса",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-PY",
       "name": "Puducherry",
-      "name_ru": "Пондишери",
+      "name_ru": "Пондішері",
       "active": "Y"
     },
     {
@@ -5531,28 +5531,28 @@
       "country_id": "IN",
       "region_id": "IN-SK",
       "name": "Sikkim",
-      "name_ru": "Сикким",
+      "name_ru": "Сіккім",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-TN",
       "name": "Tamil Nadu",
-      "name_ru": "Тамилнад",
+      "name_ru": "Тамілнад",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-TR",
       "name": "Tripura",
-      "name_ru": "Трипура",
+      "name_ru": "Тріпура",
       "active": "Y"
     },
     {
       "country_id": "IN",
       "region_id": "IN-UT",
       "name": "Uttarakhand",
-      "name_ru": "Уттаракханд",
+      "name_ru": "Уттараханд",
       "active": "Y"
     },
     {
@@ -5566,126 +5566,126 @@
       "country_id": "IN",
       "region_id": "IN-WB",
       "name": "West Bengal",
-      "name_ru": "Западная Бенгалия",
+      "name_ru": "Західна Бенгалія",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-WP",
       "name": "Greater Poland (Wielkopolskie)",
-      "name_ru": "Великопольское воеводство",
+      "name_ru": "Великопольське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-KP",
       "name": "Kuyavian-Pomeranian (Kujawsko-Pomorskie)",
-      "name_ru": "Куявско-Поморское воеводство",
+      "name_ru": "Куявсько-Поморське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-MA",
       "name": "Lesser Poland (Małopolskie)",
-      "name_ru": "Малопольское воеводство",
+      "name_ru": "Малопольське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-LD",
       "name": "Łódź (Łódzkie)",
-      "name_ru": "Лодзинское воеводство",
+      "name_ru": "Лодзинське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-DS",
       "name": "Lower Silesian (Dolnośląskie)",
-      "name_ru": "Нижнесилезское воеводство",
+      "name_ru": "Нижньосилезьке воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-LU",
       "name": "Lublin (Lubelskie)",
-      "name_ru": "Люблинское воеводство",
+      "name_ru": "Люблінське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-LB",
       "name": "Lubusz (Lubuskie)",
-      "name_ru": "Любушское воеводство",
+      "name_ru": "Любушське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-MZ",
       "name": "Masovian (Mazowieckie)",
-      "name_ru": "Мазовецкое воеводство",
+      "name_ru": "Мазовецьке воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-OP",
       "name": "Opole (Opolskie)",
-      "name_ru": "Опольское воеводство",
+      "name_ru": "Опольське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-PD",
       "name": "Podlaskie (Podlaskie)",
-      "name_ru": "Подляшское воеводство",
+      "name_ru": "Подляське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-PM",
       "name": "Pomeranian (Pomorskie)",
-      "name_ru": "Поморское воеводство",
+      "name_ru": "Поморське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-SL",
       "name": "Silesian (Śląskie)",
-      "name_ru": "Силезское воеводство",
+      "name_ru": "Сілезьке воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-PK",
       "name": "Subcarpathian (Podkarpackie)",
-      "name_ru": "Подкарпатское воеводство",
+      "name_ru": "Підкарпатське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-SK",
       "name": "Świętokrzyskie",
-      "name_ru": "Свентокшиское воеводство",
+      "name_ru": "Свентокшиське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-WN",
       "name": "Warmian-Masurian (Warmińsko-Mazurskie)",
-      "name_ru": "Варминско-Мазурское воеводство",
+      "name_ru": "Вармінсько-Мазурське воєводство",
       "active": "Y"
     },
     {
       "country_id": "PL",
       "region_id": "PL-ZP",
       "name": "West Pomeranian (Zachodniopomorskie)",
-      "name_ru": "Западно-Поморское воеводство",
+      "name_ru": "Західно-Поморське воєводство",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-01",
       "name": "Andrijevica",
-      "name_ru": "Андриевица",
+      "name_ru": "Андриєвиця",
       "active": "Y"
     },
     {
@@ -5706,7 +5706,7 @@
       "country_id": "ME",
       "region_id": "ME-04",
       "name": "Bijelo Polje",
-      "name_ru": "Биело-Поле",
+      "name_ru": "Бієло-Полє",
       "active": "Y"
     },
     {
@@ -5720,7 +5720,7 @@
       "country_id": "ME",
       "region_id": "ME-06",
       "name": "Cetinje",
-      "name_ru": "Цетине",
+      "name_ru": "Цетінє",
       "active": "Y"
     },
     {
@@ -5734,7 +5734,7 @@
       "country_id": "ME",
       "region_id": "ME-08",
       "name": "Herceg Novi",
-      "name_ru": "Херцег-Нови",
+      "name_ru": "Херцег-Нові",
       "active": "Y"
     },
     {
@@ -5762,7 +5762,7 @@
       "country_id": "ME",
       "region_id": "ME-12",
       "name": "Nikšić",
-      "name_ru": "Никшич",
+      "name_ru": "Нікшич",
       "active": "Y"
     },
     {
@@ -5776,42 +5776,42 @@
       "country_id": "ME",
       "region_id": "ME-14",
       "name": "Pljevlja",
-      "name_ru": "Плевля",
+      "name_ru": "Плєвля",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-15",
       "name": "Plužine",
-      "name_ru": "Плужине",
+      "name_ru": "Плужінє",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-16",
       "name": "Podgorica",
-      "name_ru": "Подгорица",
+      "name_ru": "Подгориця",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-17",
       "name": "Rožaje",
-      "name_ru": "Рожае",
+      "name_ru": "Рожає",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-18",
       "name": "Šavnik",
-      "name_ru": "Шавник",
+      "name_ru": "Шавнік",
       "active": "Y"
     },
     {
       "country_id": "ME",
       "region_id": "ME-19",
       "name": "Tivat",
-      "name_ru": "Тиват",
+      "name_ru": "Тіват",
       "active": "Y"
     },
     {
@@ -5832,7 +5832,7 @@
       "country_id": "ME",
       "region_id": "ME-SLK",
       "name": "Skadar Lake",
-      "name_ru": "Скадарское озеро",
+      "name_ru": "Скадарське озеро",
       "active": "Y"
     },
     {
@@ -5846,7 +5846,7 @@
       "country_id": "CH",
       "region_id": "CH-AI",
       "name": "Appenzell Inner-Rhoden",
-      "name_ru": "Аппенцелль-Иннерроден",
+      "name_ru": "Аппенцелль-Іннерроден",
       "active": "Y"
     },
     {
@@ -5881,7 +5881,7 @@
       "country_id": "CH",
       "region_id": "CH-FR",
       "name": "Fribourg",
-      "name_ru": "Фрибур",
+      "name_ru": "Фрібур",
       "active": "Y"
     },
     {
@@ -5930,7 +5930,7 @@
       "country_id": "CH",
       "region_id": "CH-NW",
       "name": "Nidwalden",
-      "name_ru": "Нидвальден",
+      "name_ru": "Нідвальден",
       "active": "Y"
     },
     {
@@ -5979,14 +5979,14 @@
       "country_id": "CH",
       "region_id": "CH-TI",
       "name": "Ticino",
-      "name_ru": "Тичино",
+      "name_ru": "Тічіно",
       "active": "Y"
     },
     {
       "country_id": "CH",
       "region_id": "CH-UR",
       "name": "Uri",
-      "name_ru": " Ури",
+      "name_ru": " Урі",
       "active": "Y"
     },
     {
@@ -6021,189 +6021,189 @@
       "country_id": "UA",
       "region_id": "UA-CK",
       "name": "Cherkasy oblast",
-      "name_ru": "Черкасская область",
+      "name_ru": "Черкаська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-CH",
       "name": "Chernihiv oblast",
-      "name_ru": "Черниговская область",
+      "name_ru": "Чернігівська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-CV",
       "name": "Chernivtsi oblast",
-      "name_ru": "Черновицкая область",
+      "name_ru": "Чернівецька область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KR",
       "name": "Crimean Autonomic Republica",
-      "name_ru": "Автономная Республика Крым",
+      "name_ru": "Автономна Республіка Крим",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-DP",
       "name": "Dnipropetrovs'k oblast",
-      "name_ru": "Днепропетровская область",
+      "name_ru": "Дніпропетровська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-DT",
       "name": "Donets'k oblast",
-      "name_ru": "Донецкая область",
+      "name_ru": "Донецька область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-IF",
       "name": "Ivano-Frankivs'k oblast",
-      "name_ru": "Ивано-Франковская область",
+      "name_ru": "Івано-Франківська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KK",
       "name": "Kharkiv oblast",
-      "name_ru": "Харьковская область",
+      "name_ru": "Харківська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KS",
       "name": "Kherson oblast",
-      "name_ru": "Херсонская область",
+      "name_ru": "Херсонська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KM",
       "name": "Khmel'nyts'kyy oblast",
-      "name_ru": "Хмельницкая область",
+      "name_ru": "Хмельницька область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KV",
       "name": "Kyiv oblast",
-      "name_ru": "Киевская область",
+      "name_ru": "Київська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-KH",
       "name": "Kirovohrad oblast",
-      "name_ru": "Кировоградская область",
+      "name_ru": "Кіровоградська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-LH",
       "name": "Luhans'k oblast",
-      "name_ru": "Луганская область",
+      "name_ru": "Луганська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-LV",
       "name": "L'viv oblast",
-      "name_ru": "Львовская область",
+      "name_ru": "Львівська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-MY",
       "name": "Mykolayiv oblast",
-      "name_ru": "Николаевская область",
+      "name_ru": "Миколаївська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-OD",
       "name": "Odessa oblast",
-      "name_ru": "Одесская область",
+      "name_ru": "Одеська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-PL",
       "name": "Poltava oblast",
-      "name_ru": "Полтавская область",
+      "name_ru": "Полтавська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-RV",
       "name": "Rivne oblast",
-      "name_ru": "Ровненская область",
+      "name_ru": "Рівненська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-SM",
       "name": "Sumy oblast",
-      "name_ru": "Сумская область",
+      "name_ru": "Сумська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-TP",
       "name": "Ternopil oblast",
-      "name_ru": "Тернопольская область",
+      "name_ru": "Тернопільська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-ZK",
       "name": "Transcarpathia (Zakarpattia) oblast",
-      "name_ru": "Закарпатская область",
+      "name_ru": "Закарпатська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-VI",
       "name": "Vinnytsya oblast",
-      "name_ru": "Винницкая область",
+      "name_ru": "Вінницька область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-VO",
       "name": "Volyn oblast",
-      "name_ru": "Волынская область",
+      "name_ru": "Волинська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-ZP",
       "name": "Zaporizhzhya oblast",
-      "name_ru": "Запорожская область",
+      "name_ru": "Запорізька область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-ZT",
       "name": "Zhytomyr oblast",
-      "name_ru": "Житомирская область",
+      "name_ru": "Житомирська область",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-40",
       "name": "Sevastpol' City",
-      "name_ru": "Севастополь (город)",
+      "name_ru": "Севастополь (місто)",
       "active": "Y"
     },
     {
       "country_id": "UA",
       "region_id": "UA-30",
       "name": "Kyiv City",
-      "name_ru": "Киев (город)",
+      "name_ru": "Київ (місто)",
       "active": "Y"
     },
     {
@@ -6224,7 +6224,7 @@
       "country_id": "IT",
       "region_id": "FR-H",
       "name": "Corsica, France",
-      "name_ru": "Корсика, Франция",
+      "name_ru": "Корсика, Франція",
       "active": "Y"
     },
     {
@@ -6245,56 +6245,56 @@
       "country_id": "IT",
       "region_id": "IT-77",
       "name": "Basilicata",
-      "name_ru": "Базиликата",
+      "name_ru": "Базиліката",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-78",
       "name": "Calabria",
-      "name_ru": "Калабрия",
+      "name_ru": "Калабрія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-72",
       "name": "Campania",
-      "name_ru": "Кампания",
+      "name_ru": "Кампанія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-45",
       "name": "Emilia-Romagna",
-      "name_ru": "Эмилия-Романья",
+      "name_ru": "Емілія-Романья",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-36",
       "name": "Friuli-Venezia Giulia",
-      "name_ru": "Фриули-Венеция-Джулия",
+      "name_ru": "Фріулі-Венеція-Джулія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-62",
       "name": "Lazio",
-      "name_ru": "Лацио",
+      "name_ru": "Лаціо",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-42",
       "name": "Liguria",
-      "name_ru": "Лигурия",
+      "name_ru": "Лігурія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-25",
       "name": "Lombardy",
-      "name_ru": "Ломбардия",
+      "name_ru": "Ломбардія",
       "active": "Y"
     },
     {
@@ -6308,35 +6308,35 @@
       "country_id": "IT",
       "region_id": "IT-67",
       "name": "Molise",
-      "name_ru": "Молизе",
+      "name_ru": "Молізе",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-21",
       "name": "Piedmont",
-      "name_ru": "Пьемонт",
+      "name_ru": "П'ємонт",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-75",
       "name": "Apulia",
-      "name_ru": "Апулия",
+      "name_ru": "Апулія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-88",
       "name": "Sardinia",
-      "name_ru": "Сардиния",
+      "name_ru": "Сардинія",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-82",
       "name": "Sicily",
-      "name_ru": "Сицилия",
+      "name_ru": "Сицилія",
       "active": "Y"
     },
     {
@@ -6350,14 +6350,14 @@
       "country_id": "IT",
       "region_id": "IT-32",
       "name": "Trentino-Alto-Adige",
-      "name_ru": "Трентино-Альто-Адидже",
+      "name_ru": "Трентіно-Альто-Адідже",
       "active": "Y"
     },
     {
       "country_id": "IT",
       "region_id": "IT-55",
       "name": "Umbria",
-      "name_ru": "Умбрия",
+      "name_ru": "Умбрія",
       "active": "Y"
     },
     {
@@ -6378,21 +6378,21 @@
       "country_id": "LU",
       "region_id": "LU-G",
       "name": "Grevenmacher",
-      "name_ru": "Гревенмахер",
+      "name_ru": "Ґревенмахер",
       "active": "Y"
     },
     {
       "country_id": "LU",
       "region_id": "LU-D",
       "name": "Diekirch",
-      "name_ru": "Дикирх",
+      "name_ru": "Дікірх",
       "active": "Y"
     },
     {
       "country_id": "LU",
       "region_id": "LU-L",
       "name": "Luxembourg",
-      "name_ru": "Люксембург",
+      "name_ru": "Люксембурґ",
       "active": "Y"
     },
     {
@@ -6413,7 +6413,7 @@
       "country_id": "NL",
       "region_id": "NL-FR",
       "name": "Friesland",
-      "name_ru": "Фрисландия",
+      "name_ru": "Фрисландія",
       "active": "Y"
     },
     {
@@ -6427,35 +6427,35 @@
       "country_id": "NL",
       "region_id": "NL-GR",
       "name": "Groningen",
-      "name_ru": "Гронинген",
+      "name_ru": "Гронінген",
       "active": "Y"
     },
     {
       "country_id": "NL",
       "region_id": "NL-LI",
       "name": "Limburg",
-      "name_ru": "Лимбург",
+      "name_ru": "Лімбург",
       "active": "Y"
     },
     {
       "country_id": "NL",
       "region_id": "NL-NB",
       "name": "Noord-Brabant",
-      "name_ru": "Северный Брабант",
+      "name_ru": "Північний Брабант",
       "active": "Y"
     },
     {
       "country_id": "NL",
       "region_id": "NL-NH",
       "name": "Noord-Holland",
-      "name_ru": "Северная Голландия",
+      "name_ru": "Північна Голландія",
       "active": "Y"
     },
     {
       "country_id": "NL",
       "region_id": "NL-OV",
       "name": "Overijssel",
-      "name_ru": "Оверэйсел",
+      "name_ru": "Оверейсел",
       "active": "Y"
     },
     {
@@ -6469,14 +6469,14 @@
       "country_id": "NL",
       "region_id": "NL-ZE",
       "name": "Zeeland",
-      "name_ru": "Зеландия",
+      "name_ru": "Зеландія",
       "active": "Y"
     },
     {
       "country_id": "NL",
       "region_id": "NL-ZH",
       "name": "Zuid-Holland",
-      "name_ru": "Южная Голландия",
+      "name_ru": "Південна Голландія",
       "active": "Y"
     },
     {
@@ -6490,35 +6490,35 @@
       "country_id": "BE",
       "region_id": "BE-WBR",
       "name": "Walloon Brabant",
-      "name_ru": "Валлонский Брабант",
+      "name_ru": "Валлонський Брабант",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-BRU",
       "name": "Brussels Capital Region",
-      "name_ru": "Брюссельский столичный регион",
+      "name_ru": "Брюссельський столичний регіон",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-WHT",
       "name": "Hainaut",
-      "name_ru": "Эно",
+      "name_ru": "Ено",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-WLG",
       "name": "Liege",
-      "name_ru": "Льеж",
+      "name_ru": "Льєж",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-VLI",
       "name": "Limburg",
-      "name_ru": "Лимбург",
+      "name_ru": "Лімбург",
       "active": "Y"
     },
     {
@@ -6539,210 +6539,210 @@
       "country_id": "BE",
       "region_id": "BE-VOV",
       "name": "East Flanders",
-      "name_ru": "Восточная Фландрия",
+      "name_ru": "Східна Фландрия",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-VBR",
       "name": "Flemish Brabant",
-      "name_ru": "Фламандский Брабант",
+      "name_ru": "Фламандський Брабант",
       "active": "Y"
     },
     {
       "country_id": "BE",
       "region_id": "BE-VWV",
       "name": "West Flanders",
-      "name_ru": "Западная Фландрия",
+      "name_ru": "Західна Фландерська",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-GO",
       "name": "Gorenjska",
-      "name_ru": "Гореньский регион",
+      "name_ru": "Горенська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-SP",
       "name": "Goriška",
-      "name_ru": "Горицкий регион",
+      "name_ru": "Горицька область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-JS",
       "name": "Jugovzhodna Slovenija",
-      "name_ru": "Регион Юго-Восточная Словения",
+      "name_ru": "Південно-Східна Словенія",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-KO",
       "name": "Koroška",
-      "name_ru": "Корушский регион",
+      "name_ru": "Корушка область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-NO",
       "name": "Notranjsko-kraška",
-      "name_ru": "Внутреннекарстский регион",
+      "name_ru": "Внутрішня-крашка область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-JP",
       "name": "Obalno-kraška",
-      "name_ru": "Прибрежнокарстский регион",
+      "name_ru": "Прибережна-крашка область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-LJ",
       "name": "Osrednjeslovenska",
-      "name_ru": "Среднесловенский регион",
+      "name_ru": "Середньословенська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-PD",
       "name": "Podravska",
-      "name_ru": "Подравский регион",
+      "name_ru": "Подравська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-PM",
       "name": "Pomurska",
-      "name_ru": "Помурский регион",
+      "name_ru": "Помурська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-SA",
       "name": "Savinjska",
-      "name_ru": "Савиньский регион",
+      "name_ru": "Савіньська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-PS",
       "name": "Spodnjeposavska",
-      "name_ru": "Нижнепосавский регион",
+      "name_ru": "Нижньопосавська область",
       "active": "Y"
     },
     {
       "country_id": "SI",
       "region_id": "SI-ZS",
       "name": "Zasavska",
-      "name_ru": "Засавский регион",
+      "name_ru": "Засавська область",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-A",
       "name": "Grand Est",
-      "name_ru": "Большой восточный регио (Гранд-Эст)",
+      "name_ru": "Великий Східний регіон (Grand Est)",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-B",
       "name": "Nouvelle-Aquitaine",
-      "name_ru": "Новая Аквитания",
+      "name_ru": "Нова Аквітанія",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-C",
       "name": "Auvergne-Rhône-Alpes",
-      "name_ru": "Овернь — Рона — Альпы",
+      "name_ru": "Овернь - Рона - Альпи",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-D",
       "name": "Bourgogne-Franche-Comté",
-      "name_ru": "Бургундия — Франш-Конте",
+      "name_ru": "Бургундія - Франш-Конте",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-E",
       "name": "Bretagne",
-      "name_ru": "Брета́нь",
+      "name_ru": "Бретань",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-F",
       "name": "Centre-Val de Loire",
-      "name_ru": "Центр — Долина Луары",
+      "name_ru": "Центр - Долина Луари",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-G",
       "name": "Corse",
-      "name_ru": "Ко́рсика",
+      "name_ru": "Корсика",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-H",
       "name": "Île-de-France",
-      "name_ru": "Иль-де-Франс",
+      "name_ru": "Іль-де-Франс",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-I",
       "name": "Occitanie",
-      "name_ru": "Окситания",
+      "name_ru": "Окситанія",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-J",
       "name": "Hauts-de-France",
-      "name_ru": "Верхняя Франция (О-де-Франс)",
+      "name_ru": "Верхня Франція (О-де-Франс)",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-K",
       "name": "Normandie",
-      "name_ru": "Нормандия",
+      "name_ru": "Нормандія",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-L",
       "name": "Pays-de-la-Loir",
-      "name_ru": "Земли Луары",
+      "name_ru": "Земля Луари",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-M",
       "name": "Provence-Alpes-Côte d'Azur",
-      "name_ru": "Прованс — Альпы — Лазурный Берег",
+      "name_ru": "Прованс-Альпи-Лазурний берег",
       "active": "Y"
     },
     {
       "country_id": "FR",
       "region_id": "FR-A-2",
       "name": "Alsace",
-      "name_ru": "Эльзас",
+      "name_ru": "Ельзас",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-B-2",
       "name": "Aquitaine",
-      "name_ru": "Аквита́ния",
+      "name_ru": "Аквітанія",
       "active": "N"
     },
     {
@@ -6756,21 +6756,21 @@
       "country_id": "FR",
       "region_id": "FR-P-2",
       "name": "Basse-Normandie (Lower Normandy)",
-      "name_ru": "Нижняя Нормандия",
+      "name_ru": "Нижня Нормандія",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-D-2",
       "name": "Bourgogne (Burgundy)",
-      "name_ru": "Бургундия",
+      "name_ru": "Бургундія",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-E-2",
       "name": "Bretagne (Brittany)",
-      "name_ru": "Брета́нь",
+      "name_ru": "Бретань",
       "active": "N"
     },
     {
@@ -6784,14 +6784,14 @@
       "country_id": "FR",
       "region_id": "FR-G-2",
       "name": "Champagne-Ardenne",
-      "name_ru": "Шампань — Арденны",
+      "name_ru": "Шампань — Арденни",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-H-2",
       "name": "Corse (Corsica)",
-      "name_ru": "Ко́рсика",
+      "name_ru": "Корсика",
       "active": "N"
     },
     {
@@ -6805,84 +6805,84 @@
       "country_id": "FR",
       "region_id": "FR-Q-2",
       "name": "Haute-Normandie (Upper Normandy)",
-      "name_ru": "Верхняя Нормандия",
+      "name_ru": "Верхня Нормандія",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-J-2",
       "name": "Île-de-France",
-      "name_ru": "Иль-де-Франс",
+      "name_ru": "Іль-де-Франс",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-K-2",
       "name": "Languedoc-Roussillon",
-      "name_ru": "Лангедо́к — Руссильо́н",
+      "name_ru": "Лангедок-Русійон",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-L-2",
       "name": "Limousin",
-      "name_ru": "Лимузен",
+      "name_ru": "Лімузен",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-M-2",
       "name": "Lorraine",
-      "name_ru": "Лотарингия",
+      "name_ru": "Лотарингія",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-N-2",
       "name": "Midi-Pyrénées",
-      "name_ru": "Юг — Пиренеи",
+      "name_ru": "Міді-Піренеї",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-O-2",
       "name": "Nord-Pas-de-Calais",
-      "name_ru": "Нор — Па-де-Кале",
+      "name_ru": "Нор-Па-де-Кале",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-R-2",
       "name": "Pays-de-la-Loire",
-      "name_ru": "Земли Луары",
+      "name_ru": "Земля Луари",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-S-2",
       "name": "Picardie",
-      "name_ru": "Пикардия",
+      "name_ru": "Пікардія",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-T-2",
       "name": "Poitou-Charentes",
-      "name_ru": "Пуату — Шаранта",
+      "name_ru": "Пуату-Шаранта",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-U-2",
       "name": "Provence-Alpes-Côte d'Azur",
-      "name_ru": "Прованс — Альпы — Лазурный Берег",
+      "name_ru": "Прованс-Альпи-Лазурний Берег",
       "active": "N"
     },
     {
       "country_id": "FR",
       "region_id": "FR-V-2",
       "name": "Rhône-Alpes",
-      "name_ru": "Рона — Альпы",
+      "name_ru": "Рона-Альпи",
       "active": "N"
     },
     {
@@ -6896,7 +6896,7 @@
       "country_id": "CY",
       "region_id": "CY-06",
       "name": "Kyrenia",
-      "name_ru": "Киренея",
+      "name_ru": "Кіренея",
       "active": "Y"
     },
     {
@@ -6910,14 +6910,14 @@
       "country_id": "CY",
       "region_id": "CY-02",
       "name": "Limassol",
-      "name_ru": "Лимасол",
+      "name_ru": "Лімасол",
       "active": "Y"
     },
     {
       "country_id": "CY",
       "region_id": "CY-01",
       "name": "Nicosia",
-      "name_ru": "Никосия",
+      "name_ru": "Нікосія",
       "active": "Y"
     },
     {
@@ -6938,21 +6938,21 @@
       "country_id": "CY",
       "region_id": "GB-DX",
       "name": "Dhekelia",
-      "name_ru": "Декелия",
+      "name_ru": "Декелія",
       "active": "Y"
     },
     {
       "country_id": "CY",
       "region_id": "CY-GA",
       "name": "Gazimagusa",
-      "name_ru": "Газимагуса",
+      "name_ru": "Фамаґуста",
       "active": "Y"
     },
     {
       "country_id": "CY",
       "region_id": "CY-GI",
       "name": "Girne",
-      "name_ru": "Гирне",
+      "name_ru": "Кіренія",
       "active": "Y"
     },
     {
@@ -6966,7 +6966,7 @@
       "country_id": "CY",
       "region_id": "CY-IS",
       "name": "Iskele",
-      "name_ru": "Искеле",
+      "name_ru": "Іскеле",
       "active": "Y"
     },
     {
@@ -6980,14 +6980,14 @@
       "country_id": "CT",
       "region_id": "CT-GA",
       "name": "Gazimagusa",
-      "name_ru": "Газимагуса",
+      "name_ru": "Фамаґуста",
       "active": "Y"
     },
     {
       "country_id": "CT",
       "region_id": "CT-GI",
       "name": "Girne",
-      "name_ru": "Гирне",
+      "name_ru": "Кіренія",
       "active": "Y"
     },
     {
@@ -7001,28 +7001,28 @@
       "country_id": "CT",
       "region_id": "CT-IS",
       "name": "Iskele",
-      "name_ru": "Искеле",
+      "name_ru": "Іскеле",
       "active": "Y"
     },
     {
       "country_id": "CT",
       "region_id": "CT-LE",
       "name": "Lefkosa",
-      "name_ru": "Левкоша",
+      "name_ru": "Лефкоша",
       "active": "Y"
     },
     {
       "country_id": "CT",
       "region_id": "GB-AX",
       "name": "Akrotiri",
-      "name_ru": "Акротири",
+      "name_ru": "Акротірі",
       "active": "Y"
     },
     {
       "country_id": "CT",
       "region_id": "GB-DX",
       "name": "Dhekelia",
-      "name_ru": "Декелия",
+      "name_ru": "Декелія",
       "active": "Y"
     },
     {
@@ -7043,21 +7043,21 @@
       "country_id": "AD",
       "region_id": "AD-03",
       "name": "Encamp",
-      "name_ru": "Энкамп",
+      "name_ru": "Енкамп",
       "active": "Y"
     },
     {
       "country_id": "AD",
       "region_id": "AD-08",
       "name": "Escaldes-Engordany",
-      "name_ru": "Эскальдес-Энгордань",
+      "name_ru": "Ескальдес-Енгордань",
       "active": "Y"
     },
     {
       "country_id": "AD",
       "region_id": "AD-04",
       "name": "La Massana",
-      "name_ru": "Ла-Массана",
+      "name_ru": "Ла-Масана",
       "active": "Y"
     },
     {
@@ -7071,14 +7071,14 @@
       "country_id": "AD",
       "region_id": "AD-06",
       "name": "Sant Julià de Lòria",
-      "name_ru": "Сант-Жулия-де-Лория",
+      "name_ru": "Сант-Жулія-де-Лорія",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-AN",
       "name": "Andalusia",
-      "name_ru": "Андалусия",
+      "name_ru": "Андалузія",
       "active": "Y"
     },
     {
@@ -7092,77 +7092,77 @@
       "country_id": "ES",
       "region_id": "ES-AS",
       "name": "Asturias",
-      "name_ru": "Астурия",
+      "name_ru": "Астурія",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-IB",
       "name": "Balearic Islands",
-      "name_ru": "Балеарские острова",
+      "name_ru": "Балеарські острови",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-PV",
       "name": "Basque Country",
-      "name_ru": "Страна Басков",
+      "name_ru": "Країна Басків",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-CN",
       "name": "Canary Islands",
-      "name_ru": "Канарские острова",
+      "name_ru": "Канарські острови",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-CB",
       "name": "Cantabria",
-      "name_ru": "Кантабрия",
+      "name_ru": "Кантабрія",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-CL",
       "name": "Castile and Leon",
-      "name_ru": "Кастилия и Леон",
+      "name_ru": "Кастілія і Леон",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-CM",
       "name": "Castile-La Mancha",
-      "name_ru": "Кастилия — Ла-Манча",
+      "name_ru": "Кастілія - Ла-Манча",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-CT",
       "name": "Catalonia",
-      "name_ru": "Каталония",
+      "name_ru": "Каталонія",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-EX",
       "name": "Extremadura",
-      "name_ru": "Эстремадура",
+      "name_ru": "Естремадура",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-GA",
       "name": "Galicia",
-      "name_ru": "Галисия",
+      "name_ru": "Галісія",
       "active": "Y"
     },
     {
       "country_id": "ES",
       "region_id": "ES-RI",
       "name": "La Rioja",
-      "name_ru": "Риоха",
+      "name_ru": "Ріоха",
       "active": "Y"
     },
     {
@@ -7176,7 +7176,7 @@
       "country_id": "ES",
       "region_id": "ES-MC",
       "name": "Murcia",
-      "name_ru": "Мурсия",
+      "name_ru": "Мурсія",
       "active": "Y"
     },
     {
@@ -7190,7 +7190,7 @@
       "country_id": "ES",
       "region_id": "ES-VC",
       "name": "Valencia",
-      "name_ru": "Валенсия",
+      "name_ru": "Валенсія",
       "active": "Y"
     },
     {
@@ -7204,7 +7204,7 @@
       "country_id": "ES",
       "region_id": "ES-ML",
       "name": "Melilla",
-      "name_ru": "Мелилья",
+      "name_ru": "Мелілья",
       "active": "Y"
     },
     {
@@ -7218,7 +7218,7 @@
       "country_id": "NO",
       "region_id": "NO-09",
       "name": "Aust-Agder",
-      "name_ru": "Эуст-Агдер",
+      "name_ru": "Еуст-Агдер",
       "active": "Y"
     },
     {
@@ -7232,7 +7232,7 @@
       "country_id": "NO",
       "region_id": "NO-20",
       "name": "Finnmark",
-      "name_ru": "Финнмарк",
+      "name_ru": "Фіннмарк",
       "active": "Y"
     },
     {
@@ -7253,7 +7253,7 @@
       "country_id": "NO",
       "region_id": "NO-15",
       "name": "Møre og Romsdal",
-      "name_ru": "Мёре-ог-Ромсдал",
+      "name_ru": "Мьоре-ог-Ромсдал",
       "active": "Y"
     },
     {
@@ -7267,7 +7267,7 @@
       "country_id": "NO",
       "region_id": "NO-17",
       "name": "Nord-Trøndelag",
-      "name_ru": "Нур-Трёнделаг",
+      "name_ru": "Нур-Трьонделаг",
       "active": "Y"
     },
     {
@@ -7288,7 +7288,7 @@
       "country_id": "NO",
       "region_id": "NO-01",
       "name": "Østfold",
-      "name_ru": "Эстфолл",
+      "name_ru": "Естфолд",
       "active": "Y"
     },
     {
@@ -7302,14 +7302,7 @@
       "country_id": "NO",
       "region_id": "NO-14",
       "name": "Sogn og Fjordane",
-      "name_ru": "Согн-ог-Фьюране",
-      "active": "Y"
-    },
-    {
-      "country_id": "NO",
-      "region_id": "NO-16",
-      "name": "Sør-Trøndelag",
-      "name_ru": "Сёр-Трёнделаг",
+      "name_ru": "Сьогн-ог-Фьордане",
       "active": "Y"
     },
     {
@@ -7345,13 +7338,14 @@
       "region_id": "SM-01",
       "name": "Acquaviva",
       "name_ru": "Акквавива",
+      "name_uk": "Аквавіва",
       "active": "Y"
     },
     {
       "country_id": "SM",
       "region_id": "SM-06",
       "name": "Borgo Maggiore",
-      "name_ru": "Борго-Маджоре",
+      "name_ru": "Борґо Маджоре",
       "active": "Y"
     },
     {
@@ -7365,21 +7359,21 @@
       "country_id": "SM",
       "region_id": "SM-02",
       "name": "Chiesanuova",
-      "name_ru": "Кьезануова",
+      "name_ru": "К'єзануова",
       "active": "Y"
     },
     {
       "country_id": "SM",
       "region_id": "SM-08",
       "name": "Montegiardino",
-      "name_ru": "Монте-Джардино",
+      "name_ru": "Монтеґ'ярдіно",
       "active": "Y"
     },
     {
       "country_id": "SM",
       "region_id": "SM-07",
       "name": "San Marino ",
-      "name_ru": "Сан-Марино",
+      "name_ru": "Сан Маріно",
       "active": "Y"
     },
     {
@@ -7393,7 +7387,7 @@
       "country_id": "SM",
       "region_id": "SM-04",
       "name": "Faetano",
-      "name_ru": "Фаэтано",
+      "name_ru": "Фаєтано",
       "active": "Y"
     },
     {
@@ -7449,7 +7443,7 @@
       "country_id": "SE",
       "region_id": "SE-F",
       "name": "Jönköping",
-      "name_ru": "Лен Йёнчёпинг",
+      "name_ru": "Лен Йенчепинг",
       "active": "Y"
     },
     {
@@ -7477,14 +7471,14 @@
       "country_id": "SE",
       "region_id": "SE-T",
       "name": "Örebro",
-      "name_ru": "Лен Э́ребру",
+      "name_ru": "Лен Еребру",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-E",
       "name": "Östergötland",
-      "name_ru": "Лен Э́стергётланд",
+      "name_ru": "Лен Естергетланд",
       "active": "Y"
     },
     {
@@ -7498,7 +7492,7 @@
       "country_id": "SE",
       "region_id": "SE-D",
       "name": "Södermanland",
-      "name_ru": "Лен Сёдерманланд",
+      "name_ru": "Лен Седерманланд",
       "active": "Y"
     },
     {
@@ -7533,21 +7527,21 @@
       "country_id": "SE",
       "region_id": "SE-Y",
       "name": "Västernorrland",
-      "name_ru": "Лен ВСтокгольме́стерноррланд",
+      "name_ru": "Лен Вестерноррланд",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-U",
       "name": "Västmanland",
-      "name_ru": "Лен Ве́стманланд",
+      "name_ru": "Лен Вестманланд",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-O",
       "name": "Västra Götaland",
-      "name_ru": "Лен Ве́стра-Гёталанд",
+      "name_ru": "Лен Ве́стра-Геталанд",
       "active": "Y"
     },
     {
