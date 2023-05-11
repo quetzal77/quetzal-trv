@@ -2976,7 +2976,7 @@
       "country_id": "RO",
       "region_id": "RO-DB",
       "name": "Dâmboviţa",
-      "name_ru": "Дамбовица",
+      "name_ru": "Дамбовиця",
       "active": "Y"
     },
     {
@@ -7401,49 +7401,49 @@
       "country_id": "SE",
       "region_id": "SE-K",
       "name": "Blekinge",
-      "name_ru": "Лен Бле́кинге",
+      "name_ru": "Лен Блекінге",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-W",
       "name": "Dalarna",
-      "name_ru": "Лен Да́ларна",
+      "name_ru": "Лен Даларна",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-X",
       "name": "Gävleborg",
-      "name_ru": "Лен Евлебо́рг",
+      "name_ru": "Лен Євлеборг",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-I",
       "name": "Gotland",
-      "name_ru": "Лен Го́тланд",
+      "name_ru": "Лен Ґотланд",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-N",
       "name": "Halland",
-      "name_ru": "Лен Ха́лланд",
+      "name_ru": "Лен Халланд",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-Z",
       "name": "Jämtland",
-      "name_ru": "Лен Е́мтланд",
+      "name_ru": "Лен Ємтланд",
       "active": "Y"
     },
     {
       "country_id": "SE",
       "region_id": "SE-F",
       "name": "Jönköping",
-      "name_ru": "Лен Йенчепинг",
+      "name_ru": "Лен Йенчепінг",
       "active": "Y"
     },
     {
@@ -7478,7 +7478,7 @@
       "country_id": "SE",
       "region_id": "SE-E",
       "name": "Östergötland",
-      "name_ru": "Лен Естергетланд",
+      "name_ru": "Лен Естерйотланд",
       "active": "Y"
     },
     {
@@ -7555,28 +7555,28 @@
       "country_id": "DK",
       "region_id": "DK-82",
       "name": "Midtjylland (Central Jutland)",
-      "name_ru": "Центральная Ютландия",
+      "name_ru": "Центральна Ютландія",
       "active": "Y"
     },
     {
       "country_id": "DK",
       "region_id": "DK-81",
       "name": "Nordjylland (North Jutland)",
-      "name_ru": "Северная Ютландия",
+      "name_ru": "Північна Ютландія",
       "active": "Y"
     },
     {
       "country_id": "DK",
       "region_id": "DK-83",
       "name": "Syddanmark (South Denmark)",
-      "name_ru": "Южная Дания",
+      "name_ru": "Південна Данія",
       "active": "Y"
     },
     {
       "country_id": "DK",
       "region_id": "DK-85",
       "name": "Sjaelland (Zealand)",
-      "name_ru": "Зеландия",
+      "name_ru": "Зеландія",
       "active": "Y"
     },
     {
@@ -7618,14 +7618,14 @@
       "country_id": "PT",
       "region_id": "PT-06",
       "name": "Coimbra",
-      "name_ru": "Коимбра",
+      "name_ru": "Коїмбра",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-07",
       "name": "Évora",
-      "name_ru": "Эвора",
+      "name_ru": "Евора",
       "active": "Y"
     },
     {
@@ -7646,21 +7646,21 @@
       "country_id": "PT",
       "region_id": "PT-10",
       "name": "Leiria",
-      "name_ru": "Лейрия",
+      "name_ru": "Лейрія",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-11",
       "name": "Lisboa",
-      "name_ru": "Лиссабон",
+      "name_ru": "Лісабон",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-12",
       "name": "Portalegre",
-      "name_ru": "Порталегри",
+      "name_ru": "Порталегре",
       "active": "Y"
     },
     {
@@ -7688,28 +7688,28 @@
       "country_id": "PT",
       "region_id": "PT-16",
       "name": "Viana do Castelo",
-      "name_ru": "Виана-ду-Каштелу",
+      "name_ru": "Віана-ду-Каштелу",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-17",
       "name": "Vila Real",
-      "name_ru": "Вила-Реал",
+      "name_ru": "Віла-Реал",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-18",
       "name": "Viseu",
-      "name_ru": "Визеу",
+      "name_ru": "Візеу",
       "active": "Y"
     },
     {
       "country_id": "PT",
       "region_id": "PT-20",
       "name": "Azores (Açores)",
-      "name_ru": "Азорские острова",
+      "name_ru": "Азорські острови",
       "active": "Y"
     },
     {
@@ -7723,63 +7723,63 @@
       "country_id": "MT",
       "region_id": "MT-CE",
       "name": "Central Region",
-      "name_ru": "Центральный регион",
+      "name_ru": "Центральний регіон",
       "active": "Y"
     },
     {
       "country_id": "MT",
       "region_id": "MT-GO",
       "name": "Gozo Region",
-      "name_ru": "Гоцо и Комино (острова)",
+      "name_ru": "Гоцо та Коміно (острови)",
       "active": "Y"
     },
     {
       "country_id": "MT",
       "region_id": "MT-NO",
       "name": "Northern Region",
-      "name_ru": "Северный регион",
+      "name_ru": "Північний регіон",
       "active": "Y"
     },
     {
       "country_id": "MT",
       "region_id": "MT-SE",
       "name": "South Eastern Region",
-      "name_ru": "Юго-Восточный регион",
+      "name_ru": "Південно-Східний регіон",
       "active": "Y"
     },
     {
       "country_id": "MT",
       "region_id": "MT-SO",
       "name": "Southern Region",
-      "name_ru": "Южный регион",
+      "name_ru": "Південний регіон",
       "active": "Y"
     },
     {
       "country_id": "GI",
       "region_id": "GI-GI",
       "name": "Gibraltar",
-      "name_ru": "Гибралтар",
+      "name_ru": "Гібралтар",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-37",
       "name": "Harjumaa",
-      "name_ru": "Харьюмаа",
+      "name_ru": "Гар'юмаа",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-39",
       "name": "Hiiumaa",
-      "name_ru": "Хийумаа",
+      "name_ru": "Гіюмаа",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-44",
       "name": "Virumaa",
-      "name_ru": "Вирумаа",
+      "name_ru": "Іда-Вірумаа",
       "active": "Y"
     },
     {
@@ -7793,21 +7793,21 @@
       "country_id": "EE",
       "region_id": "EE-49",
       "name": "Jõgevamaa",
-      "name_ru": "Йыгевамаа",
+      "name_ru": "Йиґевамаа",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-57",
       "name": "Läänemaa",
-      "name_ru": "Ляэнемаа",
+      "name_ru": "Ляенемаа",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-59",
       "name": "Lääne-Virumaa",
-      "name_ru": "Ляэне-Вирумаа",
+      "name_ru": "Ляяне-Вірумаа",
       "active": "Y"
     },
     {
@@ -7821,7 +7821,7 @@
       "country_id": "EE",
       "region_id": "EE-65",
       "name": "Põlvamaa",
-      "name_ru": "Пылвамаа",
+      "name_ru": "Пилвамаа",
       "active": "Y"
     },
     {
@@ -7856,42 +7856,42 @@
       "country_id": "EE",
       "region_id": "EE-84",
       "name": "Viljandimaa",
-      "name_ru": "Вильяндимаа",
+      "name_ru": "Вільяндімаа",
       "active": "Y"
     },
     {
       "country_id": "EE",
       "region_id": "EE-86",
       "name": "Võrumaa",
-      "name_ru": "Вырумаа",
+      "name_ru": "Вирумаа",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-01",
       "name": "Aland Islands",
-      "name_ru": "Аландские острова",
+      "name_ru": "Аландські острови",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-02",
       "name": "South Karelia",
-      "name_ru": "Южная Карелия",
+      "name_ru": "Південна Карелія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-03",
       "name": "Southern Ostrobothnia",
-      "name_ru": "Южная Остроботния",
+      "name_ru": "Південна Остроботнія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-04",
       "name": "Southern Savonia",
-      "name_ru": "Южное Саво",
+      "name_ru": "Південне Саво",
       "active": "Y"
     },
     {
@@ -7912,14 +7912,14 @@
       "country_id": "FI",
       "region_id": "FI-07",
       "name": "Central Ostrobothnia",
-      "name_ru": "Центральная Остроботния",
+      "name_ru": "Центральна Остроботнія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-08",
       "name": "Central Finland",
-      "name_ru": "Центральная Финляндия",
+      "name_ru": "Центральна Фінляндія",
       "active": "Y"
     },
     {
@@ -7933,49 +7933,49 @@
       "country_id": "FI",
       "region_id": "FI-10",
       "name": "Lapland",
-      "name_ru": "Лаппи",
+      "name_ru": "Лапландія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-11",
       "name": "Pirkanmaa",
-      "name_ru": "Пирканмаа",
+      "name_ru": "Пірканмаа",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-12",
       "name": "Ostrobothnia",
-      "name_ru": "Остроботния",
+      "name_ru": "Остроботнія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-13",
       "name": "North Karelia",
-      "name_ru": "Северная Карелия",
+      "name_ru": "Північна Карелія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-14",
       "name": "Northern Ostrobothnia",
-      "name_ru": "Северная Остроботния",
+      "name_ru": "Північна Остроботнія",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-15",
       "name": "Northern Savonia",
-      "name_ru": "Северное Саво",
+      "name_ru": "Північне Саво",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-16",
       "name": "Paijanne Tavastia",
-      "name_ru": "Пяйят-Хяме",
+      "name_ru": "Пяйятне-Хяме",
       "active": "Y"
     },
     {
@@ -7989,70 +7989,70 @@
       "country_id": "FI",
       "region_id": "FI-18",
       "name": "Uusimaa",
-      "name_ru": "Уусимаа",
+      "name_ru": "Уусімаа",
       "active": "Y"
     },
     {
       "country_id": "FI",
       "region_id": "FI-19",
       "name": "Finland Proper",
-      "name_ru": "Варсинайс-Суоми",
+      "name_ru": "Варсінайс-Суомі",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-PR",
       "name": "Pristina",
-      "name_ru": "Приштинский округ",
+      "name_ru": "Приштинський округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-KM",
       "name": "Kosovska Mitrovica",
-      "name_ru": "Косовско-Митровицкий округ",
+      "name_ru": "Косово-Мітровицький округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-DA",
       "name": "Dakovica",
-      "name_ru": "Джаковицкий округ",
+      "name_ru": "Дяковичівський округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-GN",
       "name": "Gnjilane",
-      "name_ru": "Гниланский округ",
+      "name_ru": "Гниланський округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-PE",
       "name": "Pec",
-      "name_ru": "Печский округ",
+      "name_ru": "Пецький округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-UR",
       "name": "Urosevac",
-      "name_ru": "Призренский округ",
+      "name_ru": "Ферізайський округ",
       "active": "Y"
     },
     {
       "country_id": "XK",
       "region_id": "XK-PZ",
       "name": "Prizren",
-      "name_ru": "Урошевацкий округ",
+      "name_ru": "Прізремський округ",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-01",
       "name": "Aerodrom",
-      "name_ru": "Аэродром",
+      "name_ru": "Аеродром",
       "active": "Y"
     },
     {
@@ -8073,7 +8073,7 @@
       "country_id": "MK",
       "region_id": "MK-04",
       "name": "Bitola",
-      "name_ru": "Битола",
+      "name_ru": "Бітола",
       "active": "Y"
     },
     {
@@ -8129,7 +8129,7 @@
       "country_id": "MK",
       "region_id": "MK-12",
       "name": "Vevčani",
-      "name_ru": "Вевчани",
+      "name_ru": "Вевчані",
       "active": "Y"
     },
     {
@@ -8143,7 +8143,7 @@
       "country_id": "MK",
       "region_id": "MK-14",
       "name": "Vinica",
-      "name_ru": "Виница",
+      "name_ru": "Вініца",
       "active": "Y"
     },
     {
@@ -8164,14 +8164,14 @@
       "country_id": "MK",
       "region_id": "MK-17",
       "name": "Gazi Baba",
-      "name_ru": "Гази-Баба",
+      "name_ru": "Газі-Баба",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-18",
       "name": "Gevgelija",
-      "name_ru": "Гевгелия",
+      "name_ru": "Гевгелія",
       "active": "Y"
     },
     {
@@ -8185,7 +8185,7 @@
       "country_id": "MK",
       "region_id": "MK-20",
       "name": "Gradsko",
-      "name_ru": "Градско",
+      "name_ru": "Градсько",
       "active": "Y"
     },
     {
@@ -8199,7 +8199,7 @@
       "country_id": "MK",
       "region_id": "MK-22",
       "name": "Debarca",
-      "name_ru": "Дебарца",
+      "name_ru": "Дебарська",
       "active": "Y"
     },
     {
@@ -8213,7 +8213,7 @@
       "country_id": "MK",
       "region_id": "MK-24",
       "name": "Demir Kapija",
-      "name_ru": "Демир-Капия",
+      "name_ru": "Демир-Капія",
       "active": "Y"
     },
     {
@@ -8248,49 +8248,49 @@
       "country_id": "MK",
       "region_id": "MK-29",
       "name": "Gjorče Petrov",
-      "name_ru": "Гёрче-Петров",
+      "name_ru": "Ґьорче Петров",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-30",
       "name": "Želino",
-      "name_ru": "Желино",
+      "name_ru": "Желіно",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-31",
       "name": "Zajas",
-      "name_ru": "Заяс",
+      "name_ru": "Заяць",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-32",
       "name": "Zelenikovo",
-      "name_ru": "Зелениково",
+      "name_ru": "Зеленіково",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-33",
       "name": "Zrnovci",
-      "name_ru": "Зрновци",
+      "name_ru": "Зрновці",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-34",
       "name": "Ilinden",
-      "name_ru": "Илинден",
+      "name_ru": "Ілінден",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-35",
       "name": "Jegunovce",
-      "name_ru": "Егуновце",
+      "name_ru": "Єгуновце",
       "active": "Y"
     },
     {
@@ -8304,7 +8304,7 @@
       "country_id": "MK",
       "region_id": "MK-37",
       "name": "Karbinci",
-      "name_ru": "Карбинци",
+      "name_ru": "Карбинці",
       "active": "Y"
     },
     {
@@ -8318,7 +8318,7 @@
       "country_id": "MK",
       "region_id": "MK-39",
       "name": "Kisela Voda",
-      "name_ru": "Кисела-Вода",
+      "name_ru": "Кісела-Вода",
       "active": "Y"
     },
     {
@@ -8360,7 +8360,7 @@
       "country_id": "MK",
       "region_id": "MK-45",
       "name": "Krivogaštani",
-      "name_ru": "Кривогаштани",
+      "name_ru": "Кривогаштані",
       "active": "Y"
     },
     {
@@ -8395,21 +8395,21 @@
       "country_id": "MK",
       "region_id": "MK-50",
       "name": "Mavrovo i Rostuša",
-      "name_ru": "Маврово и Ростуша",
+      "name_ru": "Маврово і Ростуша",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-51",
       "name": "Makedonska Kamenica",
-      "name_ru": "Македонска-Каменица",
+      "name_ru": "Македонска-Камениця",
       "active": "Y"
     },
     {
       "country_id": "MK",
       "region_id": "MK-52",
       "name": "Makedonski Brod",
-      "name_ru": "Македонски-Брод",
+      "name_ru": "Македонський Брод",
       "active": "Y"
     },
     {
@@ -8430,7 +8430,7 @@
       "country_id": "MK",
       "region_id": "MK-55",
       "name": "Novaci",
-      "name_ru": "Новаци",
+      "name_ru": "Новаці",
       "active": "Y"
     },
     {
@@ -8479,7 +8479,7 @@
       "country_id": "MK",
       "region_id": "MK-62",
       "name": "Prilep",
-      "name_ru": "Прилеп",
+      "name_ru": "Прілеп",
       "active": "Y"
     },
     {
@@ -8528,7 +8528,7 @@
       "country_id": "MK",
       "region_id": "MK-69",
       "name": "Sveti Nikole",
-      "name_ru": "Свети-Николе",
+      "name_ru": "Светий Николе",
       "active": "Y"
     },
     {
@@ -8556,7 +8556,7 @@
       "country_id": "MK",
       "region_id": "MK-73",
       "name": "Strumica",
-      "name_ru": "Струмица",
+      "name_ru": "Струмиця",
       "active": "Y"
     },
     {
@@ -8598,7 +8598,7 @@
       "country_id": "MK",
       "region_id": "MK-79",
       "name": "Čair",
-      "name_ru": "Чаир",
+      "name_ru": "Чаїр",
       "active": "Y"
     },
     {
@@ -8640,7 +8640,7 @@
       "country_id": "VA",
       "region_id": "VA-1",
       "name": "Vatican City",
-      "name_ru": "Ватикан",
+      "name_ru": "Ватікан",
       "active": "Y"
     },
     {
@@ -8654,238 +8654,238 @@
       "country_id": "LT",
       "region_id": "LT-AL",
       "name": "Alytus",
-      "name_ru": "Алитусский уезд",
+      "name_ru": "Алітуський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-KU",
       "name": "Kaunas",
-      "name_ru": "Каунасский уезд",
+      "name_ru": "Каунаський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-KL",
       "name": "Klaipėda",
-      "name_ru": "Клайпедский уезд",
+      "name_ru": "Клайпедський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-MR",
       "name": "Marijampolė",
-      "name_ru": "Мариямпольский уезд",
+      "name_ru": "Маріямпольський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-PN",
       "name": "Panevėžys",
-      "name_ru": "Паневежский уезд",
+      "name_ru": "Паневежиський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-SA",
       "name": "Šiauliai",
-      "name_ru": "Шяуляйский уезд",
+      "name_ru": "Шяуляйський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-TA",
       "name": "Tauragė",
-      "name_ru": "Таурагский уезд",
+      "name_ru": "Тауразький повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-TE",
       "name": "Telšiai",
-      "name_ru": "Тельшяйский уезд",
+      "name_ru": "Тельшяйський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-UT",
       "name": "Utena",
-      "name_ru": "Утенский уезд",
+      "name_ru": "Утенський повіт",
       "active": "Y"
     },
     {
       "country_id": "LT",
       "region_id": "LT-VL",
       "name": "Vilnius",
-      "name_ru": "Вильнюсский уезд",
+      "name_ru": "Вільнюський повіт",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-AN",
       "name": "Andijon viloyati",
-      "name_ru": "Андижанская область",
+      "name_ru": "Андижанський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-BU",
       "name": "Buxoro viloyati",
-      "name_ru": "Бухарская область",
+      "name_ru": "Бухарський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-FA",
       "name": "Farg’ona viloyati",
-      "name_ru": "Ферганская область",
+      "name_ru": "Ферганський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-JI",
       "name": "Jizzah viloyati",
-      "name_ru": "Джизакская область",
+      "name_ru": "Джиззацький вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-QR",
       "name": "Qoraqalpog’iston Respublikasi",
-      "name_ru": "Республика Каракалпакстан",
+      "name_ru": "Республіка Каракалпакстан",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-QA",
       "name": "Qashqadaryo viloyati",
-      "name_ru": "Кашкадарьинская область",
+      "name_ru": "Кашкадар'їнський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-NG",
       "name": "Namangan viloyati",
-      "name_ru": "Наманганская область",
+      "name_ru": "Наманганський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-NW",
       "name": "Navoiy viloyati",
-      "name_ru": "Навоийская область",
+      "name_ru": "Навоїйський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-SA",
       "name": "Samarqand viloyati",
-      "name_ru": "Самаркандская область",
+      "name_ru": "Самаркандський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-SI",
       "name": "Sirdaryo viloyati",
-      "name_ru": "Сырдарьинская область",
+      "name_ru": "Сирдар'їнський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-SU",
       "name": "Surxondaryo viloyati",
-      "name_ru": "Сурхандарьинская область",
+      "name_ru": "Сурхандар'їнський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-TO",
       "name": "Toshkent viloyati",
-      "name_ru": "Ташкентская область",
+      "name_ru": "Ташкентський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-TK",
       "name": "Toshkent",
-      "name_ru": "Город Ташкент",
+      "name_ru": "Місто Ташкент",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-XO",
       "name": "Xorazm viloyati",
-      "name_ru": "Хорезмская область",
+      "name_ru": "Хорезмський вілоят",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "TJ-SU",
       "name": "Sarvan (Sughd Province, Tajikistan)",
-      "name_ru": "Сарвакский эксклав (Таджикистан)",
+      "name_ru": "Сарвацький ексклав (Таджикистан)",
       "active": "Y"
     },
     {
       "country_id": "UZ",
       "region_id": "UZ-AS",
       "name": "Aral Sea",
-      "name_ru": "Аральское море",
+      "name_ru": "Аральське море",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AM-GR",
       "name": "Geġark'unik",
-      "name_ru": "",
+      "name_ru": "Ґегаркунік",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ABS",
       "name": "Abşeron rayonu",
-      "name_ru": "Апшеронский район",
+      "name_ru": "Апшеронський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AGA",
       "name": "Ağstafa rayonu",
-      "name_ru": "Агстафинский район",
+      "name_ru": "Агстафінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AGC",
       "name": "Ağcabədi rayonu",
-      "name_ru": "Агджабединский район",
+      "name_ru": "Агджабединський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AGM",
       "name": "Ağdam rayonu",
-      "name_ru": "Агдамский район",
+      "name_ru": "Агдамський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AGS",
       "name": "Ağdaş rayonu",
-      "name_ru": "Агдашский район",
+      "name_ru": "Агдашський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AGU",
       "name": "Ağsu rayonu",
-      "name_ru": "Ахсуйский район",
+      "name_ru": "Ахсуїнський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-AST",
       "name": "Astara rayonu",
-      "name_ru": "Астаринский район",
+      "name_ru": "Астаринський район",
       "active": "Y"
     },
     {
@@ -8899,70 +8899,70 @@
       "country_id": "AZ",
       "region_id": "AZ-BAB",
       "name": "Babək rayonu",
-      "name_ru": "Бабекский район",
+      "name_ru": "Бабекський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-BAL",
       "name": "Balakən rayonu",
-      "name_ru": "Балакенский район",
+      "name_ru": "Балакенський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-BAR",
       "name": "Bərdə rayonu",
-      "name_ru": "Бардинский район",
+      "name_ru": "Бардинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-BEY",
       "name": "Beyləqan rayonu",
-      "name_ru": "Бейлаганский район",
+      "name_ru": "Бейлаганський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-BIL",
       "name": "Biləsuvar rayonu",
-      "name_ru": "Билясуварский район",
+      "name_ru": "Билясуварський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-CAB",
       "name": "Cəbrayıl rayonu",
-      "name_ru": "Джебраильский район",
+      "name_ru": "Джебраїльський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-CAL",
       "name": "Cəlilabad rayonu",
-      "name_ru": "Джалилабадский район",
+      "name_ru": "Джалилабадський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-CUL",
       "name": "Culfa rayonu",
-      "name_ru": "Джульфинский район",
+      "name_ru": "Джульфінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-DAS",
       "name": "Daşkəsən rayonu",
-      "name_ru": "Дашкесанский район",
+      "name_ru": "Дашкесанський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-FUZ",
       "name": "Füzuli rayonu",
-      "name_ru": "Физулинский район",
+      "name_ru": "Фізулінський район",
       "active": "Y"
     },
     {
@@ -8976,112 +8976,112 @@
       "country_id": "AZ",
       "region_id": "AZ-GAD",
       "name": "Gədəbəy rayonu",
-      "name_ru": "Кедабекский район",
+      "name_ru": "Кедабекський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-GOR",
       "name": "Goranboy rayonu",
-      "name_ru": "Геранбойский район",
+      "name_ru": "Геранбойський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-GOY",
       "name": "Göyçay rayonu",
-      "name_ru": "Геокчайский район",
+      "name_ru": "Геокчайський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-GYG",
       "name": "Göygöl rayonu",
-      "name_ru": "Гёйгёльский район",
+      "name_ru": "Гойгельський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-HAC",
       "name": "Hacıqabul rayonu",
-      "name_ru": "Аджигабульский район",
+      "name_ru": "Аджигабульський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-IMI",
       "name": "İmişli rayonu",
-      "name_ru": "Имишлинский район",
+      "name_ru": "Імішлінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ISM",
       "name": "İsmayıllı rayonu",
-      "name_ru": "Исмаиллинский район",
+      "name_ru": "Ісмаїллінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-KAL",
       "name": "Kəlbəcər rayonu",
-      "name_ru": "Кельбаджарский район",
+      "name_ru": "Кельбаджарський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-KAN",
       "name": "Kəngərli rayonu",
-      "name_ru": "Кенгерлинский район",
+      "name_ru": "Кенгерлінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-KUR",
       "name": "Kürdəmir rayonu",
-      "name_ru": "Кюрдамирский район",
+      "name_ru": "Кюрдамирський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-LA",
       "name": "Lənkəran",
-      "name_ru": "Ленкорань",
+      "name_ru": "Ленкерань",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-LAC",
       "name": "Laçın rayonu",
-      "name_ru": "Лачинский район",
+      "name_ru": "Лачинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-LAN",
       "name": "Lənkəran rayonu",
-      "name_ru": "Ленкоранский район",
+      "name_ru": "Ленкеранський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-LER",
       "name": "Lerik rayonu",
-      "name_ru": "Лерикский район",
+      "name_ru": "Лерікський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-MAS",
       "name": "Masallı rayonu",
-      "name_ru": "Масаллинский район",
+      "name_ru": "Масаллінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-MI",
       "name": "Mingəçevir",
-      "name_ru": "Мингечевир",
+      "name_ru": "Мінгечевір",
       "active": "Y"
     },
     {
@@ -9095,175 +9095,175 @@
       "country_id": "AZ",
       "region_id": "AZ-NEF",
       "name": "Neftçala rayonu",
-      "name_ru": "Нефтечалинский район",
+      "name_ru": "Нефтечалінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-NV",
       "name": "Naxçıvan",
-      "name_ru": "Нахичевань",
+      "name_ru": "Нахічевань",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-OGU",
       "name": "Oğuz rayonu",
-      "name_ru": "Огузский район",
+      "name_ru": "Огузський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ORD",
       "name": "Ordubad rayonu",
-      "name_ru": "Ордубадский район",
+      "name_ru": "Ордубадський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QAB",
       "name": "Qəbələ rayonu",
-      "name_ru": "Габалинский район",
+      "name_ru": "Габалінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QAX",
       "name": "Qax rayonu",
-      "name_ru": "Гахский район",
+      "name_ru": "Гахський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QAZ",
       "name": "Qazaxı rayonu",
-      "name_ru": "Газахский район",
+      "name_ru": "Газахський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QBA",
       "name": "Quba rayonu",
-      "name_ru": "Губинский район",
+      "name_ru": "Губинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QBI",
       "name": "Qubadlı rayonu",
-      "name_ru": "Губадлинский район",
+      "name_ru": "Губадлінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QOB",
       "name": "Qobustan rayonu",
-      "name_ru": "Гобустанский район",
+      "name_ru": "Гобустанський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-QUS",
       "name": "Qusar rayonu",
-      "name_ru": "Гусарский район",
+      "name_ru": "Гусарський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SA",
       "name": "Şəki",
-      "name_ru": "Шеки",
+      "name_ru": "Шекі",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAB",
       "name": "Sabirabad rayonu",
-      "name_ru": "Сабирабадский район",
+      "name_ru": "Сабірабадський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAD",
       "name": "Sədərək rayonu",
-      "name_ru": "Садаракский район",
+      "name_ru": "Садаракський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAH",
       "name": "Şahbuz rayonu",
-      "name_ru": "Шахбузский район",
+      "name_ru": "Шахбузський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAK",
       "name": "Şəki rayonu",
-      "name_ru": "Шекинский район",
+      "name_ru": "Шекінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAL",
       "name": "Salyan rayonu",
-      "name_ru": "Салянский район",
+      "name_ru": "Салянський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAR",
       "name": "Şərur rayonu",
-      "name_ru": "Шарурский район",
+      "name_ru": "Шарурський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SAT",
       "name": "Saatlı rayonu",
-      "name_ru": "Саатлинский район",
+      "name_ru": "Саатлінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SBN",
       "name": "Şabran rayonu",
-      "name_ru": "Шабранский район",
+      "name_ru": "Шабранський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SIY",
       "name": "Siyəzən rayonu",
-      "name_ru": "Сиазаньский район",
+      "name_ru": "Сіазанський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SKR",
       "name": "Şəmkir rayonu",
-      "name_ru": "Шамкирский район",
+      "name_ru": "Шамкірський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SM",
       "name": "Sumqayıt",
-      "name_ru": "Сумгаит",
+      "name_ru": "Сумгаїт",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SMI",
       "name": "Şamaxı rayonu",
-      "name_ru": "Шемахинский район",
+      "name_ru": "Шемахинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-SMX",
       "name": "Samux rayonu",
-      "name_ru": "Самухский район",
+      "name_ru": "Самухський район",
       "active": "Y"
     },
     {
@@ -9277,98 +9277,98 @@
       "country_id": "AZ",
       "region_id": "AZ-SUS",
       "name": "Şuşa rayonu",
-      "name_ru": "Шушинский район",
+      "name_ru": "Шушинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-TAR",
       "name": "Tərtər rayonu",
-      "name_ru": "Тертерский район",
+      "name_ru": "Тертерський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-TOV",
       "name": "Tovuz rayonu",
-      "name_ru": "Товузский район",
+      "name_ru": "Товузський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-UCA",
       "name": "Ucar rayonu",
-      "name_ru": "Уджарский район",
+      "name_ru": "Уджарський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-XAC",
       "name": "Xaçmaz rayonu",
-      "name_ru": "Хачмазский район",
+      "name_ru": "Хачмазський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-XCI",
       "name": "Xocalı rayonu",
-      "name_ru": "Ходжалинский район",
+      "name_ru": "Ходжалінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-XIZ",
       "name": "Xızı rayonu",
-      "name_ru": "Хызинский район",
+      "name_ru": "Хізінський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-XVD",
       "name": "Xocavənd rayonu",
-      "name_ru": "Ходжавендский район",
+      "name_ru": "Ходжавендський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-YAR",
       "name": "Yardımlı rayonu",
-      "name_ru": "Ярдымлинский район",
+      "name_ru": "Ярдимлинський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-YE",
       "name": "Yevlax",
-      "name_ru": "Евлах",
+      "name_ru": "Євлах",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-YEV",
       "name": "Yevlax rayonu",
-      "name_ru": "Евлахский район",
+      "name_ru": "Євлахський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ZAN",
       "name": "Zəngilan rayonu",
-      "name_ru": "Зангеланский район",
+      "name_ru": "Зангеланський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ZAQ",
       "name": "Zaqatala rayonu",
-      "name_ru": "Загатальский район",
+      "name_ru": "Загатальський район",
       "active": "Y"
     },
     {
       "country_id": "AZ",
       "region_id": "AZ-ZAR",
       "name": "Zərdab rayonu",
-      "name_ru": "Зердабский район",
+      "name_ru": "Зердабський район",
       "active": "Y"
     },
     {
@@ -19042,6 +19042,7 @@
       "name_ru": "Рим",
       "region_id": "IT-62",
       "city_id": "rome",
+      "capital": "true",
       "lat": "41.8973771",
       "long": "12.4873558",
       "image": "it_rome.jpg",
@@ -20973,6 +20974,7 @@
       "lat_2": "",
       "long": "35.4993091",
       "long_2": "",
+      "capital": "true",
       "image": "lb_beirut.jpg",
       "description": "Столица и крупнейший город Ливана. Расположенный на полуострове, в середине ливанского побережья Средиземного моря, он является крупнейшим и главным морским портом страны. Достопримечательности: Площадь Мучеников(аль-Бурдж), Площадь Этуаль (площадь Звезды), Мечеть Омара, Набережная Бейрута, Голубиные скалы."
     },
@@ -21039,6 +21041,7 @@
       "lat_2": "",
       "long": "23.726722",
       "long_2": "",
+      "capital": "true",
       "image": "gr_athens.jpg",
       "description": "столица Греции. Располагается в исторической области Аттика и является экономическим, культурным и административным центром страны. Город назван в честь богини войны и мудрости Афины, которая была покровителем древнего полиса. Афины имеют богатую историю; в классический период (V век до н. э.) город-государство достигло вершины своего развития, определив многие тенденции развития позднейшей европейской культуры. Так, с городом связаны имена философов Сократа, Платона и Аристотеля, заложивших основы европейской философии, трагиков Эсхила, Софокла и Еврипида, стоявших у истоков драмы; политическим строем древних Афин была демократия. Среди достопримечательностей эпохи Древней Греции и Древнего Рима: Афинский акрополь, Башня Ветров, Театр Диониса, Ликавит, Одеон Герода Аттика, Афинская агора, Храм Зевса Олимпийского, Ареопаг, Стоя Аттала, Библиотека Адриана, Храм Гефеста, Стадион Панатинаикос."
     },
@@ -21130,6 +21133,7 @@
       "lat_2": "",
       "long": "74.5798426",
       "long_2": "",
+      "capital": "true",
       "image": "kg_bishkek.jpg",
       "description": "Столица Кыргызстана и крупнейший город страны. Составляет особую административную единицу и является городом республиканского значения. Прежние названия — Пишпек, Фрунзе. Достопримечательности - Кузнечная крепость (холм и части крепости), Мемориальный комплекс «Ата-Бейит»."
     },
@@ -21234,6 +21238,7 @@
       "lat_2": "",
       "long": "35.9263711",
       "long_2": "",
+      "capital": "true",
       "image": "jo_amman.jpg",
       "description": "Столица и крупнейший город Иордании. В древности назывался Раббат-Аммон, в эллинистическо-римскую эпоху — Филадельфия. Достопримечательности: Джебель каляа (Крепостная гора), Амфитеатр на 6 000 зрителей, Иорданский музей танков."
     },
@@ -21312,6 +21317,7 @@
       "lat_2": "",
       "long": "-82.361842",
       "long_2": "",
+      "capital": "true",
       "image": "cu_havana.jpg",
       "description": "Столица и крупнейший город Республики Куба, политический, экономический и культурный центр страны, одна из 16 её провинций. Гавана является одной из самых красивых островных столиц мира. Старый центр города до сих пор сохраняет свой самобытный колониальный облик. Здесь имеется ряд старинных архитектурных памятников, представляющих немалую историческую ценность. В 1984 г. достопримечательности столицы были внесены в Список всемирного культурного наследия ЮНЕСКО. Среди них следует особо выделить крепость Ла-Реаль-Фуэрса (1583 г.), монастырь Санта-Клара (1644 г.), собор Непорочного Зачатия (1656 г.), городскую Ратушу (1792 г.), кафедральную площадь с собором, построенным в XVIII в.\n\nВ центре расположена площадь с мемориальным комплексом имени Хосе Марти. Один из главных архитектурных памятников — бульвар Прадо, дома построены в староиспанском стиле. Здесь находится здание Национального Капитолия, построенного в 1920-х гг. по образцу здания в Вашингтоне, а также Большой театр Гаваны."
     },
@@ -21390,6 +21396,7 @@
       "lat_2": "",
       "long": "-99.1309013",
       "long_2": "",
+      "capital": "true",
       "image": "mx_mexico.jpg",
       "description": "Город, столица Мексики. Образует федеральный округ, разделённый на 16 районов. Население — 9 миллионов человек, крупнейший испаноязычный город мира. В пределах агломерации проживают 22 млн человек (оценка 2015 года, четвёртая по величине агломерация в мире). В городе расположено множество монументов и уникальных зданий (их в Мехико насчитывается более 1400). На территории Мехико имеется также 10 археологических парков. Среди достопримечательностей Мехико — пирамида ацтеков (XIV в.), Национальный кафедральный собор (1563—1667 гг.), здание госпиталя Хесус Насарено (XVI в.), муниципальный дворец (1720 г.), Национальный дворец (1792 г.), в котором в настоящее время располагаются президентская резиденция и парламент страны, часовня Саграрио Метрополитано (XVIII в.). Большую историческую ценность представляет ряд монастырей, построенных в XVII—XVIII вв. Национальный кафедральный собор, а также национальный дворец располагаются на центральной площади города — Сокало (площадь Конституции). К памятникам старины относятся замок Чапультепек, в котором ранее находилась президентская резиденция, и базилика Святой Девы Гваделупской — сооружение, являющееся главной святыней для католических жителей Мехико и всей страны. Имеются также Национальный музей антропологии, в котором хранится коллекция экспонатов, отражающих развитие культур майя, ацтеков и других коренных народов Мексики; Музей естественной истории."
     },
@@ -21531,6 +21538,7 @@
       "city_id": "tbilisi",
       "lat": "41.7141072",
       "long": "44.8133896",
+      "capital": "true",
       "description": "Тбили́си — «тёплый источник», старое (до 1936) название — Тифлис) — столица и крупнейший город Грузии, расположенный на берегу реки Куры с населением около 1,1 миллиона человек. В Тбилиси находится большое количество архитектурных памятников — в основном XVII—XIX веков. Основными туристическими зонами являются центральные кварталы Абанотубани, Авлабар, Старый Город и проспект Руставели.\n\nВ сфере архитектуры особенно примечательны собор Святой Троицы, крепость Нарикала на берегу реки Куры и церковь Метехи. В VI веке был построен самый древний собор в Тбилиси — Анчисхати, а в XVI веке — церковь Джварисмама. Ещё один собор — Земо Бетлеми (Рождества) — возведён в XVIII веке, как и несколько других зданий в историческом центре."
     },
     {
