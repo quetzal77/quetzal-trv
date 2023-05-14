@@ -9403,7 +9403,7 @@
       "country_id": "US",
       "region_id": "US-CA",
       "name": "State of California",
-      "name_ru": "Калифорния",
+      "name_ru": "Каліфорнія",
       "active": "Y"
     },
     {
@@ -9424,7 +9424,7 @@
       "country_id": "US",
       "region_id": "US-DC",
       "name": "Washington, D.C.",
-      "name_ru": "округ Колумбия",
+      "name_ru": "округ Колумбія",
       "active": "Y"
     },
     {
@@ -9445,14 +9445,14 @@
       "country_id": "US",
       "region_id": "US-GA",
       "name": "State of Georgia",
-      "name_ru": "Джорджия",
+      "name_ru": "Джорджія",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-HI",
       "name": "State of Hawai`i",
-      "name_ru": "Гавайи",
+      "name_ru": "Гавайї",
       "active": "Y"
     },
     {
@@ -9473,14 +9473,14 @@
       "country_id": "US",
       "region_id": "US-IL",
       "name": "State of Illinois",
-      "name_ru": "Иллинойс",
+      "name_ru": "Іллінойс",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-IN",
       "name": "State of Indiana",
-      "name_ru": "Индиана",
+      "name_ru": "Індіана",
       "active": "Y"
     },
     {
@@ -9494,14 +9494,14 @@
       "country_id": "US",
       "region_id": "US-KY",
       "name": "Commonwealth of Kentucky",
-      "name_ru": "Кентукки",
+      "name_ru": "Кентуккі",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-LA",
       "name": "State of Louisiana",
-      "name_ru": "Луизиана",
+      "name_ru": "Луїзіана",
       "active": "Y"
     },
     {
@@ -9515,7 +9515,7 @@
       "country_id": "US",
       "region_id": "US-MD",
       "name": "State of Maryland",
-      "name_ru": "Мэриленд",
+      "name_ru": "Меріленд",
       "active": "Y"
     },
     {
@@ -9529,28 +9529,28 @@
       "country_id": "US",
       "region_id": "US-MI",
       "name": "State of Michigan",
-      "name_ru": "Мичиган",
+      "name_ru": "Мічиган",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-MN",
       "name": "State of Minnesota",
-      "name_ru": "Миннесота",
+      "name_ru": "Міннесота",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-MO",
       "name": "State of Missouri",
-      "name_ru": "Миссури",
+      "name_ru": "Міссурі",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-MS",
       "name": "State of Mississippi",
-      "name_ru": "Миссисипи",
+      "name_ru": "Миссисипі",
       "active": "Y"
     },
     {
@@ -9564,14 +9564,14 @@
       "country_id": "US",
       "region_id": "US-NC",
       "name": "State of North Carolina",
-      "name_ru": "Северная Каролина",
+      "name_ru": "Північна Кароліна",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-ND",
       "name": "State of North Dakota",
-      "name_ru": "Северная Дакота",
+      "name_ru": "Північна Дакота",
       "active": "Y"
     },
     {
@@ -9585,14 +9585,14 @@
       "country_id": "US",
       "region_id": "US-NH",
       "name": "State of New Hampshire",
-      "name_ru": "Нью-Гэмпшир",
+      "name_ru": "Нью-Гемпшир",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-NJ",
       "name": "State of New Jersey",
-      "name_ru": "Нью-Джерси",
+      "name_ru": "Нью-Джерсі",
       "active": "Y"
     },
     {
@@ -9641,7 +9641,7 @@
       "country_id": "US",
       "region_id": "US-PA",
       "name": "Commonwealth of Pennsylvania",
-      "name_ru": "Пенсильвания",
+      "name_ru": "Пенсильванія",
       "active": "Y"
     },
     {
@@ -9655,21 +9655,21 @@
       "country_id": "US",
       "region_id": "US-SC",
       "name": "State of South Carolina",
-      "name_ru": "Южная Каролина",
+      "name_ru": "Південна Кароліна",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-SD",
       "name": "State of South Dakota",
-      "name_ru": "Южная Дакота",
+      "name_ru": "Південна Дакота",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-TN",
       "name": "State of Tennessee",
-      "name_ru": "Теннесси",
+      "name_ru": "Теннесі",
       "active": "Y"
     },
     {
@@ -9690,7 +9690,7 @@
       "country_id": "US",
       "region_id": "US-VA",
       "name": "Commonwealth of Virginia",
-      "name_ru": "Виргиния",
+      "name_ru": "Вірджинія",
       "active": "Y"
     },
     {
@@ -9711,91 +9711,91 @@
       "country_id": "US",
       "region_id": "US-WI",
       "name": "State of Wisconsin",
-      "name_ru": "Висконсин",
+      "name_ru": "Вісконсін",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-WV",
       "name": "State of West Virginia",
-      "name_ru": "Западная Виргиния",
+      "name_ru": "Західна Вірджинія",
       "active": "Y"
     },
     {
       "country_id": "US",
       "region_id": "US-WY",
       "name": "State of Wyoming",
-      "name_ru": "Вайоминг",
+      "name_ru": "Вайомінг",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-01",
       "name": "Unsko-sanski kanton",
-      "name_ru": "Унско-Санский кантон",
+      "name_ru": "Унско-Санський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-02",
       "name": "Posavski kanton",
-      "name_ru": "Посавский кантон",
+      "name_ru": "Посавський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-03",
       "name": "Tuzlanski kanton",
-      "name_ru": "Тузланский кантон",
+      "name_ru": "Тузльанський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-04",
       "name": "Zeničko-dobojski kanton",
-      "name_ru": "Зеницко-Добойский кантон",
+      "name_ru": "Зеницько-Добойський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-05",
       "name": "Bosansko-podrinjski kanton",
-      "name_ru": "Боснийско-Подринский кантон",
+      "name_ru": "Боснійсько-Подрінський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-06",
       "name": "Srednjobosanski kanton",
-      "name_ru": "Среднебоснийский кантон",
+      "name_ru": "Середньобоснійський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-07",
       "name": "Hercegovačko-neretvanski kanton",
-      "name_ru": "Герцеговино-Неретвенский кантон",
+      "name_ru": "Герцеговинсько-Неретванський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-08",
       "name": "Zapadnohercegovački kanton",
-      "name_ru": "Западногерцеговинский кантон",
+      "name_ru": "Західногерцеговинський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-09",
       "name": "Kanton Sarajevo",
-      "name_ru": "Сараевский кантон",
+      "name_ru": "Сараєвський кантон",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-10",
       "name": "Kanton br. 10",
-      "name_ru": "Герцегбосански кантон",
+      "name_ru": "Герцегбосанський кантон",
       "active": "Y"
     },
     {
@@ -9809,7 +9809,7 @@
       "country_id": "BA",
       "region_id": "BA-SR-BI",
       "name": "Bijeljina",
-      "name_ru": "Биелина",
+      "name_ru": "Бієліна",
       "active": "Y"
     },
     {
@@ -9836,15 +9836,15 @@
     {
       "country_id": "BA",
       "region_id": "BA-SR-SR",
-      "name": "Sarajevo-Romanija",
-      "name_ru": "Источно-Сараево",
+      "name": "Istočno Sarajevo",
+      "name_ru": "Східне Сараєво",
       "active": "Y"
     },
     {
       "country_id": "BA",
       "region_id": "BA-SR-TR",
       "name": "Trebinje",
-      "name_ru": "Требине",
+      "name_ru": "Требіньє",
       "active": "Y"
     },
     {
@@ -9858,343 +9858,343 @@
       "country_id": "BG",
       "region_id": "BG-01",
       "name": "Област Благоевград",
-      "name_ru": "Благоевградская область",
+      "name_ru": "Благоєвградська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-02",
       "name": "Област Бургас",
-      "name_ru": "Бургасская область",
+      "name_ru": "Бургаська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-03",
       "name": "Област Варна",
-      "name_ru": "Варненская область",
+      "name_ru": "Варненська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-04",
       "name": "Област Велико Търново",
-      "name_ru": "Великотырновская область",
+      "name_ru": "Великотирновська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-05",
       "name": "Област Видин",
-      "name_ru": "Видинская область",
+      "name_ru": "Видинська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-06",
       "name": "Област Враца",
-      "name_ru": "Врацкая область",
+      "name_ru": "Врацька область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-07",
       "name": "Област Габрово",
-      "name_ru": "Габровская область",
+      "name_ru": "Габровська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-08",
       "name": "Област Добрич",
-      "name_ru": "Добричская область",
+      "name_ru": "Добричська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-09",
       "name": "Област Кърджали",
-      "name_ru": "Кырджалийская область",
+      "name_ru": "Кирджалівська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-10",
       "name": "Област Кюстендил",
-      "name_ru": "Кюстендилская область",
+      "name_ru": "Кюстендильська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-11",
       "name": "Област Ловеч",
-      "name_ru": "Ловечская область",
+      "name_ru": "Ловешька область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-12",
       "name": "Област Монтана",
-      "name_ru": "Монтанская область",
+      "name_ru": "Монтанська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-13",
       "name": "Област Пазарджик",
-      "name_ru": "Пазарджикская область",
+      "name_ru": "Пазарджикська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-14",
       "name": "Област Перник",
-      "name_ru": "Перникская область",
+      "name_ru": "Перникська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-15",
       "name": "Област Плевен",
-      "name_ru": "Плевенская область",
+      "name_ru": "Плевенська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-16",
       "name": "Област Пловдив",
-      "name_ru": "Пловдивская область",
+      "name_ru": "Пловдівська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-17",
       "name": "Област Разград",
-      "name_ru": "Разградская область",
+      "name_ru": "Разградська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-18",
       "name": "Област Русе",
-      "name_ru": "Русенская область",
+      "name_ru": "Русенська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-19",
       "name": "Област Силистра",
-      "name_ru": "Силистренская область",
+      "name_ru": "Сілістренська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-20",
       "name": "Област Сливен",
-      "name_ru": "Сливенская область",
+      "name_ru": "Сливенська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-21",
       "name": "Област Смолян",
-      "name_ru": "Смолянская область",
+      "name_ru": "Смолянська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-22",
       "name": "София-град",
-      "name_ru": "София",
+      "name_ru": "Софія",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-23",
       "name": "област София",
-      "name_ru": "Софийская область",
+      "name_ru": "Софійська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-24",
       "name": "Област Стара Загора",
-      "name_ru": "Старозагорская область",
+      "name_ru": "Старозагорська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-25",
       "name": "Област Търговище",
-      "name_ru": "Тырговиштская область",
+      "name_ru": "Тирговиштська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-26",
       "name": "Област Хасково",
-      "name_ru": "Хасковская область",
+      "name_ru": "Хасковська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-27",
       "name": "Област Шумен",
-      "name_ru": "Шуменская область",
+      "name_ru": "Шуменська область",
       "active": "Y"
     },
     {
       "country_id": "BG",
       "region_id": "BG-28",
       "name": "Област Ямбол",
-      "name_ru": "Ямболская область",
+      "name_ru": "Ямбольська область",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-JA",
-      "name": "‎الجنوب — el-Jenūb",
-      "name_ru": "Южный Ливан",
+      "name": "الجنوب — el-Jenūb",
+      "name_ru": "Південний Ліван",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-NA",
-      "name": "‎النبطية — en-Nebatīye",
-      "name_ru": "Эн-Набатия",
+      "name": "النبطية — en-Nebatīye",
+      "name_ru": "Ен-Набатія",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-JL",
-      "name": "‎جبل لبنان - Mount Lebanon‎",
-      "name_ru": "Горный Ливан",
+      "name": "جبل لبنان - Mount Lebanon",
+      "name_ru": "Гірський Ліван",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-BA",
-      "name": "‎محافظة بيروت - Beirut",
+      "name": "محافظة بيروت - Beirut",
       "name_ru": "Бейрут",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-AS",
-      "name": "‎الشمال - Aš Šamāl",
-      "name_ru": "Северный Ливан",
+      "name": "الشمال - Aš Šamāl",
+      "name_ru": "Північний Ліван",
       "active": "Y"
     },
     {
       "country_id": "LB",
       "region_id": "LB-BI",
-      "name": "‎البقاع - Al-Biqā'",
+      "name": "البقاع - Al-Biqā'",
       "name_ru": "Бекаа",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-B",
-      "name": "‎Баткен облусу",
-      "name_ru": "Баткенская область",
+      "name": "Баткен облусу",
+      "name_ru": "Баткенська область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-C",
-      "name": "‎Чүй облусу",
-      "name_ru": "Чуйская область",
+      "name": "Чүй облусу",
+      "name_ru": "Чуйська область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-J",
-      "name": "‎Жалалабат облусу",
-      "name_ru": "Джалал-Абадская область",
+      "name": "Жалалабат облусу",
+      "name_ru": "Джалал-Абадська область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-N",
-      "name": "‎Нарын облусу",
-      "name_ru": "Нарынская область",
+      "name": "Нарын облусу",
+      "name_ru": "Наринська область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-O",
-      "name": "Ош областы‎",
-      "name_ru": "Ошская область",
+      "name": "Ош областы",
+      "name_ru": "Ошська область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-T",
-      "name": "‎Талас облусу",
-      "name_ru": "Таласская область",
+      "name": "Талас облусу",
+      "name_ru": "Таласька область",
       "active": "Y"
     },
     {
       "country_id": "KG",
       "region_id": "KG-Y",
-      "name": "Ысык-Көл областы‎",
-      "name_ru": "Иссык-Кульская область",
+      "name": "Ысык-Көл областы",
+      "name_ru": "Іссик-Кульська область",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-A",
       "name": "Eastern Macedonia and Thrace",
-      "name_ru": "Восточная Македония и Фракия",
+      "name_ru": "Східна Македонія і Фракіяя",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-B",
       "name": "Central Macedonia",
-      "name_ru": "Центральная Македония",
+      "name_ru": "Центральна Македонія",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-C",
       "name": "Western Macedonia",
-      "name_ru": "Западная Македония",
+      "name_ru": "Західна Македонія",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-D",
       "name": "Epirus",
-      "name_ru": "Эпир",
+      "name_ru": "Епір",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-E",
       "name": "Thessaly",
-      "name_ru": "Фессалия",
+      "name_ru": "Фессалія",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-F",
       "name": "Ionian Islands",
-      "name_ru": "Ионические острова",
+      "name_ru": "Іонічні острови",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-G",
       "name": "Western Greece",
-      "name_ru": "Западная Греция",
+      "name_ru": "Західна Греція",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-H",
       "name": "Central Greece",
-      "name_ru": "Центральная Греция",
+      "name_ru": "Центральна Греція",
       "active": "Y"
     },
     {
@@ -10208,21 +10208,21 @@
       "country_id": "GR",
       "region_id": "GR-J",
       "name": "Peloponnese",
-      "name_ru": "Пелопоннес",
+      "name_ru": "Пелопонес",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-K",
       "name": "North Aegean",
-      "name_ru": "Северные Эгейские острова",
+      "name_ru": "Північні Егейські острови",
       "active": "Y"
     },
     {
       "country_id": "GR",
       "region_id": "GR-L",
       "name": "South Aegean",
-      "name_ru": "Южные Эгейские острова",
+      "name_ru": "Південні Егейські острови",
       "active": "Y"
     },
     {
@@ -10243,112 +10243,112 @@
       "country_id": "KZ",
       "region_id": "KZ-AKM",
       "name": "Akmola Region",
-      "name_ru": "Акмолинская область",
+      "name_ru": "Акмолинська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-AKT",
       "name": "Aktobe Region",
-      "name_ru": "Актюбинская область",
+      "name_ru": "Актюбінська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-ALM",
       "name": "Almaty Region",
-      "name_ru": "Алматинская область",
+      "name_ru": "Алматинська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-ATY",
       "name": "Atyrau Region",
-      "name_ru": "Атырауская область",
+      "name_ru": "Атирауська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-KAR",
       "name": "Karaganda Region",
-      "name_ru": "Карагандинская область",
+      "name_ru": "Карагандинська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-KUS",
       "name": "Kostanay Region",
-      "name_ru": "Костанайская область",
+      "name_ru": "Костанайська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-KZY",
       "name": "Kyzylorda Region",
-      "name_ru": "Кызылординская область",
+      "name_ru": "Кізілордінська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-MAN",
       "name": "Mangystau Region",
-      "name_ru": "Мангистауская область",
+      "name_ru": "Мангистауська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-PAV",
       "name": "Pavlodar Region",
-      "name_ru": "Павлодарская область",
+      "name_ru": "Павлодарська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-SEV",
       "name": "North Kazakhstan Region",
-      "name_ru": "Северо-Казахстанская область",
+      "name_ru": "Північно-Казахстанська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-VOS",
       "name": "East Kazakhstan Region",
-      "name_ru": "Восточно-Казахстанская область",
+      "name_ru": "Східноказахстанська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-YUZ",
       "name": "Turkistan Region",
-      "name_ru": "Туркестанская область",
+      "name_ru": "Туркестанська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-ZAP",
       "name": "West Kazakhstan Region",
-      "name_ru": "Западно-Казахстанская область",
+      "name_ru": "Західноказахстанська область",
       "active": "Y"
     },
     {
       "country_id": "KZ",
       "region_id": "KZ-ZHA",
       "name": "Jambyl Region",
-      "name_ru": "Жамбылская область",
+      "name_ru": "Жамбильська область",
       "active": "Y"
     },
     {
       "country_id": "JO",
       "region_id": "JO-AZ",
       "name": "Zarqa Governorate",
-      "name_ru": "Эз-Зарка",
+      "name_ru": "Зарка",
       "active": "Y"
     },
     {
       "country_id": "JO",
       "region_id": "JO-KA",
       "name": "Karak Governorate",
-      "name_ru": "Эль-Карак",
+      "name_ru": "Карак",
       "active": "Y"
     },
     {
@@ -10362,7 +10362,7 @@
       "country_id": "JO",
       "region_id": "JO-BA",
       "name": "Balqa Governorate",
-      "name_ru": "Эль-Балка",
+      "name_ru": "Балка",
       "active": "Y"
     },
     {
@@ -10383,7 +10383,7 @@
       "country_id": "JO",
       "region_id": "JO-IR",
       "name": "Irbid Governorate",
-      "name_ru": "Ирбид",
+      "name_ru": "Ірбід",
       "active": "Y"
     },
     {
@@ -10397,7 +10397,7 @@
       "country_id": "JO",
       "region_id": "JO-AT",
       "name": "Tafilah Governorate",
-      "name_ru": "Эт-Тафила",
+      "name_ru": "Ет-Тафіла",
       "active": "Y"
     },
     {
@@ -10411,7 +10411,7 @@
       "country_id": "JO",
       "region_id": "JO-MA",
       "name": "Mafraq Governorate",
-      "name_ru": "Эль-Мафрак",
+      "name_ru": "Мафрак",
       "active": "Y"
     },
     {
@@ -10432,7 +10432,7 @@
       "country_id": "CU",
       "region_id": "CU-05",
       "name": "Villa Clara",
-      "name_ru": "Вилья-Клара",
+      "name_ru": "Вілла-Клара",
       "active": "Y"
     },
     {
@@ -10446,7 +10446,7 @@
       "country_id": "CU",
       "region_id": "CU-15",
       "name": "Artemisa",
-      "name_ru": "Артемиса",
+      "name_ru": "Артеміса",
       "active": "Y"
     },
     {
@@ -10474,7 +10474,7 @@
       "country_id": "CU",
       "region_id": "CU-11",
       "name": "Holguín",
-      "name_ru": "Ольгин",
+      "name_ru": "Ольгін",
       "active": "Y"
     },
     {
@@ -10495,28 +10495,28 @@
       "country_id": "CU",
       "region_id": "CU-09",
       "name": "Camagüey",
-      "name_ru": "Камагуэй",
+      "name_ru": "Камагуей",
       "active": "Y"
     },
     {
       "country_id": "CU",
       "region_id": "CU-08",
       "name": "Ciego de Ávila",
-      "name_ru": "Сьего-де-Авила",
+      "name_ru": "Сьєго-де-Авіла",
       "active": "Y"
     },
     {
       "country_id": "CU",
       "region_id": "CU-07",
       "name": "Sancti Spíritus",
-      "name_ru": "Санкти-Спиритус",
+      "name_ru": "Санкті-Спірітус",
       "active": "Y"
     },
     {
       "country_id": "CU",
       "region_id": "CU-01",
       "name": "Pinar del Río",
-      "name_ru": "Пинар-дель-Рио",
+      "name_ru": "Пінар-дель-Ріо",
       "active": "Y"
     },
     {
@@ -10530,14 +10530,14 @@
       "country_id": "CU",
       "region_id": "CU-06",
       "name": "Cienfuegos",
-      "name_ru": "Сьенфуэгос",
+      "name_ru": "Сьєнфуегос",
       "active": "Y"
     },
     {
       "country_id": "BZ",
       "region_id": "BZ-BZ",
       "name": "Belize District",
-      "name_ru": "Белиз",
+      "name_ru": "Беліз",
       "active": "Y"
     },
     {
@@ -10551,21 +10551,21 @@
       "country_id": "BZ",
       "region_id": "BZ-CZL",
       "name": "Corozal District",
-      "name_ru": "Коросаль",
+      "name_ru": "Корозаль",
       "active": "Y"
     },
     {
       "country_id": "BZ",
       "region_id": "BZ-OW",
       "name": "Orange Walk District",
-      "name_ru": "Ориндж-Уолк",
+      "name_ru": "Оранж-Уок",
       "active": "Y"
     },
     {
       "country_id": "BZ",
       "region_id": "BZ-SC",
       "name": "Stann Creek District",
-      "name_ru": "Станн-Крик",
+      "name_ru": "Стан Крик",
       "active": "Y"
     },
     {
@@ -10586,14 +10586,14 @@
       "country_id": "MX",
       "region_id": "MX-BCN",
       "name": "Baja California",
-      "name_ru": "Нижняя Калифорния",
+      "name_ru": "Нижня Каліфорнія",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-BCS",
       "name": "Baja California Sur",
-      "name_ru": "Южная Нижняя Калифорния",
+      "name_ru": "Південна Нижня Каліфорнія",
       "active": "Y"
     },
     {
@@ -10607,28 +10607,28 @@
       "country_id": "MX",
       "region_id": "MX-CHP",
       "name": "Chiapas",
-      "name_ru": "Чьяпас",
+      "name_ru": "Чіапас",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-CHH",
       "name": "Chihuahua",
-      "name_ru": "Чиуауа",
+      "name_ru": "Чіуауа",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-COA",
       "name": "Coahuila de Zaragoza",
-      "name_ru": "Коауила",
+      "name_ru": "Коауіла",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-COL",
       "name": "Colima",
-      "name_ru": "Колима",
+      "name_ru": "Коліма",
       "active": "Y"
     },
     {
@@ -10649,42 +10649,42 @@
       "country_id": "MX",
       "region_id": "MX-GUA",
       "name": "Guanajuato",
-      "name_ru": "Гуанахуато",
+      "name_ru": "Ґуанахуато",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-GRO",
       "name": "Guerrero",
-      "name_ru": "Герреро",
+      "name_ru": "Ґерреро",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-HID",
       "name": "Hidalgo",
-      "name_ru": "Идальго",
+      "name_ru": "Ідальго",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-JAL",
       "name": "Jalisco",
-      "name_ru": "Халиско",
+      "name_ru": "Халіско",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-MEX",
       "name": "Estado de México",
-      "name_ru": "Мехико",
+      "name_ru": "Штат Мехіко",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-MIC",
       "name": "Michoacán",
-      "name_ru": "Мичоакан",
+      "name_ru": "Мічуакан",
       "active": "Y"
     },
     {
@@ -10698,14 +10698,14 @@
       "country_id": "MX",
       "region_id": "MX-NAY",
       "name": "Nayarit",
-      "name_ru": "Наярит",
+      "name_ru": "Наяріт",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-NLE",
       "name": "Nuevo León",
-      "name_ru": "Нуэво-Леон",
+      "name_ru": "Нуево-Леон",
       "active": "Y"
     },
     {
@@ -10719,7 +10719,7 @@
       "country_id": "MX",
       "region_id": "MX-PUE",
       "name": "Puebla",
-      "name_ru": "Пуэбла",
+      "name_ru": "Пуебла",
       "active": "Y"
     },
     {
@@ -10733,21 +10733,21 @@
       "country_id": "MX",
       "region_id": "MX-ROO",
       "name": "Quintana Roo",
-      "name_ru": "Кинтана-Роо",
+      "name_ru": "Кінтана Ру",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-SLP",
       "name": "San Luis Potosí",
-      "name_ru": "Сан-Луис-Потоси",
+      "name_ru": "Сан-Луїс-Потосі",
       "active": "Y"
     },
     {
       "country_id": "MX",
       "region_id": "MX-SIN",
       "name": "Sinaloa",
-      "name_ru": "Синалоа",
+      "name_ru": "Сіналоа",
       "active": "Y"
     },
     {
@@ -10768,7 +10768,7 @@
       "country_id": "MX",
       "region_id": "MX-TAM",
       "name": "Tamaulipas",
-      "name_ru": "Тамаулипас",
+      "name_ru": "Тамауліпас",
       "active": "Y"
     },
     {
@@ -10803,175 +10803,175 @@
       "country_id": "AM",
       "region_id": "AM-AG",
       "name": "Aragatsotn Province",
-      "name_ru": "Арагацотнская область",
+      "name_ru": "Араґацотн",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-AR",
       "name": "Ararat Province",
-      "name_ru": "Араратская область",
+      "name_ru": "Арарат",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-AV",
       "name": "Armavir Province",
-      "name_ru": "Армавирская область",
+      "name_ru": "Армавір",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-ER",
       "name": "Yerevan",
-      "name_ru": "Ереван",
+      "name_ru": "Єреван",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-GR",
       "name": "Gegharkunik Province",
-      "name_ru": "Гехаркуникская область",
+      "name_ru": "Ґегаркунік",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-KT",
       "name": "Kotayk Province",
-      "name_ru": "Котайкская область",
+      "name_ru": "Котайк",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-LO",
       "name": "Lori Province",
-      "name_ru": "Лорийская область",
+      "name_ru": "Лорі",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-SH",
       "name": "Shirak Province",
-      "name_ru": "Ширакская область",
+      "name_ru": "Ширак",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-SU",
       "name": "Syunik Province",
-      "name_ru": "Сюникская область",
+      "name_ru": "Сюнік",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-TV",
       "name": "Tavush Province",
-      "name_ru": "Тавушская область",
+      "name_ru": "Тавуш",
       "active": "Y"
     },
     {
       "country_id": "AM",
       "region_id": "AM-VD",
       "name": "Vayots Dzor Province",
-      "name_ru": "Вайоцдзорская область",
+      "name_ru": "Вайоц-Дзор",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-AB",
       "name": "Autonomous Republic of Abkhazia",
-      "name_ru": "Абхазская Автономная Республика",
+      "name_ru": "Автономна Республіка Абхазія",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-AJ",
       "name": "Autonomous Republic of Adjara",
-      "name_ru": "Аджа́рская Автоно́мная Респу́блика",
+      "name_ru": "Автономна Республіка Аджарія",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-GU",
       "name": "Guria",
-      "name_ru": "Гурия",
+      "name_ru": "Гурія",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-IM",
       "name": "Imereti",
-      "name_ru": "Имеретия",
+      "name_ru": "Імереті",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-KA",
       "name": "Kakheti",
-      "name_ru": "Кахетия",
+      "name_ru": "Кахеті",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-KK",
       "name": "Kvemo Kartli",
-      "name_ru": "Квемо-Картли",
+      "name_ru": "Квемо-Картлі",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-MM",
       "name": "Mtskheta-Mtianeti",
-      "name_ru": "Мцхета-Мтианети",
+      "name_ru": "Мцхета-Мтіанеті",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-RL",
       "name": "Racha-Lechkhumi and Kvemo Svaneti",
-      "name_ru": "Рача-Лечхуми и Нижняя Сванетия",
+      "name_ru": "Рача-Лечхумі та Нижня Сванетія",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-SJ",
       "name": "Samtskhe–Javakheti",
-      "name_ru": "Самцхе-Джавахети",
+      "name_ru": "Самцхе-Джавахеті",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-SK",
       "name": "Shida Kartli",
-      "name_ru": "Шида-Картли",
+      "name_ru": "Шида-Картлі",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-SZ",
       "name": "Samegrelo-Zemo Svaneti",
-      "name_ru": "Самегрело-Верхняя Сванетия",
+      "name_ru": "Самегрело-Верхня Сванетія",
       "active": "Y"
     },
     {
       "country_id": "GE",
       "region_id": "GE-TB",
       "name": "Tbilisi",
-      "name_ru": "Тбилиси",
+      "name_ru": "Тбілісі",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-11",
       "name": "Tunis Governorate",
-      "name_ru": "Тунис",
+      "name_ru": "Туніс",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-12",
       "name": "Ariana Governorate",
-      "name_ru": "Арьяна",
+      "name_ru": "Аріана",
       "active": "Y"
     },
     {
@@ -11006,7 +11006,7 @@
       "country_id": "TN",
       "region_id": "TN-23",
       "name": "Bizerte Governorate",
-      "name_ru": "Бизерта",
+      "name_ru": "Бізерта",
       "active": "Y"
     },
     {
@@ -11027,14 +11027,14 @@
       "country_id": "TN",
       "region_id": "TN-33",
       "name": "Kef Governorate",
-      "name_ru": "Эль-Кеф",
+      "name_ru": "Ель-Кеф",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-34",
       "name": "Siliana Governorate",
-      "name_ru": "Сильяна",
+      "name_ru": "Сіліана",
       "active": "Y"
     },
     {
@@ -11048,14 +11048,14 @@
       "country_id": "TN",
       "region_id": "TN-42",
       "name": "Kasserine Governorate",
-      "name_ru": "Кассерин",
+      "name_ru": "Касерін",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-43",
       "name": "Sidi Bouzid Governorate",
-      "name_ru": "Сиди-Бу-Зид",
+      "name_ru": "Сиді Бузід",
       "active": "Y"
     },
     {
@@ -11076,7 +11076,7 @@
       "country_id": "TN",
       "region_id": "TN-53",
       "name": "Mahdia Governorate",
-      "name_ru": "Махдия",
+      "name_ru": "Махдія",
       "active": "Y"
     },
     {
@@ -11097,14 +11097,14 @@
       "country_id": "TN",
       "region_id": "TN-72",
       "name": "Tozeur Governorate",
-      "name_ru": "Таузар",
+      "name_ru": "Тозер",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-73",
       "name": "Kebili Governorate",
-      "name_ru": "Кебили",
+      "name_ru": "Кебілі",
       "active": "Y"
     },
     {
@@ -11118,224 +11118,224 @@
       "country_id": "TN",
       "region_id": "TN-82",
       "name": "Medenine Governorate",
-      "name_ru": "Меденин",
+      "name_ru": "Меденін",
       "active": "Y"
     },
     {
       "country_id": "TN",
       "region_id": "TN-83",
       "name": "Tataouine Governorate",
-      "name_ru": "Татавин",
+      "name_ru": "Татуїн",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-00",
       "name": "City of Belgrade",
-      "name_ru": "Белград",
+      "name_ru": "Місто Белград",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-01",
       "name": "North Bačka District",
-      "name_ru": "Северно-Бачский округ",
+      "name_ru": "Північно-Бацький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-02",
       "name": "Central Banat District",
-      "name_ru": "Средне-Банатский округ",
+      "name_ru": "Середньо-Банатський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-03",
       "name": "North Banat District",
-      "name_ru": "Северно-Банатский округ",
+      "name_ru": "Північно-Банатський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-04",
       "name": "South Banat District",
-      "name_ru": "Южно-Банатский округ",
+      "name_ru": "Південно-Банатський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-05",
       "name": "West Bačka District",
-      "name_ru": "Западно-Бачский округ",
+      "name_ru": "Західно-Бацький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-06",
       "name": "South Bačka District",
-      "name_ru": "Южно-Бачский округ",
+      "name_ru": "Південно-Бацький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-07",
       "name": "Srem District",
-      "name_ru": "Сремский округ",
+      "name_ru": "Сремський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-08",
       "name": "Mačva District",
-      "name_ru": "Мачванский округ",
+      "name_ru": "Мачванський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-09",
       "name": "Kolubara District",
-      "name_ru": "Колубарский округ",
+      "name_ru": "Колубарський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-10",
       "name": "Podunavlje District",
-      "name_ru": "Подунайский округ",
+      "name_ru": "Подунавський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-11",
       "name": "Braničevo District",
-      "name_ru": "Браничевский округ",
+      "name_ru": "Браничевський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-12",
       "name": "Šumadija District",
-      "name_ru": "Шумадийский округ",
+      "name_ru": "Шумадійський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-13",
       "name": "Pomoravlje District",
-      "name_ru": "Поморавский округ",
+      "name_ru": "Поморавський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-14",
       "name": "Bor District",
-      "name_ru": "Борский округ",
+      "name_ru": "Борський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-15",
       "name": "Zaječar District",
-      "name_ru": "Заечарский округ",
+      "name_ru": "Заєчарський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-16",
       "name": "Zlatibor District",
-      "name_ru": "Златиборский округ",
+      "name_ru": "Златиборський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-17",
       "name": "Moravica District",
-      "name_ru": "Моравичский округ",
+      "name_ru": "Моравицький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-18",
       "name": "Raška District",
-      "name_ru": "Рашский округ",
+      "name_ru": "Раський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-19",
       "name": "Rasina District",
-      "name_ru": "Расинский округ",
+      "name_ru": "Расинський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-20",
       "name": "Nišava District",
-      "name_ru": "Нишавский округ",
+      "name_ru": "Нишавський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-21",
       "name": "Toplica District",
-      "name_ru": "Топличский округ",
+      "name_ru": "Топлицький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-22",
       "name": "Pirot District",
-      "name_ru": "Пиротский округ",
+      "name_ru": "Пиротський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-23",
       "name": "Jablanica District",
-      "name_ru": "Ябланичский округ",
+      "name_ru": "Ябланицький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-24",
       "name": "Pčinja District",
-      "name_ru": "Пчиньский округ",
+      "name_ru": "Пчинський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-25",
       "name": "Kosovo District",
-      "name_ru": "Косовский округ",
+      "name_ru": "Косовський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-26",
       "name": "Peć District",
-      "name_ru": "Печский округ",
+      "name_ru": "Пецький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-27",
       "name": "Prizren District",
-      "name_ru": "Призренский округ",
+      "name_ru": "Призренський округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-28",
       "name": "District of Mitrovica",
-      "name_ru": "Косовско-Митровицкий округ",
+      "name_ru": "Косовсько-Митровицький округ",
       "active": "Y"
     },
     {
       "country_id": "RS",
       "region_id": "RS-29",
       "name": "Kosovo-Pomoravlje District",
-      "name_ru": "Косовско-Поморавский округ",
+      "name_ru": "Косовсько-Поморавський округ",
       "active": "Y"
     },
     {
@@ -11349,49 +11349,49 @@
       "country_id": "NGK",
       "region_id": "NGK-2",
       "name": "Askeran Province",
-      "name_ru": "Аскеранский район",
+      "name_ru": "Аскеранський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-3",
       "name": "Hadrut Province",
-      "name_ru": "Гадрутский район",
+      "name_ru": "Гадрутський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-4",
       "name": "Martakert Province",
-      "name_ru": "Мартакертский район",
+      "name_ru": "Мартакертський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-5",
       "name": "Martuni Province",
-      "name_ru": "Мартунинский район",
+      "name_ru": "Мартунінський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-6",
       "name": "Shahumyan Province",
-      "name_ru": "Шаумяновский район",
+      "name_ru": "Шаумянівський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-7",
       "name": "Shushi Province",
-      "name_ru": "Шушинский район",
+      "name_ru": "Шушинський район",
       "active": "Y"
     },
     {
       "country_id": "NGK",
       "region_id": "NGK-8",
       "name": "Kashatagh Province",
-      "name_ru": "Кашатагский район",
+      "name_ru": "Кашатагський район",
       "active": "Y"
     }
   ],
