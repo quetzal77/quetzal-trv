@@ -968,22 +968,22 @@
       "name_ru": "Ірландія",
       "name_nt": "Éire",
       "short_name": "ireland",
-      "small_flag_img": "",
+      "small_flag_img": "-624px -266px",
       "flag_img": "",
       "emb_img": "",
-      "map_img": ""
+      "map_img": "irelandLow.js"
     },
     {
-      "country_id": "GB",
+      "country_id": "UK",
       "continent_id": "EU",
       "name": "the United Kingdom of Great Britain and Northern Ireland",
       "name_ru": "Сполучене Королівство Великої Британії та Північної Ірландії",
       "name_nt": "the United Kingdom of Great Britain and Northern Ireland",
-      "short_name": "greatbritain",
-      "small_flag_img": "",
+      "short_name": "ukingdom",
+      "small_flag_img": "-313px -214px",
       "flag_img": "",
       "emb_img": "",
-      "map_img": ""
+      "map_img": "unitedKingdomLow.js"
     }
   ],
   "area": [
