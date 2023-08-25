@@ -969,20 +969,20 @@
       "name_nt": "Éire",
       "short_name": "ireland",
       "small_flag_img": "-624px -266px",
-      "flag_img": "",
-      "emb_img": "",
+      "flag_img": "ireland_flag.png",
+      "emb_img": "ireland_emb.png",
       "map_img": "irelandLow.js"
     },
     {
-      "country_id": "UK",
+      "country_id": "GB",
       "continent_id": "EU",
       "name": "the United Kingdom of Great Britain and Northern Ireland",
       "name_ru": "Сполучене Королівство Великої Британії та Північної Ірландії",
       "name_nt": "the United Kingdom of Great Britain and Northern Ireland",
       "short_name": "ukingdom",
       "small_flag_img": "-313px -214px",
-      "flag_img": "",
-      "emb_img": "",
+      "flag_img": "ukingdom_flag.png",
+      "emb_img": "ukingdom_emb.png",
       "map_img": "unitedKingdomLow.js"
     }
   ],
@@ -11416,6 +11416,293 @@
       "region_id": "NGK-8",
       "name": "Kashatagh Province",
       "name_ru": "Кашатагський район",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-CW",
+      "name": "County of Carlow",
+      "name_ru": "графство Карлоу",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-CN",
+      "name": "County Cavan",
+      "name_ru": "графство Каван",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-CE",
+      "name": "County Clare",
+      "name_ru": "графство Клер",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-CO",
+      "name": "County Cork",
+      "name_ru": "графство Корк",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-DL",
+      "name": "County Donegal",
+      "name_ru": "графство Донегол",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-D",
+      "name": "County Dublin",
+      "name_ru": "графство Дублін",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-G",
+      "name": "County Galway",
+      "name_ru": "графство Голвей",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-KE",
+      "name": "County Kildare",
+      "name_ru": "графство Кілдер",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-KK",
+      "name": "County Kilkenny",
+      "name_ru": "графство Кілкенні",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-KY",
+      "name": "County Kerry",
+      "name_ru": "графство Керрі",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-LD",
+      "name": "County Longford",
+      "name_ru": "графство Лонгфорд",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-LH",
+      "name": "County Louth",
+      "name_ru": "графство Лаут",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-LK",
+      "name": "County Limerick",
+      "name_ru": "графство Лімерик",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-LM",
+      "name": "County Leitrim",
+      "name_ru": "графство Літрім",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-LS",
+      "name": "County Laois",
+      "name_ru": "графство Ліїш",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-MH",
+      "name": "County Meath",
+      "name_ru": "графство Міт",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-MN",
+      "name": "County Monaghan",
+      "name_ru": "графство Монахан",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-MO",
+      "name": "County of Mayo",
+      "name_ru": "графство Мейо",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-OY",
+      "name": "County Offaly",
+      "name_ru": "графство Оффалі",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-RN",
+      "name": "County Roscommon",
+      "name_ru": "графство Роскоммон",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-SO",
+      "name": "County Sligo",
+      "name_ru": "графство Слайго",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-TA",
+      "name": "County Tipperary",
+      "name_ru": "графство Тіпперері",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-WD",
+      "name": "County Waterford",
+      "name_ru": "графство Вотерфорд",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-WH",
+      "name": "County Westmeath",
+      "name_ru": "графство Західний Міт",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-WX",
+      "name": "County Wexford",
+      "name_ru": "графство Вексфорд",
+      "active": "Y"
+    },
+    {
+      "country_id": "IRL",
+      "region_id": "IE-WW",
+      "name": "County Wicklow",
+      "name_ru": "графство Віклов",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKC",
+      "name": "North East England",
+      "name_ru": "Північно-Східна Англія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKD",
+      "name": "North West England",
+      "name_ru": "Північно-Західна Англія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKE",
+      "name": "Yorkshire and the Humber",
+      "name_ru": "Йоркшир і Гамбер",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKF",
+      "name": "East Midlands",
+      "name_ru": "Східний Мідленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKG",
+      "name": "West Midlands",
+      "name_ru": "Західний Мідленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKH",
+      "name": "East of England",
+      "name_ru": "Східна Англія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKI",
+      "name": "Greater London",
+      "name_ru": "Великий Лондон",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKJ",
+      "name": "South East England",
+      "name_ru": "Південно-Східна Англія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKK",
+      "name": "South West England",
+      "name_ru": "Південно-Західна Англія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKL",
+      "name": "Wales",
+      "name_ru": "Уельс",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKM",
+      "name": "Scotland",
+      "name_ru": "Шотландія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GB-UKN",
+      "name": "Northern Ireland",
+      "name_ru": "Північна Ірландія",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "GG",
+      "name": "Guernsey",
+      "name_ru": "Гернсі",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "JE",
+      "name": "Jersey",
+      "name_ru": "Джерсі",
+      "active": "Y"
+    },
+    {
+      "country_id": "GB",
+      "region_id": "IM",
+      "name": "Isle of Man",
+      "name_ru": "Острів Мен",
       "active": "Y"
     }
   ],
