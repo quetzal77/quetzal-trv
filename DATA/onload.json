@@ -152,6 +152,13 @@
       "name_full": "Індія - भारत - India"
     },
     {
+      "country_id": "IE",
+      "continent_id": "EU",
+      "short_name": "ireland",
+      "small_flag_img": "-624px -266px",
+      "name_full": "Ірландія - Éire - ireland"
+    },
+    {
       "country_id": "ES",
       "continent_id": "EU",
       "short_name": "spain",
