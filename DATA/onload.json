@@ -390,6 +390,13 @@
       "name_full": "Словенія - Slovenija - Slovenia"
     },
     {
+      "country_id": "GB",
+      "continent_id": "EU",
+      "short_name": "ukingdom",
+      "small_flag_img": "-313px -214px",
+      "name_full": "Сполучене Королівство Великої Британії та Північної Ірландії - the United Kingdom of Great Britain and Northern Ireland"
+    },
+    {
       "country_id": "US",
       "continent_id": "NA",
       "short_name": "unitedstatesofamerica",
