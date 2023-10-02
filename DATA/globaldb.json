@@ -22635,7 +22635,14 @@
   ],
   "visit": [
     {
-      "start_date": "129.09.2023",
+      "start_date": "28.09.2023",
+      "end_date": "28.09.2023",
+      "city": [
+        "split"
+      ]
+    },
+    {
+      "start_date": "12.09.2023",
       "end_date": "18.09.2023",
       "city": [
         "dublin",
