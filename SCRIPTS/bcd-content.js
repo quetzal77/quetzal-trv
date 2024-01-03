@@ -152,14 +152,22 @@ function populateContent(callback) {
                this.name = data.area[i].name;
                this.name_ru = data.area[i].name_ru;
                this.country_id = data.area[i].country_id;
+               this.continent_id = data.area[i].continent_id;
                this.setFullRegionName = function () {
                    return this.name_ru + " - " + this.name;
                }
                this.getCountry = function () {
                   return new CountryObj(this.country_id);
                }
-               this.getNumberOfVisitedCities = function () {
+
+               this.getNumberOfVisitedCities = function (continent_id) {
                    var result = 0;
+                   
+                   if (this.continent_id !== undefined && this.continent_id != continent_id)
+                   {
+                    return result;
+                   }
+
                    for (var i = 0; i < citiesVisited.length; i++){
                        if (citiesVisited[i].region_id == this.region_id) {
                             result += 1;
@@ -167,6 +175,7 @@ function populateContent(callback) {
                    }
                    return result;
                }
+
            break;
            }
        }
@@ -183,6 +192,7 @@ function populateContent(callback) {
                this.name_nt = data.country[i].name_nt;
                this.name_ru = data.country[i].name_ru;
                this.continent_id = data.country[i].continent_id;
+               this.continent_id2 = data.country[i].continent_id2;
                this.city_state = (data.country[i].city_state === "true") ? true : false;
                this.small_flag_img = data.country[i].small_flag_img;
                this.flag_img = data.country[i].flag_img;
@@ -195,11 +205,11 @@ function populateContent(callback) {
                        }
                    }
                }
-               this.getNumberOfVisitedCities = function () {
+               this.getNumberOfVisitedCities = function (continent_id) {
                    var result = 0;
                    for (var i = 0; i < regionsVisited.length; i++){
                        if (regionsVisited[i].country_id == this.country_id) {
-                            result += regionsVisited[i].getNumberOfVisitedCities();
+                            result += regionsVisited[i].getNumberOfVisitedCities(continent_id);
                        }
                    }
                    return result;

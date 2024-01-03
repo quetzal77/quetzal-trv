@@ -36,7 +36,6 @@
             //Create arrays with all the traveler's data
             $.getScript("SCRIPTS/bcd-content.js", function(){ populateContent(callback); });
         });
-
     }
 
     function getCountryPage( country_id ){

@@ -283,16 +283,20 @@ function getSelectorOfListOfStories_HTML(){
 function getNumberOfLocation() {
     $.each(initial_data.continent, function( i, cont ){
         var numberOfCities = 0;
+
         $.each( countriesVisited, function( j, country ){
-            if (country.continent_id == cont.continent_id) {
+            if (country.continent_id == cont.continent_id || country.continent_id2 == cont.continent_id) {
+                
                 //document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
 
-                var countryElem = $("a#" + country.short_name).last().get(0);
+                var countryElem = $("a#" + country.short_name + "[continent_id='" + cont.continent_id + "']").last().get(0);
 
-                countryElem.firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
-                numberOfCities = numberOfCities + country.getNumberOfVisitedCities();
+                var numberOfVisitedCities = country.getNumberOfVisitedCities(cont.continent_id);
+                countryElem.firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(numberOfVisitedCities));
+                numberOfCities = numberOfCities + numberOfVisitedCities;
             }
         });
+
         document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " (" + setLocationNumberWithCorrectEnd(numberOfCities) + ")";
     });
     document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";

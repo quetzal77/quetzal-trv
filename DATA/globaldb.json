@@ -397,6 +397,7 @@
     {
       "country_id": "ES",
       "continent_id": "EU",
+      "continent_id2": "AF",
       "name": "Spain",
       "name_ru": "Іспанія",
       "name_nt": "España",
@@ -7101,6 +7102,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-AN",
+      "continent_id": "EU",
       "name": "Andalusia",
       "name_ru": "Андалузія",
       "active": "Y"
@@ -7108,6 +7110,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-AR",
+      "continent_id": "EU",
       "name": "Aragon",
       "name_ru": "Арагон",
       "active": "Y"
@@ -7115,6 +7118,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-AS",
+      "continent_id": "EU",
       "name": "Asturias",
       "name_ru": "Астурія",
       "active": "Y"
@@ -7122,6 +7126,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-IB",
+      "continent_id": "EU",
       "name": "Balearic Islands",
       "name_ru": "Балеарські острови",
       "active": "Y"
@@ -7129,6 +7134,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-PV",
+      "continent_id": "EU",
       "name": "Basque Country",
       "name_ru": "Країна Басків",
       "active": "Y"
@@ -7136,6 +7142,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-CN",
+      "continent_id": "EU",
       "name": "Canary Islands",
       "name_ru": "Канарські острови",
       "active": "Y"
@@ -7143,6 +7150,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-CB",
+      "continent_id": "EU",
       "name": "Cantabria",
       "name_ru": "Кантабрія",
       "active": "Y"
@@ -7150,6 +7158,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-CL",
+      "continent_id": "EU",
       "name": "Castile and Leon",
       "name_ru": "Кастілія і Леон",
       "active": "Y"
@@ -7157,6 +7166,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-CM",
+      "continent_id": "EU",
       "name": "Castile-La Mancha",
       "name_ru": "Кастілія - Ла-Манча",
       "active": "Y"
@@ -7164,6 +7174,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-CT",
+      "continent_id": "EU",
       "name": "Catalonia",
       "name_ru": "Каталонія",
       "active": "Y"
@@ -7171,6 +7182,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-EX",
+      "continent_id": "EU",
       "name": "Extremadura",
       "name_ru": "Естремадура",
       "active": "Y"
@@ -7178,6 +7190,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-GA",
+      "continent_id": "EU",
       "name": "Galicia",
       "name_ru": "Галісія",
       "active": "Y"
@@ -7185,6 +7198,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-RI",
+      "continent_id": "EU",
       "name": "La Rioja",
       "name_ru": "Ріоха",
       "active": "Y"
@@ -7192,6 +7206,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-MD",
+      "continent_id": "EU",
       "name": "Madrid",
       "name_ru": "Мадрид",
       "active": "Y"
@@ -7199,6 +7214,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-MC",
+      "continent_id": "EU",
       "name": "Murcia",
       "name_ru": "Мурсія",
       "active": "Y"
@@ -7206,6 +7222,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-NC",
+      "continent_id": "EU",
       "name": "Navarra",
       "name_ru": "Наварра",
       "active": "Y"
@@ -7213,13 +7230,15 @@
     {
       "country_id": "ES",
       "region_id": "ES-VC",
+      "continent_id": "EU",
       "name": "Valencia",
       "name_ru": "Валенсія",
       "active": "Y"
     },
     {
-      "country_id": "ES",
       "region_id": "ES-CE",
+      "country_id": "ES",
+      "continent_id": "AF",
       "name": "Ceuta",
       "name_ru": "Сеута",
       "active": "Y"
@@ -7227,6 +7246,7 @@
     {
       "country_id": "ES",
       "region_id": "ES-ML",
+      "continent_id": "EU",
       "name": "Melilla",
       "name_ru": "Мелілья",
       "active": "Y"

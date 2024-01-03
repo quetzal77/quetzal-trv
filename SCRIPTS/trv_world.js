@@ -39,10 +39,10 @@ function createWorldPageFrontView() {
         var listOfCountries = "";
 
         $.each( countries, function( j, country ){
-            if (country.continent_id == cont.continent_id) {
+            if (country.continent_id == cont.continent_id || country.continent_id2 == cont.continent_id) {
                 countriesPerContinentNumber += 1;
 
-                listOfCountries += "<a id='" + country.short_name + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                listOfCountries += "<a id='" + country.short_name + "' continent_id='" + cont.continent_id + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
 //                "<a href='index.html?country=" + country.short_name + "' onmouseover='' style='cursor: pointer;'>" +
                 "<img src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' style='background-position:" + country.small_flag_img + "' /></a>"
             }
