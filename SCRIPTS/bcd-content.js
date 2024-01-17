@@ -163,7 +163,7 @@ function populateContent(callback) {
                this.getNumberOfVisitedCities = function (continent_id) {
                    var result = 0;
                    
-                   if (this.continent_id !== undefined && this.continent_id != continent_id)
+                   if (this.continent_id !== undefined && continent_id !== undefined && this.continent_id != continent_id)
                    {
                     return result;
                    }

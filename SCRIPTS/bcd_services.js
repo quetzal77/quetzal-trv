@@ -222,12 +222,22 @@ function getEngLocationName(locationId) {
     return result[0].name;
 }
 
+function SortByName(a, b){
+    var aName = a.name_ru.toLowerCase();
+    var bName = b.name_ru.toLowerCase(); 
+    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+  }
+
 //02.14 This method creates selector of countries
 function getSelectorOfListOfCountries_HTML () {
     var result = "";
+  
+    countriesVisited.sort(SortByName);
+    
     $.each (countriesVisited, function( i, country ) {
         result += "<li><a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
     });
+    
     result += "</select>";
     return result;
 }
