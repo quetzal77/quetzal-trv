@@ -985,6 +985,18 @@
       "flag_img": "ukingdom_flag.png",
       "emb_img": "ukingdom_emb.png",
       "map_img": "unitedKingdomLow.js"
+    },
+    {
+      "country_id": "IS",
+      "continent_id": "EU",
+      "name": "Iceland",
+      "name_ru": "Ісландія",
+      "name_nt": "Ísland",
+      "short_name": "iceland",
+      "small_flag_img": "-236px -319px",
+      "flag_img": "iceland_flag.png",
+      "emb_img": "iceland_emb.png",
+      "map_img": "icelandLow.js"
     }
   ],
   "area": [
