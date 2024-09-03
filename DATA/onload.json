@@ -159,6 +159,13 @@
       "name_full": "Ірландія - Éire - ireland"
     },
     {
+      "country_id": "IS",
+      "continent_id": "EU",
+      "short_name": "iceland",
+      "small_flag_img": "-236px -319px",
+      "name_full": "Ісландія - Ísland - Iceland"
+    },
+    {
       "country_id": "ES",
       "continent_id": "EU",
       "continent_id2": "AF",
