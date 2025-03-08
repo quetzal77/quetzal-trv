@@ -56,7 +56,7 @@ function populateContent(callback) {
        }
        visitsSorted.sort(dynamicSort("start_date"));
        visitsSorted.reverse();
-       citiesVisited.sort(dynamicSort("name_ru"))
+       citiesVisited.sort(dynamicSort("name_ua"))
    }
 
    //01.04 Array of Visited Countries and Regions
@@ -69,7 +69,7 @@ function populateContent(callback) {
               distinctIds[citiesVisited[i].region_id] = true;
           }
       }
-      regionsVisited.sort(dynamicSort("name_ru"));
+      regionsVisited.sort(dynamicSort("name_ua"));
 
       countriesVisited = [];
       var distinctIds_2 = {};
@@ -79,7 +79,7 @@ function populateContent(callback) {
               distinctIds_2[regionsVisited[i].country_id] = true;
           }
       }
-      countriesVisited.sort(dynamicSort("name_ru"));
+      countriesVisited.sort(dynamicSort("name_ua"));
    }
 
    //01.05 City Object definition
@@ -102,22 +102,22 @@ function populateContent(callback) {
 
                this.name = (data.city[i].type) ? getCityNameUpdatedEn(data.city[i].name, data.city[i].type) : data.city[i].name;
                this.name_nt = data.city[i].name_nt;
-               this.name_ru = (data.city[i].type) ? getCityNameUpdatedRu(data.city[i].name_ru, data.city[i].type) : data.city[i].name_ru;
+               this.name_ua = (data.city[i].type) ? getCityNameUpdatedRu(data.city[i].name_ua, data.city[i].type) : data.city[i].name_ua;
                this.region_id = data.city[i].region_id;
 
                this.setFullCityName = function () {
                   var result;
                   if (this.name_nt == "") {
-                       result = this.name_ru + " - " + this.name;
+                       result = this.name_ua + " - " + this.name;
                   }
-                  else if (this.name_ru == "") {
+                  else if (this.name_ua == "") {
                        result = this.name_nt + " - " + this.name;
                   }
                   else if (this.name == "") {
-                       result = this.name_ru + " - " + this.name_nt;
+                       result = this.name_ua + " - " + this.name_nt;
                   }
                   else {
-                       result = this.name_ru + " - " + this.name_nt + " - " + this.name;
+                       result = this.name_ua + " - " + this.name_nt + " - " + this.name;
                   }
                   return result;
                }
@@ -150,11 +150,11 @@ function populateContent(callback) {
                this.region_id = data.area[i].region_id;
                this.active = (data.area[i].active === "Y") ? true : false;
                this.name = data.area[i].name;
-               this.name_ru = data.area[i].name_ru;
+               this.name_ua = data.area[i].name_ua;
                this.country_id = data.area[i].country_id;
                this.continent_id = data.area[i].continent_id;
                this.setFullRegionName = function () {
-                   return this.name_ru + " - " + this.name;
+                   return this.name_ua + " - " + this.name;
                }
                this.getCountry = function () {
                   return new CountryObj(this.country_id);
@@ -190,7 +190,7 @@ function populateContent(callback) {
                this.short_name = data.country[i].short_name;
                this.name = data.country[i].name;
                this.name_nt = data.country[i].name_nt;
-               this.name_ru = data.country[i].name_ru;
+               this.name_ua = data.country[i].name_ua;
                this.continent_id = data.country[i].continent_id;
                this.continent_id2 = data.country[i].continent_id2;
                this.city_state = (data.country[i].city_state === "true") ? true : false;
@@ -201,7 +201,7 @@ function populateContent(callback) {
                this.getContinentName = function () {
                    for (var i = 0; i < data.continent.length; i++){
                        if (data.continent[i].country_id == this.continent_id) {
-                           return this.name_ru;
+                           return this.name_ua;
                        }
                    }
                }
@@ -244,16 +244,16 @@ function populateContent(callback) {
                this.setFullCountryName = function () {
                    var result;
                    if (this.name_nt == "" || this.name_nt == undefined) {
-                        result = this.name_ru + " - " + this.name;
+                        result = this.name_ua + " - " + this.name;
                    }
-                   else if (this.name_ru == "" || this.name_ru == undefined) {
+                   else if (this.name_ua == "" || this.name_ua == undefined) {
                         result = this.name_nt + " - " + this.name;
                    }
                    else if (this.name == "" || this.name == undefined) {
-                        result = this.name_ru + " - " + this.name_nt;
+                        result = this.name_ua + " - " + this.name_nt;
                    }
                    else {
-                        result = this.name_ru + " - " + this.name_nt + " - " + this.name;
+                        result = this.name_ua + " - " + this.name_nt + " - " + this.name;
                    }
                    return result;
                }
@@ -284,10 +284,10 @@ function populateContent(callback) {
     }
 
     //01.10 Get updated city RU name when it has type defined
-    function getCityNameUpdatedRu(name_ru, type_id) {
+    function getCityNameUpdatedRu(name_ua, type_id) {
     var result;
         $.each(data.type, function( i, type ){
-            if (type.type_id == type_id){result = (name_ru.toLowerCase().includes(type.name_ru)) ?  name_ru : name_ru + " (" + type.name_ru + ")";}
+            if (type.type_id == type_id){result = (name_ua.toLowerCase().includes(type.name_ua)) ?  name_ua : name_ua + " (" + type.name_ua + ")";}
         });
     return result;
     }

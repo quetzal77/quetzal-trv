@@ -2,19 +2,19 @@
   "continent": [
     {
       "continent_id": "AS",
-      "name_ru": "Азія"
+      "name_ua": "Азія"
     },
     {
       "continent_id": "AF",
-      "name_ru": "Африка"
+      "name_ua": "Африка"
     },
     {
       "continent_id": "EU",
-      "name_ru": "Європа"
+      "name_ua": "Європа"
     },
     {
       "continent_id": "NA",
-      "name_ru": "Північна Америка"
+      "name_ua": "Північна Америка"
     }
   ],
   "country": [

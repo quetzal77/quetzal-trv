@@ -5,23 +5,23 @@ function addElementOfGlobalDataArray(entityObj) {
     switch(local[1]) {
         case 'type':
             data.type.push(entityObj);
-            data.type.sort(dynamicSort("name_ru"));
+            data.type.sort(dynamicSort("name_ua"));
             break;
         case 'continent':
             data.continent.push(entityObj);
-            data.continent.sort(dynamicSort("name_ru"));
+            data.continent.sort(dynamicSort("name_ua"));
             break;
         case 'country':
             data.country.push(entityObj);
-            data.country.sort(dynamicSort("name_ru"));
+            data.country.sort(dynamicSort("name_ua"));
             break;
         case 'region':
             data.area.push(entityObj);
-            data.area.sort(dynamicSort("name_ru"));
+            data.area.sort(dynamicSort("name_ua"));
             break;
         case 'city':
             data.city.push(entityObj);
-            data.city.sort(dynamicSort("name_ru"));
+            data.city.sort(dynamicSort("name_ua"));
             break;
         case 'visit':
             data.visit.push(entityObj);
@@ -39,27 +39,27 @@ function updateElementOfGlobalDataArray(newEntityObj) {
          switch(local[1]) {
              case 'type':
                  updateElementOfTypeArray(initialEntityObj, newEntityObj)
-                 data.type.sort(dynamicSort("name_ru"));
+                 data.type.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
              case 'continent':
                  updateElementOfContinentArray (initialEntityObj, newEntityObj);
-                 data.continent.sort(dynamicSort("name_ru"));
+                 data.continent.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
              case 'country':
                  updateElementOfCountryArray (initialEntityObj, newEntityObj);
-                 data.country.sort(dynamicSort("name_ru"));
+                 data.country.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
              case 'region':
                  updateElementOfRegionArray (initialEntityObj, newEntityObj);
-                 data.area.sort(dynamicSort("name_ru"));
+                 data.area.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
              case 'city':
                  updateElementOfCityArray (initialEntityObj, newEntityObj);
-                 data.city.sort(dynamicSort("name_ru"));
+                 data.city.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
              case 'visit':
@@ -101,7 +101,7 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
 //10.04 Update Continent and Country array with new data
 function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
     var continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
-    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
 
     // Update Global Country Array with new ID
@@ -116,7 +116,7 @@ function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
     $.each (data.continent, function( i, continent ){
         if (continent.continent_id == initialEntityObj.continent_id) {
             if (continent_id){ continent.continent_id = newEntityObj.continent_id; }
-            if (name_ru){ continent.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ continent.name_ua = newEntityObj.name_ua; }
             if (name){ continent.name = newEntityObj.name; }
         }
     });
@@ -132,7 +132,7 @@ function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
     $.each (initial_data.continent, function( i, continent ){
         if (continent.continent_id == initialEntityObj.continent_id) {
             if (continent_id){ continent.continent_id = newEntityObj.continent_id; }
-            if (name_ru){ continent.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ continent.name_ua = newEntityObj.name_ua; }
         }
     });
 }
@@ -140,7 +140,7 @@ function updateElementOfContinentArray(initialEntityObj, newEntityObj) {
 //10.05 Update Type and City arrays with new data
 function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
     var type_id = (initialEntityObj.type_id.toUpperCase() != newEntityObj.type_id.toUpperCase()) ? true : false;
-    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
 
     // Update Global City Array with new ID
@@ -155,7 +155,7 @@ function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
     $.each (data.type, function( i, type ){
         if (type.type_id == initialEntityObj.type_id) {
             if (type_id){ type.type_id = newEntityObj.type_id; }
-            if (name_ru){ type.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ type.name_ua = newEntityObj.name_ua; }
             if (name){ type.name = newEntityObj.name; }
         }
     });
@@ -166,7 +166,7 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
     var city_id = (initialEntityObj.city_id.toLowerCase() != newEntityObj.city_id.toLowerCase()) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
-    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var region_id = (initialEntityObj.region_id != newEntityObj.region_id) ? true : false;
     var type = (initialEntityObj.type != newEntityObj.type) ? true : false;
     var capital = (initialEntityObj.capital != newEntityObj.capital) ? true : false;
@@ -191,7 +191,7 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
     $.each (data.city, function( i, city ){
         if (city.city_id == initialEntityObj.city_id) {
             if (city_id){ city.city_id = newEntityObj.city_id; }
-            if (name_ru){ city.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ city.name_ua = newEntityObj.name_ua; }
             if (name){ city.name = newEntityObj.name; }
             if (name_nt){ city.name_nt = newEntityObj.name_nt; }
             if (region_id){ city.region_id = newEntityObj.region_id; }
@@ -212,7 +212,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
     var country_id = (initialEntityObj.country_id.toLowerCase() != newEntityObj.country_id.toLowerCase()) ? true : false;
     var short_name = (initialEntityObj.short_name.toLowerCase() != newEntityObj.short_name.toLowerCase()) ? true : false;
     var continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
-    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
     var city_state = (initialEntityObj.city_state != newEntityObj.city_state) ? true : false;
@@ -221,7 +221,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
     var emb_img = (initialEntityObj.emb_img != newEntityObj.emb_img) ? true : false;
     var map_img = (initialEntityObj.map_img != newEntityObj.map_img) ? true : false;
     var name_nt_text = (name_nt) ? " - " + newEntityObj.name_nt + " - " : " - ";
-    var full_name = (name || name_ru || name_nt) ? newEntityObj.name_ru + name_nt_text + newEntityObj.name : false;
+    var full_name = (name || name_ua || name_nt) ? newEntityObj.name_ua + name_nt_text + newEntityObj.name : false;
 
     // Update Global Region Array with new ID
     if (country_id) {
@@ -236,7 +236,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
         if (country.country_id == initialEntityObj.country_id) {
             if (country_id){ country.country_id = newEntityObj.country_id; }
             if (continent_id){ country.continent_id = newEntityObj.continent_id; }
-            if (name_ru){ country.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ country.name_ua = newEntityObj.name_ua; }
             if (name){ country.name = newEntityObj.name; }
             if (name_nt){ country.name_nt = newEntityObj.name_nt; }
             if (short_name){ country.short_name = newEntityObj.short_name; }
@@ -265,10 +265,10 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
         if (initial_continent[0] == undefined){
             var entityObj = {
                 continent_id: continent[0].continent_id,
-                name_ru: continent[0].name_ru
+                name_ua: continent[0].name_ua
             }
             initial_data.continent.push(entityObj);
-            initial_data.continent.sort(dynamicSort("name_ru"));
+            initial_data.continent.sort(dynamicSort("name_ua"));
         }
 
         //Remove Continent when country moved from it to another one and it doesnt have countries
@@ -282,7 +282,7 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
 function updateElementOfRegionArray(initialEntityObj, newEntityObj) {
     var country_id = (initialEntityObj.country_id.toLowerCase() != newEntityObj.country_id.toLowerCase()) ? true : false;
     var region_id = (initialEntityObj.region_id.toLowerCase() != newEntityObj.region_id.toLowerCase()) ? true : false;
-    var name_ru = (initialEntityObj.name_ru != newEntityObj.name_ru) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     var active = (initialEntityObj.active != newEntityObj.active) ? true : false;
 
@@ -299,7 +299,7 @@ function updateElementOfRegionArray(initialEntityObj, newEntityObj) {
         if (region.region_id == initialEntityObj.region_id) {
             if (country_id){ region.country_id = newEntityObj.country_id; }
             if (region_id){ region.region_id = newEntityObj.region_id; }
-            if (name_ru){ region.name_ru = newEntityObj.name_ru; }
+            if (name_ua){ region.name_ua = newEntityObj.name_ua; }
             if (name){ region.name = newEntityObj.name; }
             if (active){ region.active = newEntityObj.active; }
         }
@@ -421,7 +421,7 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
 
             var initialContinentObj = {
                         continent_id: continentObj[0].continent_id,
-                        name_ru: continentObj[0].name_ru
+                        name_ua: continentObj[0].name_ua
                     };
 
             initial_data.continent.push(initialContinentObj);
@@ -429,7 +429,7 @@ function addToOnloadArrayWhenVisitAdded (entityObj) {
     }
 
     initial_data.country.sort(dynamicSort("name_full"));
-    initial_data.continent.sort(dynamicSort("name_ru"));
+    initial_data.continent.sort(dynamicSort("name_ua"));
 }
 
 //10.10 Remove data from Onload array when visit is removed

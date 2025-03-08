@@ -13,7 +13,7 @@ function createSettingsContinentTab_HTML() {
 
     var listOfContinents = '';
     $.each (data.continent, function( i, continent ){
-        listOfContinents += '<li><a id="' + continent.continent_id + '" onclick="javascript:addEditRemoveContinents(this.id)" onmouseover="" style="cursor: pointer;">' + continent.name_ru + '</a></li>';
+        listOfContinents += '<li><a id="' + continent.continent_id + '" onclick="javascript:addEditRemoveContinents(this.id)" onmouseover="" style="cursor: pointer;">' + continent.name_ua + '</a></li>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
@@ -50,7 +50,7 @@ function addEditRemoveContinents(itemId) {
     var header = "Add new";
     var submitStatus = "add";
     var name = "";
-    var name_ru = "";
+    var name_ua = "";
     var editIdField = "";
     local[0] = itemId;
 
@@ -60,11 +60,11 @@ function addEditRemoveContinents(itemId) {
         readonly = "readonly";
         header = "Edit";
         submitStatus = "edit";
-        name_ru = continent[0].name_ru;
+        name_ua = continent[0].name_ua;
         name = continent[0].name;
         local[0] = {
             continent_id: itemId,
-            name_ru: continent[0].name_ru,
+            name_ua: continent[0].name_ua,
             name: continent[0].name
         };
         removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
@@ -86,7 +86,7 @@ function addEditRemoveContinents(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name_ru + '" placeholder="Enter russian name of continent">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter russian name of continent">' +
             '</div>' +
             '<span id="alert2"></span>' +
             '<br>' +
@@ -105,7 +105,7 @@ function addEditRemoveContinents(itemId) {
 function SubmitChanges(status) {
     var continentObj = {
                          continent_id: document.getElementById("newId").value.trim(),
-                         name_ru: document.getElementById("newEngName").value.trim(),
+                         name_ua: document.getElementById("newEngName").value.trim(),
                          name: document.getElementById("newRusName").value.trim()
                        };
 
@@ -137,7 +137,7 @@ function RemoveContinent() {
     if (contToRemoveArray.length > 0) {
         var countriesLinkedToCont = "";
         $.each (contToRemoveArray, function( i, country ){
-            countriesLinkedToCont += '<b>' + country.name_ru + '</b>, ';
+            countriesLinkedToCont += '<b>' + country.name_ua + '</b>, ';
         });
         document.getElementById("remove").innerHTML =
             '<div class="alert alert-danger fade in">' +
@@ -162,18 +162,18 @@ function checkRules4AddUpdate(continentObj) {
     for (var i = 0; i < data.continent.length; i++) {
         if (initialContinentObj != "addnew") {
             if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id.toUpperCase() == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ru);
+                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ua);
                 result = false;
             }
         }
         else {
             if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ru);
+                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ua);
                 result = false;
             }
         }
         if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
-        if (continentObj.name_ru == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
+        if (continentObj.name_ua == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
         if (continentObj.name == ''){ alertOfEmptyMandatoryField("alert3"); result = false; }
     }
     return result;
@@ -190,12 +190,12 @@ function alertOfSuccess() {
 }
 
 //09.06 Failure flag for not unique ID applied
-function alertOfDuplicateFailure(id, name_ru) {
+function alertOfDuplicateFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert1").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 

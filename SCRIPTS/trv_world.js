@@ -47,7 +47,7 @@ function createWorldPageFrontView() {
                 "<img src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' style='background-position:" + country.small_flag_img + "' /></a>"
             }
         });
-        result += "<div class='my_countries'><div><b>" + cont.name_ru + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
+        result += "<div class='my_countries'><div><b>" + cont.name_ua + ":</b> " + setCountriesNumberWithCorrectEnd(countriesPerContinentNumber) + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
                   "</div>" + listOfCountries + "</div>";
     });
     result += createWorldMap_HTML(countries);

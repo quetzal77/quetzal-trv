@@ -181,7 +181,7 @@ function getRusCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
-    return result[0].name_ru;
+    return result[0].name_ua;
 }
 
 //2.11 Get full russian country name
@@ -191,16 +191,16 @@ function getFullRusCountryName(countryId) {
             });
 
     if (result[0].name_nt == "" || result[0].name_nt == undefined) {
-        result = result[0].name_ru + " - " + result[0].name;
+        result = result[0].name_ua + " - " + result[0].name;
     }
-    else if (result[0].name_ru == "" || result[0].name_ru == undefined) {
+    else if (result[0].name_ua == "" || result[0].name_ua == undefined) {
         result = result[0].name_nt + " - " + result[0].name;
     }
     else if (result[0].name == "" || result[0].name == undefined) {
-        result = result[0].name_ru + " - " + result[0].name_nt;
+        result = result[0].name_ua + " - " + result[0].name_nt;
     }
     else {
-        result = result[0].name_ru + " - " + result[0].name_nt + " - " + result[0].name;
+        result = result[0].name_ua + " - " + result[0].name_nt + " - " + result[0].name;
     }
 
     return result;
@@ -211,7 +211,7 @@ function getRusLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
-    return result[0].name_ru;
+    return result[0].name_ua;
 }
 
 //2.13 Get english Location name
@@ -223,8 +223,8 @@ function getEngLocationName(locationId) {
 }
 
 function SortByName(a, b){
-    var aName = a.name_ru.toLowerCase();
-    var bName = b.name_ru.toLowerCase(); 
+    var aName = a.name_ua.toLowerCase();
+    var bName = b.name_ua.toLowerCase();
     return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
   }
 
@@ -235,7 +235,7 @@ function getSelectorOfListOfCountries_HTML () {
     countriesVisited.sort(SortByName);
     
     $.each (countriesVisited, function( i, country ) {
-        result += "<li><a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ru + "</a></li>";
+        result += "<li><a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ua + "</a></li>";
     });
     
     result += "</select>";
@@ -246,14 +246,14 @@ function getSelectorOfListOfCountries_HTML () {
 function getSelectorOfListOfCities_HTML(){
     var result = "";
     $.each (countriesVisited, function( i, country ){
-        result += "<li class='dropdown-header'>" + country.name_ru + "</li>";
+        result += "<li class='dropdown-header'>" + country.name_ua + "</li>";
 
         var citiesList = $.grep (citiesVisited, function( n, i ) {
                                          return (n.getCountryId() == country.short_name)
                                      });
 
         $.each (citiesList, function( i, city ){
-            result += "<li><a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ru + "</a></li>";
+            result += "<li><a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ua + "</a></li>";
         });
     });
     return result;

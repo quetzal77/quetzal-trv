@@ -12,8 +12,8 @@ function createSettingsCountryTab_HTML() {
     document.getElementById("countries").setAttribute("class", "active")
 
     var listOfCountries = '';
-    $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ){
-        listOfCountries += '<li><a id="' + country.short_name + '" onclick="javascript:addEditRemoveCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ru + '</a></li>';
+    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
+        listOfCountries += '<li><a id="' + country.short_name + '" onclick="javascript:addEditRemoveCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
@@ -53,7 +53,7 @@ function addEditRemoveCountry(itemId) {
         country_id: (itemId != "addnew") ? country[0].country_id : "",
         continent_id: (itemId != "addnew") ? country[0].continent_id : "",
         name: (itemId != "addnew") ? country[0].name : "",
-        name_ru: (itemId != "addnew") ? country[0].name_ru : "",
+        name_ua: (itemId != "addnew") ? country[0].name_ua : "",
         name_nt: (itemId != "addnew") ? (country[0].name_nt != undefined) ? country[0].name_nt: "" : "",
         small_flag_img: (itemId != "addnew") ? (country[0].small_flag_img != undefined) ? country[0].small_flag_img: "" : "",
         flag_img: (itemId != "addnew") ? (country[0].flag_img != undefined) ? country[0].flag_img: "" : "",
@@ -65,9 +65,9 @@ function addEditRemoveCountry(itemId) {
     if (itemId != "addnew" && country[0].city_state != undefined) { local[0].city_state = country[0].city_state; }
         var city_state = (local[0].city_state == "true") ? "checked" : "";
 
-    $.each (data.continent.sort(dynamicSort("name_ru")), function( i, continent ) {
+    $.each (data.continent.sort(dynamicSort("name_ua")), function( i, continent ) {
         var selected = (continent.continent_id == country[0].continent_id) ? " selected" : "";
-        continents += "<option value='" + continent.continent_id + "' " + selected + ">" + continent.name_ru + "</option>";
+        continents += "<option value='" + continent.continent_id + "' " + selected + ">" + continent.name_ua + "</option>";
     });
 
     if (itemId != "addnew"){
@@ -137,9 +137,9 @@ function addEditRemoveCountry(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of country">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of country">' +
             '</div>' +
-            '<span id="alert_name_ru"></span>' +
+            '<span id="alert_name_ua"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
@@ -207,7 +207,7 @@ function SubmitChanges(status) {
                      country_id: document.getElementById("newId").value.trim(),
                      continent_id: document.getElementById("newContinent").value.trim(),
                      name: document.getElementById("newEngName").value.trim(),
-                     name_ru: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newRusName").value.trim(),
                      short_name: document.getElementById("newShortName").value.trim(),
                      small_flag_img: document.getElementById("newSmallImg").value.trim()
                    };
@@ -219,7 +219,7 @@ function SubmitChanges(status) {
     if (document.getElementById('newCityState').checked) { newCountryObj["city_state"] = "true"; }
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_short_name");
     removeAllChildNodes("alert_continent");
@@ -242,7 +242,7 @@ function RemoveCountry() {
     var regionsToRemoveArray = $.grep (data.area, function( n, i ) {return (n.country_id == newID)});
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_short_name");
     removeAllChildNodes("alert_continent");
@@ -252,7 +252,7 @@ function RemoveCountry() {
     if (regionsToRemoveArray.length > 0) {
         var regionsLinkedToCountry = "";
         $.each (regionsToRemoveArray, function( i, region ){
-            regionsLinkedToCountry += '<b>' + region.name_ru + '</b>, ';
+            regionsLinkedToCountry += '<b>' + region.name_ua + '</b>, ';
         });
         document.getElementById("remove").innerHTML =
             '<div class="alert alert-danger fade in">' +
@@ -278,27 +278,27 @@ function checkRules4AddUpdate(countryObj) {
         if (initialCountryObj.short_name != "addnew") {
             //This code id deprecated because I decided that country id must be changed only manually but lets leave this code here for future needs
             if (initialCountryObj.country_id.toLowerCase() != countryObj.country_id.toLowerCase() && data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ru);
+                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ua);
                 result = false;
             }
             if (initialCountryObj.short_name.toLowerCase() != countryObj.short_name.toLowerCase() && data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
-                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ru);
+                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ua);
                 result = false;
             }
         }
         else {
             if (data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ru);
+                alertOfDuplicateIDFailure(data.country[i].country_id, data.country[i].name_ua);
                 result = false;
             }
             if (data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
-                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ru);
+                alertOfDuplicateSNFailure(data.country[i].short_name, data.country[i].name_ua);
                 result = false;
             }
         }
         if (countryObj.country_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
         if (countryObj.short_name == ''){ alertOfEmptyMandatoryField("alert_short_name"); result = false; }
-        if (countryObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (countryObj.name_ua == ''){ alertOfEmptyMandatoryField("alert_name_ua"); result = false; }
         if (countryObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
         if (countryObj.continent_id == '0'){ alertOfEmptyMandatoryField("alert_continent"); result = false; }
         if (countryObj.small_flag_img == ''){ alertOfEmptyMandatoryField("alert_small_img"); result = false; }
@@ -318,22 +318,22 @@ function alertOfSuccess() {
 }
 
 //12.07 Failure flag for not unique ID applied
-function alertOfDuplicateIDFailure(id, name_ru) {
+function alertOfDuplicateIDFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 
 //12.08 Failure flag for not unique ShortName applied
-function alertOfDuplicateSNFailure(id, name_ru) {
+function alertOfDuplicateSNFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert_short_name").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 

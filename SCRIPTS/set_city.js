@@ -12,8 +12,8 @@ function createSettingsCityTab_HTML() {
     document.getElementById("cities").setAttribute("class", "active")
 
     var listOfCountries = '';
-    $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ){
-        listOfCountries += '<li><a id="' + country.short_name + '" onclick="javascript:showAllTheCitiesOfSelectedCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ru + '</a></li>';
+    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
+        listOfCountries += '<li><a id="' + country.short_name + '" onclick="javascript:showAllTheCitiesOfSelectedCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
@@ -49,9 +49,9 @@ function createSettingsCityTab_HTML() {
 function showAllTheCitiesOfSelectedCountry(id) {
     var listOfCities = '';
     local[2] = id;
-    $.each (data.city.sort(dynamicSort("name_ru")), function( i, city ){
+    $.each (data.city.sort(dynamicSort("name_ua")), function( i, city ){
         var cityObj = new CityObj(city.city_id);
-        var cityName = (city.type) ? getCityNameUpdatedRu(city.name_ru, city.type) : city.name_ru;
+        var cityName = (city.type) ? getCityNameUpdatedRu(city.name_ua, city.type) : city.name_ua;
         if (cityObj.getCountryId() == id){
             listOfCities += '<li><a id="' + city.city_id + '" onclick="javascript:addEditRemoveCity(this.id)" onmouseover="" style="cursor: pointer;">' + cityName + '</a></li>';
         }
@@ -80,7 +80,7 @@ function addEditRemoveCity(itemId) {
     var city = (itemId != "addnew") ? $.grep (data.city, function( n, i ) {return ( n.city_id == itemId )}) : "newcity";
     local[0] = {
         city_id: itemId,
-        name_ru: (itemId != "addnew") ? city[0].name_ru : "",
+        name_ua: (itemId != "addnew") ? city[0].name_ua : "",
         name: (itemId != "addnew") ? city[0].name : "",
         name_nt: (itemId != "addnew") ? (city[0].name_nt != undefined) ? city[0].name_nt: "" : "",
         region_id: (itemId != "addnew") ? city[0].region_id : ""
@@ -102,16 +102,16 @@ function addEditRemoveCity(itemId) {
     if (itemId != "addnew" && city[0].description != undefined) { local[0].description = city[0].description; }
     var description = (local[0].description != undefined) ? local[0].description : "";
 
-    $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ) {
+    $.each (data.area.sort(dynamicSort("name_ua")), function( i, region ) {
         if ( region.country_id == getCountryId(local[2]) && region.active != "N") {
             var selected = (region.region_id == city[0].region_id) ? " selected" : "";
-            regions += "<option value='" + region.region_id + "' " + selected + ">" + region.name_ru + "</option>";
+            regions += "<option value='" + region.region_id + "' " + selected + ">" + region.name_ua + "</option>";
         }
     });
 
-    $.each (data.type.sort(dynamicSort("name_ru")), function( i, type ) {
+    $.each (data.type.sort(dynamicSort("name_ua")), function( i, type ) {
         var selected = (type.type_id == city[0].type) ? " selected" : "";
-        types += "<option value='" + type.type_id + "' " + selected + ">" + type.name_ru + "</option>";
+        types += "<option value='" + type.type_id + "' " + selected + ">" + type.name_ua + "</option>";
     });
 
     if (itemId != "addnew"){
@@ -138,9 +138,9 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of city">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of city">' +
             '</div>' +
-            '<span id="alert_name_ru"></span>' +
+            '<span id="alert_name_ua"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
@@ -244,7 +244,7 @@ function RemoveCity() {
     });
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_region");
     removeAllChildNodes("success");
@@ -275,7 +275,7 @@ function SubmitChanges(status) {
     var newCityObj = {
                      name: document.getElementById("newEngName").value.trim(),
                      name_nt: document.getElementById("newNtName").value.trim(),
-                     name_ru: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newRusName").value.trim(),
                      city_id: document.getElementById("newId").value.trim()
                    };
 
@@ -290,7 +290,7 @@ function SubmitChanges(status) {
     if (document.getElementById("newDescription").value.trim() != "") { newCityObj["description"] = document.getElementById("newDescription").value.trim(); }
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_region");
     removeAllChildNodes("success");
@@ -312,18 +312,18 @@ function checkRules4AddUpdate(cityObj) {
     for (var i = 0; i < data.city.length; i++) {
         if (initialCityObj.city_id != "addnew") {
             if (initialCityObj.city_id.toLowerCase() != cityObj.city_id.toLowerCase() && data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
-                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ru);
+                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ua);
                 result = false;
             }
         }
         else {
             if (data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
-                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ru);
+                alertOfDuplicateFailure(data.city[i].city_id, data.city[i].name_ua);
                 result = false;
             }
         }
         if (cityObj.city_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
-        if (cityObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (cityObj.name_ua == ''){ alertOfEmptyMandatoryField("alert_name_ua"); result = false; }
         if (cityObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
         if (cityObj.region_id == undefined){ alertOfEmptyMandatoryField("alert_region"); result = false; }
     }
@@ -342,12 +342,12 @@ function alertOfSuccess() {
 }
 
 //11.08 Failure flag for not unique ID applied
-function alertOfDuplicateFailure(id, name_ru) {
+function alertOfDuplicateFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 
@@ -405,7 +405,7 @@ function openCountryMap() {
     else {
         if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}
         if (long != ""){alertOfEmptyMandatoryField("alert_long");}
-        if (name != ""){alertOfEmptyMandatoryField("alert_name_ru");}
+        if (name != ""){alertOfEmptyMandatoryField("alert_name_ua");}
     }
 }
 

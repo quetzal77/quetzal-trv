@@ -12,8 +12,8 @@ function createSettingsRegionTab_HTML() {
     document.getElementById("regions").setAttribute("class", "active")
 
     var listOfCountries = '';
-    $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ){
-        listOfCountries += '<li><a id="' + country.country_id + '" onclick="javascript:showAllTheRegionsOfSelectedCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ru + '</a></li>';
+    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
+        listOfCountries += '<li><a id="' + country.country_id + '" onclick="javascript:showAllTheRegionsOfSelectedCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
@@ -51,10 +51,10 @@ function showAllTheRegionsOfSelectedCountry(id) {
     var country = new CountryObj(id)
     local[2] = (country.map_img != undefined) ? country.map_img : country.short_name + "Low.js" ;
     local[3] = id;
-    $.each (data.area.sort(dynamicSort("name_ru")), function( i, region ){
+    $.each (data.area.sort(dynamicSort("name_ua")), function( i, region ){
         if (region.country_id == id && region.active != "N"){
             var regionObj = new RegionObj(region.region_id);
-            listOfRegions += '<li><a id="' + region.region_id + '" onclick="javascript:addEditRemoveRegion(this.id)" onmouseover="" style="cursor: pointer;">' + region.name_ru + '</a></li>';
+            listOfRegions += '<li><a id="' + region.region_id + '" onclick="javascript:addEditRemoveRegion(this.id)" onmouseover="" style="cursor: pointer;">' + region.name_ua + '</a></li>';
         }
     });
 
@@ -85,14 +85,14 @@ function addEditRemoveRegion(itemId) {
         country_id: local[3],
         region_id: itemId,
         name: (itemId != "addnew") ? region[0].name : "",
-        name_ru: (itemId != "addnew") ? region[0].name_ru : "",
+        name_ua: (itemId != "addnew") ? region[0].name_ua : "",
         active: (itemId != "addnew") ? (region[0].active != undefined) ? region[0].active: "" : ""
     };
     var active = (local[0].active == "Y") ? "checked" : "";
 
-    $.each (data.country.sort(dynamicSort("name_ru")), function( i, country ) {
+    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ) {
         var selected = (country.country_id == local[3]) ? " selected" : "";
-        countries += "<option value='" + country.country_id + "' " + selected + ">" + country.name_ru + "</option>";
+        countries += "<option value='" + country.country_id + "' " + selected + ">" + country.name_ua + "</option>";
     });
 
     //This method trying to get mapLow.js file for particular country
@@ -174,9 +174,9 @@ function addEditRemoveRegion(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ru + '" placeholder="Enter russian name of region">' +
+                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of region">' +
             '</div>' +
-            '<span id="alert_name_ru"></span>' +
+            '<span id="alert_name_ua"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
@@ -210,7 +210,7 @@ function RemoveRegion() {
     var citiesToRemoveArray = $.grep (data.city, function( n, i ) {return (n.region_id == newID)});
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_active");
     removeAllChildNodes("alert_country");
@@ -219,7 +219,7 @@ function RemoveRegion() {
     if (citiesToRemoveArray.length > 0) {
         var citiesLinkedToCountry = "";
         $.each (citiesToRemoveArray, function( i, region ){
-            citiesLinkedToCountry += '<b>' + region.name_ru + '</b>, ';
+            citiesLinkedToCountry += '<b>' + region.name_ua + '</b>, ';
         });
         document.getElementById("remove").innerHTML =
             '<div class="alert alert-danger fade in">' +
@@ -243,12 +243,12 @@ function SubmitChanges(status) {
                      country_id: document.getElementById("newCountry").value.trim(),
                      region_id: document.getElementById("newId").value.trim(),
                      name: document.getElementById("newEngName").value.trim(),
-                     name_ru: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newRusName").value.trim(),
                      active: (document.getElementById("newActive").checked) ? "Y" : "N"
                    };
 
     removeAllChildNodes("alert_id");
-    removeAllChildNodes("alert_name_ru");
+    removeAllChildNodes("alert_name_ua");
     removeAllChildNodes("alert_name");
     removeAllChildNodes("alert_active");
     removeAllChildNodes("alert_country");
@@ -272,19 +272,19 @@ function checkRules4AddUpdate(regionObj) {
         if (initialRegionObj.region_id != "addnew") {
             //This code id deprecated because I decided that country id must be changed only manually but lets leave this code here for future needs
             if (initialRegionObj.region_id.toLowerCase() != regionObj.region_id.toLowerCase() && data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ru);
+                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ua);
                 result = false;
             }
         }
         else {
             if (data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ru);
+                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ua);
                 result = false;
             }
         }
         if (regionObj.country_id == '0'){ alertOfEmptyMandatoryField("alert_country"); result = false; }
         if (regionObj.region_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
-        if (regionObj.name_ru == ''){ alertOfEmptyMandatoryField("alert_name_ru"); result = false; }
+        if (regionObj.name_ua == ''){ alertOfEmptyMandatoryField("alert_name_ua"); result = false; }
         if (regionObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
     }
     return result;
@@ -311,12 +311,12 @@ function alertOfEmptyMandatoryField(alertId) {
 }
 
 //14.09 Failure flag for not unique ID applied
-function alertOfDuplicateIDFailure(id, name_ru) {
+function alertOfDuplicateIDFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ru + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 

@@ -97,7 +97,7 @@ function getCountryDetails_HTML() {
     if (!country.city_state){
         $.each (citiesVisited, function( j, city ){
             if (city.getCountryId() == country.short_name) {
-                techinfo_2 += city.name_ru + "," + city.lat + "," + city.long + ";"
+                techinfo_2 += city.name_ua + "," + city.lat + "," + city.long + ";"
             }
         });
     }
@@ -155,7 +155,7 @@ function getCitiesAndRegionsList_HTML () {
             $.each (citiesVisited, function( i, city ){
                     if (region.region_id == city.region_id) {
                         ListOfLocations += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
-                                           " onmouseover='' style='cursor: pointer;'>" + city.name_ru + "</a>, ";
+                                           " onmouseover='' style='cursor: pointer;'>" + city.name_ua + "</a>, ";
                     }
 
                 });

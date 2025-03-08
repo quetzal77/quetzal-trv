@@ -90,7 +90,7 @@ function addEditRemoveVisits(itemId) {
 
     $.each (data.city, function( i, city ){
         if (!distinctIds[city.city_id]){
-            secondSlice += '<option value="' + city.city_id + '">' + city.name + '-' + city.name_ru + '</option>';
+            secondSlice += '<option value="' + city.city_id + '">' + city.name + '-' + city.name_ua + '</option>';
         }
     });
     citiesToBeSelected += firstSlice + secondSlice;

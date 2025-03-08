@@ -12,7 +12,7 @@ function createSettingsStoryTab_HTML() {
 
 //    var listOfStories = '';
 //    $.each (data.country, function( i, country ){
-//        listOfStories += '<li><a id="' + country.country_id + '" onclick="javascript:addEditRemoveCountries(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ru + '</a></li>';
+//        listOfStories += '<li><a id="' + country.country_id + '" onclick="javascript:addEditRemoveCountries(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
 //    });
 
     document.getElementById("rightSettingsSection").innerHTML = 'story';
