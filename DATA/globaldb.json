@@ -11993,6 +11993,118 @@
       "name": "Sabana Grande",
       "name_ua": "Сабана-Гранде",
       "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-RG",
+      "name": "Río Grande",
+      "name_ua": "Ріо-Гранде",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-RC",
+      "name": "Rincón",
+      "name_ua": "Рінкон",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-QB",
+      "name": "Quebradillas",
+      "name_ua": "Кебрадільяс",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-PO",
+      "name": "Ponce",
+      "name_ua": "Понсе",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-PN",
+      "name": "Peñuelas",
+      "name_ua": "Пеньюелас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-PT",
+      "name": "Patillas",
+      "name_ua": "Патільяс",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-OR",
+      "name": "Orocovis",
+      "name_ua": "Ороковіс",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-NR",
+      "name": "Naranjito",
+      "name_ua": "Наранхіто",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-NG",
+      "name": "Naguabo",
+      "name_ua": "Нагуабо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MV",
+      "name": "Morovis",
+      "name_ua": "Моровіс",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MC",
+      "name": "Moca",
+      "name_ua": "Мока",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MG",
+      "name": "Mayagüez",
+      "name_ua": "Маягуес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MG2",
+      "name": "Mayagüez",
+      "name_ua": "Маягуес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MB",
+      "name": "Maunabo",
+      "name_ua": "Маунабо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MR",
+      "name": "Maricao",
+      "name_ua": "Марікао",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-MT",
+      "name": "Manatí",
+      "name_ua": "Манаті",
+      "active": "Y"
     }
   ],
   "city": [
