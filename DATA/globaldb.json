@@ -997,6 +997,18 @@
       "flag_img": "iceland_flag.png",
       "emb_img": "iceland_emb.png",
       "map_img": "icelandLow.js"
+    },
+    {
+      "country_id": "PR",
+      "continent_id": "NA",
+      "name": "Puerto Rico",
+      "name_ua": "Пуерто-Рико",
+      "name_nt": "Puerto Rico",
+      "short_name": "puertorico",
+      "small_flag_img": "-430px -530px",
+      "flag_img": "puertorico_flag.png",
+      "emb_img": "puertorico_emb.png",
+      "map_img": "puertoRicoLow.js"
     }
   ],
   "area": [
@@ -11861,6 +11873,125 @@
       "region_id": "IS-8",
       "name": "Southern Region",
       "name_ua": "Судурланд",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-YU",
+      "name": "Yauco",
+      "name_ua": "Яуко",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-YB",
+      "name": "Yabucoa",
+      "name_ua": "Ябукоа",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-VL",
+      "name": "Villalba",
+      "name_ua": "Вільяльба",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-VQ",
+      "name": "Vieques",
+      "name_ua": "В'єкес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-VB",
+      "name": "Vega Baja",
+      "name_ua": "Вега-Баха",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-VA",
+      "name": "Vega Alta",
+      "name_ua": "Вега-Альта",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-UT",
+      "name": "Utuado",
+      "name_ua": "Утуадо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-TJ",
+      "name": "Trujillo Alto",
+      "name_ua": "Трухільйо-Альто",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-TB",
+      "name": "Toa Baja",
+      "name_ua": "Тоа-Баха",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-TA",
+      "name": "Toa Alta",
+      "name_ua": "Тоа-Альта",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SI",
+      "name": "Santa Isabel",
+      "name_ua": "Санта-Ісабель",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SS",
+      "name": "San Sebastián",
+      "name_ua": "Сан-Себастьян",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SL",
+      "name": "San Lorenzo",
+      "name_ua": "Сан-Лоренсо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SJ",
+      "name": "San Juan",
+      "name_ua": "Сан-Хуан",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SG",
+      "name": "San Germán",
+      "name_ua": "Сан-Херман",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SA",
+      "name": "Salinas",
+      "name_ua": "Салінас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-SB",
+      "name": "Sabana Grande",
+      "name_ua": "Сабана-Гранде",
       "active": "Y"
     }
   ],
