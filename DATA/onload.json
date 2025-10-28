@@ -355,6 +355,13 @@
       "small_flag_img": "-469px -741px",
       "name_full": "Придністровья - Нистрения - Transnistria"
     },
+	    {
+      "country_id": "PR",
+      "continent_id": "NA",
+      "short_name": "puertorico",
+      "small_flag_img": "-430px -530px",
+      "name_full": "Пуерто-Рико - Puerto Rico - Puerto Rico"
+    },
     {
       "country_id": "RU",
       "continent_id": "EU",
