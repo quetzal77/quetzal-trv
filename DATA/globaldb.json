@@ -12252,6 +12252,125 @@
       "name": "Dorado",
       "name_ua": "Дорадо",
       "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CU",
+      "name": "Culebra",
+      "name_ua": "Кулебра",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CZ",
+      "name": "Corozal",
+      "name_ua": "Коросаль",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CM",
+      "name": "Comerío",
+      "name_ua": "Комеріо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CO",
+      "name": "Coamo",
+      "name_ua": "Коамо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CD",
+      "name": "Cidra",
+      "name_ua": "Сідра",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CL",
+      "name": "Ciales",
+      "name_ua": "Сіалес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CB",
+      "name": "Ceiba",
+      "name_ua": "Сейба",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CY",
+      "name": "Cayey",
+      "name_ua": "Каєй",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CT",
+      "name": "Cataño",
+      "name_ua": "Катаньйо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CN",
+      "name": "Carolina",
+      "name_ua": "Кароліна",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CV",
+      "name": "Canóvanas",
+      "name_ua": "Канованас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CA",
+      "name": "Camuy",
+      "name_ua": "Камуй",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CG",
+      "name": "Caguas",
+      "name_ua": "Кагуас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-CR",
+      "name": "Cabo Rojo",
+      "name_ua": "Кабо-Рохо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-BY",
+      "name": "Bayamón",
+      "name_ua": "Баямон",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-BQ",
+      "name": "Barranquitas",
+      "name_ua": "Барранкітас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-BC",
+      "name": "Barceloneta",
+      "name_ua": "Барселонета",
+      "active": "Y"
     }
   ],
   "city": [
