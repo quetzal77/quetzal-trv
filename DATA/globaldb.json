@@ -12105,6 +12105,153 @@
       "name": "Manatí",
       "name_ua": "Манаті",
       "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LQ",
+      "name": "Luquillo",
+      "name_ua": "Лукільйо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LZ",
+      "name": "Loíza",
+      "name_ua": "Лоїса",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LP",
+      "name": "Las Piedras",
+      "name_ua": "Лас-П'єдрас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LM",
+      "name": "Las Marías",
+      "name_ua": "Лас-Маріас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LR",
+      "name": "Lares",
+      "name_ua": "Ларес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-LJ",
+      "name": "Lajas",
+      "name_ua": "Лахас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-JC",
+      "name": "Juncos",
+      "name_ua": "Хункос",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-JD",
+      "name": "Juana Díaz",
+      "name_ua": "Хуана-Діас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-JY",
+      "name": "Jayuya",
+      "name_ua": "Хаюя",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-IS",
+      "name": "Isabela",
+      "name_ua": "Ісабела",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-HU",
+      "name": "Humacao",
+      "name_ua": "Умакао",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-HO",
+      "name": "Hormigueros",
+      "name_ua": "Ормігерос",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-HA",
+      "name": "Hatillo",
+      "name_ua": "Атільйо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-GR",
+      "name": "Gurabo",
+      "name_ua": "Гурабо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-GB",
+      "name": "Guaynabo",
+      "name_ua": "Гвайнабо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-GL",
+      "name": "Guayanilla",
+      "name_ua": "Гваянілья",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-GM",
+      "name": "Guayama",
+      "name_ua": "Гваяма",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-GC",
+      "name": "Guánica",
+      "name_ua": "Гваніка",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-FL",
+      "name": "Florida",
+      "name_ua": "Флорида",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-FJ",
+      "name": "Fajardo",
+      "name_ua": "Фахардо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-DO",
+      "name": "Dorado",
+      "name_ua": "Дорадо",
+      "active": "Y"
     }
   ],
   "city": [
