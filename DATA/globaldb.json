@@ -12371,6 +12371,62 @@
       "name": "Barceloneta",
       "name_ua": "Барселонета",
       "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AR",
+      "name": "Arroyo",
+      "name_ua": "Арройо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AC",
+      "name": "Arecibo",
+      "name_ua": "Аресібо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AN",
+      "name": "Añasco",
+      "name_ua": "Аньяско",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AI",
+      "name": "Aibonito",
+      "name_ua": "Айбоніто",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AB",
+      "name": "Aguas Buenas",
+      "name_ua": "Агуас-Буенас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AL",
+      "name": "Aguadilla",
+      "name_ua": "Агуаділья",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AD",
+      "name": "Aguada",
+      "name_ua": "Агуада",
+      "active": "Y"
+    },
+    {
+      "country_id": "PR",
+      "region_id": "PR-AJ",
+      "name": "Adjuntas",
+      "name_ua": "Адхунтас",
+      "active": "Y"
     }
   ],
   "city": [
