@@ -51,7 +51,7 @@ function showAllTheCitiesOfSelectedCountry(id) {
     local[2] = id;
     $.each (data.city.sort(dynamicSort("name_ua")), function( i, city ){
         var cityObj = new CityObj(city.city_id);
-        var cityName = (city.type) ? getCityNameUpdatedRu(city.name_ua, city.type) : city.name_ua;
+        var cityName = (city.type) ? getCityNameUpdatedUa(city.name_ua, city.type) : city.name_ua;
         if (cityObj.getCountryId() == id){
             listOfCities += '<li><a id="' + city.city_id + '" onclick="javascript:addEditRemoveCity(this.id)" onmouseover="" style="cursor: pointer;">' + cityName + '</a></li>';
         }
@@ -138,7 +138,7 @@ function addEditRemoveCity(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of city">' +
+                '<input id="newUaName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter Ukrainian name of city">' +
             '</div>' +
             '<span id="alert_name_ua"></span>' +
             '<br>' +
@@ -275,7 +275,7 @@ function SubmitChanges(status) {
     var newCityObj = {
                      name: document.getElementById("newEngName").value.trim(),
                      name_nt: document.getElementById("newNtName").value.trim(),
-                     name_ua: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newUaName").value.trim(),
                      city_id: document.getElementById("newId").value.trim()
                    };
 
@@ -395,7 +395,7 @@ function openSecondGoogleMap() {
 function openCountryMap() {
     var lat = document.getElementById("newLat").value.trim();
     var long = document.getElementById("newLong").value.trim();
-    var name = document.getElementById("newRusName").value.trim();
+    var name = document.getElementById("newUaName").value.trim();
     var map = $.grep (data.country, function( n, i ) {return (n.short_name == local[2])});
     var city = name + "," + lat + "," + long;
 

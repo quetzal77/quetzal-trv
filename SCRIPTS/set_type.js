@@ -86,13 +86,13 @@ function addEditRemoveLocationTypes(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter russian name of type">' +
+                '<input id="newUaName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter Ukrainian name of type">' +
             '</div>' +
             '<span id="alert2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of type">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of type">' +
             '</div>' +
             '<span id="alert3"></span>' +
         '<hr>' +
@@ -105,8 +105,8 @@ function addEditRemoveLocationTypes(itemId) {
 function SubmitChanges(status) {
     var typeObj = {
                      type_id: document.getElementById("newId").value.trim(),
-                     name_ua: document.getElementById("newEngName").value.trim(),
-                     name: document.getElementById("newRusName").value.trim()
+                     name_ua: document.getElementById("newUaName").value.trim(),
+                     name: document.getElementById("newEngName").value.trim()
                    };
 
     removeAllChildNodes("alert1");

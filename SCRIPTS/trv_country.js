@@ -73,7 +73,7 @@ function getCountryDetails_HTML() {
         //03. Link of photos
         if (visit.photos != "" && visit.photos != null && visit.photos != undefined){
             $.each (visit.cities, function( i, city ){
-                    citiesShownInPhotoAlbum += (city.country_id == country.short_name) ? getRusLocationName(city.city_id) + ", " : "" ;
+                    citiesShownInPhotoAlbum += (city.country_id == country.short_name) ? getUaLocationName(city.city_id) + ", " : "" ;
             });
 
             photoAlbumLinks += (citiesShownInPhotoAlbum != "") ? "<a href='" + visit.photos + "' title='" + citiesShownInPhotoAlbum.substring(0, citiesShownInPhotoAlbum.length-2) +

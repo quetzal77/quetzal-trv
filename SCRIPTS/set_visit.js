@@ -15,7 +15,7 @@ function createSettingsVisitTab_HTML() {
     $.each (data.visit, function( i, visit ){
         var citiesList = "";
         $.each (visit.city, function( j, city ){
-            citiesList += getRusLocationName(city) + ", ";
+            citiesList += getUaLocationName(city) + ", ";
         });
 
         citiesList = (citiesList.length > 55) ? citiesList.slice(0, 55) + "..." : citiesList.slice(0, -2);
@@ -77,7 +77,7 @@ function addEditRemoveVisits(itemId) {
                 '<hr>';
         //I want to keep order of visited cities, so gather them before rest of list
         $.each (local[0].city, function( i, city ){
-            firstSlice += '<option value="' + city + '" class="selected" selected>' + getEngLocationName(city) + '-' + getRusLocationName(city) + '</option>';
+            firstSlice += '<option value="' + city + '" class="selected" selected>' + getEngLocationName(city) + '-' + getUaLocationName(city) + '</option>';
         });
     }
     editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" value="newPhoto" onclick="javascript:checkPhotoAlbum(this.value)">Check album</button></span>';

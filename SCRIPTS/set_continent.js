@@ -86,13 +86,13 @@ function addEditRemoveContinents(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter russian name of continent">' +
+                '<input id="newUaName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter Ukrainian name of continent">' +
             '</div>' +
             '<span id="alert2"></span>' +
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
+                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
             '</div>' +
             '<span id="alert3"></span>' +
         '<hr>' +
@@ -105,8 +105,8 @@ function addEditRemoveContinents(itemId) {
 function SubmitChanges(status) {
     var continentObj = {
                          continent_id: document.getElementById("newId").value.trim(),
-                         name_ua: document.getElementById("newEngName").value.trim(),
-                         name: document.getElementById("newRusName").value.trim()
+                         name_ua: document.getElementById("newUaName").value.trim(),
+                         name: document.getElementById("newEngName").value.trim()
                        };
 
     removeAllChildNodes("alert1");

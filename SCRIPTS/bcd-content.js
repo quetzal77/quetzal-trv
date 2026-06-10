@@ -102,7 +102,7 @@ function populateContent(callback) {
 
                this.name = (data.city[i].type) ? getCityNameUpdatedEn(data.city[i].name, data.city[i].type) : data.city[i].name;
                this.name_nt = data.city[i].name_nt;
-               this.name_ua = (data.city[i].type) ? getCityNameUpdatedRu(data.city[i].name_ua, data.city[i].type) : data.city[i].name_ua;
+               this.name_ua = (data.city[i].type) ? getCityNameUpdatedUa(data.city[i].name_ua, data.city[i].type) : data.city[i].name_ua;
                this.region_id = data.city[i].region_id;
 
                this.setFullCityName = function () {
@@ -284,7 +284,7 @@ function populateContent(callback) {
     }
 
     //01.10 Get updated city RU name when it has type defined
-    function getCityNameUpdatedRu(name_ua, type_id) {
+    function getCityNameUpdatedUa(name_ua, type_id) {
     var result;
         $.each(data.type, function( i, type ){
             if (type.type_id == type_id){result = (name_ua.toLowerCase().includes(type.name_ua)) ?  name_ua : name_ua + " (" + type.name_ua + ")";}

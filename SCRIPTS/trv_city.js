@@ -27,7 +27,7 @@ function HTML_CityDetais(cityId) {
 
     //Country name that this city belongs to
     result = "<div class='countrydetail'><b>Країна:</b> <a id='" + city.getCountryId() + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-             			     getFullRusCountryName(city.getCountryId()) + "</a></div>";
+             			     getFullUaCountryName(city.getCountryId()) + "</a></div>";
 
     //Country name that this city belongs to
     result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";

@@ -41,7 +41,7 @@ function createListOfVisites(){
                  $.each (visit.cities, function( i, city ){
                      if (city.country_id == local[1].short_name) {
                          citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                           getRusLocationName(city.city_id) + "</a>" + ", "
+                                           getUaLocationName(city.city_id) + "</a>" + ", "
                      }
                  });
                  if (citiesToReturn != "") {
@@ -72,10 +72,10 @@ function createListOfVisites(){
 
                  $.each (visit.cities, function( i, city ){
                      citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                      getRusLocationName(city.city_id) + "</a>" + ", ";
+                                      getUaLocationName(city.city_id) + "</a>" + ", ";
                      if (!distinctIds[city.country_id]){
                          countriesToReturn += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                      getRusCountryName(city.country_id) + "</a>" + ", ";
+                                      getUaCountryName(city.country_id) + "</a>" + ", ";
                          distinctIds[city.country_id] = true;
                      }
                  });
@@ -105,12 +105,12 @@ function getVisitDate(start_date, end_date, year){
     }
 
     if (StartDay+StartMonth == EndDay+EndMonth) {
-        VisitDateToShow += StartDay + " " + getRusMonthName(StartMonth) + "." + EndYear + "; ";
+        VisitDateToShow += StartDay + " " + getUaMonthName(StartMonth) + "." + EndYear + "; ";
     }
     else if (StartYear == EndYear) {
-        VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear + "; ";
+        VisitDateToShow = StartDay + " " + getUaMonthName(StartMonth) + " - " + EndDay + " " + getUaMonthName(EndMonth) + "." + EndYear + "; ";
     }
-    else {VisitDateToShow = StartDay + " " + getRusMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getRusMonthName(EndMonth) + "." + EndYear + "; "}
+    else {VisitDateToShow = StartDay + " " + getUaMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getUaMonthName(EndMonth) + "." + EndYear + "; "}
 
     return VisitDateToShow;
 }
@@ -131,7 +131,7 @@ function dynamicSort(property) {
 //02.05 Return correctly created string like "31 страна"
 function parseWord (word, end1, end234, endrest, number){
     var endOfWord = endrest;
-    //Returns last digit of number so then it's possible to create russian words correctly
+    //Returns last digit of number so then it's possible to create Ukrainian words correctly
     var newNumber = (number >20) ? number.toString()[number.toString().length-1]*1 : number;
 
     if (newNumber == 1){
@@ -143,7 +143,7 @@ function parseWord (word, end1, end234, endrest, number){
     return word + endOfWord;
 }
 
-//02.06 Return russian word "country" with correct end
+//02.06 Return Ukrainian word "country" with correct end
 function setCountriesNumberWithCorrectEnd (number) {
     var wordBody = "країн";
     var end1 = "а";
@@ -152,7 +152,7 @@ function setCountriesNumberWithCorrectEnd (number) {
     return number + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
-//02.07 Return russian word "location" with correct end
+//02.07 Return Ukrainian word "location" with correct end
 function setLocationNumberWithCorrectEnd (number) {
     var wordBody = "локаці";
     var end1 = "я";
@@ -161,7 +161,7 @@ function setLocationNumberWithCorrectEnd (number) {
     return number + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
-//02.08 Return russian word "region" with correct end
+//02.08 Return Ukrainian word "region" with correct end
 function setRegionsNumberWithCorrectEnd (number) {
     var word = "регіон";
     var end1 = "";
@@ -170,22 +170,22 @@ function setRegionsNumberWithCorrectEnd (number) {
     return number + " " + parseWord  (word, end1, end234, endrest, number);
 }
 
-//02.09 Return russian month name
-function getRusMonthName (number) {
+//02.09 Return Ukrainian month name
+function getUaMonthName (number) {
     var monthSList = {1: "січня", 2: "лютого", 3: "березня", 4: "квітня", 5: "травня", 6: "червня", 7: "липня", 8: "серпня", 9: "вересня", 10: "жовтня", 11: "листопада", 12: "грудня"};
     return monthSList[number];
 }
 
-//2.10 Get russian country name
-function getRusCountryName(countryId) {
+//2.10 Get Ukrainian country name
+function getUaCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
     return result[0].name_ua;
 }
 
-//2.11 Get full russian country name
-function getFullRusCountryName(countryId) {
+//2.11 Get full Ukrainian country name
+function getFullUaCountryName(countryId) {
     result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
@@ -206,8 +206,8 @@ function getFullRusCountryName(countryId) {
     return result;
 }
 
-//2.12 Get russian Location name
-function getRusLocationName(locationId) {
+//2.12 Get Ukrainian Location name
+function getUaLocationName(locationId) {
     result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
@@ -271,7 +271,7 @@ function getSelectorOfListOfStories_HTML(){
         if (visit.story != "" && visit.story != null && visit.story != undefined){
             $.each (visit.cities, function( i, city ){
                 if (!distinctIds[city.country_id]){
-                 countriesToReturn += getRusCountryName(city.country_id) + ", ";
+                 countriesToReturn += getUaCountryName(city.country_id) + ", ";
                  countriesIDToReturn += city.country_id;
                  distinctIds[city.country_id] = true;
                 }

@@ -137,7 +137,7 @@ function addEditRemoveCountry(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of country">' +
+                '<input id="newUaName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter Ukrainian name of country">' +
             '</div>' +
             '<span id="alert_name_ua"></span>' +
             '<br>' +
@@ -207,7 +207,7 @@ function SubmitChanges(status) {
                      country_id: document.getElementById("newId").value.trim(),
                      continent_id: document.getElementById("newContinent").value.trim(),
                      name: document.getElementById("newEngName").value.trim(),
-                     name_ua: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newUaName").value.trim(),
                      short_name: document.getElementById("newShortName").value.trim(),
                      small_flag_img: document.getElementById("newSmallImg").value.trim()
                    };

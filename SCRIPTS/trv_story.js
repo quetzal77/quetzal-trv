@@ -218,12 +218,12 @@ function routDateCalculator(date) {
 
     if (date.toString().length == 7) {
         day = date.toString().substring(0, 1);
-        month = getRusMonthName ((date.toString().substring(1, 2) == 0) ? date.toString().substring(2, 3) : date.toString().substring(1, 3));
+        month = getUaMonthName ((date.toString().substring(1, 2) == 0) ? date.toString().substring(2, 3) : date.toString().substring(1, 3));
         year = date.toString().substring(3, 7);
     }
     else {
         day = date.toString().substring(0, 2);
-        month = getRusMonthName((date.toString().substring(2, 3) == 0) ? date.toString().substring(3, 4) : date.toString().substring(2, 4));
+        month = getUaMonthName((date.toString().substring(2, 3) == 0) ? date.toString().substring(3, 4) : date.toString().substring(2, 4));
         year = date.toString().substring(4, 8);
     }
 
@@ -292,7 +292,7 @@ function getCountryName() {
     if (countryId.length > 1) {
         result += "<ul class='back2country'>";
         $.each (countryId, function( i, country ){
-            result += "<li><a id='" + country + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getRusCountryName(country) + "</a></li>"
+            result += "<li><a id='" + country + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getUaCountryName(country) + "</a></li>"
         });
         result += "</ul>";
     }

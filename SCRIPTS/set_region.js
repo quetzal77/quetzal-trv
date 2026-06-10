@@ -174,7 +174,7 @@ function addEditRemoveRegion(itemId) {
             '<br>' +
             '<div class="input-group">' +
                 '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newRusName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter russian name of region">' +
+                '<input id="newUaName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter Ukrainian name of region">' +
             '</div>' +
             '<span id="alert_name_ua"></span>' +
             '<br>' +
@@ -243,7 +243,7 @@ function SubmitChanges(status) {
                      country_id: document.getElementById("newCountry").value.trim(),
                      region_id: document.getElementById("newId").value.trim(),
                      name: document.getElementById("newEngName").value.trim(),
-                     name_ua: document.getElementById("newRusName").value.trim(),
+                     name_ua: document.getElementById("newUaName").value.trim(),
                      active: (document.getElementById("newActive").checked) ? "Y" : "N"
                    };
 
