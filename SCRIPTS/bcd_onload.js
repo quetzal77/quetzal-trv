@@ -4,7 +4,6 @@
 //00.01 ARRAY USED FOR CREATION OF WORLD PAGE
     var initial_data;  // Store initial information for creation of home page
     var local; // Store variable that describe which country have to be opened and drawn on a map
-    var url = "http://localhost:63342/quetzal-trv/index.html";
 
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page

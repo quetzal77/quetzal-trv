@@ -27,7 +27,7 @@ function createCountryPage_HTML(countryId) {
     drawMap();
 
     //Add copy marker and bottom line
-    document.getElementById("copy_cert").innerHTML = "&copy; 2011-2023, Slavutskyy Oleksiy";
+    document.getElementById("copy_cert").innerHTML = "&copy; 2011-" + new Date().getFullYear() + ", Slavutskyy Oleksiy";
     document.getElementById("hr_bottom").innerHTML = "<hr>";
 }
 

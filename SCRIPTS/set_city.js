@@ -347,7 +347,7 @@ function alertOfDuplicateFailure(id, name_ua) {
     document.getElementById("alert_id").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already accociated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
+        '<strong>Error!</strong> Id is not unique, it\'s one already associated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
         '</div>';
 }
 
@@ -357,7 +357,7 @@ function alertOfEmptyMandatoryField(alertId) {
     document.getElementById(alertId).innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
+        '<strong>Error!</strong> Mandatory field is empty. Populate it before submit.' +
         '</div>';
 }
 

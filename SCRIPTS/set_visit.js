@@ -101,9 +101,9 @@ function addEditRemoveVisits(itemId) {
                 removeButton +
                 '<label>Enter Start Date<span class="asteriskField">*</span> and End Date<span class="asteriskField">*</span> of visit.</label>' +
                 '<div class="input-group input-daterange">' +
-                '<input id="dateStart" type="text" class="form-control" name="date" ' + startDateValue + ' placeholder="DD/MM/YYY">' +
+                '<input id="dateStart" type="text" class="form-control" name="date" ' + startDateValue + ' placeholder="DD/MM/YYYY">' +
                 '<div class="input-group-addon">to</div>' +
-                '<input id="dateEnd" type="text" class="form-control" name="date" ' + endDateValue + ' placeholder="DD/MM/YYY">' +
+                '<input id="dateEnd" type="text" class="form-control" name="date" ' + endDateValue + ' placeholder="DD/MM/YYYY">' +
                 '</div>' +
                 '<span id="alert_date"></span>' +
                 '<br>' +
@@ -227,7 +227,7 @@ function alertOfDuplicateStartDateFailure(start_date, end_date) {
     document.getElementById("alert_date").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Start date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another START date!' +
+        '<strong>Error!</strong> Start date is not unique, it\'s one already associated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another START date!' +
         '</div>';
 }
 
@@ -237,7 +237,7 @@ function alertOfDuplicateEndDAteFailure(start_date, end_date) {
     document.getElementById("alert_date").innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> End date is not unique, it\'s one already accociated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another END date   !' +
+        '<strong>Error!</strong> End date is not unique, it\'s one already associated with next visit <b>' + start_date + ' - ' + end_date  + '</b>. Try to use another END date!' +
         '</div>';
 }
 
@@ -247,7 +247,7 @@ function alertOfEmptyMandatoryField(alertId) {
     document.getElementById(alertId).innerHTML =
         '<div class="alert alert-danger fade in">' +
         '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Mandatory field is empty. Popullate it before submit.' +
+        '<strong>Error!</strong> Mandatory field is empty. Populate it before submit.' +
         '</div>';
 }
 

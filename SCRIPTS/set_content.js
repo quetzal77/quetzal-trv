@@ -332,7 +332,7 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     var distinctNewCities = {}; //All the cities with true in this object should be added to Onload Country/Continent list
 
     $.each (initialEntityObj.city, function( i, cityOld ) {
-        for (i=0; i<newEntityObj.city.length; i++){
+        for (var i=0; i<newEntityObj.city.length; i++){
             if (cityOld == newEntityObj.city[i]){
                 distinctInitialCities[cityOld] = false;
                 break;
@@ -342,7 +342,7 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     });
 
     $.each (newEntityObj.city, function( i, cityNew ) {
-        for (j=0; j<initialEntityObj.city.length; j++){
+        for (var j=0; j<initialEntityObj.city.length; j++){
             if (cityNew == initialEntityObj.city[j]){
                 distinctNewCities[cityNew] = false;
                 break;

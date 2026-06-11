@@ -178,7 +178,7 @@ function getUaMonthName (number) {
 
 //2.10 Get Ukrainian country name
 function getUaCountryName(countryId) {
-    result = $.grep (countriesVisited, function( n, i ) {
+    var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
     return result[0].name_ua;
@@ -186,7 +186,7 @@ function getUaCountryName(countryId) {
 
 //2.11 Get full Ukrainian country name
 function getFullUaCountryName(countryId) {
-    result = $.grep (countriesVisited, function( n, i ) {
+    var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
 
@@ -208,7 +208,7 @@ function getFullUaCountryName(countryId) {
 
 //2.12 Get Ukrainian Location name
 function getUaLocationName(locationId) {
-    result = $.grep (citiesVisited, function( n, i ) {
+    var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
     return result[0].name_ua;
@@ -216,7 +216,7 @@ function getUaLocationName(locationId) {
 
 //2.13 Get english Location name
 function getEngLocationName(locationId) {
-    result = $.grep (citiesVisited, function( n, i ) {
+    var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
     return result[0].name;
@@ -360,7 +360,7 @@ function refreshAllTheArrays (){
 
 //2.23 Get country id instead of short name
 function getCountryId(short_name) {
-    result = $.grep (data.country, function( n, i ) {
+    var result = $.grep (data.country, function( n, i ) {
                 return (n.short_name == short_name)
             });
     return result[0].country_id;

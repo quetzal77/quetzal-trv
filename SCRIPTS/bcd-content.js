@@ -42,7 +42,7 @@ function populateContent(callback) {
                     }
                     else
                     {
-                        alert(data.visit[i].city[j]);
+                        console.warn("Unmapped city id (no matching region/country):", data.visit[i].city[j]);
                     }
 
                     if (!distinctIds[data.visit[i].city[j]]) {
