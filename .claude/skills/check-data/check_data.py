@@ -11,9 +11,15 @@ ONLOAD = os.path.join(ROOT, "DATA", "onload.json")
 IMG = os.path.join(ROOT, "IMG")
 MAPS = os.path.join(ROOT, "SCRIPTS", "MAPS")
 
-errors, warns = [], []
+errors, warns, accepted = [], [], []
 def err(m): errors.append(m)
 def warn(m): warns.append(m)
+
+# Known, intentional duplicate region_ids — reported as accepted exceptions, not errors.
+# The British Sovereign Base Areas (Akrotiri / Dhekelia) appear on both the Cyprus (CY)
+# and Northern Cyprus (CT) ammap maps, so the same region_id is kept under both countries
+# on purpose. Add a region_id here to whitelist a deliberate duplicate.
+ACCEPTED_DUPLICATE_REGION_IDS = {"GB-AX", "GB-DX"}
 
 # --- load + structural ---
 raw = open(GDB, "rb").read()
@@ -51,7 +57,10 @@ for name, items, key in [("continent", continents, "continent_id"),
                          ("area", areas, "region_id"),
                          ("city", cities, "city_id")]:
     for d in dups(items, key):
-        err(f"duplicate {key}: {d!r}")
+        if key == "region_id" and d in ACCEPTED_DUPLICATE_REGION_IDS:
+            accepted.append(d)
+        else:
+            err(f"duplicate {key}: {d!r}")
 
 # --- referential integrity ---
 for c in countries:
@@ -119,6 +128,9 @@ if os.path.isfile(ONLOAD):
 # --- report ---
 print(f"continents={len(continents)} countries={len(countries)} areas={len(areas)} cities={len(cities)} visits={len(visits)}")
 print(f"CRLF lines: {crlf}/{total}")
+if accepted:
+    print(f"\nACCEPTED EXCEPTIONS ({len(accepted)}) - known intentional duplicates, not errors:")
+    for m in accepted: print("  -", f"duplicate region_id: {m!r}")
 print(f"\nERRORS ({len(errors)}):")
 for m in errors: print("  -", m)
 print(f"\nWARNINGS ({len(warns)}):")

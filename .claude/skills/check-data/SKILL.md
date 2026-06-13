@@ -39,6 +39,10 @@ list, ending in `RESULT: OK` or `RESULT: FAIL` (exit code 1 on errors).
 
 - **ERRORS** are real data bugs — fix them (e.g. a duplicate `region_id`, or a city
   pointing at a non-existent region). Offer to fix, then re-run until `RESULT: OK`.
+- **ACCEPTED EXCEPTIONS** are known, intentional issues that are listed for transparency but
+  do not count as errors. Currently: region_ids `GB-AX`/`GB-DX` (the British Sovereign Base
+  Areas appear on both the Cyprus and Northern Cyprus maps). To whitelist another deliberate
+  duplicate region_id, add it to `ACCEPTED_DUPLICATE_REGION_IDS` in `check_data.py`.
 - **WARNINGS** are advisory (missing description, single-digit date, missing image file) —
   surface them but don't block.
 - This skill never modifies any file. If you fix issues, make the edits CRLF-safe and
