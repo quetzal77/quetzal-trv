@@ -8,7 +8,8 @@ function createWorldPage_HTML () {
     local.push("world", "none");
 
     // Set url
-    window.history.pushState("object or string", "Title", "index.html");
+    if (skipPushState) { skipPushState = false; }
+    else { window.history.pushState("object or string", "Title", "index.html"); }
 
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =

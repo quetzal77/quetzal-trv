@@ -72,21 +72,13 @@ IMG/                      flags, emblems, city photos
 
 ### UI / UX
 - [ ] Зробити контакт **Teams** клікабельним (deep-link `https://teams.microsoft.com/l/chat/...` або email)
-- [x] Анімації/переходи між сторінками
 - [ ] Add Login for settings
 
 ### Дані / контент
-- [ ] Review and Translate Stories to Ukr
-- [ ] Add country type - accepted, partially accepted, dependent territory
-- [ ] Translate location names to Ukr, introduce specific approach for Ukraine
-- [ ] Egypt - Luksor not green on map
+- [ ] ...
 
 ### Технічне
-- [x] Винести спільні стилі/константи, прибрати рудименти Bootstrap там, де вони більше не потрібні
 - [ ] Автогенерація `onload.json` з `globaldb.json` (щоб не редагувати вручну)
-- [x] Start from page top when open
-- [x] Enable return to previous page in browser
-- [x] Пошук по країнах/містах у навбарі
 - [ ] Експорт/бекап даних
 
 

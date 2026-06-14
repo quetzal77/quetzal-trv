@@ -383,7 +383,7 @@ function checkSmallFlag(id) {
 function openCountryMap() {
     var map = document.getElementById("newMap").value.trim();
     if (map != ""){
-        window.open('/map.html?map=' + map, '_blank');
+        window.open('map.html?map=' + map, '_blank');
     }
     else {alertOfEmptyMandatoryField("alert_map");}
 }

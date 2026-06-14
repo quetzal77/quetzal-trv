@@ -11,11 +11,16 @@ function createCountryPage_HTML(countryId) {
     local.push(countryId, country[0]);
 
     // Set url
-    window.history.pushState("object or string", "Title", "index.html?country="+countryId);
+    if (skipPushState) { skipPushState = false; }
+    else { window.history.pushState("object or string", "Title", "index.html?country="+countryId); }
+
+    var typeName = getCountryTypeName(local[1].country_type_id);
+    var typeHtml = typeName ? "<div class='country-type'><span>" + getCountryTypeIcon(local[1].country_type_id) + " " + typeName + "</span></div>" : "";
 
     //Add Country main content
     document.getElementById("mainSection").innerHTML =
     "<div class='countrylabel h3'>" + local[1].setFullCountryName() + "</div>" +
+    typeHtml +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
     "<div class='switchlink_l'>Мої локації...</div>" +
@@ -24,7 +29,7 @@ function createCountryPage_HTML(countryId) {
     getFlagEmblem_HTML(country[0]);
 
     //Highlight the active section in the navbar
-    setActiveNav("navCountries");
+    setActiveNav();
 
     //Creation of world map
     drawMap();

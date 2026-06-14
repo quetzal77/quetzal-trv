@@ -8,8 +8,8 @@
     <script type='text/javascript'>
         $(document).ready(function(){
             var map = qs('map');
-            var region = qs('region') + ",";
-            var city = qs('city') + ";";
+            var region = (qs('region') || "") + ",";
+            var city = (qs('city') || "") + ";";
             $.getScript("SCRIPTS/MAPS/" + map, function(){
                 $('#countryList').html(map.slice(0, -3) + "," + region);
                 $('#cityList').html(map.slice(0, -6) + ";" + city);
@@ -24,8 +24,8 @@
     </script>
     </head>
 <body>
-<div class='countrylabel h3'>Here is map of country you selected.</div>
-<div id='mapdiv' class='map'>&nbsp;</div>
+<div class='countrylabel h3'>Мапа обраної країни</div>
+<div id='mapdiv' class='map' style='height:520px; aspect-ratio:auto'>&nbsp;</div>
 <div id='countryList' style='display:none;'></div>
 <div id='cityList' style='display:none;'></div>
 </body>

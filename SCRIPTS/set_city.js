@@ -400,7 +400,7 @@ function openCountryMap() {
     var city = name + "," + lat + "," + long;
 
     if (lat != "" && long != "" && name != ""){
-        window.open('/map.html?map=' + map[0].map_img + '&city=' + city, '_blank');
+        window.open('map.html?map=' + map[0].map_img + '&city=' + city, '_blank');
     }
     else {
         if (lat != ""){alertOfEmptyMandatoryField("alert_lat");}

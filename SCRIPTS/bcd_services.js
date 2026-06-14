@@ -210,7 +210,7 @@ function getUaCountryName(countryId) {
     var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
-    return result[0].name_ua;
+    return result.length ? result[0].name_ua : "";
 }
 
 //2.11 Get full Ukrainian country name
@@ -219,6 +219,7 @@ function getFullUaCountryName(countryId) {
                 return (n.short_name == countryId)
             });
 
+    if (!result.length) { return ""; }
     if (result[0].name_nt == "" || result[0].name_nt == undefined) {
         result = result[0].name_ua + " - " + result[0].name;
     }
@@ -240,7 +241,7 @@ function getUaLocationName(locationId) {
     var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
-    return result[0].name_ua;
+    return result.length ? result[0].name_ua : "";
 }
 
 //2.13 Get english Location name
@@ -248,44 +249,7 @@ function getEngLocationName(locationId) {
     var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
-    return result[0].name;
-}
-
-function SortByName(a, b){
-    // Ukrainian alphabet order: і, ї, є, ґ live outside the basic Cyrillic range,
-    // so a plain < / > comparison misplaces them — localeCompare('uk') fixes that.
-    return a.name_ua.localeCompare(b.name_ua, 'uk');
-  }
-
-//02.14 This method creates selector of countries
-function getSelectorOfListOfCountries_HTML () {
-    var result = "";
-  
-    countriesVisited.sort(SortByName);
-    
-    $.each (countriesVisited, function( i, country ) {
-        result += "<li><a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ua + "</a></li>";
-    });
-    
-    result += "</select>";
-    return result;
-}
-
-//02.15 This method creates selector of cities
-function getSelectorOfListOfCities_HTML(){
-    var result = "";
-    $.each (countriesVisited, function( i, country ){
-        result += "<li class='dropdown-header'>" + country.name_ua + "</li>";
-
-        var citiesList = $.grep (citiesVisited, function( n, i ) {
-                                         return (n.getCountryId() == country.short_name)
-                                     });
-
-        $.each (citiesList, function( i, city ){
-            result += "<li><a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>&nbsp;&nbsp;&nbsp;&nbsp;" + city.name_ua + "</a></li>";
-        });
-    });
-    return result;
+    return result.length ? result[0].name : "";
 }
 
 //02.16 This method creates selector of stories
@@ -379,10 +343,6 @@ function removeElementOfGlobalDataArray (arr, attr, value){
 function refreshAllTheArrays (){
     //Reprocess all custom arrays
     processMyJson(data);
-    //Creation of Country Selector
-    document.getElementById("ContentBody_CountryList").innerHTML = getSelectorOfListOfCountries_HTML();
-    //Creation of City Selector
-    document.getElementById("ContentBody_CityList").innerHTML = getSelectorOfListOfCities_HTML();
     //Creation of Story Selector
     document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
 }
@@ -392,13 +352,102 @@ function getCountryId(short_name) {
     var result = $.grep (data.country, function( n, i ) {
                 return (n.short_name == short_name)
             });
-    return result[0].country_id;
+    return result.length ? result[0].country_id : "";
 }
 
-//2.24 Highlight the active section in the navbar
+//2.24 On page open: highlight the active navbar section and scroll back to the top
 function setActiveNav (navId) {
     $(".navbar-nav > li").removeClass("active");
     if (navId) { $("#" + navId).addClass("active"); }
+    window.scrollTo(0, 0);
+}
+
+//2.24a Return the Ukrainian name of a country's type (recognized / partially recognized / …)
+function getCountryTypeName (typeId) {
+    if (typeof data === "undefined" || !data.country_type) { return ""; }
+    for (var i = 0; i < data.country_type.length; i++) {
+        if (data.country_type[i].country_type_id == typeId) { return data.country_type[i].name_ua; }
+    }
+    return "";
+}
+
+//2.24b Status colour icon for a country type: green / yellow / red / blue
+function getCountryTypeIcon (typeId) {
+    var icons = { "1": "🟢", "2": "🟡", "3": "🔴", "4": "🔵" };
+    return icons[typeId] || "";
+}
+
+//2.25 Navbar live search over visited countries and cities (matches UA name_ua + EN name)
+function navSearch (query) {
+    var box = document.getElementById("navSearchResults");
+    if (!box) { return; }
+    var q = (query || "").trim().toLowerCase();
+    if (q === "" || typeof countriesVisited === "undefined" || typeof citiesVisited === "undefined") {
+        box.innerHTML = ""; box.classList.remove("show"); return;
+    }
+
+    var html = "", count = 0, CAP = 40;
+    var hit = function (o) {
+        return (o.name_ua && o.name_ua.toLowerCase().indexOf(q) !== -1) ||
+               (o.name && o.name.toLowerCase().indexOf(q) !== -1);
+    };
+    var row = function (label, type, id) {
+        html += "<li><a onclick=\"javascript:navSearchGo('" + type + "','" + id + "')\" style='cursor:pointer'>" +
+                "<span>" + label + "</span><span class='ns-type'>" + (type === "country" ? "країна" : "локація") + "</span></a></li>";
+        count++;
+    };
+
+    $.each(countriesVisited, function (i, c) {
+        if (count >= CAP) { return false; }
+        if (hit(c)) { row(c.name_ua, "country", c.short_name); }
+    });
+    $.each(citiesVisited, function (i, city) {
+        if (count >= CAP) { return false; }
+        if (hit(city)) { row(city.name_ua, "city", city.city_id); }
+    });
+
+    box.innerHTML = html;
+    box.classList.toggle("show", html !== "");
+}
+
+//2.26 Navigate to a search result and reset the search box
+function navSearchGo (type, id) {
+    var input = document.getElementById("navSearch"); if (input) { input.value = ""; }
+    var box = document.getElementById("navSearchResults"); if (box) { box.innerHTML = ""; box.classList.remove("show"); }
+    if (type === "country") { getCountryPage(id); } else { getCityPage(id); }
+}
+
+//2.27 Keyboard navigation for the search dropdown: Up/Down move, Enter selects, Esc closes
+function navSearchKey (e) {
+    var box = document.getElementById("navSearchResults");
+    if (!box || !box.classList.contains("show")) { return; }
+    var items = box.getElementsByTagName("a");
+    if (!items.length) { return; }
+
+    var idx = -1, i;
+    for (i = 0; i < items.length; i++) { if (items[i].classList.contains("ns-active")) { idx = i; break; } }
+
+    if (e.key === "ArrowDown") {
+        e.preventDefault();
+        idx = (idx + 1) % items.length;
+    } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        idx = (idx <= 0) ? items.length - 1 : idx - 1;
+    } else if (e.key === "Enter") {
+        e.preventDefault();
+        (idx >= 0 ? items[idx] : items[0]).click();
+        return;
+    } else if (e.key === "Escape") {
+        box.classList.remove("show");
+        return;
+    } else {
+        return;
+    }
+
+    for (i = 0; i < items.length; i++) {
+        if (i === idx) { items[i].classList.add("ns-active"); items[i].scrollIntoView({ block: "nearest" }); }
+        else { items[i].classList.remove("ns-active"); }
+    }
 }
 
 //03.00 Basic functions
@@ -406,7 +455,9 @@ function setActiveNav (navId) {
 
 //03.01 Creator of the About / Contacts page
 function HTML_CreatorOfAboutPage () {
-    setActiveNav("navAbout");
+    setActiveNav();
+    if (skipPushState) { skipPushState = false; }
+    else { window.history.pushState("object or string", "Title", "index.html?page=about"); }
     document.getElementById("mainSection").innerHTML =
         "<div class='about-page'>" +
             "<header class='about-hero'>" +

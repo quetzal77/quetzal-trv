@@ -5,7 +5,8 @@ function createStoryPage_HTML(storyId) {
     local.push(storyId, "story");
 
     // Set url
-    window.history.pushState("object or string", "Title", "index.html?storyId="+storyId);
+    if (skipPushState) { skipPushState = false; }
+    else { window.history.pushState("object or string", "Title", "index.html?storyId="+storyId); }
 
     var storyFileUrl = "DATA/stories/" + storyId + ".xml";
     $.get(storyFileUrl, processMyStory, 'xml');
@@ -81,12 +82,12 @@ function HTML_StoryPage() {
     if (title[0].short_1 != undefined) {
         result += "<div class='h5' style='text-align: center;'>" + title[0].short_1 + "</div>";
     }
-    result += "<table align='center' width='100%' cellpadding='7' cellspacing='0' border='0'><tbody>";
+    result += "<table class='story_table' align='center' width='100%' cellpadding='0' cellspacing='0' border='0'><tbody>";
 
     //06.04.02 Participants section
     if (participants[0] != undefined) {
         var participantsKeys = Object.keys(participants[0]);
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Учасники:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Учасники:</p></div></td></tr>";
 
         for (i = 0; i < participantsKeys.length; i++) {
             if (participantsKeys[i] != 'title') {
@@ -98,13 +99,13 @@ function HTML_StoryPage() {
 
     //06.04.03 Visa section
     if (visa[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Віза:</p></div></td></tr>"+
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Віза:</p></div></td></tr>"+
                   "<tr><td>" + visa[0].title + "</td></tr>";
     }
 
     //06.04.04 Exchange rate section
     if (exrate[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Курс обміну:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Курс обміну:</p></div></td></tr>";
         var exrateArray = arrayToArray(exrate[0]);
 
         for (i = 0; i < exrateArray.length; i++) {
@@ -114,7 +115,7 @@ function HTML_StoryPage() {
 
     //06.04.05 Rout section
     if (route[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Маршрут:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Маршрут:</p></div></td></tr>";
         var routArray = arrayToArray(route[0]);
 
         for (i = 0; i < routArray.length; i++) {
@@ -124,7 +125,7 @@ function HTML_StoryPage() {
 
     //06.04.06 Habitation section
     if (habitation[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Проживання:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Проживання:</p></div></td></tr>";
         var habitationArray = arrayToArray(habitation[0]);
 
         for (i = 0; i < habitationArray.length; i++) {
@@ -136,7 +137,7 @@ function HTML_StoryPage() {
 
     //06.04.07 Food section
     if (food[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Харчування:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Харчування:</p></div></td></tr>";
         var foodArray = arrayToArray(food[0]);
 
         for (i = 0; i < foodArray.length; i++) {
@@ -147,7 +148,7 @@ function HTML_StoryPage() {
 
     //06.04.08 Transport section
     if (transport[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Транспорт:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Транспорт:</p></div></td></tr>";
         var transportArray = arrayToArray(transport[0]);
 
         for (i = 0; i < transportArray.length; i++) {
@@ -159,7 +160,7 @@ function HTML_StoryPage() {
 
     //06.04.09 Sights section
     if (sights[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Визначні місця:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Визначні місця:</p></div></td></tr>";
         var sightsArray = arrayToArray(sights[0]);
 
         for (i = 0; i < sightsArray.length; i++) {
@@ -171,7 +172,7 @@ function HTML_StoryPage() {
 
     //06.04.09 Souvenirs section
     if (souvenirs[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Сувеніри:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Сувеніри:</p></div></td></tr>";
         var souvenirsArray = arrayToArray(souvenirs[0]);
 
         for (i = 0; i < souvenirsArray.length; i++) {
@@ -185,14 +186,14 @@ function HTML_StoryPage() {
         var customArray = arrayToArray(custom[0]);
 
         for (i = 0; i < customArray.length; i++) {
-            result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>" + customArray[i].name + "</p></div></td></tr>";
+            result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>" + customArray[i].name + "</p></div></td></tr>";
             result += "<tr><td><div class='story_celltext'>" + customArray[i].item + "</div></td></tr>";
         }
     }
 
     //06.04.11 Links section
     if (links[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Посилання:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Посилання:</p></div></td></tr>";
         var urlArray = arrayToArray(links[0]);
 
         for (i = 0; i < urlArray.length; i++) {
@@ -203,7 +204,7 @@ function HTML_StoryPage() {
 
     //06.04.12 Summary section
     if (summary[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Підсумки:</p></div></td></tr>" +
+        result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Підсумки:</p></div></td></tr>" +
         "<tr><td>" + summary[0].title + "</td></tr>";
     }
 

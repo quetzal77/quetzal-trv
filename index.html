@@ -92,21 +92,17 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li id="navHome"><a onclick='javascript:createWorldPage_HTML();getNumberOfLocation()' onmouseover='' style='cursor: pointer;'>Головна</a></li>
-                <li class="dropdown" id="navCountries">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мої країни <span class="caret"></span></a>
-                    <ul class="dropdown-menu" id="ContentBody_CountryList"></ul>
-                </li>
-                <li class="dropdown" id="navCities">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мої міста <span class="caret"></span></a>
-                    <ul class="dropdown-menu" id="ContentBody_CityList"></ul>
-                </li>
+                <li id="navStats"><a onclick='javascript:getStatisticsPage()' onmouseover='' style='cursor: pointer;'>Статистика</a></li>
                 <li class="dropdown" id="navStories">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Мої історії <span class="caret"></span></a>
                     <ul class="dropdown-menu" id="ContentBody_StoryList"></ul>
                 </li>
-                <li id="navAbout"><a onclick='javascript:HTML_CreatorOfAboutPage()' onmouseover='' style='cursor: pointer;'>Про проект</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li class="nav-search">
+                    <input type="text" id="navSearch" autocomplete="off" placeholder="Пошук країни/міста…" oninput="javascript:navSearch(this.value)" onkeydown="javascript:navSearchKey(event)" />
+                    <ul id="navSearchResults" class="nav-search-results"></ul>
+                </li>
                 <li id="navTheme"><a class="nav-gear" id="themeToggle" onclick='javascript:toggleTheme()' onmouseover='' style='cursor: pointer;' title='Світла / темна тема' aria-label='Перемкнути тему'>🌙</a></li>
                 <li id="navSettings"><a class="nav-gear" onclick='javascript:getSettingsOverviewPage()' onmouseover='' style='cursor: pointer;' title='Налаштування' aria-label='Налаштування'>⚙</a></li>
             </ul>
@@ -119,11 +115,21 @@
     <div class="mainsection"><p id="mainSection"></p></div>
 
     <span id="hr_bottom"></span>
-    <footer>
-        <p id="copy_cert"></p>
-        <a id='back' class="back2top" href="#">Догори</a>
-    </footer>
 </div>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <img class="footer-logo" src="IMG/icon/logo-nav.png" alt="Будинок пернатого равлика" />
+        <nav class="footer-links">
+            <a onclick='javascript:createWorldPage_HTML();getNumberOfLocation()' onmouseover='' style='cursor: pointer;'>Головна</a>
+            <a onclick='javascript:getStatisticsPage()' onmouseover='' style='cursor: pointer;'>Статистика</a>
+            <a onclick='javascript:HTML_CreatorOfAboutPage()' onmouseover='' style='cursor: pointer;'>Про проект</a>
+            <a onclick='javascript:getSettingsOverviewPage()' onmouseover='' style='cursor: pointer;'>Налаштування</a>
+        </nav>
+        <p id="copy_cert" class="footer-copy"></p>
+    </div>
+</footer>
+<a id='back' class="back2top" href="#">Догори</a>
 
 </body>
 </html>

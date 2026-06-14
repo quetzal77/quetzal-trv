@@ -335,7 +335,7 @@ function openCountryMap() {
     var map = local[2];
     var region = document.getElementById("newId").value;
     if (map != ""){
-        window.open('/map.html?map=' + map + '&region=' + region, '_blank');
+        window.open('map.html?map=' + map + '&region=' + region, '_blank');
     }
     else {alertOfEmptyMandatoryField("alert_map");}
 }

@@ -1,26 +1,4 @@
 {
-  "country_type": [
-    {
-      "country_type_id": "1",
-      "name_ua": "Визнана країна",
-      "name": "Recognized country"
-    },
-    {
-      "country_type_id": "2",
-      "name_ua": "Напіввизнана країна",
-      "name": "Partially recognized country"
-    },
-    {
-      "country_type_id": "3",
-      "name_ua": "Невизнана країна",
-      "name": "Unrecognized country"
-    },
-    {
-      "country_type_id": "4",
-      "name_ua": "Залежна територія",
-      "name": "Dependent territory"
-    }
-  ],
   "type": [
     {
       "type_id": "1",
@@ -178,7 +156,6 @@
   "country": [
     {
       "country_id": "EG",
-      "country_type_id": "1",
       "continent_id": "AF",
       "name": "Egypt",
       "name_ua": "Єгипет",
@@ -191,7 +168,6 @@
     },
     {
       "country_id": "ABH",
-      "country_type_id": "2",
       "continent_id": "AS",
       "name": "Abkhazia",
       "name_ua": "Абхазія",
@@ -204,7 +180,6 @@
     },
     {
       "country_id": "AE",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "United Arabian Emirates",
       "name_ua": "Об'єднані Арабські Емірати",
@@ -217,7 +192,6 @@
     },
     {
       "country_id": "CN",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "China",
       "name_ua": "Китай",
@@ -230,7 +204,6 @@
     },
     {
       "country_id": "CT",
-      "country_type_id": "3",
       "continent_id": "AS",
       "name": "Northern Cyprus",
       "name_ua": "Північний Кіпр",
@@ -243,7 +216,6 @@
     },
     {
       "country_id": "CY",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Cyprus",
       "name_ua": "Кіпр",
@@ -256,7 +228,6 @@
     },
     {
       "country_id": "IL",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Israel",
       "name_ua": "Ізраїль",
@@ -269,7 +240,6 @@
     },
     {
       "country_id": "IN",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "India",
       "name_ua": "Індія",
@@ -282,7 +252,6 @@
     },
     {
       "country_id": "TR",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Turkey",
       "name_ua": "Турція",
@@ -295,7 +264,6 @@
     },
     {
       "country_id": "UZ",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Uzbekistan",
       "name_ua": "Узбекистан",
@@ -308,7 +276,6 @@
     },
     {
       "country_id": "AD",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Andorra",
       "name_ua": "Андорра",
@@ -321,7 +288,6 @@
     },
     {
       "country_id": "AL",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Albania",
       "name_ua": "Албанія",
@@ -334,7 +300,6 @@
     },
     {
       "country_id": "AT",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Austria",
       "name_ua": "Австрія",
@@ -347,7 +312,6 @@
     },
     {
       "country_id": "BE",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Belgium",
       "name_ua": "Бельгія",
@@ -360,7 +324,6 @@
     },
     {
       "country_id": "BY",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Belarus",
       "name_ua": "Білорусь",
@@ -373,7 +336,6 @@
     },
     {
       "country_id": "CH",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Switzerland",
       "name_ua": "Швейцарія",
@@ -386,7 +348,6 @@
     },
     {
       "country_id": "CZ",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Czech",
       "name_ua": "Чехія",
@@ -399,7 +360,6 @@
     },
     {
       "country_id": "DE",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Germany",
       "name_ua": "Німеччина",
@@ -412,7 +372,6 @@
     },
     {
       "country_id": "DK",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Denmark",
       "name_ua": "Данія",
@@ -425,7 +384,6 @@
     },
     {
       "country_id": "EE",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Estonia",
       "name_ua": "Естонія",
@@ -438,7 +396,6 @@
     },
     {
       "country_id": "ES",
-      "country_type_id": "1",
       "continent_id": "EU",
       "continent_id2": "AF",
       "name": "Spain",
@@ -452,7 +409,6 @@
     },
     {
       "country_id": "FI",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Finland",
       "name_ua": "Фінляндія",
@@ -465,7 +421,6 @@
     },
     {
       "country_id": "FR",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "France",
       "name_ua": "Франція",
@@ -478,7 +433,6 @@
     },
     {
       "country_id": "GI",
-      "country_type_id": "4",
       "continent_id": "EU",
       "name": "Gibraltar",
       "name_ua": "Гібралтар",
@@ -492,7 +446,6 @@
     },
     {
       "country_id": "HR",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Croatia",
       "name_ua": "Хорватія",
@@ -505,7 +458,6 @@
     },
     {
       "country_id": "HU",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Hungary",
       "name_ua": "Угорщина",
@@ -518,7 +470,6 @@
     },
     {
       "country_id": "IT",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Italy",
       "name_ua": "Італія",
@@ -531,7 +482,6 @@
     },
     {
       "country_id": "LI",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Liechtenstein",
       "name_ua": "Ліхтенштейн",
@@ -544,7 +494,6 @@
     },
     {
       "country_id": "LT",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Lithuania",
       "name_ua": "Литва",
@@ -557,7 +506,6 @@
     },
     {
       "country_id": "LU",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Luxembourg",
       "name_ua": "Люксембург",
@@ -570,7 +518,6 @@
     },
     {
       "country_id": "LV",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Latvia",
       "name_ua": "Латвія",
@@ -583,7 +530,6 @@
     },
     {
       "country_id": "MC",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Monaco",
       "name_ua": "Монако",
@@ -597,7 +543,6 @@
     },
     {
       "country_id": "MD",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Moldova",
       "name_ua": "Молдо́ва",
@@ -610,7 +555,6 @@
     },
     {
       "country_id": "ME",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Montenegro",
       "name_ua": "Чорногорія",
@@ -623,7 +567,6 @@
     },
     {
       "country_id": "MK",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "North Macedonia",
       "name_ua": "Північна Македонія",
@@ -636,7 +579,6 @@
     },
     {
       "country_id": "MT",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Malta",
       "name_ua": "Мальта",
@@ -649,7 +591,6 @@
     },
     {
       "country_id": "NL",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Netherlands",
       "name_ua": "Нідерланди",
@@ -662,7 +603,6 @@
     },
     {
       "country_id": "NO",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Norway",
       "name_ua": "Норвегія",
@@ -675,7 +615,6 @@
     },
     {
       "country_id": "PL",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Poland",
       "name_ua": "Польща",
@@ -688,7 +627,6 @@
     },
     {
       "country_id": "PT",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Portugal",
       "name_ua": "Португалія",
@@ -701,7 +639,6 @@
     },
     {
       "country_id": "RO",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Romania",
       "name_ua": "Румунія",
@@ -714,7 +651,6 @@
     },
     {
       "country_id": "RU",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Russia",
       "name_ua": "Росія",
@@ -727,7 +663,6 @@
     },
     {
       "country_id": "SE",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Sweden",
       "name_ua": "Швеція",
@@ -740,7 +675,6 @@
     },
     {
       "country_id": "SI",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Slovenia",
       "name_ua": "Словенія",
@@ -753,7 +687,6 @@
     },
     {
       "country_id": "SK",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Slovakia",
       "name_ua": "Словаччина",
@@ -766,7 +699,6 @@
     },
     {
       "country_id": "SM",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "San Marino",
       "name_ua": "Сан-Марино",
@@ -779,7 +711,6 @@
     },
     {
       "country_id": "TA",
-      "country_type_id": "3",
       "continent_id": "EU",
       "name": "Transnistria",
       "name_ua": "Придністровья",
@@ -792,7 +723,6 @@
     },
     {
       "country_id": "UA",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Ukraine",
       "name_ua": "Україна",
@@ -805,7 +735,6 @@
     },
     {
       "country_id": "VA",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Vatican City State",
       "name_ua": "Ватікан",
@@ -819,7 +748,6 @@
     },
     {
       "country_id": "XK",
-      "country_type_id": "2",
       "continent_id": "EU",
       "name": "Kosovo",
       "name_ua": "Косово",
@@ -832,7 +760,6 @@
     },
     {
       "country_id": "AZ",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Azerbaijan",
       "name_ua": "Азербайджан",
@@ -845,7 +772,6 @@
     },
     {
       "country_id": "US",
-      "country_type_id": "1",
       "continent_id": "NA",
       "name": "United States of America",
       "name_ua": "Сполучені Штати Америки",
@@ -858,7 +784,6 @@
     },
     {
       "country_id": "BA",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Bosnia and Herzegovina",
       "name_ua": "Боснія і Герцеговина",
@@ -871,7 +796,6 @@
     },
     {
       "country_id": "BG",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Bulgaria",
       "name_ua": "Болгарія",
@@ -884,7 +808,6 @@
     },
     {
       "country_id": "LB",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Lebanon",
       "name_ua": "Ліван",
@@ -897,7 +820,6 @@
     },
     {
       "country_id": "KG",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Kyrgyzstan",
       "name_ua": "Киргизстан",
@@ -910,7 +832,6 @@
     },
     {
       "country_id": "KZ",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Kazakhstan",
       "name_ua": "Казахстан",
@@ -923,7 +844,6 @@
     },
     {
       "country_id": "JO",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Jordan",
       "name_ua": "Йорданія",
@@ -936,7 +856,6 @@
     },
     {
       "country_id": "GR",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Greece",
       "name_ua": "Греція",
@@ -949,7 +868,6 @@
     },
     {
       "country_id": "CU",
-      "country_type_id": "1",
       "continent_id": "NA",
       "name": "Cuba",
       "name_ua": "Куба",
@@ -962,7 +880,6 @@
     },
     {
       "country_id": "MX",
-      "country_type_id": "1",
       "continent_id": "NA",
       "name": "Mexico",
       "name_ua": "Мексика",
@@ -975,7 +892,6 @@
     },
     {
       "country_id": "BZ",
-      "country_type_id": "1",
       "continent_id": "NA",
       "name": "Belize",
       "name_ua": "Беліз",
@@ -988,7 +904,6 @@
     },
     {
       "country_id": "AM",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Armenia",
       "name_ua": "Вірменія",
@@ -1001,7 +916,6 @@
     },
     {
       "country_id": "GE",
-      "country_type_id": "1",
       "continent_id": "AS",
       "name": "Georgia",
       "name_ua": "Грузія",
@@ -1014,7 +928,6 @@
     },
     {
       "country_id": "RS",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Serbia",
       "name_ua": "Сербія",
@@ -1027,7 +940,6 @@
     },
     {
       "country_id": "TN",
-      "country_type_id": "1",
       "continent_id": "AF",
       "name": "Tunisia",
       "name_ua": "Туніс",
@@ -1040,7 +952,6 @@
     },
     {
       "country_id": "NGK",
-      "country_type_id": "3",
       "continent_id": "AS",
       "name": "Artsakh",
       "name_ua": "Нагірний Карабах",
@@ -1053,7 +964,6 @@
     },
     {
       "country_id": "IE",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Ireland",
       "name_ua": "Ірландія",
@@ -1066,7 +976,6 @@
     },
     {
       "country_id": "GB",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "the United Kingdom of Great Britain and Northern Ireland",
       "name_ua": "Сполучене Королівство Великої Британії та Північної Ірландії",
@@ -1079,7 +988,6 @@
     },
     {
       "country_id": "IS",
-      "country_type_id": "1",
       "continent_id": "EU",
       "name": "Iceland",
       "name_ua": "Ісландія",
@@ -1092,7 +1000,6 @@
     },
     {
       "country_id": "PR",
-      "country_type_id": "4",
       "continent_id": "NA",
       "name": "Puerto Rico",
       "name_ua": "Пуерто-Рико",
@@ -1697,7 +1604,7 @@
       "country_id": "CN",
       "region_id": "CN-64",
       "name": "Ningxia Hui",
-      "name_ua": "Нінся-Хуейський автономний район",
+      "name_ua": "Нінся-Хуэйський автономний район",
       "active": "Y"
     },
     {
@@ -1774,7 +1681,7 @@
       "country_id": "CN",
       "region_id": "CN-33",
       "name": "Zhejiang",
-      "name_ua": "Провінція Чжецзян",
+      "name_ua": "Провінція Чжэцзян",
       "active": "Y"
     },
     {
@@ -9592,7 +9499,7 @@
       "country_id": "US",
       "region_id": "US-DE",
       "name": "State of Delaware",
-      "name_ua": "Делавер",
+      "name_ua": "Делавэр",
       "active": "Y"
     },
     {
@@ -9683,7 +9590,7 @@
       "country_id": "US",
       "region_id": "US-ME",
       "name": "State of Maine",
-      "name_ua": "Мен",
+      "name_ua": "Мэн",
       "active": "Y"
     },
     {
@@ -10796,7 +10703,7 @@
       "country_id": "MX",
       "region_id": "MX-DIF",
       "name": "Distrito Federal",
-      "name_ua": "Федеральний округ",
+      "name_ua": "Федеральный округ",
       "active": "Y"
     },
     {
@@ -14043,7 +13950,7 @@
     {
       "name": "Karlovy Vary",
       "name_nt": "Karlovy Vary",
-      "name_ua": "Карлові Вари",
+      "name_ua": "Карловы Вары",
       "region_id": "CZ-KA",
       "city_id": "karlovy_vary",
       "lat": "50.2341572",
@@ -14098,7 +14005,7 @@
     {
       "name": "Ceske Budejovice",
       "name_nt": "České Budějovice",
-      "name_ua": "Ческе-Будейовіце",
+      "name_ua": "Ческе-Будеёвице",
       "region_id": "CZ-JC",
       "city_id": "ceske_budejovice",
       "lat": "48.974704",
@@ -14258,7 +14165,7 @@
     {
       "name": "Bender",
       "name_nt": "Бендéры",
-      "name_ua": "Бендери",
+      "name_ua": "Бендеры",
       "region_id": "TA-BD",
       "city_id": "ta-bender",
       "lat": "46.01",
@@ -14271,7 +14178,7 @@
     {
       "name": "Dubasari",
       "name_nt": "Дубоссáры",
-      "name_ua": "Дубосари",
+      "name_ua": "Дубоссары",
       "region_id": "TA-SN",
       "city_id": "ta-dubasari",
       "lat": "46.80003",
@@ -14307,7 +14214,7 @@
     {
       "name": "Old Orhei",
       "name_nt": "Orheiul Vechi",
-      "name_ua": "Старий Орхей",
+      "name_ua": "Старый Орхей",
       "type": "17",
       "region_id": "MD-OR",
       "city_id": "old_orhei",
@@ -14319,7 +14226,7 @@
     {
       "name": "Mileshti Mich",
       "name_nt": "Mileştii Mici",
-      "name_ua": "Малі Мілешти",
+      "name_ua": "Малые Милешты",
       "region_id": "MD-IA",
       "city_id": "mileshti_mich",
       "lat": "46.9003",
@@ -14352,7 +14259,7 @@
     {
       "name": "Bender",
       "name_nt": "Бендéры",
-      "name_ua": "Бендери",
+      "name_ua": "Бендеры",
       "region_id": "MD-BD",
       "city_id": "bender",
       "lat": "46.8375141",
@@ -14463,7 +14370,7 @@
     {
       "name": "Svaty Kriz",
       "name_nt": "Svaty Kriz",
-      "name_ua": "Святий Кріж",
+      "name_ua": "Святый Крис",
       "region_id": "SK-ZI",
       "city_id": "svaty_kriz",
       "lat": "49.0518547",
@@ -14582,7 +14489,7 @@
     {
       "name": "Cologne",
       "name_nt": "Köln",
-      "name_ua": "Кельн",
+      "name_ua": "Кёльн",
       "region_id": "DE-NW",
       "city_id": "cologne",
       "lat": "50.9387755",
@@ -14626,7 +14533,7 @@
     {
       "name": "Karlsruhe",
       "name_nt": "Karlsruhe",
-      "name_ua": "Карлсруе",
+      "name_ua": "Карлсруэ",
       "region_id": "DE-BW",
       "city_id": "karlsruhe",
       "lat": "49.0114557",
@@ -14714,7 +14621,7 @@
     {
       "name": "Erfurt",
       "name_nt": "Erfurt",
-      "name_ua": "Ерфурт",
+      "name_ua": "Эрфурт",
       "region_id": "DE-TH",
       "city_id": "erfurt",
       "lat": "50.9793665",
@@ -14747,7 +14654,7 @@
     {
       "name": "Gorlitz",
       "name_nt": "Görlitz",
-      "name_ua": "Герліц",
+      "name_ua": "Гёрлиц",
       "region_id": "DE-SN",
       "city_id": "gorlitz",
       "lat": "51.1563742",
@@ -15432,7 +15339,7 @@
     {
       "name": "Rasnov",
       "name_nt": "Râşnov",
-      "name_ua": "Ришнов",
+      "name_ua": "Рышнов",
       "type": "13",
       "region_id": "RO-BV",
       "city_id": "rasnov",
@@ -15489,7 +15396,7 @@
     {
       "name": "Mausoleum of Marasesti",
       "name_nt": "Mausoleul de la Mărășești",
-      "name_ua": "Мавзолей Мерешешть",
+      "name_ua": "Мавзолей Мэрэшэшть",
       "type": "22",
       "region_id": "RO-VN",
       "city_id": "mausoleummarasesti",
@@ -15681,7 +15588,7 @@
     {
       "name": "Edirne",
       "name_nt": "Edirne",
-      "name_ua": "Едірне",
+      "name_ua": "Эдирне",
       "region_id": "TR-22",
       "city_id": "edirne",
       "lat": "41.675989",
@@ -15703,7 +15610,7 @@
     {
       "name": "Eceabat",
       "name_nt": "Eceabat",
-      "name_ua": "Еджеабат",
+      "name_ua": "Эджеабат",
       "region_id": "TR-17",
       "city_id": "eceabat",
       "lat": "40.184906",
@@ -15737,7 +15644,7 @@
     {
       "name": "Balıkesir",
       "name_nt": "Balıkesir",
-      "name_ua": "Баликесір",
+      "name_ua": "Балыкесир",
       "region_id": "TR-10",
       "city_id": "balikesir",
       "lat": "39.649583",
@@ -15748,7 +15655,7 @@
     {
       "name": "Goreme",
       "name_nt": "Göreme",
-      "name_ua": "Гереме",
+      "name_ua": "Гёреме",
       "region_id": "TR-50",
       "city_id": "goreme",
       "lat": "38.642283",
@@ -15928,7 +15835,7 @@
     {
       "name": "Ephesus",
       "name_nt": "Efes",
-      "name_ua": "Ефес",
+      "name_ua": "Эфес",
       "type": "16",
       "region_id": "TR-35",
       "city_id": "ephesus",
@@ -15963,7 +15870,7 @@
     {
       "name": "Goreme",
       "name_nt": "Göreme",
-      "name_ua": "Гереме",
+      "name_ua": "Гёреме",
       "type": "17",
       "region_id": "TR-50",
       "city_id": "goreme_park",
@@ -16321,7 +16228,7 @@
     {
       "name": "Ksiaz",
       "name_nt": "Książ",
-      "name_ua": "Ксьонж",
+      "name_ua": "Кщёнж",
       "type": "13",
       "region_id": "PL-DS",
       "city_id": "ksiaz",
@@ -16366,7 +16273,7 @@
     {
       "name": "Checiny",
       "name_nt": "Chęciny",
-      "name_ua": "Хенцини",
+      "name_ua": "Хенцины",
       "region_id": "PL-SK",
       "city_id": "checiny",
       "lat": "50.802377",
@@ -16377,7 +16284,7 @@
     {
       "name": "Przemysl",
       "name_nt": "Przemysl",
-      "name_ua": "Перемишль",
+      "name_ua": "Пшемысль",
       "region_id": "PL-PK",
       "city_id": "przemysl",
       "lat": "49.7822833",
@@ -16693,8 +16600,8 @@
     },
     {
       "name": "Kyiv",
-      "name_nt": "",
-      "name_ua": "Київ",
+      "name_nt": "Київ",
+      "name_ua": "Киев",
       "region_id": "UA-30",
       "capital": "true",
       "city_id": "kyiv",
@@ -16705,7 +16612,7 @@
     },
     {
       "name": "Sevastopol",
-      "name_nt": "",
+      "name_nt": "Севастополь",
       "name_ua": "Севастополь",
       "region_id": "UA-40",
       "city_id": "sevastopol",
@@ -16716,8 +16623,8 @@
     },
     {
       "name": "Chernivtsi",
-      "name_nt": "",
-      "name_ua": "Чернівці",
+      "name_nt": "Чернівці",
+      "name_ua": "Черновцы",
       "region_id": "UA-CV",
       "city_id": "chernivtsi",
       "lat": "48.292645",
@@ -16727,7 +16634,7 @@
     },
     {
       "name": "Khotyn",
-      "name_nt": "",
+      "name_nt": "Хотин",
       "name_ua": "Хотин",
       "region_id": "UA-CV",
       "city_id": "khotyn",
@@ -16738,8 +16645,8 @@
     },
     {
       "name": "Khreschatyk",
-      "name_nt": "",
-      "name_ua": "Хрещатик",
+      "name_nt": "Хрещатик",
+      "name_ua": "Крещатик",
       "region_id": "UA-CV",
       "city_id": "khreschatik",
       "lat": "48.6278363",
@@ -16748,8 +16655,8 @@
     },
     {
       "name": "Luhansk",
-      "name_nt": "",
-      "name_ua": "Луганськ",
+      "name_nt": "Луганськ",
+      "name_ua": "Луганск",
       "region_id": "UA-LH",
       "city_id": "luhansk",
       "lat": "48.576607",
@@ -16759,8 +16666,8 @@
     },
     {
       "name": "Severodonetsk",
-      "name_nt": "",
-      "name_ua": "Сєверодонецьк",
+      "name_nt": "Сєверодонецьк",
+      "name_ua": "Северодонецк",
       "region_id": "UA-LH",
       "city_id": "severodonetsk",
       "lat": "48.946744",
@@ -16770,8 +16677,8 @@
     },
     {
       "name": "Kreminna",
-      "name_nt": "",
-      "name_ua": "Кремінна",
+      "name_nt": "Кремінна",
+      "name_ua": "Кременная",
       "region_id": "UA-LH",
       "city_id": "kreminna",
       "lat": "49.05362",
@@ -16781,8 +16688,8 @@
     },
     {
       "name": "Svatove",
-      "name_nt": "",
-      "name_ua": "Сватове",
+      "name_nt": "Сватове",
+      "name_ua": "Сватово",
       "region_id": "UA-LH",
       "city_id": "svatove",
       "lat": "49.420801",
@@ -16792,8 +16699,8 @@
     },
     {
       "name": "Kropyvnytskyi",
-      "name_nt": "",
-      "name_ua": "Кропивницький",
+      "name_nt": "Кропивницький",
+      "name_ua": "Кропивницкий",
       "region_id": "UA-KH",
       "city_id": "kropyvnytskyi",
       "lat": "48.508417",
@@ -16803,8 +16710,8 @@
     },
     {
       "name": "Rozumivka",
-      "name_nt": "",
-      "name_ua": "Розумівка",
+      "name_nt": "Розумівка",
+      "name_ua": "Разумовка",
       "region_id": "UA-KH",
       "city_id": "rozumivka",
       "lat": "48.83591",
@@ -16814,8 +16721,8 @@
     },
     {
       "name": "The Karpenko-Karyi State Museum-Reserve \"Khutir Nadia\"",
-      "name_nt": "",
-      "name_ua": "«Ху́тір Наді́я» — державний музей-заповідник Івана Карпенка-Карого (Тобілевича)",
+      "name_nt": "«Ху́тір Наді́я» — державний музей-заповідник Івана Карпенка-Карого (Тобілевича)",
+      "name_ua": "«Хутор Надежда» — государственный заповедник-музей И. К. Карпенко-Карого (Тобилевича)",
       "region_id": "UA-KH",
       "city_id": "khutirnadiia",
       "lat": "48.4701994",
@@ -16824,8 +16731,8 @@
     },
     {
       "name": "Dnipro",
-      "name_nt": "",
-      "name_ua": "Дніпро",
+      "name_nt": "Дніпро",
+      "name_ua": "Днепр",
       "region_id": "UA-DP",
       "city_id": "dnipro",
       "lat": "48.457897",
@@ -16835,8 +16742,8 @@
     },
     {
       "name": "Kryvyi Rih",
-      "name_nt": "",
-      "name_ua": "Кривий Ріг",
+      "name_nt": "Кривий Ріг",
+      "name_ua": "Кривой Рог",
       "region_id": "UA-DP",
       "city_id": "kryvyi_rih",
       "lat": "47.907367",
@@ -16846,8 +16753,8 @@
     },
     {
       "name": "Novomoskovsk",
-      "name_nt": "",
-      "name_ua": "Новомосковськ",
+      "name_nt": "Новомосковськ",
+      "name_ua": "Новомосковск",
       "region_id": "UA-DP",
       "city_id": "novomoskovsk",
       "lat": "48.6319417",
@@ -16856,8 +16763,8 @@
     },
     {
       "name": "Orliwschtschyna",
-      "name_nt": "",
-      "name_ua": "Орлі́вщина",
+      "name_nt": "Орлі́вщина",
+      "name_ua": "Орловщина",
       "region_id": "UA-DP",
       "city_id": "orliwschtschyna",
       "lat": "48.6393601",
@@ -16866,8 +16773,8 @@
     },
     {
       "name": "Solone",
-      "name_nt": "",
-      "name_ua": "Солоне",
+      "name_nt": "Солоне",
+      "name_ua": "Солёное",
       "region_id": "UA-DP",
       "city_id": "solone",
       "lat": "48.2084271",
@@ -16876,8 +16783,8 @@
     },
     {
       "name": "Petrykivka",
-      "name_nt": "",
-      "name_ua": "Петриківка",
+      "name_nt": "Петриківка",
+      "name_ua": "Петриковка",
       "region_id": "UA-DP",
       "city_id": "petrykivka",
       "lat": "48.7168378",
@@ -16886,7 +16793,7 @@
     },
     {
       "name": "Kytaihorod",
-      "name_nt": "",
+      "name_nt": "Китайгород",
       "name_ua": "Китайгород",
       "region_id": "UA-DP",
       "city_id": "kytaihorod",
@@ -16896,8 +16803,8 @@
     },
     {
       "name": "Lutsk",
-      "name_nt": "",
-      "name_ua": "Луцьк",
+      "name_nt": "Луцьк",
+      "name_ua": "Луцк",
       "region_id": "UA-VO",
       "city_id": "lutsk",
       "lat": "50.742104",
@@ -16907,8 +16814,8 @@
     },
     {
       "name": "Volodimir-Volinskiy",
-      "name_nt": "",
-      "name_ua": "Володимир-Волинський",
+      "name_nt": "Володимир-Волинський",
+      "name_ua": "Владимир-Волынский",
       "region_id": "UA-VO",
       "city_id": "volodimir_volinskiy",
       "lat": "50.846272",
@@ -16918,8 +16825,8 @@
     },
     {
       "name": "Zimne",
-      "name_nt": "",
-      "name_ua": "Зимне",
+      "name_nt": "Зимне",
+      "name_ua": "Зимнее",
       "region_id": "UA-VO",
       "city_id": "zimne",
       "lat": "50.795085",
@@ -16929,8 +16836,8 @@
     },
     {
       "name": "Olika",
-      "name_nt": "",
-      "name_ua": "Олика",
+      "name_nt": "Олика",
+      "name_ua": "Олыка",
       "region_id": "UA-VO",
       "city_id": "olika",
       "lat": "50.718037",
@@ -16940,7 +16847,7 @@
     },
     {
       "name": "Kovel",
-      "name_nt": "",
+      "name_nt": "Ковель",
       "name_ua": "Ковель",
       "region_id": "UA-VO",
       "city_id": "kovel",
@@ -16951,8 +16858,8 @@
     },
     {
       "name": "Svitiaz",
-      "name_nt": "",
-      "name_ua": "Світязь",
+      "name_nt": "Світязь",
+      "name_ua": "Свитязь",
       "region_id": "UA-VO",
       "city_id": "svitiaz",
       "lat": "51.4849408",
@@ -16962,8 +16869,8 @@
     },
     {
       "name": "Plyasheva",
-      "name_nt": "",
-      "name_ua": "Пляшева",
+      "name_nt": "Пляшева",
+      "name_ua": "Пляшевая",
       "region_id": "UA-VO",
       "city_id": "pliasheva",
       "lat": "50.3565633",
@@ -16972,7 +16879,7 @@
     },
     {
       "name": "Berestechko",
-      "name_nt": "",
+      "name_nt": "Берестечко",
       "name_ua": "Берестечко",
       "region_id": "UA-VO",
       "city_id": "berestechko",
@@ -16982,8 +16889,8 @@
     },
     {
       "name": "Kolodiazhne",
-      "name_nt": "",
-      "name_ua": "Коло́дяжне",
+      "name_nt": "Коло́дяжне",
+      "name_ua": "Колодежно",
       "region_id": "UA-VO",
       "city_id": "kolodiazhne",
       "lat": "51.178807",
@@ -16992,8 +16899,8 @@
     },
     {
       "name": "Shatsk",
-      "name_nt": "",
-      "name_ua": "Шацьк",
+      "name_nt": "Шацьк",
+      "name_ua": "Шацк",
       "region_id": "UA-VO",
       "city_id": "shatsk",
       "lat": "51.4912545",
@@ -17002,7 +16909,7 @@
     },
     {
       "name": "Pulmo",
-      "name_nt": "",
+      "name_nt": "Пульмо",
       "name_ua": "Пульмо",
       "region_id": "UA-VO",
       "city_id": "pulmo",
@@ -17012,8 +16919,8 @@
     },
     {
       "name": "Haiivka",
-      "name_nt": "",
-      "name_ua": "Гаївка",
+      "name_nt": "Гаївка",
+      "name_ua": "Гаевка",
       "region_id": "UA-VO",
       "city_id": "haiivka",
       "lat": "51.5604341",
@@ -17022,8 +16929,8 @@
     },
     {
       "name": "Dormition mans monastery (Nizkovichi)",
-      "name_nt": "",
-      "name_ua": "Успенський чоловічий монастир (Низкиничі)",
+      "name_nt": "Успенський чоловічий монастир (Низкиничі)",
+      "name_ua": "Успенский мужской монастирь (Низкиничи)",
       "region_id": "UA-VO",
       "city_id": "nizkovichimonastery",
       "lat": "50.7271754",
@@ -17032,8 +16939,8 @@
     },
     {
       "name": "Khmelnytskyi",
-      "name_nt": "",
-      "name_ua": "Хмельницький",
+      "name_nt": "Хмельницький",
+      "name_ua": "Хмельницкий",
       "region_id": "UA-KM",
       "city_id": "khmelnytskyi",
       "lat": "49.417897",
@@ -17043,8 +16950,8 @@
     },
     {
       "name": "Kamianets-Podilskyi",
-      "name_nt": "",
-      "name_ua": "Кам'янець-Подільський",
+      "name_nt": "Кам'янець-Подільський",
+      "name_ua": "Каменец-Подольский",
       "region_id": "UA-KM",
       "city_id": "kamianets-podilsky",
       "lat": "48.677587",
@@ -17054,7 +16961,7 @@
     },
     {
       "name": "Slavuta",
-      "name_nt": "",
+      "name_nt": "Славута",
       "name_ua": "Славута",
       "region_id": "UA-KM",
       "city_id": "slavuta",
@@ -17065,8 +16972,8 @@
     },
     {
       "name": "Iziaslav",
-      "name_nt": "",
-      "name_ua": "Ізяслав",
+      "name_nt": "Ізяслав",
+      "name_ua": "Изяслав",
       "region_id": "UA-KM",
       "city_id": "iziaslav",
       "lat": "50.121018",
@@ -17076,8 +16983,8 @@
     },
     {
       "name": "Shepetivka",
-      "name_nt": "",
-      "name_ua": "Шепетівка",
+      "name_nt": "Шепетівка",
+      "name_ua": "Шепетовка",
       "region_id": "UA-KM",
       "city_id": "shepetivka",
       "lat": "50.179536",
@@ -17087,7 +16994,7 @@
     },
     {
       "name": "Samchiki",
-      "name_nt": "",
+      "name_nt": "Самчики",
       "name_ua": "Самчики",
       "region_id": "UA-KM",
       "city_id": "samchiki",
@@ -17098,8 +17005,8 @@
     },
     {
       "name": "Starokostiantyniv",
-      "name_nt": "",
-      "name_ua": "Старокостянтинів",
+      "name_nt": "Старокостянтинів",
+      "name_ua": "Староконстантинов",
       "region_id": "UA-KM",
       "city_id": "starokostiantyniv",
       "lat": "49.7555241",
@@ -17109,8 +17016,8 @@
     },
     {
       "name": "Antoniny",
-      "name_nt": "",
-      "name_ua": "Антоніни",
+      "name_nt": "Антоніни",
+      "name_ua": "Антонины",
       "region_id": "UA-KM",
       "city_id": "antoniny",
       "lat": "49.8089489",
@@ -17120,8 +17027,8 @@
     },
     {
       "name": "Krasyliv",
-      "name_nt": "",
-      "name_ua": "Красилів",
+      "name_nt": "Красилів",
+      "name_ua": "Красилов",
       "region_id": "UA-KM",
       "city_id": "krasyliv",
       "lat": "49.653117",
@@ -17131,8 +17038,8 @@
     },
     {
       "name": "Medzhybizh",
-      "name_nt": "",
-      "name_ua": "Меджибіж",
+      "name_nt": "Меджибіж",
+      "name_ua": "Меджибож",
       "region_id": "UA-KM",
       "city_id": "medzhybizh",
       "lat": "49.436308",
@@ -17142,8 +17049,8 @@
     },
     {
       "name": "Letychiv",
-      "name_nt": "",
-      "name_ua": "Летичів",
+      "name_nt": "Летичів",
+      "name_ua": "Летичев",
       "region_id": "UA-KM",
       "city_id": "letychiv",
       "lat": "49.3818988",
@@ -17153,8 +17060,8 @@
     },
     {
       "name": "Kharkiv",
-      "name_nt": "",
-      "name_ua": "Харків",
+      "name_nt": "Харків",
+      "name_ua": "Харьков",
       "region_id": "UA-KK",
       "city_id": "kharkiv",
       "lat": "49.990084",
@@ -17164,8 +17071,8 @@
     },
     {
       "name": "Izyum",
-      "name_nt": "",
-      "name_ua": "Ізюм",
+      "name_nt": "Ізюм",
+      "name_ua": "Изюм",
       "region_id": "UA-KK",
       "city_id": "izyum",
       "lat": "49.213",
@@ -17175,8 +17082,8 @@
     },
     {
       "name": "Kupyansk",
-      "name_nt": "",
-      "name_ua": "Купянськ",
+      "name_nt": "Купянськ",
+      "name_ua": "Купянск",
       "region_id": "UA-KK",
       "city_id": "kupyansk",
       "lat": "49.704944",
@@ -17186,8 +17093,8 @@
     },
     {
       "name": "Chuhuiv",
-      "name_nt": "",
-      "name_ua": "Чугуїв",
+      "name_nt": "Чугуїв",
+      "name_ua": "Чугуев",
       "region_id": "UA-KK",
       "city_id": "chuhuiv",
       "lat": "49.83754",
@@ -17197,8 +17104,8 @@
     },
     {
       "name": "Lubotin",
-      "name_nt": "",
-      "name_ua": "Люботин",
+      "name_nt": "Люботин",
+      "name_ua": "Люботын",
       "region_id": "UA-KK",
       "city_id": "lubotin",
       "lat": "49.950999",
@@ -17208,8 +17115,8 @@
     },
     {
       "name": "Rakitne",
-      "name_nt": "",
-      "name_ua": "Ракитне",
+      "name_nt": "Ракитне",
+      "name_ua": "Ракитное",
       "region_id": "UA-KK",
       "city_id": "rakitne",
       "lat": "49.807582",
@@ -17219,7 +17126,7 @@
     },
     {
       "name": "Krasnohrad",
-      "name_nt": "",
+      "name_nt": "Красноград",
       "name_ua": "Красноград",
       "region_id": "UA-KK",
       "city_id": "krasnohrad",
@@ -17229,8 +17136,8 @@
     },
     {
       "name": "Vinnitsa",
-      "name_nt": "",
-      "name_ua": "Вінниця",
+      "name_nt": "Вінниця",
+      "name_ua": "Винница",
       "region_id": "UA-VI",
       "city_id": "vinnitsa",
       "lat": "49.234413",
@@ -17240,7 +17147,7 @@
     },
     {
       "name": "Zhmerenka",
-      "name_nt": "",
+      "name_nt": "Жмеренка",
       "name_ua": "Жмеренка",
       "region_id": "UA-VI",
       "city_id": "zhmerenka",
@@ -17251,7 +17158,7 @@
     },
     {
       "name": "Shargorod",
-      "name_nt": "",
+      "name_nt": "Шаргород",
       "name_ua": "Шаргород",
       "region_id": "UA-VI",
       "city_id": "shargorod",
@@ -17262,7 +17169,7 @@
     },
     {
       "name": "Khmelnik",
-      "name_nt": "",
+      "name_nt": "Хмельник",
       "name_ua": "Хмельник",
       "region_id": "UA-VI",
       "city_id": "khmelnik",
@@ -17273,7 +17180,7 @@
     },
     {
       "name": "Strizhavka",
-      "name_nt": "",
+      "name_nt": "Стрижавка",
       "name_ua": "Стрижавка",
       "region_id": "UA-VI",
       "city_id": "strizhavka",
@@ -17284,8 +17191,8 @@
     },
     {
       "name": "Mykhailivka",
-      "name_nt": "",
-      "name_ua": "Михайлівка",
+      "name_nt": "Михайлівка",
+      "name_ua": "Михайловка",
       "region_id": "UA-VI",
       "city_id": "mykhailivka",
       "lat": "48.8276318",
@@ -17294,8 +17201,8 @@
     },
     {
       "name": "Hraniv",
-      "name_nt": "",
-      "name_ua": "Гранів",
+      "name_nt": "Гранів",
+      "name_ua": "Гранов",
       "region_id": "UA-VI",
       "city_id": "hraniv",
       "lat": "48.8716104",
@@ -17304,7 +17211,7 @@
     },
     {
       "name": "Haisyn",
-      "name_nt": "",
+      "name_nt": "Гайсин",
       "name_ua": "Гайсин",
       "region_id": "UA-VI",
       "city_id": "haisyn",
@@ -17314,8 +17221,8 @@
     },
     {
       "name": "Dashiv",
-      "name_nt": "",
-      "name_ua": "Дашів",
+      "name_nt": "Дашів",
+      "name_ua": "Дашев",
       "region_id": "UA-VI",
       "city_id": "dashiv",
       "lat": "49.0022848",
@@ -17324,8 +17231,8 @@
     },
     {
       "name": "Dashiv",
-      "name_nt": "",
-      "name_ua": "Дашів",
+      "name_nt": "Дашів",
+      "name_ua": "Дашев",
       "region_id": "UA-VI",
       "city_id": "dashiv_selo",
       "lat": "49.1232983",
@@ -17334,8 +17241,8 @@
     },
     {
       "name": "Mala Rostivka",
-      "name_nt": "",
-      "name_ua": "Мала Ростівка",
+      "name_nt": "Мала Ростівка",
+      "name_ua": "Малая Ростовка",
       "region_id": "UA-VI",
       "city_id": "malarostivka",
       "lat": "49.2279339",
@@ -17344,8 +17251,8 @@
     },
     {
       "name": "Andrushivka",
-      "name_nt": "",
-      "name_ua": "Андрушівка",
+      "name_nt": "Андрушівка",
+      "name_ua": "Андрушевка",
       "region_id": "UA-VI",
       "city_id": "andrushivka_vi",
       "lat": "49.3594848",
@@ -17354,8 +17261,8 @@
     },
     {
       "name": "Napadivka",
-      "name_nt": "",
-      "name_ua": "Нападівка",
+      "name_nt": "Нападівка",
+      "name_ua": "Нападовка",
       "region_id": "UA-VI",
       "city_id": "napadivka",
       "lat": "49.2711032",
@@ -17364,8 +17271,8 @@
     },
     {
       "name": "Olhopil",
-      "name_nt": "",
-      "name_ua": "Ольго́піль",
+      "name_nt": "Ольго́піль",
+      "name_ua": "Ольгополь",
       "region_id": "UA-VI",
       "city_id": "olhopil",
       "lat": "48.1833228",
@@ -17374,7 +17281,7 @@
     },
     {
       "name": "Chechelnyk",
-      "name_nt": "",
+      "name_nt": "Чечельник",
       "name_ua": "Чечельник",
       "region_id": "UA-VI",
       "city_id": "chechelnik",
@@ -17384,7 +17291,7 @@
     },
     {
       "name": "Katashyn",
-      "name_nt": "",
+      "name_nt": "Каташин",
       "name_ua": "Каташин",
       "region_id": "UA-VI",
       "city_id": "katashin",
@@ -17394,8 +17301,8 @@
     },
     {
       "name": "Obodivka",
-      "name_nt": "",
-      "name_ua": "Ободівка",
+      "name_nt": "Ободівка",
+      "name_ua": "Ободовка",
       "region_id": "UA-VI",
       "city_id": "obodivka",
       "lat": "48.4045591",
@@ -17404,8 +17311,8 @@
     },
     {
       "name": "Verkhivka",
-      "name_nt": "",
-      "name_ua": "Верхівка",
+      "name_nt": "Верхівка",
+      "name_ua": "Верховка",
       "region_id": "UA-VI",
       "city_id": "verhivka",
       "lat": "48.445162",
@@ -17414,8 +17321,8 @@
     },
     {
       "name": "Chetvertynivka",
-      "name_nt": "",
-      "name_ua": "Четвертинівка",
+      "name_nt": "Четвертинівка",
+      "name_ua": "Четвертиновка",
       "region_id": "UA-VI",
       "city_id": "chetvertinivka",
       "lat": "48.5913757",
@@ -17424,8 +17331,8 @@
     },
     {
       "name": "Novoselivka",
-      "name_nt": "",
-      "name_ua": "Новоселівка",
+      "name_nt": "Новоселівка",
+      "name_ua": "Новоселовка",
       "region_id": "UA-VI",
       "city_id": "novoselivka",
       "lat": "48.7069641",
@@ -17434,7 +17341,7 @@
     },
     {
       "name": "Kherson",
-      "name_nt": "",
+      "name_nt": "Херсон",
       "name_ua": "Херсон",
       "region_id": "UA-KS",
       "city_id": "kherson",
@@ -17445,8 +17352,8 @@
     },
     {
       "name": "Askania-Nova",
-      "name_nt": "",
-      "name_ua": "Асканія-Нова",
+      "name_nt": "Асканія-Нова",
+      "name_ua": "Аскания-Нова",
       "type": "18",
       "region_id": "UA-KS",
       "city_id": "askania_nova",
@@ -17457,8 +17364,8 @@
     },
     {
       "name": "Primorske",
-      "name_nt": "",
-      "name_ua": "Приморське",
+      "name_nt": "Приморське",
+      "name_ua": "Приморское",
       "region_id": "UA-KS",
       "city_id": "bilshovik",
       "lat": "46.098472",
@@ -17468,8 +17375,8 @@
     },
     {
       "name": "Skadovsk",
-      "name_nt": "",
-      "name_ua": "Скадовськ",
+      "name_nt": "Скадовськ",
+      "name_ua": "Скадовск",
       "region_id": "UA-KS",
       "city_id": "skadovsk",
       "lat": "46.1175462",
@@ -17478,8 +17385,8 @@
     },
     {
       "name": "Oleshky Sands",
-      "name_nt": "",
-      "name_ua": "Національний природний парк \"Олешківські піски\"",
+      "name_nt": "Національний природний парк \"Олешківські піски\"",
+      "name_ua": "Национальный природный парк \"Алешковские пески\"",
       "region_id": "UA-KS",
       "city_id": "oleshkysands",
       "lat": "46.5912159",
@@ -17488,8 +17395,8 @@
     },
     {
       "name": "Oleshky",
-      "name_nt": "",
-      "name_ua": "Олешки",
+      "name_nt": "Олешки",
+      "name_ua": "Алёшки",
       "region_id": "UA-KS",
       "city_id": "oleshky",
       "lat": "46.6247855",
@@ -17498,8 +17405,8 @@
     },
     {
       "name": "Zeleni Khutory Tavriyi",
-      "name_nt": "",
-      "name_ua": "Зелені хутори Таврії",
+      "name_nt": "Зелені хутори Таврії",
+      "name_ua": "Зеленые Хутора Таврии",
       "region_id": "UA-KS",
       "city_id": "zelenikhutorytavrii",
       "lat": "46.5373783",
@@ -17508,8 +17415,8 @@
     },
     {
       "name": "Hola Prystan",
-      "name_nt": "",
-      "name_ua": "Гола Пристань",
+      "name_nt": "Гола Пристань",
+      "name_ua": "Голая Пристань",
       "region_id": "UA-KS",
       "city_id": "holaprystan",
       "lat": "46.5245727",
@@ -17518,8 +17425,8 @@
     },
     {
       "name": "Lazurne",
-      "name_nt": "",
-      "name_ua": "Лазурне",
+      "name_nt": "Лазурне",
+      "name_ua": "Лазурное",
       "region_id": "UA-KS",
       "city_id": "lazurne",
       "lat": "46.0830953",
@@ -17528,8 +17435,8 @@
     },
     {
       "name": "Nova Kakhovka",
-      "name_nt": "",
-      "name_ua": "Нова Каховка",
+      "name_nt": "Нова Каховка",
+      "name_ua": "Новая Каховка",
       "region_id": "UA-KS",
       "city_id": "novakakhovka",
       "lat": "46.7507253",
@@ -17538,7 +17445,7 @@
     },
     {
       "name": "Kakhovka",
-      "name_nt": "",
+      "name_nt": "Каховка",
       "name_ua": "Каховка",
       "region_id": "UA-KS",
       "city_id": "kakhovka",
@@ -17548,7 +17455,7 @@
     },
     {
       "name": "Beryslav",
-      "name_nt": "",
+      "name_nt": "Берислав",
       "name_ua": "Берислав",
       "region_id": "UA-KS",
       "city_id": "beryslav",
@@ -17558,8 +17465,8 @@
     },
     {
       "name": "Kam'yansʹka Sich",
-      "name_nt": "",
-      "name_ua": "Національний природний парк «Кам'янська Січ»",
+      "name_nt": "Національний природний парк «Кам'янська Січ»",
+      "name_ua": "Национальный природный парк «Каменская сечь»",
       "region_id": "UA-KS",
       "city_id": "kamkyanskasich",
       "lat": "47.0019843",
@@ -17568,8 +17475,8 @@
     },
     {
       "name": "Shchaslyvtseve",
-      "name_nt": "",
-      "name_ua": "Щасливцеве",
+      "name_nt": "Щасливцеве",
+      "name_ua": "Счастливцево",
       "region_id": "UA-KS",
       "city_id": "shchaslyvtseve",
       "lat": "46.0324686",
@@ -17578,8 +17485,8 @@
     },
     {
       "name": "Lemuria lake",
-      "name_nt": "",
-      "name_ua": "Лемурійське озеро",
+      "name_nt": "Лемурійське озеро",
+      "name_ua": "Лемурийское озеро",
       "region_id": "UA-KS",
       "city_id": "lemurialake",
       "lat": "46.2450132",
@@ -17588,8 +17495,8 @@
     },
     {
       "name": "Strohanivka",
-      "name_nt": "",
-      "name_ua": "Строганівка",
+      "name_nt": "Строганівка",
+      "name_ua": "Строгановка",
       "region_id": "UA-KS",
       "city_id": "strohaniwka",
       "lat": "46.2538305",
@@ -17598,8 +17505,8 @@
     },
     {
       "name": "Henichesk",
-      "name_nt": "",
-      "name_ua": "Гені́чеськ",
+      "name_nt": "Гені́чеськ",
+      "name_ua": "Геническ",
       "region_id": "UA-KS",
       "city_id": "henichesk",
       "lat": "46.1738642",
@@ -17608,8 +17515,8 @@
     },
     {
       "name": "Strilkove",
-      "name_nt": "",
-      "name_ua": "Стрілкове",
+      "name_nt": "Стрілкове",
+      "name_ua": "Стрелковое",
       "region_id": "UA-KS",
       "city_id": "strilkove",
       "lat": "45.8912535",
@@ -17618,7 +17525,7 @@
     },
     {
       "name": "Syvash",
-      "name_nt": "",
+      "name_nt": "Сиваш",
       "name_ua": "Сиваш",
       "region_id": "UA-KS",
       "city_id": "syvash",
@@ -17628,8 +17535,8 @@
     },
     {
       "name": "Pryozerne",
-      "name_nt": "",
-      "name_ua": "Приозерне",
+      "name_nt": "Приозерне",
+      "name_ua": "Приозёрное",
       "region_id": "UA-KS",
       "city_id": "pryozerne",
       "lat": "46.0619274",
@@ -17638,8 +17545,8 @@
     },
     {
       "name": "Zaporizhzhya",
-      "name_nt": "",
-      "name_ua": "Запоріжжя",
+      "name_nt": "Запоріжжя",
+      "name_ua": "Запорожье",
       "region_id": "UA-ZP",
       "city_id": "zaporizhzhya",
       "lat": "47.853487",
@@ -17649,8 +17556,8 @@
     },
     {
       "name": "Melitopol",
-      "name_nt": "",
-      "name_ua": "Мелітополь",
+      "name_nt": "Мелітополь",
+      "name_ua": "Мелитополь",
       "region_id": "UA-ZP",
       "city_id": "melitopol",
       "lat": "46.846339",
@@ -17660,8 +17567,8 @@
     },
     {
       "name": "Stone tomb",
-      "name_nt": "",
-      "name_ua": "Камяна могила",
+      "name_nt": "Камяна могила",
+      "name_ua": "Каменная могила",
       "type": "17",
       "region_id": "UA-ZP",
       "city_id": "stone_tomb",
@@ -17672,8 +17579,8 @@
     },
     {
       "name": "Kirilivka",
-      "name_nt": "",
-      "name_ua": "Кирилівка",
+      "name_nt": "Кирилівка",
+      "name_ua": "Кириловка",
       "region_id": "UA-ZP",
       "city_id": "kirilivka",
       "lat": "46.368253",
@@ -17683,8 +17590,8 @@
     },
     {
       "name": "Terpinnia",
-      "name_nt": "",
-      "name_ua": "Терпіння",
+      "name_nt": "Терпіння",
+      "name_ua": "Терпенье",
       "region_id": "UA-ZP",
       "city_id": "terpinnia",
       "lat": "46.9796595",
@@ -17693,8 +17600,8 @@
     },
     {
       "name": "Vasylivka",
-      "name_nt": "",
-      "name_ua": "Василівка",
+      "name_nt": "Василівка",
+      "name_ua": "Васильевка",
       "region_id": "UA-ZP",
       "city_id": "vasylivka",
       "lat": "47.4428697",
@@ -17703,8 +17610,8 @@
     },
     {
       "name": "Berdyansk",
-      "name_nt": "",
-      "name_ua": "Бердянськ",
+      "name_nt": "Бердянськ",
+      "name_ua": "Бердянск",
       "region_id": "UA-ZP",
       "city_id": "berdyansk",
       "lat": "46.7670529",
@@ -17713,8 +17620,8 @@
     },
     {
       "name": "Rivne",
-      "name_nt": "",
-      "name_ua": "Рівне",
+      "name_nt": "Рівне",
+      "name_ua": "Ровно",
       "region_id": "UA-RV",
       "city_id": "rivne",
       "lat": "50.620172",
@@ -17724,7 +17631,7 @@
     },
     {
       "name": "Ostrog",
-      "name_nt": "",
+      "name_nt": "Острог",
       "name_ua": "Острог",
       "type": "13",
       "region_id": "UA-RV",
@@ -17736,7 +17643,7 @@
     },
     {
       "name": "Ostrog",
-      "name_nt": "",
+      "name_nt": "Острог",
       "name_ua": "Острог",
       "region_id": "UA-RV",
       "city_id": "ostrog_city",
@@ -17747,8 +17654,8 @@
     },
     {
       "name": "Mezhirich",
-      "name_nt": "",
-      "name_ua": "Межиріч",
+      "name_nt": "Межиріч",
+      "name_ua": "Межирич",
       "region_id": "UA-RV",
       "city_id": "mezhirich",
       "lat": "50.301292",
@@ -17758,7 +17665,7 @@
     },
     {
       "name": "Dubno",
-      "name_nt": "",
+      "name_nt": "Дубно",
       "name_ua": "Дубно",
       "type": "13",
       "region_id": "UA-RV",
@@ -17770,7 +17677,7 @@
     },
     {
       "name": "Dubno",
-      "name_nt": "",
+      "name_nt": "Дубно",
       "name_ua": "Дубно",
       "region_id": "UA-RV",
       "city_id": "dubno_city",
@@ -17781,7 +17688,7 @@
     },
     {
       "name": "Klevan",
-      "name_nt": "",
+      "name_nt": "Клевань",
       "name_ua": "Клевань",
       "region_id": "UA-RV",
       "city_id": "klevan",
@@ -17792,8 +17699,8 @@
     },
     {
       "name": "Korets",
-      "name_nt": "",
-      "name_ua": "Корець",
+      "name_nt": "Корець",
+      "name_ua": "Корец",
       "region_id": "UA-RV",
       "city_id": "korets",
       "lat": "50.617014",
@@ -17803,8 +17710,8 @@
     },
     {
       "name": "Tarakaniv fort",
-      "name_nt": "",
-      "name_ua": "Тараканівський форт",
+      "name_nt": "Тараканівський форт",
+      "name_ua": "Таракановский форт",
       "region_id": "UA-RV",
       "city_id": "tarakaniv_fort",
       "lat": "50.3632548",
@@ -17814,8 +17721,8 @@
     },
     {
       "name": "Sarny",
-      "name_nt": "",
-      "name_ua": "Сарни",
+      "name_nt": "Сарни",
+      "name_ua": "Сарны",
       "region_id": "UA-RV",
       "city_id": "sarny",
       "lat": "51.3354172",
@@ -17825,8 +17732,8 @@
     },
     {
       "name": "Odesa",
-      "name_nt": "",
-      "name_ua": "Одеса",
+      "name_nt": "Одеса",
+      "name_ua": "Одесса",
       "region_id": "UA-OD",
       "city_id": "odesa",
       "lat": "46.482556",
@@ -17836,8 +17743,8 @@
     },
     {
       "name": "Belgorog-Dnistrovskiy",
-      "name_nt": "",
-      "name_ua": "Белгород-Дністровський",
+      "name_nt": "Белгород-Дністровський",
+      "name_ua": "Белгород-Днестровски",
       "region_id": "UA-OD",
       "city_id": "belgorog-dnistrovskiy",
       "lat": "46.198369",
@@ -17847,8 +17754,8 @@
     },
     {
       "name": "Izmail",
-      "name_nt": "",
-      "name_ua": "Ізмаїл",
+      "name_nt": "Ізмаїл",
+      "name_ua": "Измаил",
       "region_id": "UA-OD",
       "city_id": "izmail",
       "lat": "45.352628",
@@ -17858,8 +17765,8 @@
     },
     {
       "name": "Vilcove",
-      "name_nt": "",
-      "name_ua": "Вилкове",
+      "name_nt": "Вилкове",
+      "name_ua": "Вилково",
       "region_id": "UA-OD",
       "city_id": "vilcove",
       "lat": "45.398209",
@@ -17869,7 +17776,7 @@
     },
     {
       "name": "Dunai",
-      "name_nt": "",
+      "name_nt": "Дунай",
       "name_ua": "Дунай",
       "type": "18",
       "region_id": "UA-OD",
@@ -17881,7 +17788,7 @@
     },
     {
       "name": "Zatoka",
-      "name_nt": "",
+      "name_nt": "Затока",
       "name_ua": "Затока",
       "region_id": "UA-OD",
       "city_id": "zatoka",
@@ -17892,8 +17799,8 @@
     },
     {
       "name": "Lebedivka",
-      "name_nt": "",
-      "name_ua": "Лебедівка",
+      "name_nt": "Лебедівка",
+      "name_ua": "Лебедевка",
       "region_id": "UA-OD",
       "city_id": "lebedivka",
       "lat": "45.82583",
@@ -17902,7 +17809,7 @@
     },
     {
       "name": "Shabo",
-      "name_nt": "",
+      "name_nt": "Шабо",
       "name_ua": "Шабо",
       "region_id": "UA-OD",
       "city_id": "shabo",
@@ -17912,8 +17819,8 @@
     },
     {
       "name": "Prymorske",
-      "name_nt": "",
-      "name_ua": "Приморське",
+      "name_nt": "Приморське",
+      "name_ua": "Приморское",
       "region_id": "UA-OD",
       "city_id": "prymorske",
       "lat": "45.5287087",
@@ -17922,8 +17829,8 @@
     },
     {
       "name": "Kiliia",
-      "name_nt": "",
-      "name_ua": "Кілія",
+      "name_nt": "Кілія",
+      "name_ua": "Килия",
       "region_id": "UA-OD",
       "city_id": "kiliia",
       "lat": "45.4660111",
@@ -17932,7 +17839,7 @@
     },
     {
       "name": "Bolhrad",
-      "name_nt": "",
+      "name_nt": "Болград",
       "name_ua": "Болград",
       "region_id": "UA-OD",
       "city_id": "bolhrad",
@@ -17942,8 +17849,8 @@
     },
     {
       "name": "Stara Nekrassiwka",
-      "name_nt": "",
-      "name_ua": "Стара Некрасівка",
+      "name_nt": "Стара Некрасівка",
+      "name_ua": "Старая Некрасовка",
       "region_id": "UA-OD",
       "city_id": "staranekrassiwka",
       "lat": "45.3382388",
@@ -17952,8 +17859,8 @@
     },
     {
       "name": "Krynytschne",
-      "name_nt": "",
-      "name_ua": "Криничне",
+      "name_nt": "Криничне",
+      "name_ua": "Криничное",
       "region_id": "UA-OD",
       "city_id": "krynytschne",
       "lat": "45.5359917",
@@ -17962,8 +17869,8 @@
     },
     {
       "name": "Hlyboke",
-      "name_nt": "",
-      "name_ua": "Глибоке",
+      "name_nt": "Глибоке",
+      "name_ua": "Глубокое",
       "region_id": "UA-OD",
       "city_id": "hlyboke",
       "lat": "45.7300416",
@@ -17972,8 +17879,8 @@
     },
     {
       "name": "Vasylivka",
-      "name_nt": "",
-      "name_ua": "Василівка",
+      "name_nt": "Василівка",
+      "name_ua": "Васильевка",
       "region_id": "UA-OD",
       "city_id": "vasylivka_od",
       "lat": "46.6088097",
@@ -17982,8 +17889,8 @@
     },
     {
       "name": "Usatove",
-      "name_nt": "",
-      "name_ua": "Усатове",
+      "name_nt": "Усатове",
+      "name_ua": "Усатово",
       "region_id": "UA-OD",
       "city_id": "usatove",
       "lat": "46.5342239",
@@ -17992,8 +17899,8 @@
     },
     {
       "name": "Chornomorsk",
-      "name_nt": "",
-      "name_ua": "Чорноморськ",
+      "name_nt": "Чорноморськ",
+      "name_ua": "Черноморск",
       "region_id": "UA-OD",
       "city_id": "chornomorsk",
       "lat": "46.297265",
@@ -18002,8 +17909,8 @@
     },
     {
       "name": "Hrybivka",
-      "name_nt": "",
-      "name_ua": "Грибівка",
+      "name_nt": "Грибівка",
+      "name_ua": "Грибовка",
       "region_id": "UA-OD",
       "city_id": "hrybivka",
       "lat": "46.2069278",
@@ -18012,8 +17919,8 @@
     },
     {
       "name": "Anan'iv",
-      "name_nt": "",
-      "name_ua": "Ананьїв",
+      "name_nt": "Ананьїв",
+      "name_ua": "Ананьев",
       "region_id": "UA-OD",
       "city_id": "ananiv",
       "lat": "47.7086611",
@@ -18022,8 +17929,8 @@
     },
     {
       "name": "Podilsk",
-      "name_nt": "",
-      "name_ua": "Поді́льськ",
+      "name_nt": "Поді́льськ",
+      "name_ua": "Подольск",
       "region_id": "UA-OD",
       "city_id": "podilsk",
       "lat": "47.7432906",
@@ -18032,7 +17939,7 @@
     },
     {
       "name": "Balta",
-      "name_nt": "",
+      "name_nt": "Балта",
       "name_ua": "Балта",
       "region_id": "UA-OD",
       "city_id": "balta",
@@ -18042,8 +17949,8 @@
     },
     {
       "name": "Donetsk",
-      "name_nt": "",
-      "name_ua": "Донецьк",
+      "name_nt": "Донецьк",
+      "name_ua": "Донецк",
       "region_id": "UA-DT",
       "city_id": "donetsk",
       "lat": "48.017946",
@@ -18053,8 +17960,8 @@
     },
     {
       "name": "Sviatogirsk",
-      "name_nt": "",
-      "name_ua": "Святогірськ",
+      "name_nt": "Святогірськ",
+      "name_ua": "Святогорск",
       "region_id": "UA-DT",
       "city_id": "sviatogirsk",
       "lat": "49.038768",
@@ -18064,8 +17971,8 @@
     },
     {
       "name": "Artyomsol",
-      "name_nt": "",
-      "name_ua": "Артемсіль",
+      "name_nt": "Артемсіль",
+      "name_ua": "Артёмсоль",
       "type": "10",
       "region_id": "UA-DT",
       "city_id": "soledar",
@@ -18076,7 +17983,7 @@
     },
     {
       "name": "Soledar",
-      "name_nt": "",
+      "name_nt": "Соледар",
       "name_ua": "Соледар",
       "region_id": "UA-DT",
       "city_id": "soledar_city",
@@ -18087,8 +17994,8 @@
     },
     {
       "name": "Dokucharvsk",
-      "name_nt": "",
-      "name_ua": "Докучаєвськ",
+      "name_nt": "Докучаєвськ",
+      "name_ua": "Докучаевск",
       "region_id": "UA-DT",
       "city_id": "dokucharvsk",
       "lat": "47.758714",
@@ -18098,8 +18005,8 @@
     },
     {
       "name": "Reserve \"Stone Graves\"",
-      "name_nt": "",
-      "name_ua": "Заповідник \"Каменні могили\"",
+      "name_nt": "Заповідник \"Каменні могили\"",
+      "name_ua": "Заповедник \"Ка́менные могилы\"",
       "region_id": "UA-DT",
       "city_id": "stonegraves",
       "lat": "47.3063923",
@@ -18108,8 +18015,8 @@
     },
     {
       "name": "Mariupol",
-      "name_nt": "",
-      "name_ua": "Маріуполь",
+      "name_nt": "Маріуполь",
+      "name_ua": "Мариуполь",
       "region_id": "UA-DT",
       "city_id": "mariupol",
       "lat": "47.0973616",
@@ -18118,8 +18025,8 @@
     },
     {
       "name": "Borispil",
-      "name_nt": "",
-      "name_ua": "Бориспіль",
+      "name_nt": "Бориспіль",
+      "name_ua": "Борисполь",
       "region_id": "UA-KV",
       "city_id": "borispil",
       "lat": "50.352471",
@@ -18129,8 +18036,8 @@
     },
     {
       "name": "Brovary",
-      "name_nt": "",
-      "name_ua": "Бровари",
+      "name_nt": "Бровари",
+      "name_ua": "Бровары",
       "region_id": "UA-KV",
       "city_id": "brovary",
       "lat": "50.509278",
@@ -18140,8 +18047,8 @@
     },
     {
       "name": "Obuhiv",
-      "name_nt": "",
-      "name_ua": "Обухів",
+      "name_nt": "Обухів",
+      "name_ua": "Обухов",
       "region_id": "UA-KV",
       "city_id": "obuhiv",
       "lat": "50.1104439",
@@ -18151,8 +18058,8 @@
     },
     {
       "name": "Ukrainka",
-      "name_nt": "",
-      "name_ua": "Українка",
+      "name_nt": "Українка",
+      "name_ua": "Украинка",
       "region_id": "UA-KV",
       "city_id": "ukrainka",
       "lat": "50.153586",
@@ -18162,8 +18069,8 @@
     },
     {
       "name": "Vishgorog",
-      "name_nt": "",
-      "name_ua": "Вишгодор",
+      "name_nt": "Вишгодор",
+      "name_ua": "Вышгород",
       "region_id": "UA-KV",
       "city_id": "vishgorog",
       "lat": "50.583782",
@@ -18173,8 +18080,8 @@
     },
     {
       "name": "Vasilkiv",
-      "name_nt": "",
-      "name_ua": "Васильків",
+      "name_nt": "Васильків",
+      "name_ua": "Васильков",
       "region_id": "UA-KV",
       "city_id": "vasilkiv",
       "lat": "50.179317",
@@ -18184,7 +18091,7 @@
     },
     {
       "name": "Pereiaslav",
-      "name_nt": "",
+      "name_nt": "Переяслав",
       "name_ua": "Переяслав",
       "region_id": "UA-KV",
       "city_id": "pereiaslav",
@@ -18195,8 +18102,8 @@
     },
     {
       "name": "Fastiv",
-      "name_nt": "",
-      "name_ua": "Фастів",
+      "name_nt": "Фастів",
+      "name_ua": "Фастов",
       "region_id": "UA-KV",
       "city_id": "fastiv",
       "lat": "50.081489",
@@ -18206,8 +18113,8 @@
     },
     {
       "name": "Bila Tserkva",
-      "name_nt": "",
-      "name_ua": "Біла Церква",
+      "name_nt": "Біла Церква",
+      "name_ua": "Белая Церковь",
       "region_id": "UA-KV",
       "city_id": "bila_tserkva",
       "lat": "49.803206",
@@ -18217,8 +18124,8 @@
     },
     {
       "name": "Parhomivka",
-      "name_nt": "",
-      "name_ua": "Пархомівка",
+      "name_nt": "Пархомівка",
+      "name_ua": "Пархомовка",
       "region_id": "UA-KV",
       "city_id": "parhomivka",
       "lat": "49.5536208",
@@ -18228,7 +18135,7 @@
     },
     {
       "name": "Boyarka",
-      "name_nt": "",
+      "name_nt": "Боярка",
       "name_ua": "Боярка",
       "region_id": "UA-KV",
       "city_id": "boyarka",
@@ -18239,7 +18146,7 @@
     },
     {
       "name": "Skvira",
-      "name_nt": "",
+      "name_nt": "Сквира",
       "name_ua": "Сквира",
       "region_id": "UA-KV",
       "city_id": "skvira",
@@ -18250,7 +18157,7 @@
     },
     {
       "name": "Slavutich",
-      "name_nt": "",
+      "name_nt": "Славутич",
       "name_ua": "Славутич",
       "region_id": "UA-KV",
       "city_id": "slavutich",
@@ -18261,7 +18168,7 @@
     },
     {
       "name": "Bohuslav",
-      "name_nt": "",
+      "name_nt": "Богуслав",
       "name_ua": "Богуслав",
       "region_id": "UA-KV",
       "city_id": "bohuslav",
@@ -18272,8 +18179,8 @@
     },
     {
       "name": "Vishneve",
-      "name_nt": "",
-      "name_ua": "Вишнве",
+      "name_nt": "Вишнве",
+      "name_ua": "Вишневое",
       "region_id": "UA-KV",
       "city_id": "vishneve",
       "lat": "50.395825",
@@ -18283,8 +18190,8 @@
     },
     {
       "name": "Hodosovka",
-      "name_nt": "",
-      "name_ua": "Ходосівка",
+      "name_nt": "Ходосівка",
+      "name_ua": "Ходосовка",
       "region_id": "UA-KV",
       "city_id": "hodosovka",
       "lat": "50.280016",
@@ -18294,7 +18201,7 @@
     },
     {
       "name": "Kruglik",
-      "name_nt": "",
+      "name_nt": "Круглик",
       "name_ua": "Круглик",
       "region_id": "UA-KV",
       "city_id": "kruglik",
@@ -18305,7 +18212,7 @@
     },
     {
       "name": "Kremenische",
-      "name_nt": "",
+      "name_nt": "Кременище",
       "name_ua": "Кременище",
       "region_id": "UA-KV",
       "city_id": "kremenische",
@@ -18316,7 +18223,7 @@
     },
     {
       "name": "Gorenka",
-      "name_nt": "",
+      "name_nt": "Горенка",
       "name_ua": "Горенка",
       "region_id": "UA-KV",
       "city_id": "gorenka",
@@ -18327,8 +18234,8 @@
     },
     {
       "name": "Yurivka",
-      "name_nt": "",
-      "name_ua": "Юрівка",
+      "name_nt": "Юрівка",
+      "name_ua": "Юровка",
       "region_id": "UA-KV",
       "city_id": "yurivka",
       "lat": "50.336641",
@@ -18338,8 +18245,8 @@
     },
     {
       "name": "Chabany",
-      "name_nt": "",
-      "name_ua": "Чабани",
+      "name_nt": "Чабани",
+      "name_ua": "Чабаны",
       "region_id": "UA-KV",
       "city_id": "chabany",
       "lat": "50.340585",
@@ -18349,7 +18256,7 @@
     },
     {
       "name": "Yasnogorodka",
-      "name_nt": "",
+      "name_nt": "Ясногородка",
       "name_ua": "Ясногородка",
       "region_id": "UA-KV",
       "city_id": "yasnogorodka",
@@ -18360,8 +18267,8 @@
     },
     {
       "name": "Kovalivka",
-      "name_nt": "",
-      "name_ua": "Ковалівка",
+      "name_nt": "Ковалівка",
+      "name_ua": "Ковалевка",
       "region_id": "UA-KV",
       "city_id": "kovalivka",
       "lat": "49.986331",
@@ -18371,7 +18278,7 @@
     },
     {
       "name": "Pilipcha",
-      "name_nt": "",
+      "name_nt": "Пилипча",
       "name_ua": "Пилипча",
       "region_id": "UA-KV",
       "city_id": "pilipcha",
@@ -18382,8 +18289,8 @@
     },
     {
       "name": "Shamraivka",
-      "name_nt": "",
-      "name_ua": "Шамраївка",
+      "name_nt": "Шамраївка",
+      "name_ua": "Шамраевка",
       "region_id": "UA-KV",
       "city_id": "shamraivka",
       "lat": "49.773172",
@@ -18393,8 +18300,8 @@
     },
     {
       "name": "Gatne",
-      "name_nt": "",
-      "name_ua": "Гатне",
+      "name_nt": "Гатне",
+      "name_ua": "Гатное",
       "region_id": "UA-KV",
       "city_id": "gatne",
       "lat": "50.35897",
@@ -18404,8 +18311,8 @@
     },
     {
       "name": "Tripillia",
-      "name_nt": "",
-      "name_ua": "Трипілля",
+      "name_nt": "Трипілля",
+      "name_ua": "Триполье",
       "region_id": "UA-KV",
       "city_id": "tripillia",
       "lat": "50.120248",
@@ -18415,8 +18322,8 @@
     },
     {
       "name": "Novi Petrivtsi",
-      "name_nt": "",
-      "name_ua": "Нові Петрівці",
+      "name_nt": "Нові Петрівці",
+      "name_ua": "Новые Петровцы",
       "region_id": "UA-KV",
       "city_id": "novipetrivtsi",
       "lat": "50.623056",
@@ -18426,7 +18333,7 @@
     },
     {
       "name": "Buki",
-      "name_nt": "",
+      "name_nt": "Буки",
       "name_ua": "Буки",
       "region_id": "UA-KV",
       "city_id": "buki_kyivobl",
@@ -18437,8 +18344,8 @@
     },
     {
       "name": "National memorial complex «Bukryns’kiy Bridgehead»",
-      "name_nt": "",
-      "name_ua": "Національний музей-меморіальний комплекс «Букринський плацдарм»",
+      "name_nt": "Національний музей-меморіальний комплекс «Букринський плацдарм»",
+      "name_ua": "Национальный музей-мемориальный комплекс «Букринский плацдарм»",
       "region_id": "UA-KV",
       "city_id": "bukrinplatsdarm",
       "lat": "49.9562696",
@@ -18448,8 +18355,8 @@
     },
     {
       "name": "Rzhyshchiv",
-      "name_nt": "",
-      "name_ua": "Ржищів",
+      "name_nt": "Ржищів",
+      "name_ua": "Ржищев",
       "region_id": "UA-KV",
       "city_id": "rzhyshchiv",
       "lat": "49.9701348",
@@ -18459,8 +18366,8 @@
     },
     {
       "name": "Kaharlyk",
-      "name_nt": "",
-      "name_ua": "Кагарлик",
+      "name_nt": "Кагарлик",
+      "name_ua": "Кагарлык",
       "region_id": "UA-KV",
       "city_id": "kaharlyk",
       "lat": "49.8656381",
@@ -18470,8 +18377,8 @@
     },
     {
       "name": "Sulymivka",
-      "name_nt": "",
-      "name_ua": "Сулимівка",
+      "name_nt": "Сулимівка",
+      "name_ua": "Сулимовка",
       "region_id": "UA-KV",
       "city_id": "sulymivka",
       "lat": "50.3980616",
@@ -18480,8 +18387,8 @@
     },
     {
       "name": "Kopyliv",
-      "name_nt": "",
-      "name_ua": "Копилів",
+      "name_nt": "Копилів",
+      "name_ua": "Копылов",
       "region_id": "UA-KV",
       "city_id": "kopyliv",
       "lat": "50.4090337",
@@ -18490,8 +18397,8 @@
     },
     {
       "name": "Tomashivka",
-      "name_nt": "",
-      "name_ua": "Томашівка",
+      "name_nt": "Томашівка",
+      "name_ua": "Томашовка",
       "region_id": "UA-KV",
       "city_id": "tomashivka",
       "lat": "50.198688",
@@ -18500,8 +18407,8 @@
     },
     {
       "name": "Vytachiv",
-      "name_nt": "",
-      "name_ua": "Витачів",
+      "name_nt": "Витачів",
+      "name_ua": "Витачов",
       "region_id": "UA-KV",
       "city_id": "vitachev",
       "lat": "50.1131801",
@@ -18510,7 +18417,7 @@
     },
     {
       "name": "Bucha",
-      "name_nt": "",
+      "name_nt": "Буча",
       "name_ua": "Буча",
       "region_id": "UA-KV",
       "city_id": "bucha",
@@ -18520,8 +18427,8 @@
     },
     {
       "name": "Irpin",
-      "name_nt": "",
-      "name_ua": "Ірпінь",
+      "name_nt": "Ірпінь",
+      "name_ua": "Ирпень",
       "region_id": "UA-KV",
       "city_id": "irpin",
       "lat": "50.5162299",
@@ -18530,8 +18437,8 @@
     },
     {
       "name": "Sucholutschtschja",
-      "name_nt": "",
-      "name_ua": "Мисливське угіддя \"Сухолуччя\"",
+      "name_nt": "Мисливське угіддя \"Сухолуччя\"",
+      "name_ua": "Сухолучье",
       "region_id": "UA-KV",
       "city_id": "sucholutschtschja",
       "lat": "51.0155857",
@@ -18540,8 +18447,8 @@
     },
     {
       "name": "Protsiv",
-      "name_nt": "",
-      "name_ua": "Проців",
+      "name_nt": "Проців",
+      "name_ua": "Процев",
       "region_id": "UA-KV",
       "city_id": "protsiv",
       "lat": "50.2423821",
@@ -18550,8 +18457,8 @@
     },
     {
       "name": "Byshiv",
-      "name_nt": "",
-      "name_ua": "Бишів",
+      "name_nt": "Бишів",
+      "name_ua": "Бишев",
       "region_id": "UA-KV",
       "city_id": "byshiv",
       "lat": "50.266973",
@@ -18560,8 +18467,8 @@
     },
     {
       "name": "Makariv",
-      "name_nt": "",
-      "name_ua": "Макарів",
+      "name_nt": "Макарів",
+      "name_ua": "Макаров",
       "region_id": "UA-KV",
       "city_id": "makariv",
       "lat": "50.461491",
@@ -18570,7 +18477,7 @@
     },
     {
       "name": "Borodianka",
-      "name_nt": "",
+      "name_nt": "Бородянка",
       "name_ua": "Бородянка",
       "region_id": "UA-KV",
       "city_id": "borodianka",
@@ -18580,7 +18487,7 @@
     },
     {
       "name": "Vorzel",
-      "name_nt": "",
+      "name_nt": "Ворзель",
       "name_ua": "Ворзель",
       "region_id": "UA-KV",
       "city_id": "vorzel",
@@ -18590,8 +18497,8 @@
     },
     {
       "name": "Baryshivka",
-      "name_nt": "",
-      "name_ua": "Баришівка",
+      "name_nt": "Баришівка",
+      "name_ua": "Барышевка",
       "region_id": "UA-KV",
       "city_id": "baryshivka",
       "lat": "50.367387",
@@ -18600,8 +18507,8 @@
     },
     {
       "name": "Lukashi",
-      "name_nt": "",
-      "name_ua": "Лукаші",
+      "name_nt": "Лукаші",
+      "name_ua": "Лукаши",
       "region_id": "UA-KV",
       "city_id": "lukashi",
       "lat": "50.460485",
@@ -18610,8 +18517,8 @@
     },
     {
       "name": "Velyka Dymerka",
-      "name_nt": "",
-      "name_ua": "Велика Димерка",
+      "name_nt": "Велика Димерка",
+      "name_ua": "Великая Дымерка",
       "region_id": "UA-KV",
       "city_id": "velykadymerka",
       "lat": "50.591361",
@@ -18620,8 +18527,8 @@
     },
     {
       "name": "Ternopil",
-      "name_nt": "",
-      "name_ua": "Тернопіль",
+      "name_nt": "Тернопіль",
+      "name_ua": "Тернополь",
       "region_id": "UA-TP",
       "city_id": "ternopil",
       "lat": "49.559516",
@@ -18631,8 +18538,8 @@
     },
     {
       "name": "Kremenets",
-      "name_nt": "",
-      "name_ua": "Кремінець",
+      "name_nt": "Кремінець",
+      "name_ua": "Кременец",
       "region_id": "UA-TP",
       "city_id": "kremenets",
       "lat": "50.0955528",
@@ -18642,7 +18549,7 @@
     },
     {
       "name": "Zbarazh",
-      "name_nt": "",
+      "name_nt": "Збараж",
       "name_ua": "Збараж",
       "region_id": "UA-TP",
       "city_id": "zbarazh",
@@ -18653,8 +18560,8 @@
     },
     {
       "name": "Pochaiv",
-      "name_nt": "",
-      "name_ua": "Почаїв",
+      "name_nt": "Почаїв",
+      "name_ua": "Почаев",
       "region_id": "UA-TP",
       "city_id": "pochaiv",
       "lat": "50.001009",
@@ -18664,8 +18571,8 @@
     },
     {
       "name": "Mlinki",
-      "name_nt": "",
-      "name_ua": "Млинки",
+      "name_nt": "Млинки",
+      "name_ua": "Млынки",
       "type": "9",
       "region_id": "UA-TP",
       "city_id": "zalissia",
@@ -18676,8 +18583,8 @@
     },
     {
       "name": "Bilokrynytsya",
-      "name_nt": "",
-      "name_ua": "Білокриниця",
+      "name_nt": "Білокриниця",
+      "name_ua": "Белокриница",
       "region_id": "UA-TP",
       "city_id": "bilokrinitsa",
       "lat": "50.144383",
@@ -18686,8 +18593,8 @@
     },
     {
       "name": "Vyshnivets",
-      "name_nt": "",
-      "name_ua": "Вишнівець",
+      "name_nt": "Вишнівець",
+      "name_ua": "Вишневец",
       "region_id": "UA-TP",
       "city_id": "vishnivets",
       "lat": "49.9068043",
@@ -18696,8 +18603,8 @@
     },
     {
       "name": "Berezhany",
-      "name_nt": "",
-      "name_ua": "Бережани",
+      "name_nt": "Бережани",
+      "name_ua": "Бережаны",
       "region_id": "UA-TP",
       "city_id": "berezhany",
       "lat": "49.4438092",
@@ -18706,8 +18613,8 @@
     },
     {
       "name": "Chortkiv",
-      "name_nt": "",
-      "name_ua": "Чортків",
+      "name_nt": "Чортків",
+      "name_ua": "Чортков",
       "region_id": "UA-TP",
       "city_id": "chortkiv",
       "lat": "49.0170051",
@@ -18716,8 +18623,8 @@
     },
     {
       "name": "Zalishchyky",
-      "name_nt": "",
-      "name_ua": "Заліщики",
+      "name_nt": "Заліщики",
+      "name_ua": "Залещики",
       "region_id": "UA-TP",
       "city_id": "zalischiki",
       "lat": "48.6503166",
@@ -18726,8 +18633,8 @@
     },
     {
       "name": "Chervonohorod Castle",
-      "name_nt": "",
-      "name_ua": "Червоногродський замок",
+      "name_nt": "Червоногродський замок",
+      "name_ua": "Червоногродский замок",
       "region_id": "UA-TP",
       "city_id": "chervonogorod",
       "lat": "48.8047554",
@@ -18736,8 +18643,8 @@
     },
     {
       "name": "Nahiryanka",
-      "name_nt": "",
-      "name_ua": "Нагірянка",
+      "name_nt": "Нагірянка",
+      "name_ua": "Нагорянка",
       "region_id": "UA-TP",
       "city_id": "nagorianka",
       "lat": "48.9335506",
@@ -18746,7 +18653,7 @@
     },
     {
       "name": "Dolyna",
-      "name_nt": "",
+      "name_nt": "Долина",
       "name_ua": "Долина",
       "region_id": "UA-TP",
       "city_id": "dolina",
@@ -18756,8 +18663,8 @@
     },
     {
       "name": "Budaniv",
-      "name_nt": "",
-      "name_ua": "Буданів",
+      "name_nt": "Буданів",
+      "name_ua": "Буданов",
       "region_id": "UA-TP",
       "city_id": "budanov",
       "lat": "49.1622091",
@@ -18766,7 +18673,7 @@
     },
     {
       "name": "Terebovlya",
-      "name_nt": "",
+      "name_nt": "Теребовля",
       "name_ua": "Теребовля",
       "region_id": "UA-TP",
       "city_id": "terebovlia",
@@ -18776,8 +18683,8 @@
     },
     {
       "name": "Pidhora",
-      "name_nt": "",
-      "name_ua": "Підгора",
+      "name_nt": "Підгора",
+      "name_ua": "Подгора",
       "region_id": "UA-TP",
       "city_id": "podgora",
       "lat": "49.2796553",
@@ -18786,8 +18693,8 @@
     },
     {
       "name": "Mykulyntsi",
-      "name_nt": "",
-      "name_ua": "Микулинці",
+      "name_nt": "Микулинці",
+      "name_ua": "Микуленцы",
       "region_id": "UA-TP",
       "city_id": "mikulintsi",
       "lat": "49.395554",
@@ -18796,8 +18703,8 @@
     },
     {
       "name": "Zarvanytsya",
-      "name_nt": "",
-      "name_ua": "Зарваниця",
+      "name_nt": "Зарваниця",
+      "name_ua": "Зарваница",
       "region_id": "UA-TP",
       "city_id": "zarvanitsa",
       "lat": "49.2245096",
@@ -18806,8 +18713,8 @@
     },
     {
       "name": "Pidzamochok",
-      "name_nt": "",
-      "name_ua": "Підзамочок",
+      "name_nt": "Підзамочок",
+      "name_ua": "Подзамочек",
       "region_id": "UA-TP",
       "city_id": "pidzamochok",
       "lat": "49.0771642",
@@ -18816,7 +18723,7 @@
     },
     {
       "name": "Buchach",
-      "name_nt": "",
+      "name_nt": "Бучач",
       "name_ua": "Бучач",
       "region_id": "UA-TP",
       "city_id": "buchach",
@@ -18826,8 +18733,8 @@
     },
     {
       "name": "Yazlovets",
-      "name_nt": "",
-      "name_ua": "Язловець",
+      "name_nt": "Язловець",
+      "name_ua": "Язловец",
       "region_id": "UA-TP",
       "city_id": "yazlovets",
       "lat": "48.9608849",
@@ -18836,8 +18743,8 @@
     },
     {
       "name": "Zolotyi Potik",
-      "name_nt": "",
-      "name_ua": "Золотий Потік",
+      "name_nt": "Золотий Потік",
+      "name_ua": "Золотой Поток",
       "region_id": "UA-TP",
       "city_id": "zolotyipotik",
       "lat": "48.9086643",
@@ -18846,8 +18753,8 @@
     },
     {
       "name": "Koropets",
-      "name_nt": "",
-      "name_ua": "Коропець",
+      "name_nt": "Коропець",
+      "name_ua": "Коропец",
       "region_id": "UA-TP",
       "city_id": "koropets",
       "lat": "48.9342436",
@@ -18856,7 +18763,7 @@
     },
     {
       "name": "Skalat",
-      "name_nt": "",
+      "name_nt": "Скалат",
       "name_ua": "Скалат",
       "region_id": "UA-TP",
       "city_id": "skalat",
@@ -18866,7 +18773,7 @@
     },
     {
       "name": "Uzhgorod",
-      "name_nt": "",
+      "name_nt": "Ужгород",
       "name_ua": "Ужгород",
       "region_id": "UA-ZK",
       "city_id": "uzhgorod",
@@ -18877,8 +18784,8 @@
     },
     {
       "name": "Mukacheve",
-      "name_nt": "",
-      "name_ua": "Мукачеве",
+      "name_nt": "Мукачеве",
+      "name_ua": "Мукачево",
       "region_id": "UA-ZK",
       "city_id": "mukacheve",
       "lat": "48.438084",
@@ -18888,8 +18795,8 @@
     },
     {
       "name": "Rahiv",
-      "name_nt": "",
-      "name_ua": "Рахів",
+      "name_nt": "Рахів",
+      "name_ua": "Рахов",
       "region_id": "UA-ZK",
       "city_id": "rahiv",
       "lat": "48.062823",
@@ -18899,7 +18806,7 @@
     },
     {
       "name": "Goverla",
-      "name_nt": "",
+      "name_nt": "Говерла",
       "name_ua": "Говерла",
       "type": "7",
       "region_id": "UA-ZK",
@@ -18911,7 +18818,7 @@
     },
     {
       "name": "Goverla",
-      "name_nt": "",
+      "name_nt": "Говерла",
       "name_ua": "Говерла",
       "region_id": "UA-ZK",
       "city_id": "goverla",
@@ -18922,8 +18829,8 @@
     },
     {
       "name": "Dilove",
-      "name_nt": "",
-      "name_ua": "Ділове",
+      "name_nt": "Ділове",
+      "name_ua": "Деловое",
       "region_id": "UA-ZK",
       "city_id": "dilove",
       "lat": "47.936299",
@@ -18933,7 +18840,7 @@
     },
     {
       "name": "Chop",
-      "name_nt": "",
+      "name_nt": "Чоп",
       "name_ua": "Чоп",
       "region_id": "UA-ZK",
       "city_id": "chop",
@@ -18944,8 +18851,8 @@
     },
     {
       "name": "Tiachiv",
-      "name_nt": "",
-      "name_ua": "Тячів",
+      "name_nt": "Тячів",
+      "name_ua": "Тячев",
       "region_id": "UA-ZK",
       "city_id": "tiachiv",
       "lat": "48.01542",
@@ -18955,8 +18862,8 @@
     },
     {
       "name": "Solotvine",
-      "name_nt": "",
-      "name_ua": "Солотвине",
+      "name_nt": "Солотвине",
+      "name_ua": "Солотвино",
       "region_id": "UA-ZK",
       "city_id": "solotvine",
       "lat": "47.961767",
@@ -18966,7 +18873,7 @@
     },
     {
       "name": "Hust",
-      "name_nt": "",
+      "name_nt": "Хуст",
       "name_ua": "Хуст",
       "region_id": "UA-ZK",
       "city_id": "hust",
@@ -18977,8 +18884,8 @@
     },
     {
       "name": "Oleksandrivka",
-      "name_nt": "",
-      "name_ua": "Олександрівка",
+      "name_nt": "Олександрівка",
+      "name_ua": "Александровка",
       "region_id": "UA-ZK",
       "city_id": "oleksandrivka",
       "lat": "48.137683",
@@ -18988,8 +18895,8 @@
     },
     {
       "name": "Danilove",
-      "name_nt": "",
-      "name_ua": "Данилове",
+      "name_nt": "Данилове",
+      "name_ua": "Данилово",
       "region_id": "UA-ZK",
       "city_id": "danilove",
       "lat": "48.147649",
@@ -18999,8 +18906,8 @@
     },
     {
       "name": "Kraynikove",
-      "name_nt": "",
-      "name_ua": "Крайникове",
+      "name_nt": "Крайникове",
+      "name_ua": "Крайниково",
       "region_id": "UA-ZK",
       "city_id": "kraynikove",
       "lat": "48.118434",
@@ -19010,8 +18917,8 @@
     },
     {
       "name": "Sokirnitsa",
-      "name_nt": "",
-      "name_ua": "Сокирниця",
+      "name_nt": "Сокирниця",
+      "name_ua": "Сокирница",
       "region_id": "UA-ZK",
       "city_id": "sokirnitsa",
       "lat": "48.123362",
@@ -19021,8 +18928,8 @@
     },
     {
       "name": "Valley of Narciss",
-      "name_nt": "",
-      "name_ua": "Долина нарцисів",
+      "name_nt": "Долина нарцисів",
+      "name_ua": "Долина нарциссов",
       "type": "18",
       "region_id": "UA-ZK",
       "city_id": "kireshi",
@@ -19033,8 +18940,8 @@
     },
     {
       "name": "Chornohory",
-      "name_nt": "",
-      "name_ua": "Чорногори",
+      "name_nt": "Чорногори",
+      "name_ua": "Черногоры",
       "type": "18",
       "region_id": "UA-ZK",
       "city_id": "chernogora_massif",
@@ -19045,8 +18952,8 @@
     },
     {
       "name": "Sunevir",
-      "name_nt": "",
-      "name_ua": "Синевір",
+      "name_nt": "Синевір",
+      "name_ua": "Синевир",
       "type": "18",
       "region_id": "UA-ZK",
       "city_id": "sunevir",
@@ -19057,8 +18964,8 @@
     },
     {
       "name": "Carpathians",
-      "name_nt": "",
-      "name_ua": "Карпати",
+      "name_nt": "Карпати",
+      "name_ua": "Карпаты",
       "region_id": "UA-ZK",
       "city_id": "shenborn_castle",
       "lat": "48.52462",
@@ -19068,8 +18975,8 @@
     },
     {
       "name": "Volovets",
-      "name_nt": "",
-      "name_ua": "Воловець",
+      "name_nt": "Воловець",
+      "name_ua": "Воловец",
       "region_id": "UA-ZK",
       "city_id": "volovets",
       "lat": "48.714185",
@@ -19079,8 +18986,8 @@
     },
     {
       "name": "Vishka",
-      "name_nt": "",
-      "name_ua": "Вишка",
+      "name_nt": "Вишка",
+      "name_ua": "Вышка",
       "region_id": "UA-ZK",
       "city_id": "vishka",
       "lat": "48.935582",
@@ -19090,8 +18997,8 @@
     },
     {
       "name": "Pilipets",
-      "name_nt": "",
-      "name_ua": "Пилипець",
+      "name_nt": "Пилипець",
+      "name_ua": "Пилипец",
       "region_id": "UA-ZK",
       "city_id": "pilipets",
       "lat": "48.6701692",
@@ -19101,8 +19008,8 @@
     },
     {
       "name": "Verhniy Bistriy",
-      "name_nt": "",
-      "name_ua": "Верхній Бистрий",
+      "name_nt": "Верхній Бистрий",
+      "name_ua": "Верхний Быстрый",
       "region_id": "UA-ZK",
       "city_id": "verh_bistriy",
       "lat": "48.627236",
@@ -19112,8 +19019,8 @@
     },
     {
       "name": "Kvasi",
-      "name_nt": "",
-      "name_ua": "Кваси",
+      "name_nt": "Кваси",
+      "name_ua": "Квасы",
       "region_id": "UA-ZK",
       "city_id": "kvasi",
       "lat": "48.156238",
@@ -19123,7 +19030,7 @@
     },
     {
       "name": "Petros",
-      "name_nt": "",
+      "name_nt": "Петрос",
       "name_ua": "Петрос",
       "type": "7",
       "region_id": "UA-ZK",
@@ -19135,7 +19042,7 @@
     },
     {
       "name": "Brebeneskul",
-      "name_nt": "",
+      "name_nt": "Бребенескул",
       "name_ua": "Бребенескул",
       "type": "7",
       "region_id": "UA-ZK",
@@ -19147,8 +19054,8 @@
     },
     {
       "name": "Ivano-Frankivsk",
-      "name_nt": "",
-      "name_ua": "Івано-Франківськ",
+      "name_nt": "Івано-Франківськ",
+      "name_ua": "Ивано-Франковск",
       "region_id": "UA-IF",
       "city_id": "ivano-frankivsk",
       "lat": "48.919792",
@@ -19158,8 +19065,8 @@
     },
     {
       "name": "Sevulia Great",
-      "name_nt": "",
-      "name_ua": "Сивуля Велика",
+      "name_nt": "Сивуля Велика",
+      "name_ua": "Сивуля Большая",
       "type": "7",
       "region_id": "UA-IF",
       "city_id": "large_sevulia_mountain",
@@ -19170,8 +19077,8 @@
     },
     {
       "name": "Sevulia Low",
-      "name_nt": "",
-      "name_ua": "Сивуля Мала",
+      "name_nt": "Сивуля Мала",
+      "name_ua": "Сивуля Малая",
       "type": "7",
       "region_id": "UA-IF",
       "city_id": "low_sevulia_mountain",
@@ -19182,8 +19089,8 @@
     },
     {
       "name": "Black Kleva",
-      "name_nt": "",
-      "name_ua": "Чорна Клива",
+      "name_nt": "Чорна Клива",
+      "name_ua": "Черная Клыва",
       "type": "7",
       "region_id": "UA-IF",
       "city_id": "black_kleva_mountain",
@@ -19194,8 +19101,8 @@
     },
     {
       "name": "Nesamovite",
-      "name_nt": "",
-      "name_ua": "Несамовите",
+      "name_nt": "Несамовите",
+      "name_ua": "Неистовое",
       "type": "1",
       "region_id": "UA-IF",
       "city_id": "nesamovite_lake",
@@ -19206,8 +19113,8 @@
     },
     {
       "name": "Pip Ivan",
-      "name_nt": "",
-      "name_ua": "Піп Іван",
+      "name_nt": "Піп Іван",
+      "name_ua": "Поп Иван",
       "type": "7",
       "region_id": "UA-IF",
       "city_id": "pip_ivan_mountain",
@@ -19218,7 +19125,7 @@
     },
     {
       "name": "Palianitsa",
-      "name_nt": "",
+      "name_nt": "Паляниця",
       "name_ua": "Паляниця",
       "region_id": "UA-IF",
       "city_id": "palianitsa",
@@ -19229,7 +19136,7 @@
     },
     {
       "name": "Yablunitsa",
-      "name_nt": "",
+      "name_nt": "Яблуниця",
       "name_ua": "Яблуниця",
       "region_id": "UA-IF",
       "city_id": "yablunitsa",
@@ -19240,7 +19147,7 @@
     },
     {
       "name": "Yaremche",
-      "name_nt": "",
+      "name_nt": "Яремче",
       "name_ua": "Яремче",
       "region_id": "UA-IF",
       "city_id": "yaremche",
@@ -19251,8 +19158,8 @@
     },
     {
       "name": "Nadvirna",
-      "name_nt": "",
-      "name_ua": "Надвирна",
+      "name_nt": "Надвирна",
+      "name_ua": "Надворная",
       "region_id": "UA-IF",
       "city_id": "nadvirna",
       "lat": "48.630866",
@@ -19262,7 +19169,7 @@
     },
     {
       "name": "Kalush",
-      "name_nt": "",
+      "name_nt": "Калуш",
       "name_ua": "Калуш",
       "region_id": "UA-IF",
       "city_id": "kalush",
@@ -19273,7 +19180,7 @@
     },
     {
       "name": "Maniava",
-      "name_nt": "",
+      "name_nt": "Манява",
       "name_ua": "Манява",
       "region_id": "UA-IF",
       "city_id": "maniava",
@@ -19284,8 +19191,8 @@
     },
     {
       "name": "Kosiv",
-      "name_nt": "",
-      "name_ua": "Косів",
+      "name_nt": "Косів",
+      "name_ua": "Косов",
       "region_id": "UA-IF",
       "city_id": "kosov",
       "lat": "48.3180395",
@@ -19294,8 +19201,8 @@
     },
     {
       "name": "Kolomyya",
-      "name_nt": "",
-      "name_ua": "Коломия",
+      "name_nt": "Коломия",
+      "name_ua": "Коломыя",
       "region_id": "UA-IF",
       "city_id": "kolomiya",
       "lat": "48.5333646",
@@ -19304,8 +19211,8 @@
     },
     {
       "name": "Krylos",
-      "name_nt": "",
-      "name_ua": "Крилос",
+      "name_nt": "Крилос",
+      "name_ua": "Крылос",
       "region_id": "UA-IF",
       "city_id": "krilos",
       "lat": "49.0870496",
@@ -19314,7 +19221,7 @@
     },
     {
       "name": "Halych",
-      "name_nt": "",
+      "name_nt": "Галич",
       "name_ua": "Галич",
       "region_id": "UA-IF",
       "city_id": "galich",
@@ -19324,7 +19231,7 @@
     },
     {
       "name": "Shevchenkove",
-      "name_nt": "",
+      "name_nt": "Шевченкове",
       "name_ua": "Шевченкове",
       "region_id": "UA-IF",
       "city_id": "shevchenkoveif",
@@ -19334,7 +19241,7 @@
     },
     {
       "name": "Rohatyn",
-      "name_nt": "",
+      "name_nt": "Рогатин",
       "name_ua": "Рогатин",
       "region_id": "UA-IF",
       "city_id": "rogatin",
@@ -19344,8 +19251,8 @@
     },
     {
       "name": "Dovbush rocks",
-      "name_nt": "",
-      "name_ua": "Скелі Довбуша",
+      "name_nt": "Скелі Довбуша",
+      "name_ua": "Скалы Довбуша",
       "region_id": "UA-IF",
       "city_id": "dovbushrocks",
       "lat": "49.0435651",
@@ -19354,8 +19261,8 @@
     },
     {
       "name": "Mykolayiv",
-      "name_nt": "",
-      "name_ua": "Миколаїв",
+      "name_nt": "Миколаїв",
+      "name_ua": "Николаев",
       "region_id": "UA-MY",
       "city_id": "mykolayiv",
       "lat": "46.975568",
@@ -19365,8 +19272,8 @@
     },
     {
       "name": "Pervomaysk",
-      "name_nt": "",
-      "name_ua": "Первомайськ",
+      "name_nt": "Первомайськ",
+      "name_ua": "Первомайск",
       "region_id": "UA-MY",
       "city_id": "pervomaysk",
       "lat": "48.047562",
@@ -19376,8 +19283,8 @@
     },
     {
       "name": "Yuzhnoukrainsk",
-      "name_nt": "",
-      "name_ua": "Южноукраїнськ",
+      "name_nt": "Южноукраїнськ",
+      "name_ua": "Южноукраинск",
       "region_id": "UA-MY",
       "city_id": "yuzhnoukrainsk",
       "lat": "47.82422",
@@ -19387,8 +19294,8 @@
     },
     {
       "name": "Ochakiv",
-      "name_nt": "",
-      "name_ua": "Очаків",
+      "name_nt": "Очаків",
+      "name_ua": "Очаков",
       "region_id": "UA-MY",
       "city_id": "ochakiv",
       "lat": "46.611479",
@@ -19398,7 +19305,7 @@
     },
     {
       "name": "Beresan",
-      "name_nt": "",
+      "name_nt": "Березань",
       "name_ua": "Березань",
       "type": "16",
       "region_id": "UA-MY",
@@ -19410,8 +19317,8 @@
     },
     {
       "name": "Olbia",
-      "name_nt": "",
-      "name_ua": "Ольвія",
+      "name_nt": "Ольвія",
+      "name_ua": "Ольвия",
       "type": "16",
       "region_id": "UA-MY",
       "city_id": "olvia",
@@ -19422,8 +19329,8 @@
     },
     {
       "name": "Pelahiivka",
-      "name_nt": "",
-      "name_ua": "Пелагіївка",
+      "name_nt": "Пелагіївка",
+      "name_ua": "Пелагеевка",
       "region_id": "UA-MY",
       "city_id": "pelahiivka",
       "lat": "47.7322074",
@@ -19432,7 +19339,7 @@
     },
     {
       "name": "Poltava",
-      "name_nt": "",
+      "name_nt": "Полтава",
       "name_ua": "Полтава",
       "region_id": "UA-PL",
       "city_id": "poltava",
@@ -19443,8 +19350,8 @@
     },
     {
       "name": "Velika Bahachka",
-      "name_nt": "",
-      "name_ua": "Велика Багачка",
+      "name_nt": "Велика Багачка",
+      "name_ua": "Великая Багачка",
       "region_id": "UA-PL",
       "city_id": "velika_bahachka",
       "lat": "49.796336",
@@ -19454,7 +19361,7 @@
     },
     {
       "name": "Dikanka",
-      "name_nt": "",
+      "name_nt": "Диканька",
       "name_ua": "Диканька",
       "region_id": "UA-PL",
       "city_id": "dikanka",
@@ -19465,8 +19372,8 @@
     },
     {
       "name": "Veliki Sorochentsi",
-      "name_nt": "",
-      "name_ua": "Великі Сороченці",
+      "name_nt": "Великі Сороченці",
+      "name_ua": "Великие Сорочинцы",
       "region_id": "UA-PL",
       "city_id": "veliki_sorochentsi",
       "lat": "50.019983",
@@ -19476,8 +19383,8 @@
     },
     {
       "name": "Gogolove",
-      "name_nt": "",
-      "name_ua": "Гоголеве",
+      "name_nt": "Гоголеве",
+      "name_ua": "Гоголево",
       "region_id": "UA-PL",
       "city_id": "gogolove",
       "lat": "49.820044",
@@ -19487,8 +19394,8 @@
     },
     {
       "name": "Lubny",
-      "name_nt": "",
-      "name_ua": "Лубни",
+      "name_nt": "Лубни",
+      "name_ua": "Лубны",
       "region_id": "UA-PL",
       "city_id": "lubny",
       "lat": "50.017888",
@@ -19498,8 +19405,8 @@
     },
     {
       "name": "Mgar",
-      "name_nt": "",
-      "name_ua": "Мгар",
+      "name_nt": "Мгар",
+      "name_ua": "Мгарь",
       "region_id": "UA-PL",
       "city_id": "mgar",
       "lat": "50.0359775",
@@ -19509,7 +19416,7 @@
     },
     {
       "name": "Piriatin",
-      "name_nt": "",
+      "name_nt": "Пирятин",
       "name_ua": "Пирятин",
       "region_id": "UA-PL",
       "city_id": "piriatin",
@@ -19520,8 +19427,8 @@
     },
     {
       "name": "Beresova Rudka",
-      "name_nt": "",
-      "name_ua": "Березова Рудка",
+      "name_nt": "Березова Рудка",
+      "name_ua": "Березовая Рудка",
       "region_id": "UA-PL",
       "city_id": "beresova_rudka",
       "lat": "50.3124071",
@@ -19531,8 +19438,8 @@
     },
     {
       "name": "Komendantivka",
-      "name_nt": "",
-      "name_ua": "Комендантівка",
+      "name_nt": "Комендантівка",
+      "name_ua": "Комендантовка",
       "region_id": "UA-PL",
       "city_id": "komendantivka",
       "lat": "49.065115",
@@ -19541,7 +19448,7 @@
     },
     {
       "name": "Kozelshchyna",
-      "name_nt": "",
+      "name_nt": "Козельщина",
       "name_ua": "Козельщина",
       "region_id": "UA-PL",
       "city_id": "kozelshchyna",
@@ -19551,7 +19458,7 @@
     },
     {
       "name": "Myrhorod",
-      "name_nt": "",
+      "name_nt": "Миргород",
       "name_ua": "Миргород",
       "region_id": "UA-PL",
       "city_id": "mirgorod",
@@ -19561,8 +19468,8 @@
     },
     {
       "name": "Khomutets",
-      "name_nt": "",
-      "name_ua": "Хомутець",
+      "name_nt": "Хомутець",
+      "name_ua": "Хомутец",
       "region_id": "UA-PL",
       "city_id": "khomutets",
       "lat": "50.0614435",
@@ -19571,8 +19478,8 @@
     },
     {
       "name": "Chernihiv",
-      "name_nt": "",
-      "name_ua": "Чернігів",
+      "name_nt": "Чернігів",
+      "name_ua": "Чернигов",
       "region_id": "UA-CH",
       "city_id": "chernihiv",
       "lat": "51.492286",
@@ -19582,8 +19489,8 @@
     },
     {
       "name": "Nizhin",
-      "name_nt": "",
-      "name_ua": "Ніжин",
+      "name_nt": "Ніжин",
+      "name_ua": "Нежин",
       "region_id": "UA-CH",
       "city_id": "nizhin",
       "lat": "51.039019",
@@ -19593,8 +19500,8 @@
     },
     {
       "name": "Novgorod-Siverskiy",
-      "name_nt": "",
-      "name_ua": "Новгород-Сіверський",
+      "name_nt": "Новгород-Сіверський",
+      "name_ua": "Новгород-Сиверский",
       "region_id": "UA-CH",
       "city_id": "novgorod-siverskiy",
       "lat": "52.004117",
@@ -19604,7 +19511,7 @@
     },
     {
       "name": "Priluki",
-      "name_nt": "",
+      "name_nt": "Прилуки",
       "name_ua": "Прилуки",
       "region_id": "UA-CH",
       "city_id": "priluki",
@@ -19615,8 +19522,8 @@
     },
     {
       "name": "Gustinia",
-      "name_nt": "",
-      "name_ua": "Густиня",
+      "name_nt": "Густиня",
+      "name_ua": "Густынь",
       "region_id": "UA-CH",
       "city_id": "gustinia",
       "lat": "50.640861",
@@ -19626,8 +19533,8 @@
     },
     {
       "name": "Kozelets",
-      "name_nt": "",
-      "name_ua": "Козелець",
+      "name_nt": "Козелець",
+      "name_ua": "Козелец",
       "region_id": "UA-CH",
       "city_id": "kozelets",
       "lat": "50.911151",
@@ -19637,8 +19544,8 @@
     },
     {
       "name": "Sokirintsy",
-      "name_nt": "",
-      "name_ua": "Сокиринці",
+      "name_nt": "Сокиринці",
+      "name_ua": "Сокиринцы",
       "region_id": "UA-CH",
       "city_id": "sokirintsy",
       "lat": "50.697762",
@@ -19648,8 +19555,8 @@
     },
     {
       "name": "Trostianets",
-      "name_nt": "",
-      "name_ua": "Тростянець",
+      "name_nt": "Тростянець",
+      "name_ua": "Тростянец",
       "type": "15",
       "region_id": "UA-CH",
       "city_id": "trostyanets",
@@ -19660,8 +19567,8 @@
     },
     {
       "name": "Kachanivka",
-      "name_nt": "",
-      "name_ua": "Качанівка",
+      "name_nt": "Качанівка",
+      "name_ua": "Качановка",
       "region_id": "UA-CH",
       "city_id": "kachanivka",
       "lat": "50.840636",
@@ -19671,7 +19578,7 @@
     },
     {
       "name": "Desna",
-      "name_nt": "",
+      "name_nt": "Десна",
       "name_ua": "Десна",
       "type": "2",
       "region_id": "UA-CH",
@@ -19683,7 +19590,7 @@
     },
     {
       "name": "Baturin",
-      "name_nt": "",
+      "name_nt": "Батурин",
       "name_ua": "Батурин",
       "region_id": "UA-CH",
       "city_id": "baturin",
@@ -19694,8 +19601,8 @@
     },
     {
       "name": "Kruty Heroes Memorial",
-      "name_nt": "",
-      "name_ua": "Меморіальний комплекс «Пам'яті героїв Крут»",
+      "name_nt": "Меморіальний комплекс «Пам'яті героїв Крут»",
+      "name_ua": "Мемориал памяти героев Крут",
       "region_id": "UA-CH",
       "city_id": "kruty",
       "lat": "51.081049",
@@ -19705,8 +19612,8 @@
     },
     {
       "name": "Ichnia",
-      "name_nt": "",
-      "name_ua": "Ічня",
+      "name_nt": "Ічня",
+      "name_ua": "Ичня",
       "region_id": "UA-CH",
       "city_id": "ichnia",
       "lat": "50.8617883",
@@ -19715,8 +19622,8 @@
     },
     {
       "name": "St. George Danivskii Convent",
-      "name_nt": "",
-      "name_ua": "Георгіївський Данівський жіночий монастир",
+      "name_nt": "Георгіївський Данівський жіночий монастир",
+      "name_ua": "Георгиевский Даневский женский монастырь",
       "region_id": "UA-CH",
       "city_id": "danivskiiconvent",
       "lat": "50.8763712",
@@ -19725,8 +19632,8 @@
     },
     {
       "name": "Sedniv",
-      "name_nt": "",
-      "name_ua": "Седнів",
+      "name_nt": "Седнів",
+      "name_ua": "Седнев",
       "region_id": "UA-CH",
       "city_id": "sedniv",
       "lat": "51.6442197",
@@ -19736,7 +19643,7 @@
     },
     {
       "name": "Oster",
-      "name_nt": "",
+      "name_nt": "Остер",
       "name_ua": "Остер",
       "region_id": "UA-CH",
       "city_id": "oster",
@@ -19746,8 +19653,8 @@
     },
     {
       "name": "Vyshen'ky",
-      "name_nt": "",
-      "name_ua": "Вишеньки",
+      "name_nt": "Вишеньки",
+      "name_ua": "Вишенки",
       "region_id": "UA-CH",
       "city_id": "vyshenky",
       "lat": "51.6441301",
@@ -19756,8 +19663,8 @@
     },
     {
       "name": "Museum \"Hannyna Deserts\"",
-      "name_nt": "",
-      "name_ua": "Музей-заповідник П. Куліша «Ганнина Пустинь»",
+      "name_nt": "Музей-заповідник П. Куліша «Ганнина Пустинь»",
+      "name_ua": "Музей-заповедник П. Кулиша «Ганнина Пустынь»",
       "region_id": "UA-CH",
       "city_id": "hanninapustin",
       "lat": "51.2494889",
@@ -19766,8 +19673,8 @@
     },
     {
       "name": "Sumy",
-      "name_nt": "",
-      "name_ua": "Суми",
+      "name_nt": "Суми",
+      "name_ua": "Сумы",
       "region_id": "UA-SM",
       "city_id": "sumy",
       "lat": "50.912125",
@@ -19777,8 +19684,8 @@
     },
     {
       "name": "Trostianets",
-      "name_nt": "",
-      "name_ua": "Тростянець",
+      "name_nt": "Тростянець",
+      "name_ua": "Тростянец",
       "region_id": "UA-SM",
       "city_id": "trostianets",
       "lat": "50.481104",
@@ -19788,8 +19695,8 @@
     },
     {
       "name": "Ohtirka",
-      "name_nt": "",
-      "name_ua": "Охтирка",
+      "name_nt": "Охтирка",
+      "name_ua": "Ахтырка",
       "region_id": "UA-SM",
       "city_id": "ohtirka",
       "lat": "50.299648",
@@ -19799,8 +19706,8 @@
     },
     {
       "name": "Romny",
-      "name_nt": "",
-      "name_ua": "Ромни",
+      "name_nt": "Ромни",
+      "name_ua": "Ромны",
       "region_id": "UA-SM",
       "city_id": "romny",
       "lat": "50.745363",
@@ -19810,7 +19717,7 @@
     },
     {
       "name": "Shostka",
-      "name_nt": "",
+      "name_nt": "Шостка",
       "name_ua": "Шостка",
       "region_id": "UA-SM",
       "city_id": "shostka",
@@ -19821,8 +19728,8 @@
     },
     {
       "name": "Hluhiv",
-      "name_nt": "",
-      "name_ua": "Глухів",
+      "name_nt": "Глухів",
+      "name_ua": "Глухов",
       "region_id": "UA-SM",
       "city_id": "hluhiv",
       "lat": "51.679687",
@@ -19832,7 +19739,7 @@
     },
     {
       "name": "Putivl",
-      "name_nt": "",
+      "name_nt": "Путивль",
       "name_ua": "Путивль",
       "region_id": "UA-SM",
       "city_id": "putivl",
@@ -19843,7 +19750,7 @@
     },
     {
       "name": "Konotop",
-      "name_nt": "",
+      "name_nt": "Конотоп",
       "name_ua": "Конотоп",
       "region_id": "UA-SM",
       "city_id": "konotop",
@@ -19854,7 +19761,7 @@
     },
     {
       "name": "Psel)",
-      "name_nt": "",
+      "name_nt": "Псел",
       "name_ua": "Псел",
       "type": "2",
       "region_id": "UA-SM",
@@ -19866,8 +19773,8 @@
     },
     {
       "name": "Cherkasy",
-      "name_nt": "",
-      "name_ua": "Черкаси",
+      "name_nt": "Черкаси",
+      "name_ua": "Черкассы",
       "region_id": "UA-CK",
       "city_id": "cherkasy",
       "lat": "49.4310306",
@@ -19877,7 +19784,7 @@
     },
     {
       "name": "Uman",
-      "name_nt": "",
+      "name_nt": "Умань",
       "name_ua": "Умань",
       "region_id": "UA-CK",
       "city_id": "uman",
@@ -19888,7 +19795,7 @@
     },
     {
       "name": "Chihirin",
-      "name_nt": "",
+      "name_nt": "Чигирин",
       "name_ua": "Чигирин",
       "region_id": "UA-CK",
       "city_id": "chihirin",
@@ -19899,8 +19806,8 @@
     },
     {
       "name": "Subotiv",
-      "name_nt": "",
-      "name_ua": "Суботів",
+      "name_nt": "Суботів",
+      "name_ua": "Суботов",
       "region_id": "UA-CK",
       "city_id": "subotiv",
       "lat": "49.094103",
@@ -19910,8 +19817,8 @@
     },
     {
       "name": "Kamianka",
-      "name_nt": "",
-      "name_ua": "Камянка",
+      "name_nt": "Камянка",
+      "name_ua": "Каменка",
       "region_id": "UA-CK",
       "city_id": "kamianka",
       "lat": "49.039894",
@@ -19921,8 +19828,8 @@
     },
     {
       "name": "Smila",
-      "name_nt": "",
-      "name_ua": "Сміла",
+      "name_nt": "Сміла",
+      "name_ua": "Смела",
       "region_id": "UA-CK",
       "city_id": "smila",
       "lat": "49.229257",
@@ -19932,7 +19839,7 @@
     },
     {
       "name": "Horodische",
-      "name_nt": "",
+      "name_nt": "Городище",
       "name_ua": "Городище",
       "region_id": "UA-CK",
       "city_id": "horodische",
@@ -19943,8 +19850,8 @@
     },
     {
       "name": "Kaniv",
-      "name_nt": "",
-      "name_ua": "Канів",
+      "name_nt": "Канів",
+      "name_ua": "Канев",
       "region_id": "UA-CK",
       "city_id": "kaniv",
       "lat": "49.754765",
@@ -19954,8 +19861,8 @@
     },
     {
       "name": "Korsun-Shevchenkivskiy",
-      "name_nt": "",
-      "name_ua": "Корсунь-Шевченківський",
+      "name_nt": "Корсунь-Шевченківський",
+      "name_ua": "Корсунь-Шевченковский",
       "region_id": "UA-CK",
       "city_id": "korsun-shevchenkivskiy",
       "lat": "49.4180156",
@@ -19965,8 +19872,8 @@
     },
     {
       "name": "Regional landscape park «Trakhtemyriv»",
-      "name_nt": "",
-      "name_ua": "Регіональний ландшафтний парк «Трахтемирів»",
+      "name_nt": "Регіональний ландшафтний парк «Трахтемирів»",
+      "name_ua": "Региональный ландшафтный парк «Трахтемиров»",
       "region_id": "UA-CK",
       "city_id": "trakhtemyrivpark",
       "lat": "49.9761341",
@@ -19976,7 +19883,7 @@
     },
     {
       "name": "Zolotonosha",
-      "name_nt": "",
+      "name_nt": "Золотоноша",
       "name_ua": "Золотоноша",
       "region_id": "UA-CK",
       "city_id": "zolotonosha",
@@ -19986,8 +19893,8 @@
     },
     {
       "name": "Bakaivka",
-      "name_nt": "",
-      "name_ua": "Бакаївка",
+      "name_nt": "Бакаївка",
+      "name_ua": "Бакаевка",
       "region_id": "UA-CK",
       "city_id": "bakaivka",
       "lat": "49.7052095",
@@ -19996,8 +19903,8 @@
     },
     {
       "name": "Kornilivka",
-      "name_nt": "",
-      "name_ua": "Корнилівка",
+      "name_nt": "Корнилівка",
+      "name_ua": "Корниловка",
       "region_id": "UA-CK",
       "city_id": "kornilivka",
       "lat": "49.4829575",
@@ -20006,8 +19913,8 @@
     },
     {
       "name": "Moshny",
-      "name_nt": "",
-      "name_ua": "Мошни",
+      "name_nt": "Мошни",
+      "name_ua": "Мошны",
       "region_id": "UA-CK",
       "city_id": "moshny",
       "lat": "49.5255208",
@@ -20016,8 +19923,8 @@
     },
     {
       "name": "Chyhyrynsʹka Aes",
-      "name_nt": "",
-      "name_ua": "Чигиринська АЕС",
+      "name_nt": "Чигиринська АЕС",
+      "name_ua": "Чигиринская АЭС",
       "region_id": "UA-CK",
       "city_id": "chyhyrynska_aes",
       "lat": "49.08589",
@@ -20026,8 +19933,8 @@
     },
     {
       "name": "Holy Trinity Monastery Motronynske",
-      "name_nt": "",
-      "name_ua": "Троїцький Матронинський жіночий монастир",
+      "name_nt": "Троїцький Матронинський жіночий монастир",
+      "name_ua": "Свято-Троицкий Мотронинский монастырь",
       "region_id": "UA-CK",
       "city_id": "motronynskiy_monastery",
       "lat": "49.1540008",
@@ -20036,7 +19943,7 @@
     },
     {
       "name": "Buda",
-      "name_nt": "",
+      "name_nt": "Буда",
       "name_ua": "Буда",
       "region_id": "UA-CK",
       "city_id": "buda",
@@ -20046,8 +19953,8 @@
     },
     {
       "name": "Shevchenkove",
-      "name_nt": "",
-      "name_ua": "Шевченкове",
+      "name_nt": "Шевченкове",
+      "name_ua": "Шевченково",
       "region_id": "UA-CK",
       "city_id": "shevchenkove",
       "lat": "49.1921126",
@@ -20056,7 +19963,7 @@
     },
     {
       "name": "Budyshche",
-      "name_nt": "",
+      "name_nt": "Будище",
       "name_ua": "Будище",
       "region_id": "UA-CK",
       "city_id": "budyshche",
@@ -20066,8 +19973,8 @@
     },
     {
       "name": "Moryntsi",
-      "name_nt": "",
-      "name_ua": "Моринці",
+      "name_nt": "Моринці",
+      "name_ua": "Моринцы",
       "region_id": "UA-CK",
       "city_id": "moryntsi",
       "lat": "49.258823",
@@ -20076,8 +19983,8 @@
     },
     {
       "name": "Tal'ne",
-      "name_nt": "",
-      "name_ua": "Тальне",
+      "name_nt": "Тальне",
+      "name_ua": "Тальное",
       "region_id": "UA-CK",
       "city_id": "talne",
       "lat": "48.888219",
@@ -20086,8 +19993,8 @@
     },
     {
       "name": "Khrystynivka",
-      "name_nt": "",
-      "name_ua": "Христи́нівка",
+      "name_nt": "Христи́нівка",
+      "name_ua": "Христиновка",
       "region_id": "UA-CK",
       "city_id": "khrystynivka",
       "lat": "48.8115788",
@@ -20096,7 +20003,7 @@
     },
     {
       "name": "Zhitomir",
-      "name_nt": "",
+      "name_nt": "Житомир",
       "name_ua": "Житомир",
       "region_id": "UA-ZT",
       "city_id": "zhitomir",
@@ -20107,8 +20014,8 @@
     },
     {
       "name": "Berdichiv",
-      "name_nt": "",
-      "name_ua": "Бердичів",
+      "name_nt": "Бердичів",
+      "name_ua": "Бердичев",
       "region_id": "UA-ZT",
       "city_id": "berdichiv",
       "lat": "49.902596",
@@ -20118,8 +20025,8 @@
     },
     {
       "name": "Novograd-Volinskiy",
-      "name_nt": "",
-      "name_ua": "Новоград-Волинський",
+      "name_nt": "Новоград-Волинський",
+      "name_ua": "Новоград-Волынский",
       "region_id": "UA-ZT",
       "city_id": "novograd_volinskiy",
       "lat": "50.586942",
@@ -20129,8 +20036,8 @@
     },
     {
       "name": "Gulsk",
-      "name_nt": "",
-      "name_ua": "Гульськ",
+      "name_nt": "Гульськ",
+      "name_ua": "Гульск",
       "region_id": "UA-ZT",
       "city_id": "gulsk",
       "lat": "50.517356",
@@ -20140,8 +20047,8 @@
     },
     {
       "name": "Andrushivka",
-      "name_nt": "",
-      "name_ua": "Андрушівка",
+      "name_nt": "Андрушівка",
+      "name_ua": "Андрушовка",
       "region_id": "UA-ZT",
       "city_id": "andrushivka",
       "lat": "50.025002",
@@ -20151,8 +20058,8 @@
     },
     {
       "name": "Chervone",
-      "name_nt": "",
-      "name_ua": "Червоне",
+      "name_nt": "Червоне",
+      "name_ua": "Червоное",
       "region_id": "UA-ZT",
       "city_id": "chervone",
       "lat": "49.961601",
@@ -20162,8 +20069,8 @@
     },
     {
       "name": "Stara Kotelnia",
-      "name_nt": "",
-      "name_ua": "Стара Котельня",
+      "name_nt": "Стара Котельня",
+      "name_ua": "Старая Котельня",
       "region_id": "UA-ZT",
       "city_id": "stara_kotelnia",
       "lat": "50.108029",
@@ -20173,8 +20080,8 @@
     },
     {
       "name": "Ivnitsa",
-      "name_nt": "",
-      "name_ua": "Івниця",
+      "name_nt": "Івниця",
+      "name_ua": "Ивница",
       "region_id": "UA-ZT",
       "city_id": "ivnitsa",
       "lat": "50.150946",
@@ -20184,8 +20091,8 @@
     },
     {
       "name": "Radomishl",
-      "name_nt": "",
-      "name_ua": "Радомишль",
+      "name_nt": "Радомишль",
+      "name_ua": "Радомышль",
       "region_id": "UA-ZT",
       "city_id": "radomishl",
       "lat": "50.497268",
@@ -20195,7 +20102,7 @@
     },
     {
       "name": "Korosten",
-      "name_nt": "",
+      "name_nt": "Коростень",
       "name_ua": "Коростень",
       "region_id": "UA-ZT",
       "city_id": "korosten",
@@ -20206,7 +20113,7 @@
     },
     {
       "name": "Ovruch",
-      "name_nt": "",
+      "name_nt": "Овруч",
       "name_ua": "Овруч",
       "region_id": "UA-ZT",
       "city_id": "ovruch",
@@ -20217,8 +20124,8 @@
     },
     {
       "name": "Denishi",
-      "name_nt": "",
-      "name_ua": "Дениши",
+      "name_nt": "Дениши",
+      "name_ua": "Деныши",
       "region_id": "UA-ZT",
       "city_id": "denishi",
       "lat": "50.21547",
@@ -20228,8 +20135,8 @@
     },
     {
       "name": "Trigiria",
-      "name_nt": "",
-      "name_ua": "Тригіря",
+      "name_nt": "Тригіря",
+      "name_ua": "Тригорье",
       "region_id": "UA-ZT",
       "city_id": "trigiria",
       "lat": "50.194704",
@@ -20239,8 +20146,8 @@
     },
     {
       "name": "Korostyshiv",
-      "name_nt": "",
-      "name_ua": "Коростишів",
+      "name_nt": "Коростишів",
+      "name_ua": "Коростышев",
       "region_id": "UA-ZT",
       "city_id": "korostishiv",
       "lat": "50.3192546",
@@ -20249,8 +20156,8 @@
     },
     {
       "name": "Olevsk",
-      "name_nt": "",
-      "name_ua": "Олевськ",
+      "name_nt": "Олевськ",
+      "name_ua": "Олевск",
       "region_id": "UA-ZT",
       "city_id": "olevsk",
       "lat": "51.2212576",
@@ -20259,8 +20166,8 @@
     },
     {
       "name": "Simferopol",
-      "name_nt": "",
-      "name_ua": "Сімферополь",
+      "name_nt": "Сімферополь",
+      "name_ua": "Симферополь",
       "region_id": "UA-KR",
       "city_id": "simferopol",
       "lat": "44.952469",
@@ -20270,7 +20177,7 @@
     },
     {
       "name": "Bakhchisaray",
-      "name_nt": "",
+      "name_nt": "Бахчисарай",
       "name_ua": "Бахчисарай",
       "region_id": "UA-KR",
       "city_id": "bakhchisaray",
@@ -20281,8 +20188,8 @@
     },
     {
       "name": "Simeiz",
-      "name_nt": "",
-      "name_ua": "Симеїз",
+      "name_nt": "Симеїз",
+      "name_ua": "Симеиз",
       "region_id": "UA-KR",
       "city_id": "simeiz",
       "lat": "44.405243",
@@ -20292,7 +20199,7 @@
     },
     {
       "name": "Alupka",
-      "name_nt": "",
+      "name_nt": "Алупка",
       "name_ua": "Алупка",
       "region_id": "UA-KR",
       "city_id": "alupka",
@@ -20303,8 +20210,8 @@
     },
     {
       "name": "Swallow's Nest",
-      "name_nt": "",
-      "name_ua": "Ластівчине гніздо",
+      "name_nt": "Ластівчине гніздо",
+      "name_ua": "Ласточкино гнездо",
       "type": "13",
       "region_id": "UA-KR",
       "city_id": "gaspra",
@@ -20315,7 +20222,7 @@
     },
     {
       "name": "Yalta",
-      "name_nt": "",
+      "name_nt": "Ялта",
       "name_ua": "Ялта",
       "region_id": "UA-KR",
       "city_id": "yalta",
@@ -20326,7 +20233,7 @@
     },
     {
       "name": "Alushta",
-      "name_nt": "",
+      "name_nt": "Алушта",
       "name_ua": "Алушта",
       "region_id": "UA-KR",
       "city_id": "alushta",
@@ -20337,7 +20244,7 @@
     },
     {
       "name": "Djur-Djur",
-      "name_nt": "",
+      "name_nt": "Джур-Джур",
       "name_ua": "Джур-Джур",
       "type": "3",
       "region_id": "UA-KR",
@@ -20349,8 +20256,8 @@
     },
     {
       "name": "Red cave",
-      "name_nt": "",
-      "name_ua": "Червона печера",
+      "name_nt": "Червона печера",
+      "name_ua": "Красная пещера",
       "type": "9",
       "region_id": "UA-KR",
       "city_id": "red_grote",
@@ -20361,8 +20268,8 @@
     },
     {
       "name": "Laspi bay",
-      "name_nt": "",
-      "name_ua": "Бухта Ласпі",
+      "name_nt": "Бухта Ласпі",
+      "name_ua": "Бухта Ласпи",
       "type": "20",
       "region_id": "UA-KR",
       "city_id": "laspi_bay",
@@ -20373,8 +20280,8 @@
     },
     {
       "name": "Evpatoria",
-      "name_nt": "",
-      "name_ua": "Евпаторія",
+      "name_nt": "Евпаторія",
+      "name_ua": "Евпатория",
       "region_id": "UA-KR",
       "city_id": "evpatoria",
       "lat": "45.189296",
@@ -20384,7 +20291,7 @@
     },
     {
       "name": "Donuzlav",
-      "name_nt": "",
+      "name_nt": "Донузлав",
       "name_ua": "Донузлав",
       "type": "1",
       "region_id": "UA-KR",
@@ -20396,8 +20303,8 @@
     },
     {
       "name": "Popivka",
-      "name_nt": "",
-      "name_ua": "Попівка",
+      "name_nt": "Попівка",
+      "name_ua": "Поповка",
       "region_id": "UA-KR",
       "city_id": "popivka",
       "lat": "45.297834",
@@ -20407,8 +20314,8 @@
     },
     {
       "name": "Feodosia",
-      "name_nt": "",
-      "name_ua": "Феодосія",
+      "name_nt": "Феодосія",
+      "name_ua": "Феодосия",
       "region_id": "UA-KR",
       "city_id": "feodosia",
       "lat": "45.027557",
@@ -20418,8 +20325,8 @@
     },
     {
       "name": "Schelkine",
-      "name_nt": "",
-      "name_ua": "Щелкіне",
+      "name_nt": "Щелкіне",
+      "name_ua": "Щелкино",
       "region_id": "UA-KR",
       "city_id": "schelkine",
       "lat": "45.428335",
@@ -20429,7 +20336,7 @@
     },
     {
       "name": "Kazantip",
-      "name_nt": "",
+      "name_nt": "Казантип",
       "name_ua": "Казантип",
       "type": "18",
       "region_id": "UA-KR",
@@ -20441,7 +20348,7 @@
     },
     {
       "name": "Kerch",
-      "name_nt": "",
+      "name_nt": "Керч",
       "name_ua": "Керч",
       "region_id": "UA-KR",
       "city_id": "kerch",
@@ -20452,8 +20359,8 @@
     },
     {
       "name": "Resurrection church",
-      "name_nt": "",
-      "name_ua": "Воскресенська церква",
+      "name_nt": "Воскресенська церква",
+      "name_ua": "Воскресенская церковь",
       "type": "14",
       "region_id": "UA-KR",
       "city_id": "foros_church",
@@ -20464,8 +20371,8 @@
     },
     {
       "name": "Noviy Svit",
-      "name_nt": "",
-      "name_ua": "Новий світ",
+      "name_nt": "Новий світ",
+      "name_ua": "Новый Свет",
       "region_id": "UA-KR",
       "city_id": "noviy_svit",
       "lat": "44.827996",
@@ -20475,7 +20382,7 @@
     },
     {
       "name": "Sudak",
-      "name_nt": "",
+      "name_nt": "Судак",
       "name_ua": "Судак",
       "region_id": "UA-KR",
       "city_id": "sudak",
@@ -20486,7 +20393,7 @@
     },
     {
       "name": "Mangup",
-      "name_nt": "",
+      "name_nt": "Мангуп",
       "name_ua": "Мангуп",
       "type": "16",
       "region_id": "UA-KR",
@@ -20498,8 +20405,8 @@
     },
     {
       "name": "Black river canyon",
-      "name_nt": "",
-      "name_ua": "Чорноріченський каньйон",
+      "name_nt": "Чорноріченський каньйон",
+      "name_ua": "Чернореченский каньон",
       "type": "12",
       "region_id": "UA-KR",
       "city_id": "black_river_kanion",
@@ -20510,8 +20417,8 @@
     },
     {
       "name": "Big canyon",
-      "name_nt": "",
-      "name_ua": "Великий каньйон",
+      "name_nt": "Великий каньйон",
+      "name_ua": "Большой каньон",
       "type": "12",
       "region_id": "UA-KR",
       "city_id": "big_kanion",
@@ -20522,8 +20429,8 @@
     },
     {
       "name": "Sokoline",
-      "name_nt": "",
-      "name_ua": "Соколине",
+      "name_nt": "Соколине",
+      "name_ua": "Соколиное",
       "region_id": "UA-KR",
       "city_id": "sokoline",
       "lat": "44.552986",
@@ -20533,8 +20440,8 @@
     },
     {
       "name": "Bohatir",
-      "name_nt": "",
-      "name_ua": "Богатир",
+      "name_nt": "Богатир",
+      "name_ua": "Богатырь",
       "region_id": "UA-KR",
       "city_id": "bohatir",
       "lat": "44.57873",
@@ -20544,8 +20451,8 @@
     },
     {
       "name": "Demerdji",
-      "name_nt": "",
-      "name_ua": "Демерджі",
+      "name_nt": "Демерджі",
+      "name_ua": "Демерджи",
       "type": "8",
       "region_id": "UA-KR",
       "city_id": "demerdji_mountain",
@@ -20556,7 +20463,7 @@
     },
     {
       "name": "Meganom",
-      "name_nt": "",
+      "name_nt": "Меганом",
       "name_ua": "Меганом",
       "type": "5",
       "region_id": "UA-KR",
@@ -20568,8 +20475,8 @@
     },
     {
       "name": "Ai-Petri",
-      "name_nt": "",
-      "name_ua": "Ай-Петрi",
+      "name_nt": "Ай-Петрi",
+      "name_ua": "Ай-Петри",
       "type": "8",
       "region_id": "UA-KR",
       "city_id": "ay_petri",
@@ -20580,8 +20487,8 @@
     },
     {
       "name": "Lviv",
-      "name_nt": "",
-      "name_ua": "Львів",
+      "name_nt": "Львів",
+      "name_ua": "Львов",
       "region_id": "UA-LV",
       "city_id": "lviv",
       "lat": "49.841525",
@@ -20591,8 +20498,8 @@
     },
     {
       "name": "Truskavets",
-      "name_nt": "",
-      "name_ua": "Трускавець",
+      "name_nt": "Трускавець",
+      "name_ua": "Трускавец",
       "region_id": "UA-LV",
       "city_id": "truskavets",
       "lat": "49.281468",
@@ -20602,7 +20509,7 @@
     },
     {
       "name": "Olesko",
-      "name_nt": "",
+      "name_nt": "Олесько",
       "name_ua": "Олесько",
       "region_id": "UA-LV",
       "city_id": "olesko",
@@ -20613,8 +20520,8 @@
     },
     {
       "name": "Pidgirtsy",
-      "name_nt": "",
-      "name_ua": "Підгірці",
+      "name_nt": "Підгірці",
+      "name_ua": "Подгорцы",
       "region_id": "UA-LV",
       "city_id": "pidgirtsy",
       "lat": "49.94404",
@@ -20624,8 +20531,8 @@
     },
     {
       "name": "Pidkamin",
-      "name_nt": "",
-      "name_ua": "Підкамінь",
+      "name_nt": "Підкамінь",
+      "name_ua": "Подкамень",
       "region_id": "UA-LV",
       "city_id": "pidkamin",
       "lat": "49.9446818",
@@ -20635,7 +20542,7 @@
     },
     {
       "name": "Dobromil",
-      "name_nt": "",
+      "name_nt": "Добромиль",
       "name_ua": "Добромиль",
       "region_id": "UA-LV",
       "city_id": "dobromil",
@@ -20646,8 +20553,8 @@
     },
     {
       "name": "Hiriv",
-      "name_nt": "",
-      "name_ua": "Хирів",
+      "name_nt": "Хирів",
+      "name_ua": "Хыров",
       "region_id": "UA-LV",
       "city_id": "hiriv",
       "lat": "49.534345",
@@ -20657,8 +20564,8 @@
     },
     {
       "name": "Stara Sil",
-      "name_nt": "",
-      "name_ua": "Стара Сіль",
+      "name_nt": "Стара Сіль",
+      "name_ua": "Старая Соль",
       "region_id": "UA-LV",
       "city_id": "stara_sil",
       "lat": "49.489315",
@@ -20668,8 +20575,8 @@
     },
     {
       "name": "Sambir",
-      "name_nt": "",
-      "name_ua": "Самбір",
+      "name_nt": "Самбір",
+      "name_ua": "Самбор",
       "region_id": "UA-LV",
       "city_id": "sambir",
       "lat": "49.517408",
@@ -20679,7 +20586,7 @@
     },
     {
       "name": "Chervonohrad",
-      "name_nt": "",
+      "name_nt": "Червоноград",
       "name_ua": "Червоноград",
       "region_id": "UA-LV",
       "city_id": "chervonohrad",
@@ -20690,7 +20597,7 @@
     },
     {
       "name": "Sokal",
-      "name_nt": "",
+      "name_nt": "Сокаль",
       "name_ua": "Сокаль",
       "region_id": "UA-LV",
       "city_id": "sokal",
@@ -20701,7 +20608,7 @@
     },
     {
       "name": "Belz",
-      "name_nt": "",
+      "name_nt": "Белз",
       "name_ua": "Белз",
       "region_id": "UA-LV",
       "city_id": "belz",
@@ -20712,8 +20619,8 @@
     },
     {
       "name": "Rava Ruska",
-      "name_nt": "",
-      "name_ua": "Рава Руська",
+      "name_nt": "Рава Руська",
+      "name_ua": "Рава Руская",
       "region_id": "UA-LV",
       "city_id": "rava_ruska",
       "lat": "50.235787",
@@ -20723,8 +20630,8 @@
     },
     {
       "name": "Mykolaiv",
-      "name_nt": "",
-      "name_ua": "Миколаїв",
+      "name_nt": "Миколаїв",
+      "name_ua": "Николаев",
       "region_id": "UA-LV",
       "city_id": "mmykolaiv",
       "lat": "49.525208",
@@ -20734,7 +20641,7 @@
     },
     {
       "name": "Dubrova",
-      "name_nt": "",
+      "name_nt": "Дуброва",
       "name_ua": "Дуброва",
       "region_id": "UA-LV",
       "city_id": "dubrova",
@@ -20745,8 +20652,8 @@
     },
     {
       "name": "Stilsko",
-      "name_nt": "",
-      "name_ua": "Стільсько",
+      "name_nt": "Стільсько",
+      "name_ua": "Стильско",
       "region_id": "UA-LV",
       "city_id": "stilsko",
       "lat": "49.54192",
@@ -20756,7 +20663,7 @@
     },
     {
       "name": "Zaklad",
-      "name_nt": "",
+      "name_nt": "Заклад",
       "name_ua": "Заклад",
       "region_id": "UA-LV",
       "city_id": "zaklad",
@@ -20767,8 +20674,8 @@
     },
     {
       "name": "Mostiska",
-      "name_nt": "",
-      "name_ua": "Мостиська",
+      "name_nt": "Мостиська",
+      "name_ua": "Мостиска",
       "region_id": "UA-LV",
       "city_id": "mostiska",
       "lat": "49.793455",
@@ -20778,7 +20685,7 @@
     },
     {
       "name": "Gorodok",
-      "name_nt": "",
+      "name_nt": "Городок",
       "name_ua": "Городок",
       "region_id": "UA-LV",
       "city_id": "gorodok",
@@ -20789,8 +20696,8 @@
     },
     {
       "name": "Sudova Vishnia",
-      "name_nt": "",
-      "name_ua": "Судова Вишня",
+      "name_nt": "Судова Вишня",
+      "name_ua": "Судовая Вишня",
       "region_id": "UA-LV",
       "city_id": "sudova_vishnia",
       "lat": "49.791682",
@@ -20800,8 +20707,8 @@
     },
     {
       "name": "Popovichi",
-      "name_nt": "",
-      "name_ua": "Поповичі",
+      "name_nt": "Поповичі",
+      "name_ua": "Поповичи",
       "region_id": "UA-LV",
       "city_id": "popovichi",
       "lat": "49.7338",
@@ -20811,8 +20718,8 @@
     },
     {
       "name": "Zhovkva",
-      "name_nt": "",
-      "name_ua": "Жовква",
+      "name_nt": "Жовква",
+      "name_ua": "Жолква",
       "region_id": "UA-LV",
       "city_id": "zhovkva",
       "lat": "50.058682",
@@ -20822,8 +20729,8 @@
     },
     {
       "name": "Krehiv",
-      "name_nt": "",
-      "name_ua": "Крехів",
+      "name_nt": "Крехів",
+      "name_ua": "Крехов",
       "region_id": "UA-LV",
       "city_id": "krehiv",
       "lat": "50.051848",
@@ -20833,8 +20740,8 @@
     },
     {
       "name": "Pomoryany",
-      "name_nt": "",
-      "name_ua": "Поморяни",
+      "name_nt": "Поморяни",
+      "name_ua": "Поморяны",
       "region_id": "UA-LV",
       "city_id": "pomoriany",
       "lat": "49.6346505",
@@ -20843,8 +20750,8 @@
     },
     {
       "name": "Zolochiv",
-      "name_nt": "",
-      "name_ua": "Золочів",
+      "name_nt": "Золочів",
+      "name_ua": "Золочев",
       "region_id": "UA-LV",
       "city_id": "zolochiv",
       "lat": "49.8093097",
@@ -20853,8 +20760,8 @@
     },
     {
       "name": "Svirzh",
-      "name_nt": "",
-      "name_ua": "Свірж",
+      "name_nt": "Свірж",
+      "name_ua": "Свирж",
       "region_id": "UA-LV",
       "city_id": "svirzh",
       "lat": "49.6501882",
@@ -20863,8 +20770,8 @@
     },
     {
       "name": "Univ",
-      "name_nt": "",
-      "name_ua": "Унів",
+      "name_nt": "Унів",
+      "name_ua": "Унев",
       "region_id": "UA-LV",
       "city_id": "univ",
       "lat": "49.7145542",
@@ -20873,8 +20780,8 @@
     },
     {
       "name": "Brody",
-      "name_nt": "",
-      "name_ua": "Броди",
+      "name_nt": "Броди",
+      "name_ua": "Броды",
       "region_id": "UA-LV",
       "city_id": "brody",
       "lat": "50.080997",
@@ -20883,8 +20790,8 @@
     },
     {
       "name": "Tartakiw",
-      "name_nt": "",
-      "name_ua": "Тартаків",
+      "name_nt": "Тартаків",
+      "name_ua": "Тартаков",
       "region_id": "UA-LV",
       "city_id": "tartakiw",
       "lat": "50.459444",
@@ -20893,7 +20800,7 @@
     },
     {
       "name": "Potelytsch",
-      "name_nt": "",
+      "name_nt": "Потелич",
       "name_ua": "Потелич",
       "region_id": "UA-LV",
       "city_id": "potelytsch",
@@ -20903,8 +20810,8 @@
     },
     {
       "name": "Stare Selo",
-      "name_nt": "",
-      "name_ua": "Старе Село",
+      "name_nt": "Старе Село",
+      "name_ua": "Старое Село",
       "region_id": "UA-LV",
       "city_id": "stareselo",
       "lat": "49.7066377",
@@ -20913,8 +20820,8 @@
     },
     {
       "name": "Drohobych",
-      "name_nt": "",
-      "name_ua": "Дрогобич",
+      "name_nt": "Дрогобич",
+      "name_ua": "Дрогобыч",
       "region_id": "UA-LV",
       "city_id": "drohobych",
       "lat": "49.3503914",
@@ -20923,8 +20830,8 @@
     },
     {
       "name": "Skhidnytsia",
-      "name_nt": "",
-      "name_ua": "Східниця",
+      "name_nt": "Східниця",
+      "name_ua": "Сходница",
       "region_id": "UA-LV",
       "city_id": "skhidnytsia",
       "lat": "49.2251463",
@@ -20933,7 +20840,7 @@
     },
     {
       "name": "Fortress of Tustan",
-      "name_nt": "",
+      "name_nt": "Тустань",
       "name_ua": "Тустань",
       "region_id": "UA-LV",
       "city_id": "tustan",
@@ -20943,8 +20850,8 @@
     },
     {
       "name": "Stryi",
-      "name_nt": "",
-      "name_ua": "Стрий",
+      "name_nt": "Стрий",
+      "name_ua": "Стрый",
       "region_id": "UA-LV",
       "city_id": "stryi",
       "lat": "49.2575815",
@@ -20953,8 +20860,8 @@
     },
     {
       "name": "Busk",
-      "name_nt": "",
-      "name_ua": "Буськ",
+      "name_nt": "Буськ",
+      "name_ua": "Буск",
       "region_id": "UA-LV",
       "city_id": "busk",
       "lat": "49.967492",
@@ -20963,7 +20870,7 @@
     },
     {
       "name": "Morshyn",
-      "name_nt": "",
+      "name_nt": "Моршин",
       "name_ua": "Моршин",
       "region_id": "UA-LV",
       "city_id": "morshyn",
@@ -20973,8 +20880,8 @@
     },
     {
       "name": "Pidhirtsi",
-      "name_nt": "",
-      "name_ua": "Підгірці",
+      "name_nt": "Підгірці",
+      "name_ua": "Подгорцы",
       "region_id": "UA-LV",
       "city_id": "pidhirtsi_lviv",
       "lat": "49.2539808",
@@ -21945,7 +21852,7 @@
     {
       "name": "Cannes",
       "name_nt": "Cannes",
-      "name_ua": "Канни",
+      "name_ua": "Канны",
       "region_id": "FR-M",
       "city_id": "cannes",
       "lat": "43.5505686",
@@ -22098,7 +22005,7 @@
     {
       "name": "Étretat",
       "name_nt": "Étretat",
-      "name_ua": "Етрета",
+      "name_ua": "Этрета",
       "region_id": "FR-K",
       "city_id": "etretat",
       "lat": "49.7092261",
@@ -22558,7 +22465,7 @@
     {
       "name": "Elche",
       "name_nt": "Elx",
-      "name_ua": "Ельче",
+      "name_ua": "Эльче",
       "region_id": "ES-VC",
       "city_id": "elche",
       "lat": "38.2681394",
@@ -22829,7 +22736,7 @@
     {
       "name": "As Catedrais beach",
       "name_nt": "Praia das Catedrais",
-      "name_ua": "Пляж Кафедральних соборів",
+      "name_ua": "Пляж Кафедральных Соборов",
       "region_id": "ES-GA",
       "city_id": "praiadascatedrais",
       "lat": "43.5540896",
@@ -23029,7 +22936,7 @@
     {
       "name": "Malmo",
       "name_nt": "Malmö",
-      "name_ua": "Мальме",
+      "name_ua": "Мальмё",
       "region_id": "SE-M",
       "city_id": "malmo",
       "lat": "55.6030972",
@@ -23052,7 +22959,7 @@
     {
       "name": "Elsinore",
       "name_nt": "Helsingør",
-      "name_ua": "Гельсінгер",
+      "name_ua": "Хельсингёр",
       "region_id": "DK-84",
       "city_id": "elsinore",
       "lat": "56.034606",
@@ -23924,7 +23831,7 @@
     {
       "name": "Nesebar",
       "name_nt": "Несебър",
-      "name_ua": "Несебир",
+      "name_ua": "Несебыр",
       "region_id": "BG-02",
       "city_id": "nesebar",
       "lat": "42.6601252",
@@ -23976,7 +23883,7 @@
     {
       "name": "Rila Monastery",
       "name_nt": "Манастир «Св. Иван Рилски»",
-      "name_ua": "Рильський монастир",
+      "name_ua": "Рильский монастырь",
       "region_id": "BG-10",
       "city_id": "rilskyimonastir",
       "lat": "42.1333069",
@@ -24042,7 +23949,7 @@
     {
       "name": "Shouf Biosphere Reserve Barouk Cedar Forest",
       "name_nt": "طريق باروك - جب جنين",
-      "name_ua": "Кедровий заповідник «еш-Шуф»",
+      "name_ua": "Кедровый заповедник «эш-Шуф»",
       "region_id": "LB-JL",
       "city_id": "soufreserve",
       "lat": "33.6852798",
@@ -24055,7 +23962,7 @@
     {
       "name": "Deir El Qamar",
       "name_nt": "دير القمر",
-      "name_ua": "Дейр-ель-Камар",
+      "name_ua": "Дейр-эль-Камар",
       "region_id": "LB-JL",
       "city_id": "deirelqamar",
       "lat": "33.6975345",
@@ -24068,7 +23975,7 @@
     {
       "name": "Athens",
       "name_nt": "Αθήνα",
-      "name_ua": "Афіни",
+      "name_ua": "Афины",
       "region_id": "GR-I",
       "city_id": "athens",
       "lat": "37.9719185",
@@ -24082,7 +23989,7 @@
     {
       "name": "Mycenae",
       "name_nt": "Μυκήνες",
-      "name_ua": "Мікени",
+      "name_ua": "Микены",
       "region_id": "GR-J",
       "city_id": "mycenae",
       "lat": "37.7304137",
@@ -24095,7 +24002,7 @@
     {
       "name": "Epidaurus",
       "name_nt": "Επίδαυρος",
-      "name_ua": "Епідавр",
+      "name_ua": "Эпидавр",
       "region_id": "GR-J",
       "city_id": "epidaurus",
       "lat": "37.596684",
@@ -24313,7 +24220,7 @@
     {
       "name": "Dzhety Oguz canyon",
       "name_nt": "Жети-Өгүз",
-      "name_ua": "Ущелина Джети-Огуз",
+      "name_ua": "Джеты-Огузское ущелье",
       "region_id": "KG-Y",
       "city_id": "dzhetyoguz",
       "lat": "42.3312186",

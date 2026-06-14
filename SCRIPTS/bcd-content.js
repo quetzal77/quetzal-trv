@@ -187,6 +187,7 @@ function populateContent(callback) {
            if (data.country[i].country_id == country_id) {
                this.type = "country";
                this.country_id = data.country[i].country_id;
+               this.country_type_id = data.country[i].country_type_id;
                this.short_name = data.country[i].short_name;
                this.name = data.country[i].name;
                this.name_nt = data.country[i].name_nt;
@@ -198,13 +199,6 @@ function populateContent(callback) {
                this.flag_img = data.country[i].flag_img;
                this.emb_img = data.country[i].emb_img;
                this.map_img = data.country[i].map_img;
-               this.getContinentName = function () {
-                   for (var i = 0; i < data.continent.length; i++){
-                       if (data.continent[i].country_id == this.continent_id) {
-                           return this.name_ua;
-                       }
-                   }
-               }
                this.getNumberOfVisitedCities = function (continent_id) {
                    var result = 0;
                    for (var i = 0; i < regionsVisited.length; i++){

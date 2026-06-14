@@ -9,14 +9,15 @@ function createCityPage_HTML(cityId) {
     local.push(cityId, city[0]);
 
     // Set url
-    window.history.pushState("object or string", "Title", "index.html?cityId="+cityId);
+    if (skipPushState) { skipPushState = false; }
+    else { window.history.pushState("object or string", "Title", "index.html?cityId="+cityId); }
 
     //Add Country main content
     document.getElementById("mainSection").innerHTML = "<div class='countrylabel h3'>" + local[1].setFullCityName() + "</div>" +
                                                          HTML_CityDetais(cityId)
 
     //Highlight the active section in the navbar
-    setActiveNav("navCities");
+    setActiveNav();
 
     //Add copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "&copy; 2011-" + new Date().getFullYear() + ", Slavutskyy Oleksiy";
@@ -64,7 +65,7 @@ function HTML_CityDetais(cityId) {
     if (city.image != "" && city.image != null){
         imagesList += "<b>Фото:</b><br>";
         $.each (city.image.split(","), function( i, image ){
-            imagesList += "<img src='IMG/" + image + "' class='city_photo img-thumbnail' />"
+            imagesList += "<img src='IMG/" + image + "' class='city_photo' />"
         });
     }
     result += "<div class='countrydetail'>" + imagesList + "</div>";
