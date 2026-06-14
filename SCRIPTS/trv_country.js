@@ -18,10 +18,13 @@ function createCountryPage_HTML(countryId) {
     "<div class='countrylabel h3'>" + local[1].setFullCountryName() + "</div>" +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
-    "<div class='switchlink_l float_l'>Мої локації...</div>" +
-    "<div class='switchlink float_l'><a id='" + countryId + "'title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
-    "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
+    "<div class='switchlink_l'>Мої локації...</div>" +
+    "<div class='switchlink'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+    getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(country[0]);
+
+    //Highlight the active section in the navbar
+    setActiveNav("navCountries");
 
     //Creation of world map
     drawMap();
@@ -36,9 +39,24 @@ function getCountryDetails_HTML() {
     var result = "";
     var country = local[1];
 
-    //01. Total number of visited cities
-    result += "<div class='countrydetail'><b>Усього відвідано:</b> " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()) +
-              " (" + setRegionsNumberWithCorrectEnd(country.getNumberOfVisitedRegions()) + ")</div>";
+    //01. Visited locations · visited/total regions, with a home-page-style progress bar
+    var visitedRegions = country.getNumberOfVisitedRegions();
+    var totalRegions = 0;
+    $.each (data.area, function( i, area ){
+        if (area.country_id == country.country_id && area.active != "N") { totalRegions += 1; }
+    });
+    var regionsHtml = (totalRegions > 0)
+        ? "<b>" + visitedRegions + "</b> з <b>" + totalRegions + "</b> регіонів"
+        : setRegionsNumberWithCorrectEnd(visitedRegions);
+    var regionsBar = (totalRegions > 0)
+        ? "<div class='cont-progress'><span style='width:" + Math.min(100, Math.round(visitedRegions / totalRegions * 100)) + "%'></span></div>"
+        : "";
+    var allRegionsTrophy = (totalRegions > 0 && visitedRegions >= totalRegions)
+        ? " <span class='regions-trophy' title='Усі регіони відвідано!'>🏆</span>"
+        : "";
+    result += "<div class='countrydetail'><b>Усього відвідано:</b> " +
+              setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities(), true) +
+              " · " + regionsHtml + regionsBar + allRegionsTrophy + "</div>";
 
     //02.-03. Stories and Photos
     var ListOfStories = "";
@@ -84,7 +102,6 @@ function getCountryDetails_HTML() {
     result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>Звіти:</b> " + ListOfStories + "</div>" : "";
 
     result += (photoAlbumLinks.length > 0) ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
-    //"<a href='http://quetzal.io.ua/album558954' title='Тирана, Дуррес, Шкодер' target='_blank'>27.авг.2012; </a></div>";
 
     //04. Link to technical information
     var techinfo_1 = "";
@@ -103,43 +120,42 @@ function getCountryDetails_HTML() {
     }
 
     result += "<div id='countryList' style='display:none;'>" + techinfo_1 + "</div>" +
-    "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>" +
-    "</div>";
+    "<div id='cityList' style='display:none;'>" + techinfo_2 + "</div>";
 
     return result;
 }
 
 //05.03 Creation of Flag and Emblem section
 function getFlagEmblem_HTML(country) {
-    var result = "<div class='countryEmbFlag'>&nbsp;</div><div class='countryEmbFlag'>";
+    var images = "";
 
-    if (country.emb_img != "" && country.emb_img != undefined ){
-        result += "<img alt='emb of the " + country.short_name + "' title='emb of the " + country.short_name +
-        "' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";
-    }
     if (country.flag_img != "" && country.flag_img != undefined ){
-        result += "<img alt='flag of the " + country.short_name + "' title='flag of the " + country.short_name +
-        "' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' />";
+        images += "<img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' />";
     }
-    result += "</div>";
-    return result;
+    if (country.emb_img != "" && country.emb_img != undefined ){
+        images += "<img alt='Герб " + country.short_name + "' title='Герб' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";
+    }
+
+    if (images == "") { return ""; }
+
+    return "<div class='symbolics'><h3 class='symbolics-title'>Символіка</h3>" +
+           "<div class='symbolics-row'>" + images + "</div></div>";
 }
 
 //05.04 Country page with list of Visits
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'><a id='" + countryId + "' title='Перейти до списку локації' onclick='javascript:OpenListOfCountryCities(this.id)'' onmouseover='' style='cursor: pointer;'>Мои локації</a></div>" +
-        "<div class='switchlink float_l'>Мої візити...</div><div class='clear' />" +
+        "<div class='switchlink_l'><a id='" + countryId + "' title='Перейти до списку локації' onclick='javascript:OpenListOfCountryCities(this.id)' onmouseover='' style='cursor: pointer;'>Мої локації</a></div>" +
+        "<div class='switchlink'>Мої візити...</div>" +
         createListOfVisites();
 }
 
 //05.05 Country page with list of Cities
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l float_l'>Мої локації...</div>" +
-        "<div class='switchlink float_l'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)'' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
-        "<div class='clear' />" + getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
-    ;
+        "<div class='switchlink_l'>Мої локації...</div>" +
+        "<div class='switchlink'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+        getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
 }
 
 //05.06 List of regions and cities
@@ -149,7 +165,7 @@ function getCitiesAndRegionsList_HTML () {
 
     $.each (regionsVisited, function( i, region ){
         if (region.country_id == country.country_id) {
-            result += "<div class='clear countryregion'><b>Регіон:</b> " + region.setFullRegionName() + "</div>";
+            result += "<div class='countryregion'><b>Регіон:</b> " + region.setFullRegionName() + "</div>";
             result += "<div class='cityrow'>&#8226; <b>Локації: </b>";
             var ListOfLocations = "";
             $.each (citiesVisited, function( i, city ){

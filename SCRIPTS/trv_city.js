@@ -15,6 +15,9 @@ function createCityPage_HTML(cityId) {
     document.getElementById("mainSection").innerHTML = "<div class='countrylabel h3'>" + local[1].setFullCityName() + "</div>" +
                                                          HTML_CityDetais(cityId)
 
+    //Highlight the active section in the navbar
+    setActiveNav("navCities");
+
     //Add copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "&copy; 2011-" + new Date().getFullYear() + ", Slavutskyy Oleksiy";
     document.getElementById("hr_bottom").innerHTML = "<hr>";
@@ -33,7 +36,7 @@ function HTML_CityDetais(cityId) {
     result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";
 
     //Capital identificator
-    if (city.capital == true) {result += "<div class='countrydetail'><b>Столиця:</b> <img src='IMG/icon/crown.png' class='crown' /></div>"}
+    if (city.capital == true) {result += "<div class='countrydetail'><b>Столиця:</b> <span class='capital-badge'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M4 9l3.6 2.6L12 5l4.4 6.6L20 9l-1.7 9.2H5.7L4 9z'/></svg> Столиця країни</span></div>"}
 
     //Link to google map
     var lat = city.lat;

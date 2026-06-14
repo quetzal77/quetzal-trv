@@ -17,22 +17,41 @@ function drawMap(){
 
 //02.02 This method creates CUSTOM list of visits
 function createListOfVisites(){
-     //EXAMPLE: <div class="firstcell float_l">10.июля - 19.июля</div>
-     //         <div class="secondcell float_l"><a href="countries.aspx?country=poland" id="25,52,19.5;Katowice,50.2599736,19.0284561;Wroclaw,51.122489,17.026062;Swidnica,50.8403152,16.4935923;Ksiaz,50.8440566,16.2897844;Opole,50.6780534,17.9175784;" onmouseover="CreateMap(this.id)" onmouseout="CreateMap('none')">Катовице, Вроцлав, Свидница, Кщёнж, Ополе (Польша)</a></div>
-     //         <br class="clear">
+     //EXAMPLE: <div class="visityear">2025<span class="visityear-count">3 поїздки</span></div>
+     //         <div class="visitrow"><div class="firstcell">5 - 10 жовтня</div>
+     //                                <div class="secondcell"><a onclick="getCityPage(id)">Відень</a>, <a onclick="getCityPage(id)">Грац</a> (<a onclick="getCountryPage(id)">Австрія</a>)</div></div>
      var result = "";
      var VisitYear;
      var VisitYear_HTML = "";
+
+     //Count visits per year (recomputed each render, so it updates when a visit is added)
+     var visitsPerYear = {};
+     $.each (visitsSorted, function( i, visit ) {
+         var qualifies = (local[1].type != "city");
+         if (local[1].type == "country") {
+             qualifies = false;
+             $.each (visit.cities, function( j, city ){
+                 if (city.country_id == local[1].short_name) { qualifies = true; return false; }
+             });
+         }
+         if (qualifies) {
+             var visitYr = visit.start_date.getFullYear();
+             visitsPerYear[visitYr] = (visitsPerYear[visitYr] || 0) + 1;
+         }
+     });
 
      $.each (visitsSorted, function( i, visit ) {
          //This section sets year
          if (visit.start_date.getFullYear() != VisitYear) {
             VisitYear = visit.start_date.getFullYear();
-            VisitYear_HTML = "<div class='visityear clear'>" + VisitYear + "</div>";
+            VisitYear_HTML = "<div class='visityear'>" + VisitYear + "<span class='visityear-count'>" + setVisitsNumberWithCorrectEnd(visitsPerYear[VisitYear]) + "</span></div>";
          }
 
-         //This section is responsible to create date section
-         var VisitDate = "<div class='firstcell float_l'>" + getVisitDate (visit.start_date, visit.end_date).slice(0, -3) + "</div>";
+         //This section is responsible to create date section (skipped for the single-city view, which doesn't use it)
+         var VisitDate = "";
+         if (local[1].type != "city") {
+             VisitDate = "<div class='firstcell'>" + getVisitDate (visit.start_date, visit.end_date).slice(0, -3) + "</div>";
+         }
 
          //This section is responsible for displaying list of visited cities and countries
          switch (local[1].type) {
@@ -46,12 +65,11 @@ function createListOfVisites(){
                  });
                  if (citiesToReturn != "") {
                     result += VisitYear_HTML;
-                    result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + "</div><br class='clear'>";
+                    result += "<div class='visitrow'>" + VisitDate + "<div class='secondcell'>" + citiesToReturn.slice(0, -2) + "</div></div>";
                     VisitYear_HTML = "";
                  }
                  break;
              case "city":
-                 var citiesToReturn = "";
                  var distinctIds = {};
                  $.each (visit.cities, function( i, city ){
                     if (city.city_id == local[1].city_id) {
@@ -79,12 +97,9 @@ function createListOfVisites(){
                          distinctIds[city.country_id] = true;
                      }
                  });
-                 result += VisitDate + "<div class='secondcell float_l'>" + citiesToReturn.slice(0, -2) + " (" + countriesToReturn.slice(0, -2) + ")</div><br class='clear'>";
+                 result += "<div class='visitrow'>" + VisitDate + "<div class='secondcell'>" + citiesToReturn.slice(0, -2) + " (" + countriesToReturn.slice(0, -2) + ")</div></div>";
                  VisitYear_HTML = "";
          }
-
-         //Can be added to display a city on the map: onmouseover='CreateMap(this.id)' onmouseout=\"CreateMap('none')\"
-         //"' id='" + zoomLat + "," + zoomLong + "," + zoomLvl + ";" + citiesCoordinates +
      });
      return result;
 }
@@ -104,7 +119,7 @@ function getVisitDate(start_date, end_date, year){
         EndYear = end_date.getFullYear();
     }
 
-    if (StartDay+StartMonth == EndDay+EndMonth) {
+    if (StartDay == EndDay && StartMonth == EndMonth) {
         VisitDateToShow += StartDay + " " + getUaMonthName(StartMonth) + "." + EndYear + "; ";
     }
     else if (StartYear == EndYear) {
@@ -123,7 +138,12 @@ function dynamicSort(property) {
         property = property.substr(1);
     }
     return function (a,b) {
-        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        var av = a[property], bv = b[property];
+        // Strings (name_ua, name, name_full) → Ukrainian-aware order (і, ї, є, ґ in place);
+        // dates/numbers keep the plain relational comparison.
+        var result = (typeof av === "string" && typeof bv === "string")
+            ? av.localeCompare(bv, 'uk')
+            : (av < bv) ? -1 : (av > bv) ? 1 : 0;
         return result * sortOrder;
     }
 }
@@ -144,21 +164,21 @@ function parseWord (word, end1, end234, endrest, number){
 }
 
 //02.06 Return Ukrainian word "country" with correct end
-function setCountriesNumberWithCorrectEnd (number) {
+function setCountriesNumberWithCorrectEnd (number, bold) {
     var wordBody = "країн";
     var end1 = "а";
     var end234 = "и";
     var endrest = "";
-    return number + " " + parseWord (wordBody, end1, end234, endrest, number);
+    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
 //02.07 Return Ukrainian word "location" with correct end
-function setLocationNumberWithCorrectEnd (number) {
+function setLocationNumberWithCorrectEnd (number, bold) {
     var wordBody = "локаці";
     var end1 = "я";
     var end234 = "ї";
     var endrest = "й";
-    return number + " " + parseWord (wordBody, end1, end234, endrest, number);
+    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord (wordBody, end1, end234, endrest, number);
 }
 
 //02.08 Return Ukrainian word "region" with correct end
@@ -168,6 +188,15 @@ function setRegionsNumberWithCorrectEnd (number) {
     var end234 = "а";
     var endrest = "ів";
     return number + " " + parseWord  (word, end1, end234, endrest, number);
+}
+
+//02.08a Return Ukrainian word "visit" with correct end
+function setVisitsNumberWithCorrectEnd (number) {
+    var word = "поїздк";
+    var end1 = "а";
+    var end234 = "и";
+    var endrest = "ок";
+    return number + " " + parseWord (word, end1, end234, endrest, number);
 }
 
 //02.09 Return Ukrainian month name
@@ -223,9 +252,9 @@ function getEngLocationName(locationId) {
 }
 
 function SortByName(a, b){
-    var aName = a.name_ua.toLowerCase();
-    var bName = b.name_ua.toLowerCase();
-    return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+    // Ukrainian alphabet order: і, ї, є, ґ live outside the basic Cyrillic range,
+    // so a plain < / > comparison misplaces them — localeCompare('uk') fixes that.
+    return a.name_ua.localeCompare(b.name_ua, 'uk');
   }
 
 //02.14 This method creates selector of countries
@@ -297,25 +326,25 @@ function getNumberOfLocation() {
         $.each( countriesVisited, function( j, country ){
             if (country.continent_id == cont.continent_id || country.continent_id2 == cont.continent_id) {
                 
-                //document.getElementById(country.short_name).firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities()));
-
                 var countryElem = $("a#" + country.short_name + "[continent_id='" + cont.continent_id + "']").last().get(0);
 
                 var numberOfVisitedCities = country.getNumberOfVisitedCities(cont.continent_id);
-                countryElem.firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(numberOfVisitedCities));
+                if (countryElem) {
+                    countryElem.firstElementChild.setAttribute("title", country.setFullCountryName() + " - " + setLocationNumberWithCorrectEnd(numberOfVisitedCities));
+                }
                 numberOfCities = numberOfCities + numberOfVisitedCities;
             }
         });
 
-        document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " (" + setLocationNumberWithCorrectEnd(numberOfCities) + ")";
+        document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " · " + setLocationNumberWithCorrectEnd(numberOfCities, true);
     });
-    document.getElementById("totalCitiesNum").innerHTML = " (" + setLocationNumberWithCorrectEnd(citiesVisited.length) + ")";
+    document.getElementById("totalCitiesNum").innerHTML = " · " + setLocationNumberWithCorrectEnd(citiesVisited.length, true);
 }
 
 //2.18 Remove all attributes by name
 function removeAllAttributesByName(attrType, attrName) {
     var mylist=document.getElementsByClassName(attrName);
-    for (j=0; j<mylist.length; j++) {
+    for (var j=0; j<mylist.length; j++) {
         mylist[j].removeAttribute(attrType);
     }
 }
@@ -366,34 +395,48 @@ function getCountryId(short_name) {
     return result[0].country_id;
 }
 
+//2.24 Highlight the active section in the navbar
+function setActiveNav (navId) {
+    $(".navbar-nav > li").removeClass("active");
+    if (navId) { $("#" + navId).addClass("active"); }
+}
+
 //03.00 Basic functions
 //Here are page objects that used for each page shown
 
-//03.01 Creator of Contact page
-function HTML_CreatorOfContactPage (){
-    document.getElementById("mainSection").innerHTML = "<div class='jumbotron'>" +
-        "<h2><b> Контакти </b></h2>" +
-        "<p> Location: Київ, Україна </p>" +
-        "<p> Email: <a href='mailto:coatls77@gmail.com'>coatls77@gmail.com</a></p>" +
-        "<p> Skype: slavutskyy </p>" +
-        "</div>";
-}
-
-//03.02 Creator of About page
+//03.01 Creator of the About / Contacts page
 function HTML_CreatorOfAboutPage () {
-    document.getElementById("mainSection").innerHTML = "<div class='well'>" +
-          "<h2><b> Про проект </b></h2>" +
-          "<p><b>Version</b>: 8.1.1 (ukr)</p>" +
-          "<p><b>Compatibility Google Chrome</b>: 1.0+ </p>" +
-          "<p><b>Compatibility Internet Explorer</b>: 8.0+</p>" +
-          "<p><b>Technologies</b>: HTML, CSS, XML, Json, JScript, <a href='http://www.amcharts.com/javascript-maps/' target='_blank'>AMMAP (maps)</a>," +
-          " <a href='http://getbootstrap.com/' target='_blank'>Bootstrap (themes)</a>.</p>" +
-          "<p>Вітаю. Моє ім'я Олексій Славутський і це мій особистий сайт. Існує безліч таких сайтів, але цей мій! " +
-          "Тут зібрано всю інформацію про мої подорожі. Тут ви можете знайти фотографії, звіти про поїздки, список відвіданих мною територій та багато іншого про моє захоплення туризмом. " +
-          "Вся інформація, що міститься на сайті і сам цей сайт – результати моєї багаторічної роботи та поїздок. Спочатку був просто список країн у файлі Word, який згодом " +
-          "Спочатку був просто список країн у файлі Word, який згодом завдяки моєму захопленню інтернетом і супутніми технологіями перетворився на те, що ви бачите перед собою. Не знаю, куди заведе мене ця дорога, але радий це з'ясувати. " +
-          "Ось і все, що я хотів сказати.</p>" +
-          "<p>Приємного перегляду!</p></div>";
+    setActiveNav("navAbout");
+    document.getElementById("mainSection").innerHTML =
+        "<div class='about-page'>" +
+            "<header class='about-hero'>" +
+                "<img class='about-logo' src='IMG/icon/logo-about.png' alt='Будинок пернатого равлика' />" +
+                "<h1>Будинок пернатого равлика</h1>" +
+                "<p class='about-tagline'>Особистий сайт про мої подорожі — країни, локації, фото та звіти.</p>" +
+            "</header>" +
+            "<section class='about-card'>" +
+                "<p>Вітаю. Моє ім'я Олексій Славутський і це мій особистий сайт. Існує безліч таких сайтів, але цей — мій! " +
+                "Тут зібрано всю інформацію про мої подорожі: фотографії, звіти про поїздки, список відвіданих територій та багато іншого про моє захоплення туризмом.</p>" +
+                "<p>Вся інформація на сайті — результат моєї багаторічної роботи та поїздок. Спочатку це був просто список країн у файлі Word, який згодом, завдяки захопленню інтернетом і супутніми технологіями, перетворився на те, що ви бачите перед собою. Не знаю, куди заведе мене ця дорога, але радий це з'ясувати.</p>" +
+                "<p class='about-signature'>Приємного перегляду!</p>" +
+            "</section>" +
+            "<h2 class='about-h2'>Контакти</h2>" +
+            "<div class='contact-grid'>" +
+                "<a class='contact-card' href='mailto:coatls77@gmail.com'><span class='contact-ico'>✉️</span><span class='contact-meta'><span class='contact-label'>Email</span><span class='contact-val'>coatls77@gmail.com</span></span></a>" +
+                "<div class='contact-card'><span class='contact-ico'>📍</span><span class='contact-meta'><span class='contact-label'>Локація</span><span class='contact-val'>Київ, Україна</span></span></div>" +
+                "<div class='contact-card'><span class='contact-ico'>👥</span><span class='contact-meta'><span class='contact-label'>Teams</span><span class='contact-val'>slavutskyy</span></span></div>" +
+            "</div>" +
+            "<footer class='about-tech'>" +
+                "<span class='tech-tag'>v9.0 (ukr)</span>" +
+                "<span class='tech-tag'>HTML</span>" +
+                "<span class='tech-tag'>CSS</span>" +
+                "<span class='tech-tag'>JavaScript</span>" +
+                "<span class='tech-tag'>jQuery</span>" +
+                "<span class='tech-tag'>JSON / XML</span>" +
+                "<a class='tech-tag' href='http://www.amcharts.com/javascript-maps/' target='_blank'>amMap</a>" +
+                "<a class='tech-tag' href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>" +
+            "</footer>" +
+        "</div>";
 }
 
 //03.03 // When the user scrolls down 20px from the top of the document, show the button
@@ -405,8 +448,3 @@ function HTML_CreatorOfAboutPage () {
         }
     }
 
-//03.04 When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }

@@ -12,6 +12,9 @@ function createSettingsPage_HTML() {
         '</div> <!-- /container -->';
 
     createSettingsOverviewTab_HTML();
+
+    //Highlight the active section in the navbar
+    setActiveNav("navSettings");
 }
 
 //08.02 Creator of left menu

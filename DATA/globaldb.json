@@ -1227,49 +1227,49 @@
       "region_id": "ABH_SU",
       "name": "Sukhumi District",
       "name_ua": "Сухумський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GA",
       "name": "Gagra District",
       "name_ua": "Ґагрський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GU",
       "name": "Gudauta District",
       "name_ua": "Гудаутський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GL",
       "name": "Gulripsh District",
       "name_ua": "Ґулрипшський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_OC",
       "name": "Ochamchira District",
       "name_ua": "Очамчирський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_TQ",
       "name": "Tquarchal District",
       "name_ua": "Ткварчельський (Ткуарчалський) район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GI",
       "name": "Gali District",
       "name_ua": "Гальський (Галський) район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "AL",
@@ -2158,42 +2158,42 @@
       "region_id": "MD_TR",
       "name": "Tiraspol",
       "name_ua": "місто Тираспіль",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "TA",
       "region_id": "MD_GR",
       "name": "Grigoriopol",
       "name_ua": "Григоріопольський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "TA",
       "region_id": "MD_KA",
       "name": "Camenca",
       "name_ua": "Каменський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "TA",
       "region_id": "MD_RB",
       "name": "Rîbniţa",
       "name_ua": "Рибницький район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "TA",
       "region_id": "MD_SL",
       "name": "Slobozia",
       "name_ua": "Слободзейський район",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "TA",
       "region_id": "TA-DU",
       "name": "Dubăsari",
       "name_ua": "Дубосарський район",
-      "active": "Y"
+      "active": "Ngthtdsh sckfyls."
     },
     {
       "country_id": "TA",
@@ -6946,7 +6946,7 @@
       "region_id": "CY-06",
       "name": "Kyrenia",
       "name_ua": "Кіренея",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
@@ -6981,49 +6981,49 @@
       "region_id": "GB-AX",
       "name": "Akrotiri",
       "name_ua": "Акротири",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "GB-DX",
       "name": "Dhekelia",
       "name_ua": "Декелія",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "CY-GA",
       "name": "Gazimagusa",
       "name_ua": "Фамаґуста",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "CY-GI",
       "name": "Girne",
       "name_ua": "Кіренія",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "CY-GU",
       "name": "Guzelyurt",
       "name_ua": "Гюзельюрт",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "CY-IS",
       "name": "Iskele",
       "name_ua": "Іскеле",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CY",
       "region_id": "CY-LE",
       "name": "Lefkosa",
       "name_ua": "Левкоша",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CT",
@@ -7065,14 +7065,14 @@
       "region_id": "GB-AX",
       "name": "Akrotiri",
       "name_ua": "Акротірі",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "CT",
       "region_id": "GB-DX",
       "name": "Dhekelia",
       "name_ua": "Декелія",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "AD",
@@ -11754,70 +11754,70 @@
       "region_id": "GL1",
       "name": "Glacier 1",
       "name_ua": "Льодовик 1",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL2",
       "name": "Glacier 2",
       "name_ua": "Льодовик 2",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL3",
       "name": "Glacier 3",
       "name_ua": "Льодовик 3",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL4",
       "name": "Glacier 4",
       "name_ua": "Льодовик 4",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL5",
       "name": "Glacier 5",
       "name_ua": "Льодовик 5",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL6",
       "name": "Glacier 6",
       "name_ua": "Льодовик 6",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL7",
       "name": "Glacier 7",
       "name_ua": "Льодовик 7",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL8",
       "name": "Glacier 8",
       "name_ua": "Льодовик 8",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL9",
       "name": "Glacier 9",
       "name_ua": "Льодовик 9",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
       "region_id": "GL10",
       "name": "Glacier 10",
       "name_ua": "Льодовик 10",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
@@ -21423,7 +21423,7 @@
       "description": "Одне з найбільш мальовничих міст Європи. Усередині міста налічується 54 мости, з них 12 дерев'яних і розвідних для пропуску суден. Заслуговують на увагу такі будівлі: чотирикутний ринок на великій площі (XIV століття), з баштою висотою 107 метрів, церква Богоматері, кафедральний собор Христа Спасителя. У 2000 році історичний центр Брюгге був оголошений ЮНЕСКО об'єктом Всесвітньої культурної спадщини."
     },
     {
-      "name": "Antwerp",
+      "name": "Antwerpen",
       "name_nt": "Antwerpen",
       "name_ua": "Антверпен",
       "region_id": "BE-VAN",

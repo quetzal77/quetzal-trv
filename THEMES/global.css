@@ -1,171 +1,216 @@
-/* DEFAULTS
-----------------------------------------------------------*/
-body {background: #FFFFFF; padding-top: 70px; padding-bottom: 30px;}
-
-a, a:visited {margin: 0px; text-decoration: none; color: #483D8B;}
-a:hover {text-decoration: none; color: #696969;}
-
-.loading {background: url(../IMG/icon/loading.gif) no-repeat center;}
-
-.float_l {float: left;}
-
-.float_r {float: right;}
-
-.clear {clear: both;}
-
-/* Header and Menu
-----------------------------------------------------------*/
-.singin {padding-bottom: 15px; padding-top: 15px;}
-
-ul.dropdown-menu {max-height: 300px; overflow-y: auto;}
-
-a.back2top {position: fixed;
-            right: 20px;
-            bottom: 20px;
-            display: none;
-            z-index: 99;
-            padding: 6px 12px;
-            font-size: 14px;
-            color: #fff;
-            background-color: #868e96;
-            border-color: #868e96;
-            border: 1px solid transparent;
-            border-radius: 3px;
-            text-decoration: none;}
-
-/* COUNTRIES PAGE (WORLD)
-----------------------------------------------------------*/
-div.mainsection {font-size: 12px;}
-div.map {width: 700px; height: 480px; margin-left: 20%;}
-
-div.countryhead {width: 900px; height: 50px;  text-align:left; font-weight:bold; font-size: 14px; padding: 15px 0px 5px 0px; margin-left: 15%;}
-div.my_countries {width: 830px; font-weight: normal; padding: 5px 0px 5px 0px; margin-left: 15%; margin-right: 15%; text-align: left;}
-
-img.countflag {width: 35px; height: 35px; border: solid #c1d4cc 1px; border-radius: 3px; padding: 1px; margin: 3px;
-    background-image: url('../IMG/icon/smallClean35x35.png');
-    background-repeat: no-repeat;
+/* ============================================================
+   quetzal-trv — modern theme (Tier 1).
+   Loaded LAST in index.html so it overrides Bootstrap/dashboard.
+   Restyles the app's existing classes — no markup change required
+   (except the capital badge in trv_city.js).
+   NOTE: the Settings page is intentionally left as-is — no
+   form/well/button/page-header/sidebar restyling here.
+   ============================================================ */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#f0f2f5;
+  --text:#1d2430; --muted:#667085; --border:#e6e8ec;
+  --accent:#2563eb; --accent-weak:#e8efff;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 16px rgba(16,24,40,.06);
+  --radius:14px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0f1115; --surface:#171a21; --surface-2:#1f242d;
+  --text:#e7e9ee; --muted:#9aa3b2; --border:#272d38;
+  --accent:#5b9dff; --accent-weak:#16233d;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}}
+/* Manual theme override (navbar switch) — wins over the auto media query above */
+html[data-theme="dark"]{
+  --bg:#0f1115; --surface:#171a21; --surface-2:#1f242d;
+  --text:#e7e9ee; --muted:#9aa3b2; --border:#272d38;
+  --accent:#5b9dff; --accent-weak:#16233d;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#f0f2f5;
+  --text:#1d2430; --muted:#667085; --border:#e6e8ec;
+  --accent:#2563eb; --accent-weak:#e8efff;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 4px 16px rgba(16,24,40,.06);
 }
 
-div.visityear {width: 200px; font-weight:bold;  padding: 0px 0px 0px 145px; text-align: left; margin-left: 20%}
-div.firstcell {width: 200px; text-align:right; padding: 0px 10px 0px 5px; margin-left: 20%;}
-div.secondcell {text-align:left; width: 550px;}
+/* DEFAULTS ---------------------------------------------------- */
+body{
+  background:var(--bg)!important; color:var(--text);
+  padding-top:72px!important; padding-bottom:40px;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a,a:visited{margin:0; text-decoration:none; color:var(--accent)}
+a:hover{text-decoration:none; color:var(--text)}
+a.link{text-decoration:underline}
 
-div.switchlink_l {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 16px; margin-left: 20%;}
-div.switchlink {min-width: 370px; height: 30px; text-align:center; font-weight:bold; font-size: 16px; padding: 0px 0px 0px 0px;}
+.loading{background:var(--surface-2) url(../IMG/icon/loading.gif) no-repeat center}
+div.mainsection{font-size:15px}
 
-/* COUNTRIES PAGE (COUNTRY)
-----------------------------------------------------------*/
-div.countrylabel {text-align:center; font-weight:bold; padding: 0px 0px 10px 0px; font-size: 20px;}
-div.countrydetail {text-align:left; font-size: 12px; padding: 5px 45px 5px 45px; margin-left: 20%}
+/* NAVBAR (overrides Bootstrap navbar-inverse) ----------------- */
+.navbar.navbar-inverse{
+  background:color-mix(in srgb,var(--surface) 85%, transparent)!important;
+  background-color:var(--surface);
+  -webkit-backdrop-filter:saturate(180%) blur(12px); backdrop-filter:saturate(180%) blur(12px);
+  border:0; border-bottom:1px solid var(--border)!important; min-height:60px; box-shadow:var(--shadow);
+}
+.navbar-inverse .navbar-brand{color:var(--text)!important; font-weight:700; font-size:18px; display:flex; align-items:center; height:60px; padding-top:0; padding-bottom:0; white-space:nowrap}
+.navbar-brand .navbar-logo{width:40px; height:40px; object-fit:contain; margin:0 10px 0 0; flex:none}
+.navbar-inverse .navbar-nav>li>a{
+  color:var(--muted)!important; font-weight:500; padding:10px 14px; margin:8px 2px; border-radius:9px;
+}
+.navbar-inverse .navbar-nav>li>a:hover,
+.navbar-inverse .navbar-nav>li>a:focus{color:var(--text)!important; background:var(--surface-2)!important}
+.navbar-inverse .navbar-nav>.open>a{color:var(--text)!important; background:var(--surface-2)!important}
+.navbar-inverse .navbar-nav>.active>a{color:#fff!important; background:var(--accent)!important}
+.navbar-inverse .navbar-nav>li>a.nav-gear{font-size:18px; padding:9px 13px}
+.navbar-inverse .navbar-toggle{border-color:var(--border)}
+.navbar-inverse .navbar-toggle .icon-bar{background:var(--muted)}
+.dropdown-menu{
+  background:var(--surface); border:1px solid var(--border); border-radius:12px;
+  box-shadow:var(--shadow); padding:6px; max-height:320px; overflow-y:auto;
+}
+.dropdown-menu>li>a{color:var(--text); padding:8px 12px; border-radius:8px}
+.dropdown-menu>li>a:hover{background:var(--surface-2); color:var(--text)}
+.dropdown-header{color:var(--muted)}
 
-div.countryEmbFlag {width: 100%;}
-img.country_emb {width: 150px; height: 150px; margin-right: 75px; margin-left: 25%}
-img.country_flag {width: 300px; height: 150px; border: 2px solid; margin-left: 75px;}
+/* WORLD PAGE -------------------------------------------------- */
+div.map{
+  width:100%; max-width:680px; height:auto; aspect-ratio:7/5; margin:14px auto;
+  border:1px solid var(--border); border-radius:var(--radius); background-color:var(--surface-2);
+}
+/* total countries / locations — plain caption sitting on the toggle line */
+.totalstat{
+  display:block; width:fit-content; margin:2px 0 8px; padding:10px 24px;
+  background:var(--surface); border:1px solid var(--border); border-radius:999px;
+  color:var(--muted); font-size:17px; font-weight:400;
+}
+.totalstat::before{content:"🌍 "}
+.totalstat b{color:var(--text); font-weight:700}   /* only the numbers are bold */
+div.my_countries span{color:var(--muted); font-weight:400}
+div.my_countries{
+  width:auto; margin:14px 0; padding:14px 16px; text-align:left; font-weight:normal;
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+}
+div.my_countries>div:first-child{font-weight:400; margin-bottom:10px}
+div.my_countries>div:first-child b{font-weight:700}
+.cont-progress{display:inline-block; vertical-align:middle; width:120px; height:8px; margin-left:12px; background:var(--surface-2); border:1px solid var(--border); border-radius:999px; overflow:hidden}
+.cont-progress span{display:block; height:100%; background:var(--accent); border-radius:999px; transition:width .4s ease}
+.regions-trophy{margin-left:8px; vertical-align:middle}
+img.countflag{
+  width:35px; height:35px; border:1px solid var(--border); border-radius:3px; padding:1px; margin:4px;
+  background-image:url('../IMG/icon/smallClean35x35.png'); background-repeat:no-repeat; background-size:auto;
+  vertical-align:middle; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+img.countflag:hover{transform:translateY(-2px) scale(1.08); box-shadow:var(--shadow); border-color:var(--accent)}
 
-a.link {text-decoration: underline;}
+/* VISIT LIST -------------------------------------------------- */
+div.visityear{width:auto; margin:18px 0 6px; padding:0; font-weight:700; font-size:18px; color:var(--accent); text-align:left}
+.visityear-count{margin-left:10px; font-weight:400; color:var(--muted)}
+.visityear-count::before{content:"✈️ "}
+div.visitrow{display:flex; gap:16px; padding:4px 0; font-size:12px}
+div.visitrow .firstcell{flex:0 0 220px; white-space:nowrap; text-align:right; color:var(--muted); font-variant-numeric:tabular-nums}
+div.visitrow .secondcell{flex:1; min-width:0; text-align:left}
+/* segmented toggle (Мої країни / Мої візити), centered */
+#countryToVisitSelector{text-align:center}
+div.switchlink_l,div.switchlink{
+  float:none!important; display:inline-block; vertical-align:middle; min-width:0; height:auto;
+  margin:0 4px 10px; padding:9px 20px; font-weight:600; font-size:15px; border-radius:999px;
+  background:var(--accent); color:#fff; border:1px solid var(--accent);
+}
+/* the segment rendered as a link = the inactive (clickable) one */
+div.switchlink_l:has(a),div.switchlink:has(a){background:transparent; border-color:var(--border); padding:0}
+div.switchlink_l a,div.switchlink a{display:block; padding:9px 20px; border-radius:999px; color:var(--text)}
+div.switchlink_l:has(a):hover,div.switchlink:has(a):hover{background:var(--surface-2)}
 
-div.countryregion {text-align:left; font-size: 12px; padding: 0px 45px 0px 65px; margin-left: 20%}
-div.cityrow {text-align:left; padding: 0px 45px 5px 75px; margin-left: 20%}
+/* COUNTRY PAGE ------------------------------------------------ */
+div.countrylabel{text-align:center; font-weight:700; padding:0 0 10px; font-size:26px}
+div.countrydetail{text-align:left; font-size:15px; padding:8px 0; margin:0; border-bottom:1px solid var(--border)}
+div.countrydetail b{color:var(--text)}
+div.countryregion{text-align:left; font-size:15px; padding:12px 0 2px; margin:0; font-weight:600}
+div.cityrow{text-align:left; padding:0 0 8px; margin:0; color:var(--muted)}
+/* keep the captions under the map in a centered column, aligned with the (smaller) map */
+div.countrydetail, div.countryregion, div.cityrow{max-width:820px; margin-left:auto; margin-right:auto}
+.symbolics{
+  max-width:540px; margin:24px auto 0; padding:22px 26px;
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow);
+}
+.symbolics-title{margin:0 0 18px; font-size:18px; font-weight:700; text-align:center; color:var(--text)}
+.symbolics-row{display:flex; gap:72px; align-items:center; justify-content:center; flex-wrap:wrap}
+.symbolics-row img{height:120px; width:auto; display:block; border-radius:6px}
 
-/* CITY PAGE
-----------------------------------------------------------*/
-img.city_photo {margin: 10px 27px 10px 27px; width: 300px; height:225px;}
-img.crown {width: 23px; height:12px;}
+/* LOCATION PAGE ----------------------------------------------- */
+img.city_photo{margin:8px; width:300px; height:225px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
+.capital-badge{
+  display:inline-flex; align-items:center; gap:7px; padding:4px 12px; border-radius:999px;
+  font-size:13px; font-weight:600; color:#8a5a00; background:#fff6e0; border:1px solid #f3d18a; vertical-align:middle;
+}
+.capital-badge svg{width:15px; height:15px; color:#e0a200; flex:none}
+@media (prefers-color-scheme:dark){.capital-badge{color:#ffd479; background:#2a2310; border-color:#4a3c12}}
 
-/* SIGNIN PAGE (WORLD)
-----------------------------------------------------------*/
-.form-signin {max-width: 330px; padding: 15px; margin: 0 auto;}
-.form-signin .form-signin-heading,
-.form-signin .checkbox {margin-bottom: 10px;}
-.form-signin .checkbox {font-weight: normal;}
-.form-signin .form-control {position: relative; height: auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 10px; font-size: 16px;}
-.form-signin .form-control:focus {z-index: 2;}
-.form-signin input[type="email"] {margin-bottom: -1px; border-bottom-right-radius: 0; border-bottom-left-radius: 0;}
-.form-signin input[type="password"] {margin-bottom: 10px; border-top-left-radius: 0; border-top-right-radius: 0;}
+/* STORY PAGE -------------------------------------------------- */
+.story_celltext{text-indent:0}
+p.story_celltext{text-indent:0; margin:0 0 12px; max-width:74ch}
+.reg_header{font-weight:700; margin:0; font-size:16px}
+.reg_header_impr{padding:8px 14px; background:var(--accent-weak); border-radius:10px; display:inline-block; margin:14px 0 6px}
 
-/* STORY PROCESSOR PAGE
-----------------------------------------------------------*/
-.story_celltext {text-indent: 35px;}
-p.story_celltext {text-indent: 35px; margin-bottom: -15px; margin-top: 0px; margin-right: 20px; margin-left: 20px;} 
-.reg_header {font-weight: bold; margin-bottom: 0px;}
-.reg_header_impr {padding: 8px;}
+/* ABOUT / CONTACTS PAGE --------------------------------------- */
+.about-page{max-width:760px; margin:0 auto; text-align:left}
+.about-hero{text-align:center; padding:18px 0 4px}
+.about-logo{width:140px; height:140px; display:block; margin:0 auto 10px; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(16,24,40,.18))}
+.about-hero h1{font-size:30px; font-weight:700; margin:10px 0 6px; color:var(--text)}
+.about-tagline{color:var(--muted); font-size:16px; margin:0}
+.about-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:22px 26px; margin:20px 0;
+}
+.about-card p{margin:0 0 14px; line-height:1.7}
+.about-card p:last-child{margin-bottom:0}
+.about-signature{font-weight:600; color:var(--accent)}
+.about-h2{font-size:20px; font-weight:700; margin:24px 0 12px; color:var(--text)}
+.contact-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px}
+.contact-card{
+  display:flex; align-items:center; gap:14px; text-decoration:none;
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:14px 16px; transition:transform .15s,border-color .15s;
+}
+a.contact-card:hover{transform:translateY(-2px); border-color:var(--accent)}
+.contact-ico{font-size:24px; flex:none}
+.contact-meta{display:flex; flex-direction:column; min-width:0}
+.contact-label{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
+.contact-val{font-size:15px; font-weight:600; color:var(--text); word-break:break-word}
+.about-tech{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:26px 0 0}
+.tech-tag{
+  font-size:12px; font-weight:600; color:var(--muted); text-decoration:none;
+  background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:5px 12px;
+}
+a.tech-tag:hover{color:var(--accent); border-color:var(--accent)}
 
-.back2country {position: fixed;
-            right: 20px;
-            top: 60px;
-            display: block;
-            z-index: 99;
-            padding: 6px 12px;
-            font-size: 14px;
-            color: #fff;
-            background-color: #868e96;
-            border-color: #868e96;
-            border: 1px solid transparent;
-            border-radius: 3px;
-            text-decoration: none;}
-.back2country a,
-.back2country a:hover,
-.back2country a:visited {color:#fff;}
+/* SIGNIN ------------------------------------------------------ */
+.form-signin{max-width:330px; padding:15px; margin:0 auto}
+.form-signin .form-signin-heading,.form-signin .checkbox{margin-bottom:10px}
+.form-signin .checkbox{font-weight:normal}
+.form-signin .form-control{position:relative; height:auto; box-sizing:border-box; padding:10px; font-size:16px}
 
-/* Overview settings  PAGE
-----------------------------------------------------------*/
-#thalign {text-align: left;}
-.asteriskField {color: red;}
+/* FLOATING BUTTONS -------------------------------------------- */
+a.back2top,.back2country{
+  position:fixed; right:20px; z-index:99; padding:8px 14px; font-size:14px; color:#fff!important;
+  background:var(--accent); border:1px solid transparent; border-radius:10px; text-decoration:none; box-shadow:var(--shadow);
+}
+a.back2top{bottom:20px; display:none}
+.back2country{top:70px; display:block}
+.back2country a,.back2country a:hover,.back2country a:visited{color:#fff}
 
-/* SMALL COUNTRY FLAGS
-----------------------------------------------------------*/
-/*img#abkhazia { background-position: -391px -741px; }
-img#albania { background-position: -197px -3px; }
-img#andorra { background-position: -3px -3px; }
-img#austria { background-position: -430px -3px; }
-img#azerbaijan { background-position: -585px -3px; }
-img#belarus { background-position: -42px -108px; }
-img#belgium { background-position: -80px -55px; }
-img#china { background-position: -508px -108px; }
-img#croatia { background-position: -469px -266px; }
-img#cyprus { background-position: -120px -161px; }
-img#czech { background-position: -158px -161px; }
-img#denmark { background-position: -275px -161px; }
-img#egypt { background-position: -508px -161px; }
-img#estonia { background-position: -469px -161px; }
-img#finland { background-position: -42px -214px; }
-img#france { background-position: -236px -214px; }
-img#gibraltar { background-position: -546px -216px; }
-img#germany { background-position: -197px -161px; }
-img#hungary { background-position: -546px -266px; }
-img#israel { background-position: -3px -319px; }
-img#india { background-position: -80px -319px; }
-img#italy { background-position: -275px -319px; }
-img#kosovo { background-position: -508px -741px; }
-img#latvia { background-position: -585px -372px; }
-img#lithuania { background-position: -508px -372px; }
-img#liechtenstein { background-position: -352px -372px; }
-img#luxembourg { background-position: -546px -372px; }
-img#macedonia { background-position: -275px -424px; }
-img#malta { background-position: -624px -424px; }
-img#moldova { background-position: -80px -424px; }
-img#monaco { background-position: -42px -424px; }
-img#montenegro { background-position: -119px -424px; }
-img#netherlands { background-position: -469px -477px; }
-img#northerncyprus { background-position: -430px -741px; }
-img#norway { background-position: -508px -477px; }
-img#poland { background-position: -314px -530px; }
-img#portugal { background-position: -507px -530px; }
-img#romania { background-position: -42px -583px; }
-img#russia { background-position: -119px -583px; }
-img#sanmarino { background-position: -624px -583px; }
-img#slovakia { background-position: -546px -583px; }
-img#slovenia { background-position: -469px -583px; }
-img#spain { background-position: -624px -161px; }
-img#sweden { background-position: -352px -583px; }
-img#switzerland { background-position: -313px -108-469px -741pxpx; }
-img#transnistria { background-position: ; }
-img#turkey { background-position: -81px -688px; }
-img#ukraine { background-position: -275px -688px; }
-img#unitedarabianemirates { background-position: -42px -3px; }
-img#unitedstatesofamerica { background-position: -391px -688px; }
-img#uzbekistan { background-position: -468px -688px; }
-img#vatican { background-position: -508px -688px; }*/
+/* SETTINGS — left as-is (only the original two helpers kept) --- */
+#thalign{text-align:left}
+.asteriskField{color:red}
 
-/* THE END
-----------------------------------------------------------*/
+/* RESPONSIVE -------------------------------------------------- */
+@media (max-width:640px){
+  body{padding-top:60px!important}
+  div.visitrow{flex-direction:column; gap:2px}
+  div.visitrow .firstcell{flex:none; text-align:left; font-weight:600}
+  img.city_photo{width:100%; height:200px}
+  .symbolics-row{gap:24px}
+  .symbolics-row img{height:96px}
+}

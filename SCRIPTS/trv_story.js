@@ -35,6 +35,9 @@ var processMyStory = function (data) {
 
     //Create selector of countries
     document.getElementById("mainSection").innerHTML = HTML_StoryPage();
+
+    //Highlight the active section in the navbar
+    setActiveNav("navStories");
 }
 
 //06.03 This method transform HTMLCollection to collection (node)
@@ -83,7 +86,7 @@ function HTML_StoryPage() {
     //06.04.02 Participants section
     if (participants[0] != undefined) {
         var participantsKeys = Object.keys(participants[0]);
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Список участников:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Учасники:</p></div></td></tr>";
 
         for (i = 0; i < participantsKeys.length; i++) {
             if (participantsKeys[i] != 'title') {
@@ -95,13 +98,13 @@ function HTML_StoryPage() {
 
     //06.04.03 Visa section
     if (visa[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Виза:</p></div></td></tr>"+
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Віза:</p></div></td></tr>"+
                   "<tr><td>" + visa[0].title + "</td></tr>";
     }
 
     //06.04.04 Exchange rate section
     if (exrate[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Обменный курс:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Курс обміну:</p></div></td></tr>";
         var exrateArray = arrayToArray(exrate[0]);
 
         for (i = 0; i < exrateArray.length; i++) {
@@ -121,19 +124,19 @@ function HTML_StoryPage() {
 
     //06.04.06 Habitation section
     if (habitation[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Проживание:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Проживання:</p></div></td></tr>";
         var habitationArray = arrayToArray(habitation[0]);
 
         for (i = 0; i < habitationArray.length; i++) {
             result += "<tr><td><div class='story_celltext'>" + habitationArray[i].name + " в " + habitationArray[i].city +
-            ", " + habitationArray[i].nights + " ночь(и), " + habitationArray[i].room + ", цена " + habitationArray[i].price + " " + habitationArray[i].currency + " за ночь. " +
+            ", " + habitationArray[i].nights + " ночі, " + habitationArray[i].room + ", ціна " + habitationArray[i].price + " " + habitationArray[i].currency + " за ніч. " +
             habitationArray[i].place + "</div></td></tr>";
         }
     }
 
     //06.04.07 Food section
     if (food[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Питание:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Харчування:</p></div></td></tr>";
         var foodArray = arrayToArray(food[0]);
 
         for (i = 0; i < foodArray.length; i++) {
@@ -149,31 +152,31 @@ function HTML_StoryPage() {
 
         for (i = 0; i < transportArray.length; i++) {
             result += "<tr><td><div class='story_celltext'><b>" + routDateCalculator(transportArray[i].date) + "</b> - " + transportArray[i].type +
-                      " " + transportArray[i].dep + " - " + transportArray[i].arr + ", время в пути " + transportArray[i].time +
-                      ", цена " + transportArray[i].price + " " + transportArray[i].currency + ". " + transportArray[i].day + ".</div></td></tr>";
+                      " " + transportArray[i].dep + " - " + transportArray[i].arr + ", час у дорозі " + transportArray[i].time +
+                      ", ціна " + transportArray[i].price + " " + transportArray[i].currency + ". " + transportArray[i].day + ".</div></td></tr>";
         }
     }
 
     //06.04.09 Sights section
     if (sights[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Достопримечательности:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Визначні місця:</p></div></td></tr>";
         var sightsArray = arrayToArray(sights[0]);
 
         for (i = 0; i < sightsArray.length; i++) {
-            result += "<tr><td><div class='story_celltext'><b>" + sightsArray[i].name + "</b> из локации " + sightsArray[i].city +
-                      ", цена билета = " + sightsArray[i].price + " " + sightsArray[i].currency +
+            result += "<tr><td><div class='story_celltext'><b>" + sightsArray[i].name + "</b> з локації " + sightsArray[i].city +
+                      ", ціна квитка = " + sightsArray[i].price + " " + sightsArray[i].currency +
                       ". " + sightsArray[i].sight + "</div></td></tr>";
         }
     }
 
     //06.04.09 Souvenirs section
     if (souvenirs[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Сувениры:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Сувеніри:</p></div></td></tr>";
         var souvenirsArray = arrayToArray(souvenirs[0]);
 
         for (i = 0; i < souvenirsArray.length; i++) {
             result += "<tr><td><div class='story_celltext'>" + souvenirsArray[i].name + " (" + souvenirsArray[i].num +
-                      " шт.), цена = " + souvenirsArray[i].price + " " + souvenirsArray[i].currency + ". " + souvenirsArray[i].souvenir + "</div></td></tr>";
+                      " шт.), ціна = " + souvenirsArray[i].price + " " + souvenirsArray[i].currency + ". " + souvenirsArray[i].souvenir + "</div></td></tr>";
         }
     }
 
@@ -189,7 +192,7 @@ function HTML_StoryPage() {
 
     //06.04.11 Links section
     if (links[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Ссылки:</p></div></td></tr>";
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Посилання:</p></div></td></tr>";
         var urlArray = arrayToArray(links[0]);
 
         for (i = 0; i < urlArray.length; i++) {
@@ -200,7 +203,7 @@ function HTML_StoryPage() {
 
     //06.04.12 Summary section
     if (summary[0] != undefined) {
-        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Итоги:</p></div></td></tr>" +
+        result += "<tr><td class='story_celltext'><div class='well reg_header reg_header_impr'><p class='reg_header'>Підсумки:</p></div></td></tr>" +
         "<tr><td>" + summary[0].title + "</td></tr>";
     }
 
@@ -228,7 +231,7 @@ function routDateCalculator(date) {
     }
 
 
-    result += day + " " + month + " " + year + " г.";
+    result += day + " " + month + " " + year + " р.";
     return result
 }
 
@@ -237,7 +240,7 @@ function arrayToArray(array) {
     var arrayKeys = Object.keys(array);
     var KeysArray = [];
 
-    for (i = 0; i < arrayKeys.length; i++) {
+    for (var i = 0; i < arrayKeys.length; i++) {
         if (arrayKeys[i] != 'title') {
             var someArray = arrayKeys[i].split("_");
             KeysArray.push(someArray[0]);
@@ -246,8 +249,8 @@ function arrayToArray(array) {
     var uniqueKeysArray = KeysArray.filter(onlyUnique);
 
     var result = [];
-    for (j = 0; j < arrayKeys.length; j++) {
-        if (arrayKeys[i] != 'title') {
+    for (var j = 0; j < arrayKeys.length; j++) {
+        if (arrayKeys[j] != 'title') {
             var someArray = arrayKeys[j].split("_");
             var someObj = {};
             var firstKey = uniqueKeysArray[0];
@@ -297,7 +300,7 @@ function getCountryName() {
         result += "</ul>";
     }
     else {
-        result = "<div><a id='" + countryId[0] + "' class='back2country' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>Back to country</a></div>";
+        result = "<div><a id='" + countryId[0] + "' class='back2country' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>Назад до країни</a></div>";
     }
 
     return result;
