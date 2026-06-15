@@ -135,7 +135,7 @@ function getFlagEmblem_HTML(country) {
     var images = "";
 
     if (country.flag_img != "" && country.flag_img != undefined ){
-        images += "<img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' />";
+        images += "<span class='flag-wrap'><img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' /></span>";
     }
     if (country.emb_img != "" && country.emb_img != undefined ){
         images += "<img alt='Герб " + country.short_name + "' title='Герб' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";

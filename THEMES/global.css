@@ -124,7 +124,7 @@ div.my_countries{
 }
 div.my_countries>div:first-child{font-weight:400; margin-bottom:10px}
 div.my_countries>div:first-child b{font-weight:700}
-.cont-progress{display:inline-block; vertical-align:middle; width:120px; height:8px; margin-left:12px; background:var(--surface-2); border:1px solid var(--border); border-radius:999px; overflow:hidden}
+.cont-progress{display:inline-block; vertical-align:middle; width:120px; height:8px; margin-left:12px; background:var(--border); border:1px solid var(--muted); border-radius:999px; overflow:hidden}
 .cont-progress span{display:block; height:100%; background:var(--accent); border-radius:999px; transition:width .4s ease}
 .regions-trophy{margin-left:8px; vertical-align:middle}
 img.countflag{
@@ -169,6 +169,9 @@ div.countrydetail, div.countryregion, div.cityrow{max-width:820px; margin-left:a
 .symbolics-title{margin:0 0 18px; font-size:18px; font-weight:700; text-align:center; color:var(--text)}
 .symbolics-row{display:flex; gap:72px; align-items:center; justify-content:center; flex-wrap:wrap}
 .symbolics-row img{height:120px; width:auto; display:block; border-radius:6px}
+/* Framed wrapper so white/light flags don't blend with the plaque background */
+.flag-wrap{display:inline-block; line-height:0; border:1px solid var(--border); border-radius:7px; overflow:hidden; box-shadow:var(--shadow)}
+.flag-wrap img.country_flag{border-radius:0}
 
 /* LOCATION PAGE ----------------------------------------------- */
 img.city_photo{margin:8px; width:300px; height:225px; object-fit:cover; border-radius:12px; border:1px solid var(--border)}

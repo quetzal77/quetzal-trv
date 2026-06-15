@@ -21,7 +21,7 @@
         else if (params.get("page") === "about")    { HTML_CreatorOfAboutPage(); }
         else if (params.get("page") === "statistics") { getStatisticsPage(); }
         else if (params.get("page") === "settings") { getSettingsOverviewPage(); }
-        else                            { createWorldPage_HTML(); getNumberOfLocation(); }
+        else { createWorldPage_HTML(); getNumberOfLocation(); }
     };
 // Close the navbar search dropdown when clicking outside of it
     document.addEventListener("click", function(e){
