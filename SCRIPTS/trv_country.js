@@ -11,7 +11,7 @@ function createCountryPage_HTML(countryId) {
     local.push(countryId, country[0]);
 
     // Set url
-    if (skipPushState) { skipPushState = false; }
+    if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?country="+countryId); }
 
     var typeName = getCountryTypeName(local[1].country_type_id);

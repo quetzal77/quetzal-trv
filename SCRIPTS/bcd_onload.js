@@ -4,7 +4,7 @@
 //00.01 ARRAY USED FOR CREATION OF WORLD PAGE
     var initial_data;  // Store initial information for creation of home page
     var local; // Store variable that describe which country have to be opened and drawn on a map
-    var skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
+    window.skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
 
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
@@ -14,7 +14,7 @@
 // Browser Back/Forward: re-render the page for the current URL without pushing a new entry
     window.onpopstate = function() {
         var params = new URLSearchParams(window.location.search);
-        skipPushState = true;
+        window.skipPushState = true;
         if (params.get("country"))      { getCountryPage(params.get("country")); }
         else if (params.get("cityId"))  { getCityPage(params.get("cityId")); }
         else if (params.get("storyId")) { getStoryPage(params.get("storyId")); }

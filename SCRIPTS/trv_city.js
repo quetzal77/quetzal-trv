@@ -9,7 +9,7 @@ function createCityPage_HTML(cityId) {
     local.push(cityId, city[0]);
 
     // Set url
-    if (skipPushState) { skipPushState = false; }
+    if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?cityId="+cityId); }
 
     //Add Country main content

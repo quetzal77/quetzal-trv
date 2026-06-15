@@ -5,7 +5,7 @@ function createStoryPage_HTML(storyId) {
     local.push(storyId, "story");
 
     // Set url
-    if (skipPushState) { skipPushState = false; }
+    if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?storyId="+storyId); }
 
     var storyFileUrl = "DATA/stories/" + storyId + ".xml";

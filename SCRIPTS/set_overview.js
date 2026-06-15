@@ -16,7 +16,7 @@ function createSettingsPage_HTML() {
     //Highlight the active section in the navbar
     setActiveNav("navSettings");
 
-    if (skipPushState) { skipPushState = false; }
+    if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=settings"); }
 }
 

@@ -456,7 +456,7 @@ function navSearchKey (e) {
 //03.01 Creator of the About / Contacts page
 function HTML_CreatorOfAboutPage () {
     setActiveNav();
-    if (skipPushState) { skipPushState = false; }
+    if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=about"); }
     document.getElementById("mainSection").innerHTML =
         "<div class='about-page'>" +
