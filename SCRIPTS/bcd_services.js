@@ -478,7 +478,7 @@ function HTML_CreatorOfAboutPage () {
                 "<div class='contact-card'><span class='contact-ico'>👥</span><span class='contact-meta'><span class='contact-label'>Teams</span><span class='contact-val'>slavutskyy</span></span></div>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.0.2 (ukr)</span>" +
+                "<span class='tech-tag'>v9.0.3 (ukr)</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

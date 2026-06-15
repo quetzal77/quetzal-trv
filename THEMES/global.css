@@ -108,17 +108,85 @@ div.map{
 .totalstat b{color:var(--text); font-weight:700}   /* only the numbers are bold */
 div.my_countries span{color:var(--muted); font-weight:400}
 /* Shared surface "card" look — defined once, reused by the cards below */
-.my_countries,.symbolics,.about-card,.contact-card,.stats-card{
+.my_countries,.symbolics,.about-card,.contact-card{
   background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
 }
-.symbolics,.about-card,.contact-card,.stats-card{box-shadow:var(--shadow)}
-/* STATISTICS PAGE (placeholder) */
+.symbolics,.about-card,.contact-card{box-shadow:var(--shadow)}
+/* STATISTICS PAGE */
 .stats-page{max-width:880px; margin:0 auto}
 .stats-title{font-size:26px; font-weight:700; text-align:center; margin:6px 0 18px; color:var(--text)}
-.stats-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px}
-.stats-card{padding:20px 22px; min-height:160px}
-.stats-card h3{margin:0 0 10px; font-size:16px; color:var(--text)}
-.stats-placeholder{color:var(--muted); margin:0}
+.stats-block + .stats-block{margin-top:28px}
+/* Block 1 — summary tiles (geography / trips / time) */
+.stat-grid{display:grid; gap:14px}
+.stat-tiles-full{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.stat-tile{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+.stat-tile .num{font-size:38px; font-weight:700; line-height:1.05; color:var(--text)}
+.stat-tile .lbl{font-size:14px; color:var(--muted); margin-top:4px}
+.stat-tile .sub{margin-top:14px; padding-top:12px; border-top:1px solid var(--border); display:flex; flex-direction:column; gap:6px}
+.stat-tile .sub-row{font-size:14px; color:var(--muted)}
+.stat-tile .sub-row b{color:var(--text); font-weight:600}
+/* Block 2 — records (vertical cards, one row) */
+.stats-h2{font-size:18px; font-weight:700; margin:0 0 14px; color:var(--text)}
+.stat-records{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.stat-rec{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 18px}
+.stat-rec .emo{font-size:24px; line-height:1}
+.stat-rec .rl{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; margin-top:9px}
+.stat-rec .rv{font-size:18px; font-weight:700; margin-top:3px}
+.stat-rec .rs{font-size:13px; color:var(--muted); margin-top:2px}
+/* Block 3 — donut charts */
+.stat-donuts{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.donut-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px; text-align:center}
+.donut-card h4{margin:0 0 16px; font-size:15px; font-weight:700; color:var(--text)}
+.donut-wrap{position:relative; width:150px; height:150px; margin:0 auto}
+.donut{width:150px; height:150px; border-radius:50%}
+.donut-hole{position:absolute; inset:27px; background:var(--surface); border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center}
+.donut-hole .dt{font-size:26px; font-weight:700; line-height:1; color:var(--text)}
+.donut-hole .dl{font-size:11px; color:var(--muted); margin-top:2px}
+.donut-legend{margin-top:16px; display:flex; flex-direction:column; gap:7px; text-align:left}
+.donut-legend .lg{display:flex; align-items:center; gap:8px; font-size:13px}
+.donut-legend .sw{width:11px; height:11px; border-radius:3px; flex:none}
+.donut-legend .ln{flex:1; color:var(--text)}
+.donut-legend .lv{color:var(--muted); font-weight:600; white-space:nowrap}
+.ns-info{display:inline-flex; align-items:center; justify-content:center; width:15px; height:15px; border-radius:50%; border:1px solid var(--muted); color:var(--muted); font-size:10px; font-weight:700; font-style:italic; line-height:1; cursor:help; margin-left:6px; vertical-align:middle}
+/* Block 4 — trips per year (vertical bars) */
+.stat-chart{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 20px 14px; overflow-x:auto}
+.stat-cols{display:flex; align-items:flex-end; gap:5px; height:200px; min-width:600px}
+.stat-col{flex:1; min-width:16px; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:5px}
+.stat-col .bar{width:100%; max-width:30px; background:var(--accent); border-radius:5px 5px 0 0; transition:height .4s}
+.stat-col .bar:hover{background:#7c3aed}
+.stat-col .cnt{font-size:10px; color:var(--muted)}
+.stat-col .yr{font-size:10px; color:var(--muted); white-space:nowrap; margin-top:5px}
+/* Block 5 — trend line charts + month heat strip */
+.trend-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 20px; margin-bottom:28px}
+.trend-card:last-child{margin-bottom:0}
+.trend-head{display:flex; align-items:baseline; justify-content:space-between; margin:0 0 14px}
+.trend-head h4{margin:0; font-size:15px; font-weight:700; color:var(--text)}
+.trend-head .pk{font-size:12px; color:var(--muted)}
+.trend-box{height:160px; position:relative}
+.trend-svg{width:100%; height:100%; display:block}
+.trend-pts{position:absolute; inset:0; pointer-events:none}
+.trend-pts .pt{position:absolute; width:5px; height:5px; border-radius:50%; background:var(--surface); border:2px solid currentColor; transform:translate(-50%,-50%)}
+.trend-pts .vlbl{position:absolute; transform:translate(-50%,-150%); font-size:9px; font-weight:600; color:var(--text); white-space:nowrap}
+.trend-pts .hit{position:absolute; top:0; bottom:0; transform:translateX(-50%); pointer-events:auto; cursor:help}
+.trend-labels{display:flex; justify-content:space-between; margin-top:8px}
+.trend-labels span{font-size:10px; color:var(--muted)}
+.mh-heat{display:grid; grid-template-columns:repeat(12,1fr); gap:6px}
+.mh-cell{border-radius:8px; padding:10px 2px; text-align:center; border:1px solid var(--border)}
+.mh-cell .m{font-size:10px; opacity:.8}
+.mh-cell .v{font-size:14px; font-weight:700; margin-top:3px}
+@media (max-width:640px){.mh-heat{grid-template-columns:repeat(6,1fr)}}
+/* Block 6 — top lists */
+.top-grid{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.top-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 20px}
+.top-card h4{margin:0 0 14px; font-size:15px; font-weight:700; color:var(--text)}
+.top-row{display:flex; align-items:center; gap:10px; padding:5px 0}
+.top-row .rk{width:14px; text-align:right; font-size:12px; font-weight:700; color:var(--muted); flex:none}
+.top-row .body{flex:1; min-width:0}
+.top-row .line{display:flex; justify-content:space-between; gap:8px; font-size:13px; margin-bottom:4px}
+.top-row .tn{color:var(--text); overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.top-row .tv{color:var(--muted); font-weight:700; flex:none}
+.top-row .bar{height:6px; background:var(--border); border-radius:999px; overflow:hidden}
+.top-row .bar span{display:block; height:100%; background:var(--accent); border-radius:999px}
 div.my_countries{
   width:auto; margin:14px 0; padding:14px 16px; text-align:left; font-weight:normal;
 }
