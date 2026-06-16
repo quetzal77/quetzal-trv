@@ -73,6 +73,7 @@ IMG/                      flags, emblems, city photos
 ### UI / UX
 - [ ] Зробити контакт **Teams** клікабельним (deep-link `https://teams.microsoft.com/l/chat/...` або email)
 - [ ] Add Login for settings
+- [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowserа
 
 ### Дані / контент
 - [ ] ...

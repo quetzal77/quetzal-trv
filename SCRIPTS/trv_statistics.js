@@ -33,10 +33,15 @@ function statsBlockSummary_HTML() {
     var trips = visitsSorted.length;
     var totalCityVisits = 0;   //all location visits, counting repeats
     var totalDays = 0;
+    var oneDayTrips = 0;       //trips that start and end on the same day
+    var twoWeekTrips = 0;      //trips longer than two weeks (> 14 days)
     var DAY = 1000 * 60 * 60 * 24;
     $.each (visitsSorted, function( i, v ){
         totalCityVisits += (v.cities ? v.cities.length : 0);
-        totalDays += Math.round((v.end_date - v.start_date) / DAY) + 1;
+        var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
+        totalDays += days;
+        if (days === 1) { oneDayTrips += 1; }
+        if (days > 14) { twoWeekTrips += 1; }
     });
 
     //Average locations per trip (counts every visit, repeats included)
@@ -50,9 +55,9 @@ function statsBlockSummary_HTML() {
         "<div class='stat-tile'>" +
             "<div class='num'>" + countries + "</div><div class='lbl'>Країн відвідано</div>" +
             "<div class='sub'>" +
-                "<div class='sub-row'><b>" + regions + "</b> регіонів</div>" +
-                "<div class='sub-row'><b>" + totalCityVisits + "</b> відвідувань локацій</div>" +
-                "<div class='sub-row'><b>" + cities + "</b> унікальних локацій</div>" +
+                "<div class='sub-row'><b>" + regions + "</b> регіонів відвідано</div>" +
+                "<div class='sub-row'><b>" + totalCityVisits + "</b> локацій відвідано</div>" +
+                "<div class='sub-row'><b>" + cities + "</b> унікальних локацій відвідано</div>" +
             "</div>" +
         "</div>" +
         //Card 2 — trips
@@ -60,6 +65,8 @@ function statsBlockSummary_HTML() {
             "<div class='num'>" + trips + "</div><div class='lbl'>Поїздок</div>" +
             "<div class='sub'>" +
                 "<div class='sub-row'><b>&asymp; " + statsFmt1(avgLocPerTrip) + "</b> локацій за поїздку</div>" +
+                "<div class='sub-row'><b>" + oneDayTrips + "</b> (" + (trips ? Math.round(oneDayTrips / trips * 100) : 0) + "%) одноденних поїздок</div>" +
+                "<div class='sub-row'><b>" + twoWeekTrips + "</b> (" + (trips ? Math.round(twoWeekTrips / trips * 100) : 0) + "%) поїздок понад 2 тижні</div>" +
             "</div>" +
         "</div>" +
         //Card 3 — time
@@ -67,8 +74,8 @@ function statsBlockSummary_HTML() {
             "<div class='num'>" + totalDays + "</div><div class='lbl'>Днів у подорожах</div>" +
             "<div class='sub'>" +
                 "<div class='sub-row'><b>&asymp; " + Math.round(months) + " місяців</b></div>" +
-                "<div class='sub-row'><b>&asymp; " + statsFmt1(years) + " року</b></div>" +
-                "<div class='sub-row'><b>&asymp; " + statsFmt1(avgDaysPerTrip) + " дня</b> за поїздку</div>" +
+                "<div class='sub-row'><b>&asymp; " + statsFmt2(years) + " року</b></div>" +
+                "<div class='sub-row'><b>&asymp; " + statsFmt2(avgDaysPerTrip) + " дня</b> за поїздку</div>" +
             "</div>" +
         "</div>" +
     "</div>";
@@ -77,6 +84,11 @@ function statsBlockSummary_HTML() {
 //09.03 Format a number with one decimal, Ukrainian comma separator
 function statsFmt1(n) {
     return n.toFixed(1).replace(".", ",");
+}
+
+//09.03a Format a number with two decimals, Ukrainian comma separator
+function statsFmt2(n) {
+    return n.toFixed(2).replace(".", ",");
 }
 
 //09.04 Block 2 — records: first / longest trip, most locations, most frequent country
@@ -99,35 +111,30 @@ function statsBlockRecords_HTML() {
     var longestSub = [longestCountry, longestVisit ? longestVisit.start_date.getFullYear() : ""]
                      .filter(function(s){ return s !== "" && s !== undefined; }).join(", ");
 
-    //Country with the most unique visited locations
-    var topLocCountry = "", topLocCount = 0;
+    //Country with the most unique visited locations (+ number of trips there)
+    var topLocCountry = "", topLocShort = "", topLocCount = 0;
     $.each (countriesVisited, function( i, c ){
         var n = c.getNumberOfVisitedCities();
-        if (n > topLocCount) { topLocCount = n; topLocCountry = c.name_ua; }
+        if (n > topLocCount) { topLocCount = n; topLocCountry = c.name_ua; topLocShort = c.short_name; }
     });
-
-    //Country present in the largest number of trips
-    var tripsPerCountry = {};
+    var topLocTrips = 0;
     $.each (visitsSorted, function( i, v ){
-        var seen = {};
-        $.each (v.cities, function( j, city ){
-            if (!seen[city.country_id]) {
-                seen[city.country_id] = true;
-                tripsPerCountry[city.country_id] = (tripsPerCountry[city.country_id] || 0) + 1;
-            }
-        });
+        var has = false;
+        $.each (v.cities, function( j, city ){ if (city.country_id == topLocShort) { has = true; } });
+        if (has) { topLocTrips += 1; }
     });
-    var topTripShort = "", topTripCount = 0;
-    for (var sn in tripsPerCountry) {
-        if (tripsPerCountry[sn] > topTripCount) { topTripCount = tripsPerCountry[sn]; topTripShort = sn; }
-    }
 
-    return "<h2 class='stats-h2'>Рекорди</h2>" +
-        "<div class='stat-grid stat-records'>" +
+    //Visited capitals
+    var capitals = 0;
+    $.each (citiesVisited, function( i, c ){ if (c.capital) { capitals += 1; } });
+
+    var topLocSub = setLocationNumberWithCorrectEnd(topLocCount) + "<br>" + setVisitsNumberWithCorrectEnd(topLocTrips);
+
+    return "<div class='stat-grid stat-records'>" +
             statsRecCard("🚩", "Перша поїздка", statsFmtDate(firstVisit.start_date), firstSub) +
             statsRecCard("⏱️", "Найдовша поїздка", longestDays + " " + parseWord("д", "ень", "ні", "нів", longestDays), longestSub) +
-            statsRecCard("📍", "Найбільше локацій", topLocCountry, setLocationNumberWithCorrectEnd(topLocCount)) +
-            statsRecCard("🔁", "Найчастіша поїздка", getUaCountryName(topTripShort), setVisitsNumberWithCorrectEnd(topTripCount)) +
+            statsRecCard("📍", "Найбільше локацій", topLocCountry, topLocSub) +
+            statsRecCard("🏛️", "Відвідано столиць", capitals, "з " + countriesVisited.length + " країн") +
         "</div>";
 }
 
@@ -252,19 +259,25 @@ function statsBlockYears_HTML() {
     var maxN = 0, peakYear = years.length ? years[0] : "";
     $.each (years, function( i, yr ){ if (byYear[yr] > maxN) { maxN = byYear[yr]; peakYear = yr; } });
 
-    var cols = "";
+    var numYears = years.length;
+    var cols = "", yrs = "";
     $.each (years, function( i, yr ){
         var n = byYear[yr];
         var h = maxN ? Math.round(n / maxN * 100) : 0;
         cols += "<div class='stat-col' title='" + yr + ": " + setVisitsNumberWithCorrectEnd(n) + "'>" +
                 "<span class='cnt'>" + n + "</span>" +
-                "<span class='bar' style='height:" + h + "%'></span>" +
-                "<span class='yr'>" + String(yr).slice(2) + "</span></div>";
+                "<span class='bar' style='height:" + h + "%'></span></div>";
+        if (i === 0 || yr % 5 === 0) {   //first year + every multiple of 5
+            yrs += "<span style='left:" + ((i + 0.5) / numYears * 100).toFixed(2) + "%'>" + yr + "</span>";
+        }
     });
 
     return "<div class='trend-card'>" +
         "<div class='trend-head'><h4>Поїздки за роками</h4><span class='pk'>пік: " + maxN + " (" + peakYear + ")</span></div>" +
-        "<div class='stat-chart' style='padding:0; border:0; box-shadow:none'><div class='stat-cols'>" + cols + "</div></div>" +
+        "<div class='stat-chart' style='padding:0; border:0; box-shadow:none'>" +
+            "<div class='stat-cols'>" + cols + "</div>" +
+            "<div class='stat-years'>" + yrs + "</div>" +
+        "</div>" +
     "</div>";
 }
 
@@ -315,8 +328,10 @@ function statsBlockTrends_HTML() {
     //Months
     var monthsData = $.map(MONTHS, function( nm, idx ){ return { name: nm, value: byMonth[idx] || 0 }; });
 
-    return statsLineChart_HTML("Країн відвідано за рік", series1, "#2563eb", null) +
-        statsLineChart_HTML("Нових країн за рік", series2, "#22c55e", tips2) +
+    var tips1 = $.map(series1, function( s ){ return s.year + ": " + setCountriesNumberWithCorrectEnd(s.value) + " відвідано"; });
+
+    return statsLineChart_HTML("Країн відвідано за рік", series1, "#2563eb", tips1) +
+        statsLineChart_HTML("Нових країн відвідано за рік", series2, "#22c55e", tips2) +
         statsHeatMonths_HTML("Поїздки за місяцями", monthsData);
 }
 
@@ -325,7 +340,6 @@ function statsLineChart_HTML(title, series, color, tips) {
     var n = series.length;
     var max = 1;
     $.each (series, function( i, s ){ if (s.value > max) { max = s.value; } });
-
     var pts = [], overlay = "", labels = "", peak = series[0];
     $.each (series, function( i, s ){
         var x = n > 1 ? (i / (n - 1) * 100) : 50;
@@ -339,7 +353,9 @@ function statsLineChart_HTML(title, series, color, tips) {
         overlay += "<span class='pt' style='left:" + x + "%; top:" + y + "%'></span>";
         if (s.value > 0) { overlay += "<span class='vlbl' style='left:" + x + "%; top:" + y + "%'>" + s.value + "</span>"; }
 
-        labels += "<span>" + String(s.year).slice(2) + "</span>";
+        if (i === 0 || s.year % 5 === 0) {   //first year + every multiple of 5
+            labels += "<span style='left:" + x + "%'>" + s.year + "</span>";
+        }
         if (s.value > peak.value) { peak = s; }
     });
 
@@ -382,11 +398,12 @@ function statsBlockTop_HTML() {
     if (!visitsSorted.length) { return ""; }
 
     var DAY = 1000 * 60 * 60 * 24;
-    var byVisits = {}, byDays = {};
+    var byVisits = {}, byDays = {}, cityVisits = {};
     $.each (visitsSorted, function( i, v ){
         var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
         var seen = {};
         $.each (v.cities, function( j, city ){
+            cityVisits[city.city_id] = (cityVisits[city.city_id] || 0) + 1;
             if (!seen[city.country_id]) {
                 seen[city.country_id] = true;
                 byVisits[city.country_id] = (byVisits[city.country_id] || 0) + 1;
@@ -395,13 +412,41 @@ function statsBlockTop_HTML() {
         });
     });
 
-    var byRegions = {};
-    $.each (countriesVisited, function( i, c ){ byRegions[c.short_name] = c.getNumberOfVisitedRegions(); });
+    //Top countries by visited regions — value shown as "visited з total" with a completion bar
+    var regionRows = [];
+    $.each (countriesVisited, function( i, c ){
+        var total = 0;
+        $.each (data.area, function( k, a ){ if (a.country_id == c.country_id && a.active != "N") { total += 1; } });
+        regionRows.push({ name: c.name_ua, value: c.getNumberOfVisitedRegions(), total: total });
+    });
+    regionRows.sort(function( a, b ){ return b.value - a.value; });
+    regionRows = regionRows.slice(0, 7);
+
+    //Top cities by number of visits
+    var cityRows = [];
+    for (var cid in cityVisits) { cityRows.push({ name: getUaLocationName(cid) || cid, value: cityVisits[cid] }); }
+    cityRows.sort(function( a, b ){ return b.value - a.value; });
+    cityRows = cityRows.slice(0, 7);
+
+    //Golden combo — countries where the capital and ALL active regions are visited
+    var capCountries = {};
+    $.each (citiesVisited, function( i, city ){ if (city.capital) { capCountries[city.getCountryId()] = true; } });
+    var comboRows = [];
+    $.each (countriesVisited, function( i, c ){
+        if (!capCountries[c.short_name]) { return; }
+        var visitedReg = c.getNumberOfVisitedRegions(), totalReg = 0;
+        $.each (data.area, function( k, a ){ if (a.country_id == c.country_id && a.active != "N") { totalReg += 1; } });
+        if (totalReg > 0 && visitedReg >= totalReg) { comboRows.push({ name: c.name_ua, value: visitedReg }); }
+    });
+    comboRows.sort(function( a, b ){ return b.value - a.value; });
+    comboRows = comboRows.slice(0, 7);
 
     return "<div class='stat-grid top-grid'>" +
-        statsTopCard("Топ за візитами", statsTopRows(byVisits), "") +
-        statsTopCard("Топ за часом",    statsTopRows(byDays),   "дн") +
-        statsTopCard("Топ за регіонами", statsTopRows(byRegions), "") +
+        statsTopCard("Топ країн за візитами", statsTopRows(byVisits), "") +
+        statsTopCard("Топ міст за візитами", cityRows, "") +
+        statsTopCard("Топ за регіонами", regionRows, "") +
+        statsTopCard("Топ країн за часом", statsTopRows(byDays), "дн") +
+        statsTopCard("🥇 Золоте комбо", comboRows, "рег.", "Країни, де відвідано столицю та всі регіони.", "gold") +
     "</div>";
 }
 
@@ -413,16 +458,34 @@ function statsTopRows(map) {
     return arr.slice(0, 7);
 }
 
-//09.16 One top-list card (ranked rows with proportional bars)
-function statsTopCard(title, rows, unit) {
+//09.16 One top-list card: header (title + expand icon) + ranked rows with bars
+function statsTopCard(title, rows, unit, desc, mode) {
     var max = rows.length ? rows[0].value : 1;
+    var gold = (mode === "gold");
     var html = "";
     $.each (rows, function( i, r ){
-        var w = max ? Math.round(r.value / max * 100) : 0;
-        html += "<div class='top-row'><span class='rk'>" + (i + 1) + "</span>" +
+        var valText, bar = "";
+        if (gold) {
+            //Golden combo: no bar — every country is 100%, show a gold region badge
+            valText = "<span class='top-gold'>" + r.value + (unit ? " " + unit : "") + "</span>";
+        } else if (r.total !== undefined) {
+            //Completion mode: bar = visited / total, label "visited з total"
+            valText = r.value + " з " + r.total;
+            bar = "<div class='bar'><span style='width:" + (r.total ? Math.round(r.value / r.total * 100) : 0) + "%'></span></div>";
+        } else {
+            //Ranking mode: bar relative to the list leader
+            valText = r.value + (unit ? " " + unit : "");
+            bar = "<div class='bar'><span style='width:" + (max ? Math.round(r.value / max * 100) : 0) + "%'></span></div>";
+        }
+        html += "<div class='top-row'>" +
                 "<div class='body'><div class='line'><span class='tn'>" + r.name + "</span>" +
-                "<span class='tv'>" + r.value + (unit ? " " + unit : "") + "</span></div>" +
-                "<div class='bar'><span style='width:" + w + "%'></span></div></div></div>";
+                "<span class='tv'>" + valText + "</span></div>" + bar + "</div></div>";
     });
-    return "<div class='top-card'><h4>" + title + "</h4>" + html + "</div>";
+    var d = desc ? "<p class='top-desc'>" + desc + "</p>" : "";
+    //Expand icon — inactive for now (the expand behaviour will be wired later)
+    var head = "<div class='tc-head'><h4>" + title + "</h4>" +
+        "<button class='tc-expand' type='button' disabled aria-label='Розгорнути список' title='Розгорнути (скоро)'>" +
+            "<svg viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg>" +
+        "</button></div>";
+    return "<div class='top-card'>" + head + d + html + "</div>";
 }
