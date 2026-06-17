@@ -445,7 +445,7 @@ function statsBlockTop_HTML() {
         statsTopCard("Топ країн за візитами", statsTopRows(byVisits), "") +
         statsTopCard("Топ міст за візитами", cityRows, "") +
         statsTopCard("Топ за регіонами", regionRows, "") +
-        statsTopCard("Топ країн за часом", statsTopRows(byDays), "дн") +
+        statsTopCard("Топ країн за часом перебування", statsTopRows(byDays), "дн") +
         statsTopCard("🥇 Золоте комбо", comboRows, "рег.", "Країни, де відвідано столицю та всі регіони.", "gold") +
     "</div>";
 }

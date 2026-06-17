@@ -200,7 +200,7 @@
       "small_flag_img": "-391px -741px",
       "flag_img": "abkhazia_flag.png",
       "emb_img": "abkhazia_emb.png",
-      "map_img": "abkhaziaLow.js"
+      "map_img": "abkhaziaRegionsLow.js"
     },
     {
       "country_id": "AE",
@@ -1313,56 +1313,56 @@
       "region_id": "ABH-AB",
       "name": "Abkhazia",
       "name_ua": "Абхазія",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_SU",
       "name": "Sukhumi District",
       "name_ua": "Сухумський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GA",
       "name": "Gagra District",
       "name_ua": "Ґагрський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GU",
       "name": "Gudauta District",
       "name_ua": "Гудаутський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GL",
       "name": "Gulripsh District",
       "name_ua": "Ґулрипшський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_OC",
       "name": "Ochamchira District",
       "name_ua": "Очамчирський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_TQ",
       "name": "Tquarchal District",
       "name_ua": "Ткварчельський (Ткуарчалський) район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "ABH",
       "region_id": "ABH_GI",
       "name": "Gali District",
       "name_ua": "Гальський (Галський) район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "AL",
@@ -2248,35 +2248,35 @@
     },
     {
       "country_id": "TA",
-      "region_id": "MD_TR",
+      "region_id": "TA_TR",
       "name": "Tiraspol",
       "name_ua": "місто Тираспіль",
       "active": "N"
     },
     {
       "country_id": "TA",
-      "region_id": "MD_GR",
+      "region_id": "TA_GR",
       "name": "Grigoriopol",
       "name_ua": "Григоріопольський район",
       "active": "N"
     },
     {
       "country_id": "TA",
-      "region_id": "MD_KA",
+      "region_id": "TA_KA",
       "name": "Camenca",
       "name_ua": "Каменський район",
       "active": "N"
     },
     {
       "country_id": "TA",
-      "region_id": "MD_RB",
+      "region_id": "TA_RB",
       "name": "Rîbniţa",
       "name_ua": "Рибницький район",
       "active": "N"
     },
     {
       "country_id": "TA",
-      "region_id": "MD_SL",
+      "region_id": "TA_SL",
       "name": "Slobozia",
       "name_ua": "Слободзейський район",
       "active": "N"
@@ -2286,7 +2286,7 @@
       "region_id": "TA-DU",
       "name": "Dubăsari",
       "name_ua": "Дубосарський район",
-      "active": "Ngthtdsh sckfyls."
+      "active": "N"
     },
     {
       "country_id": "TA",
@@ -12584,7 +12584,7 @@
       "name": "Sukhum",
       "name_nt": "Акәа",
       "name_ua": "Сухумі",
-      "region_id": "ABH-AB",
+      "region_id": "ABH_SU",
       "capital": "true",
       "city_id": "sukhum",
       "lat": "42.7704499",
@@ -12598,7 +12598,7 @@
       "name": "Gagra",
       "name_nt": "Гагра",
       "name_ua": "Гагра",
-      "region_id": "ABH-AB",
+      "region_id": "ABH_GA",
       "city_id": "gagra",
       "lat": "43.2192419",
       "lat_2": "43.2778896",
@@ -12611,7 +12611,7 @@
       "name": "New Athos",
       "name_nt": "Афон Еыц",
       "name_ua": "Новий Афон",
-      "region_id": "ABH-AB",
+      "region_id": "ABH_SU",
       "city_id": "new_athos",
       "lat": "42.886052",
       "lat_2": "43.0859807",
@@ -12624,7 +12624,7 @@
       "name": "Ritsa",
       "name_nt": "Рица",
       "name_ua": "Ріца",
-      "region_id": "ABH-AB",
+      "region_id": "ABH_GU",
       "city_id": "lake_ritsa_and_blue_lake",
       "type": "1",
       "lat": "43.4169399",
@@ -14257,7 +14257,7 @@
     },
     {
       "name": "Bender",
-      "name_nt": "Бендéры",
+      "name_nt": "Бендеры",
       "name_ua": "Бендери",
       "region_id": "TA-BD",
       "city_id": "ta-bender",
