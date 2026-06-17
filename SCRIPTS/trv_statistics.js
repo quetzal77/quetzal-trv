@@ -412,7 +412,7 @@ function statsBlockTop_HTML() {
         });
     });
 
-    //Top countries by visited regions — value shown as "visited з total" with a completion bar
+    //Top countries by visited regions (full, sorted) — value "visited з total" with a completion bar
     var regionRows = [];
     $.each (countriesVisited, function( i, c ){
         var total = 0;
@@ -420,15 +420,13 @@ function statsBlockTop_HTML() {
         regionRows.push({ name: c.name_ua, value: c.getNumberOfVisitedRegions(), total: total });
     });
     regionRows.sort(function( a, b ){ return b.value - a.value; });
-    regionRows = regionRows.slice(0, 7);
 
-    //Top cities by number of visits
+    //Top cities by number of visits (full, sorted)
     var cityRows = [];
     for (var cid in cityVisits) { cityRows.push({ name: getUaLocationName(cid) || cid, value: cityVisits[cid] }); }
     cityRows.sort(function( a, b ){ return b.value - a.value; });
-    cityRows = cityRows.slice(0, 7);
 
-    //Golden combo — countries where the capital and ALL active regions are visited
+    //Golden combo — countries where the capital and ALL active regions are visited (full, sorted)
     var capCountries = {};
     $.each (citiesVisited, function( i, city ){ if (city.capital) { capCountries[city.getCountryId()] = true; } });
     var comboRows = [];
@@ -439,53 +437,90 @@ function statsBlockTop_HTML() {
         if (totalReg > 0 && visitedReg >= totalReg) { comboRows.push({ name: c.name_ua, value: visitedReg }); }
     });
     comboRows.sort(function( a, b ){ return b.value - a.value; });
-    comboRows = comboRows.slice(0, 7);
+
+    //Register full datasets so the expand button can show the complete list in a modal
+    window.statsTop = {
+        visits:  { title: "Топ країн за візитами", unit: "", mode: "", rows: statsSortRows(byVisits) },
+        cities:  { title: "Топ міст за візитами", unit: "", mode: "", rows: cityRows },
+        regions: { title: "Топ за регіонами", unit: "", mode: "", rows: regionRows },
+        days:    { title: "Топ країн за часом перебування", unit: "дн", mode: "", rows: statsSortRows(byDays) },
+        combo:   { title: "🥇 Золоте комбо", unit: "рег.", mode: "gold", desc: "Країни, де відвідано столицю та всі регіони.", rows: comboRows }
+    };
 
     return "<div class='stat-grid top-grid'>" +
-        statsTopCard("Топ країн за візитами", statsTopRows(byVisits), "") +
-        statsTopCard("Топ міст за візитами", cityRows, "") +
-        statsTopCard("Топ за регіонами", regionRows, "") +
-        statsTopCard("Топ країн за часом перебування", statsTopRows(byDays), "дн") +
-        statsTopCard("🥇 Золоте комбо", comboRows, "рег.", "Країни, де відвідано столицю та всі регіони.", "gold") +
+        statsTopCard("visits") + statsTopCard("cities") + statsTopCard("regions") +
+        statsTopCard("days") + statsTopCard("combo") +
     "</div>";
 }
 
-//09.15 Build sorted top-7 rows {name, value} from a {short_name: value} map
-function statsTopRows(map) {
+//09.15 Build full sorted rows {name, value} from a {short_name: value} map (Ukrainian country names)
+function statsSortRows(map) {
     var arr = [];
     for (var s in map) { arr.push({ name: getUaCountryName(s) || s, value: map[s] }); }
     arr.sort(function( a, b ){ return b.value - a.value; });
-    return arr.slice(0, 7);
+    return arr;
 }
 
-//09.16 One top-list card: header (title + expand icon) + ranked rows with bars
-function statsTopCard(title, rows, unit, desc, mode) {
+//09.16 Render ranked rows (shared by the card preview and the full modal list)
+function statsTopRowsHTML(rows, unit, mode, rank) {
     var max = rows.length ? rows[0].value : 1;
     var gold = (mode === "gold");
     var html = "";
     $.each (rows, function( i, r ){
+        var nm = (rank ? "<span class='rk'>" + (i + 1) + "</span> " : "") + r.name;
         var valText, bar = "";
         if (gold) {
-            //Golden combo: no bar — every country is 100%, show a gold region badge
             valText = "<span class='top-gold'>" + r.value + (unit ? " " + unit : "") + "</span>";
         } else if (r.total !== undefined) {
-            //Completion mode: bar = visited / total, label "visited з total"
             valText = r.value + " з " + r.total;
             bar = "<div class='bar'><span style='width:" + (r.total ? Math.round(r.value / r.total * 100) : 0) + "%'></span></div>";
         } else {
-            //Ranking mode: bar relative to the list leader
             valText = r.value + (unit ? " " + unit : "");
             bar = "<div class='bar'><span style='width:" + (max ? Math.round(r.value / max * 100) : 0) + "%'></span></div>";
         }
-        html += "<div class='top-row'>" +
-                "<div class='body'><div class='line'><span class='tn'>" + r.name + "</span>" +
+        html += "<div class='top-row'><div class='body'><div class='line'><span class='tn'>" + nm + "</span>" +
                 "<span class='tv'>" + valText + "</span></div>" + bar + "</div></div>";
     });
-    var d = desc ? "<p class='top-desc'>" + desc + "</p>" : "";
-    //Expand icon — inactive for now (the expand behaviour will be wired later)
-    var head = "<div class='tc-head'><h4>" + title + "</h4>" +
-        "<button class='tc-expand' type='button' disabled aria-label='Розгорнути список' title='Розгорнути (скоро)'>" +
-            "<svg viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg>" +
-        "</button></div>";
-    return "<div class='top-card'>" + head + d + html + "</div>";
+    return html;
+}
+
+//09.17 One top-list card: header (title + expand button) + top-7 preview rows
+function statsTopCard(key) {
+    var m = window.statsTop[key];
+    var d = m.desc ? "<p class='top-desc'>" + m.desc + "</p>" : "";
+    var body = statsTopRowsHTML(m.rows.slice(0, 7), m.unit, m.mode, false);
+    var btn = (m.rows.length > 7)
+        ? "<button class='tc-expand' type='button' onclick=\"statsTopOpen('" + key + "')\" aria-label='Показати весь список' title='Показати весь список'>" +
+          "<svg viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg></button>"
+        : "";
+    return "<div class='top-card'><div class='tc-head'><h4>" + m.title + "</h4>" + btn + "</div>" + d + body + "</div>";
+}
+
+//09.18 Open the full list in a modal over the charts
+function statsTopOpen(key) {
+    var m = window.statsTop && window.statsTop[key];
+    if (!m) { return; }
+    var modal = document.getElementById("statsTopModal");
+    if (!modal) {
+        modal = document.createElement("div");
+        modal.id = "statsTopModal";
+        modal.className = "stats-modal";
+        modal.addEventListener("click", function (e) { if (e.target === modal) { statsTopClose(); } });
+        document.body.appendChild(modal);
+    }
+    modal.innerHTML =
+        "<div class='stats-modal-box'>" +
+            "<div class='stats-modal-head'><h3>" + m.title + "</h3>" +
+                "<button class='stats-modal-close' type='button' onclick='statsTopClose()' aria-label='Закрити'>&times;</button>" +
+            "</div>" +
+            (m.desc ? "<p class='top-desc' style='padding:10px 20px 0; margin:0'>" + m.desc + "</p>" : "") +
+            "<div class='stats-modal-list'>" + statsTopRowsHTML(m.rows, m.unit, m.mode, false) + "</div>" +
+        "</div>";
+    modal.style.display = "flex";
+}
+
+//09.19 Close the expandable list and return to the charts
+function statsTopClose() {
+    var modal = document.getElementById("statsTopModal");
+    if (modal) { modal.style.display = "none"; }
 }

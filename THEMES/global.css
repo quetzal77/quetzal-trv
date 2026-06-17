@@ -185,8 +185,10 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .tc-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:12px}
 .tc-head h4{margin:0; font-size:15px; font-weight:700; color:var(--text)}
 .tc-expand{flex:none; width:26px; height:26px; padding:0; display:inline-flex; align-items:center; justify-content:center;
-           background:var(--surface-2); border:1px solid var(--border); border-radius:8px; color:var(--muted); cursor:not-allowed; opacity:.55}
+           background:var(--surface-2); border:1px solid var(--border); border-radius:8px; color:var(--muted); cursor:pointer; transition:all .15s}
+.tc-expand:hover{background:var(--accent-weak); border-color:var(--accent); color:var(--accent)}
 .tc-expand svg{width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round}
+.top-row .rk{color:var(--muted); font-weight:700; font-size:12px; margin-right:2px}
 .top-desc{margin:-4px 0 12px; font-size:12px; color:var(--muted); line-height:1.4}
 .top-row{display:flex; align-items:center; gap:10px; padding:5px 0}
 .top-row .body{flex:1; min-width:0}
@@ -196,6 +198,14 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .top-row .bar{height:6px; background:var(--border); border-radius:999px; overflow:hidden}
 .top-row .bar span{display:block; height:100%; background:var(--accent); border-radius:999px}
 .top-gold{font-weight:700; font-size:12px; color:#7a5600; background:linear-gradient(135deg,#ffe79e,#e9b949); border:1px solid #d4a017; border-radius:999px; padding:2px 9px}
+/* Expandable full-list modal (shown over the charts) */
+.stats-modal{position:fixed; left:0; right:0; bottom:0; top:68px; z-index:1000; display:none; align-items:flex-start; justify-content:center; background:rgba(8,12,20,.55); padding:24px 16px 40px; overflow:auto}
+.stats-modal-box{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); width:100%; max-width:520px; max-height:85vh; display:flex; flex-direction:column; overflow:hidden}
+.stats-modal-head{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 20px; border-bottom:1px solid var(--border)}
+.stats-modal-head h3{margin:0; font-size:18px; font-weight:700; color:var(--text)}
+.stats-modal-close{flex:none; width:32px; height:32px; border:1px solid var(--border); background:var(--surface-2); border-radius:8px; font-size:22px; line-height:1; color:var(--muted); cursor:pointer}
+.stats-modal-close:hover{color:var(--text); border-color:var(--muted)}
+.stats-modal-list{padding:6px 20px 18px; overflow-y:auto}
 @media (max-width:760px){
   .top-grid{grid-template-columns:1fr}
   .top-grid > .top-card,
