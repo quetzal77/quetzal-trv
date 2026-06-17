@@ -788,7 +788,7 @@
       "small_flag_img": "-469px -741px",
       "flag_img": "transnistria_flag.png",
       "emb_img": "transnistria_emb.png",
-      "map_img": "transnistriaLow.js"
+      "map_img": "transnistriaRegionsLow.js"
     },
     {
       "country_id": "UA",
@@ -2251,42 +2251,42 @@
       "region_id": "TA_TR",
       "name": "Tiraspol",
       "name_ua": "місто Тираспіль",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA_GR",
       "name": "Grigoriopol",
       "name_ua": "Григоріопольський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA_KA",
       "name": "Camenca",
       "name_ua": "Каменський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA_RB",
       "name": "Rîbniţa",
       "name_ua": "Рибницький район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA_SL",
       "name": "Slobozia",
       "name_ua": "Слободзейський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
       "region_id": "TA-DU",
       "name": "Dubăsari",
       "name_ua": "Дубосарський район",
-      "active": "N"
+      "active": "Y"
     },
     {
       "country_id": "TA",
@@ -2300,7 +2300,7 @@
       "region_id": "TA-SN",
       "name": "Transnistria",
       "name_ua": "Придністровська автономія",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "MD",
@@ -14245,7 +14245,7 @@
       "name": "Tiraspol",
       "name_nt": "Тирáсполь",
       "name_ua": "Тирасполь",
-      "region_id": "TA-SN",
+      "region_id": "TA_TR",
       "capital": "true",
       "city_id": "ta-tiraspol",
       "lat": "46.01",
@@ -14272,7 +14272,7 @@
       "name": "Dubasari",
       "name_nt": "Дубоссáры",
       "name_ua": "Дубосари",
-      "region_id": "TA-SN",
+      "region_id": "TA-DU",
       "city_id": "ta-dubasari",
       "lat": "46.80003",
       "lat_2": "47.2659914",

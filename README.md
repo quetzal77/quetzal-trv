@@ -76,7 +76,7 @@ IMG/                      flags, emblems, city photos
 - [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowserа
 
 ### Дані / контент
-- [ ] ...
+- [ ] Transform Portugal map to move islands closer to country
 
 ### Технічне
 - [ ] Автогенерація `onload.json` з `globaldb.json` (щоб не редагувати вручну)
