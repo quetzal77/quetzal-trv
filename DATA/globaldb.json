@@ -21877,11 +21877,11 @@
       "description": "Друге за значущістю місто Ельзасу, не становить особливого інтересу і важливіше як залізничний вузол, ніж місце відпочинку."
     },
     {
-      "name": "Besanсon",
+      "name": "Besancon",
       "name_nt": " Besançon",
       "name_ua": "Безансон",
       "region_id": "FR-D",
-      "city_id": "besanсon",
+      "city_id": "besancon",
       "lat": "47.2352242",
       "long": "6.026586",
       "image": "fr_besan.jpg",
@@ -22567,11 +22567,11 @@
       "description": "Ельче відомий внесеними до списку Всесвітньої спадщини ЮНЕСКО пальмовими гаями, а також як місце знахідки знаменитої «Дами з Ельче»."
     },
     {
-      "name": "València",
+      "name": "Valencia",
       "name_nt": "València",
       "name_ua": "Валенсія",
       "region_id": "ES-VC",
-      "city_id": "valència",
+      "city_id": "valencia",
       "lat": "39.4757392",
       "long": "-0.3757522",
       "description": "Адміністративний центр автономної спільноти Валенсія та однойменної провінції Іспанії. Третє за кількістю жителів місто Іспанії після Мадриду і Барселони.\nЙого історичний центр є одним з найбільших в Іспанії, займаючи 169 гектарів, і завдяки своїй історичній та монументальній спадщині та різноманітним виконавським мистецтвам і культурним закладам, це одне з міст з найбільшим припливом національних та міжнародних туристів у всій країні. Серед його найрепрезентативніших пам'яток - дзвіниця Мігелете , собор , вежі Серранос і Кварт , а також Шовкова біржа (Лонха-де-ла-Седа), оголошені об'єктом Всесвітньої спадщини ЮНЕСКО у 1996 році. Слід також зазначити, що Музей образотворчих мистецтв Валенсії , завдяки своїй важливості, є другою за важливістю художньою галереєю в Іспанії, як і Валенсійський інститут сучасного мистецтва (IVAM), а також комплекс Міста мистецтв і наук "
@@ -25341,11 +25341,15 @@
       "end_date": "06.01.2026",
       "city": [
         "budapest",
-        "valència",
+        "valencia",
         "tavernesblanques",
         "manises",
         "budapest"
-      ]
+      ],
+      "days": {
+        "budapest": 1,
+        "valencia": 14, "tavernesblanques": 0.5, "manises": 0.5
+      }
     },
     {
       "start_date": "02.11.2025",
@@ -25438,7 +25442,15 @@
         "limoges",
         "meina",
         "stresa"
-      ]
+      ],
+      "days": {
+        "passau": 0.5, "heilbronn": 0.5, "heidelberg": 0.5,
+        "amiens": 1, "lille": 0.5, "rouen": 0.4, "giverny": 0.3, "etretat": 0.3,
+        "lehavre": 0.3, "honfleur": 0.2, "deauville": 0.2, "memorialdecaen": 0.1,
+        "bayeux": 0.1, "omahabeach": 0.1, "saintmalo": 3, "lemontsaintmichel": 0.3,
+        "dinan": 0.2, "cancale": 0.1, "nantes": 0.5, "limoges": 0.5,
+        "meina": 1.9, "stresa": 0.1
+      }
     },
     {
       "start_date": "29.05.2025",
@@ -25988,7 +26000,18 @@
         "primosten",
         "mcnikolatesla",
         "gospic"
-      ]
+      ],
+      "days": {
+        "jasenovacmemorialsite": 0.1, "ston": 0.1, "brodarica": 0.1, "primosten": 0.2,
+        "mcnikolatesla": 0.2, "gospic": 0.2,
+        "sremskamitrovica": 0.1, "belgrade": 0.8, "smederevo": 0.1, "kosmajmonument": 0.1,
+        "kingsparkintopola": 0.2, "manasijamonastery": 0.2, "nis": 0.4,
+        "skopjecentar": 0.6, "memorialossuaryveles": 0.2, "memorialossuarykavadarci": 0.2,
+        "neaplaghia": 4, "vergina": 0.5, "thessaloniki": 0.5, "possidibeach": 0.2,
+        "meteora": 0.5, "ioannina": 0.5,
+        "gjirokaster": 0.2, "vlore": 2, "apoloniaarchaeologicalpark": 0.2, "berat": 0.2, "kruje": 1,
+        "susanj": 0.5, "hercegnovi": 0.5
+      }
     },
     {
       "start_date": "11.06.2023",
@@ -26871,7 +26894,14 @@
         "larochelle",
         "warsaw"
       ],
-      "photos": "https://quetzal.io.ua/album869547"
+      "photos": "https://quetzal.io.ua/album869547",
+      "days": {
+        "warsaw": 2,
+        "monaco": 0.5,
+        "nice": 1.5, "cannes": 0.5, "marseille": 1.5, "avignon": 0.4, "arles": 0.4,
+        "nimes": 0.4, "montpellier": 1.8, "carcassonne": 1, "toulouse": 0.5,
+        "albi": 0.5, "bordeaux": 3.1, "dunepilat": 0.2, "arcachon": 0.2, "larochelle": 0.5
+      }
     },
     {
       "start_date": "06.05.2018",
@@ -27232,7 +27262,7 @@
         "zurich",
         "wallisellen",
         "mulhouse",
-        "besanсon",
+        "besancon",
         "dijon",
         "lyon",
         "zurich",
@@ -27245,7 +27275,15 @@
         "ferrara",
         "treviso"
       ],
-      "photos": "http://quetzal.io.ua/album702408"
+      "photos": "http://quetzal.io.ua/album702408",
+      "days": {
+        "oslo": 2,
+        "zurich": 7.9, "wallisellen": 0.1,
+        "mulhouse": 0.3, "besancon": 0.4, "dijon": 0.3, "lyon": 1,
+        "piacenza": 0.5, "parma": 0.5, "modena": 0.3, "bologna": 0.4, "rimini": 0.3,
+        "ferrara": 0.5, "treviso": 1,
+        "sanmarino": 0.5
+      }
     },
     {
       "start_date": "20.09.2014",
@@ -27271,7 +27309,12 @@
         "zaragoza",
         "girona"
       ],
-      "photos": "http://quetzal.io.ua/album691626"
+      "photos": "http://quetzal.io.ua/album691626",
+      "days": {
+        "calella": 6.5, "barcelona": 2, "blanes": 0.5, "pinedademar": 0.5,
+        "zaragoza": 1, "girona": 0.5,
+        "andorralavella": 1
+      }
     },
     {
       "start_date": "13.05.2014",
@@ -27315,7 +27358,18 @@
         "udine",
         "treviso"
       ],
-      "photos": "http://quetzal.io.ua/album669333"
+      "photos": "http://quetzal.io.ua/album669333",
+      "days": {
+        "bonn": 0.5, "cologne": 0.5, "aachen": 0.3, "koblenz": 0.3, "mannheim": 0.4,
+        "karlsruhe": 0.3,
+        "maastricht": 0.3,
+        "liege": 0.4,
+        "zurich": 11, "zug": 1,
+        "colmar": 0.5, "strasbourg": 0.5,
+        "vienna": 0.5, "graz": 0.5,
+        "maribor": 0.5, "ljubljana": 0.5, "koper": 0.3, "piran": 0.3,
+        "trieste": 0.4, "udine": 0.5, "treviso": 0.5
+      }
     },
     {
       "start_date": "24.08.2013",
@@ -27339,7 +27393,24 @@
         "rotterdam",
         "brussels"
       ],
-      "photos": "http://quetzal.io.ua/album642340"
+      "photos": "http://quetzal.io.ua/album642340",
+      "days": {
+        "geneva": 0.5,
+        "lausanne": 0.5,
+        "zurich": 9,
+        "schaffhausen": 0.5,
+        "neuhausen": 0.5,
+        "lugano": 0.5,
+        "milan": 0.5,
+        "turin": 1,
+        "luxembourg": 1,
+        "brussels": 1.5,
+        "ghent": 0.5,
+        "bruges": 0.5,
+        "antwerp": 0.5,
+        "amsterdam": 0.5,
+        "rotterdam": 0.5
+      }
     },
     {
       "start_date": "24.02.2013",
@@ -27354,7 +27425,16 @@
         "munich",
         "salzburg"
       ],
-      "photos": "http://quetzal.io.ua/album602234"
+      "photos": "http://quetzal.io.ua/album602234",
+      "days": {
+        "zurich": 9,
+        "rapperswil": 0.2,
+        "berlin": 2,
+        "stuttgart": 0.5,
+        "nuremberg": 0.5,
+        "munich": 1,
+        "salzburg": 0.5
+      }
     },
     {
       "start_date": "02.10.2012",
@@ -27371,7 +27451,19 @@
         "bern",
         "solothurn"
       ],
-      "photos": "http://quetzal.io.ua/album569093"
+      "photos": "http://quetzal.io.ua/album569093",
+      "days": {
+        "zurich": 15.4,
+        "opfikon": 0.1,
+        "embrach": 0.5,
+        "basel": 0.5,
+        "baden": 0.5,
+        "sargans": 0.5,
+        "lucerne": 0.3,
+        "bern": 0.4,
+        "solothurn": 0.3,
+        "vaduz": 0.5
+      }
     },
     {
       "start_date": "25.08.2012",
@@ -28208,7 +28300,23 @@
         "lublin"
       ],
       "photos": "http://quetzal.io.ua/album20371",
-      "story": true
+      "story": true,
+      "days": {
+        "chop": 0.5,
+        "kosice": 1,
+        "spisske_podhradie": 0.5,
+        "levocha": 1,
+        "banska_bystrica": 0.5,
+        "bratislava": 0.5,
+        "krakow": 1,
+        "wroclaw": 1,
+        "poznan": 1,
+        "torun": 0.5,
+        "gdansk": 0.5,
+        "malbork": 0.5,
+        "warsaw": 1.5,
+        "lublin": 1
+      }
     },
     {
       "start_date": "12.08.2006",
