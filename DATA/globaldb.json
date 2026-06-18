@@ -26550,7 +26550,26 @@
         "mexico",
         "teotihuacan"
       ],
-      "photos": "https://quetzal.io.ua/album899300"
+      "photos": "https://quetzal.io.ua/album899300",
+      "days": {
+        "havana": 3,
+        "vinalesvalley": 1,
+        "cayojutía": 0.2,
+        "trinidad": 1.5,
+        "elnichowaterfalls": 0.1,
+        "varadero": 1,
+        "valladolid": 1,
+        "chichenitza": 0.2,
+        "cenotesanlorenzooxman": 0.2,
+        "ekbalam": 0.2,
+        "cenotexcanche": 0.2,
+        "lascoloradas": 0.3,
+        "rialagartos": 0.1,
+        "bacalar": 1,
+        "mexico": 1.5,
+        "teotihuacan": 0.3,
+        "belizecity": 1
+      }
     },
     {
       "start_date": "13.11.2019",

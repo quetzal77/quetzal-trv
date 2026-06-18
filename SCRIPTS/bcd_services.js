@@ -475,7 +475,7 @@ function HTML_CreatorOfAboutPage () {
             "<div class='contact-grid'>" +
                 "<a class='contact-card' href='mailto:coatls77@gmail.com'><span class='contact-ico'>✉️</span><span class='contact-meta'><span class='contact-label'>Email</span><span class='contact-val'>coatls77@gmail.com</span></span></a>" +
                 "<div class='contact-card'><span class='contact-ico'>📍</span><span class='contact-meta'><span class='contact-label'>Локація</span><span class='contact-val'>Київ, Україна</span></span></div>" +
-                "<div class='contact-card'><span class='contact-ico'>👥</span><span class='contact-meta'><span class='contact-label'>Teams</span><span class='contact-val'>slavutskyy</span></span></div>" +
+                "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
                 "<span class='tech-tag'>v9.0.5 (ukr)</span>" +

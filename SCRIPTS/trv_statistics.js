@@ -401,16 +401,31 @@ function statsBlockTop_HTML() {
     var byVisits = {}, byDays = {}, cityVisits = {};
     $.each (visitsSorted, function( i, v ){
         var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
-        var seen = {};
+        var seen = {}, cidCountry = {};
         $.each (v.cities, function( j, city ){
             cityVisits[city.city_id] = (cityVisits[city.city_id] || 0) + 1;
+            cidCountry[city.city_id] = city.country_id;
             if (!seen[city.country_id]) {
                 seen[city.country_id] = true;
                 byVisits[city.country_id] = (byVisits[city.country_id] || 0) + 1;
-                byDays[city.country_id]   = (byDays[city.country_id]   || 0) + days;
             }
         });
+        //Time spent per country
+        if (v.days) {
+            //Exact — explicit per-city days (city_id -> fractional days)
+            for (var cid in v.days) {
+                var ctry = cidCountry[cid];
+                if (ctry) { byDays[ctry] = (byDays[ctry] || 0) + v.days[cid]; }
+            }
+        } else {
+            //Approximate — split the trip evenly across its distinct cities (10 days / 5 cities = 2 each)
+            var ids = Object.keys(cidCountry);
+            var perCity = ids.length ? days / ids.length : 0;
+            ids.forEach(function( cid ){ byDays[cidCountry[cid]] = (byDays[cidCountry[cid]] || 0) + perCity; });
+        }
     });
+    //Round per-country day totals to 1 decimal (keeps 0.5-day stops readable)
+    for (var ck in byDays) { byDays[ck] = Math.round(byDays[ck] * 10) / 10; }
 
     //Top countries by visited regions (full, sorted) — value "visited з total" with a completion bar
     var regionRows = [];
