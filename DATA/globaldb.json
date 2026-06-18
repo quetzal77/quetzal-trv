@@ -23816,7 +23816,7 @@
       "name_nt": "Spomen-područje Garavice",
       "name_ua": "Меморіальний парк жертв фашистського терору «Гаравіце»",
       "region_id": "BA-01",
-      "city_id": "пaraviceьemorialзarkofthevictimsofаascistеerror",
+      "city_id": "garavicememorialparkofthevictimsoffascistterror",
       "lat": "44.8220994",
       "long": "15.8401112",
       "description": "Цей пам'ятник у Біхачі вшановує пам'ять багатьох тисяч етнічних сербів та євреїв, включаючи дітей, страчених на цьому схилі пагорба усташами в липні 1941 року."
@@ -25444,7 +25444,7 @@
       "start_date": "29.05.2025",
       "end_date": "01.06.2025",
       "city": [
-        "пaraviceьemorialзarkofthevictimsofаascistеerror",
+        "garavicememorialparkofthevictimsoffascistterror",
         "bihac",
         "memorialparktofallensoldiersandvictimsofthenationalliberationwar",
         "monumenttothevođenicacompany",
@@ -25455,7 +25455,20 @@
         "mestrovicmausoleum",
         "makarska",
         "baskavoda"
-      ]
+      ],
+      "days": {
+        "garavicememorialparkofthevictimsoffascistterror": 0.1,
+        "bihac": 0.2,
+        "memorialparktofallensoldiersandvictimsofthenationalliberationwar": 0.1,
+        "monumenttothevođenicacompany": 0.1,
+        "monumenttothepartisanairsquadron": 0.05,
+        "monumenttothefallenfightersofthenationalliberationwarbravsko": 0.05,
+        "monumenttothenationalliberationwarresanovci": 0.1,
+        "knin": 0.2,
+        "mestrovicmausoleum": 0.1,
+        "makarska": 2.5,
+        "baskavoda": 0.5
+      }
     },
     {
       "start_date": "17.05.2025",
@@ -25476,7 +25489,17 @@
         "vienna",
         "pannonhalma",
         "papa"
-      ]
+      ],
+      "days": {
+        "majkabbey": 0.2,
+        "tata": 0.2,
+        "komarom": 0.1,
+        "komarno": 0.5,
+        "gyor": 1,
+        "vienna": 1.5,
+        "pannonhalma": 0.2,
+        "papa": 0.3
+      }
     },
     {
       "start_date": "19.04.2025",
@@ -25591,7 +25614,11 @@
       "city": [
         "murskasobota",
         "graz"
-      ]
+      ],
+      "days": {
+        "murskasobota": 0.5,
+        "graz": 0.5
+      }
     },
     {
       "start_date": "21.09.2024",
@@ -25604,7 +25631,16 @@
         "umag",
         "novigrad",
         "buje"
-      ]
+      ],
+      "days": {
+        "postojnacave": 0.2,
+        "predjamaastle": 0.1,
+        "pivkaparkofmilitaryhistory": 0.1,
+        "monumentonfreedomhill": 0.1,
+        "umag": 1.3,
+        "novigrad": 0.1,
+        "buje": 0.1
+      }
     },
     {
       "start_date": "07.09.2024",
@@ -25912,7 +25948,12 @@
       "city": [
         "herend",
         "budapest"
-      ]
+      ],
+      "days": {
+        "nagykanizsa": 0.4,
+        "cakovec": 0.4,
+        "pribislavec": 0.2
+      }
     },
     {
       "start_date": "24.06.2023",
@@ -26010,7 +26051,24 @@
         "donjimiholjac",
         "nasice",
         "pozega"
-      ]
+      ],
+      "days": {
+        "podgaric": 0.1,
+        "daruvar": 0.1,
+        "dios": 0.1,
+        "virovitica": 0.1,
+        "batinabattle": 0.1,
+        "szigetvar": 0.1,
+        "harkany": 1,
+        "siklos": 0.2,
+        "pecs": 0.2,
+        "mohacsmemorial": 0.1,
+        "osijek": 0.5,
+        "valpovo": 0.1,
+        "donjimiholjac": 0.1,
+        "nasice": 0.1,
+        "pozega": 0.1
+      }
     },
     {
       "start_date": "09.04.2023",
@@ -26108,7 +26166,13 @@
         "munich",
         "salzburg",
         "bled"
-      ]
+      ],
+      "days": {
+        "ljubljana": 0.5,
+        "munich": 2.5,
+        "salzburg": 0.5,
+        "bled": 0.5
+      }
     },
     {
       "start_date": "16.12.2022",
@@ -26752,7 +26816,11 @@
         "vatican",
         "rome"
       ],
-      "photos": "https://quetzal.io.ua/album878209"
+      "photos": "https://quetzal.io.ua/album878209",
+      "days": {
+        "vatican": 1.5,
+        "rome": 2.5
+      }
     },
     {
       "start_date": "24.08.2018",
@@ -26961,7 +27029,13 @@
         "turku",
         "gdansk"
       ],
-      "photos": "http://quetzal.io.ua/album783397"
+      "photos": "http://quetzal.io.ua/album783397",
+      "days": {
+        "tallinn": 1,
+        "helsinki": 0.5,
+        "turku": 0.5,
+        "gdansk": 1
+      }
     },
     {
       "start_date": "20.02.2016",
@@ -27136,14 +27210,19 @@
       "photos": "http://quetzal.io.ua/album721125"
     },
     {
-      "start_date": "28.02.2015",
-      "end_date": "26.02.2015",
+      "start_date": "26.02.2015",
+      "end_date": "28.02.2015",
       "city": [
         "malmo",
         "copenhagen",
         "elsinore"
       ],
-      "photos": "http://quetzal.io.ua/album716395"
+      "photos": "http://quetzal.io.ua/album716395",
+      "days": {
+        "malmo": 0.5,
+        "copenhagen": 2,
+        "elsinore": 0.5
+      }
     },
     {
       "start_date": "18.10.2014",
@@ -27503,7 +27582,12 @@
         "prague",
         "vienna"
       ],
-      "photos": "http://quetzal.io.ua/album335590"
+      "photos": "http://quetzal.io.ua/album335590",
+      "days": {
+        "krakow": 1,
+        "prague": 3,
+        "vienna": 1
+      }
     },
     {
       "start_date": "24.10.2009",
@@ -27871,7 +27955,13 @@
         "ta-tiraspol"
       ],
       "photos": "http://quetzal.io.ua/album69336",
-      "story": "http://quetzalpapalotl.livejournal.com/6373.html"
+      "story": "http://quetzalpapalotl.livejournal.com/6373.html",
+      "days": {
+        "chisinau": 1,
+        "soroca": 0.15,
+        "ta-bender": 0.2,
+        "ta-tiraspol": 0.2
+      }
     },
     {
       "start_date": "30.08.2007",
@@ -27882,7 +27972,13 @@
         "zamosc",
         "kovel"
       ],
-      "photos": "http://quetzal.io.ua/album56770"
+      "photos": "http://quetzal.io.ua/album56770",
+      "days": {
+        "krakow": 2,
+        "auschwitz_birkenau_concentration_camp": 1,
+        "zamosc": 0.1,
+        "kovel": 0.2
+      }
     },
     {
       "start_date": "24.08.2007",
