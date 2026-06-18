@@ -10,11 +10,6 @@ function createSettingsStoryTab_HTML() {
     removeAllAttributesByName("class", "active");
     document.getElementById("stories").setAttribute("class", "active")
 
-//    var listOfStories = '';
-//    $.each (data.country, function( i, country ){
-//        listOfStories += '<li><a id="' + country.country_id + '" onclick="javascript:addEditRemoveCountries(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
-//    });
-
     document.getElementById("rightSettingsSection").innerHTML = 'story';
 
     //Remove copy marker and bottom line

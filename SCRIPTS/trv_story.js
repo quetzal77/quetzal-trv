@@ -54,7 +54,6 @@ var processMyStory = function (data) {
 
 //06.04 This method pars xml tag to type that can be saved as collection
     var ObjToHash2 = function (obj) {
-        //console.log('ObjToHash');
         var result = { 'title': '' };
         var child;
         for (var i = 0; i < obj.childNodes.length; i++) {
@@ -89,7 +88,7 @@ function HTML_StoryPage() {
         var participantsKeys = Object.keys(participants[0]);
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Учасники:</p></div></td></tr>";
 
-        for (i = 0; i < participantsKeys.length; i++) {
+        for (var i = 0; i < participantsKeys.length; i++) {
             if (participantsKeys[i] != 'title') {
                 var keyOfName = participantsKeys[i];
                 result += "<tr><td><div class='story_celltext'>" + participants[0][keyOfName] + "</div></td></tr>";
@@ -108,7 +107,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Курс обміну:</p></div></td></tr>";
         var exrateArray = arrayToArray(exrate[0]);
 
-        for (i = 0; i < exrateArray.length; i++) {
+        for (var i = 0; i < exrateArray.length; i++) {
             result += "<tr><td><div class='story_celltext'> 1 " + exrateArray[i].cur1 + " = " + exrateArray[i].rate + " " + exrateArray[i].curnt + " </div></td></tr>";
         }
     }
@@ -118,7 +117,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Маршрут:</p></div></td></tr>";
         var routArray = arrayToArray(route[0]);
 
-        for (i = 0; i < routArray.length; i++) {
+        for (var i = 0; i < routArray.length; i++) {
             result += "<tr><td><div class='story_celltext'><b>" + routDateCalculator(routArray[i].date) + "</b> - " + routArray[i].day + "</div></td></tr>";
         }
     }
@@ -128,7 +127,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Проживання:</p></div></td></tr>";
         var habitationArray = arrayToArray(habitation[0]);
 
-        for (i = 0; i < habitationArray.length; i++) {
+        for (var i = 0; i < habitationArray.length; i++) {
             result += "<tr><td><div class='story_celltext'>" + habitationArray[i].name + " в " + habitationArray[i].city +
             ", " + habitationArray[i].nights + " ночі, " + habitationArray[i].room + ", ціна " + habitationArray[i].price + " " + habitationArray[i].currency + " за ніч. " +
             habitationArray[i].place + "</div></td></tr>";
@@ -140,7 +139,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Харчування:</p></div></td></tr>";
         var foodArray = arrayToArray(food[0]);
 
-        for (i = 0; i < foodArray.length; i++) {
+        for (var i = 0; i < foodArray.length; i++) {
             result += "<tr><td><div class='story_celltext'>" + foodArray[i].name +
                       " - " + foodArray[i].price + " " + foodArray[i].currency + ". </div></td></tr>";
         }
@@ -151,7 +150,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Транспорт:</p></div></td></tr>";
         var transportArray = arrayToArray(transport[0]);
 
-        for (i = 0; i < transportArray.length; i++) {
+        for (var i = 0; i < transportArray.length; i++) {
             result += "<tr><td><div class='story_celltext'><b>" + routDateCalculator(transportArray[i].date) + "</b> - " + transportArray[i].type +
                       " " + transportArray[i].dep + " - " + transportArray[i].arr + ", час у дорозі " + transportArray[i].time +
                       ", ціна " + transportArray[i].price + " " + transportArray[i].currency + ". " + transportArray[i].day + ".</div></td></tr>";
@@ -163,7 +162,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Визначні місця:</p></div></td></tr>";
         var sightsArray = arrayToArray(sights[0]);
 
-        for (i = 0; i < sightsArray.length; i++) {
+        for (var i = 0; i < sightsArray.length; i++) {
             result += "<tr><td><div class='story_celltext'><b>" + sightsArray[i].name + "</b> з локації " + sightsArray[i].city +
                       ", ціна квитка = " + sightsArray[i].price + " " + sightsArray[i].currency +
                       ". " + sightsArray[i].sight + "</div></td></tr>";
@@ -175,7 +174,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Сувеніри:</p></div></td></tr>";
         var souvenirsArray = arrayToArray(souvenirs[0]);
 
-        for (i = 0; i < souvenirsArray.length; i++) {
+        for (var i = 0; i < souvenirsArray.length; i++) {
             result += "<tr><td><div class='story_celltext'>" + souvenirsArray[i].name + " (" + souvenirsArray[i].num +
                       " шт.), ціна = " + souvenirsArray[i].price + " " + souvenirsArray[i].currency + ". " + souvenirsArray[i].souvenir + "</div></td></tr>";
         }
@@ -185,7 +184,7 @@ function HTML_StoryPage() {
     if (custom[0] != undefined) {
         var customArray = arrayToArray(custom[0]);
 
-        for (i = 0; i < customArray.length; i++) {
+        for (var i = 0; i < customArray.length; i++) {
             result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>" + customArray[i].name + "</p></div></td></tr>";
             result += "<tr><td><div class='story_celltext'>" + customArray[i].item + "</div></td></tr>";
         }
@@ -196,7 +195,7 @@ function HTML_StoryPage() {
         result += "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>Посилання:</p></div></td></tr>";
         var urlArray = arrayToArray(links[0]);
 
-        for (i = 0; i < urlArray.length; i++) {
+        for (var i = 0; i < urlArray.length; i++) {
             result += "<tr><td><div class='story_celltext'><a href='" + urlArray[i].src + "' target='_blank'>" +
             urlArray[i].src + "</a> - " + urlArray[i].link + "</div></td></tr>";
         }
@@ -263,11 +262,11 @@ function arrayToArray(array) {
         }
     }
 
-    for (i = 1; i < uniqueKeysArray.length; i++) {
-        for (j = 0; j < arrayKeys.length; j++) {
+    for (var i = 1; i < uniqueKeysArray.length; i++) {
+        for (var j = 0; j < arrayKeys.length; j++) {
             var someArray = arrayKeys[j].split("_");
             if (someArray[0] == uniqueKeysArray[i]) {
-                for (l = 0; l < result.length; l++) {
+                for (var l = 0; l < result.length; l++) {
                     if (someArray[1] == result[l].id) {
                         result[l][uniqueKeysArray[i]] = array[arrayKeys[j]];
                     }

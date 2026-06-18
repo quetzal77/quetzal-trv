@@ -132,7 +132,7 @@ function populateContent(callback) {
                       return (n.country_id == region.country_id)
                   });
 
-                  return country[0].short_name;
+                  return country.length ? country[0].short_name : "";
               }
                this.getRegion = function () {
                   return new RegionObj(this.region_id);

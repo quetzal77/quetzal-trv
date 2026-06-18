@@ -79,8 +79,7 @@ function addEditRemoveCountry(itemId) {
         removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveCountry();return false" value="Remove selected item"/>' +
                 '<span id="remove"></span>' +
                 '<hr>';
-//        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
-        editIdField_2 = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        editIdField_2 ='<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newShortName" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
     }
     else {
         var countryOptions = "";

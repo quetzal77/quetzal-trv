@@ -315,12 +315,6 @@ a.contact-card:hover{transform:translateY(-2px); border-color:var(--accent)}
 }
 a.tech-tag:hover{color:var(--accent); border-color:var(--accent)}
 
-/* SIGNIN ------------------------------------------------------ */
-.form-signin{max-width:330px; padding:15px; margin:0 auto}
-.form-signin .form-signin-heading,.form-signin .checkbox{margin-bottom:10px}
-.form-signin .checkbox{font-weight:normal}
-.form-signin .form-control{position:relative; height:auto; box-sizing:border-box; padding:10px; font-size:16px}
-
 /* FLOATING BUTTONS -------------------------------------------- */
 a.back2top,.back2country{
   position:fixed; right:20px; z-index:99; padding:8px 14px; font-size:14px; color:#fff!important;
