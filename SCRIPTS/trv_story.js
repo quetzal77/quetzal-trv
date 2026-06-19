@@ -37,6 +37,9 @@ var processMyStory = function (data) {
     //Create selector of countries
     document.getElementById("mainSection").innerHTML = HTML_StoryPage();
 
+    //Keep <title>/canonical/OG in sync (story name now known from the XML)
+    setPageMeta((title[0] && title[0].title) ? title[0].title : "Історія", "index.html?storyId=" + local[0]);
+
     //Highlight the active section in the navbar
     setActiveNav("navStories");
 }

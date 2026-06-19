@@ -458,10 +458,11 @@ function HTML_CreatorOfAboutPage () {
     setActiveNav();
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=about"); }
+    setPageMeta("Про проект", "index.html?page=about");
     document.getElementById("mainSection").innerHTML =
         "<div class='about-page'>" +
             "<header class='about-hero'>" +
-                "<img class='about-logo' src='IMG/icon/logo-about.png' alt='Будинок пернатого равлика' />" +
+                "<img class='about-logo' src='IMG/icon/logo-about.png' alt='Будинок пернатого равлика' loading='lazy' decoding='async' />" +
                 "<h1>Будинок пернатого равлика</h1>" +
                 "<p class='about-tagline'>Особистий сайт про мої подорожі — країни, локації, фото та звіти.</p>" +
             "</header>" +
@@ -478,7 +479,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.0.7 (ukr)</span>" +
+                "<span class='tech-tag'>v9.0.8 (ukr)</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

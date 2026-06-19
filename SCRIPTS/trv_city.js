@@ -11,6 +11,7 @@ function createCityPage_HTML(cityId) {
     // Set url
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?cityId="+cityId); }
+    setPageMeta(city[0].name_ua, "index.html?cityId=" + cityId);
 
     //Add Country main content
     document.getElementById("mainSection").innerHTML = "<div class='countrylabel h3'>" + local[1].setFullCityName() + "</div>" +
@@ -65,7 +66,7 @@ function HTML_CityDetais(cityId) {
     if (city.image != "" && city.image != null){
         imagesList += "<b>Фото:</b><br>";
         $.each (city.image.split(","), function( i, image ){
-            imagesList += "<img src='IMG/" + image + "' class='city_photo' />"
+            imagesList += "<img src='IMG/" + image + "' class='city_photo' loading='lazy' decoding='async' />"
         });
     }
     result += "<div class='countrydetail'>" + imagesList + "</div>";

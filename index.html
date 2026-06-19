@@ -43,28 +43,46 @@
     </script>
     <meta name="description" content="Особистий сайт про мої подорожі — країни, локації, фото та звіти.">
     <meta name="author" content="Oleksiy Slavutskyy">
+
+    <!-- Canonical + social share (Open Graph / Twitter). og:title/og:url/canonical are refreshed per-page by setPageMeta(). -->
+    <link rel="canonical" href="https://quetzal.epizy.com/">
+    <meta property="og:site_name" content="Подорожі Олексія Славутського">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:title" content="Подорожі Олексія Славутського">
+    <meta property="og:description" content="Особистий сайт про мої подорожі — країни, локації, фото та звіти.">
+    <meta property="og:url" content="https://quetzal.epizy.com/">
+    <meta property="og:image" content="https://quetzal.epizy.com/IMG/icon/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Подорожі Олексія Славутського">
+    <meta name="twitter:description" content="Особистий сайт про мої подорожі — країни, локації, фото та звіти.">
+    <meta name="twitter:image" content="https://quetzal.epizy.com/IMG/icon/apple-touch-icon.png">
+
     <link rel="shortcut icon" href="IMG/icon/favicon.ico" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="32x32" href="IMG/icon/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="IMG/icon/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://code.jquery.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- JavaScript-->
     <!--==================================================-->
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+    <!-- jQuery. All scripts use `defer`: they execute in document order after HTML parse (so jQuery
+         still runs before its dependents) and no longer block the initial render. -->
+    <script defer src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
     <!-- My maps and pages. Bump ?v= after each deploy to bust browser cache.
          (Dynamically loaded SCRIPTS/trv_*, set_*, maps refresh automatically via jQuery $.getScript.) -->
-    <script src="SCRIPTS/bcd_onload.js?v=9.0.7" type="text/javascript"></script>
+    <script defer src="SCRIPTS/bcd_onload.js?v=9.0.8" type="text/javascript"></script>
     <!-- Fcbkcomplete theme (Multiple Select Widget) -->
-    <script src="SCRIPTS/jquery.fcbkcomplete.js" type="text/javascript"></script>
+    <script defer src="SCRIPTS/jquery.fcbkcomplete.js" type="text/javascript"></script>
     <!--==================================================-->
 
     <!-- Bootstrap core -->
     <link href="THEMES/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="THEMES/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script defer src="THEMES/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
     <!-- Bootstrap Date-Picker Plugin -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
     <!-- Dashboard theme -->
@@ -72,7 +90,7 @@
     <!-- Fcbkcomplete theme (Multiple Select Widget) -->
     <link rel="stylesheet" href="THEMES/fcbkcomplete.css" type="text/css">
     <!-- Custom modern theme: loaded LAST so it overrides Bootstrap/dashboard -->
-    <link rel="stylesheet" href="THEMES/global.css?v=9.0.7" type="text/css">
+    <link rel="stylesheet" href="THEMES/global.css?v=9.0.8" type="text/css">
 
 </head>
 

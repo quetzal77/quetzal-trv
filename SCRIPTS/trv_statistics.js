@@ -6,6 +6,7 @@ function createStatisticsPage_HTML() {
 
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=statistics"); }
+    setPageMeta("Статистика", "index.html?page=statistics");
 
     document.getElementById("mainSection").innerHTML =
         "<div class='stats-page'>" +

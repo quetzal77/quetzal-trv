@@ -74,6 +74,8 @@ IMG/                      flags, emblems, city photos
 - [ ] Add Login for settings
 - [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowser
 - [ ] Add second language to portal - English
+- [ ] Скрипт валідації globaldb.json: Node-скрипт, що перевіряє: CRLF/відсутність BOM, схему полів, цілісність звʼязків (city.region_id → area → country), валідність map_img (регістр!), коректність days (типи,   
+  ключі в маршруті, сума ≈ тривалості).
 
 ### Дані / контент
 - [ ] Transform Portugal map to move islands closer to country

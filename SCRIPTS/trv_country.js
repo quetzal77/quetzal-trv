@@ -13,6 +13,7 @@ function createCountryPage_HTML(countryId) {
     // Set url
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?country="+countryId); }
+    setPageMeta(country[0].name_ua, "index.html?country=" + countryId);
 
     var typeName = getCountryTypeName(local[1].country_type_id);
     var typeHtml = typeName ? "<div class='country-type'><span>" + getCountryTypeIcon(local[1].country_type_id) + " " + typeName + "</span></div>" : "";
@@ -135,10 +136,10 @@ function getFlagEmblem_HTML(country) {
     var images = "";
 
     if (country.flag_img != "" && country.flag_img != undefined ){
-        images += "<span class='flag-wrap'><img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' /></span>";
+        images += "<span class='flag-wrap'><img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' loading='lazy' decoding='async' /></span>";
     }
     if (country.emb_img != "" && country.emb_img != undefined ){
-        images += "<img alt='Герб " + country.short_name + "' title='Герб' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' />";
+        images += "<img alt='Герб " + country.short_name + "' title='Герб' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' loading='lazy' decoding='async' />";
     }
 
     if (images == "") { return ""; }

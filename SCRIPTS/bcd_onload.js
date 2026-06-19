@@ -6,6 +6,23 @@
     var local; // Store variable that describe which country have to be opened and drawn on a map
     window.skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
 
+//00.01b PAGE METADATA — keep <title>, canonical link and OG/Twitter tags in sync with the current page
+    window.SITE_URL = "https://quetzal.epizy.com/";
+    window.SITE_BRAND = "Подорожі Олексія Славутського";
+    // label = short page label ("" / undefined for home); path = URL after the base (e.g. "index.html?country=ES")
+    window.setPageMeta = function (label, path) {
+        try {
+            var title = label ? (label + " — " + window.SITE_BRAND) : window.SITE_BRAND;
+            document.title = title;
+            var url = window.SITE_URL + (path || "");
+            var set = function (sel, attr, val) { var el = document.head.querySelector(sel); if (el) { el.setAttribute(attr, val); } };
+            set("link[rel='canonical']", "href", url);
+            set("meta[property='og:title']", "content", title);
+            set("meta[property='og:url']", "content", url);
+            set("meta[name='twitter:title']", "content", title);
+        } catch (e) {}
+    };
+
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
     window.onload = function() {$.getJSON( "DATA/onload.json", processMyJson)};

@@ -10,6 +10,7 @@ function createWorldPage_HTML () {
     // Set url
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html"); }
+    setPageMeta("", "");
 
     //Add script for map creation
     document.getElementById("mainSection").innerHTML =

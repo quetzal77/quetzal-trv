@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://quetzal.epizy.com/sitemap.xml
