@@ -71,9 +71,9 @@ IMG/                      flags, emblems, city photos
 категорії; великі ідеї коротко описуй у підпунктах.
 
 ### UI / UX
-- [ ] Зробити контакт **Teams** клікабельним (deep-link `https://teams.microsoft.com/l/chat/...` або email)
 - [ ] Add Login for settings
-- [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowserа
+- [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowser
+- [ ] Add second language to portal - English
 
 ### Дані / контент
 - [ ] Transform Portugal map to move islands closer to country

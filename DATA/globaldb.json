@@ -25952,7 +25952,12 @@
         "nagykanizsa",
         "cakovec",
         "pribislavec"
-      ]
+      ],
+      "days": {
+        "nagykanizsa": 0.4,
+        "cakovec": 0.4,
+        "pribislavec": 0.2
+      }
     },
     {
       "start_date": "29.07.2023",
@@ -25960,12 +25965,7 @@
       "city": [
         "herend",
         "budapest"
-      ],
-      "days": {
-        "nagykanizsa": 0.4,
-        "cakovec": 0.4,
-        "pribislavec": 0.2
-      }
+      ]
     },
     {
       "start_date": "24.06.2023",
