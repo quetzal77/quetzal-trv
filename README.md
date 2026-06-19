@@ -78,7 +78,7 @@ IMG/                      flags, emblems, city photos
   ключі в маршруті, сума ≈ тривалості).
 
 ### Дані / контент
-- [ ] Transform Portugal map to move islands closer to country
+- [ ] ...
 
 ### Технічне
 - [ ] Автогенерація `onload.json` з `globaldb.json` (щоб не редагувати вручну)
