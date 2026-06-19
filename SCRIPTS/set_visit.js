@@ -146,7 +146,7 @@ function RemoveVisit() {
     removeAllChildNodes("alert_cities_list");
     removeAllChildNodes("success");
 
-    $.getScript("SCRIPTS/set_content.js", function(){
+    withSetContent(function(){
         removeElementOfGlobalData4DefinedArray ("start_date", startDate);
         createSettingsVisitTab_HTML();
         alertOfSuccess();
@@ -169,7 +169,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(newVisitObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(newVisitObj): updateElementOfGlobalDataArray(newVisitObj);
             createSettingsVisitTab_HTML();
             alertOfSuccess();

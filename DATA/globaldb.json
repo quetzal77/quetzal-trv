@@ -165,11 +165,6 @@
       "name": "North America"
     },
     {
-      "continent_id": "CA",
-      "name_ua": "Центральна Америка та Карибський бассейн",
-      "name": "Central America and Caribbean"
-    },
-    {
       "continent_id": "SA",
       "name_ua": "Південна Америка",
       "name": "South America"

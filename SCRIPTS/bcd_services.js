@@ -305,11 +305,25 @@ function getNumberOfLocation() {
     document.getElementById("totalCitiesNum").innerHTML = " · " + setLocationNumberWithCorrectEnd(citiesVisited.length, true);
 }
 
+//2.17b Load the shared settings helper (set_content.js) once, then run the callback.
+// Avoids re-fetching/re-evaluating the file on every add/edit/remove operation.
+function withSetContent(callback) {
+    if (window.__setContentLoaded) { callback(); return; }
+    $.getScript("SCRIPTS/set_content.js", function () { window.__setContentLoaded = true; callback(); });
+}
+
 //2.18 Remove all attributes by name
 function removeAllAttributesByName(attrType, attrName) {
-    var mylist=document.getElementsByClassName(attrName);
-    for (var j=0; j<mylist.length; j++) {
-        mylist[j].removeAttribute(attrType);
+    // getElementsByClassName returns a LIVE collection: removing the class mid-loop
+    // shrinks it and makes the loop skip elements, leaving stale "active" markers
+    // (e.g. the previous left-menu item stayed highlighted). Snapshot it first.
+    var mylist = document.getElementsByClassName(attrName);
+    var snapshot = Array.prototype.slice.call(mylist);
+    for (var j = 0; j < snapshot.length; j++) {
+        // keep the top navbar highlight (e.g. "Налаштування") — it is managed by setActiveNav,
+        // not by the settings sidebar that this clear is meant for
+        if (snapshot[j].closest && snapshot[j].closest(".navbar-nav")) { continue; }
+        snapshot[j].removeAttribute(attrType);
     }
 }
 
@@ -479,7 +493,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.0.9 (ukr)</span>" +
+                "<span class='tech-tag'>v9.1.7 (ukr)</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

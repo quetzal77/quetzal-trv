@@ -115,7 +115,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(continentObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(continentObj): updateElementOfGlobalDataArray(continentObj);
             createSettingsContinentTab_HTML();
             alertOfSuccess();
@@ -147,7 +147,7 @@ function RemoveContinent() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("continent_id", newID);
             createSettingsContinentTab_HTML();
             alertOfSuccess();

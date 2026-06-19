@@ -199,7 +199,7 @@ function addEditRemoveCity(itemId) {
             '<div class="input-group">' +
                 '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
                 '<button type="button" class="btn btn-default active" onclick="openGoogleMap();return false">Check Google Map</button>&nbsp;&nbsp;&nbsp;&nbsp;' +
-                '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Country Map</button>' +
+                '<button type="button" class="btn btn-default active" onclick="openCityMap();return false">Check Country Map</button>' +
             '</div>' +
             '<br>' +
             '<div class="input-group">' +
@@ -262,7 +262,7 @@ function RemoveCity() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("city_id", newID);
             createSettingsCityTab_HTML();
             alertOfSuccess();
@@ -296,7 +296,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(newCityObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(newCityObj): updateElementOfGlobalDataArray(newCityObj);
             createSettingsCityTab_HTML();
             alertOfSuccess();
@@ -392,7 +392,7 @@ function openSecondGoogleMap() {
 }
 
 //11.11 Open Country map for lat and long coordinates
-function openCountryMap() {
+function openCityMap() {
     var lat = document.getElementById("newLat").value.trim();
     var long = document.getElementById("newLong").value.trim();
     var name = document.getElementById("newUaName").value.trim();

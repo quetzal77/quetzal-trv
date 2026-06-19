@@ -71,17 +71,17 @@ IMG/                      flags, emblems, city photos
 категорії; великі ідеї коротко описуй у підпунктах.
 
 ### UI / UX
-- [ ] Add Login for settings
 - [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowser
 - [ ] Add second language to portal - English
-- [ ] Скрипт валідації globaldb.json: Node-скрипт, що перевіряє: CRLF/відсутність BOM, схему полів, цілісність звʼязків (city.region_id → area → country), валідність map_img (регістр!), коректність days (типи,   
-  ключі в маршруті, сума ≈ тривалості).
 
 ### Дані / контент
 - [ ] ...
 
 ### Технічне
+- [ ] Add Login for settings
 - [ ] Автогенерація `onload.json` з `globaldb.json` (щоб не редагувати вручну)
 - [ ] Експорт/бекап даних
+- [ ] Скрипт валідації globaldb.json: Node-скрипт, що перевіряє: CRLF/відсутність BOM, схему полів, цілісність звʼязків (city.region_id → area → country), валідність map_img (регістр!), коректність days (типи,   
+    ключі в маршруті, сума ≈ тривалості).
 
 

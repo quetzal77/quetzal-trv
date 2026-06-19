@@ -155,7 +155,7 @@ function addEditRemoveRegion(itemId) {
         checkReionOnCountryMapButton =
                         '<div class="input-group">' +
                             '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                            '<button type="button" class="btn btn-default active" onclick="openCountryMap();return false">Check Region on Country Map</button>' +
+                            '<button type="button" class="btn btn-default active" onclick="openRegionMap();return false">Check Region on Country Map</button>' +
                         '</div>' +
                         '<br>';
     }
@@ -229,7 +229,7 @@ function RemoveRegion() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("region_id", newID);
             createSettingsRegionTab_HTML();
             alertOfSuccess();
@@ -255,7 +255,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(newRegionObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(newRegionObj): updateElementOfGlobalDataArray(newRegionObj);
             createSettingsRegionTab_HTML();
             alertOfSuccess();
@@ -331,7 +331,7 @@ function populateForm(id) {
 }
 
 //14.11 Open Country map for region
-function openCountryMap() {
+function openRegionMap() {
     var map = local[2];
     var region = document.getElementById("newId").value;
     if (map != ""){

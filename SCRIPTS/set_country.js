@@ -226,7 +226,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(newCountryObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(newCountryObj): updateElementOfGlobalDataArray(newCountryObj);
             createSettingsCountryTab_HTML();
             alertOfSuccess();
@@ -261,7 +261,7 @@ function RemoveCountry() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("country_id", newID);
             createSettingsCountryTab_HTML();
             alertOfSuccess();

@@ -131,8 +131,3 @@
         $.getScript("SCRIPTS/set_story.js", function(){ createSettingsStoryTab_HTML() });
     }
 
-    function createSettingsExportTab(){
-        //Create settings-export tab
-        $.getScript("SCRIPTS/set_export.js", function(){ createSettingsExportTab_HTML() });
-    }
-

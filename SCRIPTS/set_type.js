@@ -115,7 +115,7 @@ function SubmitChanges(status) {
     removeAllChildNodes("success");
 
     if (checkRules4AddUpdate(typeObj)) {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(typeObj): updateElementOfGlobalDataArray(typeObj);
             createSettingsTypeTab_HTML();
             alertOfSuccess();
@@ -147,7 +147,7 @@ function RemoveLocationType() {
             '</div>';
     }
     else {
-        $.getScript("SCRIPTS/set_content.js", function(){
+        withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("type_id", newID);
             createSettingsTypeTab_HTML();
             alertOfSuccess();

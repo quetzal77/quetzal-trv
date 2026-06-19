@@ -324,8 +324,7 @@ a.back2top{bottom:20px; display:none}
 .back2country{top:70px; display:block}
 .back2country a,.back2country a:hover,.back2country a:visited{color:#fff}
 
-/* SETTINGS — left as-is (only the original two helpers kept) --- */
-#thalign{text-align:left}
+/* SETTINGS — original helper kept --- */
 .asteriskField{color:red}
 
 /* SITE FOOTER ------------------------------------------------- */
@@ -346,4 +345,87 @@ a.back2top{bottom:20px; display:none}
   .footer-copy{margin-left:0}
   .symbolics-row{gap:24px}
   .symbolics-row img{height:96px}
+}
+
+/* SETTINGS PAGE ----------------------------------------------- */
+.set-page{max-width:1080px; margin:0 auto}
+.set-title{font-size:26px; font-weight:700; text-align:center; margin:6px 0 18px; color:var(--text)}
+.set-layout{display:grid; grid-template-columns:220px 1fr; gap:20px; align-items:start}
+/* left menu */
+.set-sidebar{position:sticky; top:84px; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow); padding:10px}
+.set-nav{list-style:none; margin:0; padding:0}
+.set-nav + .set-nav{margin-top:8px; padding-top:8px; border-top:1px solid var(--border)}
+.set-nav > li{margin:0}
+.set-nav > li > a{display:block; padding:9px 12px; border-radius:9px; color:var(--text);
+  font-size:14px; font-weight:500; text-decoration:none; cursor:pointer}
+.set-nav > li > a:hover{background:var(--surface-2)}
+.set-nav > li.active > a{background:var(--accent-weak); color:var(--accent); font-weight:600}
+/* main blocks */
+.set-main{min-width:0}
+.set-block + .set-block{margin-top:24px}
+.set-block-title{font-size:18px; font-weight:700; color:var(--text); margin:0 0 12px}
+/* KPI cards — narrow stat tiles (Countries / Regions / Cities / Visits) */
+.set-kpi{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.set-kpi-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:18px; display:flex; flex-direction:column; gap:4px}
+.set-kpi-lbl{font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em; font-weight:600}
+.set-kpi-num{font-size:34px; font-weight:700; line-height:1.05; color:var(--text)}
+.set-kpi-sub{font-size:13px; color:var(--muted)}
+/* block 1 — three square cards */
+.set-cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.set-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow)}
+.set-card.is-square{aspect-ratio:1/1; display:flex; align-items:center; justify-content:center}
+.set-card.is-empty{border-style:dashed; box-shadow:none; background:var(--surface-2)}
+/* block 2 — data transformation */
+.set-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:18px}
+.set-muted{color:var(--muted); font-size:14px}
+/* option rows + buttons */
+.set-options{display:flex; flex-direction:column}
+.set-option{display:flex; align-items:center; justify-content:space-between; gap:16px;
+  padding:14px 0; border-bottom:1px solid var(--border)}
+.set-option:first-child{padding-top:0}
+.set-option:last-child{padding-bottom:0; border-bottom:0}
+.set-option-title{font-size:15px; font-weight:600; color:var(--text)}
+.set-option-desc{font-size:13px; color:var(--muted); margin-top:2px}
+.set-option-actions{display:flex; gap:8px; flex-shrink:0}
+.set-btn{background:var(--surface-2); border:1px solid var(--border); color:var(--text);
+  font-size:13px; font-weight:600; padding:7px 14px; border-radius:9px; cursor:pointer; font-family:inherit}
+.set-btn:hover{background:var(--accent-weak); border-color:var(--accent); color:var(--accent)}
+.set-btn-primary{background:var(--accent); border-color:var(--accent); color:#fff}
+.set-btn-primary:hover{background:var(--accent); color:#fff; filter:brightness(.95)}
+/* block 3 — countries table */
+.set-table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  box-shadow:var(--shadow); overflow:hidden}
+.set-table{width:100%; border-collapse:collapse; font-size:14px}
+.set-table th,.set-table td{padding:10px 14px; text-align:left; border-bottom:1px solid var(--border)}
+.set-table thead th{background:var(--surface-2); color:var(--muted); font-weight:600; font-size:12px;
+  text-transform:uppercase; letter-spacing:.03em}
+.set-table tbody tr:last-child td{border-bottom:0}
+.set-table tbody tr:hover{background:var(--surface-2)}
+.set-table th.num,.set-table td.num{text-align:right; font-variant-numeric:tabular-nums; width:1%; white-space:nowrap}
+.set-table td:nth-child(1){width:100%}
+.set-table a{color:var(--accent); text-decoration:none}
+.set-table a:hover{text-decoration:underline}
+.set-miss{color:var(--muted); font-size:12px}
+.set-frac{color:var(--muted)}
+.cap-yes{color:#16a34a; font-weight:700}
+.cap-no{color:var(--muted)}
+/* countries: filter checkbox + continent group rows */
+.set-block-head{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px}
+.set-block-head .set-block-title{margin:0}
+.set-check{display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--text); cursor:pointer; user-select:none}
+.set-check input{width:16px; height:16px; cursor:pointer; accent-color:var(--accent)}
+.set-table tr.grp td{background:var(--surface-2); color:var(--muted); font-weight:700; font-size:12px;
+  text-transform:uppercase; letter-spacing:.04em}
+.set-table tr.grp:hover td{background:var(--surface-2)}
+.set-table-wrap.only-missing tr.c-visited{display:none}
+
+@media (max-width:760px){
+  .set-layout{grid-template-columns:1fr}
+  .set-sidebar{position:static}
+  .set-cards3{grid-template-columns:1fr}
+  .set-kpi{grid-template-columns:repeat(2,1fr)}
+  .set-option{flex-direction:column; align-items:flex-start}
 }
