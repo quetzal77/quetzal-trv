@@ -25367,8 +25367,12 @@
         "chicago",
         "milwaukee",
         "sanjuan"
-      ]
-    },
+      ],
+      days": {
+      "chicago": 5, "milwaukee": 0.5,
+      "sanjuan": 2.5
+    }
+  },
     {
       "start_date": "12.10.2025",
       "end_date": "12.10.2025",
@@ -25539,7 +25543,12 @@
         "walhallabavaria",
         "oberstdorf",
         "salzburg"
-      ]
+      ],
+      "days": {
+        "herrenchiemsee": 1, "regensburg": 1, "ingolstadt": 0.6, "abensberg": 0.2,
+        "befreiungshallekelheim": 0.2, "walhallabavaria": 0.2, "oberstdorf": 0.5,
+        "salzburg": 0.5
+      }
     },
     {
       "start_date": "04.01.2025",
@@ -25606,7 +25615,15 @@
         "mostar",
         "sarajevo",
         "monumenttothefallenfightersofpeoplesliberationwar"
-      ]
+      ],
+      "days": {
+        "skradin": 0.2, "nacionalniparkkrka": 0.4, "makarska": 0.4, "seagullwingsmonument": 0.1,
+        "zaostrog": 0.1, "dubrovnik": 0.4,
+        "memorialtolostfightersofpeoplesliberationwarandvictimsoffascism": 0.1,
+        "orebic": 0.3, "korchula": 0.5,
+        "mostar": 1, "sarajevo": 1,
+        "monumenttothefallenfightersofpeoplesliberationwar": 0.1
+      }
     },
     {
       "start_date": "12.10.2024",
@@ -25684,7 +25701,17 @@
         "borgarnes",
         "reykjavík",
         "budapest"
-      ]
+      ],
+      "days": {
+        "vienna": 1,
+        "budapest": 1,
+        "bridgeamericaeurope": 0.1, "gunnuhver": 0.1, "seltúngeothermalarea": 0.1,
+        "reykjadalurhotspringthermalriver": 0.1, "kerid": 0.1, "geysirhotsprings": 0.1,
+        "gullfoss": 0.2, "hella": 0.2, "seljalandsfoss": 0.2, "skogafoss": 0.2,
+        "reynisdrangar": 0.2, "dyrholaey": 0.2, "vík": 0.2, "skaftafellnationalpark": 0.8,
+        "jokulsarlon": 0.2, "dettifoss": 0.3, "námafjall": 0.2, "mývatnnaturebaths": 0.5,
+        "husavík": 0.6, "godafoss": 0.2, "borgarnes": 0.5, "reykjavík": 2.5
+      }
     },
     {
       "start_date": "27.07.2024",
@@ -25749,7 +25776,11 @@
         "sopron",
         "bukfurdo",
         "koszeg"
-      ]
+      ],
+      "days": {
+        "vienna": 3.1,
+        "szechenyimansion": 0.3, "eszterhazapalace": 0.3, "sopron": 0.3, "bukfurdo": 0.7, "koszeg": 0.3
+      }
     },
     {
       "start_date": "17.04.2024",
@@ -25901,7 +25932,12 @@
         "giantscauseway",
         "darkhedges",
         "belfast"
-      ]
+      ],
+      "days": {
+        "dublin": 4.2, "cliffsofmoher": 0.3, "burren": 0.3, "galway": 0.3,
+        "cashel": 0.3, "cahir": 0.3, "blarneycastle": 0.3,
+        "dunlucecastle": 0.2, "giantscauseway": 0.3, "darkhedges": 0.2, "belfast": 0.3
+      }
     },
     {
       "start_date": "09.09.2023",
@@ -26048,7 +26084,12 @@
         "neuschwanstein",
         "linderhof",
         "munich"
-      ]
+      ],
+      "days": {
+        "munich": 1.5, "augsburg": 0.5, "neuschwanstein": 0.5, "linderhof": 0.5,
+        "strasbourg": 0.5, "reims": 0.5, "issylesmoulineaux": 0.5, "paris": 3.5,
+        "versailles": 0.5, "disneylandparis": 1
+      }
     },
     {
       "start_date": "15.04.2023",
@@ -26211,7 +26252,12 @@
         "nagykanizsa",
         "velikagorica",
         "zagreb"
-      ]
+      ],
+      "days": {
+        "hrubieszow": 0.5, "helm": 1,
+        "nagykanizsa": 1,
+        "velikagorica": 1, "zagreb": 1
+      }
     },
     {
       "start_date": "05.11.2022",
