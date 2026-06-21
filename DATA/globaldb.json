@@ -26721,7 +26721,12 @@
         "almaty",
         "bigalmatylake"
       ],
-      "photos": "https://quetzal.io.ua/album892054"
+      "photos": "https://quetzal.io.ua/album892054",
+      "days": {
+        "bishkek": 1.3, "cholponata": 0.2, "chonaksuucanyon": 0.2, "karakol": 0.2,
+        "dzhetyoguz": 0.2, "barskoon": 0.2, "fairytalecanyon": 0.2, "burana": 0.2,
+        "shymbulak": 0.5, "almaty": 1.3, "bigalmatylake": 0.2
+      }
     },
     {
       "start_date": "20.07.2019",
@@ -26825,7 +26830,11 @@
         "soufreserve",
         "deirelqamar"
       ],
-      "photos": "https://quetzal.io.ua/album878210"
+      "photos": "https://quetzal.io.ua/album878210",
+      "days": {
+        "ayianapa": 2,
+        "beirut": 1, "jeitagrotto": 0.3, "baalbek": 0.3, "soufreserve": 0.3, "deirelqamar": 0.1
+      }
     },
     {
       "start_date": "16.11.2018",
@@ -26858,7 +26867,13 @@
         "mausoleummarasesti",
         "chisinau"
       ],
-      "photos": "https://quetzal.io.ua/album871996"
+      "photos": "https://quetzal.io.ua/album871996",
+      "days": {
+        "comrat": 0.5, "chisinau": 1,
+        "galati": 0.5, "constanta": 1, "mausoleummarasesti": 0.1,
+        "aheloy": 2, "nesebar": 0.5, "sozopol": 0.25, "burgas": 0.25, "plovdiv": 0.5,
+        "sofia": 0.5, "rilskyimonastir": 0.5, "pleven": 0.5
+      }
     },
     {
       "start_date": "05.08.2018",
@@ -26944,7 +26959,15 @@
         "hamburg",
         "luneburg"
       ],
-      "photos": "https://quetzal.io.ua/album863991"
+      "photos": "https://quetzal.io.ua/album863991",
+      "days": {
+        "budapest": 1,
+        "konjic": 0.5, "sarajevo": 0.5, "bitvananeretve": 0.2, "pocitelj": 0.2,
+        "kravica": 0.2, "blagaj": 0.2, "mostar": 0.2, "travnik": 0.2, "jajce": 0.2,
+        "banjaluka": 0.3, "tuzla": 0.3,
+        "munster": 0.1, "hamm": 0.1, "bielefeld": 0.1, "herford": 0.1,
+        "portawestfalica": 0.1, "minden": 0.1, "hamburg": 0.5, "luneburg": 0.5
+      }
     },
     {
       "start_date": "21.12.2017",
@@ -26969,11 +26992,17 @@
       "end_date": "10.10.2017",
       "city": [
         "trier",
+        "luxembourg",
         "metz",
         "nancy",
         "saarbrucken"
       ],
-      "photos": "https://quetzal.io.ua/album852363"
+      "photos": "https://quetzal.io.ua/album852363",
+      "days": {
+        "trier": 1.2, "saarbrucken": 1,
+        "luxembourg": 0.3,
+        "metz": 2, "nancy": 0.5
+      }
     },
     {
       "start_date": "02.07.2017",
@@ -27036,7 +27065,12 @@
         "nuremberg",
         "ulm"
       ],
-      "photos": "http://quetzal.io.ua/album807463"
+      "photos": "http://quetzal.io.ua/album807463",
+      "days": {
+        "skopjecentar": 1.5, "ohrid": 0.5,
+        "pristina": 0.5,
+        "nuremberg": 0.5, "ulm": 1
+      }
     },
     {
       "start_date": "02.04.2016",
@@ -27091,7 +27125,12 @@
         "seville",
         "malaga"
       ],
-      "photos": "http://quetzal.io.ua/album764878"
+      "photos": "http://quetzal.io.ua/album764878",
+      "days": {
+        "torremolinos": 3, "lalinea": 0.1, "cordoba": 1, "granada": 1,
+        "seville": 2, "malaga": 1,
+        "gibraltar": 0.9
+      }
     },
     {
       "start_date": "04.12.2015",
@@ -27145,7 +27184,14 @@
         "szombathely",
         "vienna"
       ],
-      "photos": "http://quetzal.io.ua/album749993"
+      "photos": "http://quetzal.io.ua/album749993",
+      "days": {
+        "pohorelice": 1,
+        "graz": 1, "vienna": 1,
+        "grado": 2.8, "verona": 1, "venice": 1, "aquileia": 0.2,
+        "zagreb": 1, "rovinj": 0.5,
+        "szombathely": 0.3
+      }
     },
     {
       "start_date": "15.08.2015",
@@ -27219,7 +27265,12 @@
         "santarem",
         "bergamo"
       ],
-      "photos": "http://quetzal.io.ua/album729259"
+      "photos": "http://quetzal.io.ua/album729259",
+      "days": {
+        "pavoa": 1, "porto": 1, "villaconde": 1, "coimbra": 0.5, "lisbon": 3.5,
+        "sintra": 0.5, "santarem": 0.5,
+        "bergamo": 1
+      }
     },
     {
       "start_date": "21.03.2015",
@@ -27324,7 +27375,16 @@
         "limassol",
         "paphos"
       ],
-      "photos": "http://quetzal.io.ua/album676126"
+      "photos": "http://quetzal.io.ua/album676126",
+      "days": {
+        "larnaka": 5,
+        "nicosia": 0.3,
+        "limassol": 2.5,
+        "paphos": 1,
+        "lefkosha": 0.3,
+        "gazimagusa": 0.5,
+        "girne": 0.5
+      }
     },
     {
       "start_date": "07.03.2014",
@@ -27476,7 +27536,13 @@
         "cetinje",
         "podgorica"
       ],
-      "photos": "http://quetzal.io.ua/album558954"
+      "photos": "http://quetzal.io.ua/album558954",
+      "days": {
+        "budva": 3.1, "sveti_stefan": 0.3, "bar": 0.3, "petrovac": 0.3, "kotor": 1,
+        "cetinje": 0.3, "podgorica": 1,
+        "tirana": 0.3, "durres": 0.3, "shkoder": 0.3,
+        "dubrovnik": 0.5
+      }
     },
     {
       "start_date": "02.05.2012",
@@ -28359,7 +28425,12 @@
         "sukhum",
         "adler"
       ],
-      "photos": "http://quetzal.io.ua/album20185"
+      "photos": "http://quetzal.io.ua/album20185",
+      "days": {
+        "tuapse": 0.3, "kalezh": 0.3, "mamedova_schel": 1, "lazarevskoe": 1,
+        "golovinka": 0.3, "sochi_waterfalls": 0.2, "sochi": 0.3, "adler": 0.1,
+        "lake_ritsa_and_blue_lake": 1, "gagra": 0.5, "new_athos": 0.5, "sukhum": 1
+      }
     },
     {
       "start_date": "01.04.2006",
