@@ -101,6 +101,11 @@
         $.getScript("SCRIPTS/set_continent.js", function(){ createSettingsContinentTab_HTML() });
     }
 
+    function createSettingsCountryTypeTab(){
+        //Create settings-country_type tab
+        $.getScript("SCRIPTS/set_country_type.js", function(){ createSettingsCountryTypeTab_HTML() });
+    }
+
     function createSettingsTypeTab(){
         //Create settings-location_type tab
         $.getScript("SCRIPTS/set_type.js", function(){ createSettingsTypeTab_HTML() });

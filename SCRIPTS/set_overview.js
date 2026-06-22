@@ -27,7 +27,8 @@ function HTML_Settings_LeftPanel() {
                 '<li class="active" id="overview"><a onclick="javascript:createSettingsOverviewTab_HTML()" onmouseover="" style="cursor: pointer;">Огляд</a></li>' +
             '</ul>' +
             '<ul class="set-nav">' +
-                '<li id="types"><a onclick="javascript:createSettingsTypeTab()" onmouseover="" style="cursor: pointer;">Типи сутностей</a></li>' +
+                '<li id="ctypes"><a onclick="javascript:createSettingsCountryTypeTab()" onmouseover="" style="cursor: pointer;">Типи країн</a></li>' +
+                '<li id="types"><a onclick="javascript:createSettingsTypeTab()" onmouseover="" style="cursor: pointer;">Типи локацій</a></li>' +
                 '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">Континенти</a></li>' +
                 '<li id="countries"><a onclick="javascript:createSettingsCountryTab()" onmouseover="" style="cursor: pointer;">Країни</a></li>' +
                 '<li id="regions"><a onclick="javascript:createSettingsRegionTab()" onmouseover="" style="cursor: pointer;">Регіони</a></li>' +
@@ -189,23 +190,21 @@ function HTML_VisitesPerCountryTale() {
     var byCont = {};
     $.each(data.country, function( i, c ){ (byCont[c.continent_id] = byCont[c.continent_id] || []).push(c); });
 
+    // continent header row also carries the column labels (repeated per continent)
     var body = "";
     $.each(data.continent, function( i, cont ){
-        body += '<tr class="grp"><td colspan="5">' + cont.name_ua + '</td></tr>';
+        body += '<tr class="grp">' +
+                    '<td class="grp-name">' + cont.name_ua + '</td>' +
+                    '<td class="num">Столиця</td>' +
+                    '<td class="num">Регіони</td>' +
+                    '<td class="num">Міста</td>' +
+                    '<td class="num">Візити</td>' +
+                '</tr>';
         $.each(byCont[cont.continent_id] || [], function( j, country ){ body += rowFor(country); });
     });
 
     return  '<div class="set-table-wrap" id="countriesTable">' +
                 '<table class="set-table">' +
-                    '<thead>' +
-                        '<tr>' +
-                            '<th></th>' +
-                            '<th class="num">Столиця</th>' +
-                            '<th class="num">Регіони</th>' +
-                            '<th class="num">Міста</th>' +
-                            '<th class="num">Візити</th>' +
-                        '</tr>' +
-                    '</thead>' +
                     '<tbody>' +
                         body +
                     '</tbody>' +

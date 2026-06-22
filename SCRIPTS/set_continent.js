@@ -1,6 +1,6 @@
 //09. Settings Page - Continents
 
-//09.01 Creation of main Continents add, edit, removal section
+//09.01 Main Continents add, edit, removal section
 function createSettingsContinentTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"continent");
@@ -11,54 +11,57 @@ function createSettingsContinentTab_HTML() {
     removeAllAttributesByName("class", "active");
     document.getElementById("continents").setAttribute("class", "active")
 
-    var listOfContinents = '';
+    var options = '';
     $.each (data.continent, function( i, continent ){
-        listOfContinents += '<li><a id="' + continent.continent_id + '" onclick="javascript:addEditRemoveContinents(this.id)" onmouseover="" style="cursor: pointer;">' + continent.name_ua + '</a></li>';
+        options += '<option value="' + continent.continent_id + '">' + continent.name_ua + '</option>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
-            '<h1 class="page-header">Continents</h1>' +
-            '<span id="success"></span>' +
-                '<div class="well">' +
-                    '<p>This section gives you possible to <b>ADD</b>, <b>EDIT</b> or <b>REMOVE</b> \"continent\" entity.</p>' +
-                    '<p>Select \"Add new\" option to add new \"continent\" or choose some particular entity that gonna be either edited or removed.</p>' +
-                    '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +
-                    '<div class="btn-toolbar">' +
-                        '<div class="btn-group">' +
-                            '<button type="button" class="btn btn-info btn-default">List of existing Continents</button>' +
-                            '<button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>' +
-                            '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
-                                '<li><a id="addnew" onclick="javascript:addEditRemoveContinents(this.id)" onmouseover="" style="cursor: pointer;">Add new</a></li>' +
-                                '<li role="separator" class="divider"></li>' +
-                                listOfContinents +
-                            '</ul>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '<div id="AddEditRemoveSection"></div>';
+        '<header class="set-head">' +
+            '<span class="set-head-icon">🌍</span>' +
+            '<div>' +
+                '<h2 class="set-head-title">Континенти</h2>' +
+                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте континенти.</p>' +
+            '</div>' +
+        '</header>' +
+        '<span id="success"></span>' +
+        '<div class="set-panel">' +
+            '<label class="set-label" for="contSelect">Оберіть континент або додайте новий</label>' +
+            '<select id="contSelect" class="set-select" onchange="javascript:onContinentSelect(this.value)">' +
+                '<option value="">— оберіть —</option>' +
+                '<option value="addnew">➕ Додати новий континент</option>' +
+                options +
+            '</select>' +
+        '</div>' +
+        '<div id="AddEditRemoveSection"></div>';
 
     //Remove copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "";
     document.getElementById("hr_bottom").innerHTML = "";
 }
 
-//09.02 Creation of section to be able to add new, edit or removal of continent
+//09.02 Selection handler — render the form, or clear it when "— оберіть —" is chosen
+function onContinentSelect(value) {
+    if (value) { addEditRemoveContinents(value); }
+    else { document.getElementById("AddEditRemoveSection").innerHTML = ""; }
+}
+
+//09.02a Add/edit/remove form for a continent
 function addEditRemoveContinents(itemId) {
-    var removeButton = "";
-    var contValue = "";
-    var readonly = "";
-    var header = "Add new";
+    var contValue = "", readonly = "", name = "", name_ua = "";
+    var header = "Новий континент";
     var submitStatus = "add";
-    var name = "";
-    var name_ua = "";
-    var editIdField = "";
+    var idHint = "Унікальний ID континенту (напр. EU)";
+    var removeButton = "";
     local[0] = itemId;
 
     if (itemId != "addnew"){
         var continent = $.grep (data.continent, function( n, i ) {return (n.continent_id == itemId)});
+        if (!continent[0]) { return; }
         contValue = 'value="' + itemId + '" ';
-        readonly = "readonly";
-        header = "Edit";
+        readonly = "readonly";              // the ID is fixed once a continent exists — it can no longer be edited
+        idHint = "ID не редагується";
+        header = "Редагувати континент";
         submitStatus = "edit";
         name_ua = continent[0].name_ua;
         name = continent[0].name;
@@ -67,42 +70,48 @@ function addEditRemoveContinents(itemId) {
             name_ua: continent[0].name_ua,
             name: continent[0].name
         };
-        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveContinent();return false" value="Remove selected item"/>' +
-                '<span id="remove"></span>' +
-                '<hr>';
-        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeContinent()">Видалити континент</button>';
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' continent</h2>' +
-        '<form>' +
-            removeButton +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique continent Id" ' + contValue + readonly + '>' +
-                editIdField +
+        '<div class="set-panel set-form">' +
+            '<h3 class="set-form-title">' + header + '</h3>' +
+            '<div class="set-field">' +
+                '<label>ID континенту <span class="req">*</span></label>' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + idHint + '" ' + contValue + readonly + ' oninput="javascript:setContinentFormDirty()">' +
+                '<span id="alert1"></span>' +
             '</div>' +
-            '<span id="alert1"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newUaName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter Ukrainian name of continent">' +
+            '<div class="set-field">' +
+                '<label>Назва українською <span class="req">*</span></label>' +
+                '<input id="newUaName" type="text" class="set-input" value="' + name_ua + '" placeholder="Напр.: Європа" oninput="javascript:setContinentFormDirty()">' +
+                '<span id="alert2"></span>' +
             '</div>' +
-            '<span id="alert2"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of continent">' +
+            '<div class="set-field">' +
+                '<label>Назва англійською <span class="req">*</span></label>' +
+                '<input id="newEngName" type="text" class="set-input" value="' + name + '" placeholder="e.g. Europe" oninput="javascript:setContinentFormDirty()">' +
+                '<span id="alert3"></span>' +
             '</div>' +
-            '<span id="alert3"></span>' +
-        '<hr>' +
-        '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
-        '</form>';
-
+            '<div class="set-form-actions">' +
+                '<button type="button" id="contSaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitContinent(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                removeButton +
+            '</div>' +
+            '<span id="remove"></span>' +
+        '</div>';
 }
 
-//09.03 Submit changes for Add new of edit event
-function SubmitChanges(status) {
+//09.02b Enable "Зберегти" only after a field actually changed (vs its initial value)
+function setContinentFormDirty() {
+    var ids = ["newId", "newUaName", "newEngName"], dirty = false;
+    for (var i = 0; i < ids.length; i++) {
+        var el = document.getElementById(ids[i]);
+        if (el && el.value !== el.defaultValue) { dirty = true; break; }
+    }
+    var btn = document.getElementById("contSaveBtn");
+    if (btn) { btn.disabled = !dirty; }
+}
+
+//09.03 Submit changes for Add new or edit event
+function submitContinent(status) {
     var continentObj = {
                          continent_id: document.getElementById("newId").value.trim(),
                          name_ua: document.getElementById("newUaName").value.trim(),
@@ -114,97 +123,97 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
-    if (checkRules4AddUpdate(continentObj)) {
+    if (checkContinentRules(continentObj)) {
         withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(continentObj): updateElementOfGlobalDataArray(continentObj);
             createSettingsContinentTab_HTML();
-            alertOfSuccess();
+            continentAlertSuccess();
         });
     }
     return false;
 }
 
 //09.04 Remove item event handler
-function RemoveContinent() {
+function removeContinent() {
     var newID = document.getElementById('newId').value;
-    var contToRemoveArray = $.grep (data.country, function( n, i ) {return (n.continent_id == newID)});
+    var dependents = $.grep (data.country, function( n, i ) {return (n.continent_id == newID || n.continent_id2 == newID)});
 
     removeAllChildNodes("alert1");
     removeAllChildNodes("alert2");
     removeAllChildNodes("alert3");
     removeAllChildNodes("success");
 
-    if (contToRemoveArray.length > 0) {
-        var countriesLinkedToCont = "";
-        $.each (contToRemoveArray, function( i, country ){
-            countriesLinkedToCont += '<b>' + country.name_ua + '</b>, ';
-        });
+    if (dependents.length > 0) {
+        var linked = "";
+        $.each (dependents, function( i, country ){ linked += '<b>' + country.name_ua + '</b>, '; });
         document.getElementById("remove").innerHTML =
-            '<div class="alert alert-danger fade in">' +
-            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some country. Change continent id (or remove country) for following countries: ' +
-            countriesLinkedToCont.slice(0, -2) + '.' +
-            '</div>';
+            '<div class="set-alert is-err">Цей континент не можна видалити — від нього залежать країни: ' +
+            linked.slice(0, -2) + '. Спершу змініть їхній континент.</div>';
     }
     else {
         withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("continent_id", newID);
             createSettingsContinentTab_HTML();
-            alertOfSuccess();
+            continentAlertSuccess();
         });
     }
 }
 
 //09.05 Verification for Add/Update fields
-function checkRules4AddUpdate(continentObj) {
+function checkContinentRules(continentObj) {
     var result = true;
-    var initialContinentObj = local[0];
+    var initial = local[0];
     for (var i = 0; i < data.continent.length; i++) {
-        if (initialContinentObj != "addnew") {
-            if (initialContinentObj.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id.toUpperCase() == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ua);
+        if (initial != "addnew") {
+            if (initial.continent_id.toUpperCase() != continentObj.continent_id.toUpperCase() && data.continent[i].continent_id.toUpperCase() == continentObj.continent_id.toUpperCase()){
+                continentAlertDuplicate(data.continent[i].continent_id, data.continent[i].name_ua);
                 result = false;
             }
         }
         else {
-            if (data.continent[i].continent_id == continentObj.continent_id.toUpperCase()){
-                alertOfDuplicateFailure(data.continent[i].continent_id, data.continent[i].name_ua);
+            if (data.continent[i].continent_id.toUpperCase() == continentObj.continent_id.toUpperCase()){
+                continentAlertDuplicate(data.continent[i].continent_id, data.continent[i].name_ua);
                 result = false;
             }
         }
-        if (continentObj.continent_id == ''){ alertOfEmptyMandatoryField("alert1"); result = false; }
-        if (continentObj.name_ua == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
-        if (continentObj.name == ''){ alertOfEmptyMandatoryField("alert3"); result = false; }
     }
+    if (continentObj.continent_id == ''){ continentAlertEmpty("alert1"); result = false; }
+    if (continentObj.name_ua == ''){ continentAlertEmpty("alert2"); result = false; }
+    if (continentObj.name == ''){ continentAlertEmpty("alert3"); result = false; }
+
+    // On edit: if the ID was changed, block while countries still reference the OLD id
+    // (same dependency rule as removal — otherwise those countries would be orphaned)
+    if (initial != "addnew" && continentObj.continent_id !== '' && initial.continent_id != continentObj.continent_id) {
+        var dependents = $.grep (data.country, function( n, i ) {return (n.continent_id == initial.continent_id || n.continent_id2 == initial.continent_id)});
+        if (dependents.length > 0) {
+            var linked = "";
+            $.each (dependents, function( i, country ){ linked += '<b>' + country.name_ua + '</b>, '; });
+            document.getElementById("alert1").innerHTML =
+                '<div class="set-alert is-err">ID не можна змінити — від попереднього ID залежать країни: ' +
+                linked.slice(0, -2) + '. Спершу змініть їхній континент.</div>';
+            result = false;
+        }
+    }
+
     return result;
 }
 
-//09.05 Success flag for any event successfully applied
-function alertOfSuccess() {
-    removeAllChildNodes("alert");
+//09.06 Success flag
+function continentAlertSuccess() {
     document.getElementById("success").innerHTML =
-        '<div class="alert alert-success fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Success!</strong> Your changes are successfully applied. Check list of Continents to see changes added.' +
-        '</div>';
+        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список континентів.</div>';
 }
 
-//09.06 Failure flag for not unique ID applied
-function alertOfDuplicateFailure(id, name_ua) {
+//09.07 Failure flag for not unique ID
+function continentAlertDuplicate(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert1").innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already associated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
-        '</div>';
+        '<div class="set-alert is-err">Цей ID уже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть інший.</div>';
 }
 
-//09.07 Failure flag for empty mandatory field
-function alertOfEmptyMandatoryField(alertId) {
+//09.08 Failure flag for empty mandatory field
+function continentAlertEmpty(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Mandatory field is empty. Populate it before submit.' +
-        '</div>';
+        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
 }

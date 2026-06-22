@@ -7,6 +7,10 @@ function addElementOfGlobalDataArray(entityObj) {
             data.type.push(entityObj);
             data.type.sort(dynamicSort("name_ua"));
             break;
+        case 'country_type':
+            data.country_type.push(entityObj);
+            data.country_type.sort(dynamicSort("name_ua"));
+            break;
         case 'continent':
             data.continent.push(entityObj);
             data.continent.sort(dynamicSort("name_ua"));
@@ -42,6 +46,11 @@ function updateElementOfGlobalDataArray(newEntityObj) {
                  data.type.sort(dynamicSort("name_ua"));
                  refreshAllTheArrays ();
                  break;
+             case 'country_type':
+                 updateElementOfCountryTypeArray(initialEntityObj, newEntityObj)
+                 data.country_type.sort(dynamicSort("name_ua"));
+                 refreshAllTheArrays ();
+                 break;
              case 'continent':
                  updateElementOfContinentArray (initialEntityObj, newEntityObj);
                  data.continent.sort(dynamicSort("name_ua"));
@@ -75,6 +84,9 @@ function removeElementOfGlobalData4DefinedArray(attr, value) {
     switch(local[1]) {
         case 'type':
             removeElementOfGlobalDataArray (data.type, attr, value);
+            break;
+        case 'country_type':
+            removeElementOfGlobalDataArray (data.country_type, attr, value);
             break;
         case 'continent':
             removeElementOfGlobalDataArray (data.continent, attr, value);
@@ -157,6 +169,30 @@ function updateElementOfTypeArray(initialEntityObj, newEntityObj) {
             if (type_id){ type.type_id = newEntityObj.type_id; }
             if (name_ua){ type.name_ua = newEntityObj.name_ua; }
             if (name){ type.name = newEntityObj.name; }
+        }
+    });
+}
+
+//10.05b Update Country Type and Country arrays with new data
+function updateElementOfCountryTypeArray(initialEntityObj, newEntityObj) {
+    var ct_id = (initialEntityObj.country_type_id != newEntityObj.country_type_id) ? true : false;
+    var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
+    var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
+
+    // Update Global Country Array with new country_type_id
+    if (ct_id) {
+        $.each (data.country, function( i, country ){
+            if (country.country_type_id == initialEntityObj.country_type_id){
+                country.country_type_id = newEntityObj.country_type_id;
+            }
+        });
+    }
+    // Update Global Country Type array with new data
+    $.each (data.country_type, function( i, t ){
+        if (t.country_type_id == initialEntityObj.country_type_id) {
+            if (ct_id){ t.country_type_id = newEntityObj.country_type_id; }
+            if (name_ua){ t.name_ua = newEntityObj.name_ua; }
+            if (name){ t.name = newEntityObj.name; }
         }
     });
 }

@@ -75,7 +75,7 @@ IMG/                      flags, emblems, city photos
 - [ ] Add second language to portal - English
 
 ### Дані / контент
-- [ ] ...
+- [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation
 
 ### Технічне
 - [ ] Add Login for settings
@@ -83,5 +83,6 @@ IMG/                      flags, emblems, city photos
 - [ ] Експорт/бекап даних
 - [ ] Скрипт валідації globaldb.json: Node-скрипт, що перевіряє: CRLF/відсутність BOM, схему полів, цілісність звʼязків (city.region_id → area → country), валідність map_img (регістр!), коректність days (типи,   
     ключі в маршруті, сума ≈ тривалості).
+- [ ] Update Ammap library for latest version
 
 

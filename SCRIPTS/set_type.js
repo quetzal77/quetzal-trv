@@ -11,54 +11,57 @@ function createSettingsTypeTab_HTML() {
     removeAllAttributesByName("class", "active");
     document.getElementById("types").setAttribute("class", "active")
 
-    var listOfLOcationTypes = '';
+    var options = '';
     $.each (data.type.sort(dynamicSort("name_ua")), function( i, type ){
-        listOfLOcationTypes += '<li><a id="' + type.type_id + '" onclick="javascript:addEditRemoveLocationTypes(this.id)" onmouseover="" style="cursor: pointer;">' + type.name_ua + '</a></li>';
+        options += '<option value="' + type.type_id + '">' + type.name_ua + '</option>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
-            '<h1 class="page-header">Location Types</h1>' +
-            '<span id="success"></span>' +
-                '<div class="well">' +
-                    '<p>This section gives you possible to <b>ADD</b>, <b>EDIT</b> or <b>REMOVE</b> \"type\" of location.</p>' +
-                    '<p>Select \"Add new\" option to add new \"type\" or choose some particular entity that gonna be either edited or removed.</p>' +
-                    '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +
-                    '<div class="btn-toolbar">' +
-                        '<div class="btn-group">' +
-                            '<button type="button" class="btn btn-info btn-default">List of existing Location Types</button>' +
-                            '<button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>' +
-                            '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
-                                '<li><a id="addnew" onclick="javascript:addEditRemoveLocationTypes(this.id)" onmouseover="" style="cursor: pointer;">Add new</a></li>' +
-                                '<li role="separator" class="divider"></li>' +
-                                listOfLOcationTypes +
-                            '</ul>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-            '<div id="AddEditRemoveSection"></div>';
+        '<header class="set-head">' +
+            '<span class="set-head-icon">🏷️</span>' +
+            '<div>' +
+                '<h2 class="set-head-title">Типи локацій</h2>' +
+                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте типи локацій.</p>' +
+            '</div>' +
+        '</header>' +
+        '<span id="success"></span>' +
+        '<div class="set-panel">' +
+            '<label class="set-label" for="typeSelect">Оберіть тип локації або додайте новий</label>' +
+            '<select id="typeSelect" class="set-select" onchange="javascript:onTypeSelect(this.value)">' +
+                '<option value="">— оберіть —</option>' +
+                '<option value="addnew">➕ Додати новий тип</option>' +
+                options +
+            '</select>' +
+        '</div>' +
+        '<div id="AddEditRemoveSection"></div>';
 
     //Remove copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "";
     document.getElementById("hr_bottom").innerHTML = "";
 }
 
-//10.02 Creation of section to be able to add new, edit or removal of continent
+//10.02 Selection handler — render the form, or clear it when "— оберіть —" is chosen
+function onTypeSelect(value) {
+    if (value) { addEditRemoveLocationTypes(value); }
+    else { document.getElementById("AddEditRemoveSection").innerHTML = ""; }
+}
+
+//10.02a Creation of section to be able to add new, edit or remove a location type
 function addEditRemoveLocationTypes(itemId) {
-    var removeButton = "";
-    var contValue = "";
-    var readonly = "";
-    var header = "Add new";
+    var contValue = "", readonly = "", name = "", name_ua = "";
+    var header = "Новий тип локації";
     var submitStatus = "add";
-    var name = "";
-    var name_ua = "";
-    var editIdField = "";
+    var idHint = "Унікальний ID типу";
+    var removeButton = "";
     local[0] = itemId;
 
     if (itemId != "addnew"){
         var type = $.grep (data.type, function( n, i ) {return (n.type_id == itemId)});
+        if (!type[0]) { return; }
         contValue = 'value="' + itemId + '" ';
-        readonly = "readonly";
-        header = "Edit";
+        readonly = "readonly";              // the ID is fixed once a type exists — it can no longer be edited
+        idHint = "ID не редагується";
+        header = "Редагувати тип локації";
         submitStatus = "edit";
         name_ua = type[0].name_ua;
         name = type[0].name;
@@ -67,38 +70,44 @@ function addEditRemoveLocationTypes(itemId) {
             name_ua: type[0].name_ua,
             name: type[0].name
         };
-        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveLocationType();return false" value="Remove selected item"/>' +
-                '<span id="remove"></span>' +
-                '<hr>';
-        editIdField = '<span class="input-group-btn"><button class="btn btn-secondary" type="button" id="newId" onclick="javascript:unblockReadonlyField(this.id)">Edit</button></span>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:RemoveLocationType()">Видалити тип</button>';
     }
 
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' location type</h2>' +
-        '<form>' +
-            removeButton +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique type Id" ' + contValue + readonly + '>' +
-                editIdField +
+        '<div class="set-panel set-form">' +
+            '<h3 class="set-form-title">' + header + '</h3>' +
+            '<div class="set-field">' +
+                '<label>ID типу <span class="req">*</span></label>' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + idHint + '" ' + contValue + readonly + ' oninput="javascript:setTypeFormDirty()">' +
+                '<span id="alert1"></span>' +
             '</div>' +
-            '<span id="alert1"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newUaName" type="text" class="form-control" value="' + name_ua + '" placeholder="Enter Ukrainian name of type">' +
+            '<div class="set-field">' +
+                '<label>Назва українською <span class="req">*</span></label>' +
+                '<input id="newUaName" type="text" class="set-input" value="' + name_ua + '" placeholder="Напр.: Місто" oninput="javascript:setTypeFormDirty()">' +
+                '<span id="alert2"></span>' +
             '</div>' +
-            '<span id="alert2"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + name + '" placeholder="Enter english name of type">' +
+            '<div class="set-field">' +
+                '<label>Назва англійською <span class="req">*</span></label>' +
+                '<input id="newEngName" type="text" class="set-input" value="' + name + '" placeholder="e.g. City" oninput="javascript:setTypeFormDirty()">' +
+                '<span id="alert3"></span>' +
             '</div>' +
-            '<span id="alert3"></span>' +
-        '<hr>' +
-        '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
-        '</form>';
+            '<div class="set-form-actions">' +
+                '<button type="button" id="typeSaveBtn" class="set-btn set-btn-primary" onclick="javascript:SubmitChanges(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                removeButton +
+            '</div>' +
+            '<span id="remove"></span>' +
+        '</div>';
+}
 
+//10.02b Enable "Зберегти" only after a field actually changed (vs its initial value)
+function setTypeFormDirty() {
+    var ids = ["newId", "newUaName", "newEngName"], dirty = false;
+    for (var i = 0; i < ids.length; i++) {
+        var el = document.getElementById(ids[i]);
+        if (el && el.value !== el.defaultValue) { dirty = true; break; }
+    }
+    var btn = document.getElementById("typeSaveBtn");
+    if (btn) { btn.disabled = !dirty; }
 }
 
 //10.03 Submit changes for Add new of edit event
@@ -140,11 +149,8 @@ function RemoveLocationType() {
             citiesLinkedToType += '<b>' + city.name_ua + '</b>, ';
         });
         document.getElementById("remove").innerHTML =
-            '<div class="alert alert-danger fade in">' +
-            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some city. Change type id (or remove city) for following cities: ' +
-            citiesLinkedToType.slice(0, -2) + '.' +
-            '</div>';
+            '<div class="set-alert is-err">Цей тип не можна видалити — від нього залежать міста: ' +
+            citiesLinkedToType.slice(0, -2) + '. Змініть тип (або видаліть) ці міста.</div>';
     }
     else {
         withSetContent(function(){
@@ -176,35 +182,41 @@ function checkRules4AddUpdate(typeObj) {
         if (typeObj.name_ua == ''){ alertOfEmptyMandatoryField("alert2"); result = false; }
         if (typeObj.name == ''){ alertOfEmptyMandatoryField("alert3"); result = false; }
     }
+
+    // On edit: if the ID was changed, block while cities still reference the OLD id
+    // (same dependency rule as removal — otherwise those locations would be orphaned)
+    if (initialTypeObj != "addnew" && typeObj.type_id !== '' && initialTypeObj.type_id != typeObj.type_id) {
+        var dependents = $.grep (data.city, function( n, i ) {return (n.type == initialTypeObj.type_id)});
+        if (dependents.length > 0) {
+            var citiesLinked = "";
+            $.each (dependents, function( i, city ){ citiesLinked += '<b>' + city.name_ua + '</b>, '; });
+            document.getElementById("alert1").innerHTML =
+                '<div class="set-alert is-err">ID не можна змінити — від попереднього ID залежать локації: ' +
+                citiesLinked.slice(0, -2) + '. Спершу змініть їхній тип.</div>';
+            result = false;
+        }
+    }
+
     return result;
 }
 
-//10.05 Success flag for any event successfully applied
+//10.06 Success flag for any event successfully applied
 function alertOfSuccess() {
     removeAllChildNodes("alert");
     document.getElementById("success").innerHTML =
-        '<div class="alert alert-success fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Success!</strong> Your changes are successfully applied. Check list of Location Types to see changes added.' +
-        '</div>';
+        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список типів локацій.</div>';
 }
 
-//10.06 Failure flag for not unique ID applied
+//10.07 Failure flag for not unique ID applied
 function alertOfDuplicateFailure(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert1").innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already associated with <b>' + id + ' (' + name_ua + ')</b>. Try to use another id!' +
-        '</div>';
+        '<div class="set-alert is-err">Цей ID уже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть інший.</div>';
 }
 
-//10.07 Failure flag for empty mandatory field
+//10.08 Failure flag for empty mandatory field
 function alertOfEmptyMandatoryField(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Mandatory field is empty. Populate it before submit.' +
-        '</div>';
+        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
 }

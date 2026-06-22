@@ -34,6 +34,9 @@ html[data-theme="light"]{
 }
 
 /* DEFAULTS ---------------------------------------------------- */
+/* Always reserve the vertical scrollbar so centred content doesn't shift
+   horizontally when navigating between short and tall pages. */
+html{overflow-y:scroll}
 body{
   background:var(--bg)!important; color:var(--text);
   padding-top:72px!important; padding-bottom:40px;
@@ -395,6 +398,7 @@ a.back2top{bottom:20px; display:none}
 .set-btn:hover{background:var(--accent-weak); border-color:var(--accent); color:var(--accent)}
 .set-btn-primary{background:var(--accent); border-color:var(--accent); color:#fff}
 .set-btn-primary:hover{background:var(--accent); color:#fff; filter:brightness(.95)}
+.set-btn:disabled,.set-btn:disabled:hover{opacity:.5; cursor:not-allowed; filter:none}
 /* block 3 — countries table */
 .set-table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
   box-shadow:var(--shadow); overflow:hidden}
@@ -413,12 +417,42 @@ a.back2top{bottom:20px; display:none}
 .cap-yes{color:#16a34a; font-weight:700}
 .cap-no{color:var(--muted)}
 /* countries: filter checkbox + continent group rows */
+/* entity tab forms (types / continents / …) */
+.set-head{display:flex; align-items:center; gap:14px; margin:0 0 20px}
+.set-head-icon{width:46px; height:46px; flex:none; display:flex; align-items:center; justify-content:center;
+  font-size:22px; background:var(--accent-weak); color:var(--accent); border-radius:12px}
+.set-head-title{font-size:20px; font-weight:700; color:var(--text); margin:0}
+.set-head-desc{font-size:14px; color:var(--muted); margin:3px 0 0}
+.set-intro{font-size:15px; color:var(--muted); margin:0 0 16px}
+.set-label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px}
+.set-select{width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:9px;
+  background:var(--surface); color:var(--text); font-family:inherit; font-size:14px}
+.set-select:focus{outline:none; border-color:var(--accent)}
+.set-form{margin-top:16px}
+.set-form-title{font-size:16px; font-weight:700; margin:0 0 14px; color:var(--text)}
+.set-field{margin-bottom:14px}
+.set-field > label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px}
+.set-field .req{color:#e5484d}
+.set-input{width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:9px;
+  background:var(--surface); color:var(--text); font-family:inherit; font-size:14px; box-sizing:border-box}
+.set-input:focus{outline:none; border-color:var(--accent)}
+.set-input[readonly]{background:var(--surface-2); color:var(--muted)}
+.set-input-row{display:flex; gap:8px}
+.set-input-row .set-input{flex:1}
+.set-form-actions{display:flex; gap:10px; margin-top:4px}
+.set-btn-danger{background:#e5484d; border-color:#e5484d; color:#fff}
+.set-btn-danger:hover{background:#e5484d; color:#fff; filter:brightness(.95)}
+.set-alert{display:block; margin:8px 0 0; padding:10px 12px; border-radius:9px; font-size:13px}
+.set-alert.is-ok{color:#16a34a; background:color-mix(in srgb,#16a34a 12%,var(--surface)); border:1px solid color-mix(in srgb,#16a34a 30%,var(--surface))}
+.set-alert.is-err{color:#e5484d; background:color-mix(in srgb,#e5484d 12%,var(--surface)); border:1px solid color-mix(in srgb,#e5484d 30%,var(--surface))}
+
 .set-block-head{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:12px}
 .set-block-head .set-block-title{margin:0}
 .set-check{display:inline-flex; align-items:center; gap:8px; font-size:14px; color:var(--text); cursor:pointer; user-select:none}
 .set-check input{width:16px; height:16px; cursor:pointer; accent-color:var(--accent)}
 .set-table tr.grp td{background:var(--surface-2); color:var(--muted); font-weight:700; font-size:12px;
   text-transform:uppercase; letter-spacing:.04em}
+.set-table tr.grp .grp-name{color:var(--text)}
 .set-table tr.grp:hover td{background:var(--surface-2)}
 .set-table-wrap.only-missing tr.c-visited{display:none}
 

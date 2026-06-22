@@ -25368,7 +25368,7 @@
         "milwaukee",
         "sanjuan"
       ],
-      days": {
+      "days": {
       "chicago": 5, "milwaukee": 0.5,
       "sanjuan": 2.5
     }
@@ -25708,7 +25708,7 @@
         "bridgeamericaeurope": 0.1, "gunnuhver": 0.1, "seltungeothermalarea": 0.1,
         "reykjadalurhotspringthermalriver": 0.1, "kerid": 0.1, "geysirhotsprings": 0.1,
         "gullfoss": 0.2, "hella": 0.2, "seljalandsfoss": 0.2, "skogafoss": 0.2,
-        "reynisdrangar": 0.2, "dyrholaey": 0.2, "vik": 0.2, "skaftafellnationalpark": 0.8,
+        "reynisdrangar": 0.2, "dyrholaey": 0.2, "vík": 0.2, "skaftafellnationalpark": 0.8,
         "jokulsarlon": 0.2, "dettifoss": 0.3, "namafjall": 0.2, "myvatnnaturebaths": 0.5,
         "husavik": 0.6, "godafoss": 0.2, "borgarnes": 0.5, "reykjavik": 2.5
       }
@@ -27348,7 +27348,7 @@
     },
     {
       "start_date": "18.10.2014",
-      "end_date": "31.10.2014",
+      "end_date": "02.11.2014",
       "city": [
         "oslo",
         "zurich",
