@@ -34,8 +34,13 @@ function HTML_CityDetais(cityId) {
     result = "<div class='countrydetail'><b>Країна:</b> <a id='" + city.getCountryId() + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
              			     getFullUaCountryName(city.getCountryId()) + "</a></div>";
 
-    //Country name that this city belongs to
-    result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";
+    //Region — or a city-state badge when the region just duplicates the country
+    var ctry = $.grep (data.country, function( n, i ) { return (n.short_name == city.getCountryId()); });
+    if (ctry[0] && ctry[0].city_state === "true") {
+        result += "<div class='countrydetail'><span class='cs-badge'>🏙️ Місто-держава</span></div>";
+    } else {
+        result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";
+    }
 
     //Capital identificator
     if (city.capital == true) {result += "<div class='countrydetail'><b>Столиця:</b> <span class='capital-badge'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M4 9l3.6 2.6L12 5l4.4 6.6L20 9l-1.7 9.2H5.7L4 9z'/></svg> Столиця країни</span></div>"}

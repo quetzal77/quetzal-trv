@@ -1,6 +1,6 @@
 //14. Settings Page - Region
 
-//14.01 Creation of main Region add, edit, removal section
+//14.01 Main Region add, edit, removal section
 function createSettingsRegionTab_HTML() {
     // Set url
     window.history.pushState("object or string", "Title", "index.html?settings="+"region");
@@ -11,203 +11,188 @@ function createSettingsRegionTab_HTML() {
     removeAllAttributesByName("class", "active");
     document.getElementById("regions").setAttribute("class", "active")
 
-    var listOfCountries = '';
+    var options = '';
     $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
-        listOfCountries += '<li><a id="' + country.country_id + '" onclick="javascript:showAllTheRegionsOfSelectedCountry(this.id)" onmouseover="" style="cursor: pointer;">' + country.name_ua + '</a></li>';
+        options += '<option value="' + country.country_id + '">' + country.name_ua + '</option>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
-            '<h1 class="page-header">Regions</h1>' +
-            '<span id="success"></span>' +
-                '<div class="well">' +
-                    '<p>This section gives you possible to <b>ADD</b>, <b>EDIT</b> or <b>REMOVE</b> \"region\" entity.</p>' +
-                    '<p>Select \"Add new\" option to add new \"region\" or choose some particular entity that gonna be either edited or removed.</p>' +
-                    '<p><b>Asterisk</b> is shown for all the mandatory fields which must be populated</p>' +
-                    '<p><b>Pencil</b> is shown for all the non mandatory fields.</p>' +
-                    '<p><b>Region ID</b> should be changed only manually because it depend on map ID and region ID prefix which also must be changed.</p>' +
-                    '<hr>' +
-                    '<p><b>Select country</b> that region you gonna to add/edit/remove belongs to. It has to reduce list of regions shown and makes it more userfriendly.</p>' +
-                    '<div id="countryDropdown" class="btn-toolbar">' +
-                        '<div class="btn-group">' +
-                            '<button type="button" class="btn btn-info btn-default">List of existing Countries</button>' +
-                            '<button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>' +
-                            '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
-                                listOfCountries +
-                            '</ul>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
+        '<header class="set-head">' +
+            '<span class="set-head-icon">📍</span>' +
+            '<div>' +
+                '<h2 class="set-head-title">Регіони</h2>' +
+                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте регіони. Спершу оберіть країну.</p>' +
+            '</div>' +
+        '</header>' +
+        '<span id="success"></span>' +
+        '<div class="set-panel">' +
+            '<div class="set-field">' +
+                '<label for="regionCountrySelect">Країна</label>' +
+                '<select id="regionCountrySelect" class="set-select" onchange="javascript:showAllTheRegionsOfSelectedCountry(this.value)">' +
+                    '<option value="">— оберіть країну —</option>' +
+                    options +
+                '</select>' +
+            '</div>' +
             '<div id="RegionListSection"></div>' +
-            '<div id="AddEditRemoveSection"></div>';
+        '</div>' +
+        '<div id="AddEditRemoveSection"></div>';
 
     //Remove copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "";
     document.getElementById("hr_bottom").innerHTML = "";
 }
 
-//14.02 Second region drop down
+//14.02 Country chosen — show its regions (or clear when "— оберіть —")
 function showAllTheRegionsOfSelectedCountry(id) {
-    var listOfRegions = '';
-    var country = new CountryObj(id)
-    local[2] = (country.map_img != undefined) ? country.map_img : country.short_name + "Low.js" ;
+    document.getElementById("AddEditRemoveSection").innerHTML = "";
+    if (!id) { document.getElementById("RegionListSection").innerHTML = ""; return; }
+
+    var country = new CountryObj(id);
+    local[2] = (country.map_img != undefined) ? country.map_img : country.short_name + "Low.js";
     local[3] = id;
+
+    var options = '';
     $.each (data.area.sort(dynamicSort("name_ua")), function( i, region ){
         if (region.country_id == id && region.active != "N"){
-            var regionObj = new RegionObj(region.region_id);
-            listOfRegions += '<li><a id="' + region.region_id + '" onclick="javascript:addEditRemoveRegion(this.id)" onmouseover="" style="cursor: pointer;">' + region.name_ua + '</a></li>';
+            options += '<option value="' + region.region_id + '">' + region.name_ua + '</option>';
         }
     });
 
     document.getElementById("RegionListSection").innerHTML =
-            '<div id="regionDropdown" class="btn-toolbar" style = "margin-left: 15px;">' +
-                '<p><b>Select region</b> that you want to add/edit/remove.</p>' +
-                '<div class="btn-group">' +
-                    '<button type="button" class="btn btn-info btn-default btn-second-list">List of existing Regions</button>' +
-                    '<button type="button" data-toggle="dropdown" class="btn btn-info dropdown-toggle"><span class="caret"></span></button>' +
-                    '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">' +
-                        '<li><a id="addnew" onclick="javascript:addEditRemoveRegion(this.id)" onmouseover="" style="cursor: pointer;">Add new</a></li>' +
-                        '<li role="separator" class="divider"></li>' +
-                        listOfRegions +
-                    '</ul>' +
-                '</div>' +
-            '</div>';
-    document.getElementById("AddEditRemoveSection").innerHTML = "";
+        '<div class="set-field" style="margin-bottom:0">' +
+            '<label for="regionSelect">Регіон</label>' +
+            '<select id="regionSelect" class="set-select" onchange="javascript:onRegionSelect(this.value)">' +
+                '<option value="">— оберіть —</option>' +
+                '<option value="addnew">➕ Додати новий регіон</option>' +
+                options +
+            '</select>' +
+        '</div>';
 }
 
-//14.03 Creation of section to be able to add new, edit or removal of region
+//14.02a Region chosen — render the form, or clear it
+function onRegionSelect(value) {
+    if (value) { addEditRemoveRegion(value); }
+    else { document.getElementById("AddEditRemoveSection").innerHTML = ""; }
+}
+
+//14.03 Add/edit/remove form for a region
 function addEditRemoveRegion(itemId) {
-    var removeButton = ""; var regIdValue = ""; var readonly = ""; var editIdField = ""; var countries = '';
-    var header = "Add new"; var submitStatus = "add";var listOfNotYetAddedRegions = ""; var disabled = ''; var checkReionOnCountryMapButton = '';
-    var error = false; // error status for situation when country js map doesnt exist
-    var country_map_url = local[2];
-    var region = (itemId != "addnew") ? $.grep (data.area, function( n, i ) {return ( n.region_id == itemId )}) : "newregion";
+    var readonly = "", header = "Новий регіон", submitStatus = "add";
+    var removeButton = "", notAddedPicker = "", mapButton = "", disabled = "";
+    var error = false; // true if the country map js does not exist
+    var editMode = (itemId != "addnew");
+    var region = editMode ? $.grep (data.area, function( n, i ) {return ( n.region_id == itemId )}) : "newregion";
+
     local[0] = {
         country_id: local[3],
         region_id: itemId,
-        name: (itemId != "addnew") ? region[0].name : "",
-        name_ua: (itemId != "addnew") ? region[0].name_ua : "",
-        active: (itemId != "addnew") ? (region[0].active != undefined) ? region[0].active: "" : ""
+        name: editMode ? region[0].name : "",
+        name_ua: editMode ? region[0].name_ua : "",
+        active: editMode ? (region[0].active || "") : ""
     };
-    var active = (local[0].active == "Y") ? "checked" : "";
+    var activeInit = (local[0].active == "Y");
 
-    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ) {
+    var countries = '';
+    $.each (data.country.slice().sort(dynamicSort("name_ua")), function( i, country ) {
         var selected = (country.country_id == local[3]) ? " selected" : "";
-        countries += "<option value='" + country.country_id + "' " + selected + ">" + country.name_ua + "</option>";
+        countries += "<option value='" + country.country_id + "'" + selected + ">" + country.name_ua + "</option>";
     });
 
-    //This method trying to get mapLow.js file for particular country
-    $.ajax({
-        async: false,
-        url: "SCRIPTS/MAPS/" + local[2],
-        dataType: "script",
-        error: function (err) {
-                error = true;
-            }
-    });
+    // try to load the country's map (for the "not yet added" picker and the map-check button)
+    $.ajax({ async: false, url: "SCRIPTS/MAPS/" + local[2], dataType: "script", error: function () { error = true; } });
 
-    if (itemId != "addnew"){
-        regIdValue = 'value="' + local[0].region_id + '" ';
+    if (editMode){
         readonly = "readonly";
-        header = "Edit";
+        header = "Редагувати регіон";
         submitStatus = "edit";
-        removeButton = '<input type="submit" class="btn btn-primary" onclick="RemoveRegion();return false" value="Remove selected item"/>' +
-                '<span id="remove"></span>' +
-                '<hr>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeRegion()">Видалити регіон</button>';
     }
     else {
-        disabled = 'disabled="disabled"';
-
-        // Start of List of not yet adde Regions -----------------------------------------------------------
-        //This section responsible for drop-down contain list of regions not yet added to dataBase
-        // This list is withdrawn from countryLow.js file
-        var regionOptions = "";
-        var distinctIds = {};
-        var countryLow = local[2].slice(0, -3);
-
-        $.each (data.area, function( i, oldregion ) {
-            if (oldregion.country_id == local[3]) {
-                distinctIds[oldregion.region_id] = true;
-            }
-        });
-
+        disabled = 'disabled="disabled"';   // в режимі додавання країна зафіксована обраною вище
         if (!error) {
-            var low = eval("AmCharts.maps." + countryLow);
+            var distinctIds = {};
+            $.each (data.area, function( i, oldregion ) { if (oldregion.country_id == local[3]) { distinctIds[oldregion.region_id] = true; } });
+            var low = eval("AmCharts.maps." + local[2].slice(0, -3));
+            var regionOptions = "";
             $.each (low.svg.g.path, function( i, newregion ) {
                 if (!distinctIds[newregion.id]) {
-                    regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>'
+                    regionOptions += '<option value="' + newregion.id + '">' + newregion.title + '</option>';
                 }
             });
-
-            listOfNotYetAddedRegions =
-                '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>' +
-                '<select id="newNotAddedRegion" class="form-control" onchange="populateForm(this.value)">' +
-                '<option value="0">Select region that not yet added to base among existing on country map or skip this step and add your own variant.</option>' +
-                regionOptions +
-                '</select>' +
-                '</div>' +
-                '<hr>';
+            notAddedPicker =
+                '<div class="set-field">' +
+                    '<label>Регіон з карти країни, якого ще немає в базі</label>' +
+                    '<select id="newNotAddedRegion" class="set-select" onchange="javascript:populateRegionForm(this.value)">' +
+                        '<option value="0">— оберіть зі списку або пропустіть і введіть власний —</option>' +
+                        regionOptions +
+                    '</select>' +
+                '</div>';
         }
-        // End ------------------------------------------------------------------
     }
 
     if (!error) {
-        checkReionOnCountryMapButton =
-                        '<div class="input-group">' +
-                            '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                            '<button type="button" class="btn btn-default active" onclick="openRegionMap();return false">Check Region on Country Map</button>' +
-                        '</div>' +
-                        '<br>';
+        mapButton = '<button type="button" class="set-btn" onclick="javascript:openRegionMap()">Показати регіон на карті країни</button>';
     }
 
+    var idVal = editMode ? ('value="' + local[0].region_id + '" ') : '';
+
     document.getElementById("AddEditRemoveSection").innerHTML =
-        '<h2 class="sub-header">' + header + ' region</h2>' +
-        '<form>' +
-            removeButton +
-            listOfNotYetAddedRegions +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newId" type="text" class="form-control" placeholder="Enter unique region Id" ' + regIdValue + readonly + '>' +
-//                editIdField +
+        '<div class="set-panel set-form">' +
+            '<h3 class="set-form-title">' + header + '</h3>' +
+            notAddedPicker +
+            '<div class="set-field">' +
+                '<label>ID регіону <span class="req">*</span></label>' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? "ID не редагується" : "Унікальний ID регіону") + '" ' + idVal + readonly + ' data-init="' + local[0].region_id + '" oninput="javascript:setRegionFormDirty()">' +
+                '<span id="alert_id"></span>' +
             '</div>' +
-            '<span id="alert_id"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newUaName" type="text" class="form-control" value="' + local[0].name_ua + '" placeholder="Enter Ukrainian name of region">' +
+            '<div class="set-field">' +
+                '<label>Назва регіону українською <span class="req">*</span></label>' +
+                '<input id="newUaName" type="text" class="set-input" value="' + local[0].name_ua + '" placeholder="Напр.: Іль-де-Франс" data-init="' + local[0].name_ua + '" oninput="javascript:setRegionFormDirty()">' +
+                '<span id="alert_name_ua"></span>' +
             '</div>' +
-            '<span id="alert_name_ua"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<input id="newEngName" type="text" class="form-control" value="' + local[0].name + '" placeholder="Enter english name of region">' +
+            '<div class="set-field">' +
+                '<label>Назва регіону англійською <span class="req">*</span></label>' +
+                '<input id="newEngName" type="text" class="set-input" value="' + local[0].name + '" placeholder="e.g. Île-de-France" data-init="' + local[0].name + '" oninput="javascript:setRegionFormDirty()">' +
+                '<span id="alert_name"></span>' +
             '</div>' +
-            '<span id="alert_name"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<label class="checkbox-inline"><input type="checkbox"  id="newActive" value="" ' + active + '>Identifier if region can be shown for country.</label>' +
+            '<div class="set-field">' +
+                '<label class="set-check"><input type="checkbox" id="newActive" data-init="' + (activeInit ? "true" : "false") + '" ' + (activeInit ? "checked" : "") + ' onchange="javascript:setRegionFormDirty()"> Відображати регіон для цієї країни на порталі</label>' +
+                '<span id="alert_active"></span>' +
             '</div>' +
-            '<span id="alert_active"></span>' +
-            '<br>' +
-            '<div class="input-group">' +
-                '<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>' +
-                '<select id="newCountry" class="form-control" ' + disabled + '>' +
-                    '<option value="0">Select country that region belongs to.</option>' +
+            '<div class="set-field">' +
+                '<label>Прив’язати регіон до країни зі списку <span class="req">*</span></label>' +
+                '<select id="newCountry" class="set-select" ' + disabled + ' data-init="' + local[3] + '" onchange="javascript:setRegionFormDirty()">' +
+                    '<option value="0">— оберіть країну —</option>' +
                     countries +
                 '</select>' +
+                '<span id="alert_country"></span>' +
             '</div>' +
-            '<span id="alert_country"></span>' +
-            '<br>' +
-            checkReionOnCountryMapButton +
-        '<hr>' +
-        '<input type="submit" class="btn btn-primary" value="Submit changes" id="' + submitStatus + '" onclick="SubmitChanges(this.id);return false;" />' +
-        '</form>';
+            (mapButton ? '<div class="set-field">' + mapButton + '</div>' : '') +
+            '<div class="set-form-actions">' +
+                '<button type="button" id="regionSaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitRegion(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                removeButton +
+            '</div>' +
+            '<span id="remove"></span>' +
+        '</div>';
 }
 
-//14.04 Remove item entity handler
-function RemoveRegion() {
+//14.03a Enable "Зберегти" only after a field actually changed (vs its initial value)
+function setRegionFormDirty() {
+    var els = document.querySelectorAll("#AddEditRemoveSection [data-init]");
+    var dirty = false;
+    for (var i = 0; i < els.length; i++) {
+        var el = els[i];
+        var cur = (el.type === "checkbox") ? (el.checked ? "true" : "false") : el.value;
+        if (cur !== el.getAttribute("data-init")) { dirty = true; break; }
+    }
+    var btn = document.getElementById("regionSaveBtn");
+    if (btn) { btn.disabled = !dirty; }
+}
+
+//14.04 Remove item event handler
+function removeRegion() {
     var newID = document.getElementById('newId').value;
-    var citiesToRemoveArray = $.grep (data.city, function( n, i ) {return (n.region_id == newID)});
+    var dependents = $.grep (data.city, function( n, i ) {return (n.region_id == newID)});
 
     removeAllChildNodes("alert_id");
     removeAllChildNodes("alert_name_ua");
@@ -216,29 +201,24 @@ function RemoveRegion() {
     removeAllChildNodes("alert_country");
     removeAllChildNodes("success");
 
-    if (citiesToRemoveArray.length > 0) {
-        var citiesLinkedToCountry = "";
-        $.each (citiesToRemoveArray, function( i, region ){
-            citiesLinkedToCountry += '<b>' + region.name_ua + '</b>, ';
-        });
+    if (dependents.length > 0) {
+        var linked = "";
+        $.each (dependents, function( i, city ){ linked += '<b>' + city.name_ua + '</b>, '; });
         document.getElementById("remove").innerHTML =
-            '<div class="alert alert-danger fade in">' +
-            '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-            '<strong>Error!</strong> This item can\'t be removed, because it\'s still dependent on some city. Change region id (or remove region) for following cities: ' +
-            citiesLinkedToCountry.slice(0, -2) + '.' +
-            '</div>';
+            '<div class="set-alert is-err">Цей регіон не можна видалити — від нього залежать локації: ' +
+            linked.slice(0, -2) + '. Спершу змініть їхній регіон (або видаліть локації).</div>';
     }
     else {
         withSetContent(function(){
             removeElementOfGlobalData4DefinedArray ("region_id", newID);
             createSettingsRegionTab_HTML();
-            alertOfSuccess();
+            regionAlertSuccess();
         });
     }
 }
 
-//14.05 Submit changes for Add new of edit event
-function SubmitChanges(status) {
+//14.05 Submit changes for Add new or edit event
+function submitRegion(status) {
     var newRegionObj = {
                      country_id: document.getElementById("newCountry").value.trim(),
                      region_id: document.getElementById("newId").value.trim(),
@@ -254,88 +234,81 @@ function SubmitChanges(status) {
     removeAllChildNodes("alert_country");
     removeAllChildNodes("success");
 
-    if (checkRules4AddUpdate(newRegionObj)) {
+    if (checkRegionRules(newRegionObj)) {
         withSetContent(function(){
             (status == "add") ? addElementOfGlobalDataArray(newRegionObj): updateElementOfGlobalDataArray(newRegionObj);
             createSettingsRegionTab_HTML();
-            alertOfSuccess();
+            regionAlertSuccess();
         });
     }
     return false;
 }
 
 //14.06 Verification for Add/Update fields
-function checkRules4AddUpdate(regionObj) {
+function checkRegionRules(regionObj) {
     var result = true;
-    var initialRegionObj = local[0];
+    var initial = local[0];
+    var isAdd = (initial.region_id == "addnew");
+
     for (var i = 0; i < data.area.length; i++) {
-        if (initialRegionObj.region_id != "addnew") {
-            //This code id deprecated because I decided that country id must be changed only manually but lets leave this code here for future needs
-            if (initialRegionObj.region_id.toLowerCase() != regionObj.region_id.toLowerCase() && data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ua);
+        if (!isAdd) {
+            if (initial.region_id.toLowerCase() != regionObj.region_id.toLowerCase() && data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
+                regionAlertDupId(data.area[i].region_id, data.area[i].name_ua);
                 result = false;
             }
         }
         else {
             if (data.area[i].region_id.toLowerCase() == regionObj.region_id.toLowerCase()){
-                alertOfDuplicateIDFailure(data.area[i].region_id, data.area[i].name_ua);
+                regionAlertDupId(data.area[i].region_id, data.area[i].name_ua);
                 result = false;
             }
         }
-        if (regionObj.country_id == '0'){ alertOfEmptyMandatoryField("alert_country"); result = false; }
-        if (regionObj.region_id == ''){ alertOfEmptyMandatoryField("alert_id"); result = false; }
-        if (regionObj.name_ua == ''){ alertOfEmptyMandatoryField("alert_name_ua"); result = false; }
-        if (regionObj.name == ''){ alertOfEmptyMandatoryField("alert_name"); result = false; }
     }
+
+    if (regionObj.country_id == '0'){ regionAlertEmpty("alert_country"); result = false; }
+    if (regionObj.region_id == ''){ regionAlertEmpty("alert_id"); result = false; }
+    if (regionObj.name_ua == ''){ regionAlertEmpty("alert_name_ua"); result = false; }
+    if (regionObj.name == ''){ regionAlertEmpty("alert_name"); result = false; }
+
     return result;
 }
 
-//14.07 Success flag for any event successfully applied
-function alertOfSuccess() {
-    removeAllChildNodes("alert");
+//14.07 Success flag
+function regionAlertSuccess() {
     document.getElementById("success").innerHTML =
-        '<div class="alert alert-success fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Success!</strong> Your changes are successfully applied. Check list of Regions to see changes added.' +
-        '</div>';
+        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список регіонів.</div>';
 }
 
 //14.08 Failure flag for empty mandatory field
-function alertOfEmptyMandatoryField(alertId) {
+function regionAlertEmpty(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Mandatory field is empty. Populate it before submit.' +
-        '</div>';
+        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
 }
 
-//14.09 Failure flag for not unique ID applied
-function alertOfDuplicateIDFailure(id, name_ua) {
+//14.09 Failure flag for not unique ID
+function regionAlertDupId(id, name_ua) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
-        '<div class="alert alert-danger fade in">' +
-        '<a href="#" class="close" data-dismiss="alert">&times;</a>' +
-        '<strong>Error!</strong> Id is not unique, it\'s one already associated with <b>' + id  + ' (' + name_ua + ')</b>. Try to use another id!' +
-        '</div>';
+        '<div class="set-alert is-err">Цей ID уже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть інший.</div>';
 }
 
-//14.10 Populate add new region fields
-function populateForm(id) {
+//14.10 Populate add-new fields from the chosen country-map region
+function populateRegionForm(id) {
+    if (!id || id == "0") { return; }
     document.getElementById("newId").value = id;
-
     var e = document.getElementById("newNotAddedRegion");
     document.getElementById("newEngName").value = e.options[e.selectedIndex].text;
-
     document.getElementById("newId").readOnly = true;
+    setRegionFormDirty();
 }
 
-//14.11 Open Country map for region
+//14.11 Open the country map highlighting this region
 function openRegionMap() {
     var map = local[2];
     var region = document.getElementById("newId").value;
     if (map != ""){
         window.open('map.html?map=' + map + '&region=' + region, '_blank');
     }
-    else {alertOfEmptyMandatoryField("alert_map");}
+    else { regionAlertEmpty("alert_id"); }
 }

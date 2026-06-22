@@ -32,7 +32,7 @@ function HTML_Settings_LeftPanel() {
                 '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">Континенти</a></li>' +
                 '<li id="countries"><a onclick="javascript:createSettingsCountryTab()" onmouseover="" style="cursor: pointer;">Країни</a></li>' +
                 '<li id="regions"><a onclick="javascript:createSettingsRegionTab()" onmouseover="" style="cursor: pointer;">Регіони</a></li>' +
-                '<li id="cities"><a onclick="javascript:createSettingsCityTab()" onmouseover="" style="cursor: pointer;">Міста</a></li>' +
+                '<li id="cities"><a onclick="javascript:createSettingsCityTab()" onmouseover="" style="cursor: pointer;">Локації</a></li>' +
             '</ul>' +
             '<ul class="set-nav">' +
                 '<li id="visits"><a onclick="javascript:createSettingsVisitTab()" onmouseover="" style="cursor: pointer;">Візити</a></li>' +

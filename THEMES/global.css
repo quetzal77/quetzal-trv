@@ -253,6 +253,7 @@ div.switchlink_l:has(a):hover,div.switchlink:has(a):hover{background:var(--surfa
 div.countrylabel{text-align:center; font-weight:700; padding:0 0 10px; font-size:26px}
 .country-type{text-align:center; margin:-4px 0 16px}
 .country-type span{display:inline-block; padding:3px 12px; border-radius:999px; font-size:12px; font-weight:600; letter-spacing:.02em; color:var(--muted); background:var(--surface-2); border:1px solid var(--border)}
+.cs-badge{display:inline-block; padding:5px 14px; border-radius:999px; font-size:14px; font-weight:600; color:var(--accent); background:var(--accent-weak)}
 div.countrydetail{text-align:left; font-size:15px; padding:8px 0; margin:0; border-bottom:1px solid var(--border)}
 div.countrydetail b{color:var(--text)}
 div.countryregion{text-align:left; font-size:15px; padding:12px 0 2px; margin:0; font-weight:600}
@@ -439,9 +440,16 @@ a.back2top{bottom:20px; display:none}
 .set-input[readonly]{background:var(--surface-2); color:var(--muted)}
 .set-input-row{display:flex; gap:8px}
 .set-input-row .set-input{flex:1}
+.set-coord-row{display:flex; gap:8px}
+.set-coord{flex:1; min-width:0}
+.set-coord > label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px}
 .set-form-actions{display:flex; gap:10px; margin-top:4px}
 .set-btn-danger{background:#e5484d; border-color:#e5484d; color:#fff}
 .set-btn-danger:hover{background:#e5484d; color:#fff; filter:brightness(.95)}
+.set-link{font-size:12px; font-weight:500; color:var(--accent); white-space:nowrap}
+.set-preview{margin-top:10px}
+.set-preview .country_flag,.set-preview .country_emb{display:block; max-height:160px; width:auto;
+  border:1px solid var(--border); border-radius:8px; background:var(--surface); padding:4px}
 .set-alert{display:block; margin:8px 0 0; padding:10px 12px; border-radius:9px; font-size:13px}
 .set-alert.is-ok{color:#16a34a; background:color-mix(in srgb,#16a34a 12%,var(--surface)); border:1px solid color-mix(in srgb,#16a34a 30%,var(--surface))}
 .set-alert.is-err{color:#e5484d; background:color-mix(in srgb,#e5484d 12%,var(--surface)); border:1px solid color-mix(in srgb,#e5484d 30%,var(--surface))}

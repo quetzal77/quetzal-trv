@@ -247,7 +247,9 @@ function updateElementOfCityArray(initialEntityObj, newEntityObj) {
 function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
     var country_id = (initialEntityObj.country_id.toLowerCase() != newEntityObj.country_id.toLowerCase()) ? true : false;
     var short_name = (initialEntityObj.short_name.toLowerCase() != newEntityObj.short_name.toLowerCase()) ? true : false;
+    var country_type_id = (initialEntityObj.country_type_id != newEntityObj.country_type_id) ? true : false;
     var continent_id = (initialEntityObj.continent_id.toUpperCase() != newEntityObj.continent_id.toUpperCase()) ? true : false;
+    var continent_id2 = (initialEntityObj.continent_id2 != newEntityObj.continent_id2) ? true : false;
     var name_ua = (initialEntityObj.name_ua != newEntityObj.name_ua) ? true : false;
     var name = (initialEntityObj.name != newEntityObj.name) ? true : false;
     var name_nt = (initialEntityObj.name_nt != newEntityObj.name_nt) ? true : false;
@@ -271,7 +273,9 @@ function updateElementOfCountryArray(initialEntityObj, newEntityObj) {
     $.each (data.country, function( i, country ){
         if (country.country_id == initialEntityObj.country_id) {
             if (country_id){ country.country_id = newEntityObj.country_id; }
+            if (country_type_id){ country.country_type_id = newEntityObj.country_type_id; }
             if (continent_id){ country.continent_id = newEntityObj.continent_id; }
+            if (continent_id2){ if (newEntityObj.continent_id2 != undefined) {country.continent_id2 = newEntityObj.continent_id2;} else {delete country['continent_id2'];} }
             if (name_ua){ country.name_ua = newEntityObj.name_ua; }
             if (name){ country.name = newEntityObj.name; }
             if (name_nt){ country.name_nt = newEntityObj.name_nt; }

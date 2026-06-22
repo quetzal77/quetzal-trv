@@ -167,6 +167,19 @@ function OpenListOfCountryCities(countryId) {
 //05.06 List of regions and cities
 function getCitiesAndRegionsList_HTML () {
     var country = local[1];
+
+    // City-states: the region just duplicates the country — show a badge + the single location
+    if (country.city_state) {
+        var links = "";
+        $.each (citiesVisited, function( i, city ){
+            if (city.getCountryId() == country.short_name) {
+                links += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + city.name_ua + "</a>, ";
+            }
+        });
+        return "<div class='countrydetail'><span class='cs-badge'>🏙️ Місто-держава</span></div>" +
+               "<div class='cityrow'><b>Локація:</b> " + links.substring(0, links.length - 2) + "</div>";
+    }
+
     var result = "<div class='countrydetail'><b>Повний список відвіданих регіонів та локацій:</b></div>";
 
     $.each (regionsVisited, function( i, region ){
