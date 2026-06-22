@@ -173,34 +173,35 @@ function addEditRemoveCity(itemId) {
             '<div class="set-field">' +
                 '<label>Фото 300px×225px (посилання на фото додавати через кому без пробілів)</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newImage" type="text" class="set-input" value="' + image + '" placeholder="напр.: one.jpg,two.jpg" oninput="javascript:setCityFormDirty()">' +
-                    '<button type="button" class="set-btn" onclick="javascript:checkImage()">Перевірити</button>' +
+                    '<input id="newImage" type="text" class="set-input" value="' + image + '" placeholder="напр.: one.jpg,two.jpg" oninput="javascript:setCityFormDirty(); setCityBtns()">' +
+                    '<button type="button" id="imgCheckBtn" class="set-btn" onclick="javascript:checkImage()">Перевірити</button>' +
                 '</div>' +
                 '<span id="alert_image"></span>' +
+                '<div id="imgPreview" class="set-preview"></div>' +
             '</div>' +
             '<div class="set-field">' +
                 '<div class="set-coord-row">' +
                     '<div class="set-coord"><label>Широта <span class="req">*</span></label>' +
-                        '<input id="newLat" type="text" class="set-input" value="' + lat + '" oninput="javascript:setCityFormDirty()"></div>' +
+                        '<input id="newLat" type="text" class="set-input" value="' + lat + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
                     '<div class="set-coord"><label>Довгота <span class="req">*</span></label>' +
-                        '<input id="newLong" type="text" class="set-input" value="' + long + '" oninput="javascript:setCityFormDirty()"></div>' +
+                        '<input id="newLong" type="text" class="set-input" value="' + long + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
                 '</div>' +
                 '<span id="alert_lat"></span><span id="alert_long"></span>' +
                 '<div class="set-form-actions" style="margin-top:8px">' +
-                    '<button type="button" class="set-btn" onclick="javascript:openGoogleMap()">Google Maps</button>' +
-                    '<button type="button" class="set-btn" onclick="javascript:openCityMap()">Показати локацію на карті країни</button>' +
+                    '<button type="button" id="gmapBtn" class="set-btn" onclick="javascript:openGoogleMap()">Google Maps</button>' +
+                    '<button type="button" id="cmapBtn" class="set-btn" onclick="javascript:openCityMap()">Показати локацію на карті країни</button>' +
                 '</div>' +
             '</div>' +
             '<div class="set-field">' +
                 '<div class="set-coord-row">' +
-                    '<div class="set-coord"><label>Друга широта</label>' +
-                        '<input id="newLat_2" type="text" class="set-input" value="' + lat_2 + '" oninput="javascript:setCityFormDirty()"></div>' +
-                    '<div class="set-coord"><label>Друга довгота</label>' +
-                        '<input id="newLong_2" type="text" class="set-input" value="' + long_2 + '" oninput="javascript:setCityFormDirty()"></div>' +
+                    '<div class="set-coord"><label>Друга широта <span class="ns-info" title="Друга широта вноситься для тих країн, де координати на карті не відповідають реальним координатам">і</span></label>' +
+                        '<input id="newLat_2" type="text" class="set-input" value="' + lat_2 + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
+                    '<div class="set-coord"><label>Друга довгота <span class="ns-info" title="Друга довгота вноситься для тих країн, де координати на карті не відповідають реальним координатам">і</span></label>' +
+                        '<input id="newLong_2" type="text" class="set-input" value="' + long_2 + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
                 '</div>' +
                 '<span id="alert_lat_2"></span><span id="alert_long_2"></span>' +
                 '<div class="set-form-actions" style="margin-top:8px">' +
-                    '<button type="button" class="set-btn" onclick="javascript:openSecondGoogleMap()">Google Maps</button>' +
+                    '<button type="button" id="gmap2Btn" class="set-btn" onclick="javascript:openSecondGoogleMap()">Google Maps</button>' +
                 '</div>' +
             '</div>' +
             '<div class="set-field">' +
@@ -208,13 +209,27 @@ function addEditRemoveCity(itemId) {
                 '<textarea id="newDescription" class="set-input" rows="5" placeholder="Опис локації з переліком пам’яток." oninput="javascript:setCityFormDirty()">' + description + '</textarea>' +
                 '<span id="alert_description"></span>' +
             '</div>' +
-            '<span id="checkFlags"></span>' +
             '<div class="set-form-actions">' +
                 '<button type="button" id="citySaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitCity(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
                 removeButton +
             '</div>' +
             '<span id="remove"></span>' +
         '</div>';
+
+    setCityBtns();   // set initial disabled state of the check/map buttons
+}
+
+//11.03a0 Disable the check/map buttons while their field(s) are empty
+function setCityBtns() {
+    var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+    var hasImage = val("newImage") !== "";
+    var hasCoord1 = val("newLat") !== "" && val("newLong") !== "";
+    var hasCoord2 = val("newLat_2") !== "" && val("newLong_2") !== "";
+    var set = function (id, on) { var b = document.getElementById(id); if (b) { b.disabled = !on; } };
+    set("imgCheckBtn", hasImage);
+    set("gmapBtn", hasCoord1);
+    set("cmapBtn", hasCoord1);
+    set("gmap2Btn", hasCoord2);
 }
 
 //11.03a Enable "Зберегти" only after a field actually changed (vs its initial value)
@@ -415,7 +430,7 @@ function checkImage() {
         $.each (images.split(","), function( i, image ){
             html += '<img src="IMG/' + image + '" class="city_photo">';
         });
-        document.getElementById("checkFlags").innerHTML = html;
+        document.getElementById("imgPreview").innerHTML = html;
     }
     else {
         cityAlertEmpty("alert_image");

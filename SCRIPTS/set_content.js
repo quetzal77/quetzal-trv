@@ -353,6 +353,7 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     var city = (initialEntityObj.city != newEntityObj.city) ? true : false; //it's always true, but it's not a problem till this attr is mandatory
     var photos = (initialEntityObj.photos != newEntityObj.photos) ? true : false;
     var story = (initialEntityObj.story != newEntityObj.story) ? true : false;
+    var story_url = (initialEntityObj.story_url != newEntityObj.story_url) ? true : false;
 
     // Update Global Visit array with new data
     $.each (data.visit, function( i, visit ){
@@ -361,7 +362,8 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
             if (end_date){ visit.end_date = newEntityObj.end_date; }
             if (city){ visit.city = newEntityObj.city; }
             if (photos){ visit.photos = newEntityObj.photos; }
-            if (story){ visit.story = newEntityObj.story; }
+            if (story){ if (newEntityObj.story != undefined) { visit.story = newEntityObj.story; } else { delete visit['story']; } }
+            if (story_url){ if (newEntityObj.story_url != undefined) { visit.story_url = newEntityObj.story_url; } else { delete visit['story_url']; } }
         }
     });
 

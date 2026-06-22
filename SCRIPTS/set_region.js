@@ -131,7 +131,7 @@ function addEditRemoveRegion(itemId) {
     }
 
     if (!error) {
-        mapButton = '<button type="button" class="set-btn" onclick="javascript:openRegionMap()">Показати регіон на карті країни</button>';
+        mapButton = '<button type="button" id="regionMapBtn" class="set-btn" onclick="javascript:openRegionMap()">Показати регіон на карті країни</button>';
     }
 
     var idVal = editMode ? ('value="' + local[0].region_id + '" ') : '';
@@ -142,7 +142,7 @@ function addEditRemoveRegion(itemId) {
             notAddedPicker +
             '<div class="set-field">' +
                 '<label>ID регіону <span class="req">*</span></label>' +
-                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? "ID не редагується" : "Унікальний ID регіону") + '" ' + idVal + readonly + ' data-init="' + local[0].region_id + '" oninput="javascript:setRegionFormDirty()">' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? "ID не редагується" : "Унікальний ID регіону") + '" ' + idVal + readonly + ' data-init="' + local[0].region_id + '" oninput="javascript:setRegionFormDirty(); setRegionBtns()">' +
                 '<span id="alert_id"></span>' +
             '</div>' +
             '<div class="set-field">' +
@@ -174,6 +174,15 @@ function addEditRemoveRegion(itemId) {
             '</div>' +
             '<span id="remove"></span>' +
         '</div>';
+
+    setRegionBtns();   // initial disabled state of the "show on map" button
+}
+
+//14.02b Disable the "show on map" button while the region ID is empty
+function setRegionBtns() {
+    var el = document.getElementById("newId");
+    var btn = document.getElementById("regionMapBtn");
+    if (btn) { btn.disabled = !(el && el.value.trim() !== ""); }
 }
 
 //14.03a Enable "Зберегти" only after a field actually changed (vs its initial value)

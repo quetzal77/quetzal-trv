@@ -75,8 +75,10 @@ function getCountryDetails_HTML() {
         var citiesShownInPhotoAlbum = "";
         var VisitDateToShow = getVisitDate (visit.start_date, visit.end_date, true);
 
-        //02. Total number and link to stories
-        if (visit.story != "" && visit.story != null && visit.story != undefined){
+        //02. Total number and link to stories (internal and/or external)
+        var sid = getStoryRefId(visit);
+        var ext = getExternalStoryUrl(visit);
+        if (sid !== null || ext){
             $.each (visit.cities, function( i, city ){
                 if (!distinctIds[city.country_id]){
                     countriesIDToReturn += city.country_id;
@@ -85,12 +87,8 @@ function getCountryDetails_HTML() {
             });
 
             if (distinctIds[country.short_name]){
-                var StartMonth = visit.start_date.getMonth() + 1;
-
-                var url = (visit.story == true) ? "id='" + visit.start_date.getFullYear() + StartMonth + visit.start_date.getDate() + countriesIDToReturn + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'"
-                                                : "href='" + visit.story + "' target='_blank'";
-
-                ListOfStories += "<a " + url + ">" + VisitDateToShow.slice(0, -2) + ", " + "</a>";
+                if (sid !== null) { ListOfStories += "<a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + VisitDateToShow.slice(0, -2) + ", </a>"; }
+                if (ext) { ListOfStories += "<a href='" + ext + "' target='_blank'>" + VisitDateToShow.slice(0, -2) + " ↗, </a>"; }
             }
         }
 

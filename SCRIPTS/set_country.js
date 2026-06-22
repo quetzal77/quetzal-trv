@@ -178,8 +178,8 @@ function addEditRemoveCountry(itemId) {
                 '<label>Координати малого прапора <span class="req">*</span> ' +
                     '<a href="IMG/icon/smallClean35x35.png" target="_blank" rel="noopener" class="set-link">усі малі прапори ↗</a></label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newSmallImg" type="text" class="set-input" value="' + local[0].small_flag_img + '" placeholder="Напр.: -507px -530px" data-init="' + local[0].small_flag_img + '" oninput="javascript:setCountryFormDirty()">' +
-                    '<button type="button" class="set-btn" onclick="javascript:checkCountryFlag(\'newSmallImg\')">Перевірити</button>' +
+                    '<input id="newSmallImg" type="text" class="set-input" value="' + local[0].small_flag_img + '" placeholder="Напр.: -507px -530px" data-init="' + local[0].small_flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="smallFlagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newSmallImg\')">Перевірити</button>' +
                 '</div>' +
                 '<span id="alert_small_img"></span>' +
                 '<div id="preview_newSmallImg" class="set-preview"></div>' +
@@ -187,8 +187,8 @@ function addEditRemoveCountry(itemId) {
             '<div class="set-field">' +
                 '<label>Файл прапора (400×200)</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newFlagImg" type="text" class="set-input" value="' + local[0].flag_img + '" placeholder="Напр.: france_flag.png" data-init="' + local[0].flag_img + '" oninput="javascript:setCountryFormDirty()">' +
-                    '<button type="button" class="set-btn" onclick="javascript:checkCountryFlag(\'newFlagImg\')">Перевірити</button>' +
+                    '<input id="newFlagImg" type="text" class="set-input" value="' + local[0].flag_img + '" placeholder="Напр.: france_flag.png" data-init="' + local[0].flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="flagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newFlagImg\')">Перевірити</button>' +
                 '</div>' +
                 '<span id="alert_flag_img"></span>' +
                 '<div id="preview_newFlagImg" class="set-preview"></div>' +
@@ -196,8 +196,8 @@ function addEditRemoveCountry(itemId) {
             '<div class="set-field">' +
                 '<label>Файл герба (200×200)</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newEmbImg" type="text" class="set-input" value="' + local[0].emb_img + '" placeholder="Напр.: france_emb.png" data-init="' + local[0].emb_img + '" oninput="javascript:setCountryFormDirty()">' +
-                    '<button type="button" class="set-btn" onclick="javascript:checkCountryFlag(\'newEmbImg\')">Перевірити</button>' +
+                    '<input id="newEmbImg" type="text" class="set-input" value="' + local[0].emb_img + '" placeholder="Напр.: france_emb.png" data-init="' + local[0].emb_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="embBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newEmbImg\')">Перевірити</button>' +
                 '</div>' +
                 '<span id="alert_emb_img"></span>' +
                 '<div id="preview_newEmbImg" class="set-preview"></div>' +
@@ -205,8 +205,8 @@ function addEditRemoveCountry(itemId) {
             '<div class="set-field">' +
                 '<label>Файл карти</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newMap" type="text" class="set-input" value="' + local[0].map_img + '" placeholder="Напр.: franceLow.js" data-init="' + local[0].map_img + '" oninput="javascript:setCountryFormDirty()">' +
-                    '<button type="button" class="set-btn" onclick="javascript:openCountryMap()">Відкрити карту</button>' +
+                    '<input id="newMap" type="text" class="set-input" value="' + local[0].map_img + '" placeholder="Напр.: franceLow.js" data-init="' + local[0].map_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="mapBtn" class="set-btn" onclick="javascript:openCountryMap()">Відкрити карту</button>' +
                 '</div>' +
                 '<span id="alert_map"></span>' +
             '</div>' +
@@ -216,6 +216,18 @@ function addEditRemoveCountry(itemId) {
             '</div>' +
             '<span id="remove"></span>' +
         '</div>';
+
+    setCountryBtns();   // initial disabled state of the check/map buttons
+}
+
+//12.02a Disable the check/map buttons while their field is empty
+function setCountryBtns() {
+    var val = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+    var set = function (id, on) { var b = document.getElementById(id); if (b) { b.disabled = !on; } };
+    set("smallFlagBtn", val("newSmallImg") !== "");
+    set("flagBtn", val("newFlagImg") !== "");
+    set("embBtn", val("newEmbImg") !== "");
+    set("mapBtn", val("newMap") !== "");
 }
 
 //12.02b Enable "Зберегти" only after a field actually changed (vs its initial value)

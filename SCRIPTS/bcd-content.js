@@ -51,7 +51,7 @@ function populateContent(callback) {
                     }
                }
 
-               visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story, data.visit[i].days));
+               visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story, data.visit[i].days, data.visit[i].story_url));
            }
        }
        visitsSorted.sort(dynamicSort("start_date"));
@@ -248,10 +248,11 @@ function populateContent(callback) {
    }
 
     //01.08 Visit Object definition
-    function VisitObj(start_date, end_date, city, photos, story, days) {
+    function VisitObj(start_date, end_date, city, photos, story, days, story_url) {
         this.cities = city;
         this.photos = photos;
-        this.story = story;
+        this.story = story;          // internal story: boolean true (legacy) or explicit XML id
+        this.story_url = story_url;  // optional external story link (URL)
         this.days = days;   // optional { city_id: fractional_days } for exact time-per-country; ignored by base processing
 
         var startVisit = start_date.split(".");

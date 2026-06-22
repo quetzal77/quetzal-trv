@@ -252,6 +252,29 @@ function getEngLocationName(locationId) {
     return result.length ? result[0].name : "";
 }
 
+//02.15b Story helpers. visit.story is one of:
+//   boolean true  -> internal story; XML id is derived from date + country ids (legacy)
+//   string (id)   -> internal story; explicit XML file id (e.g. "20061028romania")
+//   string (URL)  -> external link
+function isExternalStory(s) { return (typeof s === "string" && /^https?:\/\//i.test(s)); }
+function getInternalStoryId(visit) {
+    var ids = "", seen = {};
+    $.each(visit.cities, function( i, city ){ if (!seen[city.country_id]) { ids += city.country_id; seen[city.country_id] = true; } });
+    return "" + visit.start_date.getFullYear() + (visit.start_date.getMonth() + 1) + visit.start_date.getDate() + ids;
+}
+// internal XML id (derived or explicit) or null when it's an external URL / none
+function getStoryRefId(visit) {
+    if (visit.story === true) { return getInternalStoryId(visit); }
+    if (typeof visit.story === "string" && visit.story !== "" && !isExternalStory(visit.story)) { return visit.story; }
+    return null;
+}
+// external story URL (new story_url field, or a legacy URL stored in story) or null
+function getExternalStoryUrl(visit) {
+    if (visit.story_url) { return visit.story_url; }
+    if (isExternalStory(visit.story)) { return visit.story; }
+    return null;
+}
+
 //02.16 This method creates selector of stories
 function getSelectorOfListOfStories_HTML(){
     var result = "";
@@ -261,7 +284,9 @@ function getSelectorOfListOfStories_HTML(){
         var countriesIDToReturn = "";
         var distinctIds = {};
 
-        if (visit.story != "" && visit.story != null && visit.story != undefined){
+        var sid = getStoryRefId(visit);
+        var ext = getExternalStoryUrl(visit);
+        if (sid !== null || ext) {
             $.each (visit.cities, function( i, city ){
                 if (!distinctIds[city.country_id]){
                  countriesToReturn += getUaCountryName(city.country_id) + ", ";
@@ -269,13 +294,15 @@ function getSelectorOfListOfStories_HTML(){
                  distinctIds[city.country_id] = true;
                 }
             });
-            var StartMonth = visit.start_date.getMonth() + 1;
-
-            var url = (visit.story == true) ? "id='" + visit.start_date.getFullYear() + StartMonth + visit.start_date.getDate() + countriesIDToReturn + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'"
-                                            : "href='" + visit.story + "' target='_blank'";
             var text = (countriesToReturn.length > 27) ? countriesToReturn.slice(0, 25) + "..." : countriesToReturn.slice(0, -2);
+            var dateText = getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2);
 
-            result += "<li><a " + url + ">" + getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2) + " - " + " " + text + "</a></li>";
+            if (sid !== null) {
+                result += "<li><a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + "</a></li>";
+            }
+            if (ext) {
+                result += "<li><a href='" + ext + "' target='_blank'>" + dateText + " -  " + text + " ↗</a></li>";
+            }
         }
     });
 
@@ -493,7 +520,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.1.18 (ukr)</span>" +
+                "<span class='tech-tag'>v9.1.20 (ukr)</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

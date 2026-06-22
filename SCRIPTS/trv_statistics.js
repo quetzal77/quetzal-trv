@@ -40,7 +40,7 @@ function statsBlockSummary_HTML() {
     $.each (visitsSorted, function( i, v ){
         totalCityVisits += (v.cities ? v.cities.length : 0);
         var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
-        totalDays += days;
+        totalDays += (days === 1) ? 0.5 : days;   // one-day trips count as half a day — returned home for the night
         if (days === 1) { oneDayTrips += 1; }
         if (days > 14) { twoWeekTrips += 1; }
     });
@@ -72,7 +72,8 @@ function statsBlockSummary_HTML() {
         "</div>" +
         //Card 3 — time
         "<div class='stat-tile'>" +
-            "<div class='num'>" + totalDays + "</div><div class='lbl'>Днів у подорожах</div>" +
+            "<div class='num'>" + (totalDays % 1 === 0 ? totalDays : statsFmt1(totalDays)) + "</div>" +
+            "<div class='lbl'>Днів у подорожах <span class='ns-info' title='Одноденні поїздки рахуються як 0,5 дня — тому що на ночівлю мандрівник повертається до дому'>і</span></div>" +
             "<div class='sub'>" +
                 "<div class='sub-row'><b>&asymp; " + Math.round(months) + " місяців</b></div>" +
                 "<div class='sub-row'><b>&asymp; " + statsFmt2(years) + " року</b></div>" +
