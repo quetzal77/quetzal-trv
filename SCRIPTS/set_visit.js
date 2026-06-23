@@ -162,6 +162,39 @@ function addEditRemoveVisits(itemId) {
     // widgets
     runMultipleSelectWidget();
     runDatePickerWidget();
+
+    // Populate the internal-story dropdown from the full catalog (DATA/stories.json),
+    // falling back to ids scraped from existing visits if the index is missing.
+    fillVisitStoryOptions(curId, internalList);
+}
+
+//15.02c Build the internal-story <select> from stories.json (full list) + fallback ids
+function visitEsc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function fillVisitStoryOptions(curId, fallbackList) {
+    var sel = document.getElementById("newStoryInt");
+    if (!sel) { return; }
+    curId = curId || "";
+
+    var build = function (index) {
+        var labels = {};                                                   // id -> display label
+        (fallbackList || []).forEach(function (id) { labels[id] = id; });
+        (index || []).forEach(function (s) { if (s && s.id) { labels[s.id] = s.id + (s.title ? " — " + s.title : ""); } });
+        if (curId && !labels[curId]) { labels[curId] = curId; }
+
+        var html = '<option value=""' + (curId === "" ? " selected" : "") + '>— немає —</option>';
+        Object.keys(labels).sort().forEach(function (id) {
+            html += '<option value="' + visitEsc(id) + '"' + (curId === id ? " selected" : "") + '>' + visitEsc(labels[id]) + '</option>';
+        });
+        sel.innerHTML = html;
+    };
+
+    if (window.__storiesIndex) { build(window.__storiesIndex); }
+    else {
+        $.getJSON("DATA/stories.json", function (idx) { window.__storiesIndex = idx; build(idx); })
+         .fail(function () { /* index missing — keep the synchronously-built fallback list */ });
+    }
 }
 
 //15.02b Enable "Зберегти" only after something actually changed

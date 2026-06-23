@@ -106,6 +106,15 @@ function createSettingsOverviewTab_HTML() {
                     '</div>' +
                     '<div class="set-option">' +
                         '<div class="set-option-info">' +
+                            '<div class="set-option-title">Автогенерація stories.json</div>' +
+                            '<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>' +
+                        '</div>' +
+                        '<div class="set-option-actions">' +
+                            '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="set-option">' +
+                        '<div class="set-option-info">' +
                             '<div class="set-option-title">Валідація бази подорожей</div>' +
                             '<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>' +
                         '</div>' +
@@ -114,6 +123,7 @@ function createSettingsOverviewTab_HTML() {
                         '</div>' +
                     '</div>' +
                 '</div>' +
+                '<span id="storyGenMsg"></span>' +
             '</div>' +
         '</section>' +
         // Countries table
@@ -216,4 +226,59 @@ function HTML_VisitesPerCountryTale() {
 function toggleOnlyMissing(on) {
     var el = document.getElementById("countriesTable");
     if (el) { el.classList.toggle("only-missing", on); }
+}
+
+//08.04 Regenerate DATA/stories.json in the browser and offer it for download.
+// Mirrors tools/gen_stories_index.js, but limited to stories the browser can
+// "see": those already in stories.json plus any referenced by a visit. Brand-new
+// files not yet listed/linked are invisible here — use the Node script for those.
+function generateStoriesIndex() {
+    var msg = function (cls, html) {
+        var el = document.getElementById("storyGenMsg");
+        if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
+    };
+    msg("", "Збираю історії…");
+
+    $.getJSON("DATA/stories.json", function (index) {
+        var ids = {};
+        $.each(index || [], function (i, s) { if (s && s.id) { ids[s.id] = true; } });
+        $.each(visitsSorted, function (i, v) { var sid = getStoryRefId(v); if (sid) { ids[sid] = true; } });
+
+        var list = Object.keys(ids);
+        var entries = [];
+        var pending = list.length;
+
+        var finish = function () {
+            entries.sort(function (a, b) {
+                if (!a.date && !b.date) { return 0; }
+                if (!a.date) { return -1; }
+                if (!b.date) { return 1; }
+                return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0);
+            });
+
+            var json = JSON.stringify(entries, null, 2) + "\n";
+            var a = document.createElement("a");
+            a.href = URL.createObjectURL(new Blob([json], { type: "application/json" }));
+            a.download = "stories.json";
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+
+            window.__storiesIndex = entries;   // refresh the cached catalog
+            msg("is-ok", "Згенеровано <b>" + entries.length + "</b> історій. Збережіть завантажений файл як <b>DATA/stories.json</b>.<br>" +
+                "Якщо ви щойно додали новий файл історії й ще не привʼязали його до візиту — запустіть <b>node tools/gen_stories_index.js</b>, він бачить усю папку.");
+        };
+
+        if (pending === 0) { finish(); return; }
+
+        list.forEach(function (id) {
+            $.getJSON("DATA/stories/" + id + ".json")
+                .done(function (story) {
+                    var date = (story.route && story.route[0] && story.route[0].date) ? story.route[0].date : null;
+                    entries.push({ id: story.id || id, title: story.title || "", date: date });
+                })
+                .always(function () { if (--pending === 0) { finish(); } });   // skip missing/deleted files
+        });
+    }).fail(function () {
+        msg("is-err", "Не вдалося прочитати DATA/stories.json.");
+    });
 }

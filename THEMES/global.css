@@ -400,6 +400,15 @@ a.back2top{bottom:20px; display:none}
 .set-btn-primary{background:var(--accent); border-color:var(--accent); color:#fff}
 .set-btn-primary:hover{background:var(--accent); color:#fff; filter:brightness(.95)}
 .set-btn:disabled,.set-btn:disabled:hover{opacity:.5; cursor:not-allowed; filter:none}
+/* story editor: repeatable rows */
+.story-rows{display:flex; flex-direction:column; gap:8px; margin-bottom:8px}
+.story-row,.story-crow{display:flex; flex-wrap:wrap; gap:6px; align-items:flex-start; padding:8px;
+  border:1px solid var(--border); border-radius:9px; background:var(--surface-2)}
+.story-row .set-input{flex:1 1 130px; min-width:90px}
+.story-row textarea.set-input,.story-crow textarea.set-input{flex:1 1 100%}
+.story-crow .set-input.st-ctitle{flex:1 1 100%}
+.story-del{flex:0 0 auto; color:#e5484d; padding:6px 11px; font-size:15px; line-height:1}
+.story-json{width:100%; margin-top:10px; font-family:monospace; font-size:12px}
 /* block 3 — countries table */
 .set-table-wrap{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
   box-shadow:var(--shadow); overflow:hidden}
