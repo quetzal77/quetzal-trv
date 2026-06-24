@@ -92,7 +92,6 @@ function createSettingsOverviewTab_HTML() {
                         '<div class="set-option-actions">' +
                             '<button type="button" class="set-btn" onclick="javascript:exportToPdf()">PDF</button>' +
                             '<button type="button" class="set-btn" onclick="javascript:exportToCsv()">CSV</button>' +
-                            '<button type="button" class="set-btn">MD</button>' +
                         '</div>' +
                     '</div>' +
                     '<div class="set-option-wrap">' +
@@ -900,9 +899,11 @@ function exportToCsv() {
     // ── CSS ────────────────────────────────────────────────────────────────────
     var css = [
         'body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;background:#f5f7fa;color:#1a1a1a}',
-        '.hd{background:#1d4ed8;color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-shrink:0}',
+        '.hd{background:#1d4ed8;color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-shrink:0;flex-wrap:wrap}',
         '.hd h1{font-size:15px;margin:0;font-weight:600}',
-        '.hs{font-size:11px;opacity:.7}',
+        '.hs{font-size:11px;opacity:.7;flex:1}',
+        '.dlall{margin-left:auto;padding:6px 14px;background:#fff;color:#1d4ed8;border:none;border-radius:4px;cursor:pointer;font-size:12px;font-weight:700}',
+        '.dlall:hover{background:#e0e7ff}',
         '.tnav{display:flex;gap:3px;padding:8px 10px 0;background:#fff;border-bottom:2px solid #1d4ed8;flex-wrap:wrap}',
         '.tb{padding:7px 13px;border:1px solid #cbd5e1;border-bottom:none;border-radius:4px 4px 0 0;cursor:pointer;background:#f0f4ff;font-size:11.5px;color:#374151}',
         '.tb.act{background:#fff;border-color:#1d4ed8;color:#1d4ed8;font-weight:700;margin-bottom:-2px;border-bottom:2px solid #fff}',
@@ -950,6 +951,15 @@ function exportToCsv() {
         '  a.href=URL.createObjectURL(new Blob(["\\uFEFF"+lines.join("\\r\\n")],{type:"text/csv;charset=utf-8"}));',
         '  a.download=fname;',
         '  document.body.appendChild(a);a.click();document.body.removeChild(a);',
+        '}',
+        'function dlAll(){',
+        '  var tabs=document.querySelectorAll(".tb");',
+        '  var delay=0;',
+        '  tabs.forEach(function(btn){',
+        '    var id=btn.getAttribute("data-tab");',
+        '    setTimeout(function(){dlCsv(id,id+".csv");},delay);',
+        '    delay+=500;',
+        '  });',
         '}'
     ].join('\n');
 
@@ -961,7 +971,8 @@ function exportToCsv() {
     var html = '<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">' +
         '<title>' + hdTitle + '</title>' +
         '<style>' + css + '</style></head><body>' +
-        '<div class="hd"><h1>' + hdTitle + '</h1><span class="hs">' + hdSub + '</span></div>' +
+        '<div class="hd"><h1>' + hdTitle + '</h1><span class="hs">' + hdSub + '</span>' +
+        '<button class="dlall" onclick="dlAll()">&#8595; Завантажити все</button></div>' +
         '<div class="tnav">' + navHtml + '</div>' +
         panelsHtml +
         '<scr' + 'ipt>' + js + '<' + '/script>' +
