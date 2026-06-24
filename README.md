@@ -126,8 +126,6 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### Technical
 - [ ] Add Login for settings
-- [ ] Auto-generate `onload.json` from `globaldb.json` (so it doesn't have to be edited by hand)
 - [ ] Export / backup data
-- [ ] globaldb.json validation script: a Node script that checks CRLF / no BOM, field schema, referential integrity (city.region_id → area → country), map_img validity (case-sensitivity!), and days correctness (types, route keys, sum ≈ duration)
 - [ ] Update AMmap library to the latest version
 ```
