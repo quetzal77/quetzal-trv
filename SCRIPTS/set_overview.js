@@ -90,8 +90,8 @@ function createSettingsOverviewTab_HTML() {
                             '<div class="set-option-desc">Зберегти базу подорожей у вибраному форматі</div>' +
                         '</div>' +
                         '<div class="set-option-actions">' +
-                            '<button type="button" class="set-btn">PDF</button>' +
-                            '<button type="button" class="set-btn">CSV</button>' +
+                            '<button type="button" class="set-btn" onclick="javascript:exportToPdf()">PDF</button>' +
+                            '<button type="button" class="set-btn" onclick="javascript:exportToCsv()">CSV</button>' +
                             '<button type="button" class="set-btn">MD</button>' +
                         '</div>' +
                     '</div>' +
@@ -586,4 +586,394 @@ function validateTravelDb() {
                 el.innerHTML = html;
             }
         });
+}
+
+//08.07 Export to PDF: opens a styled print-preview window with all travel data
+function exportToPdf() {
+    // ── lookup maps ────────────────────────────────────────────────────────────
+    var cityById = {}, areaById = {}, countryBySN = {}, continentById = {};
+    $.each(data.city,      function(i, c) { if (c.city_id)      { cityById[c.city_id]          = c; } });
+    $.each(data.area,      function(i, a) { if (a.region_id)    { areaById[a.region_id]         = a; } });
+    $.each(data.country,   function(i, c) { if (c.short_name)   { countryBySN[c.short_name]     = c; } });
+    $.each(data.continent, function(i, c) { if (c.continent_id) { continentById[c.continent_id] = c; } });
+
+    // ── helpers ────────────────────────────────────────────────────────────────
+    function esc(s) {
+        return String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function fmtDate(start, end) {
+        var sm = start.getMonth() + 1, sd = start.getDate(), sy = start.getFullYear();
+        var em = end.getMonth()   + 1, ed = end.getDate(),   ey = end.getFullYear();
+        if (sy === ey) {
+            if (sm === em && sd === ed) { return sd + ' ' + getUaMonthName(sm) + ' ' + sy; }
+            if (sm === em)             { return sd + '—' + ed + ' ' + getUaMonthName(sm) + ' ' + sy; }
+            return sd + ' ' + getUaMonthName(sm) + ' — ' + ed + ' ' + getUaMonthName(em) + ' ' + sy;
+        }
+        return sd + ' ' + getUaMonthName(sm) + ' ' + sy + ' — ' + ed + ' ' + getUaMonthName(em) + ' ' + ey;
+    }
+
+    function durDays(start, end) { return Math.round((end - start) / 86400000) + 1; }
+
+    function dayWord(n) {
+        var r = parseFloat(n);
+        if (!isFinite(r) || r <= 0) { return ''; }
+        var ri = Math.round(r);
+        if (ri === 0) { ri = 1; }
+        var last = ri % 10, lastTwo = ri % 100;
+        var suffix;
+        if (lastTwo >= 11 && lastTwo <= 14)       { suffix = ' днів'; }
+        else if (last === 1)                       { suffix = ' день'; }
+        else if (last >= 2 && last <= 4)           { suffix = ' дні'; }
+        else                                       { suffix = ' днів'; }
+        var display = (r === Math.round(r)) ? ri : r;
+        return display + suffix;
+    }
+
+    // ── group visits by year (ascending) ───────────────────────────────────────
+    var byYear = {}, years = [];
+    var ascending = visitsSorted.slice().reverse();
+    $.each(ascending, function(i, v) {
+        var yr = String(v.start_date.getFullYear());
+        if (!byYear[yr]) { byYear[yr] = []; years.push(yr); }
+        byYear[yr].push(v);
+    });
+    years.sort();
+
+    // ── build one visit card ───────────────────────────────────────────────────
+    function buildCard(v) {
+        var dur     = durDays(v.start_date, v.end_date);
+        var durStr  = dayWord(dur);
+        var dateStr = fmtDate(v.start_date, v.end_date);
+
+        var cityRows = '';
+        $.each(v.cities || [], function(j, c) {
+            var cityObj    = cityById[c.city_id]      || {};
+            var countryObj = countryBySN[c.country_id]|| {};
+            var areaObj    = cityObj.region_id ? (areaById[cityObj.region_id] || {}) : {};
+            var cityName   = esc(cityObj.name_ua   || cityObj.name   || c.city_id);
+            var countryName= esc(countryObj.name_ua|| countryObj.name|| c.country_id);
+            var areaName   = esc(areaObj.name_ua   || areaObj.name   || '');
+            var where      = (areaName && areaName !== countryName) ? areaName + ', ' + countryName : countryName;
+            var daysStr    = (v.days && v.days[c.city_id]) ? dayWord(v.days[c.city_id]) : '';
+            cityRows += '<li><span class="vc-cn">' + cityName + '</span>' +
+                '<span class="vc-wh">' + where + '</span>' +
+                (daysStr ? '<span class="vc-dy">' + daysStr + '</span>' : '') + '</li>';
+        });
+
+        var links = '';
+        if (v.photos)                              { links += '<a class="vl" href="' + esc(v.photos) + '" target="_blank">&#128248; ' + esc('Фото') + '</a>'; }
+        if (v.story_url)                           { links += '<a class="vl" href="' + esc(v.story_url) + '" target="_blank">&#128214; ' + esc('Звіт') + '</a>'; }
+        else if (v.story && v.story !== true)      { links += '<span class="vl vl-i">&#128214; ' + esc(v.story) + '</span>'; }
+        else if (v.story === true)                 { links += '<span class="vl vl-i">&#128214; ' + esc('є звіт') + '</span>'; }
+
+        return '<div class="vc"><div class="vc-hd"><span class="vc-dt">' + dateStr + '</span>' +
+            '<span class="vc-dr">' + durStr + '</span></div>' +
+            '<div class="vc-bd"><ul class="vc-ls">' + cityRows + '</ul>' +
+            (links ? '<div class="vc-lk">' + links + '</div>' : '') + '</div></div>';
+    }
+
+    // ── visits section ─────────────────────────────────────────────────────────
+    var visitSec = '';
+    $.each(years, function(i, yr) {
+        var vArr   = byYear[yr];
+        var cntStr = parseWord('поїздк', 'а', 'и', 'ок', vArr.length);
+        visitSec  += '<div class="yg"><div class="yh">' + yr +
+            '<span class="yh-c">' + vArr.length + ' ' + cntStr + '</span></div>';
+        $.each(vArr, function(j, v) { visitSec += buildCard(v); });
+        visitSec += '</div>';
+    });
+
+    // ── countries by continent ─────────────────────────────────────────────────
+    var contMap = {}, contOrder = [];
+    $.each(countriesVisited, function(i, c) {
+        var cid = c.continent_id;
+        if (!contMap[cid]) { contMap[cid] = []; contOrder.push(cid); }
+        contMap[cid].push(c);
+    });
+    contOrder.sort();
+
+    var countrySec = '';
+    $.each(contOrder, function(i, cid) {
+        var contObj  = continentById[cid] || {};
+        var contName = esc(contObj.name_ua || contObj.name || cid);
+        var clist    = contMap[cid].slice().sort(function(a, b) {
+            return (a.name_ua || a.name || '').localeCompare(b.name_ua || b.name || '', 'uk');
+        });
+        var liHtml = '';
+        $.each(clist, function(j, c) { liHtml += '<li>' + esc(c.name_ua || c.name) + '</li>'; });
+        countrySec += '<div class="cg"><div class="cg-nm">' + contName + ' (' + clist.length + ')</div>' +
+            '<ul class="cg-ls">' + liHtml + '</ul></div>';
+    });
+
+    // ── cover stats ────────────────────────────────────────────────────────────
+    var totalDays = 0;
+    $.each(visitsSorted, function(i, v) { totalDays += durDays(v.start_date, v.end_date); });
+    var yearRange = years.length > 1 ? years[0] + '–' + years[years.length - 1] : (years[0] || '');
+    var now = new Date();
+    var genDate = now.getDate() + ' ' + getUaMonthName(now.getMonth() + 1) + ' ' + now.getFullYear();
+
+    // ── CSS ────────────────────────────────────────────────────────────────────
+    var css = [
+        '@page{size:A4;margin:15mm 18mm}',
+        '*{box-sizing:border-box;margin:0;padding:0}',
+        'body{font-family:Arial,Helvetica,sans-serif;font-size:11pt;color:#1a1a1a;line-height:1.5}',
+        'a{color:#1d4ed8;text-decoration:none}',
+        '.cv{min-height:97vh;display:flex;flex-direction:column;justify-content:center;padding:20mm 0;page-break-after:always}',
+        '.cv-ti{font-size:28pt;font-weight:700;margin-bottom:6px}',
+        '.cv-su{font-size:13pt;color:#555;margin-bottom:28px}',
+        '.cv-st{display:flex;gap:28px;margin-bottom:28px;flex-wrap:wrap}',
+        '.cv-s{min-width:72px}',
+        '.cv-sn{font-size:22pt;font-weight:700;color:#1d4ed8;display:block}',
+        '.cv-sl{font-size:8pt;color:#777;text-transform:uppercase;letter-spacing:.5px}',
+        '.cv-yr{font-size:14pt;font-weight:600;color:#555;margin-top:8px}',
+        '.cv-gd{font-size:9pt;color:#aaa;margin-top:6px}',
+        '.sec{margin-top:10px}',
+        '.sb{page-break-before:always}',
+        '.sh{font-size:16pt;font-weight:700;border-bottom:2.5px solid #1d4ed8;padding-bottom:5px;margin-bottom:16px;page-break-after:avoid}',
+        '.yg{margin-bottom:18px}',
+        '.yh{font-size:14pt;font-weight:700;color:#1d4ed8;margin:18px 0 9px;page-break-after:avoid;display:flex;align-items:baseline;gap:8px}',
+        '.yh-c{font-size:9pt;color:#888;font-weight:400}',
+        '.vc{border:1px solid #dde1ea;border-radius:5px;margin-bottom:7px;page-break-inside:avoid;overflow:hidden}',
+        '.vc-hd{background:#f0f4ff;padding:6px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #dde1ea}',
+        '.vc-dt{font-weight:700;font-size:11pt}',
+        '.vc-dr{font-size:9.5pt;color:#555;white-space:nowrap}',
+        '.vc-bd{padding:7px 12px}',
+        '.vc-ls{list-style:none}',
+        '.vc-ls li{display:flex;align-items:baseline;padding:2px 0;font-size:10.5pt;gap:6px}',
+        '.vc-cn{font-weight:600;min-width:130px}',
+        '.vc-wh{color:#444;flex:1}',
+        '.vc-dy{color:#888;font-size:9.5pt;white-space:nowrap}',
+        '.vc-lk{margin-top:5px;display:flex;gap:10px;font-size:9pt}',
+        '.vl{color:#1d4ed8} .vl-i{color:#666}',
+        '.cg{margin-bottom:16px;page-break-inside:avoid}',
+        '.cg-nm{font-size:11pt;font-weight:700;color:#333;margin-bottom:6px}',
+        '.cg-ls{list-style:disc;columns:3;column-gap:14px;font-size:10pt}',
+        '.cg-ls li{margin-left:14px;padding:1px 0;break-inside:avoid}',
+        '@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}'
+    ].join('\n');
+
+    // ── assemble full HTML ─────────────────────────────────────────────────────
+    var cvTitle = esc('Книга подорожей');
+    var cvSub   = esc('Подорожі Олексія Славутського');
+    var secVisit = esc('Подорожі');
+    var secCountries = esc('Відвідані країни');
+    var lbl = {
+        countries : esc('країн'),
+        cities    : esc('міст'),
+        trips     : esc('поїздок'),
+        days      : esc('днів у дорозі'),
+        generated : esc('Сформовано')
+    };
+
+    var html = '<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">' +
+        '<title>' + cvTitle + '</title>' +
+        '<style>' + css + '</style></head><body>' +
+        '<div class="cv">' +
+            '<div class="cv-ti">' + cvTitle + '</div>' +
+            '<div class="cv-su">' + cvSub + '</div>' +
+            '<div class="cv-st">' +
+                '<div class="cv-s"><span class="cv-sn">' + countriesVisited.length + '</span><span class="cv-sl">' + lbl.countries + '</span></div>' +
+                '<div class="cv-s"><span class="cv-sn">' + citiesVisited.length    + '</span><span class="cv-sl">' + lbl.cities    + '</span></div>' +
+                '<div class="cv-s"><span class="cv-sn">' + visitsSorted.length     + '</span><span class="cv-sl">' + lbl.trips     + '</span></div>' +
+                '<div class="cv-s"><span class="cv-sn">' + totalDays               + '</span><span class="cv-sl">' + lbl.days      + '</span></div>' +
+            '</div>' +
+            '<div class="cv-yr">' + yearRange + '</div>' +
+            '<div class="cv-gd">' + lbl.generated + ': ' + genDate + '</div>' +
+        '</div>' +
+        '<div class="sec sb"><h1 class="sh">' + secVisit + '</h1>' + visitSec + '</div>' +
+        '<div class="sec sb"><h1 class="sh">' + secCountries + ' (' + countriesVisited.length + ')</h1>' + countrySec + '</div>' +
+        '</body></html>';
+
+    // ── open and print ─────────────────────────────────────────────────────────
+    var w = window.open('', '_blank');
+    if (!w) {
+        alert('Не вдалося відкрити вікно. Дозвольте спливаючі вікна для цього сайту.');
+        return;
+    }
+    w.document.write(html);
+    w.document.close();
+    w.focus();
+    setTimeout(function() { w.print(); }, 600);
+}
+
+//08.08 Export to CSV backup: tabbed HTML viewer, one tab per data array, per-sheet CSV download
+function exportToCsv() {
+
+    // ── helpers ────────────────────────────────────────────────────────────────
+    function esc(s) {
+        return String(s == null ? '' : s)
+            .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function cellVal(v) {
+        if (v == null) { return ''; }
+        if (typeof v === 'object') { return JSON.stringify(v); }
+        return String(v);
+    }
+
+    // ── data tabs (ordered logically) ─────────────────────────────────────────
+    var TABS = [
+        { id: 'continent',    label: 'Континенти',   arr: data.continent    || [] },
+        { id: 'country',      label: 'Країни',       arr: data.country      || [] },
+        { id: 'area',         label: 'Регіони',  arr: data.area         || [] },
+        { id: 'city',         label: 'Міста',             arr: data.city         || [] },
+        { id: 'visit',        label: 'Візити',        arr: data.visit        || [] },
+        { id: 'type',         label: 'Типи локацій', arr: data.type         || [] },
+        { id: 'country_type', label: 'Типи країн', arr: data.country_type || [] }
+    ];
+
+    // Preferred column order per array
+    var PREF = {
+        continent:    ['continent_id','name','name_ua','name_nt'],
+        country:      ['country_id','continent_id','continent_id2','name','name_ua','name_nt','short_name','country_type_id','city_state','small_flag_img','flag_img','emb_img','map_img'],
+        area:         ['region_id','country_id','name','name_ua','name_nt','active'],
+        city:         ['city_id','region_id','name','name_ua','name_nt','capital','lat','long','type_id','image','description'],
+        visit:        ['start_date','end_date','city','days','photos','story','story_url'],
+        type:         ['type_id','name','name_ua'],
+        country_type: ['country_type_id','name','name_ua']
+    };
+
+    // ── build column list for one array ───────────────────────────────────────
+    function getCols(tabId, arr) {
+        var pref = PREF[tabId] || [];
+        // Collect all keys that actually appear, in first-seen order
+        var allKeys = {}, keyOrder = [];
+        $.each(arr, function(i, obj) {
+            $.each(obj, function(k) {
+                if (!allKeys[k]) { allKeys[k] = true; keyOrder.push(k); }
+            });
+        });
+        // Start with preferred cols that exist; then append remaining
+        var cols = pref.filter(function(k) { return !!allKeys[k]; });
+        var colSet = {};
+        cols.forEach(function(k) { colSet[k] = true; });
+        keyOrder.forEach(function(k) { if (!colSet[k]) { colSet[k] = true; cols.push(k); } });
+        return cols;
+    }
+
+    // ── build HTML table for one tab ──────────────────────────────────────────
+    function buildTable(tab) {
+        var arr  = tab.arr;
+        var cols = getCols(tab.id, arr);
+
+        var thead = '<tr>' + cols.map(function(c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr>';
+        var tbodyParts = [];
+        $.each(arr, function(i, obj) {
+            var tds = cols.map(function(col) {
+                var raw  = cellVal(obj[col]);
+                var disp = raw.length > 80 ? raw.substring(0, 78) + '…' : raw;
+                return '<td data-raw="' + esc(raw) + '" title="' + esc(raw) + '">' + esc(disp) + '</td>';
+            }).join('');
+            tbodyParts.push('<tr>' + tds + '</tr>');
+        });
+
+        return '<table id="tbl-' + tab.id + '"><thead>' + thead + '</thead><tbody>' +
+            tbodyParts.join('') + '</tbody></table>';
+    }
+
+    // ── assemble nav + panels ─────────────────────────────────────────────────
+    var navHtml = '', panelsHtml = '', totalRows = 0, firstId = '';
+    $.each(TABS, function(i, tab) {
+        if (!tab.arr.length) { return; }
+        totalRows += tab.arr.length;
+        var isFirst = (firstId === '');
+        if (isFirst) { firstId = tab.id; }
+        var act = isFirst ? ' act' : '';
+
+        navHtml += '<button class="tb' + act + '" data-tab="' + tab.id +
+            '" onclick="showTab(\'' + tab.id + '\')">' +
+            esc(tab.label) + '<span class="tc">' + tab.arr.length + '</span></button>';
+
+        var fname = tab.id + '.csv';
+        panelsHtml += '<div id="tp-' + tab.id + '" class="tp' + act + '">' +
+            '<div class="bar">' +
+                '<button class="dl" onclick="dlCsv(\'' + tab.id + '\',\'' + fname + '\')">' +
+                    '&#8595; ' + esc(tab.label) + '.csv' +
+                '</button>' +
+                '<span class="bc">' + tab.arr.length + ' записів</span>' +
+            '</div>' +
+            '<div class="tw">' + buildTable(tab) + '</div>' +
+            '</div>';
+    });
+
+    // ── CSS ────────────────────────────────────────────────────────────────────
+    var css = [
+        'body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;background:#f5f7fa;color:#1a1a1a}',
+        '.hd{background:#1d4ed8;color:#fff;padding:10px 18px;display:flex;align-items:center;gap:14px;flex-shrink:0}',
+        '.hd h1{font-size:15px;margin:0;font-weight:600}',
+        '.hs{font-size:11px;opacity:.7}',
+        '.tnav{display:flex;gap:3px;padding:8px 10px 0;background:#fff;border-bottom:2px solid #1d4ed8;flex-wrap:wrap}',
+        '.tb{padding:7px 13px;border:1px solid #cbd5e1;border-bottom:none;border-radius:4px 4px 0 0;cursor:pointer;background:#f0f4ff;font-size:11.5px;color:#374151}',
+        '.tb.act{background:#fff;border-color:#1d4ed8;color:#1d4ed8;font-weight:700;margin-bottom:-2px;border-bottom:2px solid #fff}',
+        '.tc{background:#e0e7ff;color:#1d4ed8;font-size:10px;border-radius:10px;padding:1px 6px;margin-left:5px;font-weight:700;vertical-align:middle}',
+        '.tb.act .tc{background:#1d4ed8;color:#fff}',
+        '.tp{display:none;padding:10px}',
+        '.tp.act{display:block}',
+        '.bar{display:flex;align-items:center;gap:14px;margin-bottom:8px}',
+        '.dl{padding:5px 12px;background:#1d4ed8;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:11.5px;font-weight:600}',
+        '.dl:hover{background:#1e40af}',
+        '.bc{font-size:11px;color:#888}',
+        '.tw{overflow:auto;max-height:calc(100vh - 145px);border:1px solid #e5e7eb;border-radius:4px;background:#fff}',
+        'table{border-collapse:collapse;min-width:100%;font-size:11.5px}',
+        'thead{position:sticky;top:0;z-index:2}',
+        'th{background:#1d4ed8;color:#fff;padding:6px 10px;text-align:left;white-space:nowrap;font-weight:600;border-right:1px solid rgba(255,255,255,.18)}',
+        'th:last-child{border-right:none}',
+        'td{padding:4px 10px;border-bottom:1px solid #e5e7eb;white-space:nowrap;max-width:280px;overflow:hidden;text-overflow:ellipsis;border-right:1px solid #f0f0f0;color:#111}',
+        'td:last-child{border-right:none}',
+        'tr:nth-child(even) td{background:#f9fafb}',
+        'tr:hover td{background:#eff6ff!important}'
+    ].join('\n');
+
+    // ── inline script for new window ──────────────────────────────────────────
+    var js = [
+        'function showTab(id){',
+        '  document.querySelectorAll(".tb").forEach(function(b){b.classList.remove("act");});',
+        '  document.querySelectorAll(".tp").forEach(function(p){p.classList.remove("act");});',
+        '  document.getElementById("tp-"+id).classList.add("act");',
+        '  document.querySelector("[data-tab=\'"+id+"\']").classList.add("act");',
+        '}',
+        'function dlCsv(id,fname){',
+        '  var tbl=document.getElementById("tbl-"+id);',
+        '  var rows=tbl.querySelectorAll("tr");',
+        '  var lines=[];',
+        '  rows.forEach(function(r){',
+        '    var cells=r.querySelectorAll("th,td");',
+        '    var vals=[];',
+        '    cells.forEach(function(c){',
+        '      var v=c.hasAttribute("data-raw")?c.getAttribute("data-raw"):c.textContent;',
+        '      vals.push(\'"\'+v.replace(/"/g,\'""\')+\'"\');',
+        '    });',
+        '    lines.push(vals.join(","));',
+        '  });',
+        '  var a=document.createElement("a");',
+        '  a.href=URL.createObjectURL(new Blob(["\\uFEFF"+lines.join("\\r\\n")],{type:"text/csv;charset=utf-8"}));',
+        '  a.download=fname;',
+        '  document.body.appendChild(a);a.click();document.body.removeChild(a);',
+        '}'
+    ].join('\n');
+
+    // ── assemble full HTML ─────────────────────────────────────────────────────
+    var genDate = new Date().toLocaleDateString('uk-UA');
+    var hdTitle = esc('Бекап бази подорожей');
+    var hdSub   = esc(genDate + ' • ' + totalRows + ' записів усього');
+
+    var html = '<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">' +
+        '<title>' + hdTitle + '</title>' +
+        '<style>' + css + '</style></head><body>' +
+        '<div class="hd"><h1>' + hdTitle + '</h1><span class="hs">' + hdSub + '</span></div>' +
+        '<div class="tnav">' + navHtml + '</div>' +
+        panelsHtml +
+        '<scr' + 'ipt>' + js + '<' + '/script>' +
+        '</body></html>';
+
+    // ── open window ────────────────────────────────────────────────────────────
+    var w = window.open('', '_blank');
+    if (!w) {
+        alert('Не вдалося відкрити вікно. Дозвольте спливаючі вікна.');
+        return;
+    }
+    w.document.write(html);
+    w.document.close();
+    w.focus();
 }
