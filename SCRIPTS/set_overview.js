@@ -95,43 +95,43 @@ function createSettingsOverviewTab_HTML() {
                             '<button type="button" class="set-btn">MD</button>' +
                         '</div>' +
                     '</div>' +
-                    ‘<div class="set-option-wrap">’ +
-                        ‘<div class="set-option">’ +
-                            ‘<div class="set-option-info">’ +
-                                ‘<div class="set-option-title">Автогенерація onload-сторінки</div>’ +
-                                ‘<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>’ +
-                            ‘</div>’ +
-                            ‘<div class="set-option-actions">’ +
-                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>’ +
-                            ‘</div>’ +
-                        ‘</div>’ +
-                        ‘<span id="onloadGenMsg"></span>’ +
-                    ‘</div>’ +
-                    ‘<div class="set-option-wrap">’ +
-                        ‘<div class="set-option">’ +
-                            ‘<div class="set-option-info">’ +
-                                ‘<div class="set-option-title">Автогенерація stories.json</div>’ +
-                                ‘<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>’ +
-                            ‘</div>’ +
-                            ‘<div class="set-option-actions">’ +
-                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>’ +
-                            ‘</div>’ +
-                        ‘</div>’ +
-                        ‘<span id="storiesGenMsg"></span>’ +
-                    ‘</div>’ +
-                    ‘<div class="set-option-wrap">’ +
-                        ‘<div class="set-option">’ +
-                            ‘<div class="set-option-info">’ +
-                                ‘<div class="set-option-title">Валідація бази подорожей</div>’ +
-                                '<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>' +
-                            ‘</div>’ +
-                            ‘<div class="set-option-actions">’ +
-                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>’ +
-                            ‘</div>’ +
-                        ‘</div>’ +
-                        ‘<span id="validateMsg"></span>’ +
-                    ‘</div>’ +
-                ‘</div>’ +
+                    '<div class="set-option-wrap">' +
+                        '<div class="set-option">' +
+                            '<div class="set-option-info">' +
+                                '<div class="set-option-title">Автогенерація onload-сторінки</div>' +
+                                '<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>' +
+                            '</div>' +
+                            '<div class="set-option-actions">' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<span id="onloadGenMsg"></span>' +
+                    '</div>' +
+                    '<div class="set-option-wrap">' +
+                        '<div class="set-option">' +
+                            '<div class="set-option-info">' +
+                                '<div class="set-option-title">Автогенерація stories.json</div>' +
+                                '<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>' +
+                            '</div>' +
+                            '<div class="set-option-actions">' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<span id="storiesGenMsg"></span>' +
+                    '</div>' +
+                    '<div class="set-option-wrap">' +
+                        '<div class="set-option">' +
+                            '<div class="set-option-info">' +
+                                '<div class="set-option-title">Валідація бази подорожей</div>' +
+                                '<div class="set-option-desc">Перевірити структуру та цілісність зв\'язків у базі подорожей</div>' +
+                            '</div>' +
+                            '<div class="set-option-actions">' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<span id="validateMsg"></span>' +
+                    '</div>' +
+                '</div>' +
             '</div>' +
         '</section>' +
         // Countries table
