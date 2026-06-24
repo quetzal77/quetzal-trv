@@ -101,7 +101,7 @@ function createSettingsOverviewTab_HTML() {
                             '<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>' +
                         '</div>' +
                         '<div class="set-option-actions">' +
-                            '<button type="button" class="set-btn set-btn-primary">Згенерувати</button>' +
+                            '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>' +
                         '</div>' +
                     '</div>' +
                     '<div class="set-option">' +
@@ -280,5 +280,142 @@ function generateStoriesIndex() {
         });
     }).fail(function () {
         msg("is-err", "Не вдалося прочитати DATA/stories.json.");
+    });
+}
+
+//08.05 Regenerate DATA/onload.json in the browser and offer it for download.
+// Scans visits → cities → regions → countries to find which countries were visited,
+// then emits continent[] and country[] sorted alphabetically by Ukrainian name.
+// Compares with the existing onload.json and reports added/removed countries.
+function generateOnloadJson() {
+    var msg = function (cls, html) {
+        var el = document.getElementById("storyGenMsg");
+        if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
+    };
+    msg("", "Збираю дані…");
+
+    $.getJSON("DATA/onload.json").always(function (existingOrXhr) {
+        var existing = (existingOrXhr && existingOrXhr.country) ? existingOrXhr : { continent: [], country: [] };
+
+        // city_id → region_id
+        var cityRegion = {};
+        $.each(data.city, function (i, c) { cityRegion[c.city_id] = c.region_id; });
+
+        // region_id → country_id
+        var regionCountry = {};
+        $.each(data.area, function (i, a) { regionCountry[a.region_id] = a.country_id; });
+
+        // collect visited country_ids from all visits
+        var visitedCountryIds = {};
+        $.each(data.visit, function (i, v) {
+            $.each(v.city || [], function (j, cityId) {
+                var regionId = cityRegion[cityId];
+                if (regionId) {
+                    var countryId = regionCountry[regionId];
+                    if (countryId) { visitedCountryIds[countryId] = true; }
+                }
+            });
+        });
+
+        // country_id → name_ua for sorting
+        var countryNameUa = {};
+        $.each(data.country, function (i, c) { countryNameUa[c.country_id] = c.name_ua || ""; });
+
+        // build visited countries array with onload fields
+        var visitedCountries = [];
+        $.each(data.country, function (i, c) {
+            if (!visitedCountryIds[c.country_id]) { return; }
+            var nameFull = (c.name_nt && c.name_nt.trim())
+                ? c.name_ua + " - " + c.name_nt + " - " + c.name
+                : c.name_ua + " - " + c.name;
+            var entry = { country_id: c.country_id, continent_id: c.continent_id };
+            if (c.continent_id2) { entry.continent_id2 = c.continent_id2; }
+            entry.short_name     = c.short_name;
+            entry.small_flag_img = c.small_flag_img;
+            entry.name_full      = nameFull;
+            visitedCountries.push(entry);
+        });
+
+        visitedCountries.sort(function (a, b) {
+            return (countryNameUa[a.country_id] || "").localeCompare(countryNameUa[b.country_id] || "", "uk");
+        });
+
+        // collect visited continent_ids (continent_id2 counts too, e.g. Spain → AF)
+        var visitedContIds = {};
+        $.each(visitedCountries, function (i, c) {
+            visitedContIds[c.continent_id] = true;
+            if (c.continent_id2) { visitedContIds[c.continent_id2] = true; }
+        });
+
+        // build and sort continents list
+        var visitedContinents = [];
+        $.each(data.continent, function (i, cont) {
+            if (visitedContIds[cont.continent_id]) {
+                visitedContinents.push({ continent_id: cont.continent_id, name_ua: cont.name_ua });
+            }
+        });
+        visitedContinents.sort(function (a, b) {
+            return (a.name_ua || "").localeCompare(b.name_ua || "", "uk");
+        });
+
+        // diff: compare new vs existing country and continent lists
+        var oldCountryIds = {};
+        $.each(existing.country, function (i, c) { oldCountryIds[c.country_id] = true; });
+        var oldContIds = {};
+        $.each(existing.continent, function (i, c) { oldContIds[c.continent_id] = true; });
+
+        var addedCountries = [], removedCountries = [];
+        $.each(visitedCountries, function (i, c) {
+            if (!oldCountryIds[c.country_id]) { addedCountries.push(countryNameUa[c.country_id] || c.country_id); }
+        });
+        $.each(existing.country, function (i, c) {
+            if (!visitedCountryIds[c.country_id]) { removedCountries.push(countryNameUa[c.country_id] || c.country_id); }
+        });
+
+        var addedConts = [], removedConts = [];
+        var contNameUa = {};
+        $.each(data.continent, function (i, c) { contNameUa[c.continent_id] = c.name_ua; });
+        $.each(visitedContinents, function (i, c) {
+            if (!oldContIds[c.continent_id]) { addedConts.push(c.name_ua); }
+        });
+        $.each(existing.continent, function (i, c) {
+            if (!visitedContIds[c.continent_id]) { removedConts.push(contNameUa[c.continent_id] || c.continent_id); }
+        });
+
+        var onload = { continent: visitedContinents, country: visitedCountries };
+        var json = JSON.stringify(onload, null, 2) + "\n";
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(new Blob([json], { type: "application/json" }));
+        a.download = "onload.json";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+
+        // build diff summary
+        var diffLines = [];
+        if (addedCountries.length) {
+            diffLines.push("➕ Додано " + addedCountries.length + " кра" +
+                (addedCountries.length === 1 ? "їна" : (addedCountries.length < 5 ? "їни" : "їн")) +
+                ": <b>" + addedCountries.join(", ") + "</b>");
+        }
+        if (removedCountries.length) {
+            diffLines.push("➖ Видалено " + removedCountries.length + " кра" +
+                (removedCountries.length === 1 ? "їну" : (removedCountries.length < 5 ? "їни" : "їн")) +
+                ": <b>" + removedCountries.join(", ") + "</b>");
+        }
+        if (addedConts.length) {
+            diffLines.push("➕ Новий континент: <b>" + addedConts.join(", ") + "</b>");
+        }
+        if (removedConts.length) {
+            diffLines.push("➖ Зник континент: <b>" + removedConts.join(", ") + "</b>");
+        }
+        if (!diffLines.length) {
+            diffLines.push("Змін немає — список країн не змінився.");
+        }
+
+        msg("is-ok",
+            "Згенеровано <b>" + visitedCountries.length + "</b> країн " +
+            "у <b>" + visitedContinents.length + "</b> континентах. " +
+            "Збережіть як <b>DATA/onload.json</b>.<br>" +
+            diffLines.join("<br>"));
     });
 }
