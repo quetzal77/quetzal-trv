@@ -95,35 +95,43 @@ function createSettingsOverviewTab_HTML() {
                             '<button type="button" class="set-btn">MD</button>' +
                         '</div>' +
                     '</div>' +
-                    '<div class="set-option">' +
-                        '<div class="set-option-info">' +
-                            '<div class="set-option-title">Автогенерація onload-сторінки</div>' +
-                            '<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>' +
-                        '</div>' +
-                        '<div class="set-option-actions">' +
-                            '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="set-option">' +
-                        '<div class="set-option-info">' +
-                            '<div class="set-option-title">Автогенерація stories.json</div>' +
-                            '<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>' +
-                        '</div>' +
-                        '<div class="set-option-actions">' +
-                            '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="set-option">' +
-                        '<div class="set-option-info">' +
-                            '<div class="set-option-title">Валідація бази подорожей</div>' +
-                            '<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>' +
-                        '</div>' +
-                        '<div class="set-option-actions">' +
-                            '<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
-                '<span id="storyGenMsg"></span>' +
+                    ‘<div class="set-option-wrap">’ +
+                        ‘<div class="set-option">’ +
+                            ‘<div class="set-option-info">’ +
+                                ‘<div class="set-option-title">Автогенерація onload-сторінки</div>’ +
+                                ‘<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>’ +
+                            ‘</div>’ +
+                            ‘<div class="set-option-actions">’ +
+                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>’ +
+                            ‘</div>’ +
+                        ‘</div>’ +
+                        ‘<span id="onloadGenMsg"></span>’ +
+                    ‘</div>’ +
+                    ‘<div class="set-option-wrap">’ +
+                        ‘<div class="set-option">’ +
+                            ‘<div class="set-option-info">’ +
+                                ‘<div class="set-option-title">Автогенерація stories.json</div>’ +
+                                ‘<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>’ +
+                            ‘</div>’ +
+                            ‘<div class="set-option-actions">’ +
+                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>’ +
+                            ‘</div>’ +
+                        ‘</div>’ +
+                        ‘<span id="storiesGenMsg"></span>’ +
+                    ‘</div>’ +
+                    ‘<div class="set-option-wrap">’ +
+                        ‘<div class="set-option">’ +
+                            ‘<div class="set-option-info">’ +
+                                ‘<div class="set-option-title">Валідація бази подорожей</div>’ +
+                                ‘<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>’ +
+                            ‘</div>’ +
+                            ‘<div class="set-option-actions">’ +
+                                ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>’ +
+                            ‘</div>’ +
+                        ‘</div>’ +
+                        ‘<span id="validateMsg"></span>’ +
+                    ‘</div>’ +
+                ‘</div>’ +
             '</div>' +
         '</section>' +
         // Countries table
@@ -234,7 +242,7 @@ function toggleOnlyMissing(on) {
 // files not yet listed/linked are invisible here — use the Node script for those.
 function generateStoriesIndex() {
     var msg = function (cls, html) {
-        var el = document.getElementById("storyGenMsg");
+        var el = document.getElementById("storiesGenMsg");
         if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
     };
     msg("", "Збираю історії…");
@@ -289,7 +297,7 @@ function generateStoriesIndex() {
 // Compares with the existing onload.json and reports added/removed countries.
 function generateOnloadJson() {
     var msg = function (cls, html) {
-        var el = document.getElementById("storyGenMsg");
+        var el = document.getElementById("onloadGenMsg");
         if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
     };
     msg("", "Збираю дані…");
@@ -423,7 +431,7 @@ function generateOnloadJson() {
 //08.06 Validate DATA/globaldb.json — JSON syntax first, then referential integrity.
 // Fetches the raw file text so JSON.parse errors yield exact line/column info.
 function validateTravelDb() {
-    var el = document.getElementById("storyGenMsg");
+    var el = document.getElementById("validateMsg");
     if (el) { el.className = "set-alert"; el.innerHTML = "Завантажую globaldb.json…"; }
 
     function esc(s) {
