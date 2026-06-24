@@ -126,6 +126,6 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### Technical
 - [ ] Add Login for settings
-- [ ] Export / backup data
+- [ ] Enable all changes fpr entites in Settings space
 - [ ] Update AMmap library to the latest version
 ```
