@@ -123,7 +123,7 @@ function createSettingsOverviewTab_HTML() {
                         ‘<div class="set-option">’ +
                             ‘<div class="set-option-info">’ +
                                 ‘<div class="set-option-title">Валідація бази подорожей</div>’ +
-                                ‘<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>’ +
+                                '<div class="set-option-desc">Перевірити структуру та цілісність зв’язків у базі подорожей</div>' +
                             ‘</div>’ +
                             ‘<div class="set-option-actions">’ +
                                 ‘<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>’ +
