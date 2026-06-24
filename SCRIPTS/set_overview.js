@@ -420,134 +420,162 @@ function generateOnloadJson() {
     });
 }
 
-//08.06 Validate DATA/globaldb.json — referential integrity, duplicate IDs, missing fields.
+//08.06 Validate DATA/globaldb.json — JSON syntax first, then referential integrity.
+// Fetches the raw file text so JSON.parse errors yield exact line/column info.
 function validateTravelDb() {
     var el = document.getElementById("storyGenMsg");
-    if (el) { el.className = "set-alert"; el.innerHTML = "Перевіряю…"; }
+    if (el) { el.className = "set-alert"; el.innerHTML = "Завантажую globaldb.json…"; }
 
-    var errors = [];   // blocking issues
-    var warnings = []; // non-blocking notices
-
-    function err(msg, hint) { errors.push({ msg: msg, hint: hint || "" }); }
-    function warn(msg, hint) { warnings.push({ msg: msg, hint: hint || "" }); }
-
-    // --- build lookup sets ---
-    var contIds = {}, countryIds = {}, regionIds = {}, cityIds = {};
-    $.each(data.continent, function (i, c) { contIds[c.continent_id] = true; });
-
-    // duplicate country_id
-    $.each(data.country, function (i, c) {
-        if (!c.country_id) { err("Країна #" + i + " не має country_id", "шукайте " + (c.name || c.name_ua || "#" + i)); return; }
-        if (countryIds[c.country_id]) { err("Дублікат country_id: «" + c.country_id + "»", 'шукайте "country_id": "' + c.country_id + '"'); }
-        countryIds[c.country_id] = true;
-        if (!contIds[c.continent_id]) {
-            err("Країна «" + (c.name_ua || c.country_id) + "» посилається на невідомий континент «" + c.continent_id + "»",
-                '"country_id": "' + c.country_id + '"');
-        }
-        if (!c.name_ua) { warn("Порожній name_ua у країни «" + c.country_id + "»", '"country_id": "' + c.country_id + '"'); }
-    });
-
-    // duplicate region_id
-    $.each(data.area, function (i, a) {
-        if (!a.region_id) { err("Регіон #" + i + " не має region_id", "шукайте " + (a.name || "#" + i)); return; }
-        if (regionIds[a.region_id]) { err("Дублікат region_id: «" + a.region_id + "»", '"region_id": "' + a.region_id + '"'); }
-        regionIds[a.region_id] = true;
-        if (!countryIds[a.country_id]) {
-            err("Регіон «" + a.region_id + "» посилається на невідому країну «" + a.country_id + "»",
-                '"region_id": "' + a.region_id + '"');
-        }
-        if (!a.name_ua) { warn("Порожній name_ua у регіону «" + a.region_id + "»", '"region_id": "' + a.region_id + '"'); }
-    });
-
-    // duplicate city_id + city integrity
-    var emptyCityDesc = [], emptyCityImg = [], emptyCityNameUa = [];
-    $.each(data.city, function (i, c) {
-        if (!c.city_id) { err("Місто #" + i + " («" + (c.name || "?") + "») не має city_id", '"name": "' + (c.name || "") + '"'); return; }
-        if (cityIds[c.city_id]) { err("Дублікат city_id: «" + c.city_id + "»", '"city_id": "' + c.city_id + '"'); }
-        cityIds[c.city_id] = true;
-        if (!c.region_id) {
-            err("Місто «" + c.city_id + "» не має region_id", '"city_id": "' + c.city_id + '"');
-        } else if (!regionIds[c.region_id]) {
-            err("Місто «" + c.city_id + "» посилається на невідомий регіон «" + c.region_id + "»",
-                '"city_id": "' + c.city_id + '"');
-        }
-        if (!c.name_ua) { emptyCityNameUa.push(c.city_id); }
-        if (!c.description) { emptyCityDesc.push(c.city_id); }
-        if (!c.image)       { emptyCityImg.push(c.city_id); }
-    });
-
-    if (emptyCityNameUa.length) {
-        warn("Порожній name_ua у " + emptyCityNameUa.length + " міст",
-            'перші: ' + emptyCityNameUa.slice(0, 5).map(function (id) { return '"' + id + '"'; }).join(", ") +
-            (emptyCityNameUa.length > 5 ? " та ще " + (emptyCityNameUa.length - 5) : ""));
-    }
-    if (emptyCityDesc.length) {
-        warn("Порожній опис у " + emptyCityDesc.length + " міст",
-            'перші: ' + emptyCityDesc.slice(0, 5).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
-            (emptyCityDesc.length > 5 ? " та ще " + (emptyCityDesc.length - 5) : ""));
-    }
-    if (emptyCityImg.length) {
-        warn("Порожнє поле image у " + emptyCityImg.length + " міст",
-            'перші: ' + emptyCityImg.slice(0, 5).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
-            (emptyCityImg.length > 5 ? " та ще " + (emptyCityImg.length - 5) : ""));
+    function esc(s) {
+        return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
     }
 
-    // visit integrity
-    $.each(data.visit, function (i, v) {
-        if (!v.city || !v.city.length) {
-            warn("Візит від " + (v.start_date || "?") + " не має міст",
-                '"start_date": "' + (v.start_date || "") + '"');
-            return;
-        }
-        $.each(v.city, function (j, cityId) {
-            if (!cityIds[cityId]) {
-                err("Візит від " + (v.start_date || "?") + " посилається на невідоме місто «" + cityId + "»",
-                    '"start_date": "' + (v.start_date || "") + '"');
+    $.ajax({ url: "DATA/globaldb.json", dataType: "text", cache: false })
+        .fail(function () {
+            if (el) { el.className = "set-alert is-err"; el.innerHTML = "Не вдалося завантажити DATA/globaldb.json."; }
+        })
+        .done(function (rawText) {
+
+            // ── 1. JSON syntax check ─────────────────────────────────────────
+            var db;
+            try { db = JSON.parse(rawText); } catch (e) {
+                var ctxHtml = "";
+                // Chrome/Edge: "... at position N"  |  Firefox: "... at line L column C ..."
+                var mPos = e.message.match(/position\s+(\d+)/i);
+                var mLC  = e.message.match(/line\s+(\d+)\s+column\s+(\d+)/i);
+
+                function lineContext(lineNum, col0) {   // col0 is 0-indexed
+                    var lines = rawText.split("\n");
+                    var line  = lines[lineNum - 1] || "";
+                    var start = Math.max(0, col0 - 40);
+                    var snip  = line.substring(start, start + 82);
+                    var caret = new Array(Math.min(col0 - start, 81) + 1).join(" ") + "^";
+                    return '<code class="val-json-ctx">' + esc(snip) + '</code>' +
+                           '<code class="val-json-caret">' + caret + '</code>' +
+                           '<small>рядок <b>' + lineNum + '</b>, символ <b>' + (col0 + 1) + '</b></small>';
+                }
+
+                if (mPos) {
+                    var pos    = parseInt(mPos[1], 10);
+                    var before = rawText.substring(0, pos);
+                    var ln     = (before.match(/\n/g) || []).length + 1;
+                    var col    = pos - before.lastIndexOf("\n") - 1;
+                    ctxHtml    = lineContext(ln, col);
+                } else if (mLC) {
+                    ctxHtml = lineContext(parseInt(mLC[1], 10), parseInt(mLC[2], 10) - 1);
+                }
+
+                if (el) {
+                    el.className  = "set-alert is-err";
+                    el.innerHTML  = '<div class="val-report"><div class="val-block val-errors">' +
+                        '<strong>🔴 Синтаксична помилка JSON — файл неможливо розпарсити:</strong><br>' +
+                        esc(e.message) + '<br>' + ctxHtml + '</div></div>';
+                }
+                return;
+            }
+
+            // ── 2. Structural / referential checks ───────────────────────────
+            var errors = [], warnings = [];
+            function err(m, h)  { errors.push({ msg: m, hint: h || "" }); }
+            function warn(m, h) { warnings.push({ msg: m, hint: h || "" }); }
+
+            var contIds = {}, countryIds = {}, regionIds = {}, cityIds = {};
+            $.each(db.continent || [], function (i, c) { contIds[c.continent_id] = true; });
+
+            $.each(db.country || [], function (i, c) {
+                if (!c.country_id) { err("Країна #" + i + " не має country_id", c.name || c.name_ua || "#" + i); return; }
+                if (countryIds[c.country_id]) { err("Дублікат country_id: «" + c.country_id + "»", '"country_id": "' + c.country_id + '"'); }
+                countryIds[c.country_id] = true;
+                if (!contIds[c.continent_id]) {
+                    err("Країна «" + (c.name_ua || c.country_id) + "» → невідомий континент «" + c.continent_id + "»",
+                        '"country_id": "' + c.country_id + '"');
+                }
+                if (!c.name_ua) { warn("Порожній name_ua у країни", '"country_id": "' + c.country_id + '"'); }
+            });
+
+            $.each(db.area || [], function (i, a) {
+                if (!a.region_id) { err("Регіон #" + i + " не має region_id", a.name || "#" + i); return; }
+                if (regionIds[a.region_id]) { err("Дублікат region_id: «" + a.region_id + "»", '"region_id": "' + a.region_id + '"'); }
+                regionIds[a.region_id] = true;
+                if (!countryIds[a.country_id]) {
+                    err("Регіон «" + a.region_id + "» → невідома країна «" + a.country_id + "»",
+                        '"region_id": "' + a.region_id + '"');
+                }
+                if (!a.name_ua) { warn("Порожній name_ua у регіону", '"region_id": "' + a.region_id + '"'); }
+            });
+
+            var emptyCityDesc = [], emptyCityNameUa = [];
+            $.each(db.city || [], function (i, c) {
+                if (!c.city_id) { err("Місто #" + i + " («" + (c.name || "?") + "») не має city_id", '"name": "' + (c.name || "") + '"'); return; }
+                if (cityIds[c.city_id]) { err("Дублікат city_id: «" + c.city_id + "»", '"city_id": "' + c.city_id + '"'); }
+                cityIds[c.city_id] = true;
+                if (!c.region_id) {
+                    err("Місто «" + c.city_id + "» не має region_id", '"city_id": "' + c.city_id + '"');
+                } else if (!regionIds[c.region_id]) {
+                    err("Місто «" + c.city_id + "» → невідомий регіон «" + c.region_id + "»",
+                        '"city_id": "' + c.city_id + '"');
+                }
+                if (!c.name_ua)    { emptyCityNameUa.push(c.city_id); }
+                if (!c.description){ emptyCityDesc.push(c.city_id); }
+            });
+
+            if (emptyCityNameUa.length) {
+                warn("Порожній name_ua у " + emptyCityNameUa.length + " міст",
+                    "перші: " + emptyCityNameUa.slice(0, 5).map(function (id) { return '"' + id + '"'; }).join(", ") +
+                    (emptyCityNameUa.length > 5 ? " та ще " + (emptyCityNameUa.length - 5) : ""));
+            }
+            if (emptyCityDesc.length) {
+                warn("Порожній опис у " + emptyCityDesc.length + " міст",
+                    "перші: " + emptyCityDesc.slice(0, 5).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
+                    (emptyCityDesc.length > 5 ? " та ще " + (emptyCityDesc.length - 5) : ""));
+            }
+
+            $.each(db.visit || [], function (i, v) {
+                if (!v.city || !v.city.length) {
+                    warn("Візит від " + (v.start_date || "?") + " не має міст",
+                        '"start_date": "' + (v.start_date || "") + '"');
+                    return;
+                }
+                $.each(v.city, function (j, cityId) {
+                    if (!cityIds[cityId]) {
+                        err("Візит від " + (v.start_date || "?") + " → невідоме місто «" + cityId + "»",
+                            '"start_date": "' + (v.start_date || "") + '"');
+                    }
+                });
+            });
+
+            // ── 3. Render ─────────────────────────────────────────────────────
+            function renderItem(item) {
+                return '<li>' + esc(item.msg) +
+                    (item.hint ? ' <code class="val-hint">' + esc(item.hint) + '</code>' : '') + '</li>';
+            }
+
+            var html = '<div class="val-report">' +
+                '<div class="val-summary">📋 Перевірено: ' +
+                '<b>' + (db.continent||[]).length + '</b> континентів, ' +
+                '<b>' + (db.country||[]).length   + '</b> країн, ' +
+                '<b>' + (db.area||[]).length       + '</b> регіонів, ' +
+                '<b>' + (db.city||[]).length       + '</b> міст, ' +
+                '<b>' + (db.visit||[]).length      + '</b> візитів.</div>';
+
+            if (errors.length) {
+                html += '<div class="val-block val-errors"><strong>🔴 Помилки (' + errors.length + '):</strong>' +
+                    '<ul>' + errors.map(renderItem).join("") + '</ul></div>';
+            }
+            if (warnings.length) {
+                html += '<div class="val-block val-warnings"><strong>🟡 Попередження (' + warnings.length + '):</strong>' +
+                    '<ul>' + warnings.map(renderItem).join("") + '</ul></div>';
+            }
+            if (!errors.length && !warnings.length) {
+                html += '<div class="val-block val-ok">✅ Помилок не знайдено — база в порядку.</div>';
+            } else if (!errors.length) {
+                html += '<div class="val-block val-ok">✅ Критичних помилок немає.</div>';
+            }
+            html += '</div>';
+
+            if (el) {
+                el.className = errors.length ? "set-alert is-err" : (warnings.length ? "set-alert is-warn" : "set-alert is-ok");
+                el.innerHTML = html;
             }
         });
-    });
-
-    // --- render report ---
-    function renderItem(item) {
-        return '<li>' + item.msg +
-            (item.hint ? ' <code class="val-hint">' + item.hint + '</code>' : '') +
-            '</li>';
-    }
-
-    var html = '<div class="val-report">';
-
-    // summary line
-    html += '<div class="val-summary">' +
-        '📋 Перевірено: ' +
-        '<b>' + data.continent.length + '</b> континентів, ' +
-        '<b>' + data.country.length  + '</b> країн, ' +
-        '<b>' + data.area.length     + '</b> регіонів, ' +
-        '<b>' + data.city.length     + '</b> міст, ' +
-        '<b>' + data.visit.length    + '</b> візитів.' +
-        '</div>';
-
-    if (errors.length) {
-        html += '<div class="val-block val-errors">' +
-            '<strong>🔴 Помилки (' + errors.length + '):</strong>' +
-            '<ul>' + errors.map(renderItem).join("") + '</ul>' +
-            '</div>';
-    }
-    if (warnings.length) {
-        html += '<div class="val-block val-warnings">' +
-            '<strong>🟡 Попередження (' + warnings.length + '):</strong>' +
-            '<ul>' + warnings.map(renderItem).join("") + '</ul>' +
-            '</div>';
-    }
-    if (!errors.length && !warnings.length) {
-        html += '<div class="val-block val-ok">✅ Помилок не знайдено — база в порядку.</div>';
-    } else if (!errors.length) {
-        html += '<div class="val-block val-ok">✅ Критичних помилок немає.</div>';
-    }
-
-    html += '</div>';
-
-    if (el) {
-        el.className = errors.length ? "set-alert is-err" : (warnings.length ? "set-alert is-warn" : "set-alert is-ok");
-        el.innerHTML = html;
-    }
 }
