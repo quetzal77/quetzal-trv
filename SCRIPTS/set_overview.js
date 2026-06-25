@@ -97,6 +97,18 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
+                                '<div class="set-option-title">Генерація globaldb.json</div>' +
+                                '<div class="set-option-desc">Завантажити актуальний стан бази даних з урахуванням усіх змін, зроблених у налаштуваннях</div>' +
+                            '</div>' +
+                            '<div class="set-option-actions">' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateGlobalDb()">Згенерувати</button>' +
+                            '</div>' +
+                        '</div>' +
+                        '<span id="globaldbGenMsg"></span>' +
+                    '</div>' +
+                    '<div class="set-option-wrap">' +
+                        '<div class="set-option">' +
+                            '<div class="set-option-info">' +
                                 '<div class="set-option-title">Автогенерація onload-сторінки</div>' +
                                 '<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>' +
                             '</div>' +
@@ -987,4 +999,82 @@ function exportToCsv() {
     w.document.write(html);
     w.document.close();
     w.focus();
+}
+
+//08.09 Generate and download DATA/globaldb.json from current in-memory data
+function generateGlobalDb() {
+    var msg = function(cls, html) {
+        var el = document.getElementById('globaldbGenMsg');
+        if (el) { el.className = 'set-alert ' + cls; el.innerHTML = html; }
+    };
+    msg('', 'Порівнюю з поточним файлом…');
+
+    $.ajax({ url: 'DATA/globaldb.json', dataType: 'text', cache: false })
+        .always(function(rawOrXhr) {
+            var existing = null;
+            if (typeof rawOrXhr === 'string') {
+                try { existing = JSON.parse(rawOrXhr); } catch(e) {}
+            }
+
+            // Per-array config: key extractor + Ukrainian plural forms [1, 2-4, 5+]
+            var ARRAYS = [
+                { key: 'continent',    fn: function(x) { return x.continent_id; },                                  forms: ['континент',  'континенти',  'континентів'] },
+                { key: 'country',      fn: function(x) { return x.country_id; },                                    forms: ['країну',     'країни',      'країн'] },
+                { key: 'area',         fn: function(x) { return x.region_id; },                                     forms: ['регіон',     'регіони',     'регіонів'] },
+                { key: 'city',         fn: function(x) { return x.city_id; },                                       forms: ['місто',      'міста',       'міст'] },
+                { key: 'visit',        fn: function(x) { return x.start_date + ' — ' + x.end_date; },          forms: ['візит',      'візити',      'візитів'] },
+                { key: 'type',         fn: function(x) { return x.type_id; },                                       forms: ['тип',        'типи',        'типів'] },
+                { key: 'country_type', fn: function(x) { return x.country_type_id; },                               forms: ['тип країни', 'типи країн',  'типів країн'] }
+            ];
+
+            function plural(n, forms) {
+                var last = n % 10, two = n % 100;
+                if (two >= 11 && two <= 14) { return n + ' ' + forms[2]; }
+                if (last === 1)             { return n + ' ' + forms[0]; }
+                if (last >= 2 && last <= 4) { return n + ' ' + forms[1]; }
+                return n + ' ' + forms[2];
+            }
+
+            var diffLines = [];
+            if (existing) {
+                $.each(ARRAYS, function(i, cfg) {
+                    var newArr = data[cfg.key] || [];
+                    var oldArr = existing[cfg.key] || [];
+                    var oldMap = {}, newMap = {};
+                    $.each(oldArr, function(j, x) { oldMap[cfg.fn(x)] = JSON.stringify(x); });
+                    $.each(newArr, function(j, x) { newMap[cfg.fn(x)] = JSON.stringify(x); });
+
+                    var added = [], removed = [], changed = [];
+                    $.each(newArr, function(j, x) {
+                        var k = cfg.fn(x);
+                        if (!oldMap[k])                          { added.push(k); }
+                        else if (oldMap[k] !== JSON.stringify(x)){ changed.push(k); }
+                    });
+                    $.each(oldArr, function(j, x) {
+                        if (!newMap[cfg.fn(x)]) { removed.push(cfg.fn(x)); }
+                    });
+
+                    var MAX = 6;
+                    function clip(arr) { return arr.slice(0, MAX).join(', ') + (arr.length > MAX ? '…' : ''); }
+                    if (added.length)   { diffLines.push('&#10133; Додано '  + plural(added.length,   cfg.forms) + ': <b>' + clip(added)   + '</b>'); }
+                    if (removed.length) { diffLines.push('&#10134; Видалено ' + plural(removed.length, cfg.forms) + ': <b>' + clip(removed) + '</b>'); }
+                    if (changed.length) { diffLines.push('&#9998; Змінено '  + plural(changed.length, cfg.forms) + ': <b>' + clip(changed) + '</b>'); }
+                });
+            }
+
+            // Serialize: 2-space indent, CRLF line endings (same as source file)
+            var json = JSON.stringify(data, null, 2);
+            var crlf = json.replace(/\r\n|\r|\n/g, '\r\n');
+
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(new Blob([crlf], { type: 'application/json;charset=utf-8' }));
+            a.download = 'globaldb.json';
+            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+
+            var head = 'Завантажено <b>globaldb.json</b> — замініть файл <code>DATA/globaldb.json</code>.';
+            var body = !existing    ? 'Порівняння недоступне.' :
+                       !diffLines.length ? '&#10003; Змін не виявлено — стан бази ідентичний файлу на диску.' :
+                       diffLines.join('<br>');
+            msg('is-ok', head + '<br>' + body);
+        });
 }
