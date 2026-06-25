@@ -540,13 +540,13 @@ function validateTravelDb() {
 
             if (emptyCityNameUa.length) {
                 warn("Порожній name_ua у " + emptyCityNameUa.length + " міст",
-                    "перші: " + emptyCityNameUa.slice(0, 5).map(function (id) { return '"' + id + '"'; }).join(", ") +
-                    (emptyCityNameUa.length > 5 ? " та ще " + (emptyCityNameUa.length - 5) : ""));
+                    emptyCityNameUa.slice(0, 10).map(function (id) { return '"' + id + '"'; }).join(", ") +
+                    (emptyCityNameUa.length > 10 ? ", ..." : ""));
             }
             if (emptyCityDesc.length) {
                 warn("Порожній опис у " + emptyCityDesc.length + " міст",
-                    "перші: " + emptyCityDesc.slice(0, 5).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
-                    (emptyCityDesc.length > 5 ? " та ще " + (emptyCityDesc.length - 5) : ""));
+                    emptyCityDesc.slice(0, 10).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
+                    (emptyCityDesc.length > 10 ? ", ..." : ""));
             }
 
             $.each(db.visit || [], function (i, v) {

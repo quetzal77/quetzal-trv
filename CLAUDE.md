@@ -1,7 +1,7 @@
 # quetzal-trv — Project Brief for Claude
 
 Personal travel portfolio SPA by Oleksiy Slavutskyy. No backend, no build step.
-Current version: **9.1.32** (branch `site_version_9_0`).
+Current version: **9.1.33** (branch `site_version_9_0`).
 
 ---
 
