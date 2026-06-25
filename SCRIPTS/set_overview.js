@@ -1020,7 +1020,7 @@ function generateGlobalDb() {
             var ARRAYS = [
                 { key: 'continent',    fn: function(x) { return x.continent_id; },                                  forms: ['континент',  'континенти',  'континентів'] },
                 { key: 'country',      fn: function(x) { return x.country_id; },                                    forms: ['країну',     'країни',      'країн'] },
-                { key: 'area',         fn: function(x) { return x.region_id; },                                     forms: ['регіон',     'регіони',     'регіонів'] },
+                { key: 'area',         fn: function(x) { return x.country_id + ':' + x.region_id; },             forms: ['регіон',     'регіони',     'регіонів'] },
                 { key: 'city',         fn: function(x) { return x.city_id; },                                       forms: ['місто',      'міста',       'міст'] },
                 { key: 'visit',        fn: function(x) { return x.start_date + ' — ' + x.end_date; },          forms: ['візит',      'візити',      'візитів'] },
                 { key: 'type',         fn: function(x) { return x.type_id; },                                       forms: ['тип',        'типи',        'типів'] },
