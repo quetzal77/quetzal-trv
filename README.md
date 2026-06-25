@@ -118,7 +118,6 @@ Planned improvements. How to use: `- [ ]` — planned, `- [x]` — top priority.
 at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### UI / UX
-- [ ] Mobile web view testing / Compatibility / Chrome, Edge, Safari, AdnroidDefaultBrowser
 - [ ] Add second language to portal - English
 
 ### Data / content

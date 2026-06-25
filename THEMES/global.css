@@ -349,6 +349,12 @@ a.back2top{bottom:20px; display:none}
   .footer-copy{margin-left:0}
   .symbolics-row{gap:24px}
   .symbolics-row img{height:96px}
+  .navbar-inverse .navbar-brand{font-size:14px}
+  .navbar-brand .navbar-logo{width:32px; height:32px; margin-right:6px}
+}
+@media (max-width:420px){
+  .navbar-inverse .navbar-brand{font-size:12px}
+  .navbar-brand .navbar-logo{width:26px; height:26px; margin-right:5px}
 }
 
 /* SETTINGS PAGE ----------------------------------------------- */

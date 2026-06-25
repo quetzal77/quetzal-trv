@@ -328,6 +328,8 @@ function runMultipleSelectWidget() {
         filter_case: false,
         filter_selected: false
     });
+    // fcbkcomplete fires change on the underlying select when a city is added/removed
+    $("#select3").on('change', function() { setVisitFormDirty(); });
 }
 
 //15.11 Run DatePicker widget
