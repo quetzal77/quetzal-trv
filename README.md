@@ -125,7 +125,5 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 - [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation
 
 ### Technical
-- [ ] Add Login for settings
-- [ ] Enable all changes fpr entites in Settings space
 - [ ] Update AMmap library to the latest version
 ```

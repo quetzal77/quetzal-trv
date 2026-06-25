@@ -97,7 +97,7 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
-                                '<div class="set-option-title">Генерація globaldb.json</div>' +
+                                '<div class="set-option-title">Автогенерація globaldb.json</div>' +
                                 '<div class="set-option-desc">Завантажити актуальний стан бази даних з урахуванням усіх змін, зроблених у налаштуваннях</div>' +
                             '</div>' +
                             '<div class="set-option-actions">' +
@@ -1040,25 +1040,18 @@ function generateGlobalDb() {
                 $.each(ARRAYS, function(i, cfg) {
                     var newArr = data[cfg.key] || [];
                     var oldArr = existing[cfg.key] || [];
-                    var oldMap = {}, newMap = {};
-                    $.each(oldArr, function(j, x) { oldMap[cfg.fn(x)] = JSON.stringify(x); });
-                    $.each(newArr, function(j, x) { newMap[cfg.fn(x)] = JSON.stringify(x); });
+                    var oldKeys = {}, newKeys = {};
+                    $.each(oldArr, function(j, x) { oldKeys[cfg.fn(x)] = true; });
+                    $.each(newArr, function(j, x) { newKeys[cfg.fn(x)] = true; });
 
-                    var added = [], removed = [], changed = [];
-                    $.each(newArr, function(j, x) {
-                        var k = cfg.fn(x);
-                        if (!oldMap[k])                          { added.push(k); }
-                        else if (oldMap[k] !== JSON.stringify(x)){ changed.push(k); }
-                    });
-                    $.each(oldArr, function(j, x) {
-                        if (!newMap[cfg.fn(x)]) { removed.push(cfg.fn(x)); }
-                    });
+                    var added = [], removed = [];
+                    $.each(newArr, function(j, x) { if (!oldKeys[cfg.fn(x)]) { added.push(cfg.fn(x)); } });
+                    $.each(oldArr, function(j, x) { if (!newKeys[cfg.fn(x)]) { removed.push(cfg.fn(x)); } });
 
                     var MAX = 6;
                     function clip(arr) { return arr.slice(0, MAX).join(', ') + (arr.length > MAX ? '…' : ''); }
-                    if (added.length)   { diffLines.push('&#10133; Додано '  + plural(added.length,   cfg.forms) + ': <b>' + clip(added)   + '</b>'); }
+                    if (added.length)   { diffLines.push('&#10133; Додано '   + plural(added.length,   cfg.forms) + ': <b>' + clip(added)   + '</b>'); }
                     if (removed.length) { diffLines.push('&#10134; Видалено ' + plural(removed.length, cfg.forms) + ': <b>' + clip(removed) + '</b>'); }
-                    if (changed.length) { diffLines.push('&#9998; Змінено '  + plural(changed.length, cfg.forms) + ': <b>' + clip(changed) + '</b>'); }
                 });
             }
 
