@@ -33,17 +33,19 @@ The version string appears three times (fonts.css, bcd_onload.js, global.css), a
 Increment the **last** number: `9.1.27` → `9.1.28`.  
 If the user explicitly requests a minor bump, increment the middle number and reset patch to 0: `9.1.27` → `9.2.0`.
 
-Replace all three occurrences in `index.html`:
+Replace all three occurrences in `index.html` **and** the one occurrence in `CLAUDE.md`:
 ```
 sed -i 's/?v=9\.1\.27/?v=9.1.28/g' index.html
+sed -i 's/\*\*9\.1\.27\*\*/\*\*9.1.28\*\*/g' CLAUDE.md
 ```
 (adjust the numbers to match what you read in step 2)
 
 Confirm after:
 ```
 grep "?v=" index.html
+grep "Current version" CLAUDE.md
 ```
-All three lines must show the new version.
+All three `index.html` lines and the `CLAUDE.md` line must show the new version.
 
 ## 4. Stage everything
 
