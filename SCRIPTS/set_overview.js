@@ -370,7 +370,7 @@ function generateOnloadJson() {
         var visitedContinents = [];
         $.each(data.continent, function (i, cont) {
             if (visitedContIds[cont.continent_id]) {
-                visitedContinents.push({ continent_id: cont.continent_id, name_ua: cont.name_ua });
+                visitedContinents.push({ continent_id: cont.continent_id, name_ua: cont.name_ua, name: cont.name });
             }
         });
         visitedContinents.sort(function (a, b) {

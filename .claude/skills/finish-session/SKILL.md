@@ -11,6 +11,20 @@ description: >
 
 Wraps up the current work session: version bump → commit → push.
 
+## 0. Get approval FIRST — mandatory step
+
+Before doing anything else, run `git status` and `git diff --stat` to understand what changed, then **show the user a summary** and ask for explicit approval:
+
+> Готово до фіналізації:
+> - нова версія: **X.Y.Z**
+> - змінені файли: …
+> - повідомлення коміту: «…»
+>
+> Підтверджуєш?
+
+**Do not proceed to steps 1–6 until the user replies with confirmation** (e.g. "так", "yes", "ок", "давай", thumbs up).  
+If the user says no or asks for changes — adjust and ask again.
+
 ## 1. Check what changed
 
 ```

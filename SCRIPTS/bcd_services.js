@@ -165,43 +165,35 @@ function parseWord (word, end1, end234, endrest, number){
 
 //02.06 Return Ukrainian word "country" with correct end
 function setCountriesNumberWithCorrectEnd (number, bold) {
-    var wordBody = "країн";
-    var end1 = "а";
-    var end234 = "и";
-    var endrest = "";
-    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord (wordBody, end1, end234, endrest, number);
+    if (window.LANG === 'en') { return (bold ? "<b>" + number + "</b>" : number) + " " + t('countCountries'); }
+    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord ("країн", "а", "и", "", number);
 }
 
-//02.07 Return Ukrainian word "location" with correct end
+//02.07 Return word "location" with correct end
 function setLocationNumberWithCorrectEnd (number, bold) {
-    var wordBody = "локаці";
-    var end1 = "я";
-    var end234 = "ї";
-    var endrest = "й";
-    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord (wordBody, end1, end234, endrest, number);
+    if (window.LANG === 'en') { return (bold ? "<b>" + number + "</b>" : number) + " " + t('countLocations'); }
+    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord ("локаці", "я", "ї", "й", number);
 }
 
-//02.08 Return Ukrainian word "region" with correct end
+//02.08 Return word "region" with correct end
 function setRegionsNumberWithCorrectEnd (number) {
-    var word = "регіон";
-    var end1 = "";
-    var end234 = "а";
-    var endrest = "ів";
-    return number + " " + parseWord  (word, end1, end234, endrest, number);
+    if (window.LANG === 'en') { return number + " " + t('countRegions'); }
+    return number + " " + parseWord ("регіон", "", "а", "ів", number);
 }
 
-//02.08a Return Ukrainian word "visit" with correct end
+//02.08a Return word "visit" with correct end
 function setVisitsNumberWithCorrectEnd (number) {
-    var word = "поїздк";
-    var end1 = "а";
-    var end234 = "и";
-    var endrest = "ок";
-    return number + " " + parseWord (word, end1, end234, endrest, number);
+    if (window.LANG === 'en') { return number + " " + t('countTrips'); }
+    return number + " " + parseWord ("поїздк", "а", "и", "ок", number);
 }
 
-//02.09 Return Ukrainian month name
+//02.09 Return month name in current language
 function getUaMonthName (number) {
-    var monthSList = {1: "січня", 2: "лютого", 3: "березня", 4: "квітня", 5: "травня", 6: "червня", 7: "липня", 8: "серпня", 9: "вересня", 10: "жовтня", 11: "листопада", 12: "грудня"};
+    if (window.LANG === 'en') {
+        var en = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"};
+        return en[number];
+    }
+    var monthSList = {1:"січня",2:"лютого",3:"березня",4:"квітня",5:"травня",6:"червня",7:"липня",8:"серпня",9:"вересня",10:"жовтня",11:"листопада",12:"грудня"};
     return monthSList[number];
 }
 
@@ -434,7 +426,7 @@ function navSearch (query) {
     };
     var row = function (label, type, id) {
         html += "<li><a onclick=\"javascript:navSearchGo('" + type + "','" + id + "')\" style='cursor:pointer'>" +
-                "<span>" + label + "</span><span class='ns-type'>" + (type === "country" ? "країна" : "локація") + "</span></a></li>";
+                "<span>" + label + "</span><span class='ns-type'>" + (type === "country" ? t('typeCountry') : t('typeLocation')) + "</span></a></li>";
         count++;
     };
 

@@ -110,17 +110,14 @@ function populateContent(callback) {
                       return this.name_nt ? (this.name + ' - ' + this.name_nt) : (this.name || this.name_ua || '');
                   }
                   var result;
-                  if (this.name_nt == "") {
-                       result = this.name_ua + " - " + this.name;
+                  if (!this.name_ua) {
+                       result = this.name_nt || this.name;
                   }
-                  else if (this.name_ua == "") {
-                       result = this.name_nt + " - " + this.name;
-                  }
-                  else if (this.name == "") {
-                       result = this.name_ua + " - " + this.name_nt;
+                  else if (!this.name_nt) {
+                       result = this.name_ua;
                   }
                   else {
-                       result = this.name_ua + " - " + this.name_nt + " - " + this.name;
+                       result = this.name_ua + " - " + this.name_nt;
                   }
                   return result;
                }
@@ -235,17 +232,14 @@ function populateContent(callback) {
                        return (this.name_nt && this.name_nt !== '') ? (this.name + ' - ' + this.name_nt) : (this.name || this.name_ua || '');
                    }
                    var result;
-                   if (this.name_nt == "" || this.name_nt == undefined) {
-                        result = this.name_ua + " - " + this.name;
+                   if (!this.name_ua || this.name_ua == undefined) {
+                        result = this.name_nt || this.name;
                    }
-                   else if (this.name_ua == "" || this.name_ua == undefined) {
-                        result = this.name_nt + " - " + this.name;
-                   }
-                   else if (this.name == "" || this.name == undefined) {
-                        result = this.name_ua + " - " + this.name_nt;
+                   else if (!this.name_nt || this.name_nt == undefined) {
+                        result = this.name_ua;
                    }
                    else {
-                        result = this.name_ua + " - " + this.name_nt + " - " + this.name;
+                        result = this.name_ua + " - " + this.name_nt;
                    }
                    return result;
                }

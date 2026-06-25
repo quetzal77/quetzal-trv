@@ -2,19 +2,23 @@
   "continent": [
     {
       "continent_id": "AS",
-      "name_ua": "Азія"
+      "name_ua": "Азія",
+      "name": "Asia"
     },
     {
       "continent_id": "AF",
-      "name_ua": "Африка"
+      "name_ua": "Африка",
+      "name": "Africa"
     },
     {
       "continent_id": "EU",
-      "name_ua": "Європа"
+      "name_ua": "Європа",
+      "name": "Europe"
     },
     {
       "continent_id": "NA",
-      "name_ua": "Північна Америка"
+      "name_ua": "Північна Америка",
+      "name": "North America"
     }
   ],
   "country": [
@@ -355,7 +359,7 @@
       "small_flag_img": "-469px -741px",
       "name_full": "Придністровья - Нистрения - Transnistria"
     },
-	    {
+    {
       "country_id": "PR",
       "continent_id": "NA",
       "short_name": "puertorico",

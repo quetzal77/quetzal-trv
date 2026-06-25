@@ -11,7 +11,7 @@ function createCityPage_HTML(cityId) {
     // Set url
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?cityId="+cityId); }
-    setPageMeta(city[0].name_ua, "index.html?cityId=" + cityId);
+    setPageMeta(entityName(city[0]), "index.html?cityId=" + cityId);
 
     //Add Country main content
     document.getElementById("mainSection").innerHTML = "<div class='countrylabel h3'>" + local[1].setFullCityName() + "</div>" +

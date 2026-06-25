@@ -119,6 +119,7 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### UI / UX
 - [ ] Add second language to portal - English
+- [ ] Settings - Visit - add time spent in city as value
 
 ### Data / content
 - [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation

@@ -16,9 +16,9 @@ function createWorldPage_HTML () {
     document.getElementById("mainSection").innerHTML =
         "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
         "<div id='countryToVisitSelector'>" +
-		    "<div class='switchlink_l'>Мої країни...</div>" +
-            "<div class='switchlink'><a title='Перейти до списку візитів' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
-            "<span class='totalstat'>Усього: " + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
+            "<div class='switchlink_l'>" + t('myCountriesDots') + "</div>" +
+            "<div class='switchlink'><a title='" + t('goToVisits') + "' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+            "<span class='totalstat'>" + t('total') + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
             createWorldPageFrontView() + "</div>";
 
     //Creation of world map
@@ -50,18 +50,18 @@ function createWorldPageFrontView() {
             if (country.continent_id == cont.continent_id || country.continent_id2 == cont.continent_id) {
                 countriesPerContinentNumber += 1;
 
-                listOfCountries += "<a id='" + country.short_name + "' continent_id='" + cont.continent_id + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                listOfCountries += "<a id='" + country.short_name + "' continent_id='" + cont.continent_id + "' title='" + t('goToCountry') + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
                 "<img src='IMG/icon/x.gif' title='" + country.name_full + "' class='countflag' style='background-position:" + country.small_flag_img + "' /></a>";
             }
         });
         var totalCountries = continentTotalCountries[cont.continent_id];
         var countriesHtml = (totalCountries > 0)
-            ? "<b>" + countriesPerContinentNumber + "</b> з <b>" + totalCountries + "</b> країн"
+            ? "<b>" + countriesPerContinentNumber + "</b> " + t('of') + " <b>" + totalCountries + "</b> " + t('countries')
             : setCountriesNumberWithCorrectEnd(countriesPerContinentNumber, true);
         var progressHtml = (totalCountries > 0)
             ? "<div class='cont-progress'><span style='width:" + Math.min(100, Math.round(countriesPerContinentNumber / totalCountries * 100)) + "%'></span></div>"
             : "";
-        result += "<div class='my_countries'><div><b>" + cont.name_ua + ":</b> " + countriesHtml + progressHtml + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
+        result += "<div class='my_countries'><div><b>" + entityName(cont) + ":</b> " + countriesHtml + progressHtml + "<span id='citiesNumberPerContinent" + cont.continent_id + "'></span>" +
                   "</div>" + listOfCountries + "</div>";
     });
     result += createWorldMap_HTML(countries);
@@ -82,17 +82,17 @@ function createWorldMap_HTML(countries) {
 //04.04 World page with list of Visits
 function OpenListOfWorldVisits() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'><a title='Перейти до списку країн' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>Мої країни</a></div>" +
-        "<div class='switchlink'>Мої візити...</div>" +
+        "<div class='switchlink_l'><a title='" + t('goToCountries') + "' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>" + t('myCountries') + "</a></div>" +
+        "<div class='switchlink'>" + t('myVisitsDots') + "</div>" +
         createListOfVisites();
 }
 
 //04.05 World page with list of Countries
 function OpenListOfWorldCountries() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'>Мої країни...</div>" +
-        "<div class='switchlink'><a title='Перейти до списку візитів' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
-        "<span class='totalstat'>Усього: " + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
+        "<div class='switchlink_l'>" + t('myCountriesDots') + "</div>" +
+        "<div class='switchlink'><a title='" + t('goToVisits') + "' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+        "<span class='totalstat'>" + t('total') + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
         createWorldPageFrontView();
 
      //Calculate number of location visited and add them to front page

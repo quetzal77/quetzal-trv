@@ -5,6 +5,16 @@
     var initial_data;  // Store initial information for creation of home page
     var local; // Store variable that describe which country have to be opened and drawn on a map
     window.skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
+    window.LANG = localStorage.getItem('lang') || 'uk';
+    window.entityName = function(entity) {
+        if (!entity) { return ''; }
+        return (window.LANG === 'en') ? (entity.name || entity.name_ua || '') : (entity.name_ua || entity.name || '');
+    };
+    window.t = function(key) { return (i18n[window.LANG] || i18n.uk)[key] || key; };
+    window.toggleLang = function() {
+        localStorage.setItem('lang', window.LANG === 'uk' ? 'en' : 'uk');
+        location.reload();
+    };
 
 //00.01b PAGE METADATA — keep <title>, canonical link and OG/Twitter tags in sync with the current page
     window.SITE_URL = "https://quetzal.epizy.com/";
@@ -26,6 +36,7 @@
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
     window.onload = function() {$.getJSON( "DATA/onload.json", processMyJson)};
+    applyNavFooterTranslations();
 // When the user scrolls down from the top of the document, show the button
     window.onscroll = function() {scrollFunction()};
 // Browser Back/Forward: re-render the page for the current URL without pushing a new entry
@@ -57,9 +68,29 @@
         $.getScript("SCRIPTS/bcd_services.js", function(){ getWorldPage(headerMenu); });
     }
 
+    function applyNavFooterTranslations() {
+        var q = function(sel) { return document.querySelector(sel); };
+        var el;
+        // Navbar links
+        el = q('#navHome a');        if (el) { el.textContent = t('home'); }
+        el = q('#navStats a');       if (el) { el.textContent = t('statistics'); }
+        el = q('#navStories > a');   if (el) { el.innerHTML = t('stories') + ' <span class="caret"></span>'; }
+        el = q('.navbar-brand .brand-text'); if (el) { el.textContent = t('brandName'); }
+        el = document.getElementById('navSearch'); if (el) { el.placeholder = t('searchPlaceholder'); }
+        el = q('#navSettings a');    if (el) { el.setAttribute('title', t('settings')); el.setAttribute('aria-label', t('settings')); }
+        // Footer links
+        var footerKeys = ['home', 'statistics', 'about', 'settings'];
+        var links = document.querySelectorAll('.footer-links a');
+        for (var i = 0; i < links.length; i++) { if (footerKeys[i]) { links[i].textContent = t(footerKeys[i]); } }
+        // Back to top
+        el = document.getElementById('back'); if (el) { el.textContent = t('backToTop'); }
+        // Lang toggle label
+        el = document.getElementById('langToggle'); if (el) { el.textContent = window.LANG === 'en' ? 'EN' : 'UA'; }
+    }
+
     var headerMenu = function populateHeaderMenu(){
-        //Creation of Story Selector
         document.getElementById("ContentBody_StoryList").innerHTML = getSelectorOfListOfStories_HTML();
+        applyNavFooterTranslations();
     }
 
     function getWorldPage( callback ){

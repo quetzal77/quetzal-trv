@@ -117,7 +117,7 @@ function statsBlockRecords_HTML() {
     var topLocCountry = "", topLocShort = "", topLocCount = 0;
     $.each (countriesVisited, function( i, c ){
         var n = c.getNumberOfVisitedCities();
-        if (n > topLocCount) { topLocCount = n; topLocCountry = c.name_ua; topLocShort = c.short_name; }
+        if (n > topLocCount) { topLocCount = n; topLocCountry = entityName(c); topLocShort = c.short_name; }
     });
     var topLocTrips = 0;
     $.each (visitsSorted, function( i, v ){
@@ -173,7 +173,7 @@ function statsBlockDonuts_HTML() {
         $.each (countriesVisited, function( j, c ){
             if (c.continent_id == cont.continent_id) { n += 1; }
         });
-        if (n > 0) { contSegs.push({ label: cont.name_ua, value: n, color: contColors[cont.continent_id] || "#94a3b8" }); }
+        if (n > 0) { contSegs.push({ label: entityName(cont), value: n, color: contColors[cont.continent_id] || "#94a3b8" }); }
     });
 
     //2 — countries by type (list the countries for every type except "1" = визнана)
@@ -182,10 +182,10 @@ function statsBlockDonuts_HTML() {
     $.each (data.country_type, function( i, t ){
         var names = [];
         $.each (countriesVisited, function( j, c ){
-            if (c.country_type_id == t.country_type_id) { names.push(c.name_ua); }
+            if (c.country_type_id == t.country_type_id) { names.push(entityName(c)); }
         });
         if (names.length > 0) {
-            var seg = { label: t.name_ua, value: names.length, color: typeColors[t.country_type_id] || "#94a3b8" };
+            var seg = { label: entityName(t), value: names.length, color: typeColors[t.country_type_id] || "#94a3b8" };
             if (t.country_type_id != "1") { seg.names = names; }
             typeSegs.push(seg);
         }
@@ -434,7 +434,7 @@ function statsBlockTop_HTML() {
     $.each (countriesVisited, function( i, c ){
         var total = 0;
         $.each (data.area, function( k, a ){ if (a.country_id == c.country_id && a.active != "N") { total += 1; } });
-        regionRows.push({ name: c.name_ua, value: c.getNumberOfVisitedRegions(), total: total });
+        regionRows.push({ name: entityName(c), value: c.getNumberOfVisitedRegions(), total: total });
     });
     regionRows.sort(function( a, b ){ return b.value - a.value; });
 
@@ -451,7 +451,7 @@ function statsBlockTop_HTML() {
         if (!capCountries[c.short_name]) { return; }
         var visitedReg = c.getNumberOfVisitedRegions(), totalReg = 0;
         $.each (data.area, function( k, a ){ if (a.country_id == c.country_id && a.active != "N") { totalReg += 1; } });
-        if (totalReg > 0 && visitedReg >= totalReg) { comboRows.push({ name: c.name_ua, value: visitedReg }); }
+        if (totalReg > 0 && visitedReg >= totalReg) { comboRows.push({ name: entityName(c), value: visitedReg }); }
     });
     comboRows.sort(function( a, b ){ return b.value - a.value; });
 

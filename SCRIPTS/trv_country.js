@@ -13,7 +13,7 @@ function createCountryPage_HTML(countryId) {
     // Set url
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?country="+countryId); }
-    setPageMeta(country[0].name_ua, "index.html?country=" + countryId);
+    setPageMeta(entityName(country[0]), "index.html?country=" + countryId);
 
     var typeName = getCountryTypeName(local[1].country_type_id);
     var typeHtml = typeName ? "<div class='country-type'><span>" + getCountryTypeIcon(local[1].country_type_id) + " " + typeName + "</span></div>" : "";
@@ -118,7 +118,7 @@ function getCountryDetails_HTML() {
     if (!country.city_state){
         $.each (citiesVisited, function( j, city ){
             if (city.getCountryId() == country.short_name) {
-                techinfo_2 += city.name_ua + "," + city.lat + "," + city.long + ";"
+                techinfo_2 += entityName(city) + "," + city.lat + "," + city.long + ";"
             }
         });
     }
@@ -171,7 +171,7 @@ function getCitiesAndRegionsList_HTML () {
         var links = "";
         $.each (citiesVisited, function( i, city ){
             if (city.getCountryId() == country.short_name) {
-                links += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + city.name_ua + "</a>, ";
+                links += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(city) + "</a>, ";
             }
         });
         return "<div class='countrydetail'><span class='cs-badge'>🏙️ Місто-держава</span></div>" +
@@ -188,7 +188,7 @@ function getCitiesAndRegionsList_HTML () {
             $.each (citiesVisited, function( i, city ){
                     if (region.region_id == city.region_id) {
                         ListOfLocations += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
-                                           " onmouseover='' style='cursor: pointer;'>" + city.name_ua + "</a>, ";
+                                           " onmouseover='' style='cursor: pointer;'>" + entityName(city) + "</a>, ";
                     }
 
                 });
