@@ -47,10 +47,11 @@ The version string appears three times (fonts.css, bcd_onload.js, global.css), a
 Increment the **last** number: `9.1.27` → `9.1.28`.  
 If the user explicitly requests a minor bump, increment the middle number and reset patch to 0: `9.1.27` → `9.2.0`.
 
-Replace all three occurrences in `index.html` **and** the one occurrence in `CLAUDE.md`:
+Replace all three occurrences in `index.html`, the one occurrence in `CLAUDE.md`, and the version tag in `SCRIPTS/bcd_services.js`:
 ```
 sed -i 's/?v=9\.1\.27/?v=9.1.28/g' index.html
 sed -i 's/\*\*9\.1\.27\*\*/\*\*9.1.28\*\*/g' CLAUDE.md
+sed -i "s/tech-tag'>v[0-9]\+\.[0-9]\+\.[0-9]\+</tech-tag'>v9.1.28</" SCRIPTS/bcd_services.js
 ```
 (adjust the numbers to match what you read in step 2)
 
@@ -58,8 +59,9 @@ Confirm after:
 ```
 grep "?v=" index.html
 grep "Current version" CLAUDE.md
+grep "tech-tag.*v[0-9]" SCRIPTS/bcd_services.js
 ```
-All three `index.html` lines and the `CLAUDE.md` line must show the new version.
+All three `index.html` lines, the `CLAUDE.md` line, and the `bcd_services.js` tech tag must show the new version.
 
 ## 4. Stage everything
 

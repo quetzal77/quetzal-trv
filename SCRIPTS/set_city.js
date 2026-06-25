@@ -8,7 +8,7 @@ function createSettingsCityTab_HTML() {
     local[1] = "city";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("cities").setAttribute("class", "active")
 
     var options = '';

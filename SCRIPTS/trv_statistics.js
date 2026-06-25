@@ -109,7 +109,7 @@ function statsBlockRecords_HTML() {
         var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
         if (days > longestDays) { longestDays = days; longestVisit = v; }
     });
-    var longestCountry = (longestVisit && longestVisit.cities.length) ? getUaCountryName(longestVisit.cities[0].country_id) : "";
+    var longestCountry = (longestVisit && longestVisit.cities.length) ? getCountryName(longestVisit.cities[0].country_id) : "";
     var longestSub = [longestCountry, longestVisit ? longestVisit.start_date.getFullYear() : ""]
                      .filter(function(s){ return s !== "" && s !== undefined; }).join(", ");
 
@@ -151,8 +151,8 @@ function statsRecCard(emo, label, value, sub) {
 //09.06 "City, Country" label of a visit's first location
 function statsCityCountry(visit) {
     if (!visit.cities.length) { return ""; }
-    var city = getUaLocationName(visit.cities[0].city_id);
-    var country = getUaCountryName(visit.cities[0].country_id);
+    var city = getLocationName(visit.cities[0].city_id);
+    var country = getCountryName(visit.cities[0].country_id);
     return [city, country].filter(function(s){ return s; }).join(", ");
 }
 
@@ -323,7 +323,7 @@ function statsBlockTrends_HTML() {
     $.each (newYears, function( i, yr ){
         var shorts = newByYear[yr];
         series2.push({ year: yr, value: shorts.length });
-        var names = $.map(shorts, function( sh ){ return getUaCountryName(sh) || sh; });
+        var names = $.map(shorts, function( sh ){ return getCountryName(sh) || sh; });
         tips2.push(yr + ": " + names.join(", "));
     });
 
@@ -440,7 +440,7 @@ function statsBlockTop_HTML() {
 
     //Top cities by number of visits (full, sorted)
     var cityRows = [];
-    for (var cid in cityVisits) { cityRows.push({ name: getUaLocationName(cid) || cid, value: cityVisits[cid] }); }
+    for (var cid in cityVisits) { cityRows.push({ name: getLocationName(cid) || cid, value: cityVisits[cid] }); }
     cityRows.sort(function( a, b ){ return b.value - a.value; });
 
     //Golden combo — countries where the capital and ALL active regions are visited (full, sorted)
@@ -473,7 +473,7 @@ function statsBlockTop_HTML() {
 //09.15 Build full sorted rows {name, value} from a {short_name: value} map (Ukrainian country names)
 function statsSortRows(map) {
     var arr = [];
-    for (var s in map) { arr.push({ name: getUaCountryName(s) || s, value: map[s] }); }
+    for (var s in map) { arr.push({ name: getCountryName(s) || s, value: map[s] }); }
     arr.sort(function( a, b ){ return b.value - a.value; });
     return arr;
 }

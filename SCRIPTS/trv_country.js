@@ -24,8 +24,8 @@ function createCountryPage_HTML(countryId) {
     typeHtml +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
-    "<div class='switchlink_l'>Мої локації...</div>" +
-    "<div class='switchlink'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+    "<div class='switchlink_l'>" + t('myLocationsDots') + "</div>" +
+    "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToVisits') + "' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
     getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(country[0]);
 
@@ -52,15 +52,15 @@ function getCountryDetails_HTML() {
         if (area.country_id == country.country_id && area.active != "N") { totalRegions += 1; }
     });
     var regionsHtml = (totalRegions > 0)
-        ? "<b>" + visitedRegions + "</b> з <b>" + totalRegions + "</b> регіонів"
+        ? "<b>" + visitedRegions + "</b> " + t('of') + " <b>" + totalRegions + "</b> " + t('wordRegions')
         : setRegionsNumberWithCorrectEnd(visitedRegions);
     var regionsBar = (totalRegions > 0)
         ? "<div class='cont-progress'><span style='width:" + Math.min(100, Math.round(visitedRegions / totalRegions * 100)) + "%'></span></div>"
         : "";
     var allRegionsTrophy = (totalRegions > 0 && visitedRegions >= totalRegions)
-        ? " <span class='regions-trophy' title='Усі регіони відвідано!'>🏆</span>"
+        ? " <span class='regions-trophy' title='" + t('allRegionsVisited') + "'>🏆</span>"
         : "";
-    result += "<div class='countrydetail'><b>Усього відвідано:</b> " +
+    result += "<div class='countrydetail'><b>" + t('totalVisited') + "</b> " +
               setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities(), true) +
               " · " + regionsHtml + regionsBar + allRegionsTrophy + "</div>";
 
@@ -95,7 +95,7 @@ function getCountryDetails_HTML() {
         //03. Link of photos
         if (visit.photos != "" && visit.photos != null && visit.photos != undefined){
             $.each (visit.cities, function( i, city ){
-                    citiesShownInPhotoAlbum += (city.country_id == country.short_name) ? getUaLocationName(city.city_id) + ", " : "" ;
+                    citiesShownInPhotoAlbum += (city.country_id == country.short_name) ? getLocationName(city.city_id) + ", " : "" ;
             });
 
             photoAlbumLinks += (citiesShownInPhotoAlbum != "") ? "<a href='" + visit.photos + "' title='" + citiesShownInPhotoAlbum.substring(0, citiesShownInPhotoAlbum.length-2) +
@@ -103,9 +103,9 @@ function getCountryDetails_HTML() {
         }
     });
 
-    result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>Звіти:</b> " + ListOfStories + "</div>" : "";
+    result += (ListOfStories.length > 0) ? "<div class='countrydetail'><b>" + t('reports') + "</b> " + ListOfStories + "</div>" : "";
 
-    result += (photoAlbumLinks.length > 0) ? "<div class='countrydetail'><b>Фото:</b> " + photoAlbumLinks + "</div>" : "";
+    result += (photoAlbumLinks.length > 0) ? "<div class='countrydetail'><b>" + t('photos') + "</b> " + photoAlbumLinks + "</div>" : "";
 
     //04. Link to technical information
     var techinfo_1 = "";
@@ -134,31 +134,31 @@ function getFlagEmblem_HTML(country) {
     var images = "";
 
     if (country.flag_img != "" && country.flag_img != undefined ){
-        images += "<span class='flag-wrap'><img alt='Прапор " + country.short_name + "' title='Прапор' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' loading='lazy' decoding='async' /></span>";
+        images += "<span class='flag-wrap'><img alt='" + t('flag') + " " + country.short_name + "' title='" + t('flag') + "' src='IMG/flag_n_emblem/" + country.flag_img + "' class='country_flag' loading='lazy' decoding='async' /></span>";
     }
     if (country.emb_img != "" && country.emb_img != undefined ){
-        images += "<img alt='Герб " + country.short_name + "' title='Герб' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' loading='lazy' decoding='async' />";
+        images += "<img alt='" + t('emblem') + " " + country.short_name + "' title='" + t('emblem') + "' src='IMG/flag_n_emblem/" + country.emb_img + "' class='country_emb' loading='lazy' decoding='async' />";
     }
 
     if (images == "") { return ""; }
 
-    return "<div class='symbolics'><h3 class='symbolics-title'>Символіка</h3>" +
+    return "<div class='symbolics'><h3 class='symbolics-title'>" + t('symbolics') + "</h3>" +
            "<div class='symbolics-row'>" + images + "</div></div>";
 }
 
 //05.04 Country page with list of Visits
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'><a id='" + countryId + "' title='Перейти до списку локації' onclick='javascript:OpenListOfCountryCities(this.id)' onmouseover='' style='cursor: pointer;'>Мої локації</a></div>" +
-        "<div class='switchlink'>Мої візити...</div>" +
+        "<div class='switchlink_l'><a id='" + countryId + "' title='" + t('goToLocations') + "' onclick='javascript:OpenListOfCountryCities(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myLocations') + "</a></div>" +
+        "<div class='switchlink'>" + t('myVisitsDots') + "</div>" +
         createListOfVisites();
 }
 
 //05.05 Country page with list of Cities
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'>Мої локації...</div>" +
-        "<div class='switchlink'><a id='" + countryId + "' title='Перейти до списку візитів' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>Мої візити</a></div>" +
+        "<div class='switchlink_l'>" + t('myLocationsDots') + "</div>" +
+        "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToVisits') + "' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
         getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
 }
 
@@ -171,23 +171,23 @@ function getCitiesAndRegionsList_HTML () {
         var links = "";
         $.each (citiesVisited, function( i, city ){
             if (city.getCountryId() == country.short_name) {
-                links += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(city) + "</a>, ";
+                links += "<a title='" + t('goToLocation') + "' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(city) + "</a>, ";
             }
         });
-        return "<div class='countrydetail'><span class='cs-badge'>🏙️ Місто-держава</span></div>" +
-               "<div class='cityrow'><b>Локація:</b> " + links.substring(0, links.length - 2) + "</div>";
+        return "<div class='countrydetail'><span class='cs-badge'>🏙️ " + t('cityState') + "</span></div>" +
+               "<div class='cityrow'><b>" + t('locationLabel') + "</b> " + links.substring(0, links.length - 2) + "</div>";
     }
 
-    var result = "<div class='countrydetail'><b>Повний список відвіданих регіонів та локацій:</b></div>";
+    var result = "<div class='countrydetail'><b>" + t('fullRegionsList') + "</b></div>";
 
     $.each (regionsVisited, function( i, region ){
         if (region.country_id == country.country_id) {
-            result += "<div class='countryregion'><b>Регіон:</b> " + region.setFullRegionName() + "</div>";
-            result += "<div class='cityrow'>&#8226; <b>Локації: </b>";
+            result += "<div class='countryregion'><b>" + t('regionLabel') + "</b> " + region.setFullRegionName() + "</div>";
+            result += "<div class='cityrow'>&#8226; <b>" + t('locationsLabel') + "</b>";
             var ListOfLocations = "";
             $.each (citiesVisited, function( i, city ){
                     if (region.region_id == city.region_id) {
-                        ListOfLocations += "<a title='Перейти до інформації про локацію' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
+                        ListOfLocations += "<a title='" + t('goToLocation') + "' id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)'" +
                                            " onmouseover='' style='cursor: pointer;'>" + entityName(city) + "</a>, ";
                     }
 

@@ -129,7 +129,7 @@ function HTML_StoryPage(story) {
 function storyDate(iso) {
     var p = ("" + (iso || "")).split("-");
     if (p.length !== 3) { return iso || ""; }
-    return parseInt(p[2], 10) + " " + getUaMonthName(parseInt(p[1], 10)) + " " + p[0] + " р.";
+    return parseInt(p[2], 10) + " " + getMonthName(parseInt(p[1], 10)) + " " + p[0] + " р.";
 }
 
 //06.06 Create the "back to country" links from the countries named in the story id
@@ -145,7 +145,7 @@ function getCountryName() {
     if (countryId.length > 1) {
         result += "<ul class='back2country'>";
         $.each (countryId, function( i, country ){
-            result += "<li><a id='" + country + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getUaCountryName(country) + "</a></li>"
+            result += "<li><a id='" + country + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getCountryName(country) + "</a></li>"
         });
         result += "</ul>";
     }

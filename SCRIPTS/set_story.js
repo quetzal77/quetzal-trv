@@ -57,7 +57,7 @@ function createSettingsStoryTab_HTML() {
     local = [];
     local[1] = "story";
 
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("stories").setAttribute("class", "active");
 
     document.getElementById("rightSettingsSection").innerHTML =

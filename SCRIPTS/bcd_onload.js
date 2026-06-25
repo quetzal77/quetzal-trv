@@ -18,7 +18,7 @@
 
 //00.01b PAGE METADATA — keep <title>, canonical link and OG/Twitter tags in sync with the current page
     window.SITE_URL = "https://quetzal.epizy.com/";
-    window.SITE_BRAND = "Подорожі Олексія Славутського";
+    window.SITE_BRAND = t('brandName');
     // label = short page label ("" / undefined for home); path = URL after the base (e.g. "index.html?country=ES")
     window.setPageMeta = function (label, path) {
         try {
@@ -38,7 +38,7 @@
     window.onload = function() {$.getJSON( "DATA/onload.json", processMyJson)};
     applyNavFooterTranslations();
 // When the user scrolls down from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function() {updateBackToTopVisibility()};
 // Browser Back/Forward: re-render the page for the current URL without pushing a new entry
     window.onpopstate = function() {
         var params = new URLSearchParams(window.location.search);
@@ -79,7 +79,7 @@
         el = document.getElementById('navSearch'); if (el) { el.placeholder = t('searchPlaceholder'); }
         el = q('#navSettings a');    if (el) { el.setAttribute('title', t('settings')); el.setAttribute('aria-label', t('settings')); }
         // Footer links
-        var footerKeys = ['home', 'statistics', 'about', 'settings'];
+        var footerKeys = ['home', 'statistics', 'settings', 'about'];
         var links = document.querySelectorAll('.footer-links a');
         for (var i = 0; i < links.length; i++) { if (footerKeys[i]) { links[i].textContent = t(footerKeys[i]); } }
         // Back to top

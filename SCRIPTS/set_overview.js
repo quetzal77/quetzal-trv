@@ -24,19 +24,19 @@ function HTML_Settings_LeftPanel() {
     var result =
         '<aside class="set-sidebar">' +
             '<ul class="set-nav">' +
-                '<li class="active" id="overview"><a onclick="javascript:createSettingsOverviewTab_HTML()" onmouseover="" style="cursor: pointer;">Огляд</a></li>' +
+                '<li class="active" id="overview"><a onclick="javascript:createSettingsOverviewTab_HTML()" onmouseover="" style="cursor: pointer;">' + t('setOverview') + '</a></li>' +
             '</ul>' +
             '<ul class="set-nav">' +
-                '<li id="ctypes"><a onclick="javascript:createSettingsCountryTypeTab()" onmouseover="" style="cursor: pointer;">Типи країн</a></li>' +
-                '<li id="types"><a onclick="javascript:createSettingsTypeTab()" onmouseover="" style="cursor: pointer;">Типи локацій</a></li>' +
-                '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">Континенти</a></li>' +
-                '<li id="countries"><a onclick="javascript:createSettingsCountryTab()" onmouseover="" style="cursor: pointer;">Країни</a></li>' +
-                '<li id="regions"><a onclick="javascript:createSettingsRegionTab()" onmouseover="" style="cursor: pointer;">Регіони</a></li>' +
-                '<li id="cities"><a onclick="javascript:createSettingsCityTab()" onmouseover="" style="cursor: pointer;">Локації</a></li>' +
+                '<li id="ctypes"><a onclick="javascript:createSettingsCountryTypeTab()" onmouseover="" style="cursor: pointer;">' + t('setCountryTypes') + '</a></li>' +
+                '<li id="types"><a onclick="javascript:createSettingsTypeTab()" onmouseover="" style="cursor: pointer;">' + t('setLocationTypes') + '</a></li>' +
+                '<li id="continents"><a onclick="javascript:createSettingsContinentTab()" onmouseover="" style="cursor: pointer;">' + t('setContinents') + '</a></li>' +
+                '<li id="countries"><a onclick="javascript:createSettingsCountryTab()" onmouseover="" style="cursor: pointer;">' + t('setCountries') + '</a></li>' +
+                '<li id="regions"><a onclick="javascript:createSettingsRegionTab()" onmouseover="" style="cursor: pointer;">' + t('setRegions') + '</a></li>' +
+                '<li id="cities"><a onclick="javascript:createSettingsCityTab()" onmouseover="" style="cursor: pointer;">' + t('setLocations') + '</a></li>' +
             '</ul>' +
             '<ul class="set-nav">' +
-                '<li id="visits"><a onclick="javascript:createSettingsVisitTab()" onmouseover="" style="cursor: pointer;">Візити</a></li>' +
-                '<li id="stories"><a onclick="javascript:createSettingsStoryTab()" onmouseover="" style="cursor: pointer;">Історії</a></li>' +
+                '<li id="visits"><a onclick="javascript:createSettingsVisitTab()" onmouseover="" style="cursor: pointer;">' + t('setVisits') + '</a></li>' +
+                '<li id="stories"><a onclick="javascript:createSettingsStoryTab()" onmouseover="" style="cursor: pointer;">' + t('setStories') + '</a></li>' +
             '</ul>' +
         '</aside>';
 
@@ -53,7 +53,7 @@ function createSettingsOverviewTab_HTML() {
     window.history.pushState("object or string", "Title", "index.html?settings="+"overview");
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("overview").setAttribute("class", "active")
 
     //Remove copy marker and bottom line
@@ -617,11 +617,11 @@ function exportToPdf() {
         var sm = start.getMonth() + 1, sd = start.getDate(), sy = start.getFullYear();
         var em = end.getMonth()   + 1, ed = end.getDate(),   ey = end.getFullYear();
         if (sy === ey) {
-            if (sm === em && sd === ed) { return sd + ' ' + getUaMonthName(sm) + ' ' + sy; }
-            if (sm === em)             { return sd + '—' + ed + ' ' + getUaMonthName(sm) + ' ' + sy; }
-            return sd + ' ' + getUaMonthName(sm) + ' — ' + ed + ' ' + getUaMonthName(em) + ' ' + sy;
+            if (sm === em && sd === ed) { return sd + ' ' + getMonthName(sm) + ' ' + sy; }
+            if (sm === em)             { return sd + '—' + ed + ' ' + getMonthName(sm) + ' ' + sy; }
+            return sd + ' ' + getMonthName(sm) + ' — ' + ed + ' ' + getMonthName(em) + ' ' + sy;
         }
-        return sd + ' ' + getUaMonthName(sm) + ' ' + sy + ' — ' + ed + ' ' + getUaMonthName(em) + ' ' + ey;
+        return sd + ' ' + getMonthName(sm) + ' ' + sy + ' — ' + ed + ' ' + getMonthName(em) + ' ' + ey;
     }
 
     function durDays(start, end) { return Math.round((end - start) / 86400000) + 1; }
@@ -722,7 +722,7 @@ function exportToPdf() {
     $.each(visitsSorted, function(i, v) { totalDays += durDays(v.start_date, v.end_date); });
     var yearRange = years.length > 1 ? years[0] + '–' + years[years.length - 1] : (years[0] || '');
     var now = new Date();
-    var genDate = now.getDate() + ' ' + getUaMonthName(now.getMonth() + 1) + ' ' + now.getFullYear();
+    var genDate = now.getDate() + ' ' + getMonthName(now.getMonth() + 1) + ' ' + now.getFullYear();
 
     // ── CSS ────────────────────────────────────────────────────────────────────
     var css = [

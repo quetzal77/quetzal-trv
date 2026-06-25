@@ -8,7 +8,7 @@ function createSettingsRegionTab_HTML() {
     local[1] = "region";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("regions").setAttribute("class", "active")
 
     var options = '';

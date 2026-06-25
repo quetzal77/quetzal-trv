@@ -8,13 +8,13 @@ function createSettingsVisitTab_HTML() {
     local[1] = "visit";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("visits").setAttribute("class", "active")
 
     var options = '';
     $.each (data.visit, function( i, visit ){
         var citiesList = "";
-        $.each (visit.city, function( j, city ){ citiesList += getUaLocationName(city) + ", "; });
+        $.each (visit.city, function( j, city ){ citiesList += getLocationName(city) + ", "; });
         citiesList = (citiesList.length > 55) ? citiesList.slice(0, 55) + "…" : citiesList.slice(0, -2);
         options += '<option value="' + visit.start_date + '">' + visit.start_date + ' — ' + citiesList + '</option>';
     });
@@ -91,7 +91,9 @@ function addEditRemoveVisits(itemId) {
         removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeVisit()">Видалити візит</button>';
         // keep the visited-cities order: list them first, already selected
         $.each (local[0].city, function( i, city ){
-            firstSlice += '<option value="' + city + '" class="selected" selected>' + getEngLocationName(city) + '-' + getUaLocationName(city) + '</option>';
+            var cObj = $.grep(citiesVisited, function(n) { return n.city_id == city; });
+            var cityLabel = cObj.length ? (cObj[0].name + ' - ' + cObj[0].name_ua) : city;
+            firstSlice += '<option value="' + city + '" class="selected" selected>' + cityLabel + '</option>';
         });
     }
 

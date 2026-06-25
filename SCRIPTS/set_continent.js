@@ -8,7 +8,7 @@ function createSettingsContinentTab_HTML() {
     local[1] = "continent";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("continents").setAttribute("class", "active")
 
     var options = '';

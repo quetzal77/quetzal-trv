@@ -60,7 +60,7 @@ function createListOfVisites(){
                  $.each (visit.cities, function( i, city ){
                      if (city.country_id == local[1].short_name) {
                          citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                           getUaLocationName(city.city_id) + "</a>" + ", "
+                                           getLocationName(city.city_id) + "</a>" + ", "
                      }
                  });
                  if (citiesToReturn != "") {
@@ -90,10 +90,10 @@ function createListOfVisites(){
 
                  $.each (visit.cities, function( i, city ){
                      citiesToReturn += "<a id='" + city.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                      getUaLocationName(city.city_id) + "</a>" + ", ";
+                                      getLocationName(city.city_id) + "</a>" + ", ";
                      if (!distinctIds[city.country_id]){
                          countriesToReturn += "<a id='" + city.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-                                      getUaCountryName(city.country_id) + "</a>" + ", ";
+                                      getCountryName(city.country_id) + "</a>" + ", ";
                          distinctIds[city.country_id] = true;
                      }
                  });
@@ -120,12 +120,12 @@ function getVisitDate(start_date, end_date, year){
     }
 
     if (StartDay == EndDay && StartMonth == EndMonth) {
-        VisitDateToShow += StartDay + " " + getUaMonthName(StartMonth) + "." + EndYear + "; ";
+        VisitDateToShow += StartDay + " " + getMonthName(StartMonth) + "." + EndYear + "; ";
     }
     else if (StartYear == EndYear) {
-        VisitDateToShow = StartDay + " " + getUaMonthName(StartMonth) + " - " + EndDay + " " + getUaMonthName(EndMonth) + "." + EndYear + "; ";
+        VisitDateToShow = StartDay + " " + getMonthName(StartMonth) + " - " + EndDay + " " + getMonthName(EndMonth) + "." + EndYear + "; ";
     }
-    else {VisitDateToShow = StartDay + " " + getUaMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getUaMonthName(EndMonth) + "." + EndYear + "; "}
+    else {VisitDateToShow = StartDay + " " + getMonthName(StartMonth) + "." + StartYear + " - " + EndDay + " " + getMonthName(EndMonth) + "." + EndYear + "; "}
 
     return VisitDateToShow;
 }
@@ -142,7 +142,7 @@ function dynamicSort(property) {
         // Strings (name_ua, name, name_full) → Ukrainian-aware order (і, ї, є, ґ in place);
         // dates/numbers keep the plain relational comparison.
         var result = (typeof av === "string" && typeof bv === "string")
-            ? av.localeCompare(bv, 'uk')
+            ? av.localeCompare(bv, window.LANG === 'en' ? 'en' : 'uk')
             : (av < bv) ? -1 : (av > bv) ? 1 : 0;
         return result * sortOrder;
     }
@@ -163,32 +163,27 @@ function parseWord (word, end1, end234, endrest, number){
     return word + endOfWord;
 }
 
-//02.06 Return Ukrainian word "country" with correct end
-function setCountriesNumberWithCorrectEnd (number, bold) {
-    if (window.LANG === 'en') { return (bold ? "<b>" + number + "</b>" : number) + " " + t('countCountries'); }
-    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord ("країн", "а", "и", "", number);
+//02.06 Shared helper: format a count with correct word form
+function formatCount(number, bold, ukRoot, end1, end234, endRest, i18nKey) {
+    var numStr = bold ? '<b>' + number + '</b>' : String(number);
+    if (window.LANG === 'en') { return numStr + ' ' + t(i18nKey); }
+    return numStr + ' ' + parseWord(ukRoot, end1, end234, endRest, number);
 }
-
-//02.07 Return word "location" with correct end
-function setLocationNumberWithCorrectEnd (number, bold) {
-    if (window.LANG === 'en') { return (bold ? "<b>" + number + "</b>" : number) + " " + t('countLocations'); }
-    return (bold ? "<b>" + number + "</b>" : number) + " " + parseWord ("локаці", "я", "ї", "й", number);
+function setCountriesNumberWithCorrectEnd(number, bold) {
+    return formatCount(number, bold, 'країн', 'а', 'и', '', 'countCountries');
 }
-
-//02.08 Return word "region" with correct end
-function setRegionsNumberWithCorrectEnd (number) {
-    if (window.LANG === 'en') { return number + " " + t('countRegions'); }
-    return number + " " + parseWord ("регіон", "", "а", "ів", number);
+function setLocationNumberWithCorrectEnd(number, bold) {
+    return formatCount(number, bold, 'локаці', 'я', 'ї', 'й', 'countLocations');
 }
-
-//02.08a Return word "visit" with correct end
-function setVisitsNumberWithCorrectEnd (number) {
-    if (window.LANG === 'en') { return number + " " + t('countTrips'); }
-    return number + " " + parseWord ("поїздк", "а", "и", "ок", number);
+function setRegionsNumberWithCorrectEnd(number) {
+    return formatCount(number, false, 'регіон', '', 'а', 'ів', 'countRegions');
+}
+function setVisitsNumberWithCorrectEnd(number) {
+    return formatCount(number, false, 'поїздк', 'а', 'и', 'ок', 'countTrips');
 }
 
 //02.09 Return month name in current language
-function getUaMonthName (number) {
+function getMonthName (number) {
     if (window.LANG === 'en') {
         var en = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"};
         return en[number];
@@ -198,51 +193,29 @@ function getUaMonthName (number) {
 }
 
 //2.10 Get country name in current language
-function getUaCountryName(countryId) {
+function getCountryName(countryId) {
     var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
     return result.length ? entityName(result[0]) : "";
 }
 
-//2.11 Get full Ukrainian country name
+//2.11 Get full country name in current language
 function getFullUaCountryName(countryId) {
     var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
-
-    if (!result.length) { return ""; }
-    if (result[0].name_nt == "" || result[0].name_nt == undefined) {
-        result = result[0].name_ua + " - " + result[0].name;
-    }
-    else if (result[0].name_ua == "" || result[0].name_ua == undefined) {
-        result = result[0].name_nt + " - " + result[0].name;
-    }
-    else if (result[0].name == "" || result[0].name == undefined) {
-        result = result[0].name_ua + " - " + result[0].name_nt;
-    }
-    else {
-        result = result[0].name_ua + " - " + result[0].name_nt + " - " + result[0].name;
-    }
-
-    return result;
+    return result.length ? result[0].setFullCountryName() : "";
 }
 
 //2.12 Get location name in current language
-function getUaLocationName(locationId) {
+function getLocationName(locationId) {
     var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
     return result.length ? entityName(result[0]) : "";
 }
 
-//2.13 Get english Location name
-function getEngLocationName(locationId) {
-    var result = $.grep (citiesVisited, function( n, i ) {
-                return (n.city_id == locationId)
-            });
-    return result.length ? result[0].name : "";
-}
 
 //02.15b Story helpers. visit.story is one of:
 //   boolean true  -> internal story; XML id is derived from date + country ids (legacy)
@@ -281,7 +254,7 @@ function getSelectorOfListOfStories_HTML(){
         if (sid !== null || ext) {
             $.each (visit.cities, function( i, city ){
                 if (!distinctIds[city.country_id]){
-                 countriesToReturn += getUaCountryName(city.country_id) + ", ";
+                 countriesToReturn += getCountryName(city.country_id) + ", ";
                  countriesIDToReturn += city.country_id;
                  distinctIds[city.country_id] = true;
                 }
@@ -332,16 +305,12 @@ function withSetContent(callback) {
 }
 
 //2.18 Remove all attributes by name
-function removeAllAttributesByName(attrType, attrName) {
-    // getElementsByClassName returns a LIVE collection: removing the class mid-loop
-    // shrinks it and makes the loop skip elements, leaving stale "active" markers
-    // (e.g. the previous left-menu item stayed highlighted). Snapshot it first.
+function removeAllAttributesByName(attrType, attrName, excludeSelector) {
+    // getElementsByClassName returns a LIVE collection — snapshot it before modifying.
     var mylist = document.getElementsByClassName(attrName);
     var snapshot = Array.prototype.slice.call(mylist);
     for (var j = 0; j < snapshot.length; j++) {
-        // keep the top navbar highlight (e.g. "Налаштування") — it is managed by setActiveNav,
-        // not by the settings sidebar that this clear is meant for
-        if (snapshot[j].closest && snapshot[j].closest(".navbar-nav")) { continue; }
+        if (excludeSelector && snapshot[j].closest && snapshot[j].closest(excludeSelector)) { continue; }
         snapshot[j].removeAttribute(attrType);
     }
 }
@@ -399,7 +368,7 @@ function setActiveNav (navId) {
 function getCountryTypeName (typeId) {
     if (typeof data === "undefined" || !data.country_type) { return ""; }
     for (var i = 0; i < data.country_type.length; i++) {
-        if (data.country_type[i].country_type_id == typeId) { return data.country_type[i].name_ua; }
+        if (data.country_type[i].country_type_id == typeId) { return entityName(data.country_type[i]); }
     }
     return "";
 }
@@ -415,7 +384,7 @@ function navSearch (query) {
     var box = document.getElementById("navSearchResults");
     if (!box) { return; }
     var q = (query || "").trim().toLowerCase();
-    if (q === "" || typeof countriesVisited === "undefined" || typeof citiesVisited === "undefined") {
+    if (q === "") {
         box.innerHTML = ""; box.classList.remove("show"); return;
     }
 
@@ -491,28 +460,27 @@ function HTML_CreatorOfAboutPage () {
     setActiveNav();
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=about"); }
-    setPageMeta("Про проект", "index.html?page=about");
+    setPageMeta(t('about'), "index.html?page=about");
     document.getElementById("mainSection").innerHTML =
         "<div class='about-page'>" +
             "<header class='about-hero'>" +
-                "<img class='about-logo' src='IMG/icon/logo-about.png' alt='Будинок пернатого равлика' loading='lazy' decoding='async' />" +
-                "<h1>Будинок пернатого равлика</h1>" +
-                "<p class='about-tagline'>Особистий сайт про мої подорожі — країни, локації, фото та звіти.</p>" +
+                "<img class='about-logo' src='IMG/icon/logo-about.png' alt='" + t('brandName') + "' loading='lazy' decoding='async' />" +
+                "<h1>" + t('brandName') + "</h1>" +
+                "<p class='about-tagline'>" + t('aboutTagline') + "</p>" +
             "</header>" +
             "<section class='about-card'>" +
-                "<p>Вітаю. Моє ім'я Олексій Славутський і це мій особистий сайт. Існує безліч таких сайтів, але цей — мій! " +
-                "Тут зібрано всю інформацію про мої подорожі: фотографії, звіти про поїздки, список відвіданих територій та багато іншого про моє захоплення туризмом.</p>" +
-                "<p>Вся інформація на сайті — результат моєї багаторічної роботи та поїздок. Спочатку це був просто список країн у файлі Word, який згодом, завдяки захопленню інтернетом і супутніми технологіями, перетворився на те, що ви бачите перед собою. Не знаю, куди заведе мене ця дорога, але радий це з'ясувати.</p>" +
-                "<p class='about-signature'>Приємного перегляду!</p>" +
+                "<p>" + t('aboutP1') + "</p>" +
+                "<p>" + t('aboutP2') + "</p>" +
+                "<p class='about-signature'>" + t('aboutSignature') + "</p>" +
             "</section>" +
-            "<h2 class='about-h2'>Контакти</h2>" +
+            "<h2 class='about-h2'>" + t('aboutContacts') + "</h2>" +
             "<div class='contact-grid'>" +
                 "<a class='contact-card' href='mailto:coatls77@gmail.com'><span class='contact-ico'>✉️</span><span class='contact-meta'><span class='contact-label'>Email</span><span class='contact-val'>coatls77@gmail.com</span></span></a>" +
-                "<div class='contact-card'><span class='contact-ico'>📍</span><span class='contact-meta'><span class='contact-label'>Локація</span><span class='contact-val'>Київ, Україна</span></span></div>" +
+                "<div class='contact-card'><span class='contact-ico'>📍</span><span class='contact-meta'><span class='contact-label'>" + t('aboutLocationLabel') + "</span><span class='contact-val'>Kyiv, Ukraine</span></span></div>" +
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.1.21 (ukr)</span>" +
+                "<span class='tech-tag'>v9.2.1</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +
@@ -525,7 +493,7 @@ function HTML_CreatorOfAboutPage () {
 }
 
 //03.03 // When the user scrolls down 20px from the top of the document, show the button
-    function scrollFunction() {
+    function updateBackToTopVisibility() {
         if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
             document.getElementById("back").style.display = "block";
         } else {

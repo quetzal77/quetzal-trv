@@ -42,7 +42,7 @@ function populateContent(callback) {
                     }
                     else
                     {
-                        console.warn("Unmapped city id (no matching region/country):", data.visit[i].city[j]);
+                        // silently skip unmapped city ids
                     }
 
                     if (!distinctIds[data.visit[i].city[j]]) {
@@ -113,11 +113,11 @@ function populateContent(callback) {
                   if (!this.name_ua) {
                        result = this.name_nt || this.name;
                   }
-                  else if (!this.name_nt) {
-                       result = this.name_ua;
+                  else if (this.name_nt && this.name_nt !== this.name_ua) {
+                       result = this.name_ua + " - " + this.name_nt;
                   }
                   else {
-                       result = this.name_ua + " - " + this.name_nt;
+                       result = this.name_ua + (this.name ? " - " + this.name : "");
                   }
                   return result;
                }
@@ -232,14 +232,14 @@ function populateContent(callback) {
                        return (this.name_nt && this.name_nt !== '') ? (this.name + ' - ' + this.name_nt) : (this.name || this.name_ua || '');
                    }
                    var result;
-                   if (!this.name_ua || this.name_ua == undefined) {
+                   if (!this.name_ua || this.name_ua === undefined) {
                         result = this.name_nt || this.name;
                    }
-                   else if (!this.name_nt || this.name_nt == undefined) {
-                        result = this.name_ua;
+                   else if (this.name_nt && this.name_nt !== this.name_ua) {
+                        result = this.name_ua + " - " + this.name_nt;
                    }
                    else {
-                        result = this.name_ua + " - " + this.name_nt;
+                        result = this.name_ua + (this.name ? " - " + this.name : "");
                    }
                    return result;
                }
@@ -271,7 +271,7 @@ function populateContent(callback) {
     return result;
     }
 
-    //01.10 Get updated city RU name when it has type defined
+    //01.10 Get updated city UA name when it has type defined
     function getCityNameUpdatedUa(name_ua, type_id) {
     var result;
         $.each(data.type, function( i, type ){

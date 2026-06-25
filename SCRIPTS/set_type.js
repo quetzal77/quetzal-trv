@@ -8,7 +8,7 @@ function createSettingsTypeTab_HTML() {
     local[1] = "type";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("types").setAttribute("class", "active")
 
     var options = '';

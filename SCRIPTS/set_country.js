@@ -8,7 +8,7 @@ function createSettingsCountryTab_HTML() {
     local[1] = "country";
 
     // Set menu marker
-    removeAllAttributesByName("class", "active");
+    removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("countries").setAttribute("class", "active")
 
     var options = '';
