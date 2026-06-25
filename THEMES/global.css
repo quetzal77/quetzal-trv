@@ -352,9 +352,9 @@ a.back2top{bottom:20px; display:none}
   .navbar-inverse .navbar-brand{font-size:14px}
   .navbar-brand .navbar-logo{width:32px; height:32px; margin-right:6px}
 }
-@media (max-width:420px){
-  .navbar-inverse .navbar-brand{font-size:12px}
-  .navbar-brand .navbar-logo{width:26px; height:26px; margin-right:5px}
+@media (max-width:480px){
+  .brand-text{display:none}
+  .navbar-brand .navbar-logo{width:36px; height:36px; margin-right:0}
 }
 
 /* SETTINGS PAGE ----------------------------------------------- */

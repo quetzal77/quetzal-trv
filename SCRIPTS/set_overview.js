@@ -1035,23 +1035,38 @@ function generateGlobalDb() {
                 return n + ' ' + forms[2];
             }
 
+            function stableStringify(obj) {
+                if (Array.isArray(obj)) { return '[' + obj.map(stableStringify).join(',') + ']'; }
+                if (typeof obj === 'object' && obj !== null) {
+                    return '{' + Object.keys(obj).sort().map(function(k) {
+                        return JSON.stringify(k) + ':' + stableStringify(obj[k]);
+                    }).join(',') + '}';
+                }
+                return JSON.stringify(obj);
+            }
+
             var diffLines = [];
             if (existing) {
                 $.each(ARRAYS, function(i, cfg) {
                     var newArr = data[cfg.key] || [];
                     var oldArr = existing[cfg.key] || [];
-                    var oldKeys = {}, newKeys = {};
-                    $.each(oldArr, function(j, x) { oldKeys[cfg.fn(x)] = true; });
+                    var oldMap = {}, newKeys = {};
+                    $.each(oldArr, function(j, x) { oldMap[cfg.fn(x)] = x; });
                     $.each(newArr, function(j, x) { newKeys[cfg.fn(x)] = true; });
 
-                    var added = [], removed = [];
-                    $.each(newArr, function(j, x) { if (!oldKeys[cfg.fn(x)]) { added.push(cfg.fn(x)); } });
+                    var added = [], removed = [], changed = [];
+                    $.each(newArr, function(j, x) {
+                        var k = cfg.fn(x);
+                        if (!oldMap[k]) { added.push(k); }
+                        else if (stableStringify(oldMap[k]) !== stableStringify(x)) { changed.push(k); }
+                    });
                     $.each(oldArr, function(j, x) { if (!newKeys[cfg.fn(x)]) { removed.push(cfg.fn(x)); } });
 
                     var MAX = 6;
                     function clip(arr) { return arr.slice(0, MAX).join(', ') + (arr.length > MAX ? '…' : ''); }
                     if (added.length)   { diffLines.push('&#10133; Додано '   + plural(added.length,   cfg.forms) + ': <b>' + clip(added)   + '</b>'); }
                     if (removed.length) { diffLines.push('&#10134; Видалено ' + plural(removed.length, cfg.forms) + ': <b>' + clip(removed) + '</b>'); }
+                    if (changed.length) { diffLines.push('&#9998; Змінено '   + plural(changed.length, cfg.forms) + ': <b>' + clip(changed) + '</b>'); }
                 });
             }
 
