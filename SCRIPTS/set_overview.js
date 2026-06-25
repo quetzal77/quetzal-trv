@@ -200,8 +200,8 @@ function HTML_VisitesPerCountryTale() {
             ? '<span class="cap-yes" title="Столицю відвідано">✓</span>'
             : '<span class="set-miss" title="Столицю не відвідано або не задана в базі">—</span>';
 
-        var nameCell = visited ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + country.name_ua + "</a>"
-                               : country.name_ua + " <span class='set-miss' title='Не відвідано'>✕</span>" ;
+        var nameCell = visited ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a>"
+                               : entityName(country) + " <span class='set-miss' title='Не відвідано'>✕</span>" ;
 
         var rowClass = (numberCountryVisites === 0) ? "c-missing" : "c-visited";
 
@@ -215,7 +215,7 @@ function HTML_VisitesPerCountryTale() {
     }
 
     // group countries by continent (every continent gets a section, even if empty)
-    data.country.sort(dynamicSort("name_ua"));
+    data.country.sort(dynamicSort(window.LANG === 'en' ? 'name' : 'name_ua'));
     var byCont = {};
     $.each(data.country, function( i, c ){ (byCont[c.continent_id] = byCont[c.continent_id] || []).push(c); });
 
@@ -223,7 +223,7 @@ function HTML_VisitesPerCountryTale() {
     var body = "";
     $.each(data.continent, function( i, cont ){
         body += '<tr class="grp">' +
-                    '<td class="grp-name">' + cont.name_ua + '</td>' +
+                    '<td class="grp-name">' + entityName(cont) + '</td>' +
                     '<td class="num">Столиця</td>' +
                     '<td class="num">Регіони</td>' +
                     '<td class="num">Міста</td>' +

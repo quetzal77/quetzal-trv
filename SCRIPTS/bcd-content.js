@@ -56,7 +56,7 @@ function populateContent(callback) {
        }
        visitsSorted.sort(dynamicSort("start_date"));
        visitsSorted.reverse();
-       citiesVisited.sort(dynamicSort("name_ua"))
+       citiesVisited.sort(dynamicSort(window.LANG === 'en' ? 'name' : 'name_ua'));
    }
 
    //01.04 Array of Visited Countries and Regions
@@ -69,7 +69,7 @@ function populateContent(callback) {
               distinctIds[citiesVisited[i].region_id] = true;
           }
       }
-      regionsVisited.sort(dynamicSort("name_ua"));
+      regionsVisited.sort(dynamicSort(window.LANG === 'en' ? 'name' : 'name_ua'));
 
       countriesVisited = [];
       var distinctIds_2 = {};
@@ -79,7 +79,7 @@ function populateContent(callback) {
               distinctIds_2[regionsVisited[i].country_id] = true;
           }
       }
-      countriesVisited.sort(dynamicSort("name_ua"));
+      countriesVisited.sort(dynamicSort(window.LANG === 'en' ? 'name' : 'name_ua'));
    }
 
    //01.05 City Object definition
@@ -106,6 +106,9 @@ function populateContent(callback) {
                this.region_id = data.city[i].region_id;
 
                this.setFullCityName = function () {
+                  if (window.LANG === 'en') {
+                      return this.name_nt ? (this.name + ' - ' + this.name_nt) : (this.name || this.name_ua || '');
+                  }
                   var result;
                   if (this.name_nt == "") {
                        result = this.name_ua + " - " + this.name;
@@ -154,6 +157,7 @@ function populateContent(callback) {
                this.country_id = data.area[i].country_id;
                this.continent_id = data.area[i].continent_id;
                this.setFullRegionName = function () {
+                   if (window.LANG === 'en') { return this.name || this.name_ua || ''; }
                    return this.name_ua + " - " + this.name;
                }
                this.getCountry = function () {
@@ -227,6 +231,9 @@ function populateContent(callback) {
                    return result;
                }
                this.setFullCountryName = function () {
+                   if (window.LANG === 'en') {
+                       return (this.name_nt && this.name_nt !== '') ? (this.name + ' - ' + this.name_nt) : (this.name || this.name_ua || '');
+                   }
                    var result;
                    if (this.name_nt == "" || this.name_nt == undefined) {
                         result = this.name_ua + " - " + this.name;

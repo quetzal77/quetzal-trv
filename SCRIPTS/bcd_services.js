@@ -205,12 +205,12 @@ function getUaMonthName (number) {
     return monthSList[number];
 }
 
-//2.10 Get Ukrainian country name
+//2.10 Get country name in current language
 function getUaCountryName(countryId) {
     var result = $.grep (countriesVisited, function( n, i ) {
                 return (n.short_name == countryId)
             });
-    return result.length ? result[0].name_ua : "";
+    return result.length ? entityName(result[0]) : "";
 }
 
 //2.11 Get full Ukrainian country name
@@ -236,12 +236,12 @@ function getFullUaCountryName(countryId) {
     return result;
 }
 
-//2.12 Get Ukrainian Location name
+//2.12 Get location name in current language
 function getUaLocationName(locationId) {
     var result = $.grep (citiesVisited, function( n, i ) {
                 return (n.city_id == locationId)
             });
-    return result.length ? result[0].name_ua : "";
+    return result.length ? entityName(result[0]) : "";
 }
 
 //2.13 Get english Location name
@@ -440,11 +440,11 @@ function navSearch (query) {
 
     $.each(countriesVisited, function (i, c) {
         if (count >= CAP) { return false; }
-        if (hit(c)) { row(c.name_ua, "country", c.short_name); }
+        if (hit(c)) { row(entityName(c), "country", c.short_name); }
     });
     $.each(citiesVisited, function (i, city) {
         if (count >= CAP) { return false; }
-        if (hit(city)) { row(city.name_ua, "city", city.city_id); }
+        if (hit(city)) { row(entityName(city), "city", city.city_id); }
     });
 
     box.innerHTML = html;
