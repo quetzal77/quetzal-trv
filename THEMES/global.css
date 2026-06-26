@@ -406,7 +406,17 @@ a.back2top{bottom:20px; display:none}
 .set-option:last-child{padding-bottom:0; border-bottom:0}
 .set-option-title{font-size:15px; font-weight:600; color:var(--text)}
 .set-option-desc{font-size:13px; color:var(--muted); margin-top:2px}
-.set-option-actions{display:flex; gap:8px; flex-shrink:0}
+.set-option-actions{display:flex; gap:8px; flex-shrink:0; align-items:center}
+.set-info-wrap{position:relative; display:inline-flex; align-items:center}
+.set-info-btn{background:none; border:1px solid var(--border); border-radius:50%; width:20px; height:20px;
+  font-size:11px; line-height:1; padding:0; cursor:pointer; color:var(--muted); font-family:inherit;
+  display:inline-flex; align-items:center; justify-content:center; flex-shrink:0}
+.set-info-btn:hover{background:var(--accent-weak); border-color:var(--accent); color:var(--accent)}
+.set-info-tip{display:none; position:absolute; right:0; top:26px; z-index:200;
+  background:#1e293b; color:#f1f5f9; font-size:12px; line-height:1.6;
+  padding:9px 12px; border-radius:8px; min-width:300px; max-width:380px;
+  box-shadow:0 4px 16px rgba(0,0,0,.25); pointer-events:none}
+.set-info-wrap:hover .set-info-tip{display:block}
 .set-btn{background:var(--surface-2); border:1px solid var(--border); color:var(--text);
   font-size:13px; font-weight:600; padding:7px 14px; border-radius:9px; cursor:pointer; font-family:inherit}
 .set-btn:hover{background:var(--accent-weak); border-color:var(--accent); color:var(--accent)}

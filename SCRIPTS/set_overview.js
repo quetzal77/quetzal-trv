@@ -73,21 +73,21 @@ function createSettingsOverviewTab_HTML() {
         // Top KPI cards
         '<section class="set-block">' +
             '<div class="set-kpi">' +
-                kpi("Країни",  data.country.length, "відвідано: " + countriesVisited.length) +
-                kpi("Регіони", data.area.length,    "відвідано: " + regionsVisited.length) +
-                kpi("Міста",   data.city.length,    "відвідано: " + citiesVisited.length) +
-                kpi("Візити",  visitsSorted.length, "") +
+                kpi(t('kpiCountries'), data.country.length, t('kpiVisited') + " " + countriesVisited.length) +
+                kpi(t('kpiRegions'),   data.area.length,    t('kpiVisited') + " " + regionsVisited.length) +
+                kpi(t('kpiCities'),    data.city.length,    t('kpiVisited') + " " + citiesVisited.length) +
+                kpi(t('kpiVisits'),    visitsSorted.length, "") +
             '</div>' +
         '</section>' +
         // Data transformation — option rows (buttons are non-functional for now)
         '<section class="set-block">' +
-            '<h2 class="set-block-title">Робота з даними</h2>' +
+            '<h2 class="set-block-title">' + t('setDataOps') + '</h2>' +
             '<div class="set-panel">' +
                 '<div class="set-options">' +
                     '<div class="set-option">' +
                         '<div class="set-option-info">' +
-                            '<div class="set-option-title">Експорт даних</div>' +
-                            '<div class="set-option-desc">Зберегти базу подорожей у вибраному форматі</div>' +
+                            '<div class="set-option-title">' + t('setExportData') + '</div>' +
+                            '<div class="set-option-desc">' + t('setExportDesc') + '</div>' +
                         '</div>' +
                         '<div class="set-option-actions">' +
                             '<button type="button" class="set-btn" onclick="javascript:exportToPdf()">PDF</button>' +
@@ -97,11 +97,11 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
-                                '<div class="set-option-title">Автогенерація globaldb.json</div>' +
-                                '<div class="set-option-desc">Завантажити актуальний стан бази даних з урахуванням усіх змін, зроблених у налаштуваннях</div>' +
+                                '<div class="set-option-title">' + t('setGenGlobaldb') + '</div>' +
+                                '<div class="set-option-desc">' + t('setGenGlobaldbDesc') + '</div>' +
                             '</div>' +
                             '<div class="set-option-actions">' +
-                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateGlobalDb()">Згенерувати</button>' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateGlobalDb()">' + t('setGenerate') + '</button>' +
                             '</div>' +
                         '</div>' +
                         '<span id="globaldbGenMsg"></span>' +
@@ -109,11 +109,11 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
-                                '<div class="set-option-title">Автогенерація onload-сторінки</div>' +
-                                '<div class="set-option-desc">Оновити onload сторінку щоб відобразити зміни в базі подорожей</div>' +
+                                '<div class="set-option-title">' + t('setGenOnload') + '</div>' +
+                                '<div class="set-option-desc">' + t('setGenOnloadDesc') + '</div>' +
                             '</div>' +
                             '<div class="set-option-actions">' +
-                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">Згенерувати</button>' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateOnloadJson()">' + t('setGenerate') + '</button>' +
                             '</div>' +
                         '</div>' +
                         '<span id="onloadGenMsg"></span>' +
@@ -121,11 +121,11 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
-                                '<div class="set-option-title">Автогенерація stories.json</div>' +
-                                '<div class="set-option-desc">Перебудувати індекс історій (DATA/stories.json) за файлами в DATA/stories/</div>' +
+                                '<div class="set-option-title">' + t('setGenStories') + '</div>' +
+                                '<div class="set-option-desc">' + t('setGenStoriesDesc') + '</div>' +
                             '</div>' +
                             '<div class="set-option-actions">' +
-                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">Згенерувати</button>' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:generateStoriesIndex()">' + t('setGenerate') + '</button>' +
                             '</div>' +
                         '</div>' +
                         '<span id="storiesGenMsg"></span>' +
@@ -133,11 +133,15 @@ function createSettingsOverviewTab_HTML() {
                     '<div class="set-option-wrap">' +
                         '<div class="set-option">' +
                             '<div class="set-option-info">' +
-                                '<div class="set-option-title">Валідація бази подорожей</div>' +
-                                '<div class="set-option-desc">Перевірити структуру та цілісність зв\'язків у базі подорожей</div>' +
+                                '<div class="set-option-title">' + t('setValidate') + '</div>' +
+                                '<div class="set-option-desc">' + t('setValidateDesc') + '</div>' +
                             '</div>' +
                             '<div class="set-option-actions">' +
-                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">Перевірити</button>' +
+                                '<span class="set-info-wrap">' +
+                                    '<button type="button" class="set-info-btn" aria-label="info">&#x2139;</button>' +
+                                    '<span class="set-info-tip">' + t('setValidateHelp') + '</span>' +
+                                '</span>' +
+                                '<button type="button" class="set-btn set-btn-primary" onclick="javascript:validateTravelDb()">' + t('setCheck') + '</button>' +
                             '</div>' +
                         '</div>' +
                         '<span id="validateMsg"></span>' +
@@ -148,8 +152,8 @@ function createSettingsOverviewTab_HTML() {
         // Countries table
         '<section class="set-block">' +
             '<div class="set-block-head">' +
-                '<h2 class="set-block-title">Країни</h2>' +
-                '<label class="set-check"><input type="checkbox" onchange="javascript:toggleOnlyMissing(this.checked)"> Лише невідвідані</label>' +
+                '<h2 class="set-block-title">' + t('setCountries') + '</h2>' +
+                '<label class="set-check"><input type="checkbox" onchange="javascript:toggleOnlyMissing(this.checked)"> ' + t('setOnlyUnvisited') + '</label>' +
             '</div>' +
             HTML_VisitesPerCountryTale() +
         '</section>';
@@ -197,11 +201,11 @@ function HTML_VisitesPerCountryTale() {
         // ✓ only when the capital is in the base AND visited; otherwise — (not visited or not in base)
         var capVisited = (capitalOf[cid] !== undefined && visitedCity[capitalOf[cid]]);
         var capCell = capVisited
-            ? '<span class="cap-yes" title="Столицю відвідано">✓</span>'
-            : '<span class="set-miss" title="Столицю не відвідано або не задана в базі">—</span>';
+            ? '<span class="cap-yes" title="' + t('setCapVisited') + '">✓</span>'
+            : '<span class="set-miss" title="' + t('setCapNotVisited') + '">—</span>';
 
         var nameCell = visited ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a>"
-                               : entityName(country) + " <span class='set-miss' title='Не відвідано'>✕</span>" ;
+                               : entityName(country) + " <span class='set-miss' title='" + t('setNotVisited') + "'>✕</span>" ;
 
         var rowClass = (numberCountryVisites === 0) ? "c-missing" : "c-visited";
 
@@ -224,10 +228,10 @@ function HTML_VisitesPerCountryTale() {
     $.each(data.continent, function( i, cont ){
         body += '<tr class="grp">' +
                     '<td class="grp-name">' + entityName(cont) + '</td>' +
-                    '<td class="num">Столиця</td>' +
-                    '<td class="num">Регіони</td>' +
-                    '<td class="num">Міста</td>' +
-                    '<td class="num">Візити</td>' +
+                    '<td class="num">' + t('setColCapital') + '</td>' +
+                    '<td class="num">' + t('setRegions') + '</td>' +
+                    '<td class="num">' + t('setColCities') + '</td>' +
+                    '<td class="num">' + t('setColVisits') + '</td>' +
                 '</tr>';
         $.each(byCont[cont.continent_id] || [], function( j, country ){ body += rowFor(country); });
     });
@@ -256,7 +260,7 @@ function generateStoriesIndex() {
         var el = document.getElementById("storiesGenMsg");
         if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
     };
-    msg("", "Збираю історії…");
+    msg("", t('setMsgCollecting'));
 
     $.getJSON("DATA/stories.json", function (index) {
         var ids = {};
@@ -283,8 +287,9 @@ function generateStoriesIndex() {
             URL.revokeObjectURL(a.href);
 
             window.__storiesIndex = entries;   // refresh the cached catalog
-            msg("is-ok", "Згенеровано <b>" + entries.length + "</b> історій. Збережіть завантажений файл як <b>DATA/stories.json</b>.<br>" +
-                "Якщо ви щойно додали новий файл історії й ще не привʼязали його до візиту — запустіть <b>node tools/gen_stories_index.js</b>, він бачить усю папку.");
+            msg("is-ok", t('setOkGenerated') + " <b>" + entries.length + "</b> " +
+                (window.LANG === 'en' ? (entries.length === 1 ? 'story' : 'stories') : 'історій') + ". " +
+                t('setOkSaveAs') + " <b>DATA/stories.json</b>.<br>" + t('setOkStoriesNote'));
         };
 
         if (pending === 0) { finish(); return; }
@@ -298,7 +303,7 @@ function generateStoriesIndex() {
                 .always(function () { if (--pending === 0) { finish(); } });   // skip missing/deleted files
         });
     }).fail(function () {
-        msg("is-err", "Не вдалося прочитати DATA/stories.json.");
+        msg("is-err", t('setMsgFailStories'));
     });
 }
 
@@ -311,7 +316,7 @@ function generateOnloadJson() {
         var el = document.getElementById("onloadGenMsg");
         if (el) { el.className = "set-alert " + cls; el.innerHTML = html; }
     };
-    msg("", "Збираю дані…");
+    msg("", t('setMsgCollecting'));
 
     $.getJSON("DATA/onload.json").always(function (existingOrXhr) {
         var existing = (existingOrXhr && existingOrXhr.country) ? existingOrXhr : { continent: [], country: [] };
@@ -412,29 +417,34 @@ function generateOnloadJson() {
         // build diff summary
         var diffLines = [];
         if (addedCountries.length) {
-            diffLines.push("➕ Додано " + addedCountries.length + " кра" +
-                (addedCountries.length === 1 ? "їна" : (addedCountries.length < 5 ? "їни" : "їн")) +
-                ": <b>" + addedCountries.join(", ") + "</b>");
+            var cWordA = window.LANG === 'en'
+                ? (addedCountries.length === 1 ? 'country' : 'countries')
+                : 'кра' + (addedCountries.length === 1 ? 'їна' : (addedCountries.length < 5 ? 'їни' : 'їн'));
+            diffLines.push('➕ ' + t('setDiffAdded') + ' ' + addedCountries.length + ' ' + cWordA + ': <b>' + addedCountries.join(', ') + '</b>');
         }
         if (removedCountries.length) {
-            diffLines.push("➖ Видалено " + removedCountries.length + " кра" +
-                (removedCountries.length === 1 ? "їну" : (removedCountries.length < 5 ? "їни" : "їн")) +
-                ": <b>" + removedCountries.join(", ") + "</b>");
+            var cWordR = window.LANG === 'en'
+                ? (removedCountries.length === 1 ? 'country' : 'countries')
+                : 'кра' + (removedCountries.length === 1 ? 'їну' : (removedCountries.length < 5 ? 'їни' : 'їн'));
+            diffLines.push('➖ ' + t('setDiffRemoved') + ' ' + removedCountries.length + ' ' + cWordR + ': <b>' + removedCountries.join(', ') + '</b>');
         }
         if (addedConts.length) {
-            diffLines.push("➕ Новий континент: <b>" + addedConts.join(", ") + "</b>");
+            diffLines.push('➕ ' + t('setDiffNewCont') + ': <b>' + addedConts.join(', ') + '</b>');
         }
         if (removedConts.length) {
-            diffLines.push("➖ Зник континент: <b>" + removedConts.join(", ") + "</b>");
+            diffLines.push('➖ ' + t('setDiffGoneCont') + ': <b>' + removedConts.join(', ') + '</b>');
         }
         if (!diffLines.length) {
-            diffLines.push("Змін немає — список країн не змінився.");
+            diffLines.push(t('setDiffNoChanges'));
         }
 
+        var onloadCWord  = window.LANG === 'en' ? (visitedCountries.length  === 1 ? 'country'   : 'countries')  : 'країн';
+        var onloadCtWord = window.LANG === 'en' ? (visitedContinents.length === 1 ? 'continent' : 'continents') : 'континентах';
+        var onloadIn     = window.LANG === 'en' ? 'in' : 'у';
         msg("is-ok",
-            "Згенеровано <b>" + visitedCountries.length + "</b> країн " +
-            "у <b>" + visitedContinents.length + "</b> континентах. " +
-            "Збережіть як <b>DATA/onload.json</b>.<br>" +
+            t('setOkGenerated') + " <b>" + visitedCountries.length + "</b> " + onloadCWord + " " +
+            onloadIn + " <b>" + visitedContinents.length + "</b> " + onloadCtWord + ". " +
+            t('setOkSaveAs') + " <b>DATA/onload.json</b>.<br>" +
             diffLines.join("<br>"));
     });
 }
@@ -443,7 +453,7 @@ function generateOnloadJson() {
 // Fetches the raw file text so JSON.parse errors yield exact line/column info.
 function validateTravelDb() {
     var el = document.getElementById("validateMsg");
-    if (el) { el.className = "set-alert"; el.innerHTML = "Завантажую globaldb.json…"; }
+    if (el) { el.className = "set-alert"; el.innerHTML = t('setMsgLoading'); }
 
     function esc(s) {
         return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -451,7 +461,7 @@ function validateTravelDb() {
 
     $.ajax({ url: "DATA/globaldb.json", dataType: "text", cache: false })
         .fail(function () {
-            if (el) { el.className = "set-alert is-err"; el.innerHTML = "Не вдалося завантажити DATA/globaldb.json."; }
+            if (el) { el.className = "set-alert is-err"; el.innerHTML = t('setMsgFailLoad'); }
         })
         .done(function (rawText) {
 
@@ -471,7 +481,7 @@ function validateTravelDb() {
                     var caret = new Array(Math.min(col0 - start, 81) + 1).join(" ") + "^";
                     return '<code class="val-json-ctx">' + esc(snip) + '</code>' +
                            '<code class="val-json-caret">' + caret + '</code>' +
-                           '<small>рядок <b>' + lineNum + '</b>, символ <b>' + (col0 + 1) + '</b></small>';
+                           '<small>' + t('setValLine') + ' <b>' + lineNum + '</b>, ' + t('setValCol') + ' <b>' + (col0 + 1) + '</b></small>';
                 }
 
                 if (mPos) {
@@ -487,7 +497,7 @@ function validateTravelDb() {
                 if (el) {
                     el.className  = "set-alert is-err";
                     el.innerHTML  = '<div class="val-report"><div class="val-block val-errors">' +
-                        '<strong>🔴 Синтаксична помилка JSON — файл неможливо розпарсити:</strong><br>' +
+                        '<strong>' + t('setValSyntaxErr') + '</strong><br>' +
                         esc(e.message) + '<br>' + ctxHtml + '</div></div>';
                 }
                 return;
@@ -498,40 +508,41 @@ function validateTravelDb() {
             function err(m, h)  { errors.push({ msg: m, hint: h || "" }); }
             function warn(m, h) { warnings.push({ msg: m, hint: h || "" }); }
 
+            var isEn = window.LANG === 'en';
             var contIds = {}, countryIds = {}, regionIds = {}, cityIds = {};
             $.each(db.continent || [], function (i, c) { contIds[c.continent_id] = true; });
 
             $.each(db.country || [], function (i, c) {
-                if (!c.country_id) { err("Країна #" + i + " не має country_id", c.name || c.name_ua || "#" + i); return; }
-                if (countryIds[c.country_id]) { err("Дублікат country_id: «" + c.country_id + "»", '"country_id": "' + c.country_id + '"'); }
+                if (!c.country_id) { err((isEn ? 'Country #' : 'Країна #') + i + (isEn ? ' has no country_id' : ' не має country_id'), c.name || c.name_ua || '#' + i); return; }
+                if (countryIds[c.country_id]) { err((isEn ? 'Duplicate country_id: «' : 'Дублікат country_id: «') + c.country_id + '»', '"country_id": "' + c.country_id + '"'); }
                 countryIds[c.country_id] = true;
                 if (!contIds[c.continent_id]) {
-                    err("Країна «" + (c.name_ua || c.country_id) + "» → невідомий континент «" + c.continent_id + "»",
+                    err((isEn ? 'Country «' : 'Країна «') + (c.name_ua || c.country_id) + (isEn ? '» → unknown continent «' : '» → невідомий континент «') + c.continent_id + '»',
                         '"country_id": "' + c.country_id + '"');
                 }
-                if (!c.name_ua) { warn("Порожній name_ua у країни", '"country_id": "' + c.country_id + '"'); }
+                if (!c.name_ua) { warn((isEn ? 'Empty name_ua for country' : 'Порожній name_ua у країни'), '"country_id": "' + c.country_id + '"'); }
             });
 
             $.each(db.area || [], function (i, a) {
-                if (!a.region_id) { err("Регіон #" + i + " не має region_id", a.name || "#" + i); return; }
-                if (regionIds[a.region_id]) { err("Дублікат region_id: «" + a.region_id + "»", '"region_id": "' + a.region_id + '"'); }
+                if (!a.region_id) { err((isEn ? 'Region #' : 'Регіон #') + i + (isEn ? ' has no region_id' : ' не має region_id'), a.name || '#' + i); return; }
+                if (regionIds[a.region_id]) { err((isEn ? 'Duplicate region_id: «' : 'Дублікат region_id: «') + a.region_id + '»', '"region_id": "' + a.region_id + '"'); }
                 regionIds[a.region_id] = true;
                 if (!countryIds[a.country_id]) {
-                    err("Регіон «" + a.region_id + "» → невідома країна «" + a.country_id + "»",
+                    err((isEn ? 'Region «' : 'Регіон «') + a.region_id + (isEn ? '» → unknown country «' : '» → невідома країна «') + a.country_id + '»',
                         '"region_id": "' + a.region_id + '"');
                 }
-                if (!a.name_ua) { warn("Порожній name_ua у регіону", '"region_id": "' + a.region_id + '"'); }
+                if (!a.name_ua) { warn((isEn ? 'Empty name_ua for region' : 'Порожній name_ua у регіону'), '"region_id": "' + a.region_id + '"'); }
             });
 
             var emptyCityDesc = [], emptyCityNameUa = [];
             $.each(db.city || [], function (i, c) {
-                if (!c.city_id) { err("Місто #" + i + " («" + (c.name || "?") + "») не має city_id", '"name": "' + (c.name || "") + '"'); return; }
-                if (cityIds[c.city_id]) { err("Дублікат city_id: «" + c.city_id + "»", '"city_id": "' + c.city_id + '"'); }
+                if (!c.city_id) { err((isEn ? 'City #' : 'Місто #') + i + ' (' + (c.name || '?') + ') ' + (isEn ? 'has no city_id' : 'не має city_id'), '"name": "' + (c.name || '') + '"'); return; }
+                if (cityIds[c.city_id]) { err((isEn ? 'Duplicate city_id: «' : 'Дублікат city_id: «') + c.city_id + '»', '"city_id": "' + c.city_id + '"'); }
                 cityIds[c.city_id] = true;
                 if (!c.region_id) {
-                    err("Місто «" + c.city_id + "» не має region_id", '"city_id": "' + c.city_id + '"');
+                    err((isEn ? 'City «' : 'Місто «') + c.city_id + (isEn ? '» has no region_id' : '» не має region_id'), '"city_id": "' + c.city_id + '"');
                 } else if (!regionIds[c.region_id]) {
-                    err("Місто «" + c.city_id + "» → невідомий регіон «" + c.region_id + "»",
+                    err((isEn ? 'City «' : 'Місто «') + c.city_id + (isEn ? '» → unknown region «' : '» → невідомий регіон «') + c.region_id + '»',
                         '"city_id": "' + c.city_id + '"');
                 }
                 if (!c.name_ua)    { emptyCityNameUa.push(c.city_id); }
@@ -539,26 +550,26 @@ function validateTravelDb() {
             });
 
             if (emptyCityNameUa.length) {
-                warn("Порожній name_ua у " + emptyCityNameUa.length + " міст",
+                warn((isEn ? 'Empty name_ua in ' : 'Порожній name_ua у ') + emptyCityNameUa.length + (isEn ? ' cities' : ' міст'),
                     emptyCityNameUa.slice(0, 10).map(function (id) { return '"' + id + '"'; }).join(", ") +
                     (emptyCityNameUa.length > 10 ? ", ..." : ""));
             }
             if (emptyCityDesc.length) {
-                warn("Порожній опис у " + emptyCityDesc.length + " міст",
+                warn((isEn ? 'Empty description in ' : 'Порожній опис у ') + emptyCityDesc.length + (isEn ? ' cities' : ' міст'),
                     emptyCityDesc.slice(0, 10).map(function (id) { return '"city_id": "' + id + '"'; }).join(", ") +
                     (emptyCityDesc.length > 10 ? ", ..." : ""));
             }
 
             $.each(db.visit || [], function (i, v) {
                 if (!v.city || !v.city.length) {
-                    warn("Візит від " + (v.start_date || "?") + " не має міст",
-                        '"start_date": "' + (v.start_date || "") + '"');
+                    warn((isEn ? 'Visit from ' : 'Візит від ') + (v.start_date || '?') + (isEn ? ' has no cities' : ' не має міст'),
+                        '"start_date": "' + (v.start_date || '') + '"');
                     return;
                 }
                 $.each(v.city, function (j, cityId) {
                     if (!cityIds[cityId]) {
-                        err("Візит від " + (v.start_date || "?") + " → невідоме місто «" + cityId + "»",
-                            '"start_date": "' + (v.start_date || "") + '"');
+                        err((isEn ? 'Visit from ' : 'Візит від ') + (v.start_date || '?') + (isEn ? ' → unknown city «' : ' → невідоме місто «') + cityId + '»',
+                            '"start_date": "' + (v.start_date || '') + '"');
                     }
                 });
             });
@@ -570,25 +581,25 @@ function validateTravelDb() {
             }
 
             var html = '<div class="val-report">' +
-                '<div class="val-summary">📋 Перевірено: ' +
-                '<b>' + (db.continent||[]).length + '</b> континентів, ' +
-                '<b>' + (db.country||[]).length   + '</b> країн, ' +
-                '<b>' + (db.area||[]).length       + '</b> регіонів, ' +
-                '<b>' + (db.city||[]).length       + '</b> міст, ' +
-                '<b>' + (db.visit||[]).length      + '</b> візитів.</div>';
+                '<div class="val-summary">' + t('setValChecked') + ' ' +
+                '<b>' + (db.continent||[]).length + '</b> ' + t('setValContinents')    + ', ' +
+                '<b>' + (db.country||[]).length   + '</b> ' + t('setValCountriesWord') + ', ' +
+                '<b>' + (db.area||[]).length       + '</b> ' + t('setValRegionsWord')   + ', ' +
+                '<b>' + (db.city||[]).length       + '</b> ' + t('setValCitiesWord')    + ', ' +
+                '<b>' + (db.visit||[]).length      + '</b> ' + t('setValVisitsWord')    + '.</div>';
 
             if (errors.length) {
-                html += '<div class="val-block val-errors"><strong>🔴 Помилки (' + errors.length + '):</strong>' +
+                html += '<div class="val-block val-errors"><strong>' + t('setValErrors') + ' (' + errors.length + '):</strong>' +
                     '<ul>' + errors.map(renderItem).join("") + '</ul></div>';
             }
             if (warnings.length) {
-                html += '<div class="val-block val-warnings"><strong>🟡 Попередження (' + warnings.length + '):</strong>' +
+                html += '<div class="val-block val-warnings"><strong>' + t('setValWarnings') + ' (' + warnings.length + '):</strong>' +
                     '<ul>' + warnings.map(renderItem).join("") + '</ul></div>';
             }
             if (!errors.length && !warnings.length) {
-                html += '<div class="val-block val-ok">✅ Помилок не знайдено — база в порядку.</div>';
+                html += '<div class="val-block val-ok">' + t('setValOk') + '</div>';
             } else if (!errors.length) {
-                html += '<div class="val-block val-ok">✅ Критичних помилок немає.</div>';
+                html += '<div class="val-block val-ok">' + t('setValOkWarn') + '</div>';
             }
             html += '</div>';
 
@@ -631,13 +642,14 @@ function exportToPdf() {
         if (!isFinite(r) || r <= 0) { return ''; }
         var ri = Math.round(r);
         if (ri === 0) { ri = 1; }
+        var display = (r === Math.round(r)) ? ri : r;
+        if (window.LANG === 'en') { return display + (ri === 1 ? ' day' : ' days'); }
         var last = ri % 10, lastTwo = ri % 100;
         var suffix;
         if (lastTwo >= 11 && lastTwo <= 14)       { suffix = ' днів'; }
         else if (last === 1)                       { suffix = ' день'; }
         else if (last >= 2 && last <= 4)           { suffix = ' дні'; }
         else                                       { suffix = ' днів'; }
-        var display = (r === Math.round(r)) ? ri : r;
         return display + suffix;
     }
 
@@ -662,9 +674,9 @@ function exportToPdf() {
             var cityObj    = cityById[c.city_id]      || {};
             var countryObj = countryBySN[c.country_id]|| {};
             var areaObj    = cityObj.region_id ? (areaById[cityObj.region_id] || {}) : {};
-            var cityName   = esc(cityObj.name_ua   || cityObj.name   || c.city_id);
-            var countryName= esc(countryObj.name_ua|| countryObj.name|| c.country_id);
-            var areaName   = esc(areaObj.name_ua   || areaObj.name   || '');
+            var cityName   = esc(entityName(cityObj)    || c.city_id);
+            var countryName= esc(entityName(countryObj) || c.country_id);
+            var areaName   = esc(entityName(areaObj)    || '');
             var where      = (areaName && areaName !== countryName) ? areaName + ', ' + countryName : countryName;
             var daysStr    = (v.days && v.days[c.city_id]) ? dayWord(v.days[c.city_id]) : '';
             cityRows += '<li><span class="vc-cn">' + cityName + '</span>' +
@@ -673,10 +685,10 @@ function exportToPdf() {
         });
 
         var links = '';
-        if (v.photos)                              { links += '<a class="vl" href="' + esc(v.photos) + '" target="_blank">&#128248; ' + esc('Фото') + '</a>'; }
-        if (v.story_url)                           { links += '<a class="vl" href="' + esc(v.story_url) + '" target="_blank">&#128214; ' + esc('Звіт') + '</a>'; }
+        if (v.photos)                              { links += '<a class="vl" href="' + esc(v.photos) + '" target="_blank">&#128248; ' + esc(t('pdfPhotos')) + '</a>'; }
+        if (v.story_url)                           { links += '<a class="vl" href="' + esc(v.story_url) + '" target="_blank">&#128214; ' + esc(t('pdfReport')) + '</a>'; }
         else if (v.story && v.story !== true)      { links += '<span class="vl vl-i">&#128214; ' + esc(v.story) + '</span>'; }
-        else if (v.story === true)                 { links += '<span class="vl vl-i">&#128214; ' + esc('є звіт') + '</span>'; }
+        else if (v.story === true)                 { links += '<span class="vl vl-i">&#128214; ' + esc(t('pdfHasReport')) + '</span>'; }
 
         return '<div class="vc"><div class="vc-hd"><span class="vc-dt">' + dateStr + '</span>' +
             '<span class="vc-dr">' + durStr + '</span></div>' +
@@ -688,7 +700,7 @@ function exportToPdf() {
     var visitSec = '';
     $.each(years, function(i, yr) {
         var vArr   = byYear[yr];
-        var cntStr = parseWord('поїздк', 'а', 'и', 'ок', vArr.length);
+        var cntStr = window.LANG === 'en' ? (vArr.length === 1 ? 'trip' : 'trips') : parseWord('поїздк', 'а', 'и', 'ок', vArr.length);
         visitSec  += '<div class="yg"><div class="yh">' + yr +
             '<span class="yh-c">' + vArr.length + ' ' + cntStr + '</span></div>';
         $.each(vArr, function(j, v) { visitSec += buildCard(v); });
@@ -707,12 +719,12 @@ function exportToPdf() {
     var countrySec = '';
     $.each(contOrder, function(i, cid) {
         var contObj  = continentById[cid] || {};
-        var contName = esc(contObj.name_ua || contObj.name || cid);
+        var contName = esc(entityName(contObj) || cid);
         var clist    = contMap[cid].slice().sort(function(a, b) {
-            return (a.name_ua || a.name || '').localeCompare(b.name_ua || b.name || '', 'uk');
+            return (entityName(a) || '').localeCompare(entityName(b) || '', window.LANG === 'en' ? 'en' : 'uk');
         });
         var liHtml = '';
-        $.each(clist, function(j, c) { liHtml += '<li>' + esc(c.name_ua || c.name) + '</li>'; });
+        $.each(clist, function(j, c) { liHtml += '<li>' + esc(entityName(c)) + '</li>'; });
         countrySec += '<div class="cg"><div class="cg-nm">' + contName + ' (' + clist.length + ')</div>' +
             '<ul class="cg-ls">' + liHtml + '</ul></div>';
     });
@@ -765,19 +777,19 @@ function exportToPdf() {
     ].join('\n');
 
     // ── assemble full HTML ─────────────────────────────────────────────────────
-    var cvTitle = esc('Книга подорожей');
-    var cvSub   = esc('Подорожі Олексія Славутського');
-    var secVisit = esc('Подорожі');
-    var secCountries = esc('Відвідані країни');
+    var cvTitle = esc(t('pdfTitle'));
+    var cvSub   = esc(t('pdfSubtitle'));
+    var secVisit = esc(t('pdfSectionVisits'));
+    var secCountries = esc(t('pdfSectionCountries'));
     var lbl = {
-        countries : esc('країн'),
-        cities    : esc('міст'),
-        trips     : esc('поїздок'),
-        days      : esc('днів у дорозі'),
-        generated : esc('Сформовано')
+        countries : esc(t('pdfCountries')),
+        cities    : esc(t('pdfCities')),
+        trips     : esc(t('pdfTrips')),
+        days      : esc(t('pdfDays')),
+        generated : esc(t('pdfGenerated'))
     };
 
-    var html = '<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">' +
+    var html = '<!DOCTYPE html><html lang="' + (window.LANG === 'en' ? 'en' : 'uk') + '"><head><meta charset="UTF-8">' +
         '<title>' + cvTitle + '</title>' +
         '<style>' + css + '</style></head><body>' +
         '<div class="cv">' +
@@ -799,7 +811,7 @@ function exportToPdf() {
     // ── open and print ─────────────────────────────────────────────────────────
     var w = window.open('', '_blank');
     if (!w) {
-        alert('Не вдалося відкрити вікно. Дозвольте спливаючі вікна для цього сайту.');
+        alert(t('setMsgNoPopup'));
         return;
     }
     w.document.write(html);
@@ -825,13 +837,13 @@ function exportToCsv() {
 
     // ── data tabs (ordered logically) ─────────────────────────────────────────
     var TABS = [
-        { id: 'continent',    label: 'Континенти',   arr: data.continent    || [] },
-        { id: 'country',      label: 'Країни',       arr: data.country      || [] },
-        { id: 'area',         label: 'Регіони',  arr: data.area         || [] },
-        { id: 'city',         label: 'Міста',             arr: data.city         || [] },
-        { id: 'visit',        label: 'Візити',        arr: data.visit        || [] },
-        { id: 'type',         label: 'Типи локацій', arr: data.type         || [] },
-        { id: 'country_type', label: 'Типи країн', arr: data.country_type || [] }
+        { id: 'continent',    label: t('setContinents'),    arr: data.continent    || [] },
+        { id: 'country',      label: t('setCountries'),     arr: data.country      || [] },
+        { id: 'area',         label: t('setRegions'),       arr: data.area         || [] },
+        { id: 'city',         label: t('setLocations'),     arr: data.city         || [] },
+        { id: 'visit',        label: t('setVisits'),        arr: data.visit        || [] },
+        { id: 'type',         label: t('setLocationTypes'), arr: data.type         || [] },
+        { id: 'country_type', label: t('setCountryTypes'),  arr: data.country_type || [] }
     ];
 
     // Preferred column order per array
@@ -902,7 +914,7 @@ function exportToCsv() {
                 '<button class="dl" onclick="dlCsv(\'' + tab.id + '\',\'' + fname + '\')">' +
                     '&#8595; ' + esc(tab.label) + '.csv' +
                 '</button>' +
-                '<span class="bc">' + tab.arr.length + ' записів</span>' +
+                '<span class="bc">' + tab.arr.length + ' ' + t('csvRecords') + '</span>' +
             '</div>' +
             '<div class="tw">' + buildTable(tab) + '</div>' +
             '</div>';
@@ -976,15 +988,15 @@ function exportToCsv() {
     ].join('\n');
 
     // ── assemble full HTML ─────────────────────────────────────────────────────
-    var genDate = new Date().toLocaleDateString('uk-UA');
-    var hdTitle = esc('Бекап бази подорожей');
-    var hdSub   = esc(genDate + ' • ' + totalRows + ' записів усього');
+    var genDate = new Date().toLocaleDateString(window.LANG === 'en' ? 'en-GB' : 'uk-UA');
+    var hdTitle = esc(t('csvTitle'));
+    var hdSub   = esc(genDate + ' • ' + totalRows + ' ' + t('csvRecords'));
 
     var html = '<!DOCTYPE html><html lang="uk"><head><meta charset="UTF-8">' +
         '<title>' + hdTitle + '</title>' +
         '<style>' + css + '</style></head><body>' +
         '<div class="hd"><h1>' + hdTitle + '</h1><span class="hs">' + hdSub + '</span>' +
-        '<button class="dlall" onclick="dlAll()">&#8595; Завантажити все</button></div>' +
+        '<button class="dlall" onclick="dlAll()">&#8595; ' + esc(t('csvDownloadAll')) + '</button></div>' +
         '<div class="tnav">' + navHtml + '</div>' +
         panelsHtml +
         '<scr' + 'ipt>' + js + '<' + '/script>' +
@@ -993,7 +1005,7 @@ function exportToCsv() {
     // ── open window ────────────────────────────────────────────────────────────
     var w = window.open('', '_blank');
     if (!w) {
-        alert('Не вдалося відкрити вікно. Дозвольте спливаючі вікна.');
+        alert(t('setMsgNoPopupCsv'));
         return;
     }
     w.document.write(html);
@@ -1007,7 +1019,7 @@ function generateGlobalDb() {
         var el = document.getElementById('globaldbGenMsg');
         if (el) { el.className = 'set-alert ' + cls; el.innerHTML = html; }
     };
-    msg('', 'Порівнюю з поточним файлом…');
+    msg('', t('setMsgComparing'));
 
     $.ajax({ url: 'DATA/globaldb.json', dataType: 'text', cache: false })
         .always(function(rawOrXhr) {
@@ -1016,15 +1028,15 @@ function generateGlobalDb() {
                 try { existing = JSON.parse(rawOrXhr); } catch(e) {}
             }
 
-            // Per-array config: key extractor + Ukrainian plural forms [1, 2-4, 5+]
+            // Per-array config: key extractor + plural forms (UK: [1, 2-4, 5+]; EN: singular base)
             var ARRAYS = [
-                { key: 'continent',    fn: function(x) { return x.continent_id; },                                  forms: ['континент',  'континенти',  'континентів'] },
-                { key: 'country',      fn: function(x) { return x.country_id; },                                    forms: ['країну',     'країни',      'країн'] },
-                { key: 'area',         fn: function(x) { return x.country_id + ':' + x.region_id; },             forms: ['регіон',     'регіони',     'регіонів'] },
-                { key: 'city',         fn: function(x) { return x.city_id; },                                       forms: ['місто',      'міста',       'міст'] },
-                { key: 'visit',        fn: function(x) { return x.start_date + ' — ' + x.end_date; },          forms: ['візит',      'візити',      'візитів'] },
-                { key: 'type',         fn: function(x) { return x.type_id; },                                       forms: ['тип',        'типи',        'типів'] },
-                { key: 'country_type', fn: function(x) { return x.country_type_id; },                               forms: ['тип країни', 'типи країн',  'типів країн'] }
+                { key: 'continent',    fn: function(x) { return x.continent_id; },                           forms: ['континент',  'континенти',  'континентів'],   formsEn: 'continent' },
+                { key: 'country',      fn: function(x) { return x.country_id; },                             forms: ['країну',     'країни',      'країн'],         formsEn: 'country' },
+                { key: 'area',         fn: function(x) { return x.country_id + ':' + x.region_id; },        forms: ['регіон',     'регіони',     'регіонів'],      formsEn: 'region' },
+                { key: 'city',         fn: function(x) { return x.city_id; },                                forms: ['місто',      'міста',       'міст'],          formsEn: 'city' },
+                { key: 'visit',        fn: function(x) { return x.start_date + ' — ' + x.end_date; },       forms: ['візит',      'візити',      'візитів'],       formsEn: 'visit' },
+                { key: 'type',         fn: function(x) { return x.type_id; },                                forms: ['тип',        'типи',        'типів'],         formsEn: 'type' },
+                { key: 'country_type', fn: function(x) { return x.country_type_id; },                        forms: ['тип країни', 'типи країн',  'типів країн'],   formsEn: 'country type' }
             ];
 
             function plural(n, forms) {
@@ -1064,9 +1076,10 @@ function generateGlobalDb() {
 
                     var MAX = 6;
                     function clip(arr) { return arr.slice(0, MAX).join(', ') + (arr.length > MAX ? '…' : ''); }
-                    if (added.length)   { diffLines.push('&#10133; Додано '   + plural(added.length,   cfg.forms) + ': <b>' + clip(added)   + '</b>'); }
-                    if (removed.length) { diffLines.push('&#10134; Видалено ' + plural(removed.length, cfg.forms) + ': <b>' + clip(removed) + '</b>'); }
-                    if (changed.length) { diffLines.push('&#9998; Змінено '   + plural(changed.length, cfg.forms) + ': <b>' + clip(changed) + '</b>'); }
+                    function pStr(n) { return window.LANG === 'en' ? n + ' ' + cfg.formsEn + (n === 1 ? '' : 's') : plural(n, cfg.forms); }
+                    if (added.length)   { diffLines.push('&#10133; ' + t('setDiffAdded')   + ' ' + pStr(added.length)   + ': <b>' + clip(added)   + '</b>'); }
+                    if (removed.length) { diffLines.push('&#10134; ' + t('setDiffRemoved') + ' ' + pStr(removed.length) + ': <b>' + clip(removed) + '</b>'); }
+                    if (changed.length) { diffLines.push('&#9998; '  + t('setDiffChanged') + ' ' + pStr(changed.length) + ': <b>' + clip(changed) + '</b>'); }
                 });
             }
 
@@ -1079,9 +1092,9 @@ function generateGlobalDb() {
             a.download = 'globaldb.json';
             document.body.appendChild(a); a.click(); document.body.removeChild(a);
 
-            var head = 'Завантажено <b>globaldb.json</b> — замініть файл <code>DATA/globaldb.json</code>.';
-            var body = !existing    ? 'Порівняння недоступне.' :
-                       !diffLines.length ? '&#10003; Змін не виявлено — стан бази ідентичний файлу на диску.' :
+            var head = t('setOkGlobaldbHead');
+            var body = !existing         ? t('setDiffNoPrev') :
+                       !diffLines.length ? t('setDiffNoChangesGlob') :
                        diffLines.join('<br>');
             msg('is-ok', head + '<br>' + body);
         });

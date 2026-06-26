@@ -119,9 +119,7 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### UI / UX
 - [ ] Settings - Visit - add time spent in city as value
-- [ ] Add information button to Settings db file validation with description of issues verified
-- [ ] Need to ensure that global db generatio is really good
-- [ ] Need to update eneration of onload page as continents now has 2 languages
+- [ ] Need to ensure that global db generation is really good
 
 ### Data / content
 - [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation
