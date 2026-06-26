@@ -293,7 +293,7 @@ function generateStoriesIndex() {
             $.getJSON("DATA/stories/" + id + ".json")
                 .done(function (story) {
                     var date = (story.route && story.route[0] && story.route[0].date) ? story.route[0].date : null;
-                    entries.push({ id: story.id || id, title: story.title || "", date: date });
+                    entries.push({ id: story.id || id, language: story.language || "UA", title: story.title || "", date: date });
                 })
                 .always(function () { if (--pending === 0) { finish(); } });   // skip missing/deleted files
         });

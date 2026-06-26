@@ -118,7 +118,6 @@ Planned improvements. How to use: `- [ ]` — planned, `- [x]` — top priority.
 at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### UI / UX
-- [ ] Add second language to portal - English
 - [ ] Settings - Visit - add time spent in city as value
 - [ ] Add information button to Settings db file validation with description of issues verified
 - [ ] Need to ensure that global db generatio is really good

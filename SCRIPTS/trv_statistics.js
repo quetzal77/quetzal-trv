@@ -6,11 +6,11 @@ function createStatisticsPage_HTML() {
 
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?page=statistics"); }
-    setPageMeta("Статистика", "index.html?page=statistics");
+    setPageMeta(t('statTitle'), "index.html?page=statistics");
 
     document.getElementById("mainSection").innerHTML =
         "<div class='stats-page'>" +
-            "<h1 class='stats-title'>Статистика</h1>" +
+            "<h1 class='stats-title'>" + t('statTitle') + "</h1>" +
             "<section class='stats-block'>" + statsBlockSummary_HTML() + "</section>" +
             "<section class='stats-block'>" + statsBlockRecords_HTML() + "</section>" +
             "<section class='stats-block'>" + statsBlockDonuts_HTML() + "</section>" +
@@ -54,43 +54,43 @@ function statsBlockSummary_HTML() {
     return "<div class='stat-grid stat-tiles-full'>" +
         //Card 1 — geography
         "<div class='stat-tile'>" +
-            "<div class='num'>" + countries + "</div><div class='lbl'>Країн відвідано</div>" +
+            "<div class='num'>" + countries + "</div><div class='lbl'>" + t('statCountriesVisited') + "</div>" +
             "<div class='sub'>" +
-                "<div class='sub-row'><b>" + regions + "</b> регіонів відвідано</div>" +
-                "<div class='sub-row'><b>" + totalCityVisits + "</b> локацій відвідано</div>" +
-                "<div class='sub-row'><b>" + cities + "</b> унікальних локацій відвідано</div>" +
+                "<div class='sub-row'><b>" + regions + "</b> " + t('statRegionsVisited') + "</div>" +
+                "<div class='sub-row'><b>" + totalCityVisits + "</b> " + t('statLocVisited') + "</div>" +
+                "<div class='sub-row'><b>" + cities + "</b> " + t('statUniqueLocations') + "</div>" +
             "</div>" +
         "</div>" +
         //Card 2 — trips
         "<div class='stat-tile'>" +
-            "<div class='num'>" + trips + "</div><div class='lbl'>Поїздок</div>" +
+            "<div class='num'>" + trips + "</div><div class='lbl'>" + t('statTrips') + "</div>" +
             "<div class='sub'>" +
-                "<div class='sub-row'><b>&asymp; " + statsFmt1(avgLocPerTrip) + "</b> локацій за поїздку</div>" +
-                "<div class='sub-row'><b>" + oneDayTrips + "</b> (" + (trips ? Math.round(oneDayTrips / trips * 100) : 0) + "%) одноденних поїздок</div>" +
-                "<div class='sub-row'><b>" + twoWeekTrips + "</b> (" + (trips ? Math.round(twoWeekTrips / trips * 100) : 0) + "%) поїздок понад 2 тижні</div>" +
+                "<div class='sub-row'><b>&asymp; " + statsFmt1(avgLocPerTrip) + "</b> " + t('statLocPerTrip') + "</div>" +
+                "<div class='sub-row'><b>" + oneDayTrips + "</b> (" + (trips ? Math.round(oneDayTrips / trips * 100) : 0) + "%) " + t('statOneDayTrips') + "</div>" +
+                "<div class='sub-row'><b>" + twoWeekTrips + "</b> (" + (trips ? Math.round(twoWeekTrips / trips * 100) : 0) + "%) " + t('statLongTrips') + "</div>" +
             "</div>" +
         "</div>" +
         //Card 3 — time
         "<div class='stat-tile'>" +
             "<div class='num'>" + (totalDays % 1 === 0 ? totalDays : statsFmt1(totalDays)) + "</div>" +
-            "<div class='lbl'>Днів у подорожах <span class='ns-info' title='Одноденні поїздки рахуються як 0,5 дня — тому що на ночівлю мандрівник повертається до дому'>і</span></div>" +
+            "<div class='lbl'>" + t('statDaysTitle') + " <span class='ns-info' title='" + t('statOneDayNote') + "'>і</span></div>" +
             "<div class='sub'>" +
-                "<div class='sub-row'><b>&asymp; " + Math.round(months) + " місяців</b></div>" +
-                "<div class='sub-row'><b>&asymp; " + statsFmt2(years) + " року</b></div>" +
-                "<div class='sub-row'><b>&asymp; " + statsFmt2(avgDaysPerTrip) + " дня</b> за поїздку</div>" +
+                "<div class='sub-row'><b>&asymp; " + Math.round(months) + " " + t('statMonths') + "</b></div>" +
+                "<div class='sub-row'><b>&asymp; " + statsFmt2(years) + " " + t('statYearsWord') + "</b></div>" +
+                "<div class='sub-row'><b>&asymp; " + statsFmt2(avgDaysPerTrip) + "</b> " + t('statDaysPerTrip') + "</div>" +
             "</div>" +
         "</div>" +
     "</div>";
 }
 
-//09.03 Format a number with one decimal, Ukrainian comma separator
+//09.03 Format a number with one decimal (comma in UK, period in EN)
 function statsFmt1(n) {
-    return n.toFixed(1).replace(".", ",");
+    return window.LANG === 'en' ? n.toFixed(1) : n.toFixed(1).replace(".", ",");
 }
 
-//09.03a Format a number with two decimals, Ukrainian comma separator
+//09.03a Format a number with two decimals
 function statsFmt2(n) {
-    return n.toFixed(2).replace(".", ",");
+    return window.LANG === 'en' ? n.toFixed(2) : n.toFixed(2).replace(".", ",");
 }
 
 //09.04 Block 2 — records: first / longest trip, most locations, most frequent country
@@ -132,11 +132,15 @@ function statsBlockRecords_HTML() {
 
     var topLocSub = setLocationNumberWithCorrectEnd(topLocCount) + "<br>" + setVisitsNumberWithCorrectEnd(topLocTrips);
 
+    var longestDayStr = window.LANG === 'en'
+        ? longestDays + " " + t('statDaysWord')
+        : longestDays + " " + parseWord("д", "ень", "ні", "нів", longestDays);
+
     return "<div class='stat-grid stat-records'>" +
-            statsRecCard("🚩", "Перша поїздка", statsFmtDate(firstVisit.start_date), firstSub) +
-            statsRecCard("⏱️", "Найдовша поїздка", longestDays + " " + parseWord("д", "ень", "ні", "нів", longestDays), longestSub) +
-            statsRecCard("📍", "Найбільше локацій", topLocCountry, topLocSub) +
-            statsRecCard("🏛️", "Відвідано столиць", capitals, "з " + countriesVisited.length + " країн") +
+            statsRecCard("🚩", t('statFirstTrip'), statsFmtDate(firstVisit.start_date), firstSub) +
+            statsRecCard("⏱️", t('statLongestTrip'), longestDayStr, longestSub) +
+            statsRecCard("📍", t('statMostLocations'), topLocCountry, topLocSub) +
+            statsRecCard("🏛️", t('statCapitals'), capitals, t('of') + " " + countriesVisited.length + " " + t('countries')) +
         "</div>";
 }
 
@@ -156,8 +160,11 @@ function statsCityCountry(visit) {
     return [city, country].filter(function(s){ return s; }).join(", ");
 }
 
-//09.07 Format a Date object as dd.mm.yyyy
+//09.07 Format a Date object — dd.mm.yyyy in UK, "d Mon yyyy" in EN
 function statsFmtDate(d) {
+    if (window.LANG === 'en') {
+        return d.getDate() + " " + getMonthName(d.getMonth() + 1) + " " + d.getFullYear();
+    }
     var dd = ("0" + d.getDate()).slice(-2);
     var mm = ("0" + (d.getMonth() + 1)).slice(-2);
     return dd + "." + mm + "." + d.getFullYear();
@@ -201,14 +208,14 @@ function statsBlockDonuts_HTML() {
         if (cnt > 1) { multi += 1; } else if (cnt === 1) { single += 1; }
     });
     var tripSegs = [
-        { label: "Кілька країн", value: multi,  color: "#2563eb" },
-        { label: "Одна країна",  value: single, color: "#94a3b8" }
+        { label: t('statMultiCountry'), value: multi,  color: "#2563eb" },
+        { label: t('statSingleCountry'), value: single, color: "#94a3b8" }
     ];
 
     return "<div class='stat-grid stat-donuts'>" +
-            statsDonut_HTML("Країни за континентами", contSegs, "країн") +
-            statsDonut_HTML("Країни за типом", typeSegs, "країн") +
-            statsDonut_HTML("Крос-граничні поїздки", tripSegs, "поїздок") +
+            statsDonut_HTML(t('statContinent'), contSegs, t('statCountriesUnit')) +
+            statsDonut_HTML(t('statCountryType'), typeSegs, t('statCountriesUnit')) +
+            statsDonut_HTML(t('statCrossBorder'), tripSegs, t('statTripsUnit')) +
         "</div>";
 }
 
@@ -275,7 +282,7 @@ function statsBlockYears_HTML() {
     });
 
     return "<div class='trend-card'>" +
-        "<div class='trend-head'><h4>Поїздки за роками</h4><span class='pk'>пік: " + maxN + " (" + peakYear + ")</span></div>" +
+        "<div class='trend-head'><h4>" + t('statTripsByYear') + "</h4><span class='pk'>" + t('statPeak') + " " + maxN + " (" + peakYear + ")</span></div>" +
         "<div class='stat-chart' style='padding:0; border:0; box-shadow:none'>" +
             "<div class='stat-cols'>" + cols + "</div>" +
             "<div class='stat-years'>" + yrs + "</div>" +
@@ -287,7 +294,9 @@ function statsBlockYears_HTML() {
 function statsBlockTrends_HTML() {
     if (!visitsSorted.length) { return ""; }
 
-    var MONTHS = ["Січ","Лют","Бер","Кві","Тра","Чер","Лип","Сер","Вер","Жов","Лис","Гру"];
+    var MONTHS = window.LANG === 'en'
+        ? ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        : ["Січ","Лют","Бер","Кві","Тра","Чер","Лип","Сер","Вер","Жов","Лис","Гру"];
 
     var byYearC = {};      //year -> { short_name: true } (distinct countries that year)
     var firstYear = {};    //short_name -> earliest visited year
@@ -330,11 +339,11 @@ function statsBlockTrends_HTML() {
     //Months
     var monthsData = $.map(MONTHS, function( nm, idx ){ return { name: nm, value: byMonth[idx] || 0 }; });
 
-    var tips1 = $.map(series1, function( s ){ return s.year + ": " + setCountriesNumberWithCorrectEnd(s.value) + " відвідано"; });
+    var tips1 = $.map(series1, function( s ){ return s.year + ": " + setCountriesNumberWithCorrectEnd(s.value) + " " + t('statVisited'); });
 
-    return statsLineChart_HTML("Країн відвідано за рік", series1, "#2563eb", tips1) +
-        statsLineChart_HTML("Нових країн відвідано за рік", series2, "#22c55e", tips2) +
-        statsHeatMonths_HTML("Поїздки за місяцями", monthsData);
+    return statsLineChart_HTML(t('statCountriesPerYear'), series1, "#2563eb", tips1) +
+        statsLineChart_HTML(t('statNewPerYear'), series2, "#22c55e", tips2) +
+        statsHeatMonths_HTML(t('statTripsByMonth'), monthsData);
 }
 
 //09.12 Line (trend) chart: SVG line + area, with value labels and hover tooltips
@@ -365,7 +374,7 @@ function statsLineChart_HTML(title, series, color, tips) {
     var area = (n > 1 ? "0,100 " : "50,100 ") + line + (n > 1 ? " 100,100" : " 50,100");
 
     return "<div class='trend-card'>" +
-        "<div class='trend-head'><h4>" + title + "</h4><span class='pk'>пік: " + peak.value + " (" + peak.year + ")</span></div>" +
+        "<div class='trend-head'><h4>" + title + "</h4><span class='pk'>" + t('statPeak') + " " + peak.value + " (" + peak.year + ")</span></div>" +
         "<div class='trend-box' style='color:" + color + "'>" +
             "<svg class='trend-svg' viewBox='0 0 100 100' preserveAspectRatio='none'>" +
                 "<polygon points='" + area + "' fill='" + color + "' fill-opacity='0.13'/>" +
@@ -391,7 +400,7 @@ function statsHeatMonths_HTML(title, months) {
     });
 
     return "<div class='trend-card'>" +
-        "<div class='trend-head'><h4>" + title + "</h4><span class='pk'>пік: " + peak.name + " (" + peak.value + ")</span></div>" +
+        "<div class='trend-head'><h4>" + title + "</h4><span class='pk'>" + t('statPeak') + " " + peak.name + " (" + peak.value + ")</span></div>" +
         "<div class='mh-heat'>" + cells + "</div></div>";
 }
 
@@ -457,11 +466,11 @@ function statsBlockTop_HTML() {
 
     //Register full datasets so the expand button can show the complete list in a modal
     window.statsTop = {
-        visits:  { title: "Топ країн за візитами", unit: "", mode: "", rows: statsSortRows(byVisits) },
-        cities:  { title: "Топ міст за візитами", unit: "", mode: "", rows: cityRows },
-        regions: { title: "Топ за регіонами", unit: "", mode: "", rows: regionRows },
-        days:    { title: "Топ країн за часом перебування", unit: "дн", mode: "", rows: statsSortRows(byDays) },
-        combo:   { title: "🥇 Золоте комбо", unit: "рег.", mode: "gold", desc: "Країни, де відвідано столицю та всі регіони.", rows: comboRows }
+        visits:  { title: t('statTopVisits'),   unit: "",                    mode: "",     rows: statsSortRows(byVisits) },
+        cities:  { title: t('statTopCities'),   unit: "",                    mode: "",     rows: cityRows },
+        regions: { title: t('statTopRegions'),  unit: t('statTopRegsUnit'),  mode: "",     rows: regionRows },
+        days:    { title: t('statTopDays'),     unit: t('statTopDaysUnit'),  mode: "",     rows: statsSortRows(byDays) },
+        combo:   { title: t('statTopCombo'),    unit: t('statTopRegsUnit'),  mode: "gold", desc: t('statTopComboDesc'), rows: comboRows }
     };
 
     return "<div class='stat-grid top-grid'>" +
@@ -489,7 +498,7 @@ function statsTopRowsHTML(rows, unit, mode, rank) {
         if (gold) {
             valText = "<span class='top-gold'>" + r.value + (unit ? " " + unit : "") + "</span>";
         } else if (r.total !== undefined) {
-            valText = r.value + " з " + r.total;
+            valText = r.value + " " + t('of') + " " + r.total;
             bar = "<div class='bar'><span style='width:" + (r.total ? Math.round(r.value / r.total * 100) : 0) + "%'></span></div>";
         } else {
             valText = r.value + (unit ? " " + unit : "");
@@ -507,7 +516,7 @@ function statsTopCard(key) {
     var d = m.desc ? "<p class='top-desc'>" + m.desc + "</p>" : "";
     var body = statsTopRowsHTML(m.rows.slice(0, 7), m.unit, m.mode, false);
     var btn = (m.rows.length > 7)
-        ? "<button class='tc-expand' type='button' onclick=\"statsTopOpen('" + key + "')\" aria-label='Показати весь список' title='Показати весь список'>" +
+        ? "<button class='tc-expand' type='button' onclick=\"statsTopOpen('" + key + "')\" aria-label='" + t('statShowAll') + "' title='" + t('statShowAll') + "'>" +
           "<svg viewBox='0 0 24 24'><path d='M6 9l6 6 6-6'/></svg></button>"
         : "";
     return "<div class='top-card'><div class='tc-head'><h4>" + m.title + "</h4>" + btn + "</div>" + d + body + "</div>";
@@ -528,7 +537,7 @@ function statsTopOpen(key) {
     modal.innerHTML =
         "<div class='stats-modal-box'>" +
             "<div class='stats-modal-head'><h3>" + m.title + "</h3>" +
-                "<button class='stats-modal-close' type='button' onclick='statsTopClose()' aria-label='Закрити'>&times;</button>" +
+                "<button class='stats-modal-close' type='button' onclick='statsTopClose()' aria-label='" + t('statClose') + "'>&times;</button>" +
             "</div>" +
             (m.desc ? "<p class='top-desc' style='padding:10px 20px 0; margin:0'>" + m.desc + "</p>" : "") +
             "<div class='stats-modal-list'>" + statsTopRowsHTML(m.rows, m.unit, m.mode, false) + "</div>" +

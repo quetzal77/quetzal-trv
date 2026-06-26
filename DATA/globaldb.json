@@ -3,17 +3,17 @@
     {
       "country_type_id": "1",
       "name_ua": "Визнана країна",
-      "name": "Recognized country"
+      "name": "Recognized"
     },
     {
       "country_type_id": "2",
       "name_ua": "Напіввизнана країна",
-      "name": "Partially recognized country"
+      "name": "Partly recognized"
     },
     {
       "country_type_id": "3",
       "name_ua": "Невизнана країна",
-      "name": "Unrecognized country"
+      "name": "Unrecognized"
     },
     {
       "country_type_id": "4",

@@ -20,15 +20,15 @@ var processMyStory = function (story) {
     document.getElementById("mainSection").innerHTML = HTML_StoryPage(story);
 
     //Keep <title>/canonical/OG in sync
-    setPageMeta(story.title || "Історія", "index.html?storyId=" + local[0]);
+    setPageMeta(story.title || t('stories'), "index.html?storyId=" + local[0]);
 
     //Highlight the active section in the navbar
     setActiveNav("navStories");
 }
 
 //06.03 Section header + a "cell text" row helpers (keep the original markup/classes)
-function storyHeader(t) {
-    return "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>" + t + "</p></div></td></tr>";
+function storyHeader(label) {
+    return "<tr><td class='story_celltext'><div class='reg_header reg_header_impr'><p class='reg_header'>" + label + "</p></div></td></tr>";
 }
 function storyRow(html) { return "<tr><td><div class='story_celltext'>" + html + "</div></td></tr>"; }
 function storyParas(arr) { // array of paragraphs -> story_celltext paragraphs
@@ -47,28 +47,28 @@ function HTML_StoryPage(story) {
 
     //Participants
     if (story.participants && story.participants.length) {
-        r += storyHeader("Учасники:");
+        r += storyHeader(t('storyParticipants'));
         story.participants.forEach(function (p) { r += storyRow(p); });
     }
 
     //Visa
-    if (story.visa && story.visa.length) { r += storyHeader("Віза:") + storyParas(story.visa); }
+    if (story.visa && story.visa.length) { r += storyHeader(t('storyVisa')) + storyParas(story.visa); }
 
     //Exchange rate
     if (story.exrate && story.exrate.length) {
-        r += storyHeader("Курс обміну:");
+        r += storyHeader(t('storyExrate'));
         story.exrate.forEach(function (e) { r += storyRow("1 " + e.from + " = " + e.rate + " " + e.to); });
     }
 
     //Route
     if (story.route && story.route.length) {
-        r += storyHeader("Маршрут:");
+        r += storyHeader(t('storyRoute'));
         story.route.forEach(function (d) { r += storyRow("<b>" + storyDate(d.date) + "</b> - " + d.text); });
     }
 
     //Habitation
     if (story.habitation && story.habitation.length) {
-        r += storyHeader("Проживання:");
+        r += storyHeader(t('storyHabitation'));
         story.habitation.forEach(function (h) {
             r += storyRow(h.name + " в " + h.city + ", " + h.nights + " ночі, " + h.room +
                 ", ціна " + storyCost(h.price, h.currency) + " за ніч. " + (h.text || ""));
@@ -77,22 +77,22 @@ function HTML_StoryPage(story) {
 
     //Food
     if (story.food && story.food.length) {
-        r += storyHeader("Харчування:");
+        r += storyHeader(t('storyFood'));
         story.food.forEach(function (d) { r += storyRow(d.name + " - " + storyCost(d.price, d.currency) + ". " + (d.text || "")); });
     }
 
     //Transport
     if (story.transport && story.transport.length) {
-        r += storyHeader("Транспорт:");
-        story.transport.forEach(function (t) {
-            r += storyRow("<b>" + storyDate(t.date) + "</b> - " + t.type + " " + t.from + " - " + t.to +
-                ", час у дорозі " + t.time + ", ціна " + storyCost(t.price, t.currency) + ". " + (t.text || "") + ".");
+        r += storyHeader(t('storyTransport'));
+        story.transport.forEach(function (tr) {
+            r += storyRow("<b>" + storyDate(tr.date) + "</b> - " + tr.type + " " + tr.from + " - " + tr.to +
+                ", час у дорозі " + tr.time + ", ціна " + storyCost(tr.price, tr.currency) + ". " + (tr.text || "") + ".");
         });
     }
 
     //Sights
     if (story.sights && story.sights.length) {
-        r += storyHeader("Визначні місця:");
+        r += storyHeader(t('storySights'));
         story.sights.forEach(function (s) {
             r += storyRow("<b>" + s.name + "</b> з локації " + s.city + ", ціна квитка = " + storyCost(s.price, s.currency) + ". " + (s.text || ""));
         });
@@ -100,7 +100,7 @@ function HTML_StoryPage(story) {
 
     //Souvenirs
     if (story.souvenirs && story.souvenirs.length) {
-        r += storyHeader("Сувеніри:");
+        r += storyHeader(t('storySouvenirs'));
         story.souvenirs.forEach(function (s) {
             r += storyRow(s.name + " (" + s.num + " шт.), ціна = " + storyCost(s.price, s.currency) + ". " + (s.text || ""));
         });
@@ -113,23 +113,23 @@ function HTML_StoryPage(story) {
 
     //Links
     if (story.links && story.links.length) {
-        r += storyHeader("Посилання:");
+        r += storyHeader(t('storyLinks'));
         story.links.forEach(function (l) { r += storyRow("<a href='" + l.url + "' target='_blank'>" + l.url + "</a> - " + (l.text || "")); });
     }
 
     //Summary
-    if (story.summary && story.summary.length) { r += storyHeader("Підсумки:") + storyParas(story.summary); }
+    if (story.summary && story.summary.length) { r += storyHeader(t('storySummary')) + storyParas(story.summary); }
 
     r += "</tbody></table>";
     r += getCountryName();
     return r;
 }
 
-//06.05 Format an ISO date (YYYY-MM-DD) as "D MonthName YYYY р."
+//06.05 Format an ISO date (YYYY-MM-DD) as "D MonthName YYYY"
 function storyDate(iso) {
     var p = ("" + (iso || "")).split("-");
     if (p.length !== 3) { return iso || ""; }
-    return parseInt(p[2], 10) + " " + getMonthName(parseInt(p[1], 10)) + " " + p[0] + " р.";
+    return parseInt(p[2], 10) + " " + getMonthName(parseInt(p[1], 10)) + " " + p[0] + t('storyDateSuffix');
 }
 
 //06.06 Create the "back to country" links from the countries named in the story id
@@ -150,7 +150,7 @@ function getCountryName() {
         result += "</ul>";
     }
     else {
-        result = "<div><a id='" + countryId[0] + "' class='back2country' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>Назад до країни</a></div>";
+        result = "<div><a id='" + countryId[0] + "' class='back2country' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + t('storyBack') + "</a></div>";
     }
 
     return result;

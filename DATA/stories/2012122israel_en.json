@@ -1,0 +1,359 @@
+{
+  "id": "2012122israel_en",
+  "language": "EN",
+  "title": "Israel with my wife",
+  "short": "A trip report from Israel. Route: Jerusalem - Tel Aviv - Ein Bokek - Haifa.",
+  "participants": [
+    "Oleksiy Slavutskyy",
+    "Olena Zazhygaieva"
+  ],
+  "visa": [
+    "Citizens of Ukraine do not need a visa to visit Israel! If you wish, you can arrange a visa at home beforehand (at a cost), which guarantees entry, or you can answer a few questions at the airport and receive one on the spot. I chose the latter. On arrival I was asked to show my return tickets and hotel reservation (booked via Booking.com, paid on-site at the hotel), to state the purpose of my visit — tourism — and to answer similar routine questions. We received our passport stamps without any problems, despite the fact that, for example, my brand-new passport had only one previous foreign trip to the UAE — but nobody seemed to care."
+  ],
+  "exrate": [
+    {
+      "from": "USD",
+      "to": "NIS",
+      "rate": 3.17
+    },
+    {
+      "from": "USD",
+      "to": "NIS",
+      "rate": 3.75
+    }
+  ],
+  "route": [
+    {
+      "date": "2012-01-22",
+      "text": "Departure from Kyiv, arrival in Israel, transfer to the hotel in Jerusalem."
+    },
+    {
+      "date": "2012-01-23",
+      "text": "Exploring Jerusalem: the Old City, the Western Wall, the Dome of the Rock, Al-Aqsa Mosque, Via Dolorosa, the Church of the Holy Sepulchre."
+    },
+    {
+      "date": "2012-01-24",
+      "text": "Continuing to explore Jerusalem: walk along the northern wall, Church of All Nations, Church of Mary Magdalene, ascent to the observation deck, walk from the Old City to the Knesset."
+    },
+    {
+      "date": "2012-01-25",
+      "text": "Day trip to Tel Aviv: Jaffa, Old Tel Aviv, Rothschild Boulevard, the seafront."
+    },
+    {
+      "date": "2012-01-26",
+      "text": "Day trip to the Dead Sea: Ein Bokek."
+    },
+    {
+      "date": "2012-01-27",
+      "text": "Day trip to Haifa: the Bahá'í Gardens, a walk around the city."
+    },
+    {
+      "date": "2012-01-28",
+      "text": "Strolling around Jerusalem, visiting the Israel Museum."
+    },
+    {
+      "date": "2012-01-29",
+      "text": "Departure from Ben Gurion Airport to Kyiv."
+    }
+  ],
+  "habitation": [
+    {
+      "name": "Jerusalem Tower Hotel",
+      "city": "Jerusalem",
+      "nights": 7,
+      "room": "double",
+      "price": 100,
+      "currency": "USD",
+      "text": "The main advantage of this hotel is its location; the main disadvantage is absolutely everything inside. Breakfast was included in the price. I would not recommend this hotel unless you are looking to save money. Those interested can check the reviews on Booking.com. By the way, be warned — almost nowhere in Israel are there heaters in the rooms, and nobody seems to care even in winter, though to be fair it is not really cold there, except occasionally."
+    }
+  ],
+  "food": [
+    {
+      "name": "beer",
+      "price": 12,
+      "currency": "NIS"
+    },
+    {
+      "name": "fizzy drink 1L",
+      "price": 12,
+      "currency": "NIS"
+    },
+    {
+      "name": "lunch for two",
+      "price": 146,
+      "currency": "NIS"
+    },
+    {
+      "name": "1L juice at supermarket",
+      "price": 8.58,
+      "currency": "NIS"
+    },
+    {
+      "name": "large bag of crisps",
+      "price": 11.49,
+      "currency": "NIS"
+    },
+    {
+      "name": "beer at supermarket",
+      "price": 8,
+      "currency": "NIS"
+    },
+    {
+      "name": "lunch for two = (soup+salad=49 NIS) + (soup+juice+fish=79 NIS) + (pizza=38 NIS)",
+      "price": 166,
+      "currency": "NIS"
+    },
+    {
+      "name": "ice cream at supermarket",
+      "price": 10,
+      "currency": "NIS"
+    },
+    {
+      "name": "lunch in Tel Aviv",
+      "price": 190,
+      "currency": "NIS"
+    },
+    {
+      "name": "still water",
+      "price": 3.8,
+      "currency": "NIS"
+    },
+    {
+      "name": "public toilet",
+      "price": 1,
+      "currency": "NIS"
+    },
+    {
+      "name": "lunch at a café = (shakshuka=25 NIS) + (salad=27 NIS) + (sandwich=25 NIS)",
+      "price": 77,
+      "currency": "NIS"
+    }
+  ],
+  "transport": [
+    {
+      "date": "2012-01-22",
+      "type": "plane",
+      "from": "Kyiv",
+      "to": "Ben Gurion Airport (Tel Aviv)",
+      "time": "h",
+      "price": 320,
+      "currency": "USD",
+      "text": "Air tickets purchased through a travel agency."
+    },
+    {
+      "date": "2012-01-22",
+      "type": "sherut (shared taxi)",
+      "from": "Ben Gurion Airport (Tel Aviv)",
+      "to": "Jerusalem",
+      "time": "h",
+      "price": 60,
+      "currency": "NIS"
+    },
+    {
+      "date": "2012-01-25",
+      "type": "bus",
+      "from": "Jerusalem",
+      "to": "Tel Aviv",
+      "time": "1h15",
+      "price": 15.3,
+      "currency": "NIS",
+      "text": "Price and time are one way."
+    },
+    {
+      "date": "2012-01-25",
+      "type": "taxi",
+      "from": "Tel Aviv",
+      "time": "h",
+      "price": 36,
+      "currency": "NIS",
+      "text": "Taxi from the seafront to the bus station."
+    },
+    {
+      "date": "2012-01-26",
+      "type": "bus",
+      "from": "Jerusalem",
+      "to": "Ein Bokek",
+      "time": "2h30",
+      "price": 35.7,
+      "currency": "NIS",
+      "text": "Bus №486 to Ein Bokek, one way. Worth noting that one of the stops along the way is the Ein Gedi oasis, and another is near Masada. Unfortunately we did not know this and did not have enough time to visit those places, but if you set off earlier you can stop there too."
+    },
+    {
+      "date": "2012-01-27",
+      "type": "bus",
+      "from": "Jerusalem",
+      "to": "Haifa",
+      "time": "3h00",
+      "price": 35.7,
+      "currency": "NIS",
+      "text": "Price and time are one way."
+    },
+    {
+      "date": "2012-01-27",
+      "type": "taxi",
+      "from": "Haifa",
+      "time": "h",
+      "price": 62,
+      "currency": "NIS",
+      "text": "Taxi from the bus station to the upper entrance of the Bahá'í Gardens, metered."
+    },
+    {
+      "date": "2012-01-27",
+      "type": "taxi",
+      "from": "Haifa",
+      "time": "h",
+      "price": 50,
+      "currency": "NIS",
+      "text": "Taxi back from the city centre to the bus station."
+    },
+    {
+      "date": "2012-01-28",
+      "type": "sherut (shared taxi)",
+      "from": "Jerusalem",
+      "to": "Ben Gurion Airport (Tel Aviv)",
+      "time": "h",
+      "price": 65,
+      "currency": "NIS",
+      "text": "We booked a sherut from the hotel reception, door-to-door to the airport."
+    }
+  ],
+  "sights": [
+    {
+      "name": "Old City",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Western Wall",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Dome of the Rock",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Al-Aqsa Mosque",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Via Dolorosa",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Church of the Holy Sepulchre",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Walk along the northern wall",
+      "city": "Jerusalem",
+      "price": 16,
+      "currency": "NIS"
+    },
+    {
+      "name": "Church of All Nations",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Church of Mary Magdalene",
+      "city": "Jerusalem",
+      "price": 0,
+      "currency": "NIS",
+      "text": "free of charge."
+    },
+    {
+      "name": "Israel Museum",
+      "city": "Jerusalem",
+      "price": 50,
+      "currency": "NIS"
+    },
+    {
+      "name": "Jaffa",
+      "city": "Tel Aviv",
+      "price": 50,
+      "currency": "NIS"
+    },
+    {
+      "name": "Ein Bokek",
+      "city": "Dead Sea",
+      "price": 10,
+      "currency": "NIS",
+      "text": "beach chair"
+    },
+    {
+      "name": "Bahá'í Gardens",
+      "city": "Haifa",
+      "price": 0,
+      "currency": "NIS",
+      "text": "We could not get inside as the gardens were closed due to a storm warning."
+    }
+  ],
+  "souvenirs": [
+    {
+      "name": "incense",
+      "num": 1,
+      "price": 25,
+      "currency": "NIS"
+    },
+    {
+      "name": "magnets",
+      "num": 2,
+      "price": 20,
+      "currency": "NIS"
+    },
+    {
+      "name": "large decorative wall plate",
+      "num": 1,
+      "price": 20,
+      "currency": "NIS"
+    },
+    {
+      "name": "keyrings",
+      "num": 3,
+      "price": 20,
+      "currency": "NIS"
+    }
+  ],
+  "custom": [
+    {
+      "title": "Shabbat",
+      "body": [
+        "The weekly holiday when nothing and no one works begins at sunset on Friday and lasts until sunset on Saturday — effectively until Sunday. When planning your Friday itinerary, bear in mind that public transport and shops stop running around midday. On Saturday we eventually managed to find a couple of open food shops, and the hotel kitchen was still operating."
+      ]
+    },
+    {
+      "title": "Weather",
+      "body": [
+        "The average temperature during our stay was around 15°C. However, it varied considerably depending on where in Israel we were — at the Dead Sea it reached 30°C, for example. We got caught in the rain several times throughout the trip, which is quite typical for Israel in winter. We were lucky though: the only serious downpour came on our last day when we had nothing planned anyway. Overall the trip left only good impressions."
+      ]
+    },
+    {
+      "title": "Leaving the country",
+      "body": [
+        "Leaving the country turned out to be considerably more difficult than entering it. To begin with, you should arrive at the airport 4–5 hours before your flight, as the security screening process is quite involved and can take a long time. We were very fortunate to avoid having our luggage manually searched, which is rare luck — they check almost everyone thoroughly. The procedure goes roughly like this: first you join a long queue for screening, the wait alone can take an hour; as you approach the front, security staff will come over and ask a series of questions — where you went, what you did, whether you packed your own bag, whether it was ever left unattended before the flight, whether anyone asked you to carry something home, and so on. I answered honestly, explained we were tourists and said the bag was only left in our locked hotel room. Next comes the X-ray scan, after which you take your scanned luggage to a desk where the image is displayed on screen, and hand it over for what they call inspection — a full search involving every single item being removed from the bag. Good luck with that!"
+      ]
+    }
+  ],
+  "summary": [
+    "The total cost of the trip was $2,000 for two people, including flights, accommodation, food, transport, sightseeing and souvenirs. It is fair to say that you could spend considerably less if you economised on accommodation and food. We spent around $100 per day for the two of us while not denying ourselves anything."
+  ]
+}

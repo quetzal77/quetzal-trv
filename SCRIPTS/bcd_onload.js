@@ -10,7 +10,7 @@
         if (!entity) { return ''; }
         return (window.LANG === 'en') ? (entity.name || entity.name_ua || '') : (entity.name_ua || entity.name || '');
     };
-    window.t = function(key) { return (i18n[window.LANG] || i18n.uk)[key] || key; };
+    window.t = function(key) { var v = (i18n[window.LANG] || i18n.uk)[key]; return v !== undefined ? v : key; };
     window.toggleLang = function() {
         localStorage.setItem('lang', window.LANG === 'uk' ? 'en' : 'uk');
         location.reload();
@@ -36,6 +36,8 @@
 //00.02 Run function on load of World page (Home page)
 //This is jQuery function that takes data from json and transform them to collection that could be basis for creation of world page
     window.onload = function() {$.getJSON( "DATA/onload.json", processMyJson)};
+    // Preload story index so the navbar dropdown can show language badges
+    $.getJSON("DATA/stories.json", function(idx) { window.__storiesIndex = idx || []; });
     applyNavFooterTranslations();
 // When the user scrolls down from the top of the document, show the button
     window.onscroll = function() {updateBackToTopVisibility()};

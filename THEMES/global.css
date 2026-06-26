@@ -280,10 +280,11 @@ img.city_photo{margin:8px; width:300px; height:225px; object-fit:cover; border-r
 @media (prefers-color-scheme:dark){.capital-badge{color:#ffd479; background:#2a2310; border-color:#4a3c12}}
 
 /* STORY PAGE -------------------------------------------------- */
+.story_table{max-width:860px; margin:0 auto}
 .story_celltext{text-indent:0}
-p.story_celltext{text-indent:0; margin:0 0 12px; max-width:74ch}
+p.story_celltext{text-indent:0; margin:0 0 12px}
 .reg_header{font-weight:700; margin:0; font-size:16px}
-.reg_header_impr{padding:8px 14px; background:var(--accent-weak); border-radius:10px; display:inline-block; margin:14px 0 6px}
+.reg_header_impr{padding:8px 14px; background:var(--accent-weak); border-radius:10px; display:block; margin:14px 0 6px}
 .story_table td{padding:3px 0}
 /* Prose sections (Visa, Summary…) come from XML as "<p>…</p> <br>" — the <br>
    after a paragraph doubled the gap. Drop it; paragraph margin handles spacing. */
@@ -318,6 +319,12 @@ a.contact-card:hover{transform:translateY(-2px); border-color:var(--accent)}
   background:var(--surface-2); border:1px solid var(--border); border-radius:999px; padding:5px 12px;
 }
 a.tech-tag:hover{color:var(--accent); border-color:var(--accent)}
+
+/* STORY language badge in dropdown */
+.story-lang-badge{display:inline-block; font-size:10px; font-weight:700; letter-spacing:.04em;
+  padding:1px 5px; border-radius:4px; color:#fff; vertical-align:middle; margin-left:4px; background:#6b7280}
+.story-lang-badge-ua{background:#3b82f6}
+.story-lang-badge-en{background:#16a34a}
 
 /* FLOATING BUTTONS -------------------------------------------- */
 a.back2top,.back2country{

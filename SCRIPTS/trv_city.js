@@ -31,19 +31,19 @@ function HTML_CityDetais(cityId) {
     var city = local[1];
 
     //Country name that this city belongs to
-    result = "<div class='countrydetail'><b>Країна:</b> <a id='" + city.getCountryId() + "' title='Перейти до інформації про країну' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
-             			     getFullUaCountryName(city.getCountryId()) + "</a></div>";
+    result = "<div class='countrydetail'><b>" + t('cityCountry') + "</b> <a id='" + city.getCountryId() + "' title='" + t('goToCountry') + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" +
+                         getFullUaCountryName(city.getCountryId()) + "</a></div>";
 
     //Region — or a city-state badge when the region just duplicates the country
     var ctry = $.grep (data.country, function( n, i ) { return (n.short_name == city.getCountryId()); });
     if (ctry[0] && ctry[0].city_state === "true") {
-        result += "<div class='countrydetail'><span class='cs-badge'>🏙️ Місто-держава</span></div>";
+        result += "<div class='countrydetail'><span class='cs-badge'>🏙️ " + t('cityCityState') + "</span></div>";
     } else {
-        result += "<div class='countrydetail'><b>Регіон:</b> " + city.getRegion().setFullRegionName() + "</div>";
+        result += "<div class='countrydetail'><b>" + t('cityRegion') + "</b> " + city.getRegion().setFullRegionName() + "</div>";
     }
 
     //Capital identificator
-    if (city.capital == true) {result += "<div class='countrydetail'><b>Столиця:</b> <span class='capital-badge'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M4 9l3.6 2.6L12 5l4.4 6.6L20 9l-1.7 9.2H5.7L4 9z'/></svg> Столиця країни</span></div>"}
+    if (city.capital == true) {result += "<div class='countrydetail'><b>" + t('cityCapital') + "</b> <span class='capital-badge'><svg viewBox='0 0 24 24' fill='currentColor'><path d='M4 9l3.6 2.6L12 5l4.4 6.6L20 9l-1.7 9.2H5.7L4 9z'/></svg> " + t('cityCapitalOf') + "</span></div>";}
 
     //Link to google map
     var lat = city.lat;
@@ -54,22 +54,22 @@ function HTML_CityDetais(cityId) {
     }
 
     if (lat != undefined){
-        result += "<div class='countrydetail'><b>Координати:</b> <a title='Подивитись на мапі' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
-              				lat + " с.ш. " + long + " в.д.</a></div>";
+        result += "<div class='countrydetail'><b>" + t('cityCoords') + "</b> <a title='" + t('cityViewOnMap') + "' href='https://www.google.com/maps/@" + lat + "," + long + ",12z' target='_blank'>" +
+                  lat + " " + t('cityLatSuffix') + " " + long + " " + t('cityLonSuffix') + "</a></div>";
     }
 
-    //City description
-    if (city.description != undefined){
-        result += "<div class='countrydetail'><b>Опис:</b> " + city.description + "</div>";
+    //City description (hidden in EN — content is Ukrainian only)
+    if (city.description != undefined && window.LANG !== 'en'){
+        result += "<div class='countrydetail'><b>" + t('cityDescription') + "</b> " + city.description + "</div>";
     }
 
     //Date of city visit
-    result += "<div class='countrydetail'><b>Дата візитів:</b> " + createListOfVisites() + "</div>";
+    result += "<div class='countrydetail'><b>" + t('cityVisitDates') + "</b> " + createListOfVisites() + "</div>";
 
     //Create list of pictures
     var imagesList = "";
     if (city.image != "" && city.image != null){
-        imagesList += "<b>Фото:</b><br>";
+        imagesList += "<b>" + t('cityPhotos') + "</b><br>";
         $.each (city.image.split(","), function( i, image ){
             imagesList += "<img src='IMG/" + image + "' class='city_photo' loading='lazy' decoding='async' />"
         });
