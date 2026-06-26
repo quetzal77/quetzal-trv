@@ -1,7 +1,7 @@
 # quetzal-trv — Project Brief for Claude
 
 Personal travel portfolio SPA by Oleksiy Slavutskyy. No backend, no build step.
-Current version: **9.2.3** (branch `site_version_9_0`).
+Current version: **9.2.3** (branch `site_version_9_2`).
 
 ---
 
@@ -152,4 +152,4 @@ Quick replace (PowerShell):
 - After editing `globaldb.json`: normalise CRLF → run `/check-data`.
 - After editing JS/CSS: check for curly quotes → syntax-check with node → bump `?v=`.
 - To end session: `/finish-session` handles version bump + commit + push.
-- Branch: `site_version_9_0` → merges to `master` for releases.
+- Branch: `site_version_9_2` → merges to `master` for releases.
