@@ -1,4 +1,4 @@
-//02.00 Services
+﻿//02.00 Services
 //This file contains all the functions shared among all the other functions, so we can't use them for any another one function's file
 
 //02.01 Create new AMMAP's map
@@ -17,9 +17,9 @@ function drawMap(){
 
 //02.02 This method creates CUSTOM list of visits
 function createListOfVisites(){
-     //EXAMPLE: <div class="visityear">2025<span class="visityear-count">3 ???????</span></div>
-     //         <div class="visitrow"><div class="firstcell">5 - 10 ??????</div>
-     //                                <div class="secondcell"><a onclick="getCityPage(id)">??????</a>, <a onclick="getCityPage(id)">????</a> (<a onclick="getCountryPage(id)">???????</a>)</div></div>
+     //EXAMPLE: <div class="visityear">2025<span class="visityear-count">3 поїздки</span></div>
+     //         <div class="visitrow"><div class="firstcell">5 - 10 жовтня</div>
+     //                                <div class="secondcell"><a onclick="getCityPage(id)">Відень</a>, <a onclick="getCityPage(id)">Грац</a> (<a onclick="getCountryPage(id)">Австрія</a>)</div></div>
      var result = "";
      var VisitYear;
      var VisitYear_HTML = "";
@@ -139,7 +139,7 @@ function dynamicSort(property) {
     }
     return function (a,b) {
         var av = a[property], bv = b[property];
-        // Strings (name_ua, name, name_full) ? Ukrainian-aware order (?, ?, ?, ? in place);
+        // Strings (name_ua, name, name_full) → Ukrainian-aware order (і, ї, є, ґ in place);
         // dates/numbers keep the plain relational comparison.
         var result = (typeof av === "string" && typeof bv === "string")
             ? av.localeCompare(bv, window.LANG === 'en' ? 'en' : 'uk')
@@ -148,7 +148,7 @@ function dynamicSort(property) {
     }
 }
 
-//02.05 Return correctly created string like "31 ??????"
+//02.05 Return correctly created string like "31 страна"
 function parseWord (word, end1, end234, endrest, number){
     var endOfWord = endrest;
     //Returns last digit of number so then it's possible to create Ukrainian words correctly
@@ -170,16 +170,16 @@ function formatCount(number, bold, ukRoot, end1, end234, endRest, i18nKey) {
     return numStr + ' ' + parseWord(ukRoot, end1, end234, endRest, number);
 }
 function setCountriesNumberWithCorrectEnd(number, bold) {
-    return formatCount(number, bold, '?????', '?', '?', '', 'countCountries');
+    return formatCount(number, bold, 'країн', 'а', 'и', '', 'countCountries');
 }
 function setLocationNumberWithCorrectEnd(number, bold) {
-    return formatCount(number, bold, '??????', '?', '?', '?', 'countLocations');
+    return formatCount(number, bold, 'локаці', 'я', 'ї', 'й', 'countLocations');
 }
 function setRegionsNumberWithCorrectEnd(number) {
-    return formatCount(number, false, '??????', '', '?', '??', 'countRegions');
+    return formatCount(number, false, 'регіон', '', 'а', 'ів', 'countRegions');
 }
 function setVisitsNumberWithCorrectEnd(number) {
-    return formatCount(number, false, '??????', '?', '?', '??', 'countTrips');
+    return formatCount(number, false, 'поїздк', 'а', 'и', 'ок', 'countTrips');
 }
 
 //02.09 Return month name in current language
@@ -188,7 +188,7 @@ function getMonthName (number) {
         var en = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"May",6:"Jun",7:"Jul",8:"Aug",9:"Sep",10:"Oct",11:"Nov",12:"Dec"};
         return en[number];
     }
-    var monthSList = {1:"?????",2:"??????",3:"???????",4:"??????",5:"??????",6:"??????",7:"?????",8:"??????",9:"???????",10:"??????",11:"?????????",12:"??????"};
+    var monthSList = {1:"січня",2:"лютого",3:"березня",4:"квітня",5:"травня",6:"червня",7:"липня",8:"серпня",9:"вересня",10:"жовтня",11:"листопада",12:"грудня"};
     return monthSList[number];
 }
 
@@ -243,11 +243,6 @@ function getExternalStoryUrl(visit) {
 //02.16 This method creates selector of stories
 function getSelectorOfListOfStories_HTML(){
     var result = "";
-    // Build id -> language map from the preloaded stories index
-    var langMap = {};
-    $.each(window.__storiesIndex || [], function(i, s) {
-        if (s.id) { langMap[s.id] = s.language || "UA"; }
-    });
 
     $.each (visitsSorted, function( i, visit ){
         var countriesToReturn = "";
@@ -268,19 +263,10 @@ function getSelectorOfListOfStories_HTML(){
             var dateText = getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2);
 
             if (sid !== null) {
-                var lang = langMap[sid] || "UA";
-                var badge = "<span class='story-lang-badge story-lang-badge-" + lang.toLowerCase() + "'>" + lang + "</span>";
-                result += "<li><a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + " " + badge + "</a></li>";
-                // If an EN variant of this story exists, append it right after
-                var enId = sid + "_en";
-                if (langMap[enId]) {
-                    var enLang = langMap[enId];
-                    var enBadge = "<span class='story-lang-badge story-lang-badge-" + enLang.toLowerCase() + "'>" + enLang + "</span>";
-                    result += "<li><a id='" + enId + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + " " + enBadge + "</a></li>";
-                }
+                result += "<li><a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + "</a></li>";
             }
             if (ext) {
-                result += "<li><a href='" + ext + "' target='_blank'>" + dateText + " -  " + text + " ?</a></li>";
+                result += "<li><a href='" + ext + "' target='_blank'>" + dateText + " -  " + text + " ↗</a></li>";
             }
         }
     });
@@ -306,9 +292,9 @@ function getNumberOfLocation() {
             }
         });
 
-        document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " � " + setLocationNumberWithCorrectEnd(numberOfCities, true);
+        document.getElementById("citiesNumberPerContinent" + cont.continent_id).innerHTML = " · " + setLocationNumberWithCorrectEnd(numberOfCities, true);
     });
-    document.getElementById("totalCitiesNum").innerHTML = " � " + setLocationNumberWithCorrectEnd(citiesVisited.length, true);
+    document.getElementById("totalCitiesNum").innerHTML = " · " + setLocationNumberWithCorrectEnd(citiesVisited.length, true);
 }
 
 //2.17b Load the shared settings helper (set_content.js) once, then run the callback.
@@ -320,7 +306,7 @@ function withSetContent(callback) {
 
 //2.18 Remove all attributes by name
 function removeAllAttributesByName(attrType, attrName, excludeSelector) {
-    // getElementsByClassName returns a LIVE collection � snapshot it before modifying.
+    // getElementsByClassName returns a LIVE collection — snapshot it before modifying.
     var mylist = document.getElementsByClassName(attrName);
     var snapshot = Array.prototype.slice.call(mylist);
     for (var j = 0; j < snapshot.length; j++) {
@@ -378,7 +364,7 @@ function setActiveNav (navId) {
     window.scrollTo(0, 0);
 }
 
-//2.24a Return the Ukrainian name of a country's type (recognized / partially recognized / �)
+//2.24a Return the Ukrainian name of a country's type (recognized / partially recognized / …)
 function getCountryTypeName (typeId) {
     if (typeof data === "undefined" || !data.country_type) { return ""; }
     for (var i = 0; i < data.country_type.length; i++) {
@@ -389,7 +375,7 @@ function getCountryTypeName (typeId) {
 
 //2.24b Status colour icon for a country type: green / yellow / red / blue
 function getCountryTypeIcon (typeId) {
-    var icons = { "1": "??", "2": "??", "3": "??", "4": "??" };
+    var icons = { "1": "🟢", "2": "🟡", "3": "🔴", "4": "🔵" };
     return icons[typeId] || "";
 }
 
@@ -489,8 +475,8 @@ function HTML_CreatorOfAboutPage () {
             "</section>" +
             "<h2 class='about-h2'>" + t('aboutContacts') + "</h2>" +
             "<div class='contact-grid'>" +
-                "<a class='contact-card' href='mailto:coatls77@gmail.com'><span class='contact-ico'>??</span><span class='contact-meta'><span class='contact-label'>Email</span><span class='contact-val'>coatls77@gmail.com</span></span></a>" +
-                "<div class='contact-card'><span class='contact-ico'>??</span><span class='contact-meta'><span class='contact-label'>" + t('aboutLocationLabel') + "</span><span class='contact-val'>Kyiv, Ukraine</span></span></div>" +
+                "<a class='contact-card' href='mailto:coatls77@gmail.com'><span class='contact-ico'>✉️</span><span class='contact-meta'><span class='contact-label'>Email</span><span class='contact-val'>coatls77@gmail.com</span></span></a>" +
+                "<div class='contact-card'><span class='contact-ico'>📍</span><span class='contact-meta'><span class='contact-label'>" + t('aboutLocationLabel') + "</span><span class='contact-val'>Kyiv, Ukraine</span></span></div>" +
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
