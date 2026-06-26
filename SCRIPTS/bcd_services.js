@@ -244,6 +244,12 @@ function getExternalStoryUrl(visit) {
 function getSelectorOfListOfStories_HTML(){
     var result = "";
 
+    // Build id -> language map from preloaded stories index
+    var langMap = {};
+    $.each(window.__storiesIndex || [], function(i, s) {
+        if (s && s.id) { langMap[s.id] = s.language || "UA"; }
+    });
+
     $.each (visitsSorted, function( i, visit ){
         var countriesToReturn = "";
         var countriesIDToReturn = "";
@@ -263,7 +269,16 @@ function getSelectorOfListOfStories_HTML(){
             var dateText = getVisitDate(visit.start_date, visit.end_date, "year").slice(0, -2);
 
             if (sid !== null) {
-                result += "<li><a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + "</a></li>";
+                var lang = langMap[sid] || "UA";
+                var badge = "<span class='story-lang-badge story-lang-badge-" + lang.toLowerCase() + "'>" + lang + "</span>";
+                result += "<li><a id='" + sid + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + " " + badge + "</a></li>";
+                // Append EN variant if it exists in the index
+                var enId = sid + "_en";
+                if (langMap[enId]) {
+                    var enLang = langMap[enId];
+                    var enBadge = "<span class='story-lang-badge story-lang-badge-" + enLang.toLowerCase() + "'>" + enLang + "</span>";
+                    result += "<li><a id='" + enId + "' onmouseover='' style='cursor: pointer;' onclick='javascript:getStoryPage(this.id)'>" + dateText + " -  " + text + " " + enBadge + "</a></li>";
+                }
             }
             if (ext) {
                 result += "<li><a href='" + ext + "' target='_blank'>" + dateText + " -  " + text + " ↗</a></li>";
