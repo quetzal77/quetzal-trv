@@ -45,6 +45,13 @@ This prints `[[region_id, english_title], ...]`. Verify the count looks reasonab
 the country (e.g. 16 for Bulgaria, 20 for Italy). If the count is 0 or suspiciously low,
 stop and report — the map file may be malformed.
 
+**Region ID format**: every `region_id` must be two-part: `CC-XX` where `CC` is the
+country code and `XX` is the region identifier (e.g. `BG-01`, `SI-LJ`). Some ammap files
+for single-territory islands output just the country code (e.g. `"IM"` for Isle of Man) —
+`extract_regions.py` auto-fixes these to `CC-01` with a WARNING. Do not use bare
+country-code region_ids: they collide with other maps that show the same territory as a
+region of a parent country.
+
 **Check for region_id conflicts.** After extracting, run:
 ```python
 python -c "
