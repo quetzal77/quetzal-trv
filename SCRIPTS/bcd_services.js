@@ -4,15 +4,16 @@
 //02.01 Create new AMMAP's map
 function drawMap(){
     var url = (local[1].map_img != undefined) ? local[1].map_img : "worldLow.js" ;
-    $.getScript("SCRIPTS/MAPS/ammap.js", function() {
-        $.getScript("SCRIPTS/MAPS/custommap.js", function() {
+    var mapFail = function() { $('#mapdiv').removeClass('loading').text('Map unavailable.'); };
+    $.getScript("SCRIPTS/MAPS/ammap.js?v=" + APP_V, function() {
+        $.getScript("SCRIPTS/MAPS/custommap.js?v=" + APP_V, function() {
             $.getScript("SCRIPTS/MAPS/" + url, function() {
                 $('#mapdiv').removeClass('loading');
                 $('#mapdiv').addClass('map');
                 CreateMap();
-            });
-        });
-    });
+            }).fail(mapFail);
+        }).fail(mapFail);
+    }).fail(mapFail);
 }
 
 //02.02 This method creates CUSTOM list of visits
@@ -316,7 +317,8 @@ function getNumberOfLocation() {
 // Avoids re-fetching/re-evaluating the file on every add/edit/remove operation.
 function withSetContent(callback) {
     if (window.__setContentLoaded) { callback(); return; }
-    $.getScript("SCRIPTS/set_content.js", function () { window.__setContentLoaded = true; callback(); });
+    $.getScript("SCRIPTS/set_content.js?v=" + APP_V, function () { window.__setContentLoaded = true; callback(); })
+        .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load set_content.js. Reload and try again.</div>'; });
 }
 
 //2.18 Remove all attributes by name
@@ -341,12 +343,7 @@ function removeAllChildNodes(attrId) {
     };
 }
 
-//2.20 Remove readonly attribute from Input field
-function unblockReadonlyField(id){
-    $("#" + id).removeAttr("readonly");
-}
-
-//2.21 Remove element from Array
+//2.20 Remove element from Array
 function removeElementOfGlobalDataArray (arr, attr, value){
     var i = arr.length;
     while(i--){
@@ -495,7 +492,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.2.4</span>" +
+                "<span class='tech-tag'>v9.3.0</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

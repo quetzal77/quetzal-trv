@@ -1,7 +1,7 @@
 # quetzal-trv — Project Brief for Claude
 
 Personal travel portfolio SPA by Oleksiy Slavutskyy. No backend, no build step.
-Current version: **9.2.4** (branch `site_version_9_2`).
+Current version: **9.3.0** (branch `site_version_9_2`).
 
 ---
 
@@ -89,19 +89,28 @@ local[]           // current page context: local[1].type = "world"|"country"|"ci
 
 ## Version bumping
 
-Three files share the same `?v=X.Y.Z` cache-buster:
-```
-THEMES/fonts.css?v=…
-SCRIPTS/bcd_onload.js?v=…
-THEMES/global.css?v=…
-```
+Four places must be updated together on every JS/CSS deploy:
+
+| Where | What |
+|---|---|
+| `index.html` | `?v=` on fonts.css, i18n.js, bcd_onload.js, global.css + 5 local assets (bootstrap, fcbkcomplete, dashboard) |
+| `SCRIPTS/bcd_onload.js` | `var APP_V = 'X.Y.Z'` — drives `?v=` on all `$.getScript()` calls |
+| `CLAUDE.md` | `**X.Y.Z**` in the Current version line |
+| `SCRIPTS/bcd_services.js` | `tech-tag` version span |
 
 **Bump the patch** (`Z+1`) whenever JS or CSS changes are deployed.  
 **Do not bump** if only `DATA/*.json`, `.claude/`, or `README.md` changed.
 
-Quick replace (PowerShell):
-```powershell
-(Get-Content index.html -Raw) -replace '\?v=9\.1\.27',  '?v=9.1.28' | Set-Content index.html
+Quick replace (Python — safe for UTF-8):
+```python
+import re
+OLD, NEW = '9.2.5', '9.2.6'   # adjust each deploy
+for path in ['index.html']:
+    c = open(path, encoding='utf-8').read()
+    open(path, 'w', encoding='utf-8').write(c.replace('?v=' + OLD, '?v=' + NEW))
+for path in ['SCRIPTS/bcd_onload.js']:
+    c = open(path, encoding='utf-8').read()
+    open(path, 'w', encoding='utf-8').write(c.replace("APP_V = '" + OLD + "'", "APP_V = '" + NEW + "'"))
 ```
 
 ---

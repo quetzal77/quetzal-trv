@@ -125,6 +125,4 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### Technical
 - [ ] Update AMmap library to the latest version
-- [ ] Need to ensure that global db generation is really good
-- [ ] Need to run opus check for issues detection
 ```

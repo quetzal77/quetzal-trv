@@ -102,6 +102,9 @@ function createSettingsStoryTab_HTML() {
         }).join("");
         var sel = document.getElementById("storySelect");
         if (sel) { sel.innerHTML = opts; }
+    }).fail(function() {
+        var sel = document.getElementById("storySelect");
+        if (sel) { sel.innerHTML = '<option value="">— failed to load —</option>'; }
     });
 }
 
@@ -109,7 +112,8 @@ function createSettingsStoryTab_HTML() {
 function onStorySelect(value) {
     if (!value) { document.getElementById("AddEditRemoveSection").innerHTML = ""; return; }
     if (value === "__new__") { renderStoryForm({}, false); return; }
-    $.getJSON("DATA/stories/" + value + ".json", function (story) { renderStoryForm(story, true); });
+    $.getJSON("DATA/stories/" + value + ".json", function (story) { renderStoryForm(story, true); })
+        .fail(function() { document.getElementById("AddEditRemoveSection").innerHTML = '<div class="set-alert is-err">Failed to load story: ' + value + '</div>'; });
 }
 
 //16.02a Build one row of an object-row section
@@ -266,7 +270,7 @@ function saveStory() {
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([json], { type: "application/json;charset=utf-8" }));
     a.download = id + ".json";
-    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    document.body.appendChild(a); a.click(); URL.revokeObjectURL(a.href); document.body.removeChild(a);
 
     storyAlert("is-ok", t('setStorySavedOk') +
         "<br>1. " + t('setStorySavedStep1') + " <b>DATA/stories/" + id + ".json</b>." +

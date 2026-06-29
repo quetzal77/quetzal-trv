@@ -8,7 +8,10 @@ function createStoryPage_HTML(storyId) {
     if (window.skipPushState) { window.skipPushState = false; }
     else { window.history.pushState("object or string", "Title", "index.html?storyId="+storyId); }
 
-    $.getJSON("DATA/stories/" + storyId + ".json", processMyStory);
+    $.getJSON("DATA/stories/" + storyId + ".json", processMyStory)
+        .fail(function() {
+            document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Story not found: ' + storyId + '</div>';
+        });
 
     //Add copy marker and bottom line
     document.getElementById("copy_cert").innerHTML = "&copy; 2011-" + new Date().getFullYear() + ", Slavutskyy Oleksiy";
@@ -70,8 +73,8 @@ function HTML_StoryPage(story) {
     if (story.habitation && story.habitation.length) {
         r += storyHeader(t('storyHabitation'));
         story.habitation.forEach(function (h) {
-            r += storyRow(h.name + " в " + h.city + ", " + h.nights + " ночі, " + h.room +
-                ", ціна " + storyCost(h.price, h.currency) + " за ніч. " + (h.text || ""));
+            r += storyRow(h.name + t('storyIn') + h.city + ", " + h.nights + t('storyNights') + h.room +
+                t('storyCostSep') + storyCost(h.price, h.currency) + t('storyPerNight') + (h.text || ""));
         });
     }
 
@@ -86,7 +89,7 @@ function HTML_StoryPage(story) {
         r += storyHeader(t('storyTransport'));
         story.transport.forEach(function (tr) {
             r += storyRow("<b>" + storyDate(tr.date) + "</b> - " + tr.type + " " + tr.from + " - " + tr.to +
-                ", час у дорозі " + tr.time + ", ціна " + storyCost(tr.price, tr.currency) + ". " + (tr.text || "") + ".");
+                t('storyTravelTime') + tr.time + t('storyCostSep') + storyCost(tr.price, tr.currency) + ". " + (tr.text || "") + ".");
         });
     }
 
@@ -94,7 +97,7 @@ function HTML_StoryPage(story) {
     if (story.sights && story.sights.length) {
         r += storyHeader(t('storySights'));
         story.sights.forEach(function (s) {
-            r += storyRow("<b>" + s.name + "</b> з локації " + s.city + ", ціна квитка = " + storyCost(s.price, s.currency) + ". " + (s.text || ""));
+            r += storyRow("<b>" + s.name + "</b>" + t('storyFromLoc') + s.city + t('storyTicketCost') + storyCost(s.price, s.currency) + ". " + (s.text || ""));
         });
     }
 
@@ -102,7 +105,7 @@ function HTML_StoryPage(story) {
     if (story.souvenirs && story.souvenirs.length) {
         r += storyHeader(t('storySouvenirs'));
         story.souvenirs.forEach(function (s) {
-            r += storyRow(s.name + " (" + s.num + " шт.), ціна = " + storyCost(s.price, s.currency) + ". " + (s.text || ""));
+            r += storyRow(s.name + " (" + s.num + t('storyPcs') + t('storyCostEq') + storyCost(s.price, s.currency) + ". " + (s.text || ""));
         });
     }
 
@@ -121,7 +124,7 @@ function HTML_StoryPage(story) {
     if (story.summary && story.summary.length) { r += storyHeader(t('storySummary')) + storyParas(story.summary); }
 
     r += "</tbody></table>";
-    r += getCountryName();
+    r += storyBackLinks();
     return r;
 }
 
@@ -133,7 +136,7 @@ function storyDate(iso) {
 }
 
 //06.06 Create the "back to country" links from the countries named in the story id
-function getCountryName() {
+function storyBackLinks() {
     var result = "";
     var countryId = [];
     $.each (countriesVisited, function( i, country ){

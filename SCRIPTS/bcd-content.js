@@ -5,7 +5,12 @@
   var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
 
 function populateContent(callback) {
-    $.getJSON( "DATA/globaldb.json", function(result){ processMyJson(result); callback();});
+    $.getJSON("DATA/globaldb.json")
+        .done(function(result) { processMyJson(result); callback(); })
+        .fail(function() {
+            var el = document.getElementById("mainSection");
+            if (el) { el.innerHTML = '<div class="set-alert is-err">Failed to load DATA/globaldb.json. Check the server and reload the page.</div>'; }
+        });
  };
 
   var processMyJson = function(result){

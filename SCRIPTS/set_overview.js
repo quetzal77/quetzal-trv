@@ -1090,7 +1090,7 @@ function generateGlobalDb() {
             var a = document.createElement('a');
             a.href = URL.createObjectURL(new Blob([crlf], { type: 'application/json;charset=utf-8' }));
             a.download = 'globaldb.json';
-            document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            document.body.appendChild(a); a.click(); URL.revokeObjectURL(a.href); document.body.removeChild(a);
 
             var head = t('setOkGlobaldbHead');
             var body = !existing         ? t('setDiffNoPrev') :
