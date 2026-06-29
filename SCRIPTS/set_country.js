@@ -11,25 +11,26 @@ function createSettingsCountryTab_HTML() {
     removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("countries").setAttribute("class", "active")
 
+    var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
     var options = '';
-    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
-        options += '<option value="' + country.short_name + '">' + country.name_ua + '</option>';
+    $.each (data.country.sort(dynamicSort(nameKey)), function( i, country ){
+        options += '<option value="' + country.short_name + '">' + (window.LANG === 'en' ? country.name : country.name_ua) + '</option>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
         '<header class="set-head">' +
             '<span class="set-head-icon">🗺️</span>' +
             '<div>' +
-                '<h2 class="set-head-title">Країни</h2>' +
-                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте країни.</p>' +
+                '<h2 class="set-head-title">' + t('setCountries') + '</h2>' +
+                '<p class="set-head-desc">' + t('setCountryDesc') + '</p>' +
             '</div>' +
         '</header>' +
         '<span id="success"></span>' +
         '<div class="set-panel">' +
-            '<label class="set-label" for="countrySelect">Оберіть країну або додайте нову</label>' +
+            '<label class="set-label" for="countrySelect">' + t('setCountrySelectLabel') + '</label>' +
             '<select id="countrySelect" class="set-select" onchange="javascript:onCountrySelect(this.value)">' +
-                '<option value="">— оберіть —</option>' +
-                '<option value="addnew">➕ Додати нову країну</option>' +
+                '<option value="">' + t('setSelectOpt') + '</option>' +
+                '<option value="addnew">' + t('setCountryAddNew') + '</option>' +
                 options +
             '</select>' +
         '</div>' +
@@ -40,7 +41,7 @@ function createSettingsCountryTab_HTML() {
     document.getElementById("hr_bottom").innerHTML = "";
 }
 
-//12.02 Selection handler — render the form, or clear it when "— оберіть —" is chosen
+//12.02 Selection handler — render the form, or clear it when the placeholder is chosen
 function onCountrySelect(value) {
     if (value) { addEditRemoveCountry(value); }
     else { document.getElementById("AddEditRemoveSection").innerHTML = ""; }
@@ -48,7 +49,7 @@ function onCountrySelect(value) {
 
 //12.02a Add/edit/remove form for a country
 function addEditRemoveCountry(itemId) {
-    var readonly = "", header = "Нова країна", submitStatus = "add";
+    var readonly = "", header = t('setCountryNew'), submitStatus = "add";
     var removeButton = "", notAddedPicker = "";
     var country = (itemId != "addnew") ? $.grep (data.country, function( n, i ) {return ( n.short_name == itemId )}) : "newcountry";
 
@@ -71,30 +72,31 @@ function addEditRemoveCountry(itemId) {
 
     // continent options (sort a COPY — do not mutate data.continent order used elsewhere)
     var editMode = (itemId != "addnew");
-    var sortedContinents = data.continent.slice().sort(dynamicSort("name_ua"));
-    var continents = '<option value="0"' + (editMode ? "" : " selected") + '>— оберіть континент —</option>';
+    var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
+    var sortedContinents = data.continent.slice().sort(dynamicSort(nameKey));
+    var continents = '<option value="0"' + (editMode ? "" : " selected") + '>' + t('setCountryCont0') + '</option>';
     $.each (sortedContinents, function( i, continent ) {
         var selected = (continent.continent_id == local[0].continent_id) ? " selected" : "";
-        continents += "<option value='" + continent.continent_id + "'" + selected + ">" + continent.name_ua + "</option>";
+        continents += "<option value='" + continent.continent_id + "'" + selected + ">" + (window.LANG === 'en' ? continent.name : continent.name_ua) + "</option>";
     });
     // optional second continent (for cross-border countries, e.g. Spain)
-    var continents2 = '<option value=""' + (local[0].continent_id2 ? "" : " selected") + '>— немає —</option>';
+    var continents2 = '<option value=""' + (local[0].continent_id2 ? "" : " selected") + '>' + t('setCountryCont2None') + '</option>';
     $.each (sortedContinents, function( i, continent ) {
         var selected = (continent.continent_id == local[0].continent_id2) ? " selected" : "";
-        continents2 += "<option value='" + continent.continent_id + "'" + selected + ">" + continent.name_ua + "</option>";
+        continents2 += "<option value='" + continent.continent_id + "'" + selected + ">" + (window.LANG === 'en' ? continent.name : continent.name_ua) + "</option>";
     });
     // country type (recognized / partially recognized / …) — every country has one
-    var countryTypes = '<option value="0"' + (editMode ? "" : " selected") + '>— оберіть тип —</option>';
-    $.each (data.country_type.slice().sort(dynamicSort("name_ua")), function( i, t ) {
-        var selected = (t.country_type_id == local[0].country_type_id) ? " selected" : "";
-        countryTypes += "<option value='" + t.country_type_id + "'" + selected + ">" + t.name_ua + "</option>";
+    var countryTypes = '<option value="0"' + (editMode ? "" : " selected") + '>' + t('setCountryType0') + '</option>';
+    $.each (data.country_type.slice().sort(dynamicSort(nameKey)), function( i, ct ) {
+        var selected = (ct.country_type_id == local[0].country_type_id) ? " selected" : "";
+        countryTypes += "<option value='" + ct.country_type_id + "'" + selected + ">" + (window.LANG === 'en' ? ct.name : ct.name_ua) + "</option>";
     });
 
     if (editMode){
         readonly = "readonly";
-        header = "Редагувати країну";
+        header = t('setCountryEdit');
         submitStatus = "edit";
-        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeCountry()">Видалити країну</button>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeCountry()">' + t('setCountryDelete') + '</button>';
     }
     else {
         // offer countries that exist on the world map but are not in the base yet
@@ -109,9 +111,9 @@ function addEditRemoveCountry(itemId) {
         });
         notAddedPicker =
             '<div class="set-field">' +
-                '<label>Країна з карти світу, якої ще немає в базі</label>' +
+                '<label>' + t('setCountryMapPicker') + '</label>' +
                 '<select id="newNotAddedMap" class="set-select" onchange="javascript:populateCountryForm(this.value)">' +
-                    '<option value="0">— оберіть зі списку або пропустіть і введіть власну —</option>' +
+                    '<option value="0">' + t('setCountryMapPickerOpt') + '</option>' +
                     countryOptions +
                 '</select>' +
             '</div>';
@@ -125,93 +127,93 @@ function addEditRemoveCountry(itemId) {
             '<h3 class="set-form-title">' + header + '</h3>' +
             notAddedPicker +
             '<div class="set-field">' +
-                '<label>ID країни (для прив’язки регіонів) <span class="req">*</span></label>' +
-                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? "ID не редагується" : "Унікальний ID країни") + '" ' + idVal + readonly + ' data-init="' + local[0].country_id + '" oninput="javascript:setCountryFormDirty()">' +
+                '<label>' + t('setCountryIdLabel') + ' <span class="req">*</span></label>' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? t('setIdFixed') : t('setCountryIdHint')) + '" ' + idVal + readonly + ' data-init="' + local[0].country_id + '" oninput="javascript:setCountryFormDirty()">' +
                 '<span id="alert_id"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Коротка назва (для інтуїтивної прив’язки файлів, наприклад прапор або герб) <span class="req">*</span></label>' +
-                '<input id="newShortName" type="text" class="set-input" placeholder="' + (editMode ? "не редагується" : "Унікальна коротка назва") + '" ' + snVal + readonly + ' data-init="' + local[0].short_name + '" oninput="javascript:setCountryFormDirty()">' +
+                '<label>' + t('setCountrySnLabel') + ' <span class="req">*</span></label>' +
+                '<input id="newShortName" type="text" class="set-input" placeholder="' + (editMode ? t('setFieldFixed') : t('setCountrySnHint')) + '" ' + snVal + readonly + ' data-init="' + local[0].short_name + '" oninput="javascript:setCountryFormDirty()">' +
                 '<span id="alert_short_name"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Назва країни українською <span class="req">*</span></label>' +
+                '<label>' + t('setCountryNameUaLabel') + ' <span class="req">*</span></label>' +
                 '<input id="newUaName" type="text" class="set-input" value="' + local[0].name_ua + '" placeholder="Напр.: Франція" data-init="' + local[0].name_ua + '" oninput="javascript:setCountryFormDirty()">' +
                 '<span id="alert_name_ua"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Назва країни англійською <span class="req">*</span></label>' +
+                '<label>' + t('setCountryNameEnLabel') + ' <span class="req">*</span></label>' +
                 '<input id="newEngName" type="text" class="set-input" value="' + local[0].name + '" placeholder="e.g. France" data-init="' + local[0].name + '" oninput="javascript:setCountryFormDirty()">' +
                 '<span id="alert_name"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Рідна назва країни (мовою країни)</label>' +
-                '<input id="newNtName" type="text" class="set-input" value="' + local[0].name_nt + '" placeholder="Напр.: France" data-init="' + local[0].name_nt + '" oninput="javascript:setCountryFormDirty()">' +
+                '<label>' + t('setCountryNtLabel') + '</label>' +
+                '<input id="newNtName" type="text" class="set-input" value="' + local[0].name_nt + '" placeholder="e.g. France" data-init="' + local[0].name_nt + '" oninput="javascript:setCountryFormDirty()">' +
                 '<span id="alert_name_nt"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Континент <span class="req">*</span></label>' +
+                '<label>' + t('setCountryContLabel') + ' <span class="req">*</span></label>' +
                 '<select id="newContinent" class="set-select" data-init="' + (editMode ? local[0].continent_id : "0") + '" onchange="javascript:setCountryFormDirty()">' +
                     continents +
                 '</select>' +
                 '<span id="alert_continent"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Другий континент (для крос-граничних країн)</label>' +
+                '<label>' + t('setCountryCont2Label') + '</label>' +
                 '<select id="newContinent2" class="set-select" data-init="' + local[0].continent_id2 + '" onchange="javascript:setCountryFormDirty()">' +
                     continents2 +
                 '</select>' +
                 '<span id="alert_continent2"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Тип країни <span class="req">*</span></label>' +
+                '<label>' + t('setCountryTypeLabel') + ' <span class="req">*</span></label>' +
                 '<select id="newCountryType" class="set-select" data-init="' + (editMode ? local[0].country_type_id : "0") + '" onchange="javascript:setCountryFormDirty()">' +
                     countryTypes +
                 '</select>' +
                 '<span id="alert_country_type"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label class="set-check"><input type="checkbox" id="newCityState" data-init="' + (cityStateInit ? "true" : "false") + '" ' + (cityStateInit ? "checked" : "") + ' onchange="javascript:setCountryFormDirty()"> Місто-держава (дуже мала країна, що радше місто, ніж держава)</label>' +
+                '<label class="set-check"><input type="checkbox" id="newCityState" data-init="' + (cityStateInit ? "true" : "false") + '" ' + (cityStateInit ? "checked" : "") + ' onchange="javascript:setCountryFormDirty()"> ' + t('setCountryCityState') + '</label>' +
                 '<span id="alert_city_state"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Координати малого прапора <span class="req">*</span> ' +
-                    '<a href="IMG/icon/smallClean35x35.png" target="_blank" rel="noopener" class="set-link">усі малі прапори ↗</a></label>' +
+                '<label>' + t('setCountrySmallFlag') + ' <span class="req">*</span> ' +
+                    '<a href="IMG/icon/smallClean35x35.png" target="_blank" rel="noopener" class="set-link">' + t('setCountrySmallFlagLink') + '</a></label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newSmallImg" type="text" class="set-input" value="' + local[0].small_flag_img + '" placeholder="Напр.: -507px -530px" data-init="' + local[0].small_flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
-                    '<button type="button" id="smallFlagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newSmallImg\')">Перевірити</button>' +
+                    '<input id="newSmallImg" type="text" class="set-input" value="' + local[0].small_flag_img + '" placeholder="e.g. -507px -530px" data-init="' + local[0].small_flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="smallFlagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newSmallImg\')">' + t('setPreview') + '</button>' +
                 '</div>' +
                 '<span id="alert_small_img"></span>' +
                 '<div id="preview_newSmallImg" class="set-preview"></div>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Файл прапора (400×200)</label>' +
+                '<label>' + t('setCountryFlagFile') + '</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newFlagImg" type="text" class="set-input" value="' + local[0].flag_img + '" placeholder="Напр.: france_flag.png" data-init="' + local[0].flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
-                    '<button type="button" id="flagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newFlagImg\')">Перевірити</button>' +
+                    '<input id="newFlagImg" type="text" class="set-input" value="' + local[0].flag_img + '" placeholder="e.g. france_flag.png" data-init="' + local[0].flag_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="flagBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newFlagImg\')">' + t('setPreview') + '</button>' +
                 '</div>' +
                 '<span id="alert_flag_img"></span>' +
                 '<div id="preview_newFlagImg" class="set-preview"></div>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Файл герба (200×200)</label>' +
+                '<label>' + t('setCountryEmbFile') + '</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newEmbImg" type="text" class="set-input" value="' + local[0].emb_img + '" placeholder="Напр.: france_emb.png" data-init="' + local[0].emb_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
-                    '<button type="button" id="embBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newEmbImg\')">Перевірити</button>' +
+                    '<input id="newEmbImg" type="text" class="set-input" value="' + local[0].emb_img + '" placeholder="e.g. france_emb.png" data-init="' + local[0].emb_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="embBtn" class="set-btn" onclick="javascript:checkCountryFlag(\'newEmbImg\')">' + t('setPreview') + '</button>' +
                 '</div>' +
                 '<span id="alert_emb_img"></span>' +
                 '<div id="preview_newEmbImg" class="set-preview"></div>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Файл карти</label>' +
+                '<label>' + t('setCountryMapFile') + '</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newMap" type="text" class="set-input" value="' + local[0].map_img + '" placeholder="Напр.: franceLow.js" data-init="' + local[0].map_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
-                    '<button type="button" id="mapBtn" class="set-btn" onclick="javascript:openCountryMap()">Відкрити карту</button>' +
+                    '<input id="newMap" type="text" class="set-input" value="' + local[0].map_img + '" placeholder="e.g. franceLow.js" data-init="' + local[0].map_img + '" oninput="javascript:setCountryFormDirty(); setCountryBtns()">' +
+                    '<button type="button" id="mapBtn" class="set-btn" onclick="javascript:openCountryMap()">' + t('setCountryOpenMap') + '</button>' +
                 '</div>' +
                 '<span id="alert_map"></span>' +
             '</div>' +
             '<div class="set-form-actions">' +
-                '<button type="button" id="countrySaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitCountry(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                '<button type="button" id="countrySaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitCountry(\'' + submitStatus + '\')" disabled>' + t('setSave') + '</button>' +
                 removeButton +
             '</div>' +
             '<span id="remove"></span>' +
@@ -230,7 +232,7 @@ function setCountryBtns() {
     set("mapBtn", val("newMap") !== "");
 }
 
-//12.02b Enable "Зберегти" only after a field actually changed (vs its initial value)
+//12.02b Enable "Save" only after a field actually changed (vs its initial value)
 function setCountryFormDirty() {
     var els = document.querySelectorAll("#AddEditRemoveSection [data-init]");
     var dirty = false;
@@ -296,10 +298,10 @@ function removeCountry() {
 
     if (dependents.length > 0) {
         var linked = "";
-        $.each (dependents, function( i, region ){ linked += '<b>' + region.name_ua + '</b>, '; });
+        $.each (dependents, function( i, region ){ linked += '<b>' + entityName(region) + '</b>, '; });
         document.getElementById("remove").innerHTML =
-            '<div class="set-alert is-err">Цю країну не можна видалити — від неї залежать регіони: ' +
-            linked.slice(0, -2) + '. Спершу змініть їхню країну (або видаліть регіони).</div>';
+            '<div class="set-alert is-err">' + t('setCountryNoDel') + ' ' +
+            linked.slice(0, -2) + t('setCountryNoDelSuffix') + '</div>';
     }
     else {
         withSetContent(function(){
@@ -319,21 +321,21 @@ function checkCountryRules(countryObj) {
     for (var i = 0; i < data.country.length; i++) {
         if (!isAdd) {
             if (initial.country_id.toLowerCase() != countryObj.country_id.toLowerCase() && data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
-                countryAlertDupId(data.country[i].country_id, data.country[i].name_ua);
+                countryAlertDupId(data.country[i].country_id, entityName(data.country[i]));
                 result = false;
             }
             if (initial.short_name.toLowerCase() != countryObj.short_name.toLowerCase() && data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
-                countryAlertDupSN(data.country[i].short_name, data.country[i].name_ua);
+                countryAlertDupSN(data.country[i].short_name, entityName(data.country[i]));
                 result = false;
             }
         }
         else {
             if (data.country[i].country_id.toLowerCase() == countryObj.country_id.toLowerCase()){
-                countryAlertDupId(data.country[i].country_id, data.country[i].name_ua);
+                countryAlertDupId(data.country[i].country_id, entityName(data.country[i]));
                 result = false;
             }
             if (data.country[i].short_name.toLowerCase() == countryObj.short_name.toLowerCase()){
-                countryAlertDupSN(data.country[i].short_name, data.country[i].name_ua);
+                countryAlertDupSN(data.country[i].short_name, entityName(data.country[i]));
                 result = false;
             }
         }
@@ -353,28 +355,28 @@ function checkCountryRules(countryObj) {
 //12.06 Success flag
 function countryAlertSuccess() {
     document.getElementById("success").innerHTML =
-        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список країн.</div>';
+        '<div class="set-alert is-ok">' + t('setCountryOk') + '</div>';
 }
 
 //12.07 Failure flag for not unique ID
-function countryAlertDupId(id, name_ua) {
+function countryAlertDupId(id, name) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
-        '<div class="set-alert is-err">Цей ID уже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть інший.</div>';
+        '<div class="set-alert is-err">' + t('setDupIdPrefix') + ' <b>' + id + ' (' + name + ')</b>. ' + t('setDupIdSuffix') + '</div>';
 }
 
 //12.08 Failure flag for not unique Short Name
-function countryAlertDupSN(id, name_ua) {
+function countryAlertDupSN(id, name) {
     removeAllChildNodes("success");
     document.getElementById("alert_short_name").innerHTML =
-        '<div class="set-alert is-err">Ця коротка назва вже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть іншу.</div>';
+        '<div class="set-alert is-err">' + t('setCountryDupSN') + ' <b>' + id + ' (' + name + ')</b>. ' + t('setDupIdSuffix') + '</div>';
 }
 
 //12.09 Failure flag for empty mandatory field
 function countryAlertEmpty(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
+        '<div class="set-alert is-err">' + t('setEmptyField') + '</div>';
 }
 
 //12.10 Add image to verify if it looks good
@@ -388,10 +390,10 @@ function checkCountryFlag(id) {
                 box.innerHTML = '<img src="IMG/icon/x.gif" class="countflag" style="background-position:' + image + '" />';
                 break;
             case "newFlagImg":
-                box.innerHTML = '<img alt="Прапор країни" title="Прапор країни" src="IMG/flag_n_emblem/' + image + '" class="country_flag">';
+                box.innerHTML = '<img alt="' + t('flag') + '" title="' + t('flag') + '" src="IMG/flag_n_emblem/' + image + '" class="country_flag">';
                 break;
             case "newEmbImg":
-                box.innerHTML = '<img alt="Герб країни" title="Герб країни" src="IMG/flag_n_emblem/' + image + '" class="country_emb">';
+                box.innerHTML = '<img alt="' + t('emblem') + '" title="' + t('emblem') + '" src="IMG/flag_n_emblem/' + image + '" class="country_emb">';
                 break;
         }
     }

@@ -118,8 +118,7 @@ Planned improvements. How to use: `- [ ]` — planned, `- [x]` — top priority.
 at the bottom of the relevant category; sketch big ideas as sub-bullets.
 
 ### UI / UX
-- [ ] Settings - Visit - add time spent in city as value
-- [ ] Need to ensure that global db generation is really good
+- [ ] ...
 
 ### Data / content
 - [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation

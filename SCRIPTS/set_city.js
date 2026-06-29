@@ -11,25 +11,26 @@ function createSettingsCityTab_HTML() {
     removeAllAttributesByName("class", "active", ".navbar-nav");
     document.getElementById("cities").setAttribute("class", "active")
 
+    var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
     var options = '';
-    $.each (data.country.sort(dynamicSort("name_ua")), function( i, country ){
-        options += '<option value="' + country.short_name + '">' + country.name_ua + '</option>';
+    $.each (data.country.sort(dynamicSort(nameKey)), function( i, country ){
+        options += '<option value="' + country.short_name + '">' + (window.LANG === 'en' ? country.name : country.name_ua) + '</option>';
     });
 
     document.getElementById("rightSettingsSection").innerHTML =
         '<header class="set-head">' +
             '<span class="set-head-icon">🏙️</span>' +
             '<div>' +
-                '<h2 class="set-head-title">Локації</h2>' +
-                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте локації. Спершу оберіть країну.</p>' +
+                '<h2 class="set-head-title">' + t('setLocations') + '</h2>' +
+                '<p class="set-head-desc">' + t('setCityDesc') + '</p>' +
             '</div>' +
         '</header>' +
         '<span id="success"></span>' +
         '<div class="set-panel">' +
             '<div class="set-field">' +
-                '<label for="cityCountrySelect">Країна</label>' +
+                '<label for="cityCountrySelect">' + t('setCityCountryLabel') + '</label>' +
                 '<select id="cityCountrySelect" class="set-select" onchange="javascript:showAllTheCitiesOfSelectedCountry(this.value)">' +
-                    '<option value="">— оберіть країну —</option>' +
+                    '<option value="">' + t('setCityCountry0') + '</option>' +
                     options +
                 '</select>' +
             '</div>' +
@@ -48,10 +49,11 @@ function showAllTheCitiesOfSelectedCountry(id) {
     if (!id) { document.getElementById("CityListSection").innerHTML = ""; return; }
 
     local[2] = id;
+    var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
     var options = '';
-    $.each (data.city.sort(dynamicSort("name_ua")), function( i, city ){
+    $.each (data.city.sort(dynamicSort(nameKey)), function( i, city ){
         var cityObj = new CityObj(city.city_id);
-        var cityName = (city.type) ? getCityNameUpdatedUa(city.name_ua, city.type) : city.name_ua;
+        var cityName = (window.LANG === 'en') ? city.name : (city.type ? getCityNameUpdatedUa(city.name_ua, city.type) : city.name_ua);
         if (cityObj.getCountryId() == id){
             options += '<option value="' + city.city_id + '">' + cityName + '</option>';
         }
@@ -59,10 +61,10 @@ function showAllTheCitiesOfSelectedCountry(id) {
 
     document.getElementById("CityListSection").innerHTML =
         '<div class="set-field" style="margin-bottom:0">' +
-            '<label for="citySelect">Локація</label>' +
+            '<label for="citySelect">' + t('setCityLabel') + '</label>' +
             '<select id="citySelect" class="set-select" onchange="javascript:onCitySelect(this.value)">' +
-                '<option value="">— оберіть —</option>' +
-                '<option value="addnew">➕ Додати нову локацію</option>' +
+                '<option value="">' + t('setSelectOpt') + '</option>' +
+                '<option value="addnew">' + t('setCityAddNew') + '</option>' +
                 options +
             '</select>' +
         '</div>';
@@ -76,7 +78,7 @@ function onCitySelect(value) {
 
 //11.03 Add/edit/remove form for a city
 function addEditRemoveCity(itemId) {
-    var readonly = "", header = "Нова локація", submitStatus = "add", removeButton = "";
+    var readonly = "", header = t('setCityNew'), submitStatus = "add", removeButton = "";
     var editMode = (itemId != "addnew");
     var city = editMode ? $.grep (data.city, function( n, i ) {return ( n.city_id == itemId )}) : "newcity";
 
@@ -104,25 +106,26 @@ function addEditRemoveCity(itemId) {
     var long_2      = (local[0].long_2      != undefined) ? local[0].long_2 : "";
     var description = (local[0].description != undefined) ? local[0].description : "";
 
+    var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
     var regions = '';
-    $.each (data.area.slice().sort(dynamicSort("name_ua")), function( i, region ) {
+    $.each (data.area.slice().sort(dynamicSort(nameKey)), function( i, region ) {
         if (region.country_id == getCountryId(local[2]) && region.active != "N") {
             var selected = (region.region_id == local[0].region_id) ? " selected" : "";
-            regions += "<option value='" + region.region_id + "'" + selected + ">" + region.name_ua + "</option>";
+            regions += "<option value='" + region.region_id + "'" + selected + ">" + (window.LANG === 'en' ? region.name : region.name_ua) + "</option>";
         }
     });
 
     var types = '';
-    $.each (data.type.slice().sort(dynamicSort("name_ua")), function( i, type ) {
+    $.each (data.type.slice().sort(dynamicSort(nameKey)), function( i, type ) {
         var selected = (type.type_id == local[0].type) ? " selected" : "";
-        types += "<option value='" + type.type_id + "'" + selected + ">" + type.name_ua + "</option>";
+        types += "<option value='" + type.type_id + "'" + selected + ">" + (window.LANG === 'en' ? type.name : type.name_ua) + "</option>";
     });
 
     if (editMode){
         readonly = "readonly";
-        header = "Редагувати локацію";
+        header = t('setCityEdit');
         submitStatus = "edit";
-        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeCity()">Видалити локацію</button>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeCity()">' + t('setCityDelete') + '</button>';
     }
 
     var idVal = editMode ? ('value="' + itemId + '" ') : '';
@@ -131,72 +134,72 @@ function addEditRemoveCity(itemId) {
         '<div class="set-panel set-form">' +
             '<h3 class="set-form-title">' + header + '</h3>' +
             '<div class="set-field">' +
-                '<label>ID локації <span class="req">*</span></label>' +
-                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? "ID не редагується" : "Унікальний ID локації") + '" ' + idVal + readonly + ' oninput="javascript:setCityFormDirty()">' +
+                '<label>' + t('setCityIdLabel') + ' <span class="req">*</span></label>' +
+                '<input id="newId" type="text" class="set-input" placeholder="' + (editMode ? t('setIdFixed') : t('setCityIdHint')) + '" ' + idVal + readonly + ' oninput="javascript:setCityFormDirty()">' +
                 '<span id="alert_id"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Назва локації українською <span class="req">*</span></label>' +
+                '<label>' + t('setCityNameUaLabel') + ' <span class="req">*</span></label>' +
                 '<input id="newUaName" type="text" class="set-input" value="' + local[0].name_ua + '" placeholder="Напр.: Париж" oninput="javascript:setCityFormDirty()">' +
                 '<span id="alert_name_ua"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Назва локації англійською <span class="req">*</span></label>' +
+                '<label>' + t('setCityNameEnLabel') + ' <span class="req">*</span></label>' +
                 '<input id="newEngName" type="text" class="set-input" value="' + local[0].name + '" placeholder="e.g. Paris" oninput="javascript:setCityFormDirty()">' +
                 '<span id="alert_name"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Рідна назва локації (мовою країни)</label>' +
+                '<label>' + t('setCityNtLabel') + '</label>' +
                 '<input id="newNtName" type="text" class="set-input" value="' + local[0].name_nt + '" placeholder="Напр.: Paris" oninput="javascript:setCityFormDirty()">' +
                 '<span id="alert_name_nt"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label class="set-check"><input type="checkbox" id="newCapital" ' + capital + ' onchange="javascript:setCityFormDirty()"> Столиця</label>' +
+                '<label class="set-check"><input type="checkbox" id="newCapital" ' + capital + ' onchange="javascript:setCityFormDirty()"> ' + t('setCityCapital') + '</label>' +
                 '<span id="alert_capital"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Регіон <span class="req">*</span></label>' +
+                '<label>' + t('setCityRegionLabel') + ' <span class="req">*</span></label>' +
                 '<select id="newRegion" class="set-select" data-init="' + (local[0].region_id || "0") + '" onchange="javascript:setCityFormDirty()">' +
-                    '<option value="0">— оберіть регіон —</option>' +
+                    '<option value="0">' + t('setCityRegion0') + '</option>' +
                     regions +
                 '</select>' +
                 '<span id="alert_region"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Тип локації</label>' +
+                '<label>' + t('setCityTypeLabel') + '</label>' +
                 '<select id="newType" class="set-select" data-init="' + (local[0].type || "0") + '" onchange="javascript:setCityFormDirty()">' +
-                    '<option value="0">Тип за замовчуванням</option>' +
+                    '<option value="0">' + t('setCityType0') + '</option>' +
                     types +
                 '</select>' +
                 '<span id="alert_type"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Фото 300px×225px (посилання на фото додавати через кому без пробілів)</label>' +
+                '<label>' + t('setCityImageLabel') + '</label>' +
                 '<div class="set-input-row">' +
                     '<input id="newImage" type="text" class="set-input" value="' + image + '" placeholder="напр.: one.jpg,two.jpg" oninput="javascript:setCityFormDirty(); setCityBtns()">' +
-                    '<button type="button" id="imgCheckBtn" class="set-btn" onclick="javascript:checkImage()">Перевірити</button>' +
+                    '<button type="button" id="imgCheckBtn" class="set-btn" onclick="javascript:checkImage()">' + t('setCityCheckImg') + '</button>' +
                 '</div>' +
                 '<span id="alert_image"></span>' +
                 '<div id="imgPreview" class="set-preview"></div>' +
             '</div>' +
             '<div class="set-field">' +
                 '<div class="set-coord-row">' +
-                    '<div class="set-coord"><label>Широта <span class="req">*</span></label>' +
+                    '<div class="set-coord"><label>' + t('setCityLat') + ' <span class="req">*</span></label>' +
                         '<input id="newLat" type="text" class="set-input" value="' + lat + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
-                    '<div class="set-coord"><label>Довгота <span class="req">*</span></label>' +
+                    '<div class="set-coord"><label>' + t('setCityLong') + ' <span class="req">*</span></label>' +
                         '<input id="newLong" type="text" class="set-input" value="' + long + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
                 '</div>' +
                 '<span id="alert_lat"></span><span id="alert_long"></span>' +
                 '<div class="set-form-actions" style="margin-top:8px">' +
                     '<button type="button" id="gmapBtn" class="set-btn" onclick="javascript:openGoogleMap()">Google Maps</button>' +
-                    '<button type="button" id="cmapBtn" class="set-btn" onclick="javascript:openCityMap()">Показати локацію на карті країни</button>' +
+                    '<button type="button" id="cmapBtn" class="set-btn" onclick="javascript:openCityMap()">' + t('setCityShowMap') + '</button>' +
                 '</div>' +
             '</div>' +
             '<div class="set-field">' +
                 '<div class="set-coord-row">' +
-                    '<div class="set-coord"><label>Друга широта <span class="ns-info" title="Друга широта вноситься для тих країн, де координати на карті не відповідають реальним координатам">і</span></label>' +
+                    '<div class="set-coord"><label>' + t('setCityLat2') + ' <span class="ns-info" title="' + t('setCityLat2Hint') + '">і</span></label>' +
                         '<input id="newLat_2" type="text" class="set-input" value="' + lat_2 + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
-                    '<div class="set-coord"><label>Друга довгота <span class="ns-info" title="Друга довгота вноситься для тих країн, де координати на карті не відповідають реальним координатам">і</span></label>' +
+                    '<div class="set-coord"><label>' + t('setCityLong2') + ' <span class="ns-info" title="' + t('setCityLong2Hint') + '">і</span></label>' +
                         '<input id="newLong_2" type="text" class="set-input" value="' + long_2 + '" oninput="javascript:setCityFormDirty(); setCityBtns()"></div>' +
                 '</div>' +
                 '<span id="alert_lat_2"></span><span id="alert_long_2"></span>' +
@@ -205,12 +208,12 @@ function addEditRemoveCity(itemId) {
                 '</div>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Опис</label>' +
-                '<textarea id="newDescription" class="set-input" rows="5" placeholder="Опис локації з переліком пам’яток." oninput="javascript:setCityFormDirty()">' + description + '</textarea>' +
+                '<label>' + t('setCityDescLabel') + '</label>' +
+                '<textarea id="newDescription" class="set-input" rows="5" placeholder="Напр.: Опис локації з переліком пам\'яток." oninput="javascript:setCityFormDirty()">' + description + '</textarea>' +
                 '<span id="alert_description"></span>' +
             '</div>' +
             '<div class="set-form-actions">' +
-                '<button type="button" id="citySaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitCity(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                '<button type="button" id="citySaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitCity(\'' + submitStatus + '\')" disabled>' + t('setSave') + '</button>' +
                 removeButton +
             '</div>' +
             '<span id="remove"></span>' +
@@ -274,8 +277,8 @@ function removeCity() {
         var linked = "";
         $.each (dependents, function( i, visit ){ linked += '<b>' + getVisitDate(visit.start_date, visit.end_date, true) + '</b>, '; });
         document.getElementById("remove").innerHTML =
-            '<div class="set-alert is-err">Цю локацію не можна видалити — від неї залежать візити: ' +
-            linked.slice(0, -2) + '. Спершу змініть їхню локацію (або видаліть візити).</div>';
+            '<div class="set-alert is-err">' + t('setCityNoDel') + ' ' +
+            linked.slice(0, -2) + t('setCityNoDelSuffix') + '</div>';
     }
     else {
         withSetContent(function(){
@@ -332,13 +335,13 @@ function checkCityRules(cityObj) {
     for (var i = 0; i < data.city.length; i++) {
         if (!isAdd) {
             if (initial.city_id.toLowerCase() != cityObj.city_id.toLowerCase() && data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
-                cityAlertDup(data.city[i].city_id, data.city[i].name_ua);
+                cityAlertDup(data.city[i].city_id, entityName(data.city[i]));
                 result = false;
             }
         }
         else {
             if (data.city[i].city_id.toLowerCase() == cityObj.city_id.toLowerCase()){
-                cityAlertDup(data.city[i].city_id, data.city[i].name_ua);
+                cityAlertDup(data.city[i].city_id, entityName(data.city[i]));
                 result = false;
             }
         }
@@ -357,21 +360,21 @@ function checkCityRules(cityObj) {
 //11.07 Success flag
 function cityAlertSuccess() {
     document.getElementById("success").innerHTML =
-        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список локацій.</div>';
+        '<div class="set-alert is-ok">' + t('setCityOk') + '</div>';
 }
 
 //11.08 Failure flag for not unique ID
-function cityAlertDup(id, name_ua) {
+function cityAlertDup(id, name) {
     removeAllChildNodes("success");
     document.getElementById("alert_id").innerHTML =
-        '<div class="set-alert is-err">Цей ID уже використовується: <b>' + id + ' (' + name_ua + ')</b>. Оберіть інший.</div>';
+        '<div class="set-alert is-err">' + t('setDupIdPrefix') + ' <b>' + id + ' (' + name + ')</b>. ' + t('setDupIdSuffix') + '</div>';
 }
 
 //11.09 Failure flag for empty mandatory field
 function cityAlertEmpty(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
+        '<div class="set-alert is-err">' + t('setEmptyField') + '</div>';
 }
 
 //11.10 Open Google map for lat/long

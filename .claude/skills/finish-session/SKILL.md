@@ -40,28 +40,47 @@ Look at the diff to understand what was actually modified — you'll need this f
 grep "?v=" index.html
 ```
 
-The version string appears three times (fonts.css, bcd_onload.js, global.css), all identical, e.g. `?v=9.1.27`.
+The version string appears in `index.html` (multiple assets), `SCRIPTS/bcd_onload.js` (`APP_V`), `CLAUDE.md`, and `SCRIPTS/bcd_services.js` (tech-tag).
 
 ## 3. Bump the patch version
 
 Increment the **last** number: `9.1.27` → `9.1.28`.  
 If the user explicitly requests a minor bump, increment the middle number and reset patch to 0: `9.1.27` → `9.2.0`.
 
-Replace all three occurrences in `index.html`, the one occurrence in `CLAUDE.md`, and the version tag in `SCRIPTS/bcd_services.js`:
+Use Python (safe for UTF-8 — never use sed on these files):
+```python
+OLD, NEW = '9.2.4', '9.2.5'   # adjust to actual old/new versions
+
+# 1. index.html — all ?v= occurrences
+p = 'index.html'
+c = open(p, encoding='utf-8').read()
+open(p, 'w', encoding='utf-8').write(c.replace('?v=' + OLD, '?v=' + NEW))
+
+# 2. APP_V in bcd_onload.js
+p = 'SCRIPTS/bcd_onload.js'
+c = open(p, encoding='utf-8').read()
+open(p, 'w', encoding='utf-8').write(c.replace("APP_V = '" + OLD + "'", "APP_V = '" + NEW + "'"))
+
+# 3. CLAUDE.md
+p = 'CLAUDE.md'
+c = open(p, encoding='utf-8').read()
+open(p, 'w', encoding='utf-8').write(c.replace('**' + OLD + '**', '**' + NEW + '**'))
+
+# 4. bcd_services.js tech-tag
+import re
+p = 'SCRIPTS/bcd_services.js'
+c = open(p, encoding='utf-8').read()
+open(p, 'w', encoding='utf-8').write(re.sub(r"tech-tag'>v[\d.]+<", "tech-tag'>v" + NEW + "<", c))
 ```
-sed -i 's/?v=9\.1\.27/?v=9.1.28/g' index.html
-sed -i 's/\*\*9\.1\.27\*\*/\*\*9.1.28\*\*/g' CLAUDE.md
-sed -i "s/tech-tag'>v[0-9]\+\.[0-9]\+\.[0-9]\+</tech-tag'>v9.1.28</" SCRIPTS/bcd_services.js
-```
-(adjust the numbers to match what you read in step 2)
 
 Confirm after:
 ```
 grep "?v=" index.html
+grep "APP_V" SCRIPTS/bcd_onload.js
 grep "Current version" CLAUDE.md
 grep "tech-tag.*v[0-9]" SCRIPTS/bcd_services.js
 ```
-All three `index.html` lines, the `CLAUDE.md` line, and the `bcd_services.js` tech tag must show the new version.
+All occurrences must show the new version.
 
 ## 4. Stage everything
 

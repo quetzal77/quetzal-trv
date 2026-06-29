@@ -75,7 +75,6 @@ div.mainsection{font-size:15px}
 }
 .dropdown-menu>li>a{color:var(--text); padding:8px 12px; border-radius:8px}
 .dropdown-menu>li>a:hover{background:var(--surface-2); color:var(--text)}
-.dropdown-header{color:var(--muted)}
 /* NAVBAR SEARCH (countries + cities, UA/EN) */
 .nav-search{position:relative}
 #navSearch{
@@ -129,7 +128,6 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .stat-tile .sub-row{font-size:14px; color:var(--muted)}
 .stat-tile .sub-row b{color:var(--text); font-weight:600}
 /* Block 2 — records (vertical cards, one row) */
-.stats-h2{font-size:18px; font-weight:700; margin:0 0 14px; color:var(--text)}
 .stat-records{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
 .stat-rec{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px 18px}
 .stat-rec .emo{font-size:24px; line-height:1}
@@ -335,8 +333,6 @@ a.back2top{bottom:20px; display:none}
 .back2country{top:70px; display:block}
 .back2country a,.back2country a:hover,.back2country a:visited{color:#fff}
 
-/* SETTINGS — original helper kept --- */
-.asteriskField{color:red}
 
 /* SITE FOOTER ------------------------------------------------- */
 .site-footer{margin-top:40px; border-top:1px solid var(--border)}
@@ -366,7 +362,6 @@ a.back2top{bottom:20px; display:none}
 
 /* SETTINGS PAGE ----------------------------------------------- */
 .set-page{max-width:1080px; margin:0 auto}
-.set-title{font-size:26px; font-weight:700; text-align:center; margin:6px 0 18px; color:var(--text)}
 .set-layout{display:grid; grid-template-columns:220px 1fr; gap:20px; align-items:start}
 /* left menu */
 .set-sidebar{position:sticky; top:84px; background:var(--surface); border:1px solid var(--border);
@@ -390,14 +385,9 @@ a.back2top{bottom:20px; display:none}
 .set-kpi-num{font-size:34px; font-weight:700; line-height:1.05; color:var(--text)}
 .set-kpi-sub{font-size:13px; color:var(--muted)}
 /* block 1 — three square cards */
-.set-cards3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
-.set-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow)}
-.set-card.is-square{aspect-ratio:1/1; display:flex; align-items:center; justify-content:center}
-.set-card.is-empty{border-style:dashed; box-shadow:none; background:var(--surface-2)}
 /* block 2 — data transformation */
 .set-panel{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
   box-shadow:var(--shadow); padding:18px}
-.set-muted{color:var(--muted); font-size:14px}
 /* option rows + buttons */
 .set-options{display:flex; flex-direction:column}
 .set-option{display:flex; align-items:center; justify-content:space-between; gap:16px;
@@ -448,7 +438,6 @@ a.back2top{bottom:20px; display:none}
 .set-miss{color:var(--muted); font-size:12px}
 .set-frac{color:var(--muted)}
 .cap-yes{color:#16a34a; font-weight:700}
-.cap-no{color:var(--muted)}
 /* countries: filter checkbox + continent group rows */
 /* entity tab forms (types / continents / …) */
 .set-head{display:flex; align-items:center; gap:14px; margin:0 0 20px}
@@ -456,7 +445,6 @@ a.back2top{bottom:20px; display:none}
   font-size:22px; background:var(--accent-weak); color:var(--accent); border-radius:12px}
 .set-head-title{font-size:20px; font-weight:700; color:var(--text); margin:0}
 .set-head-desc{font-size:14px; color:var(--muted); margin:3px 0 0}
-.set-intro{font-size:15px; color:var(--muted); margin:0 0 16px}
 .set-label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px}
 .set-select{width:100%; padding:9px 12px; border:1px solid var(--border); border-radius:9px;
   background:var(--surface); color:var(--text); font-family:inherit; font-size:14px}
@@ -476,9 +464,6 @@ a.back2top{bottom:20px; display:none}
 .set-coord{flex:1; min-width:0}
 .set-coord > label{display:block; font-size:13px; font-weight:600; color:var(--muted); margin-bottom:6px}
 /* fcbkcomplete (visit "locations" multi-select) restyled to the modern theme */
-.set-fcbk{position:relative}   /* anchor the absolutely-positioned dropdown to the field width */
-.set-fcbk .facebook-auto{width:auto!important; left:0; right:0}
-.set-fcbk .facebook-auto ul{width:auto!important; left:0; right:0}
 ul.holder{margin:0!important; border:1px solid var(--border); border-radius:9px; background:var(--surface); padding:6px 8px 2px; min-height:42px; box-sizing:border-box}
 ul.holder li{margin:0 6px 5px 0}
 ul.holder li.bit-box{border-radius:999px; border:1px solid transparent; background:var(--accent-weak); color:var(--accent); padding:4px 24px 4px 11px; font-weight:600; font-size:12px}
@@ -491,6 +476,25 @@ ul.holder li.bit-box a.closebutton::before{content:"×"}
 .facebook-auto ul li{border:0!important; background:var(--surface)!important; color:var(--text); font-size:14px!important; padding:8px 12px}
 .facebook-auto ul li.auto-focus{background:var(--accent-weak)!important; color:var(--accent)}
 .facebook-auto ul li em{background:none!important; color:var(--accent)}
+/* city autocomplete (visit form) */
+.set-city-autocomplete{position:relative}
+.city-dropdown{display:none; position:absolute; top:calc(100% + 2px); left:0; right:0; z-index:200;
+  background:var(--surface); border:1px solid var(--border); border-radius:9px;
+  max-height:220px; overflow-y:auto; box-shadow:var(--shadow)}
+.city-dropdown.is-open{display:block}
+.city-dropdown-item{padding:8px 12px; font-size:13px; cursor:pointer; color:var(--text); border-bottom:1px solid var(--border)}
+.city-dropdown-item:last-child{border-bottom:none}
+.city-dropdown-item:hover{background:var(--accent-weak); color:var(--accent)}
+.city-dropdown-empty{padding:8px 12px; font-size:13px; color:var(--muted)}
+/* visit city list (replaces fcbkcomplete multi-select widget) */
+.visit-city-list{margin-top:8px; border:1px solid var(--border); border-radius:9px; overflow:hidden}
+.visit-city-row{display:flex; align-items:center; gap:8px; padding:6px 10px; border-bottom:1px solid var(--border); background:var(--surface)}
+.visit-city-row:last-child{border-bottom:none}
+.visit-city-name{flex:1; font-size:13px; color:var(--text); min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.visit-city-days{width:72px!important; flex:none!important; padding:5px 8px!important; font-size:13px; text-align:right}
+.visit-city-remove{flex:none; background:none; border:none; color:var(--muted); cursor:pointer; font-size:16px; line-height:1; padding:2px 6px; border-radius:6px}
+.visit-city-remove:hover{color:#e5484d; background:var(--surface-2)}
+.visit-city-empty{padding:12px 14px; font-size:13px; color:var(--muted)}
 .set-form-actions{display:flex; gap:10px; margin-top:4px}
 .set-btn-danger{background:#e5484d; border-color:#e5484d; color:#fff}
 .set-btn-danger:hover{background:#e5484d; color:#fff; filter:brightness(.95)}
@@ -533,7 +537,6 @@ ul.holder li.bit-box a.closebutton::before{content:"×"}
 @media (max-width:760px){
   .set-layout{grid-template-columns:1fr}
   .set-sidebar{position:static}
-  .set-cards3{grid-template-columns:1fr}
   .set-kpi{grid-template-columns:repeat(2,1fr)}
   .set-option{flex-direction:column; align-items:flex-start}
 }

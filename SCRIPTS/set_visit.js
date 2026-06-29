@@ -23,16 +23,16 @@ function createSettingsVisitTab_HTML() {
         '<header class="set-head">' +
             '<span class="set-head-icon">✈️</span>' +
             '<div>' +
-                '<h2 class="set-head-title">Візити</h2>' +
-                '<p class="set-head-desc">Створюйте, редагуйте та видаляйте візити (поїздки).</p>' +
+                '<h2 class="set-head-title">' + t('setVisits') + '</h2>' +
+                '<p class="set-head-desc">' + t('setVisitDesc') + '</p>' +
             '</div>' +
         '</header>' +
         '<span id="success"></span>' +
         '<div class="set-panel">' +
-            '<label class="set-label" for="visitSelect">Оберіть візит або додайте новий</label>' +
+            '<label class="set-label" for="visitSelect">' + t('setVisitSelectLabel') + '</label>' +
             '<select id="visitSelect" class="set-select" onchange="javascript:onVisitSelect(this.value)">' +
-                '<option value="">— оберіть —</option>' +
-                '<option value="addnew">➕ Додати новий візит</option>' +
+                '<option value="">' + t('setSelectOpt') + '</option>' +
+                '<option value="addnew">' + t('setVisitAddNew') + '</option>' +
                 options +
             '</select>' +
         '</div>' +
@@ -51,16 +51,17 @@ function onVisitSelect(value) {
 
 //15.02a Add/edit/remove form for a visit
 function addEditRemoveVisits(itemId) {
-    var startDateValue = "", endDateValue = "", removeButton = "", firstSlice = "", secondSlice = "";
-    var header = "Новий візит", submitStatus = "add";
+    var startDateValue = "", endDateValue = "", removeButton = "";
+    var header = t('setVisitNew'), submitStatus = "add";
     var editMode = (itemId != "addnew");
     var visit = editMode ? $.grep (data.visit, function( n, i ) {return ( n.start_date == itemId )}) : "newvisit";
 
     local[0] = {
         start_date: itemId,
         end_date: editMode ? visit[0].end_date : "",
-        city: editMode ? visit[0].city : ""
+        city: editMode ? visit[0].city : []
     };
+    if (editMode && visit[0].days      != undefined) { local[0].days = visit[0].days; }
     if (editMode && visit[0].photos    != undefined) { local[0].photos = visit[0].photos; }
     if (editMode && visit[0].story     != undefined) { local[0].story = visit[0].story; }
     if (editMode && visit[0].story_url != undefined) { local[0].story_url = visit[0].story_url; }
@@ -86,33 +87,33 @@ function addEditRemoveVisits(itemId) {
     if (editMode){
         startDateValue = 'value="' + local[0].start_date.replace(/\./g, "/") + '" ';
         endDateValue   = 'value="' + local[0].end_date.replace(/\./g, "/") + '" ';
-        header = "Редагувати візит";
+        header = t('setVisitEdit');
         submitStatus = "edit";
-        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeVisit()">Видалити візит</button>';
-        // keep the visited-cities order: list them first, already selected
-        $.each (local[0].city, function( i, city ){
-            var cObj = $.grep(citiesVisited, function(n) { return n.city_id == city; });
-            var cityLabel = cObj.length ? (cObj[0].name + ' - ' + cObj[0].name_ua) : city;
-            firstSlice += '<option value="' + city + '" class="selected" selected>' + cityLabel + '</option>';
+        removeButton = '<button type="button" class="set-btn set-btn-danger" onclick="javascript:removeVisit()">' + t('setVisitDelete') + '</button>';
+    }
+
+    // initialise the city list: [{id, days}, ...]
+    // days values are strings so serialisation stays stable (no float→string drift)
+    window.__visitCities = [];
+    if (editMode && local[0].city) {
+        var usedDays = {};
+        $.each(local[0].city, function(i, cityId) {
+            var d = "";
+            if (local[0].days && local[0].days[cityId] !== undefined && !usedDays[cityId]) {
+                d = String(local[0].days[cityId]);
+                usedDays[cityId] = true;
+            }
+            window.__visitCities.push({id: cityId, days: d});
         });
     }
 
-    // remaining (not-yet-selected) cities
-    var distinctIds = {};
-    $.each (local[0].city, function( i, city ){ distinctIds[city] = true; });
-    $.each (data.city, function( i, city ){
-        if (!distinctIds[city.city_id]){
-            secondSlice += '<option value="' + city.city_id + '">' + city.name + '-' + city.name_ua + '</option>';
-        }
-    });
-
-    // dirty-tracking snapshot (normalized)
+    // dirty-tracking snapshot
     var norm = function (d) { return (d || "").replace(/[^0-9]/g, "."); };
     window.__visitInit = {
-        start:  editMode ? norm(local[0].start_date) : "",
-        end:    editMode ? norm(local[0].end_date) : "",
-        cities: (editMode && local[0].city) ? local[0].city.slice().sort().join(",") : "",
-        photos: photos,
+        start:    editMode ? norm(local[0].start_date) : "",
+        end:      editMode ? norm(local[0].end_date) : "",
+        cities:   window.__visitCities.map(function(e) { return e.id + ":" + e.days; }).join("~"),
+        photos:   photos,
         storyInt: curId,
         storyExt: curExtUrl
     };
@@ -122,47 +123,52 @@ function addEditRemoveVisits(itemId) {
             '<h3 class="set-form-title">' + header + '</h3>' +
             '<div class="set-field">' +
                 '<div class="set-coord-row">' +
-                    '<div class="set-coord"><label>Дата початку <span class="req">*</span></label>' +
-                        '<input id="dateStart" name="date" type="text" class="set-input" ' + startDateValue + 'placeholder="ДД/ММ/РРРР"></div>' +
-                    '<div class="set-coord"><label>Дата завершення <span class="req">*</span></label>' +
-                        '<input id="dateEnd" name="date" type="text" class="set-input" ' + endDateValue + 'placeholder="ДД/ММ/РРРР"></div>' +
+                    '<div class="set-coord"><label>' + t('setVisitDateStart') + ' <span class="req">*</span></label>' +
+                        '<input id="dateStart" name="date" type="text" class="set-input" ' + startDateValue + 'placeholder="' + t('setVisitDateFmt') + '"></div>' +
+                    '<div class="set-coord"><label>' + t('setVisitDateEnd') + ' <span class="req">*</span></label>' +
+                        '<input id="dateEnd" name="date" type="text" class="set-input" ' + endDateValue + 'placeholder="' + t('setVisitDateFmt') + '"></div>' +
                 '</div>' +
                 '<span id="alert_date"></span>' +
             '</div>' +
-            '<div class="set-field set-fcbk" onclick="javascript:setTimeout(setVisitFormDirty, 0)">' +
-                '<label for="select3">Локації цієї поїздки <span class="req">*</span></label>' +
-                '<select id="select3" name="select3">' + firstSlice + secondSlice + '</select>' +
+            '<div class="set-field">' +
+                '<label>' + t('setVisitCitiesLabel') + ' <span class="req">*</span></label>' +
+                '<div class="set-city-autocomplete">' +
+                    '<input id="citySearch" type="text" class="set-input" placeholder="' + t('setVisitCitySearch') + '" autocomplete="off" oninput="javascript:updateCitySearch()">' +
+                    '<div id="cityDropdown" class="city-dropdown"></div>' +
+                '</div>' +
+                '<div id="visitCityList" class="visit-city-list"></div>' +
                 '<span id="alert_cities_list"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Посилання на фотоальбом поїздки</label>' +
+                '<label>' + t('setVisitPhotosLabel') + '</label>' +
                 '<div class="set-input-row">' +
-                    '<input id="newPhotos" type="text" class="set-input" value="' + photos + '" placeholder="URL фотоальбому" oninput="javascript:setVisitFormDirty(); document.getElementById(\'photoCheckBtn\').disabled = (this.value.trim() === \'\')">' +
-                    '<button type="button" id="photoCheckBtn" class="set-btn" onclick="javascript:checkPhotoAlbum()"' + (photos ? "" : " disabled") + '>Переглянути</button>' +
+                    '<input id="newPhotos" type="text" class="set-input" value="' + photos + '" placeholder="' + t('setVisitPhotosUrl') + '" oninput="javascript:setVisitFormDirty(); document.getElementById(\'photoCheckBtn\').disabled = (this.value.trim() === \'\')">' +
+                    '<button type="button" id="photoCheckBtn" class="set-btn" onclick="javascript:checkPhotoAlbum()"' + (photos ? "" : " disabled") + '>' + t('setVisitPhotosView') + '</button>' +
                 '</div>' +
                 '<span id="alert_photos"></span>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Внутрішня історія (XML-файл)</label>' +
+                '<label>' + t('setVisitStoryInt') + '</label>' +
                 '<select id="newStoryInt" class="set-select" onchange="javascript:setVisitFormDirty()">' +
-                    '<option value=""' + (curId === "" ? " selected" : "") + '>— немає —</option>' +
+                    '<option value=""' + (curId === "" ? " selected" : "") + '>' + t('setVisitNone') + '</option>' +
                     internalList.map(function(id){ return '<option value="' + id + '"' + (curId === id ? " selected" : "") + '>' + id + '</option>'; }).join("") +
                 '</select>' +
             '</div>' +
             '<div class="set-field">' +
-                '<label>Зовнішня історія (посилання)</label>' +
-                '<input id="newStoryExt" type="text" class="set-input" value="' + curExtUrl + '" placeholder="URL історії / блогу" oninput="javascript:setVisitFormDirty()">' +
+                '<label>' + t('setVisitStoryExt') + '</label>' +
+                '<input id="newStoryExt" type="text" class="set-input" value="' + curExtUrl + '" placeholder="' + t('setVisitStoryExtUrl') + '" oninput="javascript:setVisitFormDirty()">' +
                 '<span id="alert_story"></span>' +
             '</div>' +
             '<div class="set-form-actions">' +
-                '<button type="button" id="visitSaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitVisit(\'' + submitStatus + '\')" disabled>Зберегти</button>' +
+                '<button type="button" id="visitSaveBtn" class="set-btn set-btn-primary" onclick="javascript:submitVisit(\'' + submitStatus + '\')" disabled>' + t('setSave') + '</button>' +
                 removeButton +
             '</div>' +
             '<span id="remove"></span>' +
         '</div>';
 
     // widgets
-    runMultipleSelectWidget();
+    renderVisitCityList();
+    $('#citySearch').on('blur', function() { setTimeout(closeCityDropdown, 150); });
     runDatePickerWidget();
 
     // Populate the internal-story dropdown from the full catalog (DATA/stories.json),
@@ -170,7 +176,105 @@ function addEditRemoveVisits(itemId) {
     fillVisitStoryOptions(curId, internalList);
 }
 
-//15.02c Build the internal-story <select> from stories.json (full list) + fallback ids
+//15.02b Render the city rows (name + days input + remove button)
+// Days input is disabled for duplicate city entries — days is keyed by city_id, so only the first occurrence can hold a value.
+function renderVisitCityList() {
+    var container = document.getElementById("visitCityList");
+    if (!container) { return; }
+
+    if (!window.__visitCities || window.__visitCities.length === 0) {
+        container.innerHTML = '<div class="visit-city-empty">' + t('setVisitNoCities') + '</div>';
+        return;
+    }
+
+    var seen = {};
+    var html = '';
+    $.each(window.__visitCities, function(i, entry) {
+        var cObj = $.grep(data.city, function(n) { return n.city_id === entry.id; });
+        var label = cObj.length
+            ? (window.LANG === 'en' ? cObj[0].name + ' — ' + cObj[0].name_ua : cObj[0].name_ua + ' — ' + cObj[0].name)
+            : entry.id;
+        var isDup = !!seen[entry.id];
+        seen[entry.id] = true;
+        var daysInput = isDup
+            ? '<input type="number" class="set-input visit-city-days" disabled title="' + t('setVisitDaysDupTitle') + '">'
+            : '<input type="number" class="set-input visit-city-days" value="' + entry.days + '" min="0" step="0.1" placeholder="' + t('setVisitDaysPlh') + '" oninput="javascript:setVisitCityDays(' + i + ', this.value)">';
+        html +=
+            '<div class="visit-city-row">' +
+                '<span class="visit-city-name" title="' + entry.id + '">' + label + '</span>' +
+                daysInput +
+                '<button type="button" class="visit-city-remove" title="' + t('setVisitRemoveCity') + '" onclick="javascript:removeVisitCity(' + i + ')">&#x2715;</button>' +
+            '</div>';
+    });
+    container.innerHTML = html;
+}
+
+//15.02c Update the autocomplete dropdown as the user types
+function updateCitySearch() {
+    var q = (document.getElementById("citySearch").value || "").toLowerCase().trim();
+    var dropdown = document.getElementById("cityDropdown");
+    if (!dropdown) { return; }
+
+    if (!q) { closeCityDropdown(); return; }
+
+    var inList = {};
+    $.each(window.__visitCities || [], function(i, e) { inList[e.id] = true; });
+
+    var html = '';
+    var count = 0;
+    $.each(data.city, function(i, city) {
+        if (inList[city.city_id]) { return; }
+        if (city.name_ua.toLowerCase().indexOf(q) !== -1 ||
+            city.name.toLowerCase().indexOf(q) !== -1 ||
+            city.city_id.indexOf(q) !== -1) {
+            var label = window.LANG === 'en'
+                ? city.name + ' — ' + city.name_ua
+                : city.name_ua + ' — ' + city.name;
+            html += '<div class="city-dropdown-item" onmousedown="javascript:selectCityFromDropdown(\'' + city.city_id + '\')">' + label + '</div>';
+            count++;
+            if (count >= 60) { return false; }
+        }
+    });
+
+    dropdown.innerHTML = html || '<div class="city-dropdown-empty">' + t('setVisitCityNotFound') + '</div>';
+    dropdown.className = "city-dropdown is-open";
+}
+
+//15.02d Add a city chosen from the dropdown to the visit city list
+function selectCityFromDropdown(cityId) {
+    window.__visitCities = window.__visitCities || [];
+    window.__visitCities.push({id: cityId, days: ""});
+    var search = document.getElementById("citySearch");
+    if (search) { search.value = ""; search.focus(); }
+    closeCityDropdown();
+    renderVisitCityList();
+    setVisitFormDirty();
+}
+
+//15.02e Close and clear the city autocomplete dropdown
+function closeCityDropdown() {
+    var dropdown = document.getElementById("cityDropdown");
+    if (dropdown) { dropdown.className = "city-dropdown"; }
+}
+
+//15.02f Remove a city from the list by its index
+function removeVisitCity(idx) {
+    if (window.__visitCities) {
+        window.__visitCities.splice(idx, 1);
+        renderVisitCityList();
+        setVisitFormDirty();
+    }
+}
+
+//15.02g Update the days value for a city entry (called from oninput in the rendered row)
+function setVisitCityDays(idx, val) {
+    if (window.__visitCities && window.__visitCities[idx] !== undefined) {
+        window.__visitCities[idx].days = val;
+        setVisitFormDirty();
+    }
+}
+
+//15.02h Build the internal-story <select> from stories.json (full list) + fallback ids
 function visitEsc(s) {
     return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -185,7 +289,7 @@ function fillVisitStoryOptions(curId, fallbackList) {
         (index || []).forEach(function (s) { if (s && s.id) { labels[s.id] = s.id + (s.title ? " — " + s.title : ""); } });
         if (curId && !labels[curId]) { labels[curId] = curId; }
 
-        var html = '<option value=""' + (curId === "" ? " selected" : "") + '>— немає —</option>';
+        var html = '<option value=""' + (curId === "" ? " selected" : "") + '>' + t('setVisitNone') + '</option>';
         Object.keys(labels).sort().forEach(function (id) {
             html += '<option value="' + visitEsc(id) + '"' + (curId === id ? " selected" : "") + '>' + visitEsc(labels[id]) + '</option>';
         });
@@ -199,13 +303,13 @@ function fillVisitStoryOptions(curId, fallbackList) {
     }
 }
 
-//15.02b Enable "Зберегти" only after something actually changed
+//15.02i Enable "Зберегти" only after something actually changed
 function setVisitFormDirty() {
     var init = window.__visitInit || {};
     var norm = function (d) { return (d || "").replace(/[^0-9]/g, "."); };
     var start  = norm($('#dateStart').val());
     var end    = norm($('#dateEnd').val());
-    var cities = ($('#select3').val() || []).slice().sort().join(",");
+    var cities = (window.__visitCities || []).map(function(e) { return e.id + ":" + e.days; }).join("~");
     var photos = (((document.getElementById("newPhotos") || {}).value) || "").trim();
     var storyInt = (document.getElementById("newStoryInt") || {}).value || "";
     var storyExt = (((document.getElementById("newStoryExt") || {}).value) || "").trim();
@@ -236,7 +340,20 @@ function submitVisit(status) {
                      end_date: $('#dateEnd').val().replace(/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/g, ".")
                    };
 
-    if ($('#select3').val() != "") { newVisitObj["city"] = $('#select3').val(); }
+    var cityIds = [];
+    var daysObj = {};
+    var hasDays = false;
+    $.each(window.__visitCities || [], function(i, entry) {
+        cityIds.push(entry.id);
+        var d = (entry.days !== "" && entry.days !== undefined) ? parseFloat(entry.days) : NaN;
+        if (!isNaN(d) && daysObj[entry.id] === undefined) {
+            daysObj[entry.id] = d;
+            hasDays = true;
+        }
+    });
+    if (cityIds.length > 0) { newVisitObj["city"] = cityIds; }
+    if (hasDays) { newVisitObj["days"] = daysObj; }
+
     if (document.getElementById("newPhotos").value.trim() != "") { newVisitObj["photos"] = document.getElementById("newPhotos").value.trim(); }
     var storyInt = document.getElementById("newStoryInt").value;
     if (storyInt != "") { newVisitObj["story"] = storyInt; }          // explicit internal XML file id
@@ -296,45 +413,31 @@ function checkVisitRules(visitObj) {
 //15.06 Success flag
 function visitAlertSuccess() {
     document.getElementById("success").innerHTML =
-        '<div class="set-alert is-ok">Зміни успішно застосовано. Перевірте список візитів.</div>';
+        '<div class="set-alert is-ok">' + t('setVisitOk') + '</div>';
 }
 
 //15.07 Failure flag — duplicate start date
 function visitAlertDupStart(start_date, end_date) {
     removeAllChildNodes("success");
     document.getElementById("alert_date").innerHTML =
-        '<div class="set-alert is-err">Дата початку не унікальна — вже є візит <b>' + start_date + ' - ' + end_date + '</b>. Оберіть іншу дату початку.</div>';
+        '<div class="set-alert is-err">' + t('setVisitDupStart') + ' <b>' + start_date + ' - ' + end_date + '</b>' + t('setVisitDupStartSuffix') + '</div>';
 }
 
 //15.08 Failure flag — duplicate end date
 function visitAlertDupEnd(start_date, end_date) {
     removeAllChildNodes("success");
     document.getElementById("alert_date").innerHTML =
-        '<div class="set-alert is-err">Дата завершення не унікальна — вже є візит <b>' + start_date + ' - ' + end_date + '</b>. Оберіть іншу дату завершення.</div>';
+        '<div class="set-alert is-err">' + t('setVisitDupEnd') + ' <b>' + start_date + ' - ' + end_date + '</b>' + t('setVisitDupEndSuffix') + '</div>';
 }
 
 //15.09 Failure flag — empty mandatory field
 function visitAlertEmpty(alertId) {
     removeAllChildNodes("success");
     document.getElementById(alertId).innerHTML =
-        '<div class="set-alert is-err">Обов’язкове поле порожнє. Заповніть його перед збереженням.</div>';
+        '<div class="set-alert is-err">' + t('setEmptyField') + '</div>';
 }
 
-//15.10 Run multiselect widget (cities)
-function runMultipleSelectWidget() {
-    $("#select3").fcbkcomplete({
-        width: '100%',
-        height: 10,
-        cache: true,
-        newel: false,
-        filter_case: false,
-        filter_selected: false
-    });
-    // fcbkcomplete fires change on the underlying select when a city is added/removed
-    $("#select3").on('change', function() { setVisitFormDirty(); });
-}
-
-//15.11 Run DatePicker widget
+//15.10 Run DatePicker widget
 function runDatePickerWidget() {
     var date_input = $('input[name="date"]');
     var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
@@ -349,7 +452,7 @@ function runDatePickerWidget() {
     date_input.on('changeDate change input', setVisitFormDirty);
 }
 
-//15.12 Open the photo album of the visit
+//15.11 Open the photo album of the visit
 function checkPhotoAlbum() {
     var url = document.getElementById("newPhotos").value.trim();
     if (url != ""){
