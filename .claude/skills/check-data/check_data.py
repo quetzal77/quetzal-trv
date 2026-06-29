@@ -56,7 +56,9 @@ for name, items, key in [("continent", continents, "continent_id"),
                          ("country", countries, "country_id"),
                          ("area", areas, "region_id"),
                          ("city", cities, "city_id")]:
-    for d in dups(items, key):
+    # for areas: only count active entries (active != "N") toward duplicate detection
+    check_items = [it for it in items if not (key == "region_id" and it.get("active") == "N")] if key == "region_id" else items
+    for d in dups(check_items, key):
         if key == "region_id" and d in ACCEPTED_DUPLICATE_REGION_IDS:
             accepted.append(d)
         else:

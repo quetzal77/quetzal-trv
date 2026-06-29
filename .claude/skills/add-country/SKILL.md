@@ -45,6 +45,22 @@ This prints `[[region_id, english_title], ...]`. Verify the count looks reasonab
 the country (e.g. 16 for Bulgaria, 20 for Italy). If the count is 0 or suspiciously low,
 stop and report — the map file may be malformed.
 
+**Check for region_id conflicts.** After extracting, run:
+```python
+python -c "
+import json, sys
+sys.stdout = open(sys.stdout.fileno(), mode='w', encoding='utf-8', buffering=1)
+new_ids = <list of extracted region_ids>
+db = json.load(open('DATA/globaldb.json', encoding='utf-8'))
+for r in db['area']:
+    if r['region_id'] in new_ids:
+        print('CONFLICT:', r['region_id'], 'used by country_id', r['country_id'])
+"
+```
+If a conflict is found (same `region_id` already used by another country's map, e.g. island
+territories that appear on a parent country's map): set that existing area entry to
+`"active": "N"` — do NOT delete it. The new country's entry takes over the ID.
+
 ## Step 4 — Gather country metadata
 
 Ask the user for any fields not already known:

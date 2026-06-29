@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "IM",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Isle of Man",
+      "name_ua": "Острів Мен",
+      "name_nt": "Ellan Vannin",
+      "short_name": "isleofman",
+      "small_flag_img": "",
+      "flag_img": "",
+      "emb_img": "",
+      "map_img": "isleOfManLow.js"
+    },
+    {
       "country_id": "EG",
       "country_type_id": "1",
       "continent_id": "AF",
@@ -1100,6 +1113,13 @@
     }
   ],
   "area": [
+    {
+      "country_id": "IM",
+      "region_id": "IM",
+      "name": "Isle of Man",
+      "name_ua": "Острів Мен",
+      "active": "Y"
+    },
     {
       "country_id": "EG",
       "region_id": "EG-DK",
@@ -11835,7 +11855,7 @@
       "region_id": "IM",
       "name": "Isle of Man",
       "name_ua": "Острів Мен",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "IS",
@@ -12518,6 +12538,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Douglas",
+      "name_nt": "Douglas",
+      "name_ua": "Дуглас",
+      "city_id": "douglas",
+      "region_id": "IM",
+      "capital": "true",
+      "lat": "54.1509",
+      "long": "-4.4815",
+      "description": "Столиця та найбільше місто Острова Мен. Головні пам'ятки: Манський музей (Manx Museum) з колекцією кельтських хрестів і вікінгських артефактів, набережна прогулянкова алея Променад із кінним трамваєм (діє з 1876 р.), фортеця Піл на сусідньому острівці, а також гірська залізниця Snaefell Mountain Railway до найвищої точки острова."
+    },
     {
       "name": "Cairo (Al Qāhirah)",
       "name_nt": "القاهرة",
