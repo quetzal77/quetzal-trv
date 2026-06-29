@@ -182,7 +182,7 @@
       "small_flag_img": "",
       "flag_img": "",
       "emb_img": "",
-      "map_img": "isleOfManLow.js"
+      "map_img": "isleOfManHigh.js"
     },
     {
       "country_id": "EG",
@@ -1115,7 +1115,7 @@
   "area": [
     {
       "country_id": "IM",
-      "region_id": "IM",
+      "region_id": "IM-01",
       "name": "Isle of Man",
       "name_ua": "Острів Мен",
       "active": "Y"
@@ -12543,7 +12543,7 @@
       "name_nt": "Douglas",
       "name_ua": "Дуглас",
       "city_id": "douglas",
-      "region_id": "IM",
+      "region_id": "IM-01",
       "capital": "true",
       "lat": "54.1509",
       "long": "-4.4815",
