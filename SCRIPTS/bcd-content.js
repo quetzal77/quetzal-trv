@@ -129,7 +129,7 @@ function populateContent(callback) {
                this.getCountryId = function () {
                 var region;
                 for (var j = 0; j < data.area.length; j++) {
-                    if (data.area[j].region_id == this.region_id)
+                    if (data.area[j].region_id == this.region_id && data.area[j].active != "N")
                         {region = data.area[j];}
                 }
                    if(typeof region == "undefined") { return ""; }
