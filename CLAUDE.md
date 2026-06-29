@@ -161,4 +161,4 @@ for path in ['SCRIPTS/bcd_onload.js']:
 - After editing `globaldb.json`: normalise CRLF → run `/check-data`.
 - After editing JS/CSS: check for curly quotes → syntax-check with node → bump `?v=`.
 - To end session: `/finish-session` handles version bump + commit + push.
-- Branch: `site_version_9_2` → merges to `master` for releases.
+- Branch: `site_version_9_3` → merges to `master` for releases.
