@@ -3,73 +3,137 @@ name: add-country
 description: >
   Add a new country and all its regions to quetzal-trv's DATA/globaldb.json, sourcing the
   region list from the bundled ammap map (SCRIPTS/MAPS/ammap_3.21.14/<country>Low.js).
-  Creates the `country` entry plus one `area` (region) entry per province/region —
-  region_id + English name come straight from the map, name_ua is translated to Ukrainian.
+  Creates the `country` entry, one `area` entry per region, and the capital `city` entry.
   Use when you visited a country that isn't in globaldb.json yet and need it added with
   its regions before adding cities/visits.
 ---
 
 # add-country
 
-Adds a country and its regions. Regions are taken from the matching ammap map so the
-`region_id`s line up with what the on-site maps highlight.
+Adds a country, its regions, and capital city. Map file is the source of truth for region IDs.
 
-## Inputs to gather (ask the user if not given)
-- **Country** (which one) and its ammap map file name, e.g. `bulgaria` → `bulgariaLow.js`.
-  List candidates with: `ls SCRIPTS/MAPS/ammap_3.21.14/ | grep -i <name>`
-- **country_id**: the project's id (mostly ISO alpha-2, e.g. `BG`; a few custom like `ABH`).
-- **short_name**: lowercase English slug (e.g. `bulgaria`) — used in URLs and flag lookups.
-- **name** (English), **name_ua** (Ukrainian), **name_nt** (native-language name).
-- **continent_id**: one of the existing continents (`EU`,`AS`,`AF`,`NA`,…); add `continent_id2` only if it spans two.
-- Optional assets: **small_flag_img** (CSS sprite coords like `"-158px -55px"`), **flag_img**,
-  **emb_img** (filenames under `IMG/flag_n_emblem/`). If unknown, leave `""` and tell the user to fill later.
+## Step 1 — Find the map file
 
-## Steps
+Search for the country in `SCRIPTS/MAPS/ammap_3.21.14/`:
+```
+ls SCRIPTS/MAPS/ammap_3.21.14/ | grep -i <country_name>
+```
 
-1. **Extract regions** from the ammap map:
-   ```
-   python .claude/skills/add-country/extract_regions.py SCRIPTS/MAPS/ammap_3.21.14/<country>Low.js
-   ```
-   This prints `[[region_id, english_title], ...]`. Sanity-check the count.
+**Selection priority:**
+1. `<name>Low.js` — preferred (Low detail = smaller file, used for country pages)
+2. Any other variant (`High.js`, etc.) — if Low is absent
+3. **No file found** → stop. Ask the user:
+   > Карту для «<country>» не знайдено в `SCRIPTS/MAPS/ammap_3.21.14/`.
+   > Надайте ім'я файлу карти або покладіть файл у цю папку і підтвердіть.
+   Do not proceed until the user provides a file name and it exists on disk.
 
-2. **Build the country entry** (match existing field order):
-   ```json
-   {
-     "country_id": "BG",
-     "continent_id": "EU",
-     "name": "Bulgaria",
-     "name_ua": "Болгарія",
-     "name_nt": "България",
-     "short_name": "bulgaria",
-     "small_flag_img": "",
-     "flag_img": "",
-     "emb_img": "",
-     "map_img": "bulgariaLow.js"
-   }
-   ```
-   Insert it right after the `  "country": [` line (Edit: match that line, append the object as the first element with a trailing comma).
+## Step 2 — Copy the map to the runtime folder
 
-3. **Build one area entry per region**, translating each English title to Ukrainian:
-   ```json
-   { "country_id": "BG", "region_id": "BG-01", "name": "Blagoevgrad", "name_ua": "Благоєвград", "active": "Y" }
-   ```
-   Insert all of them right after the `  "area": [` line.
+The app loads maps from `SCRIPTS/MAPS/` directly. Copy the chosen file one level up:
+```
+cp SCRIPTS/MAPS/ammap_3.21.14/<chosen_file> SCRIPTS/MAPS/<chosen_file>
+```
+Note the file name — it becomes the `map_img` field in the country entry.
 
-4. **Copy the map file** into the runtime maps folder (the app loads `SCRIPTS/MAPS/<map_img>`):
-   ```
-   cp SCRIPTS/MAPS/ammap_3.21.14/<country>Low.js SCRIPTS/MAPS/<country>Low.js
-   ```
+## Step 3 — Extract regions
 
-5. **Normalize line endings + validate JSON** (Edit may insert LF lines into this CRLF file):
-   ```
-   python -c "import json;p='DATA/globaldb.json';t=open(p,encoding='utf-8').read();json.loads(t);open(p,'wb').write(('\r\n'.join(t.splitlines())+'\r\n').encode('utf-8'));print('normalized + valid')"
-   ```
+```
+python .claude/skills/add-country/extract_regions.py SCRIPTS/MAPS/ammap_3.21.14/<chosen_file>
+```
 
-6. **Verify**: run the `check-data` skill (`python .claude/skills/check-data/check_data.py`).
-   Then remind the user to: add the flag sprite coords / flag & emblem images, and run
-   `sync-onload` (or add the country to `onload.json`) if it should appear on the home page.
+This prints `[[region_id, english_title], ...]`. Verify the count looks reasonable for
+the country (e.g. 16 for Bulgaria, 20 for Italy). If the count is 0 or suspiciously low,
+stop and report — the map file may be malformed.
+
+## Step 4 — Gather country metadata
+
+Ask the user for any fields not already known:
+- **country_id**: ISO alpha-2 code (e.g. `SI`); a few custom ones like `ABH` for Abkhazia
+- **country_type_id**: `1` = Recognized · `2` = Partly recognized · `3` = Unrecognized · `4` = Dependent territory (default: `1`)
+- **continent_id**: `EU` · `AS` · `AF` · `NA` · `SA` · `OC` · `AN`; add `continent_id2` only if the country spans two continents
+- **name** (English), **name_ua** (Ukrainian), **name_nt** (native-language name)
+- **short_name**: lowercase ASCII slug (e.g. `slovenia`) — used in URLs and as the in-memory key
+- **small_flag_img**, **flag_img**, **emb_img**: CSS sprite coords / filenames under `IMG/flag_n_emblem/`. Leave `""` if unknown — tell the user to fill later.
+
+## Step 5 — Add the country entry to `country[]`
+
+Insert right after the `  "country": [` line. Field order must match existing entries exactly:
+```json
+{
+  "country_id": "SI",
+  "country_type_id": "1",
+  "continent_id": "EU",
+  "name": "Slovenia",
+  "name_ua": "Словенія",
+  "name_nt": "Slovenija",
+  "short_name": "slovenia",
+  "small_flag_img": "",
+  "flag_img": "",
+  "emb_img": "",
+  "map_img": "sloveniaLow.js"
+}
+```
+
+## Step 6 — Add area entries to `area[]`
+
+For each `[region_id, english_title]` pair from Step 3, build one entry and translate
+the English title to Ukrainian (`name_ua`). Insert all of them right after the `  "area": [` line.
+
+Field order: `country_id`, `region_id`, `name`, `name_ua`, `active`:
+```json
+{ "country_id": "SI", "region_id": "SI-LJ", "name": "Osrednjeslovenska", "name_ua": "Центральна Словенія", "active": "Y" }
+```
+
+## Step 7 — Add the capital city entry to `city[]`
+
+Gather the capital city data:
+- **name** (English), **name_nt** (native), **name_ua** (Ukrainian)
+- **city_id**: lowercase ASCII slug of the English name
+- **region_id**: the region the capital sits in (pick from the extracted list)
+- **lat** / **long**: decimal coordinates
+- **description**: 2–4 sentences in **Ukrainian**, naming specific landmarks and sights —
+  generic text is not acceptable.
+- `"capital": "true"` — mandatory for the capital
+
+Do NOT add the `image` field unless the user explicitly requests it.
+
+Find the country's position in `city[]` — cities are grouped by country. Since this is a
+new country with no existing cities, insert right after the `  "city": [` line.
+
+Field order: `name`, `name_nt`, `name_ua`, `city_id`, `region_id`, `capital`, `lat`, `long`, `description`:
+```json
+{
+  "name": "Ljubljana",
+  "name_nt": "Ljubljana",
+  "name_ua": "Любляна",
+  "city_id": "ljubljana",
+  "region_id": "SI-LJ",
+  "capital": "true",
+  "lat": "46.051244",
+  "long": "14.503061",
+  "description": "Столиця Словенії. Фортеця Град, барокове Старе місто, мости Плечника, Народна галерея та Національний музей."
+}
+```
+
+## Step 8 — Normalize line endings + validate JSON
+
+```
+python -c "import json;p='DATA/globaldb.json';t=open(p,encoding='utf-8').read();json.loads(t);open(p,'wb').write(('\r\n'.join(t.splitlines())+'\r\n').encode('utf-8'));print('normalized + valid')"
+```
+
+## Step 9 — Verify
+
+Run `python .claude/skills/check-data/check_data.py` — confirm `RESULT: OK`.
+
+Remind the user:
+- Add flag sprite coords and flag/emblem images to `IMG/flag_n_emblem/`
+- Capital city photo: `IMG/<cc>_<slug>.jpg` (only if image field was requested)
 
 ## Rules
-- Only touch `country[]` and `area[]`. Don't alter other entities.
-- Keep each JSON object's fields consistent with existing entries; one entry per line block.
-- `active` defaults to `"Y"`. Region `region_id` must be exactly the map's id (e.g. `BG-01`).
+
+- Touch only `country[]`, `area[]`, and `city[]`. Never alter other arrays.
+- `region_id` must exactly match the map's id — never invent one.
+- Keep all three name languages; descriptions in Ukrainian with real landmarks.
+- `active` defaults to `"Y"` for all regions.
+- Never add `image` field to a city unless explicitly requested.
+- If any step is ambiguous (wrong map match, region count mismatch, etc.) — stop and ask.
