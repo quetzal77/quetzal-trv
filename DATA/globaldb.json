@@ -179,7 +179,7 @@
       "name_ua": "Острів Мен",
       "name_nt": "Ellan Vannin",
       "short_name": "isleofman",
-      "small_flag_img": "",
+      "small_flag_img": "-42px -319px",
       "flag_img": "",
       "emb_img": "",
       "map_img": "isleOfManHigh.js"
@@ -1119,6 +1119,153 @@
       "name": "Isle of Man",
       "name_ua": "Острів Мен",
       "active": "Y"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-DG",
+      "name": "Douglas",
+      "name_ua": "Дуглас",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-CA",
+      "name": "Castletown",
+      "name_ua": "Кастлтаун",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-PE",
+      "name": "Peel",
+      "name_ua": "Піл",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-RM",
+      "name": "Ramsey",
+      "name_ua": "Ремзі",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-MC",
+      "name": "Michael",
+      "name_ua": "Майкл",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-OC",
+      "name": "Onchan",
+      "name_ua": "Онкан",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-PO",
+      "name": "Port Erin",
+      "name_ua": "Порт-Ерін",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-PM",
+      "name": "Port St Mary",
+      "name_ua": "Порт-Сент-Мері",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-AN",
+      "name": "Andreas",
+      "name_ua": "Андреас",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-AR",
+      "name": "Arbory and Rushen",
+      "name_ua": "Арборі та Рашен",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-BL",
+      "name": "Ballaugh",
+      "name_ua": "Баллаф",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-BD",
+      "name": "Braddan",
+      "name_ua": "Брадан",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-BR",
+      "name": "Bride",
+      "name_ua": "Брайд",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-GA",
+      "name": "Garff",
+      "name_ua": "Гарф",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-GE",
+      "name": "German",
+      "name_ua": "Джерман",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-JU",
+      "name": "Jurby",
+      "name_ua": "Джербі",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-LZ",
+      "name": "Lezayre",
+      "name_ua": "Лезер",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-MW",
+      "name": "Malew",
+      "name_ua": "Малю",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-MR",
+      "name": "Marown",
+      "name_ua": "Марон",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-PT",
+      "name": "Patrick",
+      "name_ua": "Патрік",
+      "active": "N"
+    },
+    {
+      "country_id": "IM",
+      "region_id": "IM-SN",
+      "name": "Santon",
+      "name_ua": "Сантон",
+      "active": "N"
     },
     {
       "country_id": "EG",

@@ -55,7 +55,7 @@ function showAllTheRegionsOfSelectedCountry(id) {
     var nameKey = window.LANG === 'en' ? 'name' : 'name_ua';
     var options = '';
     $.each (data.area.sort(dynamicSort(nameKey)), function( i, region ){
-        if (region.country_id == id && region.active != "N"){
+        if (region.country_id == id){
             options += '<option value="' + region.region_id + '">' + (window.LANG === 'en' ? region.name : region.name_ua) + '</option>';
         }
     });
