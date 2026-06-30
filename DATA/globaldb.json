@@ -180,8 +180,8 @@
       "name_nt": "Ellan Vannin",
       "short_name": "isleofman",
       "small_flag_img": "-42px -319px",
-      "flag_img": "",
-      "emb_img": "",
+      "flag_img": "isleofman_flag.png",
+      "emb_img": "isleofman_emb.png",
       "map_img": "isleOfManHigh.js"
     },
     {
