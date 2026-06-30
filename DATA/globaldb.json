@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "FO",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Faroe Islands",
+      "name_ua": "Фарерські острови",
+      "name_nt": "Føroyar",
+      "short_name": "faroeislands",
+      "small_flag_img": "-197px -214px",
+      "flag_img": "faroeislands_flag.png",
+      "emb_img": "faroeislands_emb.png",
+      "map_img": "faroeIslandsHigh.js"
+    },
+    {
       "country_id": "JE",
       "country_type_id": "4",
       "continent_id": "EU",
@@ -1126,6 +1139,251 @@
     }
   ],
   "area": [
+    {
+      "country_id": "FO",
+      "region_id": "FO-ST",
+      "name": "Streymoy",
+      "name_ua": "Стреймой",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-OS",
+      "name": "Eysturoy",
+      "name_ua": "Ейстурой",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-NO",
+      "name": "Nordoyar",
+      "name_ua": "Норрой",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-SA",
+      "name": "Sandoy",
+      "name_ua": "Сандой",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-SU",
+      "name": "Suduroy",
+      "name_ua": "Судурой",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-VG",
+      "name": "Vagar",
+      "name_ua": "Ваґар",
+      "active": "Y"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-01",
+      "name": "Tórshavn",
+      "name_ua": "Торсгавн",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-02",
+      "name": "Vestmanna",
+      "name_ua": "Вестманна",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-03",
+      "name": "Kvívík",
+      "name_ua": "Квівік",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-04",
+      "name": "Sunda",
+      "name_ua": "Сунда",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-05",
+      "name": "Runavík",
+      "name_ua": "Рунавік",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-06",
+      "name": "Eystur",
+      "name_ua": "Ейстур",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-07",
+      "name": "Nes",
+      "name_ua": "Нес",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-08",
+      "name": "Sjóvar",
+      "name_ua": "Шовар",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-09",
+      "name": "Fuglafjørður",
+      "name_ua": "Фуґлафйордур",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-10",
+      "name": "Eiði",
+      "name_ua": "Ейді",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-11",
+      "name": "Klaksvík",
+      "name_ua": "Клаксвік",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-12",
+      "name": "Hvannasund",
+      "name_ua": "Гваннасунд",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-13",
+      "name": "Viðareiði",
+      "name_ua": "Відарейді",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-14",
+      "name": "Kunoy",
+      "name_ua": "Куной",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-15",
+      "name": "Fugloy",
+      "name_ua": "Фуглой",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-16",
+      "name": "Sandur",
+      "name_ua": "Сандур",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-17",
+      "name": "Skopun",
+      "name_ua": "Скопун",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-18",
+      "name": "Skálavík",
+      "name_ua": "Скалавік",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-19",
+      "name": "Húsavík",
+      "name_ua": "Гусавік",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-20",
+      "name": "Skúvoy",
+      "name_ua": "Скувой",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-21",
+      "name": "Tvøroyri",
+      "name_ua": "Твьоройрі",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-22",
+      "name": "Vágur",
+      "name_ua": "Вагур",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-23",
+      "name": "Hvalba",
+      "name_ua": "Гвальба",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-24",
+      "name": "Sumba",
+      "name_ua": "Самба",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-25",
+      "name": "Porkeri",
+      "name_ua": "Поркері",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-26",
+      "name": "Hov",
+      "name_ua": "Гов",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-27",
+      "name": "Fámjin",
+      "name_ua": "Фамйін",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-28",
+      "name": "Vágar",
+      "name_ua": "Вагар",
+      "active": "N"
+    },
+    {
+      "country_id": "FO",
+      "region_id": "FO-29",
+      "name": "Sørvágur",
+      "name_ua": "Сервагур",
+      "active": "N"
+    },
     {
       "country_id": "JE",
       "region_id": "JE-JE",
@@ -12789,6 +13047,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Torshavn",
+      "name_nt": "Tórshavn",
+      "name_ua": "Торсгавн",
+      "city_id": "torshavn",
+      "region_id": "FO-ST",
+      "capital": "true",
+      "lat": "62.0092",
+      "long": "-6.7711",
+      "description": "Столиця Фарерських островів і найменша столиця Європи. Головні пам'ятки: середньовічний квартал Тінгейнес зі старовинними кольоровими будинками та торфяними дахами, фортеця Скансін (XVIII ст.), Фарерський національний музей, Нордіка хаус — центр нордичної культури, а також мальовнича гавань з рибальськими човнами."
+    },
     {
       "name": "Saint Helier",
       "name_nt": "Saint Hélyi",
