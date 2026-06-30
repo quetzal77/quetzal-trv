@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "BS",
+      "country_type_id": "1",
+      "continent_id": "NA",
+      "name": "Bahamas",
+      "name_ua": "Багамські острови",
+      "name_nt": "The Bahamas",
+      "short_name": "bahamas",
+      "small_flag_img": "-546px -55px",
+      "flag_img": "bahamas_flag.png",
+      "emb_img": "bahamas_emb.png",
+      "map_img": "bahamasHigh.js"
+    },
+    {
       "country_id": "FO",
       "country_type_id": "4",
       "continent_id": "EU",
@@ -1139,6 +1152,230 @@
     }
   ],
   "area": [
+    {
+      "country_id": "BS",
+      "region_id": "BS-NP",
+      "name": "New Providence",
+      "name_ua": "Нью-Провіденс",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-FP",
+      "name": "City of Freeport",
+      "name_ua": "Фріпорт",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-EG",
+      "name": "East Grand Bahama",
+      "name_ua": "Схід Великої Багами",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-WG",
+      "name": "West Grand Bahama",
+      "name_ua": "Захід Великої Багами",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-NO",
+      "name": "North Abaco",
+      "name_ua": "Північ Абако",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-CO",
+      "name": "Central Abaco",
+      "name_ua": "Центр Абако",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-SO",
+      "name": "South Abaco",
+      "name_ua": "Південь Абако",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-HT",
+      "name": "Hope Town",
+      "name_ua": "Хоуп-Таун",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-GC",
+      "name": "Grand Cay",
+      "name_ua": "Гранд-Кей",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-BY",
+      "name": "Berry Islands",
+      "name_ua": "Беррі",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-MI",
+      "name": "Moores Island",
+      "name_ua": "Острів Мурс",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-NS",
+      "name": "North Andros",
+      "name_ua": "Північ Андросу",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-CS",
+      "name": "Central Andros",
+      "name_ua": "Центр Андросу",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-MC",
+      "name": "Mangrove Cay",
+      "name_ua": "Мангровий Кей",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-SA",
+      "name": "South Andros",
+      "name_ua": "Південь Андросу",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-NE",
+      "name": "North Eleuthera",
+      "name_ua": "Північ Елютери",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-CE",
+      "name": "Central Eleuthera",
+      "name_ua": "Центр Елютери",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-SE",
+      "name": "South Eleuthera",
+      "name_ua": "Південь Елютери",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-HI",
+      "name": "Harbour Island",
+      "name_ua": "Гарбур-Айленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-SW",
+      "name": "Spanish Wells",
+      "name_ua": "Спаніш-Веллс",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-EX",
+      "name": "Exuma",
+      "name_ua": "Ексума",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-BP",
+      "name": "Black Point",
+      "name_ua": "Блек-Пойнт",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-CI",
+      "name": "Cat Island",
+      "name_ua": "Кет-Айленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-SS",
+      "name": "San Salvador",
+      "name_ua": "Сан-Сальвадор",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-RC",
+      "name": "Rum Cay",
+      "name_ua": "Ром-Кей",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-LI",
+      "name": "Long Island",
+      "name_ua": "Лонг-Айленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-AK",
+      "name": "Acklins",
+      "name_ua": "Акліни",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-CK",
+      "name": "Crooked Island and Long Cay",
+      "name_ua": "Крукед-Айленд і Лонг-Кей",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-RI",
+      "name": "Ragged Island",
+      "name_ua": "Реггед-Айленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-MG",
+      "name": "Mayaguana",
+      "name_ua": "Маягуана",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-IN",
+      "name": "Inagua",
+      "name_ua": "Інагуа",
+      "active": "Y"
+    },
+    {
+      "country_id": "BS",
+      "region_id": "BS-BI",
+      "name": "Bimini",
+      "name_ua": "Біміні",
+      "active": "Y"
+    },
     {
       "country_id": "FO",
       "region_id": "FO-ST",
@@ -13047,6 +13284,19 @@
     }
   ],
   "city": [
+    {
+      "name": "Nassau",
+      "name_nt": "Nassau",
+      "name_ua": "Нассау",
+      "city_id": "nassau",
+      "region_id": "BS-NP",
+      "capital": "true",
+      "lat": "25.0480",
+      "long": "-77.3554",
+      "lat_2": "25.0480",
+      "long_2": "-77.3554",
+      "description": "Столиця Багамських островів на острові Нью-Провіденс. Головні пам'ятки: форт Шарлотт (1789) — найбільша фортеця Багам, Квінс-Стеркейс (66 ступенів, вирубаних у скелі), Національний музей Багам у форті Фінкасл, барвистий ринок Стро-Маркет і набережна Прінс-Джордж-Уорф."
+    },
     {
       "name": "Torshavn",
       "name_nt": "Tórshavn",
