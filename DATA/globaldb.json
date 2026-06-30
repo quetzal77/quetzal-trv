@@ -179,7 +179,7 @@
       "name_ua": "Джерсі",
       "name_nt": "Jèrri",
       "short_name": "jersey",
-      "small_flag_img": "",
+      "small_flag_img": "-313px -319px",
       "flag_img": "jersey_flag.png",
       "emb_img": "jersey_emb.png",
       "map_img": "jerseyLow.js"
@@ -1132,6 +1132,90 @@
       "name": "Jersey",
       "name_ua": "Джерсі",
       "active": "Y"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-GR",
+      "name": "Grouville",
+      "name_ua": "Груввіль",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-BR",
+      "name": "St Brelade",
+      "name_ua": "Сент-Брелад",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-CL",
+      "name": "St Clement",
+      "name_ua": "Сент-Клемент",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-HE",
+      "name": "St Helier",
+      "name_ua": "Сент-Хельє",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-JN",
+      "name": "St John",
+      "name_ua": "Сент-Джон",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-LW",
+      "name": "St Lawrence",
+      "name_ua": "Сент-Лоуренс",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-MN",
+      "name": "St Martin",
+      "name_ua": "Сент-Мартін",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-MY",
+      "name": "St Mary",
+      "name_ua": "Сент-Мері",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-OU",
+      "name": "St Ouen",
+      "name_ua": "Сент-Уен",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-PE",
+      "name": "St Peter",
+      "name_ua": "Сент-П'єр",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-SV",
+      "name": "St Saviour",
+      "name_ua": "Сент-Сов'єр",
+      "active": "N"
+    },
+    {
+      "country_id": "JE",
+      "region_id": "JE-TR",
+      "name": "Trinity",
+      "name_ua": "Трінніте",
+      "active": "N"
     },
     {
       "country_id": "IM",
