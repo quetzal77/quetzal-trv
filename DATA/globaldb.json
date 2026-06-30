@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "PE",
+      "country_type_id": "1",
+      "continent_id": "SA",
+      "name": "Peru",
+      "name_ua": "Перу",
+      "name_nt": "Peru",
+      "short_name": "peru",
+      "small_flag_img": "",
+      "flag_img": "peru_flag.png",
+      "emb_img": "peru_emb.png",
+      "map_img": "peruHigh.js"
+    },
+    {
       "country_id": "NZ",
       "country_type_id": "1",
       "continent_id": "AO",
@@ -179,7 +192,7 @@
       "name_ua": "Нова Зеландія",
       "name_nt": "Aotearoa New Zealand",
       "short_name": "newzealand",
-      "small_flag_img": "",
+      "small_flag_img": "-3px  -530px",
       "flag_img": "newzealand_flag.png",
       "emb_img": "newzealand_emb.png",
       "map_img": "newZealandHigh.js"
@@ -1165,6 +1178,195 @@
     }
   ],
   "area": [
+    {
+      "country_id": "PE",
+      "region_id": "PE-AMA",
+      "name": "Amazonas",
+      "name_ua": "Амасонас",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-ANC",
+      "name": "Ancash",
+      "name_ua": "Анкаш",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-APU",
+      "name": "Apurimac",
+      "name_ua": "Апурімак",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-ARE",
+      "name": "Arequipa",
+      "name_ua": "Арекіпа",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-AYA",
+      "name": "Ayacucho",
+      "name_ua": "Аякучо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-CAJ",
+      "name": "Cajamarca",
+      "name_ua": "Кахамарка",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-CAL",
+      "name": "El Callao",
+      "name_ua": "Кальяо",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-CUS",
+      "name": "Cusco",
+      "name_ua": "Куско",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-HUC",
+      "name": "Huanuco",
+      "name_ua": "Уануко",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-HUV",
+      "name": "Huancavelica",
+      "name_ua": "Уанкавеліка",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-ICA",
+      "name": "Ica",
+      "name_ua": "Іка",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-JUN",
+      "name": "Junin",
+      "name_ua": "Хунін",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LAL",
+      "name": "La Libertad",
+      "name_ua": "Ла-Лібертад",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LAM",
+      "name": "Lambayeque",
+      "name_ua": "Ламбаєке",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LIM",
+      "name": "Lima",
+      "name_ua": "Ліма",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LMA",
+      "name": "Municipalidad Metropolitana de Lima",
+      "name_ua": "Метрополітен Ліма",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LOR",
+      "name": "Loreto",
+      "name_ua": "Лорето",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-MDD",
+      "name": "Madre de Dios",
+      "name_ua": "Мадре-де-Діос",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-MOQ",
+      "name": "Moquegua",
+      "name_ua": "Мокегуа",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-PAS",
+      "name": "Pasco",
+      "name_ua": "Паско",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-PIU",
+      "name": "Piura",
+      "name_ua": "П'юра",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-PUN",
+      "name": "Puno",
+      "name_ua": "Пуно",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-SAM",
+      "name": "San Martin",
+      "name_ua": "Сан-Мартін",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-TAC",
+      "name": "Tacna",
+      "name_ua": "Такна",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-TUM",
+      "name": "Tumbes",
+      "name_ua": "Тумбес",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-UCA",
+      "name": "Ucayali",
+      "name_ua": "Укаялі",
+      "active": "Y"
+    },
+    {
+      "country_id": "PE",
+      "region_id": "PE-LKT",
+      "name": "Lake Titicaca",
+      "name_ua": "Озеро Тітікака",
+      "active": "Y"
+    },
     {
       "country_id": "NZ",
       "region_id": "NZ-NTL",
@@ -13417,6 +13619,17 @@
   ],
   "city": [
     {
+      "name": "Lima",
+      "name_nt": "Lima",
+      "name_ua": "Ліма",
+      "city_id": "lima",
+      "region_id": "PE-LMA",
+      "capital": "true",
+      "lat": "-12.0464",
+      "long": "-77.0428",
+      "description": "Столиця і найбільше місто Перу на узбережжі Тихого океану. Головні пам'ятки: Головна площа Пласа-Майор з Президентським палацом і Кафедральним собором XVI ст., доколумбовий археологічний комплекс Уака-Пукльяна в районі Міра-Флорес, Музей Ларко зі збіркою перуанської кераміки, а також набережна Малекон у Барранко зі старовинними мостами й галереями."
+    },
+    {
       "name": "Wellington",
       "name_nt": "Te Whanganui-a-Tara",
       "name_ua": "Веллінгтон",
@@ -13434,7 +13647,7 @@
       "city_id": "nassau",
       "region_id": "BS-NP",
       "capital": "true",
-      "lat": "25.0480",
+      "lat": "25.5180",
       "long": "-77.3554",
       "lat_2": "25.0480",
       "long_2": "-77.3554",
