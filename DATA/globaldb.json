@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "NZ",
+      "country_type_id": "1",
+      "continent_id": "AO",
+      "name": "New Zealand",
+      "name_ua": "Нова Зеландія",
+      "name_nt": "Aotearoa New Zealand",
+      "short_name": "newzealand",
+      "small_flag_img": "",
+      "flag_img": "newzealand_flag.png",
+      "emb_img": "newzealand_emb.png",
+      "map_img": "newZealandHigh.js"
+    },
+    {
       "country_id": "BS",
       "country_type_id": "1",
       "continent_id": "NA",
@@ -1152,6 +1165,125 @@
     }
   ],
   "area": [
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-NTL",
+      "name": "Northland",
+      "name_ua": "Нортленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-AUK",
+      "name": "Auckland",
+      "name_ua": "Окленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-WKO",
+      "name": "Waikato",
+      "name_ua": "Вайкато",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-BOP",
+      "name": "Bay of Plenty",
+      "name_ua": "Бей-оф-Пленті",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-GIS",
+      "name": "Gisborne District",
+      "name_ua": "Ґісборн",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-HKB",
+      "name": "Hawke's Bay",
+      "name_ua": "Хокс-Бей",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-TKI",
+      "name": "Taranaki",
+      "name_ua": "Таранакі",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-MWT",
+      "name": "Manawatu-Wanganui",
+      "name_ua": "Манавату-Вангануї",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-WGN",
+      "name": "Wellington",
+      "name_ua": "Веллінгтон",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-NSN",
+      "name": "Nelson City",
+      "name_ua": "Нельсон",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-TAS",
+      "name": "Tasman District",
+      "name_ua": "Тасман",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-MBH",
+      "name": "Marlborough District",
+      "name_ua": "Мальборо",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-WTC",
+      "name": "West Coast",
+      "name_ua": "Західне узбережжя",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-CAN",
+      "name": "Canterbury",
+      "name_ua": "Кентербері",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-OTA",
+      "name": "Otago",
+      "name_ua": "Отаго",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-STL",
+      "name": "Southland",
+      "name_ua": "Саутленд",
+      "active": "Y"
+    },
+    {
+      "country_id": "NZ",
+      "region_id": "NZ-CIT",
+      "name": "Chatham Islands Territory",
+      "name_ua": "Чатем",
+      "active": "Y"
+    },
     {
       "country_id": "BS",
       "region_id": "BS-NP",
@@ -13284,6 +13416,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Wellington",
+      "name_nt": "Te Whanganui-a-Tara",
+      "name_ua": "Веллінгтон",
+      "city_id": "wellington",
+      "region_id": "NZ-WGN",
+      "capital": "true",
+      "lat": "-41.2866",
+      "long": "174.7756",
+      "description": "Столиця Нової Зеландії на півдні Північного острова. Головні пам'ятки: Національний музей Те Папа Тонгарева на березі затоки, парламентський комплекс з відомою будівлею 'Вулик' (Beehive), Музей Нової Зеландії Те Папа, канатна дорога Wellington Cable Car до ботанічного саду Болтон-Стріт, а також квартал Te Aro з галереями та кафе."
+    },
     {
       "name": "Nassau",
       "name_nt": "Nassau",
