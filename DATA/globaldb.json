@@ -179,7 +179,7 @@
       "name_ua": "Шпіцберген і Ян-Маєн",
       "name_nt": "Svalbard og Jan Mayen",
       "short_name": "svalbard",
-      "small_flag_img": "",
+      "small_flag_img": "-508px -583px",
       "flag_img": "svalbard_flag.png",
       "emb_img": "svalbard_emb.png",
       "map_img": "svalbardJanMayenHigh.js"
@@ -195,7 +195,7 @@
       "small_flag_img": "-120px -530px",
       "flag_img": "peru_flag.png",
       "emb_img": "peru_emb.png",
-      "map_img": "peruHigh.js"
+      "map_img": "peruLow.js"
     },
     {
       "country_id": "NZ",
