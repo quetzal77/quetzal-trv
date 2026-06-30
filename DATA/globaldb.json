@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "SJ",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Svalbard and Jan Mayen",
+      "name_ua": "Шпіцберген і Ян-Маєн",
+      "name_nt": "Svalbard og Jan Mayen",
+      "short_name": "svalbard",
+      "small_flag_img": "",
+      "flag_img": "svalbard_flag.png",
+      "emb_img": "svalbard_emb.png",
+      "map_img": "svalbardJanMayenHigh.js"
+    },
+    {
       "country_id": "PE",
       "country_type_id": "1",
       "continent_id": "SA",
@@ -179,7 +192,7 @@
       "name_ua": "Перу",
       "name_nt": "Peru",
       "short_name": "peru",
-      "small_flag_img": "",
+      "small_flag_img": "-120px -530px",
       "flag_img": "peru_flag.png",
       "emb_img": "peru_emb.png",
       "map_img": "peruHigh.js"
@@ -192,7 +205,7 @@
       "name_ua": "Нова Зеландія",
       "name_nt": "Aotearoa New Zealand",
       "short_name": "newzealand",
-      "small_flag_img": "-3px  -530px",
+      "small_flag_img": "-3px -530px",
       "flag_img": "newzealand_flag.png",
       "emb_img": "newzealand_emb.png",
       "map_img": "newZealandHigh.js"
@@ -1178,6 +1191,20 @@
     }
   ],
   "area": [
+    {
+      "country_id": "SJ",
+      "region_id": "SJ-SV",
+      "name": "Svalbard",
+      "name_ua": "Шпіцберген",
+      "active": "Y"
+    },
+    {
+      "country_id": "SJ",
+      "region_id": "SJ-JN",
+      "name": "Jan Mayen",
+      "name_ua": "Ян-Маєн",
+      "active": "Y"
+    },
     {
       "country_id": "PE",
       "region_id": "PE-AMA",
@@ -13618,6 +13645,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Longyearbyen",
+      "name_nt": "Longyearbyen",
+      "name_ua": "Лонг'їрбюєн",
+      "city_id": "longyearbyen",
+      "region_id": "SJ-SV",
+      "capital": "true",
+      "lat": "78.2232",
+      "long": "15.6469",
+      "description": "Найпівнічніше місто світу і адміністративний центр Шпіцбергена. Головні пам'ятки: Музей Шпіцбергена з колекцією про вугільну добу та полярні дослідження, Церква Лонг'їрбюєна (найпівнічніший діючий православний та лютеранський храми), Глобальне сховище насіння у вічній мерзлоті в горі Плато та захопливі тури до льодовиків і арктичної дикої природи."
+    },
     {
       "name": "Lima",
       "name_nt": "Lima",
