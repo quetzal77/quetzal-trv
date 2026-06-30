@@ -172,6 +172,19 @@
   ],
   "country": [
     {
+      "country_id": "JE",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Jersey",
+      "name_ua": "Джерсі",
+      "name_nt": "Jèrri",
+      "short_name": "jersey",
+      "small_flag_img": "",
+      "flag_img": "jersey_flag.png",
+      "emb_img": "jersey_emb.png",
+      "map_img": "jerseyLow.js"
+    },
+    {
       "country_id": "IM",
       "country_type_id": "4",
       "continent_id": "EU",
@@ -1113,6 +1126,13 @@
     }
   ],
   "area": [
+    {
+      "country_id": "JE",
+      "region_id": "JE-JE",
+      "name": "Jersey",
+      "name_ua": "Джерсі",
+      "active": "Y"
+    },
     {
       "country_id": "IM",
       "region_id": "IM-01",
@@ -12685,6 +12705,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Saint Helier",
+      "name_nt": "Saint Hélyi",
+      "name_ua": "Сент-Хельє",
+      "city_id": "sainthelier",
+      "region_id": "JE-JE",
+      "capital": "true",
+      "lat": "49.1858",
+      "long": "-2.1066",
+      "description": "Столиця Джерсі. Головні пам'ятки: замок Елізабет (XVI ст.) на скелі в затоці, Монтгомерійська фортеця (Fort Regent), Єрзейський музей та художня галерея, Ринкова площа з пам'ятником королеві Вікторії та Королівська площа — центр громадського та культурного життя острова."
+    },
     {
       "name": "Douglas",
       "name_nt": "Douglas",
