@@ -197,7 +197,7 @@
       "name_ua": "Антарктида",
       "name_nt": "Antarctica",
       "short_name": "southantarctic",
-      "small_flag_img": "",
+      "small_flag_img": "-624px -741px",
       "flag_img": "southantarctic_flag.png",
       "emb_img": "southantarctic_emb.png",
       "map_img": "antarcticaLow.js"
