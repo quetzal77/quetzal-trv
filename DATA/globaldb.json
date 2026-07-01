@@ -184,7 +184,7 @@
       "name_ua": "Гернсі",
       "name_nt": "Guernsey",
       "short_name": "guernsey",
-      "small_flag_img": "",
+      "small_flag_img": "-469px -216px",
       "flag_img": "guernsey_flag.png",
       "emb_img": "guernsey_emb.png",
       "map_img": "guernseyHigh.js"
@@ -1228,6 +1228,90 @@
       "name": "Guernsey",
       "name_ua": "Гернсі",
       "active": "Y"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-01",
+      "name": "Castel",
+      "name_ua": "Кастель",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-02",
+      "name": "Forest",
+      "name_ua": "Форест",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-03",
+      "name": "St Andrew",
+      "name_ua": "Сент-Ендрю",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-04",
+      "name": "St Martin",
+      "name_ua": "Сент-Мартін",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-05",
+      "name": "St Peter Port",
+      "name_ua": "Сент-Пітер-Порт",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-06",
+      "name": "St Pierre du Bois",
+      "name_ua": "Сен-П'єр-дю-Буа",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-07",
+      "name": "St Sampson",
+      "name_ua": "Сент-Семпсон",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-08",
+      "name": "St Saviour",
+      "name_ua": "Сент-Сев'є",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-09",
+      "name": "Torteval",
+      "name_ua": "Тортевал",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-10",
+      "name": "Vale",
+      "name_ua": "Вейл",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-11",
+      "name": "Alderney",
+      "name_ua": "Олдерні",
+      "active": "N"
+    },
+    {
+      "country_id": "GG",
+      "region_id": "GG-12",
+      "name": "Sark",
+      "name_ua": "Сарк",
+      "active": "N"
     },
     {
       "country_id": "AQ",
