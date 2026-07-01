@@ -1,6 +1,6 @@
 ﻿// (c) ammap.com | SVG (in JSON format) map of United Kingdom - High
 // areas: {id:"GB-UKC"},{id:"GB-UKD"},{id:"GB-UKE"},{id:"GB-UKF"},{id:"GB-UKG"},{id:"GB-UKH"},{id:"GB-UKI"},{id:"GB-UKJ"},{id:"GB-UKK"},{id:"GB-UKL"},{id:"GB-UKM"},{id:"GB-UKN"},{id:"GG"},{id:"JE"},{id:"IM"},{id:"IE"}
-AmCharts.maps.unitedKingdomHigh={
+AmCharts.maps.guernseyHigh={
 	"svg": {
 		"defs": {
 			"amcharts:ammap": {
