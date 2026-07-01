@@ -177,6 +177,19 @@
   ],
   "country": [
     {
+      "country_id": "GG",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Guernsey",
+      "name_ua": "Гернсі",
+      "name_nt": "Guernsey",
+      "short_name": "guernsey",
+      "small_flag_img": "",
+      "flag_img": "guernsey_flag.png",
+      "emb_img": "guernsey_emb.png",
+      "map_img": "guernseyHigh.js"
+    },
+    {
       "country_id": "AQ",
       "country_type_id": "5",
       "continent_id": "AN",
@@ -1209,6 +1222,13 @@
     }
   ],
   "area": [
+    {
+      "country_id": "GG",
+      "region_id": "GG-GG",
+      "name": "Guernsey",
+      "name_ua": "Гернсі",
+      "active": "Y"
+    },
     {
       "country_id": "AQ",
       "region_id": "AQ-01",
@@ -13670,6 +13690,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Saint Peter Port",
+      "name_nt": "Saint Peter Port",
+      "name_ua": "Сент-Пітер-Порт",
+      "city_id": "saintpeterport",
+      "region_id": "GG-GG",
+      "capital": "true",
+      "lat": "49.4560",
+      "long": "-2.5368",
+      "description": "Столиця і головний порт Гернсі. Головні пам'ятки: замок Корнет (XII ст.) на скелі біля входу в гавань з Музеєм морської спадщини, середньовічна Висока вулиця зі старовинними крамницями без ПДВ, Victor Hugo House — будинок де жив Гюго у вигнанні (1855–1870), а також Замкова прогулянка з панорамою на затоку і сусідні острови."
+    },
     {
       "name": "Vernadsky Research Base",
       "name_nt": "Vernadsky Research Base",
