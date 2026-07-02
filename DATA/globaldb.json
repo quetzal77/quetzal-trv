@@ -183,7 +183,7 @@
   "country": [
     {
       "country_id": "AX",
-      "country_type_id": "4",
+      "country_type_id": "6",
       "continent_id": "EU",
       "name": "Åland Islands",
       "name_ua": "Аландські острови",
@@ -1266,7 +1266,7 @@
     }
   ],
   "area": [
-    { "country_id": "AX", "region_id": "FI-01", "name": "Åland Islands", "name_ua": "Аландські острови", "active": "Y" },
+    { "country_id": "AX", "region_id": "AX-01", "name": "Åland Islands", "name_ua": "Аландські острови", "active": "Y" },
     { "country_id": "MA", "region_id": "MA-01", "name": "Tanger-Tetouan", "name_ua": "Танжер-Тетуан", "active": "Y" },
     { "country_id": "MA", "region_id": "MA-02", "name": "Gharb-Chrarda-Beni Hssen", "name_ua": "Ґарб-Шрарда-Бені-Хссен", "active": "Y" },
     { "country_id": "MA", "region_id": "MA-03", "name": "Taza-Al Hoceima-Taounate", "name_ua": "Таза-Аль-Госейма-Тауната", "active": "Y" },
@@ -13909,7 +13909,7 @@
       "name_nt": "Mariehamn",
       "name_ua": "Маріехамн",
       "city_id": "mariehamn",
-      "region_id": "FI-01",
+      "region_id": "AX-01",
       "capital": "true",
       "lat": "60.0969",
       "long": "19.9348",
