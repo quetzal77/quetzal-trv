@@ -182,6 +182,32 @@
   ],
   "country": [
     {
+      "country_id": "AX",
+      "country_type_id": "4",
+      "continent_id": "EU",
+      "name": "Åland Islands",
+      "name_ua": "Аландські острови",
+      "name_nt": "Åland",
+      "short_name": "aland",
+      "small_flag_img": "",
+      "flag_img": "aland_flag.png",
+      "emb_img": "aland_emb.png",
+      "map_img": "finlandHigh.js"
+    },
+    {
+      "country_id": "MA",
+      "country_type_id": "1",
+      "continent_id": "AF",
+      "name": "Morocco",
+      "name_ua": "Марокко",
+      "name_nt": "المغرب",
+      "short_name": "morocco",
+      "small_flag_img": "",
+      "flag_img": "morocco_flag.png",
+      "emb_img": "morocco_emb.png",
+      "map_img": "moroccoLow.js"
+    },
+    {
       "country_id": "JP",
       "country_type_id": "1",
       "continent_id": "AS",
@@ -1240,6 +1266,23 @@
     }
   ],
   "area": [
+    { "country_id": "AX", "region_id": "FI-01", "name": "Åland Islands", "name_ua": "Аландські острови", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-01", "name": "Tanger-Tetouan", "name_ua": "Танжер-Тетуан", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-02", "name": "Gharb-Chrarda-Beni Hssen", "name_ua": "Ґарб-Шрарда-Бені-Хссен", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-03", "name": "Taza-Al Hoceima-Taounate", "name_ua": "Таза-Аль-Госейма-Тауната", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-04", "name": "L'Oriental", "name_ua": "Ль-Орьєнталь", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-05", "name": "Fes-Boulemane", "name_ua": "Фес-Булемані", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-06", "name": "Meknes-Tafilalet", "name_ua": "Мекнес-Тафілалет", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-07", "name": "Rabat-Sale-Zemmour-Zaer", "name_ua": "Рабат-Салі-Земмур-Заер", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-08", "name": "Grand Casablanca", "name_ua": "Великий Касабланка", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-09", "name": "Chaouia-Ouardigha", "name_ua": "Шавія-Уардіґа", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-10", "name": "Doukhala-Abda", "name_ua": "Дукала-Абда", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-11", "name": "Marrakech-Tensift-Al Haouz", "name_ua": "Марракеш-Тенсіфт-Аль-Хауз", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-12", "name": "Tadla-Azilal", "name_ua": "Тадла-Азілал", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-13", "name": "Souss-Massa-Draa", "name_ua": "Сус-Масса-Драа", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-14", "name": "Guelmim-Es Smara", "name_ua": "Ґельмін-Ес-Смара", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-15", "name": "Laayoune-Boujdour-Sakia el Hamra", "name_ua": "Аюн-Бужур-Сакія-ель-Хамра", "active": "Y" },
+    { "country_id": "MA", "region_id": "MA-16", "name": "Oued ed Dahab-Lagouira", "name_ua": "Уед-ед-Дахаб-Лаґуіра", "active": "Y" },
     { "country_id": "JP", "region_id": "JP-23", "name": "Aichi", "name_ua": "Айті", "active": "Y" },
     { "country_id": "JP", "region_id": "JP-05", "name": "Akita", "name_ua": "Акіта", "active": "Y" },
     { "country_id": "JP", "region_id": "JP-02", "name": "Aomori", "name_ua": "Аоморі", "active": "Y" },
@@ -9348,7 +9391,7 @@
       "region_id": "FI-01",
       "name": "Aland Islands",
       "name_ua": "Аландські острови",
-      "active": "Y"
+      "active": "N"
     },
     {
       "country_id": "FI",
@@ -13839,6 +13882,28 @@
     }
   ],
   "city": [
+    {
+      "name": "Mariehamn",
+      "name_nt": "Mariehamn",
+      "name_ua": "Маріехамн",
+      "city_id": "mariehamn",
+      "region_id": "FI-01",
+      "capital": "true",
+      "lat": "60.0969",
+      "long": "19.9348",
+      "description": "Столиця Аландських островів, єдине місто архіпелагу. Морський музей та музей судноплавства, Аландський художній музей, парк Есплан та середньовічна церква Святого Йоганна."
+    },
+    {
+      "name": "Rabat",
+      "name_nt": "الرباط",
+      "name_ua": "Рабат",
+      "city_id": "rabat",
+      "region_id": "MA-07",
+      "capital": "true",
+      "lat": "34.0209",
+      "long": "-6.8416",
+      "description": "Столиця Марокко на узбережжі Атлантики. Медіна з мечеттю Хасана, мавзолей Мухаммеда V, фортеця Касба Удая, руїни Шелла та Королівський палац."
+    },
     {
       "name": "Tokyo",
       "name_nt": "東京",
