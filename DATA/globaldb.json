@@ -189,7 +189,7 @@
       "name_ua": "Аландські острови",
       "name_nt": "Åland",
       "short_name": "aland",
-      "small_flag_img": "",
+      "small_flag_img": "-546px -3px",
       "flag_img": "aland_flag.png",
       "emb_img": "aland_emb.png",
       "map_img": "alandHigh.js"
@@ -202,7 +202,7 @@
       "name_ua": "Марокко",
       "name_nt": "المغرب",
       "short_name": "morocco",
-      "small_flag_img": "",
+      "small_flag_img": "-3px -424px",
       "flag_img": "morocco_flag.png",
       "emb_img": "morocco_emb.png",
       "map_img": "moroccoLow.js"
@@ -215,7 +215,7 @@
       "name_ua": "Японія",
       "name_nt": "日本",
       "short_name": "japan",
-      "small_flag_img": "",
+      "small_flag_img": "-430px -319px",
       "flag_img": "japan_flag.png",
       "emb_img": "japan_emb.png",
       "map_img": "japanLow.js"
