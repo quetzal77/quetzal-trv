@@ -24,6 +24,11 @@
       "country_type_id": "5",
       "name_ua": "Договірна зона",
       "name": "Treaty zone"
+    },
+    {
+      "country_type_id": "6",
+      "name_ua": "Зона особливого суверенітету",
+      "name": "Areas of special sovereignty"
     }
   ],
   "type": [
@@ -177,6 +182,19 @@
   ],
   "country": [
     {
+      "country_id": "JP",
+      "country_type_id": "1",
+      "continent_id": "AS",
+      "name": "Japan",
+      "name_ua": "Японія",
+      "name_nt": "日本",
+      "short_name": "japan",
+      "small_flag_img": "",
+      "flag_img": "japan_flag.png",
+      "emb_img": "japan_emb.png",
+      "map_img": "japanLow.js"
+    },
+    {
       "country_id": "GG",
       "country_type_id": "4",
       "continent_id": "EU",
@@ -204,7 +222,7 @@
     },
     {
       "country_id": "SJ",
-      "country_type_id": "4",
+      "country_type_id": "6",
       "continent_id": "EU",
       "name": "Svalbard and Jan Mayen",
       "name_ua": "Шпіцберген і Ян-Маєн",
@@ -278,7 +296,7 @@
       "small_flag_img": "-313px -319px",
       "flag_img": "jersey_flag.png",
       "emb_img": "jersey_emb.png",
-      "map_img": "jerseyLow.js"
+      "map_img": "jerseyHigh.js"
     },
     {
       "country_id": "IM",
@@ -1222,6 +1240,53 @@
     }
   ],
   "area": [
+    { "country_id": "JP", "region_id": "JP-23", "name": "Aichi", "name_ua": "Айті", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-05", "name": "Akita", "name_ua": "Акіта", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-02", "name": "Aomori", "name_ua": "Аоморі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-12", "name": "Chiba", "name_ua": "Тіба", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-38", "name": "Ehime", "name_ua": "Ехіме", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-18", "name": "Fukui", "name_ua": "Фукуі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-40", "name": "Fukuoka", "name_ua": "Фукуока", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-07", "name": "Fukushima", "name_ua": "Фукусіма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-21", "name": "Gifu", "name_ua": "Гіфу", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-10", "name": "Gunma", "name_ua": "Гунма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-28", "name": "Hyogo", "name_ua": "Хього", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-01", "name": "Hokkaido", "name_ua": "Хоккайдо", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-34", "name": "Hiroshima", "name_ua": "Хіросіма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-08", "name": "Ibaraki", "name_ua": "Ібаракі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-17", "name": "Ishikawa", "name_ua": "Ісікава", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-03", "name": "Iwate", "name_ua": "Івате", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-39", "name": "Kochi", "name_ua": "Кочі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-37", "name": "Kagawa", "name_ua": "Кагава", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-43", "name": "Kumamoto", "name_ua": "Кумамото", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-14", "name": "Kanagawa", "name_ua": "Канагава", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-46", "name": "Kagoshima", "name_ua": "Кагосіма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-26", "name": "Kyoto", "name_ua": "Кіото", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-24", "name": "Mie", "name_ua": "Міє", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-04", "name": "Miyagi", "name_ua": "Міяґі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-45", "name": "Miyazaki", "name_ua": "Міядзакі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-15", "name": "Niigata", "name_ua": "Нііґата", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-20", "name": "Nagano", "name_ua": "Наґано", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-29", "name": "Nara", "name_ua": "Нара", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-42", "name": "Nagasaki", "name_ua": "Наґасакі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-47", "name": "Okinawa", "name_ua": "Окінава", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-27", "name": "Osaka", "name_ua": "Осака", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-33", "name": "Okayama", "name_ua": "Окаяма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-44", "name": "Oita", "name_ua": "Оіта", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-41", "name": "Saga", "name_ua": "Саґа", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-25", "name": "Shiga", "name_ua": "Сіґа", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-32", "name": "Shimane", "name_ua": "Сімане", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-11", "name": "Saitama", "name_ua": "Сайтама", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-22", "name": "Shizuoka", "name_ua": "Сідзуока", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-09", "name": "Tochigi", "name_ua": "Тотіґі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-13", "name": "Tokyo", "name_ua": "Токіо", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-36", "name": "Tokushima", "name_ua": "Токусіма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-31", "name": "Tottori", "name_ua": "Тотторі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-16", "name": "Toyama", "name_ua": "Тояма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-30", "name": "Wakayama", "name_ua": "Вакаяма", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-35", "name": "Yamaguchi", "name_ua": "Ямаґуті", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-19", "name": "Yamanashi", "name_ua": "Яманасі", "active": "Y" },
+    { "country_id": "JP", "region_id": "JP-06", "name": "Yamagata", "name_ua": "Ямаґата", "active": "Y" },
     {
       "country_id": "GG",
       "region_id": "GG-GG",
@@ -13774,6 +13839,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Tokyo",
+      "name_nt": "東京",
+      "name_ua": "Токіо",
+      "city_id": "tokyo",
+      "region_id": "JP-13",
+      "capital": "true",
+      "lat": "35.6762",
+      "long": "139.6503",
+      "description": "Столиця Японії та одне з найбільших міст світу. Імператорський палац, храм Сенсо-дзі в Асакусі, Токійська вежа, Національний музей Японії, квартали Сібуя та Шінджуку."
+    },
     {
       "name": "Saint Peter Port",
       "name_nt": "Saint Peter Port",
