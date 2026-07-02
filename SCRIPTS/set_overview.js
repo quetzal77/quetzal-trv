@@ -204,8 +204,9 @@ function HTML_VisitesPerCountryTale() {
             ? '<span class="cap-yes" title="' + t('setCapVisited') + '">✓</span>'
             : '<span class="set-miss" title="' + t('setCapNotVisited') + '">—</span>';
 
-        var nameCell = visited ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a>"
-                               : entityName(country) + " <span class='set-miss' title='" + t('setNotVisited') + "'>✕</span>" ;
+        var nameCell = visited
+            ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a>"
+            : "<a id='" + country.short_name + "' onclick='javascript:previewCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a> <span class='set-miss' title='" + t('setNotVisited') + "'>✕</span>";
 
         var rowClass = (numberCountryVisites === 0) ? "c-missing" : "c-visited";
 
@@ -249,6 +250,75 @@ function HTML_VisitesPerCountryTale() {
 function toggleOnlyMissing(on) {
     var el = document.getElementById("countriesTable");
     if (el) { el.classList.toggle("only-missing", on); }
+}
+
+// Open a preview country page for a country with no real visits.
+// Temporarily injects a fake visit (today, all DB cities) so the country
+// page renders with full map + city list, then restores original arrays.
+function previewCountryPage(shortName) {
+    var countryData = null;
+    $.each(data.country, function(i, c) {
+        if (c.short_name === shortName) { countryData = c; return false; }
+    });
+    if (!countryData) { return; }
+
+    // Collect IDs of all cities that belong to active regions of this country
+    var regionIds = {};
+    $.each(data.area, function(i, a) {
+        if (a.country_id === countryData.country_id && a.active !== 'N') {
+            regionIds[a.region_id] = true;
+        }
+    });
+    var cityIds = [];
+    $.each(data.city, function(i, c) {
+        if (regionIds[c.region_id]) { cityIds.push(c.city_id); }
+    });
+
+    // Build today string DD.MM.YYYY
+    var now = new Date();
+    var dd = now.getDate() < 10 ? '0' + now.getDate() : '' + now.getDate();
+    var mm = (now.getMonth() + 1) < 10 ? '0' + (now.getMonth() + 1) : '' + (now.getMonth() + 1);
+    var todayStr = dd + '.' + mm + '.' + now.getFullYear();
+
+    // Snapshot originals
+    var origVisits    = visitsSorted.slice();
+    var origCities    = citiesVisited.slice();
+    var origRegions   = regionsVisited.slice();
+    var origCountries = countriesVisited.slice();
+
+    // Inject fake cities and visit
+    var fakeCities = [];
+    var injected = {};
+    $.each(cityIds, function(i, cityId) {
+        fakeCities.push({ city_id: cityId, country_id: shortName });
+        if (!injected[cityId]) {
+            citiesVisited.push(new CityObj(cityId));
+            injected[cityId] = true;
+        }
+    });
+    visitsSorted.unshift(new VisitObj(todayStr, todayStr, fakeCities, null, false, undefined, null));
+
+    // Rebuild regions + countries from updated citiesVisited
+    createArrayOfVisitedCountriesAndRegions();
+
+    // If no cities in DB for this country, push CountryObj directly so the page can render
+    var inList = $.grep(countriesVisited, function(n) { return n.short_name === shortName; });
+    if (!inList.length) { countriesVisited.push(new CountryObj(countryData.country_id)); }
+
+    var restore = function() {
+        visitsSorted    = origVisits;
+        citiesVisited   = origCities;
+        regionsVisited  = origRegions;
+        countriesVisited = origCountries;
+    };
+
+    $.getScript("SCRIPTS/trv_country.js?v=" + APP_V, function() {
+        createCountryPage_HTML(shortName);
+        restore();
+    }).fail(function() {
+        restore();
+        document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>';
+    });
 }
 
 //08.04 Regenerate DATA/stories.json in the browser and offer it for download.
