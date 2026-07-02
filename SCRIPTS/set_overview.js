@@ -206,7 +206,7 @@ function HTML_VisitesPerCountryTale() {
 
         var nameCell = visited
             ? "<a id='" + country.short_name + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a>"
-            : "<a id='" + country.short_name + "' onclick='javascript:previewCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + entityName(country) + "</a> <span class='set-miss' title='" + t('setNotVisited') + "'>✕</span>";
+            : "<a id='" + country.short_name + "' onclick='javascript:previewCountryPage(this.id)' onmouseover='' style='cursor: pointer; color: var(--muted);'>" + entityName(country) + "</a> <span class='set-miss' title='" + t('setNotVisited') + "'>✕</span>";
 
         var rowClass = (numberCountryVisites === 0) ? "c-missing" : "c-visited";
 
@@ -253,9 +253,20 @@ function toggleOnlyMissing(on) {
 }
 
 // Open a preview country page for a country with no real visits.
-// Temporarily injects a fake visit (today, all DB cities) so the country
-// page renders with full map + city list, then restores original arrays.
+// Injects a temporary fake visit (today, all DB cities) so the country page
+// renders with map + city list + "My Visits" panel. Arrays are restored only
+// when the user navigates away from this country/its cities context.
 function previewCountryPage(shortName) {
+    // Clean up any still-active previous preview
+    if (window._previewRestore) {
+        window._previewRestore();
+        window._previewRestore = null;
+    }
+    if (window._previewObserver) {
+        window._previewObserver.disconnect();
+        window._previewObserver = null;
+    }
+
     var countryData = null;
     $.each(data.country, function(i, c) {
         if (c.short_name === shortName) { countryData = c; return false; }
@@ -301,11 +312,11 @@ function previewCountryPage(shortName) {
     // Rebuild regions + countries from updated citiesVisited
     createArrayOfVisitedCountriesAndRegions();
 
-    // If no cities in DB for this country, push CountryObj directly so the page can render
+    // If no cities in DB for this country, push CountryObj directly so page can render
     var inList = $.grep(countriesVisited, function(n) { return n.short_name === shortName; });
     if (!inList.length) { countriesVisited.push(new CountryObj(countryData.country_id)); }
 
-    var restore = function() {
+    window._previewRestore = function() {
         visitsSorted    = origVisits;
         citiesVisited   = origCities;
         regionsVisited  = origRegions;
@@ -314,9 +325,28 @@ function previewCountryPage(shortName) {
 
     $.getScript("SCRIPTS/trv_country.js?v=" + APP_V, function() {
         createCountryPage_HTML(shortName);
-        restore();
+
+        // After initial render, watch for navigation AWAY from this preview context.
+        // Keep arrays alive while user stays on this country or its cities.
+        var mainSection = document.getElementById('mainSection');
+        if (mainSection) {
+            window._previewObserver = new MutationObserver(function() {
+                var stillInContext = local && local[1] && (
+                    (local[1].type === 'country' && local[1].short_name === shortName) ||
+                    (local[1].type === 'city' && local[1].getCountryId && local[1].getCountryId() === shortName)
+                );
+                if (stillInContext) { return; }
+                if (window._previewRestore) {
+                    window._previewRestore();
+                    window._previewRestore = null;
+                }
+                window._previewObserver.disconnect();
+                window._previewObserver = null;
+            });
+            window._previewObserver.observe(mainSection, { childList: true });
+        }
     }).fail(function() {
-        restore();
+        if (window._previewRestore) { window._previewRestore(); window._previewRestore = null; }
         document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>';
     });
 }
