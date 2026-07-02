@@ -13,6 +13,10 @@ AmCharts.maps.newZealandHigh={
 		},
 		"g":{
 			"path":[
+				{ "id":"NZ-P1", "title":"", "d":"M-121,-128L-119,-128L-121,-126Z" },
+				{ "id":"NZ-P2", "title":"", "d":"M899,-128L901,-128L901,-126Z" },
+				{ "id":"NZ-P3", "title":"", "d":"M-121,1312L-119,1312L-121,1314Z" },
+				{ "id":"NZ-P4", "title":"", "d":"M899,1312L901,1312L901,1314Z" },
 				{
 					"id":"NZ-AUK",
 					"title":"Auckland",

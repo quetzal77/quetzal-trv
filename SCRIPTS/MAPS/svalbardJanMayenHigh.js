@@ -13,6 +13,10 @@ AmCharts.maps.svalbardJanMayenHigh={
 		},
 		"g":{
 			"path":[
+				{ "id":"SJ-P1", "title":"", "d":"M-103,-104L-101,-104L-103,-102Z" },
+				{ "id":"SJ-P2", "title":"", "d":"M709,-104L711,-104L711,-102Z" },
+				{ "id":"SJ-P3", "title":"", "d":"M-103,890L-101,890L-103,892Z" },
+				{ "id":"SJ-P4", "title":"", "d":"M709,890L711,890L711,892Z" },
 				{
 					"id":"SJ-JN",
 					"title":"Jan Mayen",
