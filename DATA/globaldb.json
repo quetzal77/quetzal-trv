@@ -182,6 +182,19 @@
   ],
   "country": [
     {
+      "country_id": "XA",
+      "country_type_id": "4",
+      "continent_id": "AS",
+      "name": "Akrotiri and Dhekelia",
+      "name_ua": "Акротірі та Декелія",
+      "name_nt": "Akrotiri and Dhekelia",
+      "short_name": "akrotiridhekelia",
+      "small_flag_img": "-313px -214px",
+      "flag_img": "akrotiridhekelia_flag.png",
+      "emb_img": "akrotiridhekelia_emb.png",
+      "map_img": "akrotiridhekeliaLow.js"
+    },
+    {
       "country_id": "AX",
       "country_type_id": "6",
       "continent_id": "EU",
@@ -1266,6 +1279,8 @@
     }
   ],
   "area": [
+    { "country_id": "XA", "region_id": "GB-AX", "name": "Akrotiri", "name_ua": "Акротірі", "active": "Y" },
+    { "country_id": "XA", "region_id": "GB-DX", "name": "Dhekelia", "name_ua": "Декелія", "active": "Y" },
     { "country_id": "AX", "region_id": "AX-01", "name": "Åland Islands", "name_ua": "Аландські острови", "active": "Y" },
     { "country_id": "MA", "region_id": "MA-01", "name": "Tanger-Tetouan", "name_ua": "Танжер-Тетуан", "active": "Y" },
     { "country_id": "MA", "region_id": "MA-02", "name": "Gharb-Chrarda-Beni Hssen", "name_ua": "Ґарб-Шрарда-Бені-Хссен", "active": "Y" },
@@ -13882,6 +13897,17 @@
     }
   ],
   "city": [
+    {
+      "name": "Episkopi Cantonment",
+      "name_nt": "Episkopi Cantonment",
+      "name_ua": "Єпіскопі",
+      "city_id": "episkopi",
+      "region_id": "GB-AX",
+      "capital": "true",
+      "lat": "34.6736",
+      "long": "32.9062",
+      "description": "Адміністративний центр Британських суверенних баз на Кіпрі. Штаб-квартира Західної суверенної бази (Акротірі), авіабаза RAF Акротірі — одна з найважливіших стратегічних баз Великої Британії на Близькому Сході."
+    },
     {
       "name": "Yerevan",
       "name_nt": "Երևան",
