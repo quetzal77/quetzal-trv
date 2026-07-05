@@ -432,7 +432,7 @@ function generateOnloadJson() {
         // collect visited country_ids from all visits
         var visitedCountryIds = {};
         $.each(data.visit, function (i, v) {
-            if (v.visit_type == "residence") { return; } // residence-type visits are excluded from all existing pages/stats
+            // residence-type visits DO count towards visited countries/regions (living there counts as visited)
             $.each(v.city || [], function (j, cityId) {
                 var regionId = cityRegion[cityId];
                 if (regionId) {

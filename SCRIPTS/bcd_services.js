@@ -105,6 +105,48 @@ function createListOfVisites(){
      return result;
 }
 
+//02.02b This method creates the "Моє життя" timeline of places lived (residence-type visits)
+function createListOfResidences(){
+    //EXAMPLE: <div class="visitrow"><div class="firstcell">грудень 1977 – липень 2004</div>
+    //                                <div class="secondcell"><a onclick="getCityPage(id)">Київ</a> <span class="life-duration">(26 років 7 місяців)</span></div></div>
+    var result = "";
+    $.each (residencesSorted, function( i, r ){
+        var period = getMonthName(r.start_date.getMonth() + 1) + " " + r.start_date.getFullYear() + " – " +
+                     (r.ongoing ? t('lifePresent') : getMonthName(r.end_date.getMonth() + 1) + " " + r.end_date.getFullYear());
+        var duration = getResidenceDuration(r.start_date, r.end_date);
+        var cityLink = "<a id='" + r.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getLocationName(r.city_id) + "</a>";
+
+        result += "<div class='visitrow'><div class='firstcell'>" + period + "</div>" +
+                   "<div class='secondcell'>" + cityLink + " <span class='life-duration'>(" + duration + ")</span></div></div>";
+    });
+    return result;
+}
+
+//02.02c Duration between two dates as a "X years Y months" string in the current language
+function getResidenceDuration(start_date, end_date) {
+    var months = (end_date.getFullYear() - start_date.getFullYear()) * 12 + (end_date.getMonth() - start_date.getMonth());
+    if (end_date.getDate() < start_date.getDate()) { months -= 1; }
+    if (months < 0) { months = 0; }
+
+    var years = Math.floor(months / 12);
+    var remMonths = months % 12;
+    var parts = [];
+    if (years > 0)     { parts.push(ukPluralWord(years, ['рік', 'роки', 'років'], 'year')); }
+    if (remMonths > 0) { parts.push(ukPluralWord(remMonths, ['місяць', 'місяці', 'місяців'], 'month')); }
+    if (parts.length === 0) { parts.push(ukPluralWord(0, ['місяць', 'місяці', 'місяців'], 'month')); }
+    return parts.join(' ');
+}
+
+//02.02d Ukrainian noun pluralisation (1/2-4/5+ with the 11-14 exception) with an EN fallback; forms = [one, few, many]
+function ukPluralWord(number, forms, enWord) {
+    if (window.LANG === 'en') { return number + ' ' + enWord + (number == 1 ? '' : 's'); }
+    var mod10 = number % 10, mod100 = number % 100;
+    var word = (mod10 === 1 && mod100 !== 11) ? forms[0]
+             : (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) ? forms[1]
+             : forms[2];
+    return number + ' ' + word;
+}
+
 //02.03 Get Visit date
 function getVisitDate(start_date, end_date, year){
     var VisitDateToShow = "";
@@ -492,7 +534,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.3.3</span>" +
+                "<span class='tech-tag'>v9.3.4</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

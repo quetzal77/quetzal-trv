@@ -26920,8 +26920,14 @@
     },
     {
       "start_date": "20.03.2023",
-      "end_date": "",
+      "end_date": "20.03.2024",
       "city": ["velikagorica"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "21.03.2024",
+      "end_date": "",
+      "city": ["vernadsky"],
       "visit_type": "residence"
     },
     {
@@ -30494,13 +30500,6 @@
       "end_date": "01.06.1978",
       "city": [
         "yasnogorodka"
-      ]
-    },
-    {
-      "start_date": "01.12.1977",
-      "end_date": "01.12.1977",
-      "city": [
-        "kyiv"
       ]
     }
   ]

@@ -2,7 +2,7 @@
 //These functions have to create all the object with content data
 
 //01.01 ARRAYS USED FOR CREATION OF WORLD PAGE
-  var visitsSorted, citiesVisited, regionsVisited, countriesVisited;
+  var visitsSorted, residencesSorted, citiesVisited, regionsVisited, countriesVisited;
 
 function populateContent(callback) {
     $.getJSON("DATA/globaldb.json")
@@ -29,10 +29,11 @@ function populateContent(callback) {
   //01.03 Array of visits sorted descendingly and with dates in DATETIME format
    function createArrayOfVisitesAndArrayOfCitiesVisited() {
        visitsSorted = []; //Array to be used for storing all of them visites happened
+       residencesSorted = []; //Long-term-living entries — kept out of visitsSorted so trip lists/stats stay unaffected
        citiesVisited = []; //Array to be used for storing all of the unique places so it would be possible to create array of visited countries
        var distinctIds = {};
        for (var i = 0; i < data.visit.length; i++) {
-           if (data.visit[i].visit_type == "residence") { continue; } // residence-type visits are excluded from all existing pages/stats
+           var isResidence = (data.visit[i].visit_type == "residence");
            if (data.visit[i].start_date != undefined && data.visit[i].end_date != undefined && data.visit[i].city != undefined){
                var cities = []; //This variable is used to store arrays of cities with country identifier which will be stored in Visits array
 
@@ -57,11 +58,18 @@ function populateContent(callback) {
                     }
                }
 
-               visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story, data.visit[i].days, data.visit[i].story_url));
+               if (isResidence) {
+                   residencesSorted.push(new ResidenceObj(data.visit[i].start_date, data.visit[i].end_date, data.visit[i].city[0]));
+               }
+               else {
+                   visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story, data.visit[i].days, data.visit[i].story_url));
+               }
            }
        }
        visitsSorted.sort(dynamicSort("start_date"));
        visitsSorted.reverse();
+       residencesSorted.sort(dynamicSort("start_date"));
+       residencesSorted.reverse();
        citiesVisited.sort(dynamicSort(window.LANG === 'en' ? 'name' : 'name_ua'));
    }
 
@@ -266,6 +274,23 @@ function populateContent(callback) {
         this.start_date = new Date(startVisit[2], startVisit[1] - 1, startVisit[0]);
         var endVisit = end_date.split(".");
         this.end_date = new Date(endVisit[2], endVisit[1] - 1, endVisit[0]);
+    }
+
+    //01.08b Residence Object definition — long-term-living entry; empty end_date means "still living there"
+    function ResidenceObj(start_date, end_date, city_id) {
+        this.city_id = city_id;
+
+        var startResidence = start_date.split(".");
+        this.start_date = new Date(startResidence[2], startResidence[1] - 1, startResidence[0]);
+
+        this.ongoing = (end_date == "");
+        if (this.ongoing) {
+            this.end_date = new Date();
+        }
+        else {
+            var endResidence = end_date.split(".");
+            this.end_date = new Date(endResidence[2], endResidence[1] - 1, endResidence[0]);
+        }
     }
 
     //01.09 Get updated city EN name when it has type defined

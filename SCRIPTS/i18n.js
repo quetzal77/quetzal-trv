@@ -38,6 +38,9 @@ var i18n = {
         myCountriesDots:  'Мої країни...',
         myVisits:         'Мої подорожі',
         myVisitsDots:     'Мої подорожі...',
+        myLife:           'Моє життя',
+        myLifeDots:       'Моє життя...',
+        lifePresent:      'дотепер',
         // World page — stats
         total:            'Усього: ',
         of:               'з',
@@ -46,6 +49,7 @@ var i18n = {
         goToCountry:      'Перейти до інформації про країну',
         goToVisits:       'Перейти до списку подорожей',
         goToCountries:    'Перейти до списку країн',
+        goToLife:         'Перейти до списку місць проживання',
         // Statistics page — summary
         statTitle:            'Статистика',
         statCountriesVisited: 'Країн відвідано',
@@ -468,6 +472,9 @@ var i18n = {
         myCountriesDots:  'My countries...',
         myVisits:         'My travels',
         myVisitsDots:     'My travels...',
+        myLife:           'My life',
+        myLifeDots:       'My life...',
+        lifePresent:      'present',
         // World page — stats
         total:            'Total: ',
         of:               'of',
@@ -476,6 +483,7 @@ var i18n = {
         goToCountry:      'Go to country page',
         goToVisits:       'Go to travels list',
         goToCountries:    'Go to countries list',
+        goToLife:         'Go to places lived',
         // Statistics page — summary
         statTitle:            'Statistics',
         statCountriesVisited: 'Countries visited',

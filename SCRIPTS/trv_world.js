@@ -16,8 +16,7 @@ function createWorldPage_HTML () {
     document.getElementById("mainSection").innerHTML =
         "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
         "<div id='countryToVisitSelector'>" +
-            "<div class='switchlink_l'>" + t('myCountriesDots') + "</div>" +
-            "<div class='switchlink'><a title='" + t('goToVisits') + "' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+            worldTabsBar_HTML("countries") +
             "<span class='totalstat'>" + t('total') + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
             createWorldPageFrontView() + "</div>";
 
@@ -82,16 +81,14 @@ function createWorldMap_HTML(countries) {
 //04.04 World page with list of Visits
 function OpenListOfWorldVisits() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'><a title='" + t('goToCountries') + "' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>" + t('myCountries') + "</a></div>" +
-        "<div class='switchlink'>" + t('myVisitsDots') + "</div>" +
+        worldTabsBar_HTML("visits") +
         createListOfVisites();
 }
 
 //04.05 World page with list of Countries
 function OpenListOfWorldCountries() {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'>" + t('myCountriesDots') + "</div>" +
-        "<div class='switchlink'><a title='" + t('goToVisits') + "' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+        worldTabsBar_HTML("countries") +
         "<span class='totalstat'>" + t('total') + setCountriesNumberWithCorrectEnd(initial_data.country.length, true) + "<span id='totalCitiesNum'></span></span>" +
         createWorldPageFrontView();
 
@@ -100,3 +97,24 @@ function OpenListOfWorldCountries() {
         getNumberOfLocation();
      }
     }
+
+//04.06 World page with list of places lived (residence-type visits)
+function OpenListOfWorldLife() {
+    document.getElementById("countryToVisitSelector").innerHTML =
+        worldTabsBar_HTML("life") +
+        createListOfResidences();
+}
+
+//04.07 Shared 3-segment tab bar (Мої країни / Мої подорожі / Моє життя) — the active tab is plain text, the rest are links
+function worldTabsBar_HTML(active) {
+    var countriesSeg = (active == "countries")
+        ? "<div class='switchlink_l'>" + t('myCountriesDots') + "</div>"
+        : "<div class='switchlink_l'><a title='" + t('goToCountries') + "' onclick='javascript:OpenListOfWorldCountries()' onmouseover='' style='cursor: pointer;'>" + t('myCountries') + "</a></div>";
+    var visitsSeg = (active == "visits")
+        ? "<div class='switchlink'>" + t('myVisitsDots') + "</div>"
+        : "<div class='switchlink'><a title='" + t('goToVisits') + "' onclick='javascript:OpenListOfWorldVisits()' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>";
+    var lifeSeg = (active == "life")
+        ? "<div class='switchlink'>" + t('myLifeDots') + "</div>"
+        : "<div class='switchlink'><a title='" + t('goToLife') + "' onclick='javascript:OpenListOfWorldLife()' onmouseover='' style='cursor: pointer;'>" + t('myLife') + "</a></div>";
+    return countriesSeg + visitsSeg + lifeSeg;
+}

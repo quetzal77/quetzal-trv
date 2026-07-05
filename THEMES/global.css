@@ -235,6 +235,7 @@ div.visityear{width:auto; margin:18px 0 6px; padding:0; font-weight:700; font-si
 div.visitrow{display:flex; gap:16px; padding:4px 0; font-size:12px}
 div.visitrow .firstcell{flex:0 0 220px; white-space:nowrap; text-align:right; color:var(--muted); font-variant-numeric:tabular-nums}
 div.visitrow .secondcell{flex:1; min-width:0; text-align:left}
+.life-duration{color:var(--muted)}
 /* segmented toggle (Мої країни / Мої візити), centered */
 #countryToVisitSelector{text-align:center}
 div.switchlink_l,div.switchlink{
