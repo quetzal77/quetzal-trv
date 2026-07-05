@@ -432,6 +432,7 @@ function generateOnloadJson() {
         // collect visited country_ids from all visits
         var visitedCountryIds = {};
         $.each(data.visit, function (i, v) {
+            if (v.visit_type == "residence") { return; } // residence-type visits are excluded from all existing pages/stats
             $.each(v.city || [], function (j, cityId) {
                 var regionId = cityRegion[cityId];
                 if (regionId) {
@@ -941,7 +942,7 @@ function exportToCsv() {
         { id: 'country',      label: t('setCountries'),     arr: data.country      || [] },
         { id: 'area',         label: t('setRegions'),       arr: data.area         || [] },
         { id: 'city',         label: t('setLocations'),     arr: data.city         || [] },
-        { id: 'visit',        label: t('setVisits'),        arr: data.visit        || [] },
+        { id: 'visit',        label: t('setVisits'),        arr: (data.visit || []).filter(function (v) { return v.visit_type != "residence"; }) },
         { id: 'type',         label: t('setLocationTypes'), arr: data.type         || [] },
         { id: 'country_type', label: t('setCountryTypes'),  arr: data.country_type || [] }
     ];

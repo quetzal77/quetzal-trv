@@ -26836,6 +26836,48 @@
   ],
   "visit": [
     {
+      "start_date": "01.12.1977",
+      "end_date": "31.07.2004",
+      "city": ["kyiv"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "01.08.2004",
+      "end_date": "21.05.2011",
+      "city": ["brovary"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "21.05.2011",
+      "end_date": "17.01.2015",
+      "city": ["kyiv"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "18.01.2015",
+      "end_date": "10.04.2016",
+      "city": ["krakow"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "11.04.2016",
+      "end_date": "07.12.2022",
+      "city": ["kyiv"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "20.12.2022",
+      "end_date": "19.03.2023",
+      "city": ["zagreb"],
+      "visit_type": "residence"
+    },
+    {
+      "start_date": "20.03.2023",
+      "end_date": "",
+      "city": ["velikagorica"],
+      "visit_type": "residence"
+    },
+    {
       "start_date": "28.06.2026",
       "end_date": "28.06.2026",
       "city": ["idrija"]
@@ -30405,13 +30447,6 @@
       "end_date": "01.06.1978",
       "city": [
         "yasnogorodka"
-      ]
-    },
-    {
-      "start_date": "01.12.1977",
-      "end_date": "01.12.1977",
-      "city": [
-        "kyiv"
       ]
     }
   ]

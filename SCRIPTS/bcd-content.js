@@ -32,6 +32,7 @@ function populateContent(callback) {
        citiesVisited = []; //Array to be used for storing all of the unique places so it would be possible to create array of visited countries
        var distinctIds = {};
        for (var i = 0; i < data.visit.length; i++) {
+           if (data.visit[i].visit_type == "residence") { continue; } // residence-type visits are excluded from all existing pages/stats
            if (data.visit[i].start_date != undefined && data.visit[i].end_date != undefined && data.visit[i].city != undefined){
                var cities = []; //This variable is used to store arrays of cities with country identifier which will be stored in Visits array
 

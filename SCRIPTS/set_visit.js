@@ -13,6 +13,7 @@ function createSettingsVisitTab_HTML() {
 
     var options = '';
     $.each (data.visit, function( i, visit ){
+        if (visit.visit_type == "residence") { return; } // residence-type visits get a separate UI, not this list
         var citiesList = "";
         $.each (visit.city, function( j, city ){ citiesList += getLocationName(city) + ", "; });
         citiesList = (citiesList.length > 55) ? citiesList.slice(0, 55) + "…" : citiesList.slice(0, -2);
