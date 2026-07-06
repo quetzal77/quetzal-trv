@@ -6,11 +6,6 @@
       "name": "Asia"
     },
     {
-      "continent_id": "AN",
-      "name_ua": "Антарктида",
-      "name": "Antarctica"
-    },
-    {
       "continent_id": "AF",
       "name_ua": "Африка",
       "name": "Africa"
@@ -61,13 +56,6 @@
       "short_name": "andorra",
       "small_flag_img": "-3px -3px",
       "name_full": "Андорра - Andorra - Andorra"
-    },
-    {
-      "country_id": "AQ",
-      "continent_id": "AN",
-      "short_name": "southantarctic",
-      "small_flag_img": "-624px -741px",
-      "name_full": "Антарктида - Antarctica - Antarctica"
     },
     {
       "country_id": "BZ",
