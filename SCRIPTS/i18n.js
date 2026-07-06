@@ -21,6 +21,7 @@ var i18n = {
         goToLocation:     'Перейти до інформації про локацію',
         // Country page — details
         totalVisited:     'Усього відвідано:',
+        countryResidenceTime: 'Час проживання в країні:',
         wordRegions:      'регіонів',
         allRegionsVisited:'Усі регіони відвідано!',
         reports:          'Звіти:',
@@ -455,6 +456,7 @@ var i18n = {
         goToLocation:     'Go to location page',
         // Country page — details
         totalVisited:     'Total visited:',
+        countryResidenceTime: 'Country residence time:',
         wordRegions:      'regions',
         allRegionsVisited:'All regions visited!',
         reports:          'Reports:',

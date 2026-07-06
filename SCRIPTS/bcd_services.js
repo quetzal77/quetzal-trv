@@ -105,36 +105,74 @@ function createListOfVisites(){
      return result;
 }
 
-//02.02b This method creates the "Моє життя" timeline of places lived (residence-type visits)
-function createListOfResidences(){
-    //EXAMPLE: <div class="visitrow"><div class="firstcell">грудень 1977 – липень 2004</div>
-    //                                <div class="secondcell"><a onclick="getCityPage(id)">Київ</a> <span class="life-duration">(26 років 7 місяців)</span></div></div>
+//02.02b This method creates the "Моє життя" timeline of places lived (residence-type visits).
+//Pass a country short_name to scope the list to that country (used by the country page's "Моє життя" tab) —
+//in that case the country link is omitted (redundant, we're already on that country's page).
+function createListOfResidences(countryId){
+    //EXAMPLE: <div class="visitrow"><div class="firstcell">1 грудня 1977 – 31 липня 2004</div>
+    //                                <div class="secondcell"><a onclick="getCityPage(id)">Київ</a> (<a onclick="getCountryPage(id)">Україна</a>) <span class="life-duration">(26 років, 7 місяців, 30 днів)</span></div></div>
     var result = "";
     $.each (residencesSorted, function( i, r ){
-        var period = getMonthName(r.start_date.getMonth() + 1) + " " + r.start_date.getFullYear() + " – " +
-                     (r.ongoing ? t('lifePresent') : getMonthName(r.end_date.getMonth() + 1) + " " + r.end_date.getFullYear());
-        var duration = getResidenceDuration(r.start_date, r.end_date);
+        if (countryId && r.country_id != countryId) { return; }
+
+        var period = getFullResidenceDate(r.start_date) + " – " +
+                     (r.ongoing ? t('lifePresent') : getFullResidenceDate(r.end_date));
+        var duration = formatDurationParts(dateDiffYMD(r.start_date, r.end_date));
         var cityLink = "<a id='" + r.city_id + "' onclick='javascript:getCityPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getLocationName(r.city_id) + "</a>";
+        var countryLink = countryId ? "" :
+            " (<a id='" + r.country_id + "' onclick='javascript:getCountryPage(this.id)' onmouseover='' style='cursor: pointer;'>" + getCountryName(r.country_id) + "</a>)";
 
         result += "<div class='visitrow'><div class='firstcell'>" + period + "</div>" +
-                   "<div class='secondcell'>" + cityLink + " <span class='life-duration'>(" + duration + ")</span></div></div>";
+                   "<div class='secondcell'>" + cityLink + countryLink + " <span class='life-duration'>(" + duration + ")</span></div></div>";
     });
     return result;
 }
 
-//02.02c Duration between two dates as a "X years Y months" string in the current language
-function getResidenceDuration(start_date, end_date) {
-    var months = (end_date.getFullYear() - start_date.getFullYear()) * 12 + (end_date.getMonth() - start_date.getMonth());
-    if (end_date.getDate() < start_date.getDate()) { months -= 1; }
-    if (months < 0) { months = 0; }
+//02.02c Full date as "1 грудня 1977" / "1 Dec 1977"
+function getFullResidenceDate(date) {
+    return date.getDate() + " " + getMonthName(date.getMonth() + 1) + " " + date.getFullYear();
+}
 
-    var years = Math.floor(months / 12);
-    var remMonths = months % 12;
-    var parts = [];
-    if (years > 0)     { parts.push(ukPluralWord(years, ['рік', 'роки', 'років'], 'year')); }
-    if (remMonths > 0) { parts.push(ukPluralWord(remMonths, ['місяць', 'місяці', 'місяців'], 'month')); }
-    if (parts.length === 0) { parts.push(ukPluralWord(0, ['місяць', 'місяці', 'місяців'], 'month')); }
-    return parts.join(' ');
+//02.02d Calendar-exact difference between two dates as whole years/months/days (handles real month lengths)
+function dateDiffYMD(start_date, end_date) {
+    var years = end_date.getFullYear() - start_date.getFullYear();
+    var months = end_date.getMonth() - start_date.getMonth();
+    var days = end_date.getDate() - start_date.getDate();
+    if (days < 0) {
+        months -= 1;
+        days += new Date(end_date.getFullYear(), end_date.getMonth(), 0).getDate(); // days in the month before end_date's month
+    }
+    if (months < 0) {
+        years -= 1;
+        months += 12;
+    }
+    if (years < 0) { years = 0; months = 0; days = 0; }
+    return { years: years, months: months, days: days };
+}
+
+//02.02e Format {years, months, days} as "X років, Y місяців, Z днів" in the current language
+function formatDurationParts(parts) {
+    var out = [];
+    if (parts.years > 0)  { out.push(ukPluralWord(parts.years, ['рік', 'роки', 'років'], 'year')); }
+    if (parts.months > 0) { out.push(ukPluralWord(parts.months, ['місяць', 'місяці', 'місяців'], 'month')); }
+    if (parts.days > 0 || out.length === 0) { out.push(ukPluralWord(parts.days, ['день', 'дні', 'днів'], 'day')); }
+    return out.join(', ');
+}
+
+//02.02f Decompose a raw day count into {years, months, days} by walking forward from a fixed epoch —
+//used to sum several residence periods (which may span different, unrelated date ranges) into one duration
+function decomposeDays(totalDays) {
+    var epoch = new Date(2000, 0, 1);
+    var end = new Date(epoch.getTime() + totalDays * 86400000);
+    return dateDiffYMD(epoch, end);
+}
+
+//02.02e Join a list of names into a natural-language phrase: "A, B та C" / "A, B and C"
+function joinWithAnd(items) {
+    if (items.length === 0) { return ""; }
+    if (items.length === 1) { return items[0]; }
+    var andWord = (window.LANG === 'en') ? ' and ' : ' та ';
+    return items.slice(0, -1).join(', ') + andWord + items[items.length - 1];
 }
 
 //02.02d Ukrainian noun pluralisation (1/2-4/5+ with the 11-14 exception) with an EN fallback; forms = [one, few, many]
@@ -534,7 +572,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.3.4</span>" +
+                "<span class='tech-tag'>v9.3.5</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

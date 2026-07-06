@@ -59,7 +59,8 @@ function populateContent(callback) {
                }
 
                if (isResidence) {
-                   residencesSorted.push(new ResidenceObj(data.visit[i].start_date, data.visit[i].end_date, data.visit[i].city[0]));
+                   var residenceCountryId = (cities.length > 0) ? cities[0].country_id : "";
+                   residencesSorted.push(new ResidenceObj(data.visit[i].start_date, data.visit[i].end_date, data.visit[i].city[0], residenceCountryId));
                }
                else {
                    visitsSorted.push(new VisitObj(data.visit[i].start_date, data.visit[i].end_date, cities, data.visit[i].photos, data.visit[i].story, data.visit[i].days, data.visit[i].story_url));
@@ -277,8 +278,9 @@ function populateContent(callback) {
     }
 
     //01.08b Residence Object definition — long-term-living entry; empty end_date means "still living there"
-    function ResidenceObj(start_date, end_date, city_id) {
+    function ResidenceObj(start_date, end_date, city_id, country_id) {
         this.city_id = city_id;
+        this.country_id = country_id; // country short_name, same convention as VisitObj.cities[].country_id
 
         var startResidence = start_date.split(".");
         this.start_date = new Date(startResidence[2], startResidence[1] - 1, startResidence[0]);

@@ -24,8 +24,7 @@ function createCountryPage_HTML(countryId) {
     typeHtml +
     "<div id='mapdiv' class='map loading'>&nbsp;</div>" +
     "<div id='countryToVisitSelector'>" +
-    "<div class='switchlink_l'>" + t('myLocationsDots') + "</div>" +
-    "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToVisits') + "' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+    countryTabsBar_HTML(countryId, "locations") +
     getCountryDetails_HTML() + getCitiesAndRegionsList_HTML() + "</div>" +
     getFlagEmblem_HTML(country[0]);
 
@@ -63,6 +62,26 @@ function getCountryDetails_HTML() {
     result += "<div class='countrydetail'><b>" + t('totalVisited') + "</b> " +
               setLocationNumberWithCorrectEnd(country.getNumberOfVisitedCities(), true) +
               " · " + regionsHtml + regionsBar + allRegionsTrophy + "</div>";
+
+    //01b. Residence time within this country — sums every residence-type visit here, across all its cities.
+    //Periods are summed as raw days (not calendar months) since they can span unrelated date ranges,
+    //then the total is decomposed back into years/months/days for display.
+    var countryResidences = $.grep(residencesSorted, function(r){ return r.country_id == country.short_name; });
+    if (countryResidences.length > 0) {
+        var totalDays = 0;
+        var seenCities = {};
+        var cityNames = [];
+        var DAY = 1000 * 60 * 60 * 24;
+        $.each(countryResidences, function(i, r){
+            totalDays += Math.round((r.end_date - r.start_date) / DAY);
+            if (!seenCities[r.city_id]) {
+                seenCities[r.city_id] = true;
+                cityNames.push(getLocationName(r.city_id));
+            }
+        });
+        result += "<div class='countrydetail'><b>" + t('countryResidenceTime') + "</b> " +
+                  formatDurationParts(decomposeDays(totalDays)) + " — " + joinWithAnd(cityNames) + "</div>";
+    }
 
     //02.-03. Stories and Photos
     var ListOfStories = "";
@@ -149,17 +168,41 @@ function getFlagEmblem_HTML(country) {
 //05.04 Country page with list of Visits
 function OpenListOfCountryVisits(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'><a id='" + countryId + "' title='" + t('goToLocations') + "' onclick='javascript:OpenListOfCountryCities(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myLocations') + "</a></div>" +
-        "<div class='switchlink'>" + t('myVisitsDots') + "</div>" +
+        countryTabsBar_HTML(countryId, "visits") +
         createListOfVisites();
 }
 
 //05.05 Country page with list of Cities
 function OpenListOfCountryCities(countryId) {
     document.getElementById("countryToVisitSelector").innerHTML =
-        "<div class='switchlink_l'>" + t('myLocationsDots') + "</div>" +
-        "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToVisits') + "' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>" +
+        countryTabsBar_HTML(countryId, "locations") +
         getCountryDetails_HTML() + getCitiesAndRegionsList_HTML();
+}
+
+//05.05b Country page with list of places lived in this country (only reachable when the country has residence-type visits)
+function OpenListOfCountryLife(countryId) {
+    document.getElementById("countryToVisitSelector").innerHTML =
+        countryTabsBar_HTML(countryId, "life") +
+        createListOfResidences(countryId);
+}
+
+//05.05c Shared tab bar (Мої локації / Мої подорожі / Моє життя) — the "Моє життя" tab only appears if this country has residence-type visits
+function countryTabsBar_HTML(countryId, active) {
+    var hasResidence = $.grep(residencesSorted, function(r){ return r.country_id == countryId; }).length > 0;
+
+    var locationsSeg = (active == "locations")
+        ? "<div class='switchlink_l'>" + t('myLocationsDots') + "</div>"
+        : "<div class='switchlink_l'><a id='" + countryId + "' title='" + t('goToLocations') + "' onclick='javascript:OpenListOfCountryCities(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myLocations') + "</a></div>";
+    var visitsSeg = (active == "visits")
+        ? "<div class='switchlink'>" + t('myVisitsDots') + "</div>"
+        : "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToVisits') + "' onclick='javascript:OpenListOfCountryVisits(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myVisits') + "</a></div>";
+    var lifeSeg = "";
+    if (hasResidence) {
+        lifeSeg = (active == "life")
+            ? "<div class='switchlink'>" + t('myLifeDots') + "</div>"
+            : "<div class='switchlink'><a id='" + countryId + "' title='" + t('goToLife') + "' onclick='javascript:OpenListOfCountryLife(this.id)' onmouseover='' style='cursor: pointer;'>" + t('myLife') + "</a></div>";
+    }
+    return locationsSeg + visitsSeg + lifeSeg;
 }
 
 //05.06 List of regions and cities

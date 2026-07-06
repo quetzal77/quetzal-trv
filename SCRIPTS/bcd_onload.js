@@ -6,7 +6,7 @@
     var local; // Store variable that describe which country have to be opened and drawn on a map
     window.skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
     window.LANG = localStorage.getItem('lang') || 'uk';
-    window.APP_V = '9.3.4';
+    window.APP_V = '9.3.5';
     window.entityName = function(entity) {
         if (!entity) { return ''; }
         return (window.LANG === 'en') ? (entity.name || entity.name_ua || '') : (entity.name_ua || entity.name || '');
