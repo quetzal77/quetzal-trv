@@ -26920,14 +26920,8 @@
     },
     {
       "start_date": "20.03.2023",
-      "end_date": "20.03.2024",
-      "city": ["velikagorica"],
-      "visit_type": "residence"
-    },
-    {
-      "start_date": "21.03.2024",
       "end_date": "",
-      "city": ["vernadsky"],
+      "city": ["velikagorica"],
       "visit_type": "residence"
     },
     {

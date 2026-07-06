@@ -354,6 +354,7 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
     var photos = (initialEntityObj.photos != newEntityObj.photos) ? true : false;
     var story = (initialEntityObj.story != newEntityObj.story) ? true : false;
     var story_url = (initialEntityObj.story_url != newEntityObj.story_url) ? true : false;
+    var visit_type = (initialEntityObj.visit_type != newEntityObj.visit_type) ? true : false;
 
     // Update Global Visit array with new data
     $.each (data.visit, function( i, visit ){
@@ -364,6 +365,7 @@ function updateElementOfVisitArray(initialEntityObj, newEntityObj) {
             if (photos){ visit.photos = newEntityObj.photos; }
             if (story){ if (newEntityObj.story != undefined) { visit.story = newEntityObj.story; } else { delete visit['story']; } }
             if (story_url){ if (newEntityObj.story_url != undefined) { visit.story_url = newEntityObj.story_url; } else { delete visit['story_url']; } }
+            if (visit_type){ if (newEntityObj.visit_type != undefined) { visit.visit_type = newEntityObj.visit_type; } else { delete visit['visit_type']; } }
         }
     });
 

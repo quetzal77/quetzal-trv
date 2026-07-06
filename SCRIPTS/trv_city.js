@@ -63,6 +63,15 @@ function HTML_CityDetais(cityId) {
         result += "<div class='countrydetail'><b>" + t('cityDescription') + "</b> " + city.description + "</div>";
     }
 
+    //Residence time at this location — sums every residence-type visit here (e.g. multiple stays over the years)
+    var cityResidences = $.grep(residencesSorted, function(r){ return r.city_id == cityId; });
+    if (cityResidences.length > 0) {
+        var totalDays = 0;
+        var DAY = 1000 * 60 * 60 * 24;
+        $.each(cityResidences, function(i, r){ totalDays += Math.round((r.end_date - r.start_date) / DAY); });
+        result += "<div class='countrydetail'><b>" + t('cityResidenceTime') + "</b> " + formatDurationParts(decomposeDays(totalDays)) + "</div>";
+    }
+
     //Date of city visit
     result += "<div class='countrydetail'><b>" + t('cityVisitDates') + "</b> " + createListOfVisites() + "</div>";
 

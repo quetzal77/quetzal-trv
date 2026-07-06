@@ -109,6 +109,7 @@ var i18n = {
         cityLatSuffix:    'с.ш.',
         cityLonSuffix:    'в.д.',
         cityDescription:  'Опис:',
+        cityResidenceTime:'Час проживання в локації:',
         cityVisitDates:   'Дата візитів:',
         cityPhotos:       'Фото:',
         // Settings sidebar
@@ -386,6 +387,8 @@ var i18n = {
         setVisitDateStart:      'Дата початку',
         setVisitDateEnd:        'Дата завершення',
         setVisitDateFmt:        'ДД/ММ/РРРР',
+        setVisitResidenceLabel: 'Резиденс-візит (тривале проживання)',
+        setVisitResidenceCityLimit: 'Резиденс-візит може містити лише одне місто',
         setVisitCitiesLabel:    'Локації цієї поїздки',
         setVisitCitySearch:     'Починайте вводити назву міста...',
         setVisitCityNotFound:   'Нічого не знайдено',
@@ -544,6 +547,7 @@ var i18n = {
         cityLatSuffix:    'N',
         cityLonSuffix:    'E',
         cityDescription:  'Description:',
+        cityResidenceTime:'Residence time at this location:',
         cityVisitDates:   'Visit dates:',
         cityPhotos:       'Photos:',
         // Count suffixes (UK uses parseWord — these keys are EN-only)
@@ -825,6 +829,8 @@ var i18n = {
         setVisitDateStart:      'Start date',
         setVisitDateEnd:        'End date',
         setVisitDateFmt:        'DD/MM/YYYY',
+        setVisitResidenceLabel: 'Residence visit (long-term living)',
+        setVisitResidenceCityLimit: 'A residence visit can only have one city',
         setVisitCitiesLabel:    'Locations of this trip',
         setVisitCitySearch:     'Start typing a city name...',
         setVisitCityNotFound:   'Nothing found',

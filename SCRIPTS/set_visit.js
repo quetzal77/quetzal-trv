@@ -60,7 +60,8 @@ function addEditRemoveVisits(itemId) {
     local[0] = {
         start_date: itemId,
         end_date: editMode ? visit[0].end_date : "",
-        city: editMode ? visit[0].city : []
+        city: editMode ? visit[0].city : [],
+        visit_type: editMode ? visit[0].visit_type : undefined
     };
     if (editMode && visit[0].days      != undefined) { local[0].days = visit[0].days; }
     if (editMode && visit[0].photos    != undefined) { local[0].photos = visit[0].photos; }
@@ -108,6 +109,8 @@ function addEditRemoveVisits(itemId) {
         });
     }
 
+    var isResidence = (local[0].visit_type === "residence");
+
     // dirty-tracking snapshot
     var norm = function (d) { return (d || "").replace(/[^0-9]/g, "."); };
     window.__visitInit = {
@@ -116,7 +119,8 @@ function addEditRemoveVisits(itemId) {
         cities:   window.__visitCities.map(function(e) { return e.id + ":" + e.days; }).join("~"),
         photos:   photos,
         storyInt: curId,
-        storyExt: curExtUrl
+        storyExt: curExtUrl,
+        residence: isResidence
     };
 
     document.getElementById("AddEditRemoveSection").innerHTML =
@@ -130,6 +134,9 @@ function addEditRemoveVisits(itemId) {
                         '<input id="dateEnd" name="date" type="text" class="set-input" ' + endDateValue + 'placeholder="' + t('setVisitDateFmt') + '"></div>' +
                 '</div>' +
                 '<span id="alert_date"></span>' +
+            '</div>' +
+            '<div class="set-field">' +
+                '<label class="set-check"><input type="checkbox" id="visitResidence" ' + (isResidence ? "checked" : "") + ' onchange="javascript:onVisitResidenceToggle()"> ' + t('setVisitResidenceLabel') + '</label>' +
             '</div>' +
             '<div class="set-field">' +
                 '<label>' + t('setVisitCitiesLabel') + ' <span class="req">*</span></label>' +
@@ -177,9 +184,31 @@ function addEditRemoveVisits(itemId) {
     fillVisitStoryOptions(curId, internalList);
 }
 
+//15.02a2 A residence visit can only ever hold one city
+function isResidenceCityLimitReached() {
+    var chk = document.getElementById('visitResidence');
+    return !!(chk && chk.checked && window.__visitCities && window.__visitCities.length >= 1);
+}
+
+//15.02a3 Toggle handler for the residence checkbox — trims extra cities and re-renders
+function onVisitResidenceToggle() {
+    var chk = document.getElementById('visitResidence');
+    if (chk && chk.checked && window.__visitCities && window.__visitCities.length > 1) {
+        window.__visitCities = window.__visitCities.slice(0, 1);
+    }
+    renderVisitCityList();
+    setVisitFormDirty();
+}
+
 //15.02b Render the city rows (name + days input + remove button)
 // Days input is disabled for duplicate city entries — days is keyed by city_id, so only the first occurrence can hold a value.
 function renderVisitCityList() {
+    var citySearchInput = document.getElementById('citySearch');
+    if (citySearchInput) {
+        citySearchInput.disabled = isResidenceCityLimitReached();
+        citySearchInput.placeholder = citySearchInput.disabled ? t('setVisitResidenceCityLimit') : t('setVisitCitySearch');
+    }
+
     var container = document.getElementById("visitCityList");
     if (!container) { return; }
 
@@ -216,7 +245,7 @@ function updateCitySearch() {
     var dropdown = document.getElementById("cityDropdown");
     if (!dropdown) { return; }
 
-    if (!q) { closeCityDropdown(); return; }
+    if (!q || isResidenceCityLimitReached()) { closeCityDropdown(); return; }
 
     var inList = {};
     $.each(window.__visitCities || [], function(i, e) { inList[e.id] = true; });
@@ -243,6 +272,7 @@ function updateCitySearch() {
 
 //15.02d Add a city chosen from the dropdown to the visit city list
 function selectCityFromDropdown(cityId) {
+    if (isResidenceCityLimitReached()) { return; }
     window.__visitCities = window.__visitCities || [];
     window.__visitCities.push({id: cityId, days: ""});
     var search = document.getElementById("citySearch");
@@ -314,9 +344,11 @@ function setVisitFormDirty() {
     var photos = (((document.getElementById("newPhotos") || {}).value) || "").trim();
     var storyInt = (document.getElementById("newStoryInt") || {}).value || "";
     var storyExt = (((document.getElementById("newStoryExt") || {}).value) || "").trim();
+    var residence = !!((document.getElementById("visitResidence") || {}).checked);
 
     var dirty = (start !== init.start) || (end !== init.end) || (cities !== init.cities) ||
-                (photos !== init.photos) || (storyInt !== init.storyInt) || (storyExt !== init.storyExt);
+                (photos !== init.photos) || (storyInt !== init.storyInt) || (storyExt !== init.storyExt) ||
+                (residence !== init.residence);
     var btn = document.getElementById("visitSaveBtn");
     if (btn) { btn.disabled = !dirty; }
 }
@@ -354,6 +386,7 @@ function submitVisit(status) {
     });
     if (cityIds.length > 0) { newVisitObj["city"] = cityIds; }
     if (hasDays) { newVisitObj["days"] = daysObj; }
+    if (document.getElementById("visitResidence").checked) { newVisitObj["visit_type"] = "residence"; }
 
     if (document.getElementById("newPhotos").value.trim() != "") { newVisitObj["photos"] = document.getElementById("newPhotos").value.trim(); }
     var storyInt = document.getElementById("newStoryInt").value;
@@ -407,6 +440,12 @@ function checkVisitRules(visitObj) {
     if (visitObj.start_date == ''){ visitAlertEmpty("alert_date"); result = false; }
     if (visitObj.end_date == ''){ visitAlertEmpty("alert_date"); result = false; }
     if (visitObj.city == undefined){ visitAlertEmpty("alert_cities_list"); result = false; }
+    if (visitObj.visit_type == "residence" && visitObj.city != undefined && visitObj.city.length > 1){
+        removeAllChildNodes("success");
+        document.getElementById("alert_cities_list").innerHTML =
+            '<div class="set-alert is-err">' + t('setVisitResidenceCityLimit') + '</div>';
+        result = false;
+    }
 
     return result;
 }
