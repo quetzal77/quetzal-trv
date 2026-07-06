@@ -404,39 +404,90 @@ function statsHeatMonths_HTML(title, months) {
         "<div class='mh-heat'>" + cells + "</div></div>";
 }
 
+//09.13b Per-country day breakdown of a single trip: explicit per-city days if set, else the trip split evenly
+//across its distinct cities. Shared by the main tally below and by the residence abroad-time deduction.
+function getTripCountryDayMap(v, DAY) {
+    var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
+    var cidCountry = {}, result = {};
+    $.each (v.cities, function( j, city ){ cidCountry[city.city_id] = city.country_id; });
+    if (v.days) {
+        for (var cid in v.days) {
+            var ctry = cidCountry[cid];
+            if (ctry) { result[ctry] = (result[ctry] || 0) + v.days[cid]; }
+        }
+    } else {
+        var ids = Object.keys(cidCountry);
+        var perCity = ids.length ? days / ids.length : 0;
+        ids.forEach(function( cid ){ result[cidCountry[cid]] = (result[cidCountry[cid]] || 0) + perCity; });
+    }
+    return result;
+}
+
+//09.13c Per-city day breakdown of a single trip: explicit per-city days if set, else the trip split evenly
+//across its distinct cities. Shared by the main tally below and by the residence away-time deduction.
+function getTripCityDayMap(v, DAY) {
+    var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
+    var result = {};
+    if (v.days) {
+        for (var cid in v.days) { result[cid] = v.days[cid]; }
+    } else {
+        var seen = {};
+        $.each (v.cities, function( j, city ){ seen[city.city_id] = true; });
+        var ids = Object.keys(seen);
+        var perCity = ids.length ? days / ids.length : 0;
+        ids.forEach(function( cid ){ result[cid] = perCity; });
+    }
+    return result;
+}
+
 //09.14 Block 6 — top-7 lists: countries by visits / time / regions
 function statsBlockTop_HTML() {
     if (!visitsSorted.length) { return ""; }
 
     var DAY = 1000 * 60 * 60 * 24;
-    var byVisits = {}, byDays = {}, cityVisits = {};
+    var byVisits = {}, byDays = {}, cityVisits = {}, byCityDays = {};
     $.each (visitsSorted, function( i, v ){
-        var days = Math.round((v.end_date - v.start_date) / DAY) + 1;
-        var seen = {}, cidCountry = {};
+        var seen = {};
         $.each (v.cities, function( j, city ){
             cityVisits[city.city_id] = (cityVisits[city.city_id] || 0) + 1;
-            cidCountry[city.city_id] = city.country_id;
             if (!seen[city.country_id]) {
                 seen[city.country_id] = true;
                 byVisits[city.country_id] = (byVisits[city.country_id] || 0) + 1;
             }
         });
+        //Time spent per city
+        var tripCityDays = getTripCityDayMap(v, DAY);
+        for (var cid2 in tripCityDays) { byCityDays[cid2] = (byCityDays[cid2] || 0) + tripCityDays[cid2]; }
         //Time spent per country
-        if (v.days) {
-            //Exact — explicit per-city days (city_id -> fractional days)
-            for (var cid in v.days) {
-                var ctry = cidCountry[cid];
-                if (ctry) { byDays[ctry] = (byDays[ctry] || 0) + v.days[cid]; }
-            }
-        } else {
-            //Approximate — split the trip evenly across its distinct cities (10 days / 5 cities = 2 each)
-            var ids = Object.keys(cidCountry);
-            var perCity = ids.length ? days / ids.length : 0;
-            ids.forEach(function( cid ){ byDays[cidCountry[cid]] = (byDays[cidCountry[cid]] || 0) + perCity; });
-        }
+        var tripCountryDays = getTripCountryDayMap(v, DAY);
+        for (var ctry in tripCountryDays) { byDays[ctry] = (byDays[ctry] || 0) + tripCountryDays[ctry]; }
     });
-    //Round per-country day totals to 1 decimal (keeps 0.5-day stops readable)
+    //Residence-type visits (long-term living) count towards country and city time-spent. In both cases, trips
+    //taken away from that place *during* the residence period are subtracted — e.g. 36 years living in Kyiv minus
+    //the days actually spent travelling outside Ukraine (country card) / outside Kyiv itself (city card).
+    $.each (residencesSorted, function( i, r ){
+        var days = Math.round((r.end_date - r.start_date) / DAY);
+
+        var daysAbroad = 0, daysAway = 0;
+        $.each (visitsSorted, function( j, v ){
+            if (v.start_date >= r.start_date && v.start_date <= r.end_date) {
+                var tripCountryDays = getTripCountryDayMap(v, DAY);
+                for (var ctry in tripCountryDays) {
+                    if (ctry !== r.country_id) { daysAbroad += tripCountryDays[ctry]; }
+                }
+                var tripCityDays = getTripCityDayMap(v, DAY);
+                for (var cid3 in tripCityDays) {
+                    if (cid3 !== r.city_id) { daysAway += tripCityDays[cid3]; }
+                }
+            }
+        });
+
+        byDays[r.country_id] = (byDays[r.country_id] || 0) + Math.max(0, days - daysAbroad);
+        byCityDays[r.city_id] = (byCityDays[r.city_id] || 0) + Math.max(0, days - daysAway);
+    });
+    //Round per-country / per-city day totals to 1 decimal (keeps 0.5-day stops readable)
     for (var ck in byDays) { byDays[ck] = Math.round(byDays[ck] * 10) / 10; }
+    for (var cdk in byCityDays) { byCityDays[cdk] = Math.round(byCityDays[cdk] * 10) / 10; }
 
     //Top countries by visited regions (full, sorted) — value "visited з total" with a completion bar
     var regionRows = [];
@@ -452,6 +503,14 @@ function statsBlockTop_HTML() {
     for (var cid in cityVisits) { cityRows.push({ name: getLocationName(cid) || cid, value: cityVisits[cid] }); }
     cityRows.sort(function( a, b ){ return b.value - a.value; });
 
+    //Top cities by time spent (full, sorted) — includes residence-type visits, unlike the country/trip cards above
+    var cityDaysRows = [];
+    for (var cdid in byCityDays) {
+        var cdTotal = Math.round(byCityDays[cdid]);
+        cityDaysRows.push({ name: getLocationName(cdid) || cdid, value: cdTotal, label: formatDurationPartsShort(decomposeDays(cdTotal)) });
+    }
+    cityDaysRows.sort(function( a, b ){ return b.value - a.value; });
+
     //Golden combo — countries where the capital and ALL active regions are visited (full, sorted)
     var capCountries = {};
     $.each (citiesVisited, function( i, city ){ if (city.capital) { capCountries[city.getCountryId()] = true; } });
@@ -466,16 +525,17 @@ function statsBlockTop_HTML() {
 
     //Register full datasets so the expand button can show the complete list in a modal
     window.statsTop = {
-        visits:  { title: t('statTopVisits'),   unit: "",                    mode: "",     rows: statsSortRows(byVisits) },
-        cities:  { title: t('statTopCities'),   unit: "",                    mode: "",     rows: cityRows },
-        regions: { title: t('statTopRegions'),  unit: t('statTopRegsUnit'),  mode: "",     rows: regionRows },
-        days:    { title: t('statTopDays'),     unit: t('statTopDaysUnit'),  mode: "",     rows: statsSortRows(byDays) },
-        combo:   { title: t('statTopCombo'),    unit: t('statTopRegsUnit'),  mode: "gold", desc: t('statTopComboDesc'), rows: comboRows }
+        visits:   { title: t('statTopVisits'),    unit: "",                    mode: "",     rows: statsSortRows(byVisits) },
+        cities:   { title: t('statTopCities'),    unit: "",                    mode: "",     rows: cityRows },
+        regions:  { title: t('statTopRegions'),   unit: t('statTopRegsUnit'),  mode: "",     rows: regionRows },
+        days:     { title: t('statTopDays'),      unit: "",                    mode: "",     rows: statsSortRowsDuration(byDays) },
+        combo:    { title: t('statTopCombo'),     unit: t('statTopRegsUnit'),  mode: "gold", desc: t('statTopComboDesc'), rows: comboRows },
+        cityDays: { title: t('statTopCityDays'),  unit: "",                    mode: "",     rows: cityDaysRows }
     };
 
     return "<div class='stat-grid top-grid'>" +
         statsTopCard("visits") + statsTopCard("cities") + statsTopCard("regions") +
-        statsTopCard("days") + statsTopCard("combo") +
+        statsTopCard("days") + statsTopCard("cityDays") + statsTopCard("combo") +
     "</div>";
 }
 
@@ -483,6 +543,17 @@ function statsBlockTop_HTML() {
 function statsSortRows(map) {
     var arr = [];
     for (var s in map) { arr.push({ name: getCountryName(s) || s, value: map[s] }); }
+    arr.sort(function( a, b ){ return b.value - a.value; });
+    return arr;
+}
+
+//09.15b Same as statsSortRows, but the value is shown as "44 рр, 7 міс, 26 дн" (whole days as the sort/bar value)
+function statsSortRowsDuration(map) {
+    var arr = [];
+    for (var s in map) {
+        var totalDays = Math.round(map[s]);
+        arr.push({ name: getCountryName(s) || s, value: totalDays, label: formatDurationPartsShort(decomposeDays(totalDays)) });
+    }
     arr.sort(function( a, b ){ return b.value - a.value; });
     return arr;
 }
@@ -500,6 +571,9 @@ function statsTopRowsHTML(rows, unit, mode, rank) {
         } else if (r.total !== undefined) {
             valText = r.value + " " + t('of') + " " + r.total;
             bar = "<div class='bar'><span style='width:" + (r.total ? Math.round(r.value / r.total * 100) : 0) + "%'></span></div>";
+        } else if (r.label !== undefined) {
+            valText = r.label;
+            bar = "<div class='bar'><span style='width:" + (max ? Math.round(r.value / max * 100) : 0) + "%'></span></div>";
         } else {
             valText = r.value + (unit ? " " + unit : "");
             bar = "<div class='bar'><span style='width:" + (max ? Math.round(r.value / max * 100) : 0) + "%'></span></div>";

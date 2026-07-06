@@ -198,6 +198,12 @@ function HTML_VisitesPerCountryTale() {
         var regV  = visited ? countryObj[0].getNumberOfVisitedRegions() : 0;
         var cityV = visited ? countryObj[0].getNumberOfVisitedCities()  : 0;
 
+        // ✓ when a residence-type visit exists for this country
+        var isResident = $.grep(residencesSorted, function(r){ return r.country_id == country.short_name; }).length > 0;
+        var residentCell = isResident
+            ? '<span class="cap-yes" title="' + t('setResidentYes') + '">✓</span>'
+            : '<span class="set-miss" title="' + t('setResidentNo') + '">—</span>';
+
         // ✓ only when the capital is in the base AND visited; otherwise — (not visited or not in base)
         var capVisited = (capitalOf[cid] !== undefined && visitedCity[capitalOf[cid]]);
         var capCell = capVisited
@@ -215,6 +221,7 @@ function HTML_VisitesPerCountryTale() {
             '<td class="num">' + capCell + '</td>' +
             '<td class="num">' + frac(regV,  totRegions[cid] || 0) + '</td>' +
             '<td class="num">' + frac(cityV, totCities[cid]  || 0) + '</td>' +
+            '<td class="num">' + residentCell + '</td>' +
             '<td class="num">' + numberCountryVisites + '</td>' +
         '</tr>';
     }
@@ -232,6 +239,7 @@ function HTML_VisitesPerCountryTale() {
                     '<td class="num">' + t('setColCapital') + '</td>' +
                     '<td class="num">' + t('setRegions') + '</td>' +
                     '<td class="num">' + t('setColCities') + '</td>' +
+                    '<td class="num">' + t('setColResident') + '</td>' +
                     '<td class="num">' + t('setColVisits') + '</td>' +
                 '</tr>';
         $.each(byCont[cont.continent_id] || [], function( j, country ){ body += rowFor(country); });

@@ -159,6 +159,17 @@ function formatDurationParts(parts) {
     return out.join(', ');
 }
 
+//02.02e2 Compact form of formatDurationParts: "44 рр, 7 міс, 26 дн" / "44 y, 7 mo, 26 d" — abbreviations don't
+//decline except years, where Ukrainian uses "р" for exactly one year and "рр" for everything else (incl. 0)
+function formatDurationPartsShort(parts) {
+    var out = [];
+    var unit = window.LANG === 'en' ? { m: 'mo', d: 'd' } : { m: 'міс', d: 'дн' };
+    if (parts.years > 0)  { out.push(parts.years + ' ' + (window.LANG === 'en' ? 'y' : (parts.years === 1 ? 'р' : 'рр'))); }
+    if (parts.months > 0) { out.push(parts.months + ' ' + unit.m); }
+    if (parts.days > 0 || out.length === 0) { out.push(parts.days + ' ' + unit.d); }
+    return out.join(', ');
+}
+
 //02.02f Decompose a raw day count into {years, months, days} by walking forward from a fixed epoch —
 //used to sum several residence periods (which may span different, unrelated date ranges) into one duration
 function decomposeDays(totalDays) {

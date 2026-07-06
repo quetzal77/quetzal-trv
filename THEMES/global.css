@@ -179,9 +179,7 @@ div.my_countries span{color:var(--muted); font-weight:400}
 @media (max-width:640px){.mh-heat{grid-template-columns:repeat(6,1fr)}}
 /* Block 6 — top lists (3 + 2 layout, expandable cards) */
 .top-grid{grid-template-columns:repeat(6,1fr)}
-.top-grid > .top-card{grid-column:span 2}                                  /* row 1: three cards */
-.top-grid > .top-card:nth-child(4){grid-column:2 / span 2}                 /* row 2: two cards, */
-.top-grid > .top-card:nth-child(5){grid-column:4 / span 2}                 /* centered (cols 2-3 & 4-5) */
+.top-grid > .top-card{grid-column:span 2}                                  /* 3 cards per row (6 cards = 2 even rows) */
 .top-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px 20px}
 .tc-head{display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:12px}
 .tc-head h4{margin:0; font-size:15px; font-weight:700; color:var(--text)}
@@ -209,9 +207,7 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .stats-modal-list{padding:6px 20px 18px; overflow-y:auto}
 @media (max-width:760px){
   .top-grid{grid-template-columns:1fr}
-  .top-grid > .top-card,
-  .top-grid > .top-card:nth-child(4),
-  .top-grid > .top-card:nth-child(5){grid-column:auto}
+  .top-grid > .top-card{grid-column:auto}
 }
 div.my_countries{
   width:auto; margin:14px 0; padding:14px 16px; text-align:left; font-weight:normal;
