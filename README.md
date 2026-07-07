@@ -25,11 +25,13 @@ in a new tab from the country / location / settings views.
 
 ## Pages
 
-- **Home** — world map (AMmap) with the list of visited countries / visits.
+- **Home** — world map (AMmap) with the list of visited countries / visits / places lived
+  ("Моє життя" — shown for any residence-type stay, see below).
 - **Statistics** — data-driven dashboard (summary, records, donut charts, per-year and
-  trend charts, top lists).
+  trend charts, top lists incl. residence-aware time-spent per country/city).
 - **Stories** — long-form trip reports (`DATA/stories/*.xml`).
-- **Country / Location** — per-entity pages with map, flag/emblem, regions and places.
+- **Country / Location** — per-entity pages with map, flag/emblem, regions and places; a
+  country also gets a "Моє життя" tab + residence-time summary if you lived there.
 - **About** — about page.
 - **Settings** — CRUD UI for the data model (see below).
 
@@ -45,7 +47,7 @@ One JSON file holds all travel data as parallel arrays:
 | `country`      | country       | `country_type_id`, `continent_id` (+ optional `continent_id2`), flag/emblem/map images, optional `city_state` flag |
 | `area`         | region        | (referred to as "region" in code); `active` flag controls whether it shows on the country map |
 | `city`         | city / place  | belongs to an `area`; `capital`, optional `type`, `lat`/`long` (+ optional second pair), `image`, `description` |
-| `visit`        | a trip        | dates + list of `city_id`s; optional `photos`, `story`, and `days` (per-place day allocation) |
+| `visit`        | a trip        | dates + list of `city_id`s; optional `photos`, `story`, and `days` (per-place day allocation); optional `visit_type: "residence"` marks long-term living instead of a trip (single city, `end_date: ""` = ongoing) |
 
 A place is linked to its country only through its region: `city → area → country`.
 
@@ -59,12 +61,14 @@ initial render of the home page. `DATA/stories/*.xml` are the long-form trip rep
 
 ## Settings (CRUD tabs)
 
-`Overview` (KPI cards + per-continent countries table), `Country types`, `Location types`,
-`Continents`, `Countries`, `Regions`, `Locations`, `Visits`, `Stories`. The entity tabs
-share a common modern form pattern: pick-or-add `<select>`, read-only IDs on edit, **Save**
-enabled only after a change, and a dependency guard that blocks deletion / ID change while
-other entities still reference the item. `set_content.js` holds the shared add / update /
-remove logic.
+`Overview` (KPI cards + per-continent countries table, incl. a "Резидент" ✓/— column),
+`Country types`, `Location types`, `Continents`, `Countries`, `Regions`, `Locations`,
+`Visits`, `Stories`. The entity tabs share a common modern form pattern: pick-or-add
+`<select>`, read-only IDs on edit, **Save** enabled only after a change, and a dependency
+guard that blocks deletion / ID change while other entities still reference the item.
+`set_content.js` holds the shared add / update / remove logic. The Visits form has a
+"Резиденс-візит" checkbox that switches a trip into a residence entry and caps it to one
+city while checked.
 
 ## Tech stack
 
@@ -121,7 +125,7 @@ at the bottom of the relevant category; sketch big ideas as sub-bullets.
 - [ ] ...
 
 ### Data / content
-- [ ] Introduce live visit type for cities that user is living in, that will influence on Statistic calculation
+- [ ] ...
 
 ### Technical
 - [ ] Update AMmap library to the latest version

@@ -1,7 +1,7 @@
 # quetzal-trv — Project Brief for Claude
 
 Personal travel portfolio SPA by Oleksiy Slavutskyy. No backend, no build step.
-Current version: **9.3.5** (branch `site_version_9_3`).
+Current version: **9.4.0** (branch `site_version_9_3`).
 
 ---
 
@@ -51,12 +51,14 @@ Seven parallel arrays — no foreign-key enforcement, references are string IDs:
 | Array | Count | Key field | Notes |
 |---|---|---|---|
 | `continent` | 7 | `continent_id` | e.g. `"EU"`, `"AS"` |
-| `country` | 71 | `country_id` | ISO 3166-1 alpha-2 |
-| `area` | 1628 | `region_id` | ISO 3166-2, e.g. `"UA-30"` |
-| `city` | 1165 | `city_id` | lowercase ASCII slug |
-| `visit` | 287 | — | `city[]` = array of city_id strings |
+| `country` | 84 | `country_id` | ISO 3166-1 alpha-2 |
+| `area` | 1856 | `region_id` | ISO 3166-2, e.g. `"UA-30"` |
+| `city` | 1185 | `city_id` | lowercase ASCII slug |
+| `visit` | 296 | — | `city[]` = array of city_id strings; optional `visit_type: "residence"` (see below) |
 | `type` | 22 | `type_id` | location types (lake, island…) |
 | `country_type` | 4 | `country_type_id` | recognised / partially / unrecognised… |
+
+**Residence-type visits** (`visit_type: "residence"`) mark long-term living, not trips — always exactly one `city_id`, `end_date: ""` means still living there. Built into `residencesSorted[]`, kept **out of** `visitsSorted[]` (so trip lists/stats are unaffected), but their city/region/country still land in `citiesVisited`/`regionsVisited`/`countriesVisited` (living somewhere counts as visited). Powers the "Моє життя" tab (world page, and per-country page when that country has any residence) and the residence-aware calculations in statistics (see `trv_statistics.js`). Settings → Visits has a checkbox that caps the city list at one when checked. Add via `/add-visit`-style direct JSON edit — there's no dedicated add-flow skill yet.
 
 **Three-language name convention** (used on every entity):
 - `name` = English
@@ -78,8 +80,9 @@ python -c "p='DATA/globaldb.json';t=open(p,encoding='utf-8').read();import json;
 
 ```js
 data              // parsed globaldb.json object
-visitsSorted[]    // VisitObj[], descending by date; .start_date/.end_date are Date objects
-countriesVisited[]// CountryObj[] — countries that have ≥1 visit
+visitsSorted[]    // VisitObj[], descending by date; .start_date/.end_date are Date objects — trips only
+residencesSorted[]// ResidenceObj[], descending by date — visit_type:"residence" entries only
+countriesVisited[]// CountryObj[] — countries that have ≥1 visit (trip or residence)
 regionsVisited[]  // RegionObj[]
 citiesVisited[]   // CityObj[]
 local[]           // current page context: local[1].type = "world"|"country"|"city"|"settings"…
@@ -99,7 +102,7 @@ Four places must be updated together on every JS/CSS deploy:
 | `SCRIPTS/bcd_services.js` | `tech-tag` version span |
 
 **Bump the patch** (`Z+1`) whenever JS or CSS changes are deployed.  
-**Do not bump** if only `DATA/*.json`, `.claude/`, or `README.md` changed.
+**Do not bump** if only `DATA/*.json`, `.claude/`, `README.md`, or `CLAUDE.md` changed.
 
 Quick replace (Python — safe for UTF-8):
 ```python
@@ -138,9 +141,10 @@ for path in ['SCRIPTS/bcd_onload.js']:
 
 | File | Purpose |
 |---|---|
-| `SCRIPTS/set_overview.js` | Settings overview: KPI cards, data-ops buttons (onload gen, stories gen, validate, PDF/CSV export) |
-| `SCRIPTS/bcd_services.js` | `getVisitDate()`, `getUaMonthName()`, `parseWord()`, `dynamicSort()` |
-| `SCRIPTS/bcd-content.js` | All object constructors + `createArrayOfVisitesAndArrayOfCitiesVisited()` |
+| `SCRIPTS/set_overview.js` | Settings overview: KPI cards, per-continent countries table (incl. "Резидент" column), data-ops buttons (onload gen, stories gen, validate, PDF/CSV export) |
+| `SCRIPTS/bcd_services.js` | `getVisitDate()`, `getUaMonthName()`, `parseWord()`, `dynamicSort()`, `createListOfResidences()`, `dateDiffYMD()`/`decomposeDays()`/`formatDurationParts[Short]()` |
+| `SCRIPTS/bcd-content.js` | All object constructors (`VisitObj`, `ResidenceObj`, `CityObj`…) + `createArrayOfVisitesAndArrayOfCitiesVisited()` |
+| `SCRIPTS/trv_statistics.js` | Stats dashboard; top-lists include residence-aware country/city time-spent (`getTripCountryDayMap()`/`getTripCityDayMap()`, abroad/away-time deduction) |
 | `THEMES/global.css` | All custom CSS — add new utility classes here |
 
 ---
@@ -151,7 +155,7 @@ for path in ['SCRIPTS/bcd_onload.js']:
 |---|---|
 | `/add-visit` | User visited somewhere — add city + visit entry to globaldb.json |
 | `/add-country` | Country not yet in DB — add continent/country/regions |
-| `/check-data` | Run structural integrity check on globaldb.json |
+| `/check-data` | Run structural integrity check on globaldb.json (incl. `end_date` before `start_date`) |
 | `/finish-session` | End of work — bump version, commit, push |
 
 ---
