@@ -85,6 +85,13 @@ for v in visits:
     for fld in ("start_date", "end_date"):
         if not re.match(r"^\d{2}\.\d{2}\.\d{4}$", str(v.get(fld, ""))):
             warn(f"visit {v.get('start_date')!r}: {fld} {v.get(fld)!r} not DD.MM.YYYY")
+    sd_str, ed_str = str(v.get("start_date", "")), str(v.get("end_date", ""))
+    if re.match(r"^\d{2}\.\d{2}\.\d{4}$", sd_str) and re.match(r"^\d{2}\.\d{2}\.\d{4}$", ed_str):
+        sd_parts, ed_parts = sd_str.split("."), ed_str.split(".")
+        sd_key = (sd_parts[2], sd_parts[1], sd_parts[0])
+        ed_key = (ed_parts[2], ed_parts[1], ed_parts[0])
+        if ed_key < sd_key:
+            err(f"visit {sd_str!r}: end_date {ed_str!r} is before start_date {sd_str!r}")
 
 # --- completeness ---
 for c in cities:
