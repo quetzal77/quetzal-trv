@@ -160,13 +160,20 @@ function formatDurationParts(parts) {
 }
 
 //02.02e2 Compact form of formatDurationParts: "44 рр, 7 міс, 26 дн" / "44 y, 7 mo, 26 d" — abbreviations don't
-//decline except years, where Ukrainian uses "р" for exactly one year and "рр" for everything else (incl. 0)
-function formatDurationPartsShort(parts) {
+//decline except years, where Ukrainian uses "р" for exactly one year and "рр" for everything else (incl. 0).
+//fracDays (optional) is a sub-day remainder (e.g. 0.3) added to the days figure and shown after the decimal
+//point — needed for top-lists where a stop shorter than a day would otherwise round down to "0 днів".
+function formatDurationPartsShort(parts, fracDays) {
+    fracDays = fracDays || 0;
     var out = [];
     var unit = window.LANG === 'en' ? { m: 'mo', d: 'd' } : { m: 'міс', d: 'дн' };
     if (parts.years > 0)  { out.push(parts.years + ' ' + (window.LANG === 'en' ? 'y' : (parts.years === 1 ? 'р' : 'рр'))); }
     if (parts.months > 0) { out.push(parts.months + ' ' + unit.m); }
-    if (parts.days > 0 || out.length === 0) { out.push(parts.days + ' ' + unit.d); }
+    var daysVal = parts.days + fracDays;
+    var daysStr = fracDays !== 0
+        ? (window.LANG === 'en' ? daysVal.toFixed(1) : daysVal.toFixed(1).replace('.', ','))
+        : String(parts.days);
+    if (daysVal > 0 || out.length === 0) { out.push(daysStr + ' ' + unit.d); }
     return out.join(', ');
 }
 
@@ -583,7 +590,7 @@ function HTML_CreatorOfAboutPage () {
                 "<a class='contact-card' href='https://www.linkedin.com/in/oleksiyslavutskyy/' target='_blank' rel='noopener'><span class='contact-ico'>in</span><span class='contact-meta'><span class='contact-label'>LinkedIn</span><span class='contact-val'>oleksiyslavutskyy</span></span></a>" +
             "</div>" +
             "<footer class='about-tech'>" +
-                "<span class='tech-tag'>v9.4.0</span>" +
+                "<span class='tech-tag'>v9.4.1</span>" +
                 "<span class='tech-tag'>HTML</span>" +
                 "<span class='tech-tag'>CSS</span>" +
                 "<span class='tech-tag'>JavaScript</span>" +

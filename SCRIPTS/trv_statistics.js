@@ -333,13 +333,19 @@ function statsBlockTrends_HTML() {
         var shorts = newByYear[yr];
         series2.push({ year: yr, value: shorts.length });
         var names = $.map(shorts, function( sh ){ return getCountryName(sh) || sh; });
+        names.sort(function( a, b ){ return a.localeCompare(b, window.LANG === 'en' ? 'en' : 'uk'); });
         tips2.push(yr + ": " + names.join(", "));
     });
 
     //Months
     var monthsData = $.map(MONTHS, function( nm, idx ){ return { name: nm, value: byMonth[idx] || 0 }; });
 
-    var tips1 = $.map(series1, function( s ){ return s.year + ": " + setCountriesNumberWithCorrectEnd(s.value) + " " + t('statVisited'); });
+    var tips1 = $.map(series1, function( s ){
+        var names = [];
+        for (var cs in byYearC[s.year]) { names.push(getCountryName(cs) || cs); }
+        names.sort(function( a, b ){ return a.localeCompare(b, window.LANG === 'en' ? 'en' : 'uk'); });
+        return s.year + ": " + setCountriesNumberWithCorrectEnd(s.value) + " " + t('statVisited') + " (" + names.join(", ") + ")";
+    });
 
     return statsLineChart_HTML(t('statCountriesPerYear'), series1, "#2563eb", tips1) +
         statsLineChart_HTML(t('statNewPerYear'), series2, "#22c55e", tips2) +
@@ -506,8 +512,10 @@ function statsBlockTop_HTML() {
     //Top cities by time spent (full, sorted) — includes residence-type visits, unlike the country/trip cards above
     var cityDaysRows = [];
     for (var cdid in byCityDays) {
-        var cdTotal = Math.round(byCityDays[cdid]);
-        cityDaysRows.push({ name: getLocationName(cdid) || cdid, value: cdTotal, label: formatDurationPartsShort(decomposeDays(cdTotal)) });
+        var cdRaw = byCityDays[cdid];
+        var cdInt = Math.floor(cdRaw);
+        var cdFrac = Math.round((cdRaw - cdInt) * 10) / 10;
+        cityDaysRows.push({ name: getLocationName(cdid) || cdid, value: cdRaw, label: formatDurationPartsShort(decomposeDays(cdInt), cdFrac) });
     }
     cityDaysRows.sort(function( a, b ){ return b.value - a.value; });
 
@@ -551,8 +559,10 @@ function statsSortRows(map) {
 function statsSortRowsDuration(map) {
     var arr = [];
     for (var s in map) {
-        var totalDays = Math.round(map[s]);
-        arr.push({ name: getCountryName(s) || s, value: totalDays, label: formatDurationPartsShort(decomposeDays(totalDays)) });
+        var raw = map[s];
+        var intDays = Math.floor(raw);
+        var frac = Math.round((raw - intDays) * 10) / 10;
+        arr.push({ name: getCountryName(s) || s, value: raw, label: formatDurationPartsShort(decomposeDays(intDays), frac) });
     }
     arr.sort(function( a, b ){ return b.value - a.value; });
     return arr;
