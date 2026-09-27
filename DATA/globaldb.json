@@ -14475,7 +14475,7 @@
     {
       "name": "Minsk",
       "name_nt": "Мінск",
-      "name_ua": "Минск",
+      "name_ua": "Мінськ",
       "region_id": "BY-HM",
       "capital": "true",
       "city_id": "minsk",
@@ -17845,7 +17845,7 @@
     {
       "name": "Krakow",
       "name_nt": "Kraków",
-      "name_ua": "Краков",
+      "name_ua": "Краків",
       "region_id": "PL-MA",
       "city_id": "krakow",
       "lat": "50.056257",
@@ -22714,7 +22714,7 @@
     {
       "name": "Milan",
       "name_nt": "Milano",
-      "name_ua": "Милан",
+      "name_ua": "Мілан",
       "region_id": "IT-25",
       "city_id": "milan",
       "lat": "45.466249",
@@ -22736,7 +22736,7 @@
     {
       "name": "Trieste",
       "name_nt": "Trieste",
-      "name_ua": "Триест",
+      "name_ua": "Тріест",
       "region_id": "IT-36",
       "city_id": "trieste",
       "lat": "45.643923",
@@ -22758,7 +22758,7 @@
     {
       "name": "Treviso",
       "name_nt": "Treviso",
-      "name_ua": "Тревизо",
+      "name_ua": "Тревізо",
       "region_id": "IT-34",
       "city_id": "treviso",
       "lat": "45.6654791",
@@ -23289,7 +23289,7 @@
     {
       "name": "Liege",
       "name_nt": "Liège",
-      "name_ua": "Льеж",
+      "name_ua": "Льєж",
       "region_id": "BE-WLG",
       "city_id": "liege",
       "lat": "50.6315247",
@@ -24028,7 +24028,7 @@
     {
       "name": "Nicosia",
       "name_nt": "Λευκωσία",
-      "name_ua": "Никосия",
+      "name_ua": "Нікосія",
       "capital": "true",
       "region_id": "CY-01",
       "city_id": "nicosia",
@@ -25476,7 +25476,7 @@
     {
       "name": "Sarajevo",
       "name_nt": "Sarajevo",
-      "name_ua": "Сараево",
+      "name_ua": "Сараєво",
       "capital": "true",
       "region_id": "BA-09",
       "city_id": "sarajevo",
@@ -25714,7 +25714,7 @@
     {
       "name": "Sofia",
       "name_nt": "София",
-      "name_ua": "София",
+      "name_ua": "Софія",
       "capital": "true",
       "region_id": "BG-23",
       "city_id": "sofia",
