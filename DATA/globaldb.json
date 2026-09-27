@@ -27174,6 +27174,11 @@
   ],
   "visit": [
     {
+      "start_date": "26.09.2026",
+      "end_date": "26.09.2026",
+      "city": ["munich"]
+    },
+    {
       "start_date": "22.08.2026",
       "end_date": "24.08.2026",
       "city": [
