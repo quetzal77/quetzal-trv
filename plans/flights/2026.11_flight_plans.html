@@ -1,0 +1,398 @@
+<!doctype html>
+<html data-theme="light" style="color-scheme: light;"><head><!-- frame-runtime --><!-- /frame-runtime --><meta charset="utf8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Відпустка Відень Бангкок</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap">
+<style>
+/* Layout: одна колонка 760px, умови зверху, далі варіант перельоту, візи й наступні кроки */
+:root {
+  --bg: #f3f6f7;
+  --surface: #ffffff;
+  --fg: #14282e;
+  --muted: #5a6e74;
+  --line: #d6e0e3;
+  --accent: #0b6e7a;
+  --accent-soft: #dcf0f2;
+  --warn: #9a5b00;
+  --warn-soft: #fff1d6;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1b1f; --surface: #162429; --fg: #e4eef0; --muted: #94a9af; --line: #29393e;
+    --accent: #5cc4d0; --accent-soft: #17383d; --warn: #f0b955; --warn-soft: #3a2d12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1b1f; --surface: #162429; --fg: #e4eef0; --muted: #94a9af; --line: #29393e;
+  --accent: #5cc4d0; --accent-soft: #17383d; --warn: #f0b955; --warn-soft: #3a2d12;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.55;
+  padding-block: 32px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(1.9rem, 6vw, 2.6rem); }
+h2 { font-size: 1.4rem; }
+p { margin: 0; }
+.lead { color: var(--muted); margin-top: 8px; max-width: 60ch; }
+.label { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; min-width: 0; }
+dl { margin: 0; display: grid; grid-template-columns: minmax(120px, 190px) 1fr; gap: 10px 18px; }
+dt { color: var(--muted); }
+dd { margin: 0; font-weight: 500; }
+@media (max-width: 520px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+.route { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.route .code { font-family: var(--font-mono); font-size: 1.5rem; }
+.route .arrow { color: var(--accent); font-family: var(--font-mono); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.fare { border: 1px solid var(--line); border-radius: 6px; padding: 16px; background: var(--surface); display: flex; flex-direction: column; gap: 4px; }
+.fare.best { border-color: var(--accent); background: var(--accent-soft); }
+.fare .dates { font-family: var(--font-mono); font-size: .95rem; }
+.fare .price { font-family: var(--font-display); font-size: 2rem; line-height: 1.1; }
+.fare .meta { color: var(--muted); font-size: .9rem; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 420px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+th { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num { font-family: var(--font-mono); }
+.note { background: var(--warn-soft); border-radius: 6px; padding: 14px 16px; color: var(--fg); }
+.note b { color: var(--warn); }
+ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 8px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { color: var(--muted); font-size: .85rem; }
+#dl-btn { margin-top: 14px; font: inherit; font-weight: 600; color: #fff; background: var(--accent); border: 0; border-radius: 6px; padding: 10px 16px; cursor: pointer; }
+#dl-btn:hover { filter: brightness(1.1); }
+#dl-btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+.dl-msg { margin-top: 8px; color: var(--muted); font-size: .9rem; }
+</style>
+
+<main>
+  <header>
+    <div class="label">План відпустки · станом на 20.10.2026</div>
+    <h1>Перельоти з Відня до Бангкока</h1>
+    
+    
+  </header>
+
+  <section>
+    <h2>Саммарі</h2>
+    <div class="cards">
+      <div class="fare best">
+        <span class="label">Найдешевше</span>
+        <span class="dates">Мілан → Сал, Кабо-Верде</span>
+        <span class="price">від €187</span>
+        <span class="meta">01.12 – 15.12.2026, 14 ночей. Прямі рейси в обидва боки. Для чотирьох ≈ €750. Віза для українців потребує перевірки.</span>
+      </div>
+      <div class="fare best">
+        <span class="label">Найпростіше</span>
+        <span class="dates">Відень → Бангкок, Air Arabia</span>
+        <span class="price">від €501</span>
+        <span class="meta">19.11 – 30.11.2026, 11 днів. Одне бронювання, пересадка в Шарджі. Для чотирьох ≈ €2 000. Безвіз до 60 днів.</span>
+      </div>
+      <div class="fare best">
+        <span class="label">В'єтнам за бюджет</span>
+        <span class="dates">Відень → Ханой, Kiwi</span>
+        <span class="price">від €494</span>
+        <span class="meta">24.11 – 05.12.2026, 11 ночей. Пересадки в Сінгапурі та Пекіні, потрібна е-віза. Для чотирьох ≈ €1 980.</span>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table style="min-width: 760px;">
+        <thead><tr><th>Напрямок</th><th>Дати</th><th>Тривалість</th><th>На особу</th><th>На 4 особи</th><th>Особливості</th></tr></thead>
+        <tbody>
+          <tr><td>Мілан – Сал (Кабо-Верде)</td><td>01.12 – 15.12.2026</td><td>14 ночей</td><td class="num">€187</td><td class="num">≈ €750</td><td>Прямі рейси</td></tr>
+          <tr><td>Мілан – Сал (Кабо-Верде)</td><td>10.11 – 21.11.2026</td><td>11 ночей</td><td class="num">€206</td><td class="num">≈ €825</td><td>Назад через Манчестер, self-transfer</td></tr>
+          <tr><td>Відень – Ханой, Kiwi</td><td>24.11 – 05.12.2026</td><td>11 ночей</td><td class="num">€494</td><td class="num">≈ €1 980</td><td>Сінгапур і Пекін, е-віза</td></tr>
+          <tr><td>Відень – Сінгапур – Пенанг, Scoot</td><td>22.11 – 01.12.2026</td><td>10 днів</td><td class="num">≈ €643</td><td class="num">≈ €2 570</td><td>Окремі квитки, багаж платний</td></tr>
+          <tr><td>Відень – Бангкок, Air Arabia</td><td>07.04 – 17.04.2027</td><td>10 днів</td><td class="num">€500</td><td class="num">≈ €2 000</td><td>Пересадка в Шарджі</td></tr>
+          <tr><td>Відень – Бангкок, Air Arabia</td><td>19.11 – 30.11.2026</td><td>11 днів</td><td class="num">€501</td><td class="num">≈ €2 005</td><td>Пересадка в Шарджі</td></tr>
+          <tr><td>Відень – Пхукет, Air Arabia</td><td>16.11 – 24.11.2026</td><td>8 днів</td><td class="num">€518</td><td class="num">≈ €2 070</td><td>Пересадка в Шарджі</td></tr>
+          <tr><td>Мілан (BGY) – Коломбо, Air Arabia</td><td>25.11 – 07.12.2026</td><td>12 днів</td><td class="num">€523</td><td class="num">≈ €2 090</td><td>Шрі-Ланка, потрібен eTA</td></tr>
+          <tr><td>Відень – Коломбо, Air Arabia</td><td>02.12 – 14.12.2026</td><td>12 днів</td><td class="num">€548</td><td class="num">≈ €2 190</td><td>Шрі-Ланка, потрібен eTA</td></tr>
+          <tr><td>Відень – Ханой, Etihad</td><td>18.11 – 25.11.2026</td><td>7 днів</td><td class="num">€653</td><td class="num">≈ €2 610</td><td>Пересадка в Абу-Дабі</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу туди й назад, економ-клас, без багажу. Їх треба перевірити перед бронюванням.</p>
+  </section>
+
+  <section>
+    <h2>Базові умови</h2>
+    <div class="panel">
+      <dl>
+        <dt>Домашнє місто</dt><dd>Загреб, Хорватія</dd>
+        <dt>Склад</dt><dd>2 дорослих, 2 дітей (10 і 13 років), 4 пасажири</dd>
+        <dt>Громадянство</dt><dd>Україна</dd>
+        <dt>Напрямок</dt><dd>Поза Європою. Розглядаємо Домінікану, Шрі-Ланку, Мальдіви, Таїланд, В'єтнам</dd>
+        <dt>Аеропорти вильоту</dt><dd>Відень, Будапешт, Любляна, Мілан, Загреб</dd>
+        <dt>Бюджет перельоту</dt><dd>близько €500 на особу туди й назад (≈ €2000 на родину)</dd>
+        <dt>Тривалість</dt><dd>10–12 днів</dd>
+        <dt>Старт</dt><dd>Можемо вилетіти у будь-який момент</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2>Варіант: Відень – Бангкок, Air Arabia</h2>
+    <div class="route">
+      <span class="code">VIE</span><span class="arrow">⇄</span><span class="code">BKK</span>
+    </div>
+
+    <div class="cards">
+      <div class="fare best">
+        <span class="label">Найближчий варіант</span>
+        <span class="dates">19.11.2026 – 30.11.2026</span>
+        <span class="price">від €501</span>
+        <span class="meta">11 днів, ціна за одну особу</span>
+      </div>
+      <div class="fare">
+        <span class="label">Весна</span>
+        <span class="dates">07.04.2027 – 17.04.2027</span>
+        <span class="price">від €500</span>
+        <span class="meta">10 днів, ціна за одну особу</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Варіант: Відень – Сінгапур, Scoot</h2>
+    <div class="route">
+      <span class="code">VIE</span><span class="arrow">⇄</span><span class="code">SIN</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Відень → Сінгапур</th><th>Ціна від</th></tr></thead>
+        <tbody>
+          <tr><td>22.11.2026</td><td class="num">€231.97</td></tr>
+          <tr><td>15.11, 19.11, 21.11.2026</td><td class="num">€261.97</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Сінгапур → Відень</th><th>Ціна від</th></tr></thead>
+        <tbody>
+          <tr><td>21.11, 24.11, 26.11.2026</td><td class="num">€261.63</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Варіант: Сінгапур – Таїланд, Scoot</h2>
+    <div class="route">
+      <span class="code">SIN</span><span class="arrow">→</span><span class="code">HKT / BKK</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Виліт з Відня</th><th>Виліт із Сінгапура</th><th>Пхукет</th><th>Бангкок</th></tr></thead>
+        <tbody>
+          <tr><td>22.11</td><td>25.11</td><td class="num">S$97.49 ≈ €66</td><td class="num">S$110.49 ≈ €75</td></tr>
+          <tr><td>22.11</td><td>26.11</td><td class="num">S$127.49 ≈ €87</td><td class="num">S$145.49 ≈ €99</td></tr>
+          <tr><td>21.11</td><td>24.11</td><td class="num">S$97.49 ≈ €66</td><td class="num">S$110.49 ≈ €75</td></tr>
+          <tr><td>21.11</td><td>25.11</td><td class="num">S$97.49 ≈ €66</td><td class="num">S$110.49 ≈ €75</td></tr>
+          <tr><td>19.11</td><td>22.11</td><td class="num">S$114.49 ≈ €78</td><td class="num">S$125.49 ≈ €85</td></tr>
+          <tr><td>19.11</td><td>23.11</td><td class="num">S$103.49 ≈ €70</td><td class="num">S$110.49 ≈ €75</td></tr>
+          <tr><td>15.11</td><td>18.11</td><td class="num">S$97.49 ≈ €66</td><td class="num">S$145.49 ≈ €99</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу в один бік. Курс для перерахунку 1 SGD ≈ €0.68 (орієнтовно).</p>
+  </section>
+
+  <section>
+    <h2>Варіант: Шрі-Ланка, Air Arabia</h2>
+    <div class="route">
+      <span class="code">VIE / BGY</span><span class="arrow">⇄</span><span class="code">CMB</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Звідки</th><th>Дати</th><th>Тривалість</th><th>Ціна від</th></tr></thead>
+        <tbody>
+          <tr><td>Мілан (BGY)</td><td>25.11 – 07.12.2026</td><td>12 днів</td><td class="num">€523</td></tr>
+          <tr><td>Мілан (BGY)</td><td>23.11 – 07.12.2026</td><td>14 днів</td><td class="num">€539</td></tr>
+          <tr><td>Мілан (BGY)</td><td>05.12 – 19.12.2026</td><td>14 днів</td><td class="num">€530</td></tr>
+          <tr><td>Відень</td><td>02.12 – 14.12.2026</td><td>12 днів</td><td class="num">€548</td></tr>
+          <tr><td>Відень</td><td>28.11 – 07.12.2026</td><td>9 днів</td><td class="num">€551</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу туди й назад, економ-клас.</p>
+  </section>
+
+  <section>
+    <h2>Варіант: Відень – Ханой, Etihad</h2>
+    <div class="route">
+      <span class="code">VIE</span><span class="arrow">⇄</span><span class="code">HAN</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Дати</th><th>Тривалість</th><th>Ціна від</th></tr></thead>
+        <tbody>
+          <tr><td>18.11 – 25.11.2026</td><td>7 днів</td><td class="num">€653</td></tr>
+          <tr><td>24.11 – 29.11.2026</td><td>5 днів</td><td class="num">€653</td></tr>
+          <tr><td>25.11 – 30.11.2026</td><td>5 днів</td><td class="num">€653</td></tr>
+          <tr><td>18.11 – 02.12.2026</td><td>14 днів</td><td class="num">€653</td></tr>
+          <tr><td>14.11 – 28.11.2026</td><td>14 днів</td><td class="num">€674</td></tr>
+          <tr><td>09.11 – 23.11.2026</td><td>14 днів</td><td class="num">€674</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу туди й назад, економ-клас, пересадка в Абу-Дабі. Для В'єтнаму українцям потрібна е-віза.</p>
+  </section>
+
+  <section>
+    <h2>Варіант: Відень – Ханой, Kiwi</h2>
+    <div class="route">
+      <span class="code">VIE</span><span class="arrow">⇄</span><span class="code">HAN</span>
+    </div>
+
+    <div class="cards">
+      <div class="fare best">
+        <span class="label">24.11 – 05.12.2026</span>
+        <span class="price">від €494</span>
+        <span class="meta">11 ночей, ціна за одну особу</span>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Напрямок</th><th>Виліт</th><th>Прильот</th><th>Час у дорозі</th><th>Пересадка</th></tr></thead>
+        <tbody>
+          <tr><td>Відень → Ханой, 24.11</td><td class="num">10:00</td><td class="num">08:35 (+1 день)</td><td>16 год 35 хв</td><td>Сінгапур</td></tr>
+          <tr><td>Ханой → Відень, 05.12</td><td class="num">04:30</td><td class="num">16:20</td><td>17 год 50 хв</td><td>Пекін</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Дати</th><th>Ночей</th><th>Ціна від</th></tr></thead>
+        <tbody>
+          <tr><td>24.11 – 05.12.2026</td><td>11</td><td class="num">€494</td></tr>
+          <tr><td>22.11 – 03.12.2026</td><td>11</td><td class="num">€521</td></tr>
+          <tr><td>23.11 – 04.12.2026</td><td>11</td><td class="num">€551</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Транзит через Китай (Пекін) для українців</h2>
+    <div class="panel">
+      <ul>
+        <li><b>Україна</b> є у списку країн для безвізового транзиту до 240 годин (10 днів).</li>
+        <li><b>Умови:</b> звичайний паспорт і квиток далі в третю країну з підтвердженим місцем і датою вильоту.</li>
+        <li><b>До 24 годин у транзитній зоні</b> аеропорту без прикордонного контролю. Паспорт чинний не менше 3 місяців.</li>
+        <li><b>Вихід у місто</b> потребує окремого дозволу на тимчасовий в'їзд.</li>
+        <li><b>Перевірити перед покупкою:</b> який саме аеропорт Пекіна (PEK чи PKX), чи є він у переліку пунктів пропуску, тривалість пересадки й чи видають багаж наскрізно до Відня.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Варіант: Мілан – Сал (Кабо-Верде), Kiwi</h2>
+    <div class="route">
+      <span class="code">MXP</span><span class="arrow">⇄</span><span class="code">SID</span>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Дати</th><th>Ночей</th><th>Ціна від</th><th>Рейси</th></tr></thead>
+        <tbody>
+          <tr><td>10.11 – 21.11.2026</td><td>11</td><td class="num">€206</td><td>Туди прямий, назад через Манчестер (self-transfer)</td></tr>
+          <tr><td>11.11 – 22.11.2026</td><td>11</td><td class="num">€275</td><td>Назад із пересадкою</td></tr>
+          <tr><td>09.11 – 20.11.2026</td><td>11</td><td class="num">€352</td><td>Назад із пересадкою</td></tr>
+          <tr><td>10.11 – 26.11.2026</td><td>16</td><td class="num">€174</td><td>Туди прямий, назад через Брістоль (self-transfer)</td></tr>
+          <tr><td>03.11 – 26.11.2026</td><td>23</td><td class="num">€187</td><td>Туди прямий, назад через Брістоль (self-transfer)</td></tr>
+          <tr><td>01.12 – 15.12.2026</td><td>14</td><td class="num">€187</td><td>Прямі в обидва боки</td></tr>
+          <tr><td>01.12 – 17.12.2026</td><td>16</td><td class="num">€187</td><td>Прямі в обидва боки</td></tr>
+          <tr><td>30.11 – 11.12.2026</td><td>11</td><td class="num">€233</td><td>Назад із пересадкою</td></tr>
+          <tr><td>01.12 – 12.12.2026</td><td>11</td><td class="num">€241</td><td>Туди прямий, назад через Манчестер (self-transfer)</td></tr>
+          <tr><td>02.12 – 13.12.2026</td><td>11</td><td class="num">€285</td><td>Назад із пересадкою</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Напрямок</th><th>Виліт</th><th>Прильот</th><th>Час у дорозі</th></tr></thead>
+        <tbody>
+          <tr><td>Мілан → Сал, 01.12</td><td class="num">11:00</td><td class="num">15:10</td><td>6 год 10 хв, прямий</td></tr>
+          <tr><td>Мілан → Сал, 10.11</td><td class="num">11:00</td><td class="num">15:10</td><td>6 год 10 хв, прямий</td></tr>
+          <tr><td>Сал → Мілан, 21.11</td><td class="num">18:40</td><td class="num">09:05 (+1 день)</td><td>12 год 25 хв, пересадка в Манчестері</td></tr>
+          <tr><td>Сал → Мілан, 15.12</td><td class="num">16:00</td><td class="num">23:45</td><td>5 год 45 хв, прямий</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <ul>
+        <li><b>Self-transfer:</b> окремі квитки, багаж забираєте й реєструєте самі, за пропущену пересадку відповідаєте ви.</li>
+        <li><b>EASE:</b> усі пасажири, що прилітають літаком, заповнюють онлайн-форму й сплачують аеропортовий збір, приблизно 3 400 ескудо.</li>
+        <li><b>Віза для українців:</b> джерела розходяться (віза по прибутті чи е-віза). Уточнити в посольстві Кабо-Верде перед покупкою.</li>
+      </ul>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу туди й назад, економ-клас.</p>
+  </section>
+
+  <section>
+    <h2>Варіант: Відень – Сінгапур – Пенанг, Scoot</h2>
+    <div class="route">
+      <span class="code">VIE</span><span class="arrow">→</span><span class="code">SIN</span><span class="arrow">→</span><span class="code">PEN</span><span class="arrow">→</span><span class="code">SIN</span><span class="arrow">→</span><span class="code">VIE</span>
+    </div>
+
+    <div class="cards">
+      <div class="fare best">
+        <span class="label">Разом на одну особу</span>
+        <span class="price">≈ €643</span>
+        <span class="meta">На чотирьох ≈ €2 570, без багажу</span>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Ділянка</th><th>Дати</th><th>Ціна</th></tr></thead>
+        <tbody>
+          <tr><td>Відень → Сінгапур</td><td>22.11.2026</td><td class="num">€231.97</td></tr>
+          <tr><td>Сінгапур → Пенанг</td><td>22 – 26.11.2026</td><td class="num">S$104.20 ≈ €71</td></tr>
+          <tr><td>Пенанг → Сінгапур</td><td>30.11, 02.12, 03.12, 04.12.2026</td><td class="num">MYR 219 ≈ €45</td></tr>
+          <tr><td>Сінгапур → Відень</td><td>01.12, 03.12, 05.12.2026</td><td class="num">€294.63</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Варіант</th><th>Виліт з Відня</th><th>Сінгапур</th><th>Пенанг</th><th>Повернення</th><th>Днів</th></tr></thead>
+        <tbody>
+          <tr><td>A</td><td>22.11</td><td>23.11 – 25.11</td><td>25.11 – 30.11</td><td>SIN → VIE 01.12</td><td>10</td></tr>
+          <tr><td>B</td><td>22.11</td><td>23.11 – 25.11, ніч 02.12</td><td>25.11 – 02.12</td><td>SIN → VIE 03.12</td><td>12</td></tr>
+          <tr><td>C</td><td>22.11</td><td>23.11 – 25.11, ніч 04.12</td><td>25.11 – 04.12</td><td>SIN → VIE 05.12</td><td>14</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="meta" style="color: var(--muted); font-size: .85rem;">Ціни за одну особу, економ-клас, у євро (S$ і MYR перераховано орієнтовно). Дні з MYR 299 (29.11 і 01.12) для Пенанг → Сінгапур дорожчі. Багаж у Scoot платний окремо. Візи для Малайзії та Сінгапуру треба перевірити.</p>
+  </section>
+</main>
+
+
+
+</body></html>

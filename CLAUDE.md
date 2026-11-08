@@ -156,6 +156,7 @@ for path in ['SCRIPTS/bcd_onload.js']:
 | `/add-visit` | User visited somewhere — add city + visit entry to globaldb.json |
 | `/add-country` | Country not yet in DB — add continent/country/regions |
 | `/check-data` | Run structural integrity check on globaldb.json (incl. `end_date` before `start_date`) |
+| `/find-flights` | Search flights (Google Flights via Chrome) for chosen dates/destinations/origins → HTML report in `plans/flights/` |
 | `/finish-session` | End of work — bump version, commit, push |
 
 ---
