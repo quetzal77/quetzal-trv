@@ -11,7 +11,7 @@ description: >
 # find-flights
 
 Interactive flight search: confirm conditions -> search Google Flights -> HTML report.
-Reference output (the format to follow): `plans/flights/2026.12_christmas_flights.html`.
+Reference output (the format to follow): `plans/flights/2026.12_christmas_flights_open_return.html`.
 Earlier plan for style/logic: `plans/flights/2026.11_flight_plans.html`.
 
 ## 1. Confirm start conditions — mandatory, one item at a time
@@ -91,8 +91,8 @@ Notes:
 
 ## 3. Build the HTML report
 
-File: `plans/flights/<YYYY>.<MM>_<slug>_flights.html` (year.month of the **travel** date, slug from the trip, e.g. `2026.12_christmas_flights.html`). Do not overwrite an existing file — add a suffix.
-Single self-contained file: inline CSS, light/dark via `prefers-color-scheme`, no external fonts or scripts, readable on a phone (tables in `.tablewrap` with `overflow-x:auto`). Copy the CSS from `2026.12_christmas_flights.html`.
+File: `plans/flights/<YYYY>.<MM>_<slug>_flights.html` (year.month of the **travel** date, slug from the trip, e.g. `2026.12_christmas_flights_open_return.html`). Do not overwrite an existing file — add a suffix.
+Single self-contained file: inline CSS, light/dark via `prefers-color-scheme`, no external fonts or scripts, readable on a phone (tables in `.tablewrap` with `overflow-x:auto`). Copy the CSS from `2026.12_christmas_flights_open_return.html`.
 Language: Ukrainian. Date format DD.MM.YYYY, currency EUR, "год"/"хв" for durations.
 
 Sections, in this order:
