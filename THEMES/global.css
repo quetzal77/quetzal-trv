@@ -205,6 +205,21 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .stats-modal-close{flex:none; width:32px; height:32px; border:1px solid var(--border); background:var(--surface-2); border-radius:8px; font-size:22px; line-height:1; color:var(--muted); cursor:pointer}
 .stats-modal-close:hover{color:var(--text); border-color:var(--muted)}
 .stats-modal-list{padding:6px 20px 18px; overflow-y:auto}
+/* Plans page (admin only): iframe with plans/index.html */
+.plans-page{display:flex; flex-direction:column; gap:12px; margin:8px 0 24px}
+.plans-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.plans-title{margin:0; font-size:22px; font-weight:700; color:var(--text)}
+.plans-open{color:var(--accent); font-size:14px; text-decoration:none}
+.plans-open:hover{text-decoration:underline}
+.plans-frame{width:100%; height:calc(100vh - 190px); min-height:520px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface)}
+/* Login dialog (reuses the stats-modal shell) */
+.auth-box{max-width:360px}
+.auth-body{padding:14px 20px 20px; display:flex; flex-direction:column; gap:6px}
+.auth-body label{font-size:13px; color:var(--muted); margin:6px 0 0; font-weight:600}
+.auth-input{width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; background:var(--surface-2); color:var(--text); font-size:15px}
+.auth-input:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent)}
+.auth-submit{margin-top:12px; padding:10px 14px; border:0; border-radius:8px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer}
+.auth-submit:hover{filter:brightness(1.1)}
 @media (max-width:760px){
   .top-grid{grid-template-columns:1fr}
   .top-grid > .top-card{grid-column:auto}

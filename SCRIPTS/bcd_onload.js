@@ -6,7 +6,7 @@
     var local; // Store variable that describe which country have to be opened and drawn on a map
     window.skipPushState = true; // when true, the next page creator re-renders WITHOUT pushing history (initial load + Back/Forward)
     window.LANG = localStorage.getItem('lang') || 'uk';
-    window.APP_V = '9.4.1';
+    window.APP_V = '9.4.2';
     window.entityName = function(entity) {
         if (!entity) { return ''; }
         return (window.LANG === 'en') ? (entity.name || entity.name_ua || '') : (entity.name_ua || entity.name || '');
@@ -59,6 +59,7 @@
         else if (params.get("storyId")) { getStoryPage(params.get("storyId")); }
         else if (params.get("page") === "about")    { HTML_CreatorOfAboutPage(); }
         else if (params.get("page") === "statistics") { getStatisticsPage(); }
+        else if (params.get("page") === "plans")    { getPlansPage(); }
         else if (params.get("page") === "settings") { getSettingsOverviewPage(); }
         else { createWorldPage_HTML(); getNumberOfLocation(); }
     };
@@ -86,12 +87,13 @@
         // Navbar links
         el = q('#navHome a');        if (el) { el.textContent = t('home'); }
         el = q('#navStats a');       if (el) { el.textContent = t('statistics'); }
+        el = q('#navPlans a');       if (el) { el.textContent = t('plans'); }
         el = q('#navStories > a');   if (el) { el.innerHTML = t('stories') + ' <span class="caret"></span>'; }
         el = q('.navbar-brand .brand-text'); if (el) { el.textContent = t('brandName'); }
         el = document.getElementById('navSearch'); if (el) { el.placeholder = t('searchPlaceholder'); }
         el = q('#navSettings a');    if (el) { el.setAttribute('title', t('settings')); el.setAttribute('aria-label', t('settings')); }
         // Footer links
-        var footerKeys = ['home', 'statistics', 'settings', 'about'];
+        var footerKeys = ['home', 'statistics', 'plans', 'settings', 'about'];
         var links = document.querySelectorAll('.footer-links a');
         for (var i = 0; i < links.length; i++) { if (footerKeys[i]) { links[i].textContent = t(footerKeys[i]); } }
         // Back to top
@@ -138,55 +140,71 @@
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
+    function getPlansPage(){
+        //Create plans page (admin only)
+        if (!window.isAdmin()) { window.requireAdmin(getPlansPage); return; }
+        $.getScript("SCRIPTS/trv_plans.js?v=" + APP_V, function(){ createPlansPage_HTML() })
+            .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
+    }
+
     function getSettingsOverviewPage( setting_type ){
+        if (!window.isAdmin()) { window.requireAdmin(function(){ getSettingsOverviewPage(setting_type); }); return; }
         //Create settings-overview page
         $.getScript("SCRIPTS/set_overview.js?v=" + APP_V, function(){ createSettingsPage_HTML(setting_type) })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsContinentTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsContinentTab); return; }
         //Create settings-continent tab
         $.getScript("SCRIPTS/set_continent.js?v=" + APP_V, function(){ createSettingsContinentTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsCountryTypeTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsCountryTypeTab); return; }
         //Create settings-country_type tab
         $.getScript("SCRIPTS/set_country_type.js?v=" + APP_V, function(){ createSettingsCountryTypeTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsTypeTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsTypeTab); return; }
         //Create settings-location_type tab
         $.getScript("SCRIPTS/set_type.js?v=" + APP_V, function(){ createSettingsTypeTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsCityTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsCityTab); return; }
         //Create settings-city tab
         $.getScript("SCRIPTS/set_city.js?v=" + APP_V, function(){ createSettingsCityTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsCountryTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsCountryTab); return; }
         //Create settings-country tab
         $.getScript("SCRIPTS/set_country.js?v=" + APP_V, function(){ createSettingsCountryTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsRegionTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsRegionTab); return; }
         //Create settings-region tab
         $.getScript("SCRIPTS/set_region.js?v=" + APP_V, function(){ createSettingsRegionTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsVisitTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsVisitTab); return; }
         //Create settings-visit tab
         $.getScript("SCRIPTS/set_visit.js?v=" + APP_V, function(){ createSettingsVisitTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });
     }
 
     function createSettingsStoryTab(){
+        if (!window.isAdmin()) { window.requireAdmin(createSettingsStoryTab); return; }
         //Create settings-story tab
         $.getScript("SCRIPTS/set_story.js?v=" + APP_V, function(){ createSettingsStoryTab_HTML() })
             .fail(function() { document.getElementById("mainSection").innerHTML = '<div class="set-alert is-err">Failed to load page script. Reload and try again.</div>'; });

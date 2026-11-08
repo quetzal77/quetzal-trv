@@ -1,7 +1,7 @@
 # quetzal-trv — Project Brief for Claude
 
 Personal travel portfolio SPA by Oleksiy Slavutskyy. No backend, no build step.
-Current version: **9.4.1** (branch `site_version_9_3`).
+Current version: **9.4.2** (branch `site_version_9_3`).
 
 ---
 
@@ -27,7 +27,8 @@ SCRIPTS/
   bcd_onload.js       — bootstrap: loads globaldb.json, builds global state, wires nav
   bcd-content.js      — data objects: VisitObj, CityObj, CountryObj, RegionObj etc.
   bcd_services.js     — shared helpers: getVisitDate(), getUaMonthName(), parseWord()…
-  trv_*.js            — read-only travel pages (world, country, city, story, stats)
+  auth.js             — admin login (client-side only, SHA-256 hash in source): hides settings + Plans UI for visitors
+  trv_*.js            — read-only travel pages (world, country, city, story, stats, plans)
   set_*.js            — settings/CRUD pages (overview, visit, city, region, country…)
 THEMES/
   global.css          — main custom styles (loaded last, overrides Bootstrap)
@@ -39,6 +40,7 @@ DATA/
   stories.json        — story index (id + title + date per story)
   stories/<id>.json   — individual trip story files
 IMG/                  — city/country photos, flags, icons
+plans/                — trip + flight plans (static HTML); plans/index.html aggregates them and is shown on the admin-only "Плани" page
 .claude/skills/       — Claude Code skills (see Skills section)
 ```
 
