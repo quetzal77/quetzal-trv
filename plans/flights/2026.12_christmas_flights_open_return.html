@@ -56,6 +56,17 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
 .small { color: var(--muted); font-size: .85rem; }
 .tag { display: inline-block; font-size: .7rem; padding: 1px 7px; border-radius: 99px; background: var(--warn-soft); color: var(--warn); font-weight: 600; white-space: nowrap; }
 .tag.one { background: var(--good-soft); color: var(--good); }
+details > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 10px; user-select: none; }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::before { content: "\25BE"; color: var(--accent); font-size: 1rem; width: 1em; flex: none; }
+details:not([open]) > summary::before { content: "\25B8"; }
+details > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+details > summary h2, details > summary h3 { display: inline; }
+.sbody { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; min-width: 0; }
+details.sub { border-left: 3px solid var(--line); padding-left: 12px; }
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+.toolbar button { font: inherit; font-size: .85rem; font-weight: 600; color: var(--accent); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+.toolbar button:hover { background: var(--accent-soft); }
 </style>
 </head>
 <body>
@@ -67,8 +78,14 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
   <p class="lead">Домінікана, Гваделупа, Мартиніка, Шрі-Ланка, Таїланд, В'єтнам, Малайзія, Японія. Вильоти з семи міст. Виліт туди будь-якого дня 24-30.12, зворотний рейс будь-якого дня 01-18.01.2027, обираємо найдешевшу пару.</p>
 </header>
 
+<div class="toolbar">
+  <button type="button" id="expandAll">Розгорнути все</button>
+  <button type="button" id="collapseAll">Згорнути все</button>
+</div>
+
+
 <section>
-  <h2>1. Умови на старті</h2>
+<details class="sec" open><summary><h2>1. Умови на старті</h2></summary><div class="sbody">
   <div class="panel">
     <dl>
       <dt>Склад</dt><dd>4 пасажири: 2 дорослих і 2 дітей (10 і 13 років)</dd>
@@ -82,10 +99,261 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
   </div>
   <div class="note"><b>Підсумок:</b> у €600 не вкладається жоден з восьми основних напрямків. Найближчий: Відень → Коломбо (Шрі-Ланка) за €676 на особу (≈ €2 700 на чотирьох), виліт 30.12, зворотний рейс 18.01 (приліт у Відень 19.01). Деталі трьох виділених варіантів нижче. До ліміту бракує €76 на особу.</div>
   <div class="ok"><b>У бюджет вкладаються</b> Тбілісі (Відень €270, Загреб €330) і Дубай (Будапешт €433, Відень €445). Детальніше в розділі «Що вкладається в бюджет».</div>
+</div></details>
 </section>
 
 <section>
-  <h2>Підсумок: три виділені варіанти</h2>
+<details class="sec" open><summary><h2>2. Підсумки</h2></summary><div class="sbody">
+<details class="sub" open><summary><h3>Відень → Коломбо: поглиблений розбір</h3></summary><div class="sbody">
+  <p class="small">Окремий розбір варіанта з виділеної плашки (Kiwi €676). Ціни на одного дорослого, дані на 08.11.2026 з Kiwi.com і з Google Flights (рядки «Book with SalamAir» та «Book with Air Arabia» показують ціну на сайті самої авіакомпанії). Зворотний рейс у всіх варіантах 18.01.2027.</p>
+  <div class="ok"><b>Головне:</b> купівля напряму в SalamAir (Відень → Маскат → Коломбо і назад на одному квитку) коштує <b>€666</b>, тобто на €10 дешевше за Kiwi (€676), і зворотна дорога набагато коротша: 12 год 25 хв замість 25 год 15 хв з нічною пересадкою в Шарджі. Зупинка в Маскаті на 1–5 ночей (окремі квитки) виходить <b>€670</b>, лише на €4 дорожче за квиток без зупинки.</div>
+
+  <details class="sub" open><summary><h3>Підсумок: два сценарії</h3></summary><div class="sbody">
+  <p class="small">Ціни на одного дорослого, час місцевий, дані на 08.11.2026 (Google Flights, «Book with…» авіакомпанії). Перший сценарій: поїздка лише в Оман. Другий: Оман 4 ночі, далі Коломбо, і додому.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Показник</th><th>Сценарій 1: Відень ↔ Оман</th><th>Сценарій 2: Відень → Оман → Коломбо → Відень</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Ціна на особу</td><td class="num">€443</td><td class="num mid"><span>€670</span></td></tr>
+      <tr><td class="city">На чотирьох (≈)</td><td class="num">€1 772</td><td class="num">€2 680</td></tr>
+      <tr><td class="city">Виліт з Відня</td><td>30.12.2026 13:30</td><td>30.12.2026 13:30</td></tr>
+      <tr><td class="city">Повернення у Відень</td><td>18.01.2027 12:45</td><td>19.01.2027 11:20</td></tr>
+      <tr><td class="city">Ночей в Омані</td><td class="num">19</td><td class="num">4</td></tr>
+      <tr><td class="city">Ночей у Коломбо</td><td class="num">—</td><td class="num">14</td></tr>
+      <tr><td class="city">Усього з дому</td><td>19 ночей</td><td>20 ночей</td></tr>
+      <tr><td class="city">Перельотів</td><td class="num">2, обидва прямі</td><td class="num">4 (два прямі й один квиток з пересадкою)</td></tr>
+      <tr><td class="city">Час у повітрі разом</td><td class="num">13 год 15 хв</td><td class="num">21 год 20 хв + 14 год 10 хв нічної пересадки в Шарджі</td></tr>
+      <tr><td class="city">Квитки</td><td>один квиток SalamAir туди-назад</td><td>три окремі бронювання: SalamAir, SalamAir, Air Arabia</td></tr>
+      <tr><td class="city">Різниця</td><td>базовий варіант</td><td>+€227 на особу (+€908 на чотирьох) за додаткові 14 ночей і Коломбо</td></tr>
+    </tbody></table></div>
+  </div></details>
+  <details class="sub" open><summary><h3>Сценарій 1: просто Відень ↔ Оман (€443)</h3></summary><div class="sbody">
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>В повітрі</th><th>Авіакомпанія</th><th>Пересадка / примітка</th><th>Ціна</th></tr></thead>
+    <tbody>
+      <tr><td>Відень → Маскат</td><td>30.12 (ср)</td><td class="num">13:30 VIE</td><td class="num">22:40 MCT</td><td class="num">6 год 10 хв</td><td>SalamAir</td><td>прямий</td><td class="num"></td></tr>
+      <tr><td colspan="8" class="city">19 ночей в Омані (30.12 → 18.01)</td></tr>
+      <tr><td>Маскат → Відень</td><td>18.01 (пн)</td><td class="num">08:40 MCT</td><td class="num">12:45 VIE</td><td class="num">7 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€443 разом</td></tr>
+    </tbody></table></div>
+  <div class="panel"><ul>
+    <li><b>Ціна напряму:</b> SalamAir €443. Через посередників дорожче: Booking.com €453, Gotogate €463, Expedia €467, lucky2go €479.</li>
+    <li><b>Коротший варіант:</b> 30.12 → 04.01 (5 ночей) коштує €515, тобто дорожче за довгий (19 ночей), бо така ціна на ці дати.</li>
+    <li><b>Багаж:</b> лише 1 ручна поклажа, зареєстрований багаж платний. Візу чи дозвіл для Оману перевірте окремо.</li>
+    <li><b>Посилання:</b> <a href="https://www.google.com/travel/flights?q=Flights%20from%20Vienna%20to%20Muscat%20on%202026-12-30%20through%202027-01-18&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google Flights: Відень ↔ Маскат 30.12 / 18.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Vienna%20to%20Muscat%20on%202026-12-30%20through%202027-01-04&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google Flights: 30.12 / 04.01</a>, <a href="https://www.kiwi.com/en/search/results/vienna-austria/muscat-oman/2026-12-24_2026-12-30/2027-01-01_2027-01-18?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Відень ↔ Маскат</a>.</li>
+  </ul></div>
+  </div></details>
+  <details class="sub" open><summary><h3>Сценарій 2: Відень → Оман (4 ночі) → Коломбо (14 ночей) → Відень (€670)</h3></summary><div class="sbody">
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>В повітрі</th><th>Авіакомпанія</th><th>Пересадка / примітка</th><th>Ціна</th></tr></thead>
+    <tbody>
+      <tr><td>Відень → Маскат</td><td>30.12 (ср)</td><td class="num">13:30 VIE</td><td class="num">22:40 MCT</td><td class="num">6 год 10 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€219</td></tr>
+      <tr><td colspan="8" class="city">4 ночі в Омані (30.12 → 03.01)</td></tr>
+      <tr><td>Маскат → Коломбо</td><td>03.01 (нд) → 04.01</td><td class="num">22:15 MCT</td><td class="num">03:50 CMB (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€180</td></tr>
+      <tr><td colspan="8" class="city">14 ночей на Шрі-Ланці (04.01 → 18.01)</td></tr>
+      <tr><td>Коломбо → Шарджа</td><td>18.01 (пн)</td><td class="num">14:35 CMB</td><td class="num">17:45 SHJ</td><td class="num">4 год 40 хв</td><td>Air Arabia</td><td>нічна пересадка 14 год 10 хв у Шарджі</td><td class="num"></td></tr>
+      <tr><td>Шарджа → Відень</td><td>19.01 (вт)</td><td class="num">07:55 SHJ</td><td class="num">11:20 VIE</td><td class="num">6 год 25 хв</td><td>Air Arabia</td><td>—</td><td class="num">€271 (AED 1 108)</td></tr>
+    </tbody></table></div>
+  <div class="panel"><ul>
+    <li><b>Розбиття ціни:</b> Відень → Маскат €219, Маскат → Коломбо €180, Коломбо → Відень €271. Разом €670.</li>
+    <li><b>Окремі бронювання:</b> три незалежні квитки, пропущений рейс на одній ділянці не захищає інші. Між SalamAir (Маскат) і Air Arabia (Коломбо) жодної гарантії стикування немає, але між ними 4 доби й 14 діб запасу.</li>
+    <li><b>Заміна зворотного рейсу:</b> замість Air Arabia через Шарджу (25 год 15 хв, нічна пересадка 14 год 10 хв) є SalamAir Коломбо → Маскат → Відень 18.01 04:50 → 12:45 (12 год 25 хв, пересадка 1 год 5 хв) за €341. Тоді підсумок €740 на особу (€2 960 на чотирьох).</li>
+    <li><b>Додаткові витрати:</b> готелі в Омані на 4 ночі й у Коломбо на 14 ночей, трансфери, зареєстрований багаж. У цінах квитків цього немає.</li>
+    <li><b>Перевірити перед покупкою:</b> дозвіл для в'їзду в Оман, eTA Шрі-Ланки, нічну пересадку в Шарджі, актуальний розклад SalamAir (рейси Відень ↔ Маскат у пн, ср, пт).</li>
+  </ul></div>
+  </div></details>
+  <details class="sub" open><summary><h3>1. Порівняння способів купити</h3></summary><div class="sbody">
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Варіант</th><th>Як купувати</th><th>Ціна на особу</th><th>На чотирьох (≈)</th><th>Ночей у Маскаті</th><th>Квиток</th><th>Пересадки</th></tr></thead>
+    <tbody>
+      <tr><td class="city">A. Kiwi (виділений варіант)</td><td>Kiwi.com, один квиток Hahn Air + Air Arabia</td><td class="num">€676</td><td class="num">€2 704</td><td class="num">0</td><td><span class="tag one">один квиток</span></td><td>туди Маскат 1 год 10 хв; назад Шарджа 14 год 10 хв (ніч)</td></tr>
+      <tr><td class="city">B. SalamAir туди-назад</td><td>salamair.com напряму (Google: «Book with SalamAir»)</td><td class="num low">€666</td><td class="num">€2 664</td><td class="num">0</td><td><span class="tag one">один квиток SalamAir</span></td><td>туди Маскат 1 год 10 хв; назад Маскат 1 год 5 хв</td></tr>
+      <tr><td class="city">C. Окремі квитки без зупинки</td><td>SalamAir VIE→MCT €219 + SalamAir MCT→CMB (30.12 23:50) €204 + Air Arabia CMB→VIE €271</td><td class="num">€694</td><td class="num">€2 776</td><td class="num">0</td><td><span class="tag">окремі квитки</span></td><td>Маскат 1 год 10 хв; Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">D1. Зупинка в Маскаті 1 ніч</td><td>VIE→MCT 30.12 €219 + MCT→CMB 31.12 €180 + CMB→VIE Air Arabia €271</td><td class="num mid"><span>€670</span></td><td class="num">€2 680</td><td class="num">1</td><td><span class="tag">окремі квитки</span></td><td>Маскат ≈ 23 год 35 хв; Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">D2. Зупинка 2 ночі</td><td>VIE→MCT €219 + MCT→CMB 01.01 €204 + €271</td><td class="num">€694</td><td class="num">€2 776</td><td class="num">2</td><td><span class="tag">окремі квитки</span></td><td>Маскат 2 ночі; Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">D3. Зупинка 3 ночі</td><td>VIE→MCT €219 + MCT→CMB 02.01 €227 (SalamAir) або €224 (Air Arabia через Шарджу) + €271</td><td class="num">€717</td><td class="num">€2 868</td><td class="num">3</td><td><span class="tag">окремі квитки</span></td><td>Маскат 3 ночі; Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">D4. Зупинка 4 ночі</td><td>VIE→MCT €219 + MCT→CMB 03.01 €180 + €271</td><td class="num mid"><span>€670</span></td><td class="num">€2 680</td><td class="num">4</td><td><span class="tag">окремі квитки</span></td><td>Маскат 4 ночі; Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">D5. Зупинка 5 ночей</td><td>VIE→MCT €219 + MCT→CMB 04.01 23:50 €180 + €271</td><td class="num mid"><span>€670</span></td><td class="num">€2 680</td><td class="num">5</td><td><span class="tag">окремі квитки</span></td><td>Маскат ≈ 5 діб 1 год; Шарджа 14 год 10 хв</td></tr>
+    </tbody></table></div>
+  <p class="small">Для порівняння Kiwi за тими самими окремими ділянками: VIE→MCT €236, MCT→CMB 31.12 €209, CMB→VIE €275, разом €720. Напряму в авіакомпаній вийшло дешевше. Заміна зворотного рейсу Air Arabia (€271) на SalamAir CMB→MCT→VIE (04:50 → 12:45, один квиток) коштує €341 в один бік, тобто +€70, але економить близько 12 годин у дорозі.</p>
+  </div></details>
+  <details class="sub" open><summary><h3>2. Рейси, які знайшлися</h3></summary><div class="sbody">
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт → приліт</th><th>В дорозі</th><th>Авіакомпанія</th><th>Тип</th><th>Ціна напряму</th></tr></thead>
+    <tbody>
+      <tr><td colspan="7" class="city">Туди: Відень → Маскат</td></tr>
+      <tr><td>VIE → MCT</td><td>30.12 (ср)</td><td class="num">13:30 → 22:40</td><td class="num">6 год 10 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€219 (Booking.com €220, Expedia €230)</td></tr>
+      <tr><td colspan="7" class="city">Маскат → Коломбо (SalamAir прямий, 4 год 5 хв)</td></tr>
+      <tr><td>MCT → CMB</td><td>30.12 (ср)</td><td class="num">23:50 → 05:25 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€204</td></tr>
+      <tr><td>MCT → CMB</td><td>31.12 (чт)</td><td class="num">22:15 → 03:50 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€180 (OMR 77; Booking.com €176)</td></tr>
+      <tr><td>MCT → CMB</td><td>01.01 (пт)</td><td class="num">22:15 → 03:50 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€204</td></tr>
+      <tr><td>MCT → CMB</td><td>02.01 (сб)</td><td class="num">22:15 → 03:50 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€227</td></tr>
+      <tr><td>MCT → CMB</td><td>02.01 (сб)</td><td class="num">10:10 → 01:50 (+1)</td><td class="num">14 год 10 хв</td><td>Air Arabia через Шарджу (8 год 45 хв)</td><td>1 пересадка</td><td class="num">€224</td></tr>
+      <tr><td>MCT → CMB</td><td>03.01 (нд)</td><td class="num">22:15 → 03:50 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€180</td></tr>
+      <tr><td>MCT → CMB</td><td>04.01 (пн)</td><td class="num">23:50 → 05:25 (+1)</td><td class="num">4 год 5 хв</td><td>SalamAir</td><td>прямий</td><td class="num">€180</td></tr>
+      <tr><td colspan="7" class="city">Назад: Коломбо → Відень, 18.01.2027 (пн)</td></tr>
+      <tr><td>CMB → VIE</td><td>18.01</td><td class="num">14:35 → 11:20 (+1)</td><td class="num">25 год 15 хв</td><td>Air Arabia через Шарджу (14 год 10 хв, ніч)</td><td>1 пересадка</td><td class="num">€271 (AED 1 108, включно з AED 33 комісії; Expedia €263, Booking.com €266)</td></tr>
+      <tr><td>CMB → VIE</td><td>18.01</td><td class="num">05:20 → 21:10</td><td class="num">20 год 20 хв</td><td>Air Arabia через Шарджу (9 год 15 хв)</td><td>1 пересадка</td><td class="num">€310</td></tr>
+      <tr><td>CMB → VIE</td><td>18.01</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td>SalamAir через Маскат (1 год 5 хв)</td><td>1 пересадка, один квиток</td><td class="num">€341 в один бік; у квитку туди-назад від €666</td></tr>
+      <tr><td colspan="7" class="city">Туди-назад одним бронюванням (VIE → MCT → CMB → MCT → VIE)</td></tr>
+      <tr><td>Туди 30.12</td><td>30.12 (ср)</td><td class="num">13:30 → 05:25 (+1)</td><td class="num">11 год 25 хв</td><td>SalamAir через Маскат (1 год 10 хв)</td><td>1 пересадка</td><td rowspan="2" class="num">€666 на salamair.com<br>€686 Gotogate<br>€811 Booking.com<br>€821 lastminute.com</td></tr>
+      <tr><td>Назад 18.01</td><td>18.01 (пн)</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td>SalamAir через Маскат (1 год 5 хв)</td><td>1 пересадка</td></tr>
+    </tbody></table></div>
+  </div></details>
+  <details class="sub" open><summary><h3>3. Зворотний рейс: ранні дати і Будапешт</h3></summary><div class="sbody">
+  <p class="small">Ціни одного дорослого в один бік із Коломбо, найдешевший варіант на кожну дату (календар Google Flights, 08.11.2026). Колонка «Ночей у Коломбо» і «Разом» відповідають сценарію 2: Відень → Маскат 30.12 (€219) → Коломбо з 04.01 (€180) → зворотний рейс у цей день.</p>
+  <div class="ok"><b>Висновок:</b> найдешевший зворотний рейс це 18.01 за €271 (Air Arabia через Шарджу, нічна пересадка 14 год 10 хв). Раніше можна, але дорожче: 15.01 за €341 (SalamAir), 13.01 і 14.01 за €387. Будапешт як пункт прибуття дорожчий за Відень на €242 і більше, найдешевший із Коломбо €513.</div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Дата виїзду з Коломбо</th><th>→ Відень</th><th>→ Будапешт</th><th>Будапешт дорожче</th><th>Ночей у Коломбо (сценарій 2)</th><th>Разом сценарій 2 (Відень)</th></tr></thead>
+    <tbody>
+      <tr><td class="city">01.01 (пт)</td><td class="num low">€387</td><td class="num">€696</td><td class="num">+€309</td><td class="num">—</td><td class="num">€786</td></tr>
+      <tr><td class="city">02.01 (сб)</td><td class="num">€626</td><td class="num">€927</td><td class="num">+€301</td><td class="num">—</td><td class="num">€1025</td></tr>
+      <tr><td class="city">03.01 (нд)</td><td class="num">€793</td><td class="num">€776</td><td class="num">+€-17</td><td class="num">—</td><td class="num">€1192</td></tr>
+      <tr><td class="city">04.01 (пн)</td><td class="num">€562</td><td class="num">€828</td><td class="num">+€266</td><td class="num">—</td><td class="num">€961</td></tr>
+      <tr><td class="city">05.01 (вт)</td><td class="num">€640</td><td class="num">€749</td><td class="num">+€109</td><td class="num">1</td><td class="num">€1039</td></tr>
+      <tr><td class="city">06.01 (ср)</td><td class="num">€578</td><td class="num">€749</td><td class="num">+€171</td><td class="num">2</td><td class="num">€977</td></tr>
+      <tr><td class="city">07.01 (чт)</td><td class="num">€585</td><td class="num">€749</td><td class="num">+€164</td><td class="num">3</td><td class="num">€984</td></tr>
+      <tr><td class="city">08.01 (пт)</td><td class="num">€562</td><td class="num">€801</td><td class="num">+€239</td><td class="num">4</td><td class="num">€961</td></tr>
+      <tr><td class="city">09.01 (сб)</td><td class="num">€621</td><td class="num">€846</td><td class="num">+€225</td><td class="num">5</td><td class="num">€1020</td></tr>
+      <tr><td class="city">10.01 (нд)</td><td class="num">€625</td><td class="num">€763</td><td class="num">+€138</td><td class="num">6</td><td class="num">€1024</td></tr>
+      <tr><td class="city">11.01 (пн)</td><td class="num">€415</td><td class="num">€534</td><td class="num">+€119</td><td class="num">7</td><td class="num">€814</td></tr>
+      <tr><td class="city">12.01 (вт)</td><td class="num">€418</td><td class="num">€571</td><td class="num">+€153</td><td class="num">8</td><td class="num">€817</td></tr>
+      <tr><td class="city">13.01 (ср)</td><td class="num low">€387</td><td class="num">€631</td><td class="num">+€244</td><td class="num">9</td><td class="num">€786</td></tr>
+      <tr><td class="city">14.01 (чт)</td><td class="num low">€387</td><td class="num">€513</td><td class="num">+€126</td><td class="num">10</td><td class="num">€786</td></tr>
+      <tr><td class="city">15.01 (пт)</td><td class="num low">€341</td><td class="num">€513</td><td class="num">+€172</td><td class="num">11</td><td class="num">€740</td></tr>
+      <tr><td class="city">16.01 (сб)</td><td class="num">€402</td><td class="num">€513</td><td class="num">+€111</td><td class="num">12</td><td class="num">€801</td></tr>
+      <tr><td class="city">17.01 (нд)</td><td class="num">€446</td><td class="num">€513</td><td class="num">+€67</td><td class="num">13</td><td class="num">€845</td></tr>
+      <tr><td class="city">18.01 (пн)</td><td class="num hl"><span>€271</span></td><td class="num">€513</td><td class="num">+€242</td><td class="num">14</td><td class="num">€670</td></tr>
+      <tr><td class="city">19.01 (вт)</td><td class="num low">€275</td><td class="num">€513</td><td class="num">+€238</td><td class="num">15</td><td class="num">€674</td></tr>
+    </tbody></table></div>
+  <p class="small">Рядок 18.01 виділено як найдешевший. Ціни 01.01 і 11-17.01 найнижчі до 18.01. На 02-10.01 зворотні квитки дорогі (€560-790), бо це пік повернення зі свят.</p>
+
+  <h4>Що саме літає в ранні дати (Коломбо → Відень)</h4>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Дата</th><th>Ціна</th><th>Виліт → приліт</th><th>В дорозі</th><th>Авіакомпанія</th><th>Пересадка</th></tr></thead>
+    <tbody>
+      <tr><td class="city">13.01 (ср)</td><td class="num">€387</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td>SalamAir</td><td>Маскат 1 год 5 хв</td></tr>
+      <tr><td class="city">14.01 (чт)</td><td class="num">€387</td><td class="num">02:40 → 11:20</td><td class="num">13 год 10 хв</td><td>Air Arabia</td><td>Шарджа 2 год 5 хв</td></tr>
+      <tr><td class="city">15.01 (пт)</td><td class="num">€341</td><td class="num">04:50 → 22:00</td><td class="num">21 год 40 хв</td><td>SalamAir</td><td>Маскат 10 год 20 хв</td></tr>
+      <tr><td class="city">15.01 (пт)</td><td class="num">€437</td><td class="num">02:40 → 11:20</td><td class="num">13 год 10 хв</td><td>Air Arabia</td><td>Шарджа 2 год 5 хв</td></tr>
+      <tr><td class="city">16.01 (сб)</td><td class="num">€402</td><td class="num">14:35 → 11:20 (+1)</td><td class="num">25 год 15 хв</td><td>Air Arabia</td><td>Шарджа 14 год 10 хв</td></tr>
+      <tr><td class="city">01.01 (пт)</td><td class="num">€387</td><td class="num">04:50 → 22:00</td><td class="num">21 год 40 хв</td><td>SalamAir</td><td>Маскат 10 год 20 хв</td></tr>
+      <tr><td class="city">01.01 (пт)</td><td class="num">€389</td><td class="num">02:40 → 11:20</td><td class="num">13 год 10 хв</td><td>Air Arabia</td><td>Шарджа 2 год 5 хв</td></tr>
+      <tr><td class="city">18.01 (пн), базовий</td><td class="num hl"><span>€271</span></td><td class="num">14:35 → 11:20 (+1)</td><td class="num">25 год 15 хв</td><td>Air Arabia</td><td>Шарджа 14 год 10 хв</td></tr>
+    </tbody></table></div>
+
+  <h4>Зворотний рейс SalamAir (Коломбо → Маскат → Відень)</h4>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Дата виїзду з Коломбо</th><th>Виліт → приліт у Відень</th><th>В дорозі</th><th>Пересадка в Маскаті</th><th>Ціна в один бік</th><th>Коментар</th></tr></thead>
+    <tbody>
+      <tr><td class="city">18.01 (пн), базовий</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td class="num">1 год 5 хв</td><td class="num hl"><span>€341</span></td><td>базова ціна SalamAir, одна пересадка</td></tr>
+      <tr><td class="city">15.01 (пт)</td><td class="num">04:50 → 22:00</td><td class="num">21 год 40 хв</td><td class="num">10 год 20 хв</td><td class="num">€341</td><td>та сама ціна, але на 9 годин довше (нічна пересадка)</td></tr>
+      <tr><td class="city">13.01 (ср)</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td class="num">1 год 5 хв</td><td class="num">€387</td><td>+€46 до базового, виліт на 5 днів раніше, така сама швидка дорога</td></tr>
+      <tr><td class="city">11.01 (пн)</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td class="num">1 год 5 хв</td><td class="num">€504</td><td>+€163 до базового</td></tr>
+      <tr><td class="city">08.01 (пт)</td><td class="num">04:50 → 22:00</td><td class="num">21 год 40 хв</td><td class="num">10 год 20 хв</td><td class="num">€562</td><td>довга пересадка й дорого</td></tr>
+      <tr><td class="city">04.01 (пн)</td><td class="num">04:50 → 12:45</td><td class="num">12 год 25 хв</td><td class="num">1 год 5 хв</td><td class="num">€562</td><td>+€221 до базового</td></tr>
+      <tr><td class="city">01.01 (пт)</td><td class="num">04:50 → 22:00</td><td class="num">21 год 40 хв</td><td class="num">10 год 20 хв</td><td class="num">€387</td><td>довга пересадка, але найраніша дата</td></tr>
+      <tr><td class="city">06.01 (ср)</td><td colspan="5">SalamAir на цю дату не знайшовся</td></tr>
+    </tbody></table></div>
+  <div class="panel"><ul>
+    <li><b>Рейси SalamAir:</b> Маскат → Відень літає лише в пн, ср, пт, тому і з Коломбо SalamAir через Маскат доступний у ці дні. Виліт з Коломбо завжди о 04:50.</li>
+    <li><b>Раніше за ту саму ціну і так само швидко:</b> немає. Той самий швидкий рейс 13.01 коштує €387, тобто +€46, а за €341 раніше (15.01) пересадка в Маскаті 10 год 20 хв.</li>
+    <li><b>Туди-назад одним бронюванням SalamAir:</b> 30.12 / 18.01 коштує €666, а 30.12 / 13.01 коштує €711 (+€45). Для 11.01 і 15.01 квиток SalamAir туди-назад у результатах не з'явився.</li>
+    <li><b>Для порівняння:</b> Air Arabia 14.01 коштує €387 і їде 13 год 10 хв (пересадка в Шарджі 2 год 5 хв), тобто за ціною як SalamAir 13.01.</li>
+    <li><b>Посилання (Google Flights):</b> <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-01%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">01.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-04%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">04.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-08%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">08.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-11%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">11.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-13%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">13.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-15%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">15.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-18%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">18.01</a>.</li>
+  </ul></div>
+
+  <h4>Будапешт як пункт прибуття (Коломбо → Будапешт)</h4>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Дата</th><th>Ціна</th><th>Виліт → приліт</th><th>В дорозі</th><th>Авіакомпанія</th><th>Пересадки</th></tr></thead>
+    <tbody>
+      <tr><td class="city">14-19.01</td><td class="num">€513</td><td class="num">18.01: 17:00 → 08:15 (+1)</td><td class="num">19 год 45 хв</td><td>Gulf Air, Turkish Airlines</td><td>3 пересадки: Мале, Манама, Стамбул</td></tr>
+      <tr><td class="city">18.01 (пн)</td><td class="num">€602</td><td class="num">22:25 → 17:35 (+1)</td><td class="num">23 год 40 хв</td><td>Air China</td><td>2 пересадки: Ченду, Пекін</td></tr>
+      <tr><td class="city">18.01 (пн)</td><td class="num">€613</td><td class="num">07:25 → 19:10</td><td class="num">16 год 15 хв</td><td>Turkish Airlines</td><td>Стамбул 5 год 20 хв</td></tr>
+      <tr><td class="city">14.01 (чт) і 18.01</td><td class="num">€631</td><td class="num">09:15 → 21:20</td><td class="num">16 год 35 хв</td><td>flydubai, Emirates</td><td>Дубай 5 год 10 хв</td></tr>
+      <tr><td class="city">11.01 (пн)</td><td class="num">€534</td><td colspan="4">дешевший пік Будапешта до 14.01, деталі не збирав</td></tr>
+    </tbody></table></div>
+  <div class="panel"><ul>
+    <li><b>Будапешт vs Відень:</b> із Коломбо до Відня 18.01 коштує €271, до Будапешта від €513 (з 3 пересадками) або €602-631 з 1-2 пересадками. Різниця €242-360 на особу, тобто €968-1 440 на чотирьох.</li>
+    <li><b>Ціна всього сценарію 2:</b> з поверненням 18.01 у Відень €670, у Будапешт від €912 (219 + 180 + 513).</li>
+    <li><b>Швидший зворотний рейс:</b> 14.01 Air Arabia через Шарджу всього 13 год 10 хв (€387), але це 10 ночей у Коломбо замість 14, а сценарій 2 коштує €786.</li>
+  </ul></div>
+  <p class="small">Посилання (Google Flights): <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-01%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 01.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-13%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 13.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-14%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 14.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-15%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 15.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-16%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 16.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-18%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Відень 18.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Budapest%20on%202027-01-14%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Будапешт 14.01</a>, <a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Budapest%20on%202027-01-18%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Будапешт 18.01</a></p>
+  </div></details>
+
+  <details class="sub" open><summary><h3>4. Дешеві напрямки з Маскату (04-18.01)</h3></summary><div class="sbody">
+  <p class="small">Ціни на одного дорослого в один бік, мінімум «від» у діапазоні 04-18.01.2027 (Kiwi.com, 08.11.2026). Відсортовано за ціною. «Дубай» у Kiwi означає аеропорт Шарджі (SHJ).</p>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Місто</th><th>Країна</th><th>Ціна від</th><th>Рейс, який знайшовся</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Салала</td><td>Оман</td><td class="num">€101</td><td>прямий 1 год 40 хв, 07-10.01: 19:55 → 21:35 або 08:30 → 10:15</td></tr>
+      <tr><td class="city">Дубай / Шарджа</td><td>ОАЕ</td><td class="num">€106</td><td>прямий Air Arabia 1 год, 10:10 → 11:10 (05, 06, 11, 14.01 та інші)</td></tr>
+      <tr><td class="city">Абу-Дабі</td><td>ОАЕ</td><td class="num">€115</td><td>—</td></tr>
+      <tr><td class="city">Ісламабад</td><td>Пакистан</td><td class="num">€116</td><td>—</td></tr>
+      <tr><td class="city">Лахор</td><td>Пакистан</td><td class="num">€116</td><td>—</td></tr>
+      <tr><td class="city">Мумбай</td><td>Індія</td><td class="num">€117</td><td>—</td></tr>
+      <tr><td class="city">Доха</td><td>Катар</td><td class="num">€119</td><td>—</td></tr>
+      <tr><td class="city">Сіалкот</td><td>Пакистан</td><td class="num">€133</td><td>—</td></tr>
+      <tr><td class="city">Манама</td><td>Бахрейн</td><td class="num">€140</td><td>—</td></tr>
+      <tr><td class="city">Нью-Делі</td><td>Індія</td><td class="num">€142</td><td>—</td></tr>
+      <tr><td class="city">Стамбул</td><td>Туреччина</td><td class="num">€144</td><td>прямий Pegasus (SAW), пн 18.01 04:15 → 08:35, 5 год 20 хв; 15.01 за €191</td></tr>
+      <tr><td class="city">Бенгалуру</td><td>Індія</td><td class="num">€145</td><td>—</td></tr>
+      <tr><td class="city">Кочі</td><td>Індія</td><td class="num">€145</td><td>—</td></tr>
+      <tr><td class="city">Ченнаї</td><td>Індія</td><td class="num">€149</td><td>—</td></tr>
+      <tr><td class="city">Тируванантапурам</td><td>Індія</td><td class="num">€151</td><td>—</td></tr>
+      <tr><td class="city">Дака</td><td>Бангладеш</td><td class="num">€155</td><td>—</td></tr>
+      <tr><td class="city">Кожикоде</td><td>Індія</td><td class="num">€167</td><td>—</td></tr>
+      <tr><td class="city">Коломбо</td><td>Шрі-Ланка</td><td class="num hl"><span>€178</span></td><td>SalamAir прямий 4 год 5 хв, 22:15 → 03:50 (+1) або 23:50 → 05:25 (+1), €180 на 03-04.01</td></tr>
+      <tr><td class="city">Каннур</td><td>Індія</td><td class="num">€183</td><td>—</td></tr>
+      <tr><td class="city">Каїр</td><td>Єгипет</td><td class="num">€186</td><td>—</td></tr>
+      <tr><td class="city">Куала-Лумпур</td><td>Малайзія</td><td class="num">€191</td><td>через Абу-Дабі, 23:50 → 19:45 (+1), 15 год 55 хв, на 10, 12, 14, 16, 17 і 18.01. Швидший варіант за €235 (6 год 50 хв)</td></tr>
+      <tr><td class="city">Бангкок</td><td>Таїланд</td><td class="num">€192</td><td>через Абу-Дабі, сб 16.01 11:50 → 23:40, 8 год 50 хв (швидший варіант €252, 5 год 40 хв)</td></tr>
+      <tr><td class="city">Амстердам</td><td>Нідерланди</td><td class="num">€201</td><td>—</td></tr>
+      <tr><td class="city">Хайдерабад</td><td>Індія</td><td class="num">€202</td><td>—</td></tr>
+      <tr><td class="city">Ташкент</td><td>Узбекистан</td><td class="num">€203</td><td>—</td></tr>
+      <tr><td class="city">Лакнау</td><td>Індія</td><td class="num">€204</td><td>—</td></tr>
+      <tr><td class="city">Пхукет</td><td>Таїланд</td><td class="num">€205</td><td>через Абу-Дабі, ср 13.01 11:50 → 23:50, 9 год</td></tr>
+      <tr><td class="city">Джидда</td><td>Саудівська Аравія</td><td class="num">€206</td><td>—</td></tr>
+      <tr><td class="city">Мангалор</td><td>Індія</td><td class="num">€215</td><td>—</td></tr>
+      <tr><td class="city">Алмати</td><td>Казахстан</td><td class="num">€228</td><td>—</td></tr>
+    </tbody></table></div>
+  <div class="panel"><ul>
+    <li><b>Південно-Східна Азія з Маскату:</b> Бангкок (Таїланд) €192, Куала-Лумпур (Малайзія) €191, Пхукет (Таїланд) €205. Усі через Абу-Дабі, тож це можливе продовження подорожі після Оману, якщо не їхати в Коломбо.</li>
+    <li><b>Не з діапазону 04-18.01:</b> Google Explore показує без прив'язки до цих дат Сінгапур (Сінгапур) €194 і Гонконг (КНР, особливий район) €238, а також Токіо (Японія) €411.</li>
+    <li><b>Посилання:</b> <a href="https://www.kiwi.com/en/search/tiles/muscat-oman/anywhere/2027-01-04_2027-01-18/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → куди завгодно, 04-18.01</a>, <a href="https://www.google.com/travel/explore?q=Flights%20from%20Muscat%20one%20way%20January%204%202027%20to%20January%2018%202027&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google Explore: Маскат</a>.</li>
+  </ul></div>
+  </div></details>
+
+  <details class="sub" open><summary><h3>5. Що важливо знати</h3></summary><div class="sbody">
+  <div class="panel">
+    <ul>
+      <li><b>Зупинка в Маскаті:</b> SalamAir літає Відень → Маскат тричі на тиждень (пн, ср, пт), тож вильот 30.12 (ср) підходить. Прильот у Маскат 22:40, вечірній рейс у Коломбо відправляється наступного дня о 22:15 (D1), тобто 1 ніч. Остання дата в діапазоні 5 діб: 04.01 о 23:50.</li>
+      <li><b>Окремі квитки:</b> у варіантах C і D кожну ділянку купуєте окремо: пропущений або скасований рейс на одній ділянці не захищає інші. У варіанті B усе під одним бронюванням SalamAir.</li>
+      <li><b>Багаж:</b> SalamAir і Air Arabia включають лише 1 ручну поклажу. Зареєстрований багаж платний окремо (у цінах його немає).</li>
+      <li><b>Додаткові витрати зупинки:</b> готель у Маскаті на 1-5 ночей і трансфери. Це окремі гроші, вони не входять у ціну квитків.</li>
+      <li><b>Візи й дозволи (перевірити):</b> Оман (в'їзд для українців на час зупинки), Шрі-Ланка (eTA), нічна пересадка в Шарджі (ОАЕ) для варіантів A, C, D. Google Flights показує попередження «Air traffic disruptions may affect flights» для регіону. Також на сайті SalamAir на момент перевірки була позначка про скасовані до 30.11.2026 рейси на деяких напрямках, тож актуальний розклад на ваші дати перевірте перед покупкою.</li>
+      <li><b>Спосіб перевірки цін:</b> ціни напряму взяті з рядків «Book with SalamAir» / «Book with Air Arabia» на Google Flights (вони ведуть на сайти авіакомпаній). Сам сайт SalamAir я відкривав, але поки не заходив у форму пошуку: на ньому є банер про куки, який я без вашої згоди не приймав.</li>
+    </ul>
+  </div>
+  </div></details>
+  <details class="sub" open><summary><h3>6. Посилання на всі варіанти</h3></summary><div class="sbody">
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Що</th><th>Google Flights (ціни й кнопка «Book with…» авіакомпанії)</th><th>Kiwi.com</th></tr></thead>
+    <tbody>
+      <tr><td class="city">A. Kiwi, один квиток VIE → CMB 24-30.12 / 01-18.01</td><td>—</td><td><a href="https://www.kiwi.com/en/search/results/vienna-austria/colombo-sri-lanka/2026-12-24_2026-12-30/2027-01-01_2027-01-18?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Відень → Коломбо (діапазони)</a></td></tr>
+      <tr><td class="city">B. SalamAir туди-назад VIE → CMB, 30.12 / 18.01</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Vienna%20to%20Colombo%20on%202026-12-30%20through%202027-01-18&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Відень → Коломбо туди-назад</a></td><td>—</td></tr>
+      <tr><td class="city">Відень → Маскат, 30.12 (SalamAir)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Vienna%20to%20Muscat%20on%202026-12-30%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Відень → Маскат</a></td><td><a href="https://www.kiwi.com/en/search/results/vienna-austria/muscat-oman/2026-12-24_2026-12-30/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Відень → Маскат</a></td></tr>
+      <tr><td class="city">Маскат → Коломбо, 30.12 (варіант C)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202026-12-30%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 30.12</a></td><td>—</td></tr>
+      <tr><td class="city">Маскат → Коломбо, 31.12 (D1)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202026-12-31%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 31.12</a></td><td><a href="https://www.kiwi.com/en/search/results/muscat-oman/colombo-sri-lanka/2026-12-31/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → Коломбо 31.12</a></td></tr>
+      <tr><td class="city">Маскат → Коломбо, 01.01 (D2)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202027-01-01%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 01.01</a></td><td><a href="https://www.kiwi.com/en/search/results/muscat-oman/colombo-sri-lanka/2027-01-01/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → Коломбо 01.01</a></td></tr>
+      <tr><td class="city">Маскат → Коломбо, 02.01 (D3)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202027-01-02%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 02.01</a></td><td><a href="https://www.kiwi.com/en/search/results/muscat-oman/colombo-sri-lanka/2027-01-02/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → Коломбо 02.01</a></td></tr>
+      <tr><td class="city">Маскат → Коломбо, 03.01 (D4)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202027-01-03%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 03.01</a></td><td><a href="https://www.kiwi.com/en/search/results/muscat-oman/colombo-sri-lanka/2027-01-03/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → Коломбо 03.01</a></td></tr>
+      <tr><td class="city">Маскат → Коломбо, 04.01 (D5)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Muscat%20to%20Colombo%20on%202027-01-04%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Маскат → Коломбо 04.01</a></td><td><a href="https://www.kiwi.com/en/search/results/muscat-oman/colombo-sri-lanka/2027-01-04/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Маскат → Коломбо 04.01</a></td></tr>
+      <tr><td class="city">Коломбо → Відень, 18.01 (Air Arabia і SalamAir)</td><td><a href="https://www.google.com/travel/flights?q=Flights%20from%20Colombo%20to%20Vienna%20on%202027-01-18%20one%20way&amp;curr=EUR&amp;hl=en" target="_blank" rel="noopener">Google: Коломбо → Відень 18.01</a></td><td><a href="https://www.kiwi.com/en/search/results/colombo-sri-lanka/vienna-austria/2027-01-01_2027-01-18/no-return?sortBy=price&amp;currency=EUR&amp;transportTypes=FLIGHT" target="_blank" rel="noopener">Kiwi: Коломбо → Відень (01-18.01)</a></td></tr>
+    </tbody></table></div>
+  <p class="small">Сайти авіакомпаній (прямі посилання на пошук квитків без сторінки входу відсутні, вибираєте маршрут і дати вручну): <a href="https://www.salamair.com/en" target="_blank" rel="noopener">salamair.com</a> та <a href="https://www.airarabia.com/en" target="_blank" rel="noopener">airarabia.com</a>. Посилання Google Flights відкривають пошук на потрібні дати, а далі в рядку квитка кнопка «Book with SalamAir» чи «Book with Air Arabia» веде на сайт авіакомпанії.</p>
+  </div></details>
+</div></details>
+
+<details class="sub" open><summary><h3>Підсумки по трьох виділених варіантах</h3></summary><div class="sbody">
   <p class="small">Ціни на одного дорослого, дані зі сторінок Kiwi.com на 08.11.2026. Час вильоту й прильоту місцевий, (+1) означає наступний день. Ціна без багажу, а вартість для родини розрахована множенням на чотири.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Показник</th><th>Відень → Коломбо</th><th>Будапешт → Ханой</th><th>Відень → Токіо</th></tr></thead>
@@ -104,7 +372,7 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Авіакомпанії</td><td>Hahn Air (X1), Air Arabia</td><td>Ryanair, Turkish, China Eastern</td><td>SAS (Cityjet)</td></tr>
       <tr><td class="city">Віза / дозвіл (перевірити)</td><td>eTA Шрі-Ланки</td><td>е-віза В'єтнаму, транзит через Китай</td><td>віза в Японію</td></tr>
     </tbody></table></div>
-  <h3>1. Відень → Коломбо (Шрі-Ланка): €676</h3>
+  <details class="sub" open><summary><h3>1. Відень → Коломбо (Шрі-Ланка): €676</h3></summary><div class="sbody">
   <div class="panel">
     <dl>
       <dt>Ціна</dt><dd><b>€676</b> на особу, ≈ €2 704 на чотирьох. З гарантією Kiwi +€346 (€1 022). Ціна без багажу</dd>
@@ -127,7 +395,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td>Шарджа → Відень</td><td>19.01 (вт)</td><td class="num">07:55 SHJ</td><td class="num">11:20 VIE</td><td class="num">6 год 25 хв</td><td>Air Arabia</td><td>—</td></tr>
     </tbody></table></div>
   <div class="note"><b>На що звернути увагу:</b> нічна пересадка на 14 год 10 хв у Шарджі (аеропорт SHJ, не Дубай). Туди перевізника показано як Hahn Air Technologies, фактичного оператора Kiwi не вказує, тож перевірте на сторінці квитка. Віза: Шрі-Ланка потребує eTA.</div>
-  <h3>2. Будапешт → Ханой (В'єтнам): €688</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>2. Будапешт → Ханой (В'єтнам): €688</h3></summary><div class="sbody">
   <div class="panel">
     <dl>
       <dt>Ціна</dt><dd><b>€688</b> на особу, ≈ €2 752 на чотирьох. З гарантією Kiwi +€79 (€767). Без багажу</dd>
@@ -152,7 +421,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td>Шанхай → Будапешт</td><td>19.01 (вт)</td><td class="num">02:25 PVG</td><td class="num">07:05 BUD</td><td class="num">11 год 40 хв</td><td>Shanghai Airlines (China Eastern), MU 8639</td><td>—</td></tr>
     </tbody></table></div>
   <div class="note"><b>На що звернути увагу:</b> найдовша дорога з трьох (разом майже 62 год) і найбільше пересадок (4). Дві пересадки на окремих квитках, і лише перший перельот коштує дешево завдяки Ryanair. Приїзд у Ханой 26.12, тобто 2 дні на дорогу. Транзит через Шанхай і віза для В'єтнаму (е-віза) потребують перевірки.</div>
-  <h3>3. Відень → Токіо (Японія): €712</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>3. Відень → Токіо (Японія): €712</h3></summary><div class="sbody">
   <div class="panel">
     <dl>
       <dt>Ціна</dt><dd><b>€712</b> на особу, ≈ €2 848 на чотирьох. З гарантією Kiwi +€85 (€797). Без багажу</dd>
@@ -175,10 +445,16 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td>Копенгаген → Відень</td><td>13.01 (ср)</td><td class="num">17:45 CPH</td><td class="num">19:25 VIE</td><td class="num">1 год 40 хв</td><td>SAS, SK 695 (виконує Cityjet)</td><td>—</td></tr>
     </tbody></table></div>
   <div class="note"><b>На що звернути увагу:</b> єдиний з трьох варіантів, де в Японії лише один квиток з однією авіакомпанією і найменше ризику пропущеної пересадки. Новий рік (31.12) проводите у Копенгагені та в літаку, а в Токіо прилітаєте 01.01. Для українців потрібна віза в Японію, перевірте перед покупкою. Дорожче за інші два на €24-36.</div>
+  </div></details>
+</div></details>
+</div></details>
 </section>
 
+
+
+
 <section>
-  <h2>2. Зведена таблиця: найдешевша пара на особу</h2>
+<details class="sec" open><summary><h2>3. Зведена таблиця: найдешевша пара на особу</h2></summary><div class="sbody">
   <p class="small">Формат «найдешевша / найкраща». «Найдешевша» часто має кілька пересадок і окремі квитки. «Найкраща» збалансована за ціною й часом у дорозі, «—» означає, що свіжої ціни не знайшлося.</p>
   <div class="tablewrap">
     <table>
@@ -196,13 +472,14 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
     </table>
   </div>
   <p class="small">Помаранчева плашка: ціна «найдешевшої» пари в межах €600-700 (Відень → Коломбо €676, Будапешт → Ханой €688). Бірюзова плашка: Відень → Токіо €712 / €712, один квиток SAS. Зеленим позначено найдешевше в решті рядків. Найнижча ціна в усій таблиці: Відень → Коломбо €676.</p>
+</div></details>
 </section>
 
 <section>
-  <h2>3. Таблиці по напрямках</h2>
+<details class="sec" open><summary><h2>4. Таблиці по напрямках</h2></summary><div class="sbody">
   <p class="small">«Авіакомпанії» — перевізники, логотипи яких Kiwi показує на картці квитка (без розбивки по сегментах). «Туди» й «Назад»: дата, час вильоту → час прильоту за місцевим часом, (+N) означає наступні дні, нижче пересадки. «Один квиток» визначено за відсутністю позначки Self-transfer у Kiwi: для окремих квитків багаж забираєте й реєструєте самі, а пропущена пересадка на вашій відповідальності.</p>
 
-  <h3>Шрі-Ланка (Коломбо, CMB)</h3>
+  <details class="sub" open><summary><h3>Шрі-Ланка (Коломбо, CMB)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -214,8 +491,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Любляна</td><td class="num">€880</td><td class="air">Wizz Air, Pegasus, Etihad Airways</td><td class="leg">29.12 <b>13:30 → 06:25 (+2)</b><small>через Скоп'є, Стамбул, Ер-Ріяд</small></td><td class="leg">14.01 <b>16:05 → 11:55 (+1)</b><small>через Абу-Дабі, Стамбул</small></td><td class="num">14</td><td><span class="tag one">один квиток</span></td><td class="num">€941 · 43 год 55 хв</td></tr>
       <tr><td class="city">Мюнхен</td><td class="num">€935</td><td class="air">AJet, Emirates, Air Arabia</td><td class="leg">30.12 <b>13:40 → 21:55 (+1)</b><small>через Стамбул, Ер-Ріяд, Дубай</small></td><td class="leg">13.01 <b>02:40 → 11:15</b><small>через Дубай</small></td><td class="num">13</td><td><span class="tag">окремі квитки</span></td><td class="num">€995 · 25 год</td></tr>
     </tbody></table></div>
-
-  <h3>В'єтнам (Ханой, HAN)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>В'єтнам (Ханой, HAN)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -227,8 +504,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Загреб</td><td class="num">€882</td><td class="air">Croatia Airlines, Juneyao Airlines</td><td class="leg">30.12 <b>06:45 → 12:15 (+1)</b><small>через Брюссель, Шанхай</small></td><td class="leg">14.01 <b>13:15 → 12:15 (+1)</b><small>через Шанхай, Брюссель</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€882 (це ж)</td></tr>
       <tr><td class="city">Белград</td><td class="num">€942</td><td class="air">China Southern, VietJet Air, Air Serbia</td><td class="leg">30.12 <b>11:00 → 04:20 (+2)</b><small>через Гуанчжоу</small></td><td class="leg">12.01 <b>21:25 → 15:30 (+1)</b><small>через Шанхай</small></td><td class="num">11</td><td><span class="tag one">один квиток</span></td><td class="num">€1 021 · 44 год 5 хв</td></tr>
     </tbody></table></div>
-
-  <h3>Малайзія (Куала-Лумпур, KUL)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Малайзія (Куала-Лумпур, KUL)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -240,8 +517,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Любляна</td><td class="num">€880</td><td class="air">Air Serbia, Oman Air, Turkish Airlines</td><td class="leg">30.12 <b>20:45 → 07:55 (+3)</b><small>через Белград, Мюнхен, Маскат</small></td><td class="leg">14.01 <b>08:15 → 18:45</b><small>через Стамбул</small></td><td class="num">12</td><td><span class="tag">окремі квитки</span></td><td class="num">€909 · 41 год 30 хв</td></tr>
       <tr><td class="city">Белград</td><td class="num">€1 094</td><td class="air">Malaysia Airlines, Etihad Airways</td><td class="leg">30.12 <b>11:55 → 14:40 (+1)</b><small>через Доху</small></td><td class="leg">10.01 <b>21:40 → 05:10 (+2)</b><small>через Абу-Дабі, Афіни</small></td><td class="num">10</td><td><span class="tag one">один квиток</span></td><td class="num">€1 173 · 50 год 30 хв</td></tr>
     </tbody></table></div>
-
-  <h3>Японія (Токіо, NRT/HND)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Японія (Токіо, NRT/HND)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -253,8 +530,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Любляна</td><td class="num">€1 252</td><td class="air">Air France, Air China</td><td class="leg">27.12 <b>12:25 → 19:50 (+1)</b><small>через Париж, Пекін (в HND)</small></td><td class="leg">12.01 <b>21:00 → 11:40 (+1)</b><small>з HND через Пекін, Париж</small></td><td class="num">15</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 361 · 36 год 40 хв</td></tr>
       <tr><td class="city">Белград</td><td class="num">€1 407</td><td class="air">Turkish Airlines</td><td class="leg">30.12 <b>08:50 → 12:10 (+1)</b><small>через Стамбул (в HND)</small></td><td class="leg">11.01 <b>08:55 → 19:30</b><small>з HND через Стамбул</small></td><td class="num">11</td><td><span class="tag one">один квиток</span></td><td class="num">€1 407 (це ж)</td></tr>
     </tbody></table></div>
-
-  <h3>Таїланд (Бангкок, BKK/DMK)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Таїланд (Бангкок, BKK/DMK)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -266,8 +543,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Любляна</td><td class="num">€1 056</td><td class="air">Turkish Airlines, Saudi Arabian Airlines</td><td class="leg">29.12 <b>09:20 → 23:30 (+1)</b><small>через Стамбул, Джидду</small></td><td class="leg">18.01 <b>15:20 → 18:45 (+1)</b><small>через Джидду, Стамбул</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 095 · 42 год 20 хв</td></tr>
       <tr><td class="city">Загреб</td><td class="num">€1 076</td><td class="air">Fly Dubai</td><td class="leg">29.12 <b>13:55 → 10:05 (+1)</b><small>через Дубай (в DMK)</small></td><td class="leg">14.01 <b>23:00 → 12:55 (+1)</b><small>через Дубай</small></td><td class="num">15</td><td><span class="tag one">один квиток</span></td><td class="num">€1 076 (це ж)</td></tr>
     </tbody></table></div>
-
-  <h3>Домінікана (Пунта-Кана, PUJ)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Домінікана (Пунта-Кана, PUJ)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -279,8 +556,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Варшава</td><td class="num">€1 129</td><td class="air">Ryanair, easyJet, Discover Airlines, Neos Air, Wizz Air</td><td class="leg">30.12 <b>22:15 → 17:30 (+2)</b><small>з Модліна (WMI) через Мілан (зміна аеропорту), Франкфурт</small></td><td class="leg">18.01 <b>19:50 → 10:20 (+2)</b><small>через Мілан (зміна аеропорту)</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 293 · 29 год</td></tr>
       <tr><td class="city">Белград</td><td class="num">€1 163</td><td class="air">Air Serbia, Vueling, Air Caraïbes</td><td class="leg">30.12 <b>17:10 → 17:00 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">12.01 <b>19:20 → 23:10 (+1)</b><small>через Париж, Барселону</small></td><td class="num">12</td><td><span class="tag">окремі квитки</span></td><td class="num">—</td></tr>
     </tbody></table></div>
-
-  <h3>Гваделупа (Pointe-à-Pitre, PTP)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Гваделупа (Pointe-à-Pitre, PTP)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -292,8 +569,8 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Мюнхен</td><td class="num">€1 150</td><td class="air">Lufthansa, Wizz Air Malta, Corsair International, easyJet</td><td class="leg">30.12 <b>21:40 → 19:15 (+1)</b><small>через Рим, Париж</small></td><td class="leg">14.01 <b>21:20 → 16:50 (+1)</b><small>через Париж, Рим</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">—</td></tr>
       <tr><td class="city">Загреб</td><td class="num">€1 158</td><td class="air">Ryanair, Air Caraïbes</td><td class="leg">27.12 <b>19:20 → 14:40 (+1)</b><small>через Париж (зміна аеропорту)</small></td><td class="leg">16.01 <b>19:00 → 14:20 (+2)</b><small>через Фор-де-Франс, Париж (зміна аеропорту)</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 203 · 37 год 10 хв</td></tr>
     </tbody></table></div>
-
-  <h3>Мартиніка (Fort-de-France, FDF)</h3>
+  </div></details>
+  <details class="sub" open><summary><h3>Мартиніка (Fort-de-France, FDF)</h3></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
     <tbody>
@@ -305,10 +582,12 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Мюнхен</td><td class="num">€1 163</td><td class="air">Vueling, Air Caraïbes</td><td class="leg">29.12 <b>21:05 → 14:10 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">16.01 <b>17:10 → 20:15 (+1)</b><small>через Париж, Барселону</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 291 · 29 год 35 хв</td></tr>
       <tr><td class="city">Загреб</td><td class="num">€1 202</td><td class="air">Ryanair, easyJet, Air Caraïbes, Transavia France</td><td class="leg">29.12 <b>07:45 → 18:40</b><small>через Рим, Париж</small></td><td class="leg">15.01 <b>18:25 → 21:55 (+1)</b><small>через Париж, Рим</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 281 · 30 год 40 хв</td></tr>
     </tbody></table></div>
+  </div></details>
+</div></details>
 </section>
 
 <section>
-  <h2>Що вкладається в бюджет (поза основним списком)</h2>
+<details class="sec" open><summary><h2>Що вкладається в бюджет (поза основним списком)</h2></summary><div class="sbody">
   <div class="tablewrap"><table class="wide">
     <thead><tr><th>Напрямок</th><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th></tr></thead>
     <tbody>
@@ -320,10 +599,11 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
       <tr><td class="city">Дубай (ОАЕ)</td><td class="city">Варшава</td><td class="num low">€475</td><td class="air">Wizz Air, Israir, SunExpress, Pegasus</td><td class="leg">24.12 <b>06:10 → 12:45 (+1)</b><small>через Тель-Авів</small></td><td class="leg">15.01 <b>03:50 → 11:30</b><small>через Анталью</small></td><td class="num">21</td><td><span class="tag">окремі квитки</span></td></tr>
     </tbody></table></div>
   <p class="small">Для Тбілісі й Дубая я шукав лише з Відня, Загреба, Будапешта та Варшави. З Любляни, Белграда й Мюнхена не перевіряв.</p>
+</div></details>
 </section>
 
 <section>
-  <h2>Нотатки</h2>
+<details class="sec" open><summary><h2>Нотатки</h2></summary><div class="sbody">
   <div class="panel">
     <ul>
       <li><b>Ціни на родину:</b> показано ціну за одного дорослого. Для чотирьох сума може бути вищою, якщо в тарифі лишилося менше місць (у багатьох картках Kiwi «1-3 місця за цією ціною»). Для найближчого варіанту (Відень → Коломбо €676) це ≈ €2 700 на чотирьох.</li>
@@ -338,8 +618,19 @@ ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap:
     </ul>
   </div>
   <p class="small">Ціни змінюються щодня. Перед бронюванням перевірте пару дат і вартість на сайті Kiwi або авіакомпанії.</p>
+</div></details>
 </section>
 
 </main>
+<script>
+(function () {
+  function setAll(open) {
+    var d = document.querySelectorAll('details');
+    for (var i = 0; i < d.length; i++) { d[i].open = open; }
+  }
+  document.getElementById('expandAll').addEventListener('click', function () { setAll(true); });
+  document.getElementById('collapseAll').addEventListener('click', function () { setAll(false); });
+})();
+</script>
 </body>
 </html>
