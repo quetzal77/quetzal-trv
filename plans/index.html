@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Плани поїздок</title>
+<style>
+:root {
+  --bg: #f3f6f7; --surface: #ffffff; --fg: #14282e; --muted: #5a6e74; --line: #d6e0e3;
+  --accent: #0b6e7a; --accent-soft: #dcf0f2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1b1f; --surface: #162429; --fg: #e4eef0; --muted: #94a9af; --line: #29393e;
+    --accent: #5cc4d0; --accent-soft: #17383d;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; display: flex; }
+nav { width: 300px; flex: none; background: var(--surface); border-right: 1px solid var(--line); overflow-y: auto; padding: 20px 14px; }
+nav h1 { font-size: 1.2rem; margin: 0 0 16px; }
+nav h2 { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 20px 0 6px; }
+nav a { display: block; padding: 8px 10px; border-radius: 6px; color: var(--fg); text-decoration: none; }
+nav a:hover { background: var(--accent-soft); }
+nav a.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+nav a small { display: block; color: var(--muted); font-weight: 400; font-size: .8rem; }
+main { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--surface); }
+.bar span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar a { color: var(--accent); white-space: nowrap; }
+iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+.empty { margin: auto; color: var(--muted); padding: 24px; text-align: center; }
+@media (max-width: 760px) {
+  body { flex-direction: column; }
+  nav { width: 100%; max-height: 40%; border-right: 0; border-bottom: 1px solid var(--line); }
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <h1>Плани поїздок</h1>
+  <h2>Поїздки</h2>
+  <a href="trip_plan/2026.11_trip-austria-germany.html" data-title="Австрія та Німеччина">Австрія та Німеччина<small>листопад 2026</small></a>
+  <h2>Перельоти</h2>
+  <a href="flights/2026.12_christmas_flights_open_return.html" data-title="Виліт 24-30.12.2026, повернення до 18.01.2027">Виліт 24-30.12, назад до 18.01<small>7 напрямків, 6 міст, найдешевша пара</small></a>
+  <a href="flights/2026.12_christmas_flights.html" data-title="Перельоти 24-30.12.2026 (застаріле: фіксоване повернення 30.12)">Різдво 24-30.12 (застаріле)<small>фіксоване повернення 30.12</small></a>
+  <a href="flights/2026.11_flight_plans.html" data-title="Відень - Бангкок (листопад 2026)">Відень - Бангкок<small>попередній план, листопад 2026</small></a>
+</nav>
+<main>
+  <div class="bar"><span id="cur">Оберіть план зліва</span><a id="open" href="#" target="_blank" rel="noopener" hidden>Відкрити окремо</a></div>
+  <div class="empty" id="empty">Оберіть план або переліт у списку зліва.</div>
+  <iframe id="frame" title="План" hidden></iframe>
+</main>
+<script>
+(function () {
+  var links = document.querySelectorAll('#nav a');
+  var frame = document.getElementById('frame');
+  var empty = document.getElementById('empty');
+  var cur = document.getElementById('cur');
+  var open = document.getElementById('open');
+
+  function show(href) {
+    var found = null;
+    for (var i = 0; i < links.length; i++) {
+      var on = links[i].getAttribute('href') === href;
+      links[i].className = on ? 'active' : '';
+      if (on) { found = links[i]; }
+    }
+    if (!found) { return; }
+    frame.src = href;
+    frame.hidden = false;
+    empty.hidden = true;
+    cur.textContent = found.getAttribute('data-title');
+    open.href = href;
+    open.hidden = false;
+  }
+
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = this.getAttribute('href');
+      try { history.replaceState(null, '', '#' + href); } catch (err) { location.hash = href; }
+      show(href);
+    });
+  }
+
+  var h = decodeURIComponent(location.hash.slice(1));
+  show(h || links[0].getAttribute('href'));
+})();
+</script>
+</body>
+</html>

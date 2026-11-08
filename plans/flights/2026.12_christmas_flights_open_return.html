@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Перельоти: виліт 24-30.12.2026, повернення до 18.01.2027</title>
+<style>
+:root {
+  --bg: #f3f6f7; --surface: #ffffff; --fg: #14282e; --muted: #5a6e74; --line: #d6e0e3;
+  --accent: #0b6e7a; --accent-soft: #dcf0f2; --warn: #9a5b00; --warn-soft: #fff1d6;
+  --bad: #a3302a; --good: #1b7a3d; --good-soft: #def3e4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1b1f; --surface: #162429; --fg: #e4eef0; --muted: #94a9af; --line: #29393e;
+    --accent: #5cc4d0; --accent-soft: #17383d; --warn: #f0b955; --warn-soft: #3a2d12;
+    --bad: #ef8a83; --good: #6fd08c; --good-soft: #14341f;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 32px 16px 56px; }
+main { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; }
+p { margin: 0; }
+.label { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.lead { color: var(--muted); margin-top: 8px; max-width: 72ch; }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 18px; }
+dl { margin: 0; display: grid; grid-template-columns: minmax(140px, 230px) 1fr; gap: 10px 18px; }
+dt { color: var(--muted); }
+dd { margin: 0; font-weight: 500; }
+@media (max-width: 520px) { dl { grid-template-columns: 1fr; gap: 2px; } dd { margin-bottom: 10px; } }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-variant-numeric: tabular-nums; }
+table.wide { min-width: 1120px; }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-family: ui-monospace, Consolas, monospace; white-space: nowrap; }
+td.city { font-weight: 600; white-space: nowrap; }
+td.low { color: var(--good); font-weight: 700; }
+td.hl span { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); font-weight: 700; box-shadow: inset 0 0 0 1px var(--accent); }
+td.mid span { display: inline-block; padding: 2px 8px; border-radius: 6px; background: var(--warn-soft); color: var(--warn); font-weight: 700; box-shadow: inset 0 0 0 1px var(--warn); }
+td.air { font-size: .88rem; min-width: 150px; }
+td.leg { font-size: .88rem; min-width: 150px; }
+td.leg b { font-family: ui-monospace, Consolas, monospace; font-weight: 600; }
+td.leg small { display: block; color: var(--muted); }
+.note { background: var(--warn-soft); border-radius: 6px; padding: 14px 16px; }
+.note b { color: var(--warn); }
+.ok { background: var(--good-soft); border-radius: 6px; padding: 14px 16px; }
+.ok b { color: var(--good); }
+ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+.small { color: var(--muted); font-size: .85rem; }
+.tag { display: inline-block; font-size: .7rem; padding: 1px 7px; border-radius: 99px; background: var(--warn-soft); color: var(--warn); font-weight: 600; white-space: nowrap; }
+.tag.one { background: var(--good-soft); color: var(--good); }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="label">Пошук перельотів · станом на 08.11.2026</div>
+  <h1>Виліт 24-30 грудня 2026, повернення до 18 січня 2027</h1>
+  <p class="lead">Домінікана, Гваделупа, Мартиніка, Шрі-Ланка, Таїланд, В'єтнам, Малайзія, Японія. Вильоти з семи міст. Виліт туди будь-якого дня 24-30.12, зворотний рейс будь-якого дня 01-18.01.2027, обираємо найдешевшу пару.</p>
+</header>
+
+<section>
+  <h2>1. Умови на старті</h2>
+  <div class="panel">
+    <dl>
+      <dt>Склад</dt><dd>4 пасажири: 2 дорослих і 2 дітей (10 і 13 років)</dd>
+      <dt>Виліт туди</dt><dd>будь-який день 24.12-30.12.2026</dd>
+      <dt>Виліт назад</dt><dd>найдешевший у 2027 році, не пізніше 18.01.2027</dd>
+      <dt>Бюджет</dt><dd>не більше €600 на особу туди й назад (≈ €2 400 на родину)</dd>
+      <dt>Клас</dt><dd>Економ, ціни без платного багажу</dd>
+      <dt>Громадянство</dt><dd>Україна</dd>
+      <dt>Джерело цін</dt><dd>Kiwi.com (гнучкі діапазони дат, тільки літаки), ціни для одного дорослого, перевірено 08.11.2026</dd>
+    </dl>
+  </div>
+  <div class="note"><b>Підсумок:</b> у €600 не вкладається жоден з восьми основних напрямків. Найближчий: Відень → Коломбо (Шрі-Ланка) за €676 на особу (≈ €2 700 на чотирьох), виліт 30.12, зворотний рейс 18.01 (приліт у Відень 19.01). Деталі трьох виділених варіантів нижче. До ліміту бракує €76 на особу.</div>
+  <div class="ok"><b>У бюджет вкладаються</b> Тбілісі (Відень €270, Загреб €330) і Дубай (Будапешт €433, Відень €445). Детальніше в розділі «Що вкладається в бюджет».</div>
+</section>
+
+<section>
+  <h2>Підсумок: три виділені варіанти</h2>
+  <p class="small">Ціни на одного дорослого, дані зі сторінок Kiwi.com на 08.11.2026. Час вильоту й прильоту місцевий, (+1) означає наступний день. Ціна без багажу, а вартість для родини розрахована множенням на чотири.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Показник</th><th>Відень → Коломбо</th><th>Будапешт → Ханой</th><th>Відень → Токіо</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Ціна на особу</td><td class="num">€676</td><td class="num">€688</td><td class="num">€712</td></tr>
+      <tr><td class="city">На чотирьох (≈)</td><td class="num">€2 704</td><td class="num">€2 752</td><td class="num">€2 848</td></tr>
+      <tr><td class="city">Виліт туди</td><td>30.12 13:30</td><td>24.12 12:35</td><td>30.12 20:05</td></tr>
+      <tr><td class="city">Приліт туди</td><td>31.12 05:25</td><td>26.12 14:10</td><td>01.01 07:55</td></tr>
+      <tr><td class="city">Виліт назад</td><td>18.01 14:35</td><td>18.01 18:45</td><td>13.01 09:55</td></tr>
+      <tr><td class="city">Приліт додому</td><td>19.01 11:20</td><td>19.01 07:05</td><td>13.01 19:25</td></tr>
+      <tr><td class="city">Ночей на місці</td><td class="num">18</td><td class="num">23</td><td class="num">12</td></tr>
+      <tr><td class="city">Час у дорозі (туди / назад)</td><td>11 год 25 хв / 25 год 15 хв</td><td>43 год 35 хв / 18 год 20 хв</td><td>27 год 50 хв / 17 год 30 хв</td></tr>
+      <tr><td class="city">Разом у дорозі</td><td class="num">36 год 40 хв</td><td class="num">61 год 55 хв</td><td class="num">45 год 20 хв</td></tr>
+      <tr><td class="city">Пересадки</td><td>Маскат 1 год 10 хв; Шарджа 14 год 10 хв</td><td>Тирана 6 год 30 хв; Стамбул 13 год 50 хв; Шанхай 5 год 35 хв; Шанхай 3 год 35 хв</td><td>Копенгаген 13 год 30 хв; Копенгаген 2 год 25 хв</td></tr>
+      <tr><td class="city">Квиток</td><td>один квиток</td><td>окремі квитки (Тирана, Стамбул)</td><td>один квиток</td></tr>
+      <tr><td class="city">Авіакомпанії</td><td>Hahn Air (X1), Air Arabia</td><td>Ryanair, Turkish, China Eastern</td><td>SAS (Cityjet)</td></tr>
+      <tr><td class="city">Віза / дозвіл (перевірити)</td><td>eTA Шрі-Ланки</td><td>е-віза В'єтнаму, транзит через Китай</td><td>віза в Японію</td></tr>
+    </tbody></table></div>
+  <h3>1. Відень → Коломбо (Шрі-Ланка): €676</h3>
+  <div class="panel">
+    <dl>
+      <dt>Ціна</dt><dd><b>€676</b> на особу, ≈ €2 704 на чотирьох. З гарантією Kiwi +€346 (€1 022). Ціна без багажу</dd>
+      <dt>Пункт відправлення</dt><dd>Відень (VIE), повернення теж у Відень</dd>
+      <dt>Дати</dt><dd>Виліт 30.12.2026, приліт у Коломбо 31.12 05:25. Виліт назад 18.01.2027, приліт у Відень 19.01 11:20. 18 ночей на Шрі-Ланці</dd>
+      <dt>Час у дорозі</dt><dd>Туди 11 год 25 хв, назад 25 год 15 хв, разом 36 год 40 хв</dd>
+      <dt>Пересадки</dt><dd>Туди 1 пересадка (Маскат, 1 год 10 хв). Назад 1 пересадка (Шарджа, 14 год 10 хв, ніч)</dd>
+      <dt>Квиток</dt><dd>Один квиток (Kiwi не позначив self-transfer)</dd>
+      <dt>Авіакомпанії</dt><dd>Туди: Hahn Air Technologies (рейси X1 1382 і X1 1342, виписані через Hahn Air). Назад: Air Arabia</dd>
+    </dl>
+  </div>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>В повітрі</th><th>Авіакомпанія, рейс</th><th>Пересадка після ділянки</th></tr></thead>
+    <tbody>
+      <tr><td colspan="7" class="city">Туди</td></tr>
+      <tr><td>Відень → Маскат</td><td>30.12 (ср)</td><td class="num">13:30 VIE</td><td class="num">22:40 MCT</td><td class="num">6 год 10 хв</td><td>Hahn Air Technologies, X1 1382</td><td>1 год 10 хв у Маскаті</td></tr>
+      <tr><td>Маскат → Коломбо</td><td>30.12 → 31.12</td><td class="num">23:50 MCT</td><td class="num">05:25 CMB (+1)</td><td class="num">4 год 06 хв</td><td>Hahn Air Technologies, X1 1342</td><td>—</td></tr>
+      <tr><td colspan="7" class="city">Назад</td></tr>
+      <tr><td>Коломбо → Шарджа</td><td>18.01 (пн)</td><td class="num">14:35 CMB</td><td class="num">17:45 SHJ</td><td class="num">4 год 40 хв</td><td>Air Arabia</td><td>14 год 10 хв у Шарджі (нічна пересадка)</td></tr>
+      <tr><td>Шарджа → Відень</td><td>19.01 (вт)</td><td class="num">07:55 SHJ</td><td class="num">11:20 VIE</td><td class="num">6 год 25 хв</td><td>Air Arabia</td><td>—</td></tr>
+    </tbody></table></div>
+  <div class="note"><b>На що звернути увагу:</b> нічна пересадка на 14 год 10 хв у Шарджі (аеропорт SHJ, не Дубай). Туди перевізника показано як Hahn Air Technologies, фактичного оператора Kiwi не вказує, тож перевірте на сторінці квитка. Віза: Шрі-Ланка потребує eTA.</div>
+  <h3>2. Будапешт → Ханой (В'єтнам): €688</h3>
+  <div class="panel">
+    <dl>
+      <dt>Ціна</dt><dd><b>€688</b> на особу, ≈ €2 752 на чотирьох. З гарантією Kiwi +€79 (€767). Без багажу</dd>
+      <dt>Пункт відправлення</dt><dd>Будапешт (BUD), повернення теж у Будапешт</dd>
+      <dt>Дати</dt><dd>Виліт 24.12.2026, приліт у Ханой 26.12 14:10. Виліт назад 18.01.2027, приліт у Будапешт 19.01 07:05. 23 ночі у В'єтнамі</dd>
+      <dt>Час у дорозі</dt><dd>Туди 43 год 35 хв, назад 18 год 20 хв, разом 61 год 55 хв</dd>
+      <dt>Пересадки</dt><dd>Туди 3 пересадки: Тирана (6 год 30 хв), Стамбул (13 год 50 хв, ніч), Шанхай (5 год 35 хв). Назад 1 пересадка: Шанхай (3 год 35 хв, ніч)</dd>
+      <dt>Квиток</dt><dd>Окремі квитки (self-transfer): у Тирані й Стамбулі багаж забираєте самі, за пропущену пересадку відповідаєте ви. Квиток Kiwi перевіряє Ryanair</dd>
+      <dt>Авіакомпанії</dt><dd>Ryanair, Turkish Airlines, China Eastern Airlines (зворотний рейс Шанхай → Будапешт виконує Shanghai Airlines, MU 8639)</dd>
+    </dl>
+  </div>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>В повітрі</th><th>Авіакомпанія, рейс</th><th>Пересадка після ділянки</th></tr></thead>
+    <tbody>
+      <tr><td colspan="7" class="city">Туди</td></tr>
+      <tr><td>Будапешт → Тирана</td><td>24.12 (чт)</td><td class="num">12:35 BUD</td><td class="num">14:00 TIA</td><td class="num">1 год 25 хв</td><td>Ryanair, FR 6887</td><td>6 год 30 хв у Тирані (self-transfer)</td></tr>
+      <tr><td>Тирана → Стамбул</td><td>24.12 → 25.12</td><td class="num">20:30 TIA</td><td class="num">00:20 IST (+1)</td><td class="num">1 год 50 хв</td><td>Turkish Airlines</td><td>13 год 50 хв у Стамбулі (ніч, self-transfer)</td></tr>
+      <tr><td>Стамбул → Шанхай</td><td>25.12 → 26.12</td><td class="num">14:10 IST</td><td class="num">05:30 PVG (+1)</td><td class="num">10 год 20 хв</td><td>China Eastern Airlines</td><td>5 год 35 хв у Шанхаї</td></tr>
+      <tr><td>Шанхай → Ханой</td><td>26.12 (сб)</td><td class="num">11:05 PVG</td><td class="num">14:10 HAN</td><td class="num">4 год 05 хв</td><td>China Eastern Airlines</td><td>—</td></tr>
+      <tr><td colspan="7" class="city">Назад</td></tr>
+      <tr><td>Ханой → Шанхай</td><td>18.01 (пн)</td><td class="num">18:45 HAN</td><td class="num">22:50 PVG</td><td class="num">3 год 05 хв</td><td>China Eastern Airlines</td><td>3 год 35 хв у Шанхаї (нічна пересадка)</td></tr>
+      <tr><td>Шанхай → Будапешт</td><td>19.01 (вт)</td><td class="num">02:25 PVG</td><td class="num">07:05 BUD</td><td class="num">11 год 40 хв</td><td>Shanghai Airlines (China Eastern), MU 8639</td><td>—</td></tr>
+    </tbody></table></div>
+  <div class="note"><b>На що звернути увагу:</b> найдовша дорога з трьох (разом майже 62 год) і найбільше пересадок (4). Дві пересадки на окремих квитках, і лише перший перельот коштує дешево завдяки Ryanair. Приїзд у Ханой 26.12, тобто 2 дні на дорогу. Транзит через Шанхай і віза для В'єтнаму (е-віза) потребують перевірки.</div>
+  <h3>3. Відень → Токіо (Японія): €712</h3>
+  <div class="panel">
+    <dl>
+      <dt>Ціна</dt><dd><b>€712</b> на особу, ≈ €2 848 на чотирьох. З гарантією Kiwi +€85 (€797). Без багажу</dd>
+      <dt>Пункт відправлення</dt><dd>Відень (VIE), повернення теж у Відень. Прильот у Токіо в Ханеду (HND)</dd>
+      <dt>Дати</dt><dd>Виліт 30.12.2026, приліт у Токіо 01.01.2027 07:55. Виліт назад 13.01.2027, приліт у Відень 13.01 19:25. 12 ночей в Японії</dd>
+      <dt>Час у дорозі</dt><dd>Туди 27 год 50 хв, назад 17 год 30 хв, разом 45 год 20 хв</dd>
+      <dt>Пересадки</dt><dd>Туди 1 пересадка (Копенгаген, 13 год 30 хв, ніч). Назад 1 пересадка (Копенгаген, 2 год 25 хв)</dd>
+      <dt>Квиток</dt><dd>Один квиток, без self-transfer</dd>
+      <dt>Авіакомпанії</dt><dd>SAS (рейси SK 696 і SK 695, останній виконує Cityjet)</dd>
+    </dl>
+  </div>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Ділянка</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>В повітрі</th><th>Авіакомпанія, рейс</th><th>Пересадка після ділянки</th></tr></thead>
+    <tbody>
+      <tr><td colspan="7" class="city">Туди</td></tr>
+      <tr><td>Відень → Копенгаген</td><td>30.12 (ср)</td><td class="num">20:05 VIE</td><td class="num">21:50 CPH</td><td class="num">1 год 45 хв</td><td>SAS, SK 696</td><td>13 год 30 хв у Копенгагені (ніч)</td></tr>
+      <tr><td>Копенгаген → Токіо (Ханеда)</td><td>31.12 → 01.01</td><td class="num">11:20 CPH</td><td class="num">07:55 HND (+1)</td><td class="num">12 год 35 хв</td><td>SAS</td><td>—</td></tr>
+      <tr><td colspan="7" class="city">Назад</td></tr>
+      <tr><td>Токіо (Ханеда) → Копенгаген</td><td>13.01 (ср)</td><td class="num">09:55 HND</td><td class="num">15:20 CPH</td><td class="num">13 год 25 хв</td><td>SAS</td><td>2 год 25 хв у Копенгагені</td></tr>
+      <tr><td>Копенгаген → Відень</td><td>13.01 (ср)</td><td class="num">17:45 CPH</td><td class="num">19:25 VIE</td><td class="num">1 год 40 хв</td><td>SAS, SK 695 (виконує Cityjet)</td><td>—</td></tr>
+    </tbody></table></div>
+  <div class="note"><b>На що звернути увагу:</b> єдиний з трьох варіантів, де в Японії лише один квиток з однією авіакомпанією і найменше ризику пропущеної пересадки. Новий рік (31.12) проводите у Копенгагені та в літаку, а в Токіо прилітаєте 01.01. Для українців потрібна віза в Японію, перевірте перед покупкою. Дорожче за інші два на €24-36.</div>
+</section>
+
+<section>
+  <h2>2. Зведена таблиця: найдешевша пара на особу</h2>
+  <p class="small">Формат «найдешевша / найкраща». «Найдешевша» часто має кілька пересадок і окремі квитки. «Найкраща» збалансована за ціною й часом у дорозі, «—» означає, що свіжої ціни не знайшлося.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Напрямок</th><th>Загреб</th><th>Відень</th><th>Будапешт</th><th>Любляна</th><th>Белград</th><th>Мюнхен</th><th>Варшава</th></tr></thead>
+      <tbody>
+        <tr><td class="city">Шрі-Ланка (CMB)</td><td class="num">€880 / €880</td><td class="num mid"><span>€676 / €676</span></td><td class="num">€812 / €914</td><td class="num">€880 / €941</td><td class="num">€859 / €871</td><td class="num">€935 / €995</td><td class="num">€713 / €906</td></tr>
+        <tr><td class="city">В'єтнам (HAN)</td><td class="num">€882 / €882</td><td class="num">€746 / €830</td><td class="num mid"><span>€688 / €721</span></td><td class="num">€752 / €764</td><td class="num">€942 / €1 021</td><td class="num">€776 / €847</td><td class="num">€714 / €836</td></tr>
+        <tr><td class="city">Малайзія (KUL)</td><td class="num">€812 / €903</td><td class="num">€808 / €862</td><td class="num low">€732 / €762</td><td class="num">€880 / €909</td><td class="num">€1 094 / €1 173</td><td class="num">€816 / €888</td><td class="num">€785 / €877</td></tr>
+        <tr><td class="city">Японія (Токіо)</td><td class="num">€944 / €944</td><td class="num hl"><span>€712 / €712</span></td><td class="num">€860 / €860</td><td class="num">€1 252 / €1 361</td><td class="num">€1 407 / €1 407</td><td class="num">€856 / €909</td><td class="num">€926 / €956</td></tr>
+        <tr><td class="city">Таїланд (BKK/DMK)</td><td class="num">€1 076 / €1 076</td><td class="num">€797 / €947</td><td class="num">€897 / €1 015</td><td class="num">€1 056 / €1 095</td><td class="num">€758 / €758</td><td class="num">€852 / €899</td><td class="num low">€752 / €876</td></tr>
+        <tr><td class="city">Домінікана (PUJ)</td><td class="num low">€960 / €994</td><td class="num">€1 037 / €1 089</td><td class="num">€1 003 / —</td><td class="num">€1 028 / €1 297</td><td class="num">€1 163 / —</td><td class="num">€982 / €988</td><td class="num">€1 129 / €1 293</td></tr>
+        <tr><td class="city">Гваделупа (PTP)</td><td class="num">€1 158 / €1 203</td><td class="num">€1 100 / €1 100</td><td class="num low">€1 035 / €1 035</td><td class="num">€1 116 / €1 116</td><td class="num">€1 046 / €1 148</td><td class="num">€1 150 / —</td><td class="num">€1 080 / €1 080</td></tr>
+        <tr><td class="city">Мартиніка (FDF)</td><td class="num">€1 202 / €1 281</td><td class="num">€1 119 / €1 203</td><td class="num low">€982 / €1 033</td><td class="num">€1 096 / €1 096</td><td class="num">€1 071 / €1 071</td><td class="num">€1 163 / €1 291</td><td class="num">€1 037 / €1 037</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">Помаранчева плашка: ціна «найдешевшої» пари в межах €600-700 (Відень → Коломбо €676, Будапешт → Ханой €688). Бірюзова плашка: Відень → Токіо €712 / €712, один квиток SAS. Зеленим позначено найдешевше в решті рядків. Найнижча ціна в усій таблиці: Відень → Коломбо €676.</p>
+</section>
+
+<section>
+  <h2>3. Таблиці по напрямках</h2>
+  <p class="small">«Авіакомпанії» — перевізники, логотипи яких Kiwi показує на картці квитка (без розбивки по сегментах). «Туди» й «Назад»: дата, час вильоту → час прильоту за місцевим часом, (+N) означає наступні дні, нижче пересадки. «Один квиток» визначено за відсутністю позначки Self-transfer у Kiwi: для окремих квитків багаж забираєте й реєструєте самі, а пропущена пересадка на вашій відповідальності.</p>
+
+  <h3>Шрі-Ланка (Коломбо, CMB)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Відень</td><td class="num low">€676</td><td class="air">Hahn Air Technologies, Air Arabia</td><td class="leg">30.12 <b>13:30 → 05:25 (+1)</b><small>через Маскат</small></td><td class="leg">18.01 <b>14:35 → 11:20 (+1)</b><small>через Шарджу (14 год 10 хв)</small></td><td class="num">18</td><td><span class="tag one">один квиток</span></td><td class="num">€676 (це ж)</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€713</td><td class="air">LOT Polish Airlines, Air Arabia</td><td class="leg">30.12 <b>22:50 → 01:50 (+3)</b><small>через Катовіце, Дубай</small></td><td class="leg">18.01 <b>02:40 → 10:55</b><small>через Дубай</small></td><td class="num">16</td><td><span class="tag">окремі квитки</span></td><td class="num">€906 · 27 год 20 хв</td></tr>
+      <tr><td class="city">Будапешт</td><td class="num">€812</td><td class="air">Israir, FitsAir, IndiGo, Ryanair</td><td class="leg">27.12 <b>20:00 → 00:05 (+2)</b><small>через Тель-Авів, Дубай</small></td><td class="leg">03.01 <b>23:15 → 20:00 (+1)</b><small>через Мумбай, Афіни</small></td><td class="num">5</td><td>не визначено</td><td class="num">€914 · 29 год 25 хв</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€859</td><td class="air">Wizz Air, Israir, FitsAir, Air Arabia Abu Dhabi, Air Serbia</td><td class="leg">27.12 <b>18:45 → 00:05 (+2)</b><small>через Ларнаку, Тель-Авів, Дубай</small></td><td class="leg">17.01 <b>21:55 → 22:35 (+1)</b><small>через Абу-Дабі, Єреван, Гамбург</small></td><td class="num">19</td><td><span class="tag one">один квиток</span></td><td class="num">€871 · 44 год 20 хв</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€880</td><td class="air">Fly Dubai</td><td class="leg">30.12 <b>13:55 → 08:15 (+1)</b><small>через Дубай</small></td><td class="leg">13.01 <b>23:00 → 12:55 (+1)</b><small>через Дубай</small></td><td class="num">13</td><td><span class="tag one">один квиток</span></td><td class="num">€880 (це ж)</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€880</td><td class="air">Wizz Air, Pegasus, Etihad Airways</td><td class="leg">29.12 <b>13:30 → 06:25 (+2)</b><small>через Скоп'є, Стамбул, Ер-Ріяд</small></td><td class="leg">14.01 <b>16:05 → 11:55 (+1)</b><small>через Абу-Дабі, Стамбул</small></td><td class="num">14</td><td><span class="tag one">один квиток</span></td><td class="num">€941 · 43 год 55 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€935</td><td class="air">AJet, Emirates, Air Arabia</td><td class="leg">30.12 <b>13:40 → 21:55 (+1)</b><small>через Стамбул, Ер-Ріяд, Дубай</small></td><td class="leg">13.01 <b>02:40 → 11:15</b><small>через Дубай</small></td><td class="num">13</td><td><span class="tag">окремі квитки</span></td><td class="num">€995 · 25 год</td></tr>
+    </tbody></table></div>
+
+  <h3>В'єтнам (Ханой, HAN)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Будапешт</td><td class="num mid"><span>€688</span></td><td class="air">Ryanair, Turkish Airlines, China Eastern</td><td class="leg">24.12 <b>12:35 → 14:10 (+2)</b><small>через Тирану, Стамбул, Шанхай</small></td><td class="leg">18.01 <b>18:45 → 07:05 (+1)</b><small>через Шанхай</small></td><td class="num">23</td><td><span class="tag">окремі квитки</span></td><td class="num">€721 · 49 год 5 хв</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€714</td><td class="air">Ryanair, Turkish Airlines, China Eastern, Air China</td><td class="leg">29.12 <b>06:10 → 14:10 (+2)</b><small>з Модліна (WMI) через Тирану, Стамбул, Шанхай</small></td><td class="leg">17.01 <b>20:20 → 11:00 (+1)</b><small>через Ченду, Мілан (в WMI)</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€836 · 41 год 50 хв</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€746</td><td class="air">Turkish Airlines, China Eastern, Air China, Ryanair</td><td class="leg">29.12 <b>19:35 → 14:10 (+2)</b><small>через Стамбул, Шанхай</small></td><td class="leg">17.01 <b>20:20 → 15:50 (+1)</b><small>через Ченду, Мілан</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€830 · 40 год 45 хв</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€752</td><td class="air">Turkish Airlines, China Eastern, Air China, easyJet</td><td class="leg">29.12 <b>19:40 → 14:10 (+2)</b><small>через Стамбул, Шанхай</small></td><td class="leg">14.01 <b>18:30 → 19:55 (+1)</b><small>через Шанхай, Лондон (зміна аеропорту)</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€764 · 64 год 25 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€776</td><td class="air">Turkish Airlines, China Eastern, Air China, easyJet</td><td class="leg">30.12 <b>06:55 → 14:10 (+1)</b><small>через Стамбул, Шанхай</small></td><td class="leg">14.01 <b>18:30 → 15:10 (+1)</b><small>через Шанхай, Лондон</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€847 · 41 год</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€882</td><td class="air">Croatia Airlines, Juneyao Airlines</td><td class="leg">30.12 <b>06:45 → 12:15 (+1)</b><small>через Брюссель, Шанхай</small></td><td class="leg">14.01 <b>13:15 → 12:15 (+1)</b><small>через Шанхай, Брюссель</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€882 (це ж)</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€942</td><td class="air">China Southern, VietJet Air, Air Serbia</td><td class="leg">30.12 <b>11:00 → 04:20 (+2)</b><small>через Гуанчжоу</small></td><td class="leg">12.01 <b>21:25 → 15:30 (+1)</b><small>через Шанхай</small></td><td class="num">11</td><td><span class="tag one">один квиток</span></td><td class="num">€1 021 · 44 год 5 хв</td></tr>
+    </tbody></table></div>
+
+  <h3>Малайзія (Куала-Лумпур, KUL)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Будапешт</td><td class="num low">€732</td><td class="air">Ryanair, Pegasus, AirAsia X</td><td class="leg">24.12 <b>12:35 → 08:45 (+2)</b><small>через Тирану, Стамбул</small></td><td class="leg">01.01 <b>09:20 → 09:25 (+1)</b><small>через Стамбул</small></td><td class="num">6</td><td><span class="tag">окремі квитки</span></td><td class="num">€762 · 55 год 15 хв</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€785</td><td class="air">Wizz Air, Air Arabia, Oman Air, Ryanair</td><td class="leg">30.12 <b>05:35 → 02:20 (+2)</b><small>через Мілан, Дубай</small></td><td class="leg">17.01 <b>21:25 → 14:40 (+1)</b><small>через Маскат, Лондон (зміна аеропорту, в WMI)</small></td><td class="num">16</td><td><span class="tag">окремі квитки</span></td><td class="num">€877 · 37 год 10 хв</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€808</td><td class="air">Pegasus, AirAsia X, Turkish Airlines</td><td class="leg">29.12 <b>19:55 → 08:45 (+2)</b><small>через Стамбул</small></td><td class="leg">14.01 <b>08:15 → 18:00</b><small>через Стамбул</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€862 · 32 год 25 хв</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€812</td><td class="air">Ryanair, Wizz Air Malta, AirAsia X, Pegasus</td><td class="leg">24.12 <b>12:15 → 08:45 (+2)</b><small>через Мілан (зміна аеропорту), Тирану, Стамбул</small></td><td class="leg">18.01 <b>09:20 → 08:30 (+1)</b><small>через Стамбул</small></td><td class="num">23</td><td><span class="tag">окремі квитки</span></td><td class="num">€903 · 42 год 45 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€816</td><td class="air">Pegasus, Etihad Airways</td><td class="leg">30.12 <b>08:30 → 08:45 (+1)</b><small>через Стамбул</small></td><td class="leg">03.01 <b>09:20 → 06:00 (+1)</b><small>через Абу-Дабі</small></td><td class="num">3</td><td><span class="tag one">один квиток</span></td><td class="num">€888 · 35 год 10 хв</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€880</td><td class="air">Air Serbia, Oman Air, Turkish Airlines</td><td class="leg">30.12 <b>20:45 → 07:55 (+3)</b><small>через Белград, Мюнхен, Маскат</small></td><td class="leg">14.01 <b>08:15 → 18:45</b><small>через Стамбул</small></td><td class="num">12</td><td><span class="tag">окремі квитки</span></td><td class="num">€909 · 41 год 30 хв</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€1 094</td><td class="air">Malaysia Airlines, Etihad Airways</td><td class="leg">30.12 <b>11:55 → 14:40 (+1)</b><small>через Доху</small></td><td class="leg">10.01 <b>21:40 → 05:10 (+2)</b><small>через Абу-Дабі, Афіни</small></td><td class="num">10</td><td><span class="tag one">один квиток</span></td><td class="num">€1 173 · 50 год 30 хв</td></tr>
+    </tbody></table></div>
+
+  <h3>Японія (Токіо, NRT/HND)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Відень</td><td class="num low">€712</td><td class="air">SAS</td><td class="leg">30.12 <b>20:05 → 07:55 (+2)</b><small>через Копенгаген (в HND)</small></td><td class="leg">13.01 <b>09:55 → 19:25</b><small>з HND через Копенгаген</small></td><td class="num">12</td><td><span class="tag one">один квиток</span></td><td class="num">€712 (це ж)</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€856</td><td class="air">LOT Polish Airlines</td><td class="leg">29.12 <b>19:40 → 19:40 (+1)</b><small>через Варшаву (в NRT)</small></td><td class="leg">17.01 <b>23:00 → 18:50 (+1)</b><small>з NRT через Варшаву</small></td><td class="num">18</td><td><span class="tag one">один квиток</span></td><td class="num">€909 · 33 год 55 хв</td></tr>
+      <tr><td class="city">Будапешт</td><td class="num">€860</td><td class="air">Wizz Air, China Southern Airlines</td><td class="leg">24.12 <b>05:00 → 14:05 (+1)</b><small>через Стамбул, Пекін (в HND)</small></td><td class="leg">01.01 <b>15:40 → 10:00 (+1)</b><small>з HND через Пекін, Стамбул</small></td><td class="num">7</td><td><span class="tag">окремі квитки</span></td><td class="num">€860 (це ж)</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€926</td><td class="air">LOT Polish Airlines, SAS</td><td class="leg">29.12 <b>17:25 → 07:55 (+2)</b><small>через Копенгаген (в HND)</small></td><td class="leg">17.01 <b>09:55 → 11:45 (+1)</b><small>з HND через Копенгаген</small></td><td class="num">17</td><td><span class="tag one">один квиток</span></td><td class="num">€956 · 27 год 35 хв</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€944</td><td class="air">LOT Polish Airlines</td><td class="leg">29.12 <b>18:00 → 19:40 (+1)</b><small>через Варшаву (в NRT)</small></td><td class="leg">17.01 <b>23:00 → 12:05 (+1)</b><small>з NRT через Варшаву</small></td><td class="num">18</td><td><span class="tag one">один квиток</span></td><td class="num">€944 (це ж)</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€1 252</td><td class="air">Air France, Air China</td><td class="leg">27.12 <b>12:25 → 19:50 (+1)</b><small>через Париж, Пекін (в HND)</small></td><td class="leg">12.01 <b>21:00 → 11:40 (+1)</b><small>з HND через Пекін, Париж</small></td><td class="num">15</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 361 · 36 год 40 хв</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€1 407</td><td class="air">Turkish Airlines</td><td class="leg">30.12 <b>08:50 → 12:10 (+1)</b><small>через Стамбул (в HND)</small></td><td class="leg">11.01 <b>08:55 → 19:30</b><small>з HND через Стамбул</small></td><td class="num">11</td><td><span class="tag one">один квиток</span></td><td class="num">€1 407 (це ж)</td></tr>
+    </tbody></table></div>
+
+  <h3>Таїланд (Бангкок, BKK/DMK)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Варшава</td><td class="num low">€752</td><td class="air">LOT Polish Airlines, Air Arabia, Hainan Airlines, Ryanair</td><td class="leg">30.12 <b>10:30 → 01:45 (+2)</b><small>через Гданськ, Дубай</small></td><td class="leg">17.01 <b>11:50 → 17:15 (+1)</b><small>через Чунцін, Брюссель (зміна аеропорту)</small></td><td class="num">16</td><td><span class="tag">окремі квитки</span></td><td class="num">€876 · 40 год 45 хв</td></tr>
+      <tr><td class="city">Белград</td><td class="num low">€758</td><td class="air">Fly Dubai</td><td class="leg">30.12 <b>22:25 → 20:10 (+1)</b><small>через Дубай (в DMK)</small></td><td class="leg">13.01 <b>09:10 → 21:25</b><small>через Дубай</small></td><td class="num">13</td><td><span class="tag one">один квиток</span></td><td class="num">€758 (це ж)</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€797</td><td class="air">AJet, IndiGo, Thai Vietjet, China Eastern</td><td class="leg">30.12 <b>16:45 → 06:40 (+2)</b><small>через Стамбул, Ер-Ріяд, Мумбай</small></td><td class="leg">17.01 <b>10:50 → 06:00 (+1)</b><small>через Куньмін, Сіань</small></td><td class="num">16</td><td><span class="tag">окремі квитки</span></td><td class="num">€947 · 30 год 5 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€852</td><td class="air">Qatar Airways, Iberia</td><td class="leg">30.12 <b>08:40 → 19:25 (+1)</b><small>через Доху</small></td><td class="leg">18.01 <b>18:55 → 06:55 (+1)</b><small>через Доху</small></td><td class="num">18</td><td><span class="tag one">один квиток</span></td><td class="num">€899 · 30 год 10 хв</td></tr>
+      <tr><td class="city">Будапешт</td><td class="num">€897</td><td class="air">Thai Airways, China Eastern</td><td class="leg">30.12 <b>13:55 → 05:20 (+2)</b><small>через Стамбул</small></td><td class="leg">10.01 <b>07:20 → 17:40 (+1)</b><small>через Куньмін, Нінбо</small></td><td class="num">9</td><td><span class="tag one">один квиток</span></td><td class="num">€1 015 · 32 год</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€1 056</td><td class="air">Turkish Airlines, Saudi Arabian Airlines</td><td class="leg">29.12 <b>09:20 → 23:30 (+1)</b><small>через Стамбул, Джидду</small></td><td class="leg">18.01 <b>15:20 → 18:45 (+1)</b><small>через Джидду, Стамбул</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 095 · 42 год 20 хв</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€1 076</td><td class="air">Fly Dubai</td><td class="leg">29.12 <b>13:55 → 10:05 (+1)</b><small>через Дубай (в DMK)</small></td><td class="leg">14.01 <b>23:00 → 12:55 (+1)</b><small>через Дубай</small></td><td class="num">15</td><td><span class="tag one">один квиток</span></td><td class="num">€1 076 (це ж)</td></tr>
+    </tbody></table></div>
+
+  <h3>Домінікана (Пунта-Кана, PUJ)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Загреб</td><td class="num low">€960</td><td class="air">Ryanair, easyJet, Discover Airlines, JetBlue Airways</td><td class="leg">30.12 <b>19:40 → 17:30 (+2)</b><small>через Мілан (зміна аеропорту), Франкфурт</small></td><td class="leg">16.01 <b>16:15 → 14:20 (+2)</b><small>через Нью-Йорк, Париж (зміна аеропорту)</small></td><td class="num">15</td><td><span class="tag">окремі квитки</span></td><td class="num">€994 · 61 год 45 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€982</td><td class="air">Air Canada</td><td class="leg">24.12 <b>11:50 → 11:55 (+1)</b><small>через Торонто</small></td><td class="leg">13.01 <b>12:50 → 10:00 (+1)</b><small>через Торонто</small></td><td class="num">19</td><td><span class="tag one">один квиток</span></td><td class="num">€988 · 31 год</td></tr>
+      <tr><td class="city">Будапешт</td><td class="num">€1 003</td><td class="air">KLM, Air France</td><td class="leg">30.12 <b>17:20 → 18:55 (+1)</b><small>через Амстердам, Париж</small></td><td class="leg">11.01 <b>15:10 → 22:40 (+1)</b><small>через Нью-Йорк, Париж</small></td><td class="num">11</td><td><span class="tag one">один квиток</span></td><td class="num">—</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€1 028</td><td class="air">Air Serbia, Lufthansa, JetBlue Airways</td><td class="leg">30.12 <b>20:45 → 17:50 (+2)</b><small>через Белград, Франкфурт, Мюнхен</small></td><td class="leg">15.01 <b>16:15 → 09:00 (+2)</b><small>через Нью-Йорк, Париж, Белград</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 297 · 42 год</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€1 037</td><td class="air">KLM</td><td class="leg">24.12 <b>12:10 → 12:34 (+1)</b><small>через Амстердам, Атланту</small></td><td class="leg">11.01 <b>15:10 → 22:50 (+1)</b><small>через Нью-Йорк, Амстердам</small></td><td class="num">17</td><td><span class="tag one">один квиток</span></td><td class="num">€1 089 · 31 год</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€1 129</td><td class="air">Ryanair, easyJet, Discover Airlines, Neos Air, Wizz Air</td><td class="leg">30.12 <b>22:15 → 17:30 (+2)</b><small>з Модліна (WMI) через Мілан (зміна аеропорту), Франкфурт</small></td><td class="leg">18.01 <b>19:50 → 10:20 (+2)</b><small>через Мілан (зміна аеропорту)</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 293 · 29 год</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€1 163</td><td class="air">Air Serbia, Vueling, Air Caraïbes</td><td class="leg">30.12 <b>17:10 → 17:00 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">12.01 <b>19:20 → 23:10 (+1)</b><small>через Париж, Барселону</small></td><td class="num">12</td><td><span class="tag">окремі квитки</span></td><td class="num">—</td></tr>
+    </tbody></table></div>
+
+  <h3>Гваделупа (Pointe-à-Pitre, PTP)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Будапешт</td><td class="num low">€1 035</td><td class="air">Wizz Air, Corsair International</td><td class="leg">24.12 <b>06:15 → 15:15</b><small>через Париж</small></td><td class="leg">14.01 <b>18:50 → 11:25 (+1)</b><small>через Париж</small></td><td class="num">21</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 035 (це ж)</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€1 046</td><td class="air">Air Serbia, Vueling, Corsair International, Transavia France, Wizz Air</td><td class="leg">30.12 <b>17:10 → 15:15 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">17.01 <b>21:20 → 01:10 (+2)</b><small>через Париж, Барселону</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 148 · 32 год</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€1 080</td><td class="air">Wizz Air, Transavia France, Corsair International, Wizz Air Malta</td><td class="leg">25.12 <b>05:35 → 19:15</b><small>через Рим, Париж</small></td><td class="leg">15.01 <b>21:20 → 20:55 (+1)</b><small>через Париж, Рим</small></td><td class="num">21</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 080 (це ж)</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€1 100</td><td class="air">Transavia France, Corsair International</td><td class="leg">25.12 <b>09:55 → 19:15</b><small>через Париж</small></td><td class="leg">13.01 <b>21:20 → 19:55 (+1)</b><small>через Париж</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 100 (це ж)</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€1 116</td><td class="air">Vueling, Corsair International</td><td class="leg">24.12 <b>17:55 → 15:15 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">13.01 <b>21:20 → 17:05 (+1)</b><small>через Париж, Барселону</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 116 (це ж)</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€1 150</td><td class="air">Lufthansa, Wizz Air Malta, Corsair International, easyJet</td><td class="leg">30.12 <b>21:40 → 19:15 (+1)</b><small>через Рим, Париж</small></td><td class="leg">14.01 <b>21:20 → 16:50 (+1)</b><small>через Париж, Рим</small></td><td class="num">14</td><td><span class="tag">окремі квитки</span></td><td class="num">—</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€1 158</td><td class="air">Ryanair, Air Caraïbes</td><td class="leg">27.12 <b>19:20 → 14:40 (+1)</b><small>через Париж (зміна аеропорту)</small></td><td class="leg">16.01 <b>19:00 → 14:20 (+2)</b><small>через Фор-де-Франс, Париж (зміна аеропорту)</small></td><td class="num">19</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 203 · 37 год 10 хв</td></tr>
+    </tbody></table></div>
+
+  <h3>Мартиніка (Fort-de-France, FDF)</h3>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th><th>Найкраща</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Будапешт</td><td class="num low">€982</td><td class="air">Ryanair, Vueling, Air Caraïbes, Wizz Air</td><td class="leg">28.12 <b>21:45 → 15:55 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">18.01 <b>18:25 → 23:30 (+1)</b><small>через Париж, Барселону</small></td><td class="num">20</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 033 · 28 год 5 хв</td></tr>
+      <tr><td class="city">Варшава</td><td class="num">€1 037</td><td class="air">Wizz Air Malta, Air Caraïbes, Transavia France</td><td class="leg">28.12 <b>21:30 → 15:55 (+1)</b><small>через Рим, Париж</small></td><td class="leg">18.01 <b>18:25 → 20:55 (+1)</b><small>через Париж, Рим</small></td><td class="num">20</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 037 (це ж)</td></tr>
+      <tr><td class="city">Белград</td><td class="num">€1 071</td><td class="air">Air Serbia, Vueling, Air Caraïbes</td><td class="leg">30.12 <b>17:10 → 14:10 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">12.01 <b>18:25 → 23:10 (+1)</b><small>через Париж, Барселону</small></td><td class="num">12</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 071 (це ж)</td></tr>
+      <tr><td class="city">Любляна</td><td class="num">€1 096</td><td class="air">Vueling, Air Caraïbes</td><td class="leg">27.12 <b>21:20 → 14:10 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">13.01 <b>18:25 → 17:05 (+1)</b><small>через Париж, Барселону</small></td><td class="num">16</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 096 (це ж)</td></tr>
+      <tr><td class="city">Відень</td><td class="num">€1 119</td><td class="air">Ryanair, Vueling, Air Caraïbes, Austrian Airlines</td><td class="leg">30.12 <b>20:40 → 15:55 (+1)</b><small>через Пальму, Париж</small></td><td class="leg">13.01 <b>17:10 → 15:00 (+1)</b><small>через Париж, Пальму</small></td><td class="num">13</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 203 · 32 год 40 хв</td></tr>
+      <tr><td class="city">Мюнхен</td><td class="num">€1 163</td><td class="air">Vueling, Air Caraïbes</td><td class="leg">29.12 <b>21:05 → 14:10 (+1)</b><small>через Барселону, Париж</small></td><td class="leg">16.01 <b>17:10 → 20:15 (+1)</b><small>через Париж, Барселону</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 291 · 29 год 35 хв</td></tr>
+      <tr><td class="city">Загреб</td><td class="num">€1 202</td><td class="air">Ryanair, easyJet, Air Caraïbes, Transavia France</td><td class="leg">29.12 <b>07:45 → 18:40</b><small>через Рим, Париж</small></td><td class="leg">15.01 <b>18:25 → 21:55 (+1)</b><small>через Париж, Рим</small></td><td class="num">17</td><td><span class="tag">окремі квитки</span></td><td class="num">€1 281 · 30 год 40 хв</td></tr>
+    </tbody></table></div>
+</section>
+
+<section>
+  <h2>Що вкладається в бюджет (поза основним списком)</h2>
+  <div class="tablewrap"><table class="wide">
+    <thead><tr><th>Напрямок</th><th>Виліт з</th><th>Ціна</th><th>Авіакомпанії</th><th>Туди</th><th>Назад</th><th>Ночей</th><th>Квиток</th></tr></thead>
+    <tbody>
+      <tr><td class="city">Тбілісі (Грузія)</td><td class="city">Відень</td><td class="num low">€270</td><td class="air">Pegasus, AJet</td><td class="leg">30.12 <b>10:05 → 22:50</b><small>через Стамбул</small></td><td class="leg">14.01 <b>06:05 → 13:00</b><small>через Стамбул</small></td><td class="num">15</td><td><span class="tag one">один квиток</span></td></tr>
+      <tr><td class="city">Тбілісі (Грузія)</td><td class="city">Загреб</td><td class="num low">€330</td><td class="air">Pegasus, easyJet, Ryanair</td><td class="leg">29.12 <b>09:30 → 01:05 (+1)</b><small>через Стамбул</small></td><td class="leg">14.01 <b>20:40 → 11:05 (+1)</b><small>через Лондон (зміна аеропорту)</small></td><td class="num">15</td><td><span class="tag">окремі квитки</span></td></tr>
+      <tr><td class="city">Тбілісі (Грузія)</td><td class="city">Варшава</td><td class="num low">€336</td><td class="air">Wizz Air, Pegasus, LOT Polish Airlines</td><td class="leg">25.12 <b>05:35 → 05:00 (+1)</b><small>з Модліна (WMI) через Афіни, Стамбул</small></td><td class="leg">18.01 <b>06:45 → 07:45</b><small>прямий Тбілісі → Варшава</small></td><td class="num">23</td><td><span class="tag">окремі квитки</span></td></tr>
+      <tr><td class="city">Дубай (ОАЕ)</td><td class="city">Будапешт</td><td class="num low">€433</td><td class="air">Israir, Pegasus, Wizz Air</td><td class="leg">27.12 <b>20:00 → 12:45 (+1)</b><small>через Тель-Авів</small></td><td class="leg">07.01 <b>04:10 → 11:05</b><small>через Анкару</small></td><td class="num">10</td><td><span class="tag">окремі квитки</span></td></tr>
+      <tr><td class="city">Дубай (ОАЕ)</td><td class="city">Відень</td><td class="num low">€445</td><td class="air">Pegasus, AJet</td><td class="leg">26.12 <b>19:55 → 03:15 (+2)</b><small>через Стамбул</small></td><td class="leg">18.01 <b>07:20 → 13:50</b><small>з Шарджі через Стамбул</small></td><td class="num">21</td><td><span class="tag">окремі квитки</span></td></tr>
+      <tr><td class="city">Дубай (ОАЕ)</td><td class="city">Варшава</td><td class="num low">€475</td><td class="air">Wizz Air, Israir, SunExpress, Pegasus</td><td class="leg">24.12 <b>06:10 → 12:45 (+1)</b><small>через Тель-Авів</small></td><td class="leg">15.01 <b>03:50 → 11:30</b><small>через Анталью</small></td><td class="num">21</td><td><span class="tag">окремі квитки</span></td></tr>
+    </tbody></table></div>
+  <p class="small">Для Тбілісі й Дубая я шукав лише з Відня, Загреба, Будапешта та Варшави. З Любляни, Белграда й Мюнхена не перевіряв.</p>
+</section>
+
+<section>
+  <h2>Нотатки</h2>
+  <div class="panel">
+    <ul>
+      <li><b>Ціни на родину:</b> показано ціну за одного дорослого. Для чотирьох сума може бути вищою, якщо в тарифі лишилося менше місць (у багатьох картках Kiwi «1-3 місця за цією ціною»). Для найближчого варіанту (Відень → Коломбо €676) це ≈ €2 700 на чотирьох.</li>
+      <li><b>Ціни змінюються між завантаженнями:</b> за час пошуку Будапешт → Бангкок подорожчав з €754 до €897, Белград → Куала-Лумпур з €834 до €1 094, а Мюнхен → Гваделупа здешевшав з €1 328 до €1 150. У таблицях наведено останні побачені ціни.</li>
+      <li><b>Варшава:</b> Kiwi шукає по обох аеропортах, WAW (Шопен) і WMI (Модлін). Рейси з Модліна позначені в таблицях. Найкращі ціни Варшави на межі €700-720 (Коломбо €713, Ханой €714), тож у діапазон €600-700 вони не потрапили.</li>
+      <li><b>Авіакомпанії:</b> Kiwi показує перевізників без розбивки по сегментах. «Hahn Air Technologies» (Відень → Коломбо) — партнер з виписки квитків, а не перевізник. Тому реальних перевізників на кожній ділянці перевірте на сторінці квитка.</li>
+      <li><b>Окремі квитки (self-transfer):</b> більшість найдешевших пар складаються з окремих квитків. Ви самі забираєте й реєструєте багаж на пересадці, а пропущена пересадка на вашій відповідальності. Kiwi пропонує платну гарантію (≈ €80-550).</li>
+      <li><b>Короткі поїздки серед найдешевших пар:</b> Будапешт → Коломбо (5 ночей), Будапешт → Куала-Лумпур (6 ночей), Мюнхен → Куала-Лумпур (3 ночі). Дешеві пари сортуються за ціною, тому тривалість відпочинку різна (від 3 до 23 ночей).</li>
+      <li><b>Дати вильоту</b> часто припадають на 29-30.12, ближче до Нового року. Якщо вам потрібен виліт саме 24-26.12, обмежте діапазон і перерахуйте.</li>
+      <li><b>Візи для українців (перевірити перед покупкою):</b> Таїланд (безвіз до 60 днів за вашим попереднім планом), В'єтнам (е-віза), Шрі-Ланка (eTA), Малайзія, Японія (для українців потрібна віза), Домінікана, французькі заморські території та Грузія. Транзит через Китай, Ізраїль і країни Затоки теж потребує перевірки.</li>
+      <li><b>Гваделупа й Мартиніка</b> на Kiwi знайшлись лише через слуги <code>pointe-a-pitre-guadeloupe-france</code> і <code>fort-de-france-martinique-france</code>.</li>
+    </ul>
+  </div>
+  <p class="small">Ціни змінюються щодня. Перед бронюванням перевірте пару дат і вартість на сайті Kiwi або авіакомпанії.</p>
+</section>
+
+</main>
+</body>
+</html>

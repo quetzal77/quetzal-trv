@@ -23,7 +23,7 @@ likely alternative; the user can always type "Other"). Do NOT search until every
 | # | Item | Default (from last run) |
 |---|---|---|
 | 1 | Passengers | 4: 2 adults + 2 children (10 and 13 years) |
-| 2 | Dates | Departure 24.12.2026, return 30.12.2026 (ask for year, flexibility +-1-2 days) |
+| 2 | Dates | Ask for the **departure window** and the **return rule** separately. Last run: departure any day 24.12-30.12.2026; return = cheapest possible in 2027, not later than 18.01.2027 (open window, not a fixed return date). Offer the alternative: fixed return date |
 | 3 | Destinations | Dominican Republic (PUJ), Sri Lanka (CMB), Thailand (BKK/DMK), Vietnam (HAN), Malaysia (KUL), French Caribbean (Guadeloupe PTP, Martinique FDF) |
 | 4 | Departure cities | Zagreb (ZAG), Vienna (VIE), Budapest (BUD), Ljubljana (LJU), Belgrade (BEG), Munich (MUC) |
 | 5 | Budget | up to EUR 600 per person, round trip, economy |
@@ -32,7 +32,31 @@ Also known (state it, ask only if it changed): citizenship Ukraine, home city Za
 Today's date comes from the environment; if the dates are in the past, ask again.
 After confirmation, print the final conditions as a short list and proceed.
 
-## 2. Search via Google Flights (Chrome)
+## 2a. Date windows: use Kiwi (when departure or return is a range)
+
+Google Flights cannot search a range for both legs. For ranges use Kiwi with `<from>_<to>` date ranges:
+
+```
+https://www.kiwi.com/en/search/results/<origin>/<dest>/<out_from>_<out_to>/<ret_from>_<ret_to>?sortBy=price&currency=EUR&transportTypes=FLIGHT
+```
+e.g. `.../vienna-austria/colombo-sri-lanka/2026-12-24_2026-12-30/2027-01-01_2027-01-18?...`
+
+Per search: navigate -> `computer wait 10` (**max 10 s per wait**) -> `javascript_tool`:
+```js
+var t=document.body.innerText;var i=t.indexOf('Best');document.title+' || '+t.slice(i,i+560).replace(/\n+/g,' | ')
+```
+It returns `Best / Cheapest / Fastest` price + total travel time (both ways summed) and the first card (out/back dates, stops, nights, "Self-transfer" label). If the title shows a different city or `Loading`, the page did not switch: re-run that search alone with a longer wait. A bad slug redirects to the Kiwi home page (pathname `/en/`).
+
+Slugs: `zagreb-croatia`, `vienna-austria`, `budapest-hungary`, `ljubljana-slovenia`, `belgrade-serbia`, `munich-germany`;
+`punta-cana-dominican-republic`, `colombo-sri-lanka`, `bangkok-thailand`, `hanoi-vietnam`, `kuala-lumpur-malaysia`,
+`pointe-a-pitre-guadeloupe-france`, `fort-de-france-martinique-france`, `tokyo-japan` (NRT + HND), `tbilisi-georgia`, `dubai-united-arab-emirates`.
+Slugs without the `-france` suffix do NOT work for the French islands.
+
+Report both "Cheapest" and "Best" per origin/destination. "Cheapest" is often many stops, 50-85 h total and
+self-transfer (separate tickets) and can have very short stays (3-6 nights) — flag these. Mark a ticket as "один квиток"
+only if the card has no "Self-transfer" label; otherwise "окремі квитки"; if the card was cut off, "не визначено".
+
+## 2. Search via Google Flights (Chrome) — fixed dates
 
 Tools: load with ToolSearch `select:mcp__claude-in-chrome__tabs_context_mcp,mcp__claude-in-chrome__tabs_create_mcp,mcp__claude-in-chrome__tabs_close_mcp,mcp__claude-in-chrome__browser_batch,mcp__claude-in-chrome__navigate,mcp__claude-in-chrome__computer,mcp__claude-in-chrome__javascript_tool,mcp__claude-in-chrome__get_page_text`.
 Call `tabs_context_mcp` with `createIfEmpty: true` first; use that tab. Close it when done.
@@ -81,6 +105,11 @@ Sections, in this order:
 Rules:
 - Only prices actually read from the pages. Never invent or estimate a fare; mark gaps as "немає даних".
 - State clearly that prices change daily and must be rechecked before booking.
+
+## 3b. Register in the plans index
+
+Add a link to the new report in `plans/index.html` under the "Перельоти" heading (newest first), same shape as the existing entries:
+`<a href="flights/<file>.html" data-title="<title>">Short name<small>subtitle</small></a>`.
 
 ## 4. Wrap up
 
