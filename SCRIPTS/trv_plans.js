@@ -9,6 +9,19 @@ function createPlansPage_HTML() {
 
     document.getElementById("mainSection").innerHTML =
         "<div class='plans-page'>" +
-            "<iframe class='plans-frame' id='plansFrame' src='plans/index.html' title='" + t('plans') + "'></iframe>" +
+            "<iframe class='plans-frame' id='plansFrame' src='plans/index.html' title='" + t('plans') + "' scrolling='no'></iframe>" +
         "</div>";
+
+    var frame = document.getElementById("plansFrame");
+    var fit = function () {
+        if (!document.body.contains(frame)) { clearInterval(timer); return; }
+        try {
+            var d = frame.contentDocument;
+            if (!d || !d.documentElement) { return; }
+            var h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+            if (h > 0 && Math.abs(frame.offsetHeight - h) > 1) { frame.style.height = h + "px"; }
+        } catch (e) {}
+    };
+    var timer = setInterval(fit, 400);
+    frame.onload = fit;
 }

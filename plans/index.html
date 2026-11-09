@@ -16,7 +16,7 @@
   }
 }
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+html, body { margin: 0; }
 body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
 
 #list { padding: 14px max(14px, env(safe-area-inset-right)) 28px max(14px, env(safe-area-inset-left)); max-width: 760px; margin: 0 auto; }
@@ -26,13 +26,15 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
 .card:hover, .card:focus-visible { border-color: var(--accent); background: var(--accent-soft); outline: none; }
 .card small { display: block; color: var(--muted); font-weight: 400; font-size: .85rem; margin-top: 2px; }
 
-#viewer { position: fixed; top: 0; right: 0; bottom: 0; left: 0; display: flex; flex-direction: column; background: var(--bg); }
+#viewer { background: var(--bg); }
 #viewer[hidden] { display: none; }
-.vbar { display: flex; align-items: center; gap: 10px; height: 44px; flex: none; padding: 0 10px; padding-top: env(safe-area-inset-top); background: var(--surface); border-bottom: 1px solid var(--line); }
+.vbar { position: sticky; top: 0; z-index: 1; display: flex; align-items: center; gap: 10px; height: 44px; flex: none; padding: 0 10px; padding-top: env(safe-area-inset-top); background: var(--surface); border-bottom: 1px solid var(--line); }
 .vbar button { font: inherit; font-weight: 600; color: var(--accent); background: none; border: 0; padding: 8px 10px; margin-left: -6px; cursor: pointer; border-radius: 8px; }
 .vbar button:hover, .vbar button:focus-visible { background: var(--accent-soft); outline: none; }
+.vbar a { margin-left: auto; flex: none; color: var(--accent); font-weight: 600; font-size: .9rem; text-decoration: none; padding: 8px 10px; margin-right: -6px; border-radius: 8px; white-space: nowrap; }
+.vbar a:hover, .vbar a:focus-visible { background: var(--accent-soft); outline: none; }
 .vbar span { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-#frame { flex: 1; width: 100%; border: 0; background: #fff; }
+#frame { display: block; width: 100%; height: 600px; border: 0; background: #fff; }
 </style>
 </head>
 <body>
@@ -45,8 +47,8 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
   <a class="card" href="flights/2026.11_flight_plans.html" data-title="Відень - Бангкок (листопад 2026)">Відень - Бангкок<small>попередній план, листопад 2026</small></a>
 </div>
 <div id="viewer" hidden>
-  <div class="vbar"><button type="button" id="back" aria-label="Назад до списку планів">&larr; Плани</button><span id="vtitle"></span></div>
-  <iframe id="frame" title="План"></iframe>
+  <div class="vbar"><button type="button" id="back" aria-label="Назад до списку планів">&larr; Плани</button><span id="vtitle"></span><a id="open" target="_blank" rel="noopener">Окремо &#8599;</a></div>
+  <iframe id="frame" title="План" scrolling="no"></iframe>
 </div>
 <script>
 (function () {
@@ -55,6 +57,7 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
   var viewer = document.getElementById('viewer');
   var frame = document.getElementById('frame');
   var vtitle = document.getElementById('vtitle');
+  var openLink = document.getElementById('open');
 
   function findCard(href) {
     for (var i = 0; i < cards.length; i++) {
@@ -71,6 +74,7 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
       list.hidden = true;
       viewer.hidden = false;
       vtitle.textContent = card.getAttribute('data-title');
+      openLink.setAttribute('href', href);
       if (frame.getAttribute('src') !== href) { frame.setAttribute('src', href); }
     } else {
       viewer.hidden = true;
@@ -90,6 +94,19 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
     if (window.history.length > 1) { window.history.back(); }
     else { location.hash = ''; }
   });
+
+  function fit() {
+    if (viewer.hidden) { return; }
+    try {
+      var d = frame.contentDocument;
+      if (!d || !d.documentElement) { return; }
+      var h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
+      if (h > 0 && Math.abs(frame.offsetHeight - h) > 1) { frame.style.height = h + 'px'; }
+    } catch (e) {}
+  }
+  frame.addEventListener('load', fit);
+  window.addEventListener('resize', fit);
+  setInterval(fit, 400);
 
   window.addEventListener('hashchange', render);
   render();
