@@ -58,6 +58,34 @@ ul.todo-list{list-style:none;padding-left:0}
 .todo-list li{margin:8px 0}
 .todo-list label{cursor:pointer;display:flex;gap:10px;align-items:baseline}
 .todo-list input{width:18px;height:18px;flex:none;margin:0;accent-color:var(--accent2)}
+.dr{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px}
+details>summary .dr .date{flex-basis:auto}
+.final{display:inline-block;margin-left:auto;background:var(--card);color:#1c6b34;border:1px solid #b9dfc2;border-radius:99px;padding:1px 10px;font-size:.8rem;font-weight:700}
+@media (prefers-color-scheme:dark){.final{color:#8fd6a3;border-color:#2c5a3a}}
+details.day.pending>summary{background:#e7eef7;border-color:#c5d5e8}
+details.day.done>summary{background:#e3f3e6;border-color:#b9dfc2}
+@media (prefers-color-scheme:dark){details.day.pending>summary{background:#1f2a38;border-color:#2f4157}details.day.done>summary{background:#1d3324;border-color:#2c5a3a}}
+ul.items{list-style:none;margin:0;padding:0}
+ul.items>li{border-bottom:1px solid var(--line)}
+ul.items>li:last-child{border-bottom:0}
+details.item>summary{background:none;border:0;border-radius:0;padding:10px 0 10px 22px}
+details.item>summary::before{left:2px;top:10px}
+details.item[open]>summary{margin-bottom:6px}
+details.item>summary b{font-size:1rem}
+details.item>.fm,details.item>.route-line{margin-bottom:10px}
+details.sec>details.day{padding:0;margin:4px 0 4px 14px;border-radius:10px}
+details.sec>details.day>summary{padding:6px 12px 6px 30px;gap:0 12px}
+details.sec>details.day>summary::before{top:7px;left:12px}
+details.sec>details.day>summary h2{font-size:1rem}
+details.sec>details.day>summary .date{font-size:.72rem}
+details.sec>details.day[open]>summary{margin-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0}
+details.sec>details.day>.block{margin:6px 8px 8px;padding:8px 12px}
+details.sec>details.day>.block .fair{margin:0 0 4px;line-height:1.4}
+details.sec>details.day>.block .fair:last-child{margin-bottom:0}
+details.sec>details.day>.block .route-line{margin-top:4px;line-height:1.35}
+details.sec>details.day>summary{line-height:1.3;padding-top:5px;padding-bottom:5px}
+details.sec>details.day>summary .dr{line-height:1.2}
+details.sec>details.day>summary .final{padding:0 9px;line-height:1.5}
 .todo-list input:checked + span{text-decoration:line-through;color:var(--muted)}
 </style>
 </head>
@@ -71,38 +99,41 @@ ul.todo-list{list-style:none;padding-left:0}
 <div class="route"><span class="c">Загреб</span><span class="a">→</span><span class="c">Відень</span><span class="a">→</span><span class="c">Маскат (Оман)</span><span class="a">→</span><span class="c">Відень</span><span class="a">→</span><span class="c">Загреб</span></div>
 
 
-<details class="sec"><summary><h3>Перед поїздкою</h3><span class="sum">8 завдань: документи, транспорт, місця, готелі, страхування, квитки</span></summary>
+<details class="sec"><summary><h3>Перед поїздкою</h3><span class="sum">6 завдань: документи, транспорт, чекін, готелі, страхування</span></summary>
 <div class="block" style="background:var(--card)">
   <ul class="tips todo-list">
     <li><label><input type="checkbox" class="todo" data-id="docs"> <span>Паспорти всіх чотирьох, дійсні 6+ місяців від в'їзду (віза не потрібна).</span></label></li>
-    <li><label><input type="checkbox" class="todo" data-id="zgvie"> <span>Купити квитки на автобус Загреб → Відень на 29.12.</span></label></li>
     <li><label><input type="checkbox" class="todo" data-id="viezg"> <span>Вирішити, як повертатись із Відня 08.01 о 22:00: нічний переїзд чи ночівля.</span></label></li>
-    <li><label><input type="checkbox" class="todo" data-id="seats"> <span>Обрати місця в літаку (харчування в тарифі не включено).</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="seats"> <span>Зачекинитись на літак за 24 години до вильоту.</span></label></li>
     <li><label><input type="checkbox" class="todo" data-id="viehotel"> <span>Перевірити, чи є у хостелу у Відні вся потрібна інформація (бронювання, час заїзду, дані гостей).</span></label></li>
     <li><label><input type="checkbox" class="todo" data-id="hotel"> <span>Забронювати житло в Маскаті на ніч 30 → 31.12 (прильот 22:40): Muscat Oasis Residences заброньовано лише з 31.12 (8 ночей до 08.01).</span></label></li>
     <li><label><input type="checkbox" class="todo" data-id="insurance"> <span>Оформити медичне страхування мандрівників.</span></label></li>
-    <li><label><input type="checkbox" class="todo" data-id="print"> <span>Роздрукувати квитки на літак.</span></label></li>
   </ul>
 </div></details>
 
 <details class="sec"><summary><h3>План по днях</h3><span class="sum">11 днів · 29 грудня – 8 січня 2027</span></summary>
-<details class="day"><summary><span class="date">День 0 · Вівторок, 29 грудня</span><h2>Загреб → Відень</h2><span class="sum">автобус · заселення в BeFree Hostel 15:00–00:00</span></summary>
-  <div class="block"><h4>Проживання · готель заброньовано</h4>
-    <p class="fair"><b>BeFree Hostel - Self-Service</b>, Відень: ночівля 29 → 30 грудня, заселення 29.12 з 15:00 до 00:00, виселення 30.12 до 11:00.</p>
-    <p class="fair">Телефон: <a href="tel:+4369919232769">+43 699 19232769</a> · Адреса: Beingasse 13 Ecke Goldschlagstraße, 1150 Wien · Бронювання Booking.com № 5381.215.428. Докладніше в розділі «Проживання».</p>
+<details class="day done"><summary><div class="dr"><span class="date">День 0 · Вівторок, 29 грудня</span></div><h2>Загреб → Відень</h2><span class="sum">FlixBus 08:35 → 14:15 · заселення в BeFree Hostel 15:00–00:00 · Технічний музей до 18:00</span></summary>
+  <div class="block">
+    <p class="fair"><b>08:35 – 14:15</b> · Автобус FlixBus (маршрут 060) Загреб → Відень, квиток куплено. Відправлення: Загреб, автобусна станція, Avenija Marina Držića 4. Прибуття: Відень, Erdberg (VIB), Erdbergstraße 200A. Місця 20A, 20B, 20C, 20E.</p>
+    <p class="fair"><b>~14:30 – ~15:05</b> · Метро U3 (оранжева лінія, напрямок Ottakring) від Wien Erdberg, поруч з автобусною станцією, до Schweglerstraße, без пересадок (~20 хв), далі ~6 хв пішки до хостелу.</p>
+    <p class="fair"><b>з 15:00 до 00:00</b> · Заселення в <b>BeFree Hostel - Self-Service</b>, Beingasse 13 Ecke Goldschlagstraße, 1150 Wien, <a href="tel:+4369919232769">+43 699 19232769</a>. Ночівля 29 → 30 грудня, виселення 30.12 до 11:00.</p>
+    <p class="fair"><b>~16:00 – 17:45</b> · Technisches Museum Wien mit Österreichischer Mediathek, Mariahilfer Straße 212, 1140 Wien (<a href="https://www.google.com/maps/search/?api=1&query=Technisches%20Museum%20Wien%2C%20Mariahilfer%20Stra%C3%9Fe%20212%2C%201140%20Wien" target="_blank" rel="noopener">Google Maps</a>). Сьогодні (вт) відкрито 9:00–18:00; пн–пт 9–18, сб, нд і свята 10–18; 24.12 до 15:00; 25.12 і 31.12 зачинено. Дорослий 18 €, до 19 років безкоштовно, для родини 2 × 18 € = 36 €. Дані зі сторонніх джерел, перевірте на technischesmuseum.at.</p>
+    <p class="route-line">Вартість і тарифи автобуса та метро: розділ «Транспорт». Хостел: розділ «Проживання».</p>
   </div>
 </details>
 
-<details class="day"><summary><span class="date">День 1 · Середа, 30 грудня</span><h2>Відень → Маскат</h2><span class="sum">виселення з хостелу у Відні до 11:00 · виліт Відень 13:30 · приліт Маскат 22:40</span></summary>
-  <div class="block"><h4>Переліт</h4>
-    <div class="kv">
-      <div><small>Виліт · Відень (VIE)</small><b>13:30</b></div>
-      <div><small>Приліт · Маскат (MCT)</small><b>22:40</b></div>
-    </div>
+<details class="day pending"><summary><span class="date">День 1 · Середа, 30 грудня</span><h2>Відень → Маскат</h2><span class="sum">виселення з хостелу у Відні до 11:00 · виліт Відень 13:30 · приліт Маскат 22:40</span></summary>
+  <div class="block">
+    <p class="fair"><b>до 11:00</b> · Виселення з BeFree Hostel (Beingasse 13), виїзд з хостелу орієнтовно о <b>~09:45</b>.</p>
+    <p class="fair"><b>~09:45 – ~10:35</b> · Дорога до залізничного вокзалу Wien Hauptbahnhof: ~6 хв пішки до станції Schweglerstraße, метро U3 (напрямок Simmering) до Stephansplatz, пересадка на U1 (напрямок Oberlaa) до Hauptbahnhof.</p>
+    <p class="fair"><b>~10:50 – ~11:10</b> · Потяг Railjet (або REX 7) Wien Hauptbahnhof → Flughafen Wien, ~15–20 хв у дорозі, відправлення приблизно кожні 30 хв (точний рейс перевірте на oebb.at).</p>
+    <p class="fair"><b>до 11:30</b> · Бути в аеропорту Відня (VIE), за 2 години до вильоту.</p>
+    <p class="fair"><b>13:30 – 22:40</b> · Переліт SalamAir OV812 Відень (VIE) → Маскат (MCT), прямий, 6 год 10 хв. Час прильоту місцевий (Маскат на 3 години попереду Відня).</p>
+    <p class="route-line">Вартість і тарифи дороги до аеропорту: розділ «Транспорт». Квитки на літак: розділ «Транспорт».</p>
   </div>
 </details>
 
-<details class="day"><summary><span class="date">День 2 · Четвер, 31 грудня</span><h2>Оман</h2><span class="sum">заселення в Muscat Oasis Residences 12:30–17:00</span></summary>
+<details class="day pending"><summary><span class="date">День 2 · Четвер, 31 грудня</span><h2>Оман</h2><span class="sum">заселення в Muscat Oasis Residences 12:30–17:00</span></summary>
   <div class="block"><h4>Проживання · апартаменти заброньовано</h4>
     <p class="fair"><b>Muscat Oasis Residences</b>, Bowsher, Al Khuwair, Muscat: заселення 31.12 з 12:30 до 17:00 (8 ночей, виселення 08.01 12:00–13:00).</p>
     <p class="fair">Телефон: <a href="tel:+96824582558">+968 24 582558</a> · Докладніше в розділі «Проживання».</p>
@@ -111,35 +142,35 @@ ul.todo-list{list-style:none;padding-left:0}
   <div class="block"><p class="fair"><small>Програма дня і транспорт ще не додані.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 3 · П'ятниця, 1 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 3 · П'ятниця, 1 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 4 · Субота, 2 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 4 · Субота, 2 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 5 · Неділя, 3 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 5 · Неділя, 3 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 6 · Понеділок, 4 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 6 · Понеділок, 4 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 7 · Вівторок, 5 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 7 · Вівторок, 5 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 8 · Середа, 6 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 8 · Середа, 6 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 9 · Четвер, 7 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+<details class="day pending"><summary><span class="date">День 9 · Четвер, 7 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
   <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
 </details>
 
-<details class="day"><summary><span class="date">День 10 · П'ятниця, 8 січня</span><h2>Маскат → Відень → Загреб</h2><span class="sum">виліт Маскат 17:55 · приліт Відень 22:00 · далі в Загреб (ще не заплановано)</span></summary>
+<details class="day pending"><summary><span class="date">День 10 · П'ятниця, 8 січня</span><h2>Маскат → Відень → Загреб</h2><span class="sum">виліт Маскат 17:55 · приліт Відень 22:00 · далі в Загреб (ще не заплановано)</span></summary>
   <div class="block"><h4>Переліт</h4>
     <div class="kv">
       <div><small>Виліт · Маскат (MCT)</small><b>17:55</b></div>
@@ -158,47 +189,110 @@ ul.todo-list{list-style:none;padding-left:0}
 </details>
 </details>
 
-<details class="sec"><summary><h3>Транспорт</h3><span class="sum">SalamAir · Lite · OV812, OV811 · 4 пасажири · дати, час, багаж</span></summary>
+<details class="sec"><summary><h3>Що спробувати</h3><span class="sum">2 пункти: знайти пивну етикетку, зібрати монети</span></summary>
 <div class="block" style="background:var(--card)">
-  <h4>Перельоти</h4>
-  <table class="fm">
-    <thead><tr><th>Рейс</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>Час у повітрі</th><th>Пересадки</th><th>Тариф</th></tr></thead>
-    <tbody>
-      <tr><td><b>OV812</b><br><small>Відень → Маскат</small></td><td>середа, 30.12.2026</td><td>13:30 · Відень (VIE)</td><td>22:40 · Маскат (MCT)</td><td>6 год 10 хв</td><td>прямий</td><td>Lite</td></tr>
-      <tr><td><b>OV811</b><br><small>Маскат → Відень</small></td><td>п'ятниця, 08.01.2027</td><td>17:55 · Маскат (MCT)</td><td>22:00 · Відень (VIE)</td><td>7 год 5 хв</td><td>прямий</td><td>Lite</td></tr>
-    </tbody>
-  </table>
-  <p class="route-line">Час місцевий для кожного аеропорту: Маскат на 3 години попереду Відня й Загреба (UTC+4 проти UTC+1). Перевізник SalamAir, бронювання від 09.11.2026.</p>
+  <ul class="items">
+    <li><details class="item"><summary><b>Знайти пивну етикетку</b><span class="sum">2 варіанти: Shukran limonada, пиво мальт</span></summary>
+      <h4 style="margin:14px 0 8px">Варіант 1 · Shukran Soft drink limonada 1.5 л</h4>
+      <p class="fair"><img src="img/oman-shukran-drink.png" alt="Shukran Soft drink limonada 1.5 л" style="max-width:260px;width:100%;height:auto;border-radius:10px;display:block"></p>
+      <p class="route-line">Shukran Soft drink limonada, 1,5 л.</p>
+      <h4 style="margin:14px 0 8px">Варіант 2 · пиво мальт (безалкогольний солодовий напій)</h4>
+      <p class="fair"><img src="img/oman-malt-drink.webp" alt="Classic Malt і Fruit Malt, безалкогольний солодовий напій" style="max-width:260px;width:100%;height:auto;border-radius:10px;display:block"></p>
+      <p class="fair"><b>Classic Malt</b> · класичний безалкогольний солодовий напій з насиченим солодовим смаком.</p>
+      <p class="fair"><b>Fruit Malt</b> · безалкогольний солодовий напій з фруктовим відтінком (який саме фрукт, не вказано).</p>
+      <p class="route-line">Обидва в скляних пляшках з кронен-корком, розраховані на ринок Оману й країн Перської затоки (GCC). Об'єм не вказаний. На сторінці виробника зазначено, що баланс смаку, солодкості й газації ще допрацьовують, тож у продажу напій може бути ще не скрізь. Джерело: <a href="https://soharfoodbev.com/malt-drink/" target="_blank" rel="noopener">soharfoodbev.com</a>.</p>
+    </details></li>
+    <li><details class="item"><summary><b>Зібрати монети Омана</b><span class="sum">звичайні монети та банкноти в обігу</span></summary>
+      <p class="fair"><img src="img/oman-coins.png" alt="Монети Оману: 50, 10, 5 і 25 байс" style="max-width:420px;width:100%;height:auto;border-radius:10px;display:block"></p>
+      <p class="fair"><b>Монети в обігу:</b> 5, 10, 25 і 50 байс (найчастіше трапляються 25 і 50).</p>
+      <p class="fair"><img src="img/oman-banknotes-100-baisa-half-1-rial.jpg" alt="Банкноти Оману серії 2020 року: 100 байс, ½ ріала, 1 ріал" style="max-width:420px;width:100%;height:auto;border-radius:10px;display:block"></p>
+      <p class="fair"><b>Банкноти 100 байс, ½ ріала і 1 ріал</b> · звичайні банкноти серії 2020 року (аверс і реверс).</p>
+      <p class="fair"><b>Банкноти в обігу:</b> 100 байс, ½, 1, 5, 10, 20 і 50 ріалів. Ювілейні випуски не рахуємо.</p>
+      <p class="route-line">Фото банкнот: <a href="https://www.monetnik.ru/banknoty/mira/aziya/oman/oman-nabor-3-banknoty-100-367133/" target="_blank" rel="noopener">monetnik.ru</a>.</p>
+    </details></li>
+  </ul>
+</div></details>
 
-  <h4 style="margin:18px 0 8px">Пасажири, багаж і місця</h4>
-  <table class="fm">
+<details class="sec"><summary><h3>Транспорт</h3><span class="sum">SalamAir · Lite · OV812, OV811 · FlixBus 060 · метро U3 · 4 пасажири · дати, час, багаж, вартість</span></summary>
+<div class="block" style="background:var(--card)">
+  <ul class="items">
+    <li><details class="item"><summary><b>Переліт Відень ↔ Маскат, OV812 і OV811</b><span class="sum">30.12 · 13:30 → 22:40 і 08.01 · 17:55 → 22:00 · 2 375,71 €</span></summary>
+<h4 style="margin:14px 0 8px">Рейси</h4>
+<table class="fm"><thead><tr><th>Рейс</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>Час у повітрі</th><th>Пересадки</th><th>Тариф</th></tr></thead><tbody><tr><td><b>OV812</b><br><small>Відень → Маскат</small></td><td>середа, 30.12.2026</td><td>13:30 · Відень (VIE)</td><td>22:40 · Маскат (MCT)</td><td>6 год 10 хв</td><td>прямий</td><td>Lite</td></tr><tr><td><b>OV811</b><br><small>Маскат → Відень</small></td><td>п'ятниця, 08.01.2027</td><td>17:55 · Маскат (MCT)</td><td>22:00 · Відень (VIE)</td><td>7 год 5 хв</td><td>прямий</td><td>Lite</td></tr></tbody></table>
+<p class="route-line">Час місцевий для кожного аеропорту: Маскат на 3 години попереду Відня й Загреба (UTC+4 проти UTC+1). Перевізник SalamAir, бронювання від 09.11.2026.</p>
+<h4 style="margin:14px 0 8px">Пасажири, багаж і місця</h4>
+<table class="fm">
     <thead><tr><th>Пасажир</th><th>Тариф</th><th>Ручна поклажа</th><th>Зареєстрований багаж, OV812 (30.12)</th><th>Зареєстрований багаж, OV811 (08.01)</th><th>Місце</th><th>Харчування</th></tr></thead>
     <tbody>
-      <tr><td>Олексій</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
-      <tr><td>Олена</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
-      <tr><td>Софія</td><td>дорослий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
-      <tr><td>Аліса</td><td>дитячий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Дорослий 1</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Дорослий 2</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Дитина 1</td><td>дорослий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Дитина 2</td><td>дитячий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
     </tbody>
   </table>
-  <p class="route-line">Разом зареєстрованого багажу: 2 місця по 10 кг на кожен рейс (20 кг на сім'ю), решта пасажирів літає лише з ручною поклажею 5 кг. Додатковий багаж 10 кг коштував 45,18 € за місце на рейс; суми дивіться нижче в цьому розділі.</p>
-
-  <h4 style="margin:18px 0 8px">Вартість перельотів за підтвердженням SalamAir</h4>
-  <table class="fm">
+<p class="route-line">Разом зареєстрованого багажу: 2 місця по 10 кг на кожен рейс (20 кг на сім'ю), решта пасажирів літає лише з ручною поклажею 5 кг. Додатковий багаж 10 кг коштував 45,18 € за місце на рейс; суми дивіться нижче в цьому розділі.</p>
+<h4 style="margin:14px 0 8px">Вартість за підтвердженням SalamAir</h4>
+<table class="fm">
     <thead><tr><th>Стаття</th><th>Розрахунок</th><th>Сума</th></tr></thead>
     <tbody>
       <tr><td>OV812, 30.12</td><td>4 пасажири × 218,02 € (тариф 171,80 + збір пасажира 23,47 + безпека Австрії 12,00 + безпека AT 10,75)</td><td>872,08 €</td></tr>
       <tr><td>OV811, 08.01</td><td>4 пасажири × 326,21 € (тариф 295,94 + аеропорт Оману 22,59 + безпека 2,26 + інфраструктурний збір 4,97 + додатковий збір 0,45)</td><td>1 304,84 €</td></tr>
-      <tr><td>Додатковий багаж 10 кг, OV812</td><td>Олексій 45,18 € + адмін-збір 18,07 €; Олена 45,18 €</td><td>108,43 €</td></tr>
-      <tr><td>Додатковий багаж 10 кг, OV811</td><td>Олексій 45,18 €; Олена 45,18 €</td><td>90,36 €</td></tr>
+      <tr><td>Додатковий багаж 10 кг, OV812</td><td>дорослий 1: 45,18 € + адмін-збір 18,07 €; дорослий 2: 45,18 €</td><td>108,43 €</td></tr>
+      <tr><td>Додатковий багаж 10 кг, OV811</td><td>дорослий 1: 45,18 €; дорослий 2: 45,18 €</td><td>90,36 €</td></tr>
       <tr><td><b>Разом у підтвердженні</b></td><td>квитки 2 176,92 € + багаж 198,79 €</td><td><b>2 375,71 €</b></td></tr>
       <tr><td>Фактично сплачено</td><td>за вашими даними, на 104,29 € більше за підтвердження</td><td><b>2 480 €</b></td></tr>
     </tbody>
   </table>
+    </details></li>
+    <li><details class="item"><summary><b>Автобус Загреб → Відень (FlixBus)</b><span class="sum">29.12 · 08:35 → 14:15 · 140,95 €</span></summary>
+<table class="fm">
+    <tbody>
+      <tr><td><b>Дата</b></td><td>вівторок, 29.12.2026</td></tr>
+      <tr><td><b>Перевізник і рейс</b></td><td>FlixBus (оператор: концесіонер FlixBus DACH GmbH), маршрут 060, напряму</td></tr>
+      <tr><td><b>Відправлення</b></td><td>08:35 · Загреб, автобусна станція, Avenija Marina Držića 4, 10000 Zagreb</td></tr>
+      <tr><td><b>Прибуття</b></td><td>14:15 · Відень, Erdberg (VIB), Erdbergstraße 200A, 1030 Wien</td></tr>
+      <tr><td><b>Час у дорозі</b></td><td>5 год 40 хв</td></tr>
+      <tr><td><b>Пасажири і місця</b></td><td>4 пасажири (2 дорослих, 2 дітей): 20A, 20B, 20C, 20E</td></tr>
+      <tr><td><b>Багаж</b></td><td>на кожного пасажира: мала ручна поклажа (7 кг, 42×30×18 см) і туристичний багаж (20 кг, 80×50×30 см)</td></tr>
+      <tr><td><b>Документи</b></td><td>дійсні посвідчення особи або паспорти; можливі прикордонні й візові перевірки</td></tr>
+      <tr><td><b>Вартість</b></td><td><b>140,95 €</b> за 4 пасажирів, квиток куплено</td></tr>
+    </tbody>
+  </table>
+    </details></li>
+    <li><details class="item"><summary><b>Метро Відня до хостелу</b><span class="sum">29.12 · U3 Erdberg → Schweglerstraße · 9 €</span></summary>
+<table class="fm">
+    <tbody>
+      <tr><td><b>Дата</b></td><td>29.12.2026, після прибуття автобуса (14:15)</td></tr>
+      <tr><td><b>Маршрут</b></td><td>лінія U3 (оранжева), напрямок Ottakring: від станції Wien Erdberg до станції Schweglerstraße, без пересадок</td></tr>
+      <tr><td><b>Посадка</b></td><td>Wien Erdberg, поруч з автобусною станцією Erdberg (VIB)</td></tr>
+      <tr><td><b>Вихід</b></td><td>Schweglerstraße, далі пішки до BeFree Hostel (Beingasse 13, 1150 Wien), орієнтовно 6 хв</td></tr>
+      <tr><td><b>Час у дорозі</b></td><td>орієнтовно 20 хв, без урахування пішої частини</td></tr>
+      <tr><td><b>Квиток</b></td><td>на одну поїздку: 2 дорослих по 3 € (онлайн) + 2 дитячих пільгових по 1,50 € (діти 10 і 13 років); в автоматі дорожче (дорослий 3,20 €). Тарифи Wiener Linien на 2026 рік; купити можна в застосунку WienMobil</td></tr>
+      <tr><td><b>Вартість</b></td><td><b>9 €</b> за 4 пасажирів</td></tr>
+    </tbody>
+  </table>
+    </details></li>
+    <li><details class="item"><summary><b>Дорога з хостелу до аеропорту Відня</b><span class="sum">30.12 · до 11:30 в аеропорту · 25,60 €</span></summary>
+<table class="fm">
+    <tbody>
+      <tr><td><b>Дата</b></td><td>середа, 30.12.2026: виселення до 11:00, бути в аеропорту до 11:30 (виліт OV812 о 13:30)</td></tr>
+      <tr><td><b>Маршрут</b></td><td>пішки ~6 хв від BeFree Hostel до станції Schweglerstraße; метро U3 (напрямок Simmering) до Stephansplatz; пересадка на U1 (напрямок Oberlaa) до Wien Hauptbahnhof; потяг Railjet або REX 7 до Flughafen Wien</td></tr>
+      <tr><td><b>Орієнтовний графік</b></td><td>виїзд з хостелу ~09:45, на Wien Hauptbahnhof ~10:35, потяг ~10:50–11:00 (в дорозі ~15–20 хв, відправлення приблизно кожні 30 хв), в аеропорту ~11:10–11:20; запас часу до 11:30 невеликий, тож за можливості виїжджайте раніше</td></tr>
+      <tr><td><b>Метро (U3 + U1)</b></td><td>2 дорослих по 3 € + 2 дитячих по 1,50 € (діти 10 і 13 років) = 9 €; тарифи Wiener Linien на 2026 рік</td></tr>
+      <tr><td><b>Потяг до аеропорту</b></td><td>ÖBB Railjet/REX 7, Hauptbahnhof → Flughafen Wien: дорослий 5,50 €, діти 6–14 років 2,80 €; 2 × 5,50 € + 2 × 2,80 € = 16,60 €</td></tr>
+      <tr><td><b>Вартість</b></td><td><b>25,60 €</b> за 4 пасажирів (метро 9 € + потяг 16,60 €)</td></tr>
+    </tbody>
+  </table>
+<p class="route-line">Квиток ÖBB до аеропорту може не включати проїзд метро, тому метро враховано окремо. Перед поїздкою перевірте тарифи й розклад на oebb.at та wienerlinien.at. Через ремонт колії S7 до жовтня 2027 року не доходить до Wien Mitte, тому потяг з Hauptbahnhof зручніший.</p>
+    </details></li>
+  </ul>
 </div></details>
 
 <details class="sec"><summary><h3>Проживання</h3><span class="sum">Відень · 29 → 30.12 · 111,78 € · Маскат · 31.12 → 08.01 · 609,23 €</span></summary>
 <div class="block" style="background:var(--card)">
-  <table class="fm">
+  <ul class="items">
+    <li><details class="item"><summary><b>BeFree Hostel, Відень</b><span class="sum">29 → 30.12 · 1 ніч · 111,78 €</span></summary>
+<table class="fm">
     <tbody>
       <tr><td><b>Готель</b></td><td>BeFree Hostel - Self-Service</td></tr>
       <tr><td><b>Адреса</b></td><td>Beingasse 13 Ecke Goldschlagstraße, 15, 1150 Wien, Austria<br><small>GPS: 48°11.900′ N, 16°19.971′ E</small></td></tr>
@@ -207,15 +301,14 @@ ul.todo-list{list-style:none;padding-left:0}
       <tr><td><b>Виїзд</b></td><td>30 грудня 2026 (середа), 00:00–11:00</td></tr>
       <tr><td><b>Склад</b></td><td>1 номер, 1 ніч: 2 дорослих, 2 дітей (10 і 13 років)</td></tr>
       <tr><td><b>Номер</b></td><td>«Хостел» на 4 ліжка (двоярусні), спільна ванна кімната; харчування не включено</td></tr>
-      <tr><td><b>Гість</b></td><td>Olena Zazhyhaieva</td></tr>
-      <tr><td><b>Бронювання</b></td><td>Booking.com, № 5381.215.428</td></tr>
+      <tr><td><b>Бронювання</b></td><td>Booking.com</td></tr>
       <tr><td><b>Ціна</b></td><td>номер 97,20 € + ПДВ 10 % 9,72 € + міський податок 5 % 4,86 € = <b>111,78 €</b>; з цієї суми 7,78 € сплачує Booking.com</td></tr>
       <tr><td><b>Скасування</b></td><td>безкоштовно за 3 дні до заїзду (до 26.12); пізніше штраф у повній вартості бронювання</td></tr>
     </tbody>
   </table>
-  <p class="route-line">Фото і PIN-код бронювання не додано: вони у вашому підтвердженні Booking.com.</p>
-  <h4 style="margin-top:18px">Маскат · Muscat Oasis Residences</h4>
-  <table class="fm">
+    </details></li>
+    <li><details class="item"><summary><b>Muscat Oasis Residences, Маскат</b><span class="sum">31.12 → 08.01 · 8 ночей · 609,23 €</span></summary>
+<table class="fm">
     <tbody>
       <tr><td><b>Готель</b></td><td>Muscat Oasis Residences (سكن واحة مسقط)</td></tr>
       <tr><td><b>Адреса</b></td><td>Bowsher, Al Khuwair, Muscat, 112, Oman<br><small>GPS: 23°34.905′ N, 58°24.572′ E</small></td></tr>
@@ -224,37 +317,42 @@ ul.todo-list{list-style:none;padding-left:0}
       <tr><td><b>Виїзд</b></td><td>8 січня 2027 (п'ятниця), 12:00–13:00</td></tr>
       <tr><td><b>Склад</b></td><td>1 апартамент, 8 ночей: 2 дорослих, 2 дітей (10 і 13 років)</td></tr>
       <tr><td><b>Номер</b></td><td>Апартаменти з 2 спальнями, власна ванна кімната, балкон, кухня, пральна машина, кондиціонер; харчування не включено</td></tr>
-      <tr><td><b>Гість</b></td><td>Olena Zazhyhaieva</td></tr>
       <tr><td><b>Ціна</b></td><td>апартамент 529 € + ПДВ 5 % 31 € + муніципальний збір 5 % 29 € + сервісний збір 8 % 42 € + туристичний збір 4 % 21 € = 652 € (651,51 € точно; 279,576 OMR). Знижка Booking.com 42,28 € (18,144 OMR), до сплати <b>609,23 €</b></td></tr>
       <tr><td><b>Скасування</b></td><td>безкоштовно до 18:00 у день заїзду (31.12); пізніше штраф 50 % вартості проживання; незаїзд = штраф у повній вартості</td></tr>
     </tbody>
   </table>
+    </details></li>
+  </ul>
   <p class="route-line">Бронювання починається 31.12, а ви прилітаєте 30.12 о 22:40: ніч 30 → 31.12 потрібно забронювати окремо або домовитися про ранній заїзд.</p>
 </div></details>
 
-<details class="sec"><summary><h3>Витрати</h3><span class="sum">сплачено 2 480 € (перельоти) · решта витрат ще не розрахована</span></summary><div class="block" style="background:var(--card)"><table class="fm">
+<details class="sec"><summary><h3>Витрати</h3><span class="sum">сплачено 2 620,95 € (перельоти й автобус) · решта витрат ще не розрахована</span></summary><div class="block" style="background:var(--card)"><table class="fm">
     <thead><tr><th>Стаття</th><th>Вже сплачено</th><th>Залишилось</th></tr></thead>
     <tbody>
       <tr><td><b>Авіаквитки SalamAir</b><br><small>Відень ↔ Маскат, 4 пасажири, разом з багажем; розбиття в розділі «Транспорт»</small></td><td><b>2 480 €</b></td><td>—</td></tr>
-      <tr><td>Дорога Загреб → Відень<br><small>авто, автобус чи потяг; віньєтки, платні ділянки, паркінг</small></td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Автобус Загреб → Відень, 29.12<br><small>FlixBus, 4 пасажири</small></td><td><b>140,95 €</b></td><td>—</td></tr>
       <tr><td>Хостел у Відні, 29 → 30.12<br><small>BeFree Hostel, 1 ніч, 4 гості; розбиття в розділі «Проживання»</small></td><td>—</td><td><b>111,78 €</b></td></tr>
+      <tr><td>Метро у Відні, 29.12<br><small>U3, Erdberg → Schweglerstraße, 4 особи: 2 дорослих по 3 € + 2 дитячі по 1,50 €</small></td><td>—</td><td><b>9 €</b></td></tr>
+      <tr><td>Дорога до аеропорту Відня, 30.12<br><small>метро U3 + U1 9 € і потяг Railjet/REX 7 16,60 €, 4 пасажири</small></td><td>—</td><td><b>25,60 €</b></td></tr>
       <tr><td>Житло в Омані, 31.12 → 08.01<br><small>Muscat Oasis Residences, 8 ночей, 4 гості; ніч 30 → 31.12 не включена; розбиття в розділі «Проживання»</small></td><td>—</td><td><b>609,23 €</b></td></tr>
       <tr><td>Їжа</td><td>—</td><td>ще не розраховано</td></tr>
-      <tr><td>Пам'ятки і розваги</td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Пам'ятки і розваги<br><small>Technisches Museum Wien, 29.12: 2 дорослих по 18 €, діти до 19 років безкоштовно; пам'ятки в Омані ще не розраховані</small></td><td>—</td><td><b>36 €</b></td></tr>
       <tr><td>Транспорт в Омані<br><small>трансфери, оренда авто</small></td><td>—</td><td>ще не розраховано</td></tr>
       <tr><td>Дорога Відень → Загреб<br><small>авто, автобус чи потяг; платні ділянки, паркінг</small></td><td>—</td><td>ще не розраховано</td></tr>
       <tr><td>Візи, дозволи, страховка</td><td>—</td><td>ще не розраховано</td></tr>
-      <tr><td><b>Разом</b></td><td><b>2 480 €</b></td><td><b>721,01 €</b></td></tr>
-      <tr><td colspan="2"><b>Загалом: сплачено + залишилось</b><br><small>2 480 € + 721,01 €; їжа, пам'ятки, транспорт в Омані, дорога й візи/страховка ще не розраховані</small></td><td><b>3 201,01 €</b></td></tr>
+      <tr><td><b>Разом</b></td><td><b>2 620,95 €</b></td><td><b>791,61 €</b></td></tr>
+      <tr><td colspan="2"><b>Загалом: сплачено + залишилось</b><br><small>2 620,95 € + 791,61 €; їжа, пам'ятки й транспорт в Омані, дорога Відень → Загреб і візи/страховка ще не розраховані</small></td><td><b>3 412,56 €</b></td></tr>
     </tbody>
   </table>
   <p class="route-line">Сума 2 480 € вказана за фактом оплати за перельоти. У підтвердженні бронювання SalamAir стоїть 2 375,71 € (різниця 104,29 €).</p></div></details>
 
 <details class="sec"><summary><h3>Практичні нотатки</h3><span class="sum">візи для українців в Оман</span></summary>
+<div class="block" style="background:var(--card)">
 <ul class="tips">
   <li><b>Візи в Оман для українців.</b> Візу оформлювати не потрібно: Україна входить до <a href="https://experienceoman.om/media/3qqn4mzq/list-of-countries-with-visa-free-entry-to-sultanate-of-oman-1.pdf" target="_blank" rel="noopener">офіційного переліку країн із безвізовим в'їздом в Оман</a> (1-й список, без додаткових умов). Безвіз діє до 14 днів і не продовжується, ваша поїздка (прильот 30.12, виліт 08.01, 9 діб) у цей строк вкладається; за прострочення штраф 10 ріалів на день. Умови в'їзду: паспорт, дійсний щонайменше 6 місяців від дати в'їзду; квиток назад (є: OV811, 08.01); підтвердження готелю; медична страховка; кошти на витрати під час перебування. Під час безвізового перебування працювати не можна. Дані з офіційного переліку Міністерства спадщини й туризму Оману, перед поїздкою звірте їх на <a href="https://visitoman.om/visa-info" target="_blank" rel="noopener">Visit Oman</a>.</li>
+  <li><b>Валюта Оману.</b> Оманський ріал (OMR, ر.ع.), 1 ріал = 1000 байс (baisa), ціни часто вказують з трьома знаками після коми. Монети: 5, 10, 25 і 50 байс (найчастіше трапляються 25 і 50). Банкноти: 100 байс, ½, 1, 5, 10, 20 і 50 ріалів (серія 2020 року); старіші банкноти недійсні з 1 січня 2025 року. Курс до євро: 1 OMR ≈ 2,32–2,33 € (≈ 0,43 OMR за 1 €), станом на 9.11.2026 за <a href="https://pluang.com/en/tools/currency-converter/omr-eur" target="_blank" rel="noopener">Pluang</a>, <a href="https://alanchand.com/en/exchange-rates/omr-eur" target="_blank" rel="noopener">Alanchand</a> та <a href="https://www.xe.com/en-us/currencyconverter/convert/?Amount=1&From=OMR&To=EUR" target="_blank" rel="noopener">XE</a>; перед поїздкою перевірте актуальний курс. Курс до долара фіксований: 1 OMR = 2,6008 USD (1 USD = 0,3845 OMR). Для довідки: у підтвердженні Booking.com за житло 279,576 OMR відповідало 651,51 €.</li>
 </ul>
-</details>
+</div></details>
 
 <footer>Дані про перельоти взято з підтвердження бронювання SalamAir від 09.11.2026. Відстані й час наземної частини орієнтовні, перевірте в навігаторі. Готелі у Відні та Маскаті взято з підтверджень Booking.com. Програма й візові вимоги поки не перевірені.</footer>
 </div>
