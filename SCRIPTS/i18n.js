@@ -17,7 +17,6 @@ var i18n = {
         loginSubmit:      'Увійти',
         loginError:       'Невірний логін або пароль',
         plans:            'Плани',
-        plansOpenSeparately: 'Відкрити окремо',
         about:            'Про проект',
         backToTop:        'Догори',
         // Search result type labels
@@ -468,7 +467,6 @@ var i18n = {
         loginSubmit:      'Log in',
         loginError:       'Wrong username or password',
         plans:            'Plans',
-        plansOpenSeparately: 'Open separately',
         about:            'About',
         backToTop:        'Back to top',
         // Search result type labels

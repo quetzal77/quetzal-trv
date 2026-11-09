@@ -9,10 +9,6 @@ function createPlansPage_HTML() {
 
     document.getElementById("mainSection").innerHTML =
         "<div class='plans-page'>" +
-            "<div class='plans-bar'>" +
-                "<h2 class='plans-title'>" + t('plans') + "</h2>" +
-                "<a class='plans-open' href='plans/index.html' target='_blank' rel='noopener'>" + t('plansOpenSeparately') + "</a>" +
-            "</div>" +
             "<iframe class='plans-frame' id='plansFrame' src='plans/index.html' title='" + t('plans') + "'></iframe>" +
         "</div>";
 }

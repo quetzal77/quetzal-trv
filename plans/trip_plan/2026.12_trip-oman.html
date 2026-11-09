@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оман — план поїздки</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2433;--muted:#667085;--line:#e4e0d6;--accent:#b4381f;--accent2:#1f5f8b;--chip:#efe9dc}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--card:#1c2029;--ink:#eceff4;--muted:#9aa4b2;--line:#2b303b;--accent:#ff8a6b;--accent2:#7cc0ee;--chip:#262b36}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 56px}
+header h1{margin:0 0 4px;font-size:clamp(1.6rem,5vw,2.3rem)}
+header p{margin:0;color:var(--muted)}
+.route{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:18px 0 8px;font-weight:600}
+.route span.c{background:var(--chip);padding:4px 12px;border-radius:99px}
+.route span.a{color:var(--muted)}
+.day{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:18px 0}
+.day h2{margin:0 0 12px;font-size:1.25rem}
+.date{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+.block{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}
+.block h4{margin:0 0 8px;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent2)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kv div{background:var(--chip);border-radius:8px;padding:8px 10px}
+.kv small{display:block;color:var(--muted);font-size:.75rem}
+.kv b{font-size:1.05rem}
+.route-line{margin:10px 0 0;color:var(--muted);font-size:.92rem}
+.stay{margin-top:12px;font-size:.95rem}
+.fm{width:100%;border-collapse:collapse;font-size:.9rem}
+.fm th,.fm td{text-align:left;vertical-align:top;padding:8px 8px;border-bottom:1px solid var(--line)}
+.fm th{font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.fm small{color:var(--muted)}
+@media (max-width:640px){.fm,.fm thead,.fm tbody,.fm tr,.fm td{display:block}.fm thead{display:none}.fm tr{border-bottom:1px solid var(--line);padding:8px 0}.fm td{border:0;padding:2px 0}}
+.fair{margin:0 0 6px;font-size:.95rem}
+.fair:last-child{margin-bottom:0}
+h3{font-size:1.05rem;margin:28px 0 8px}
+ul.tips{padding-left:20px;margin:0}
+ul.tips li{margin:4px 0}
+details>summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 34px;position:relative}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"▸";position:absolute;left:14px;top:10px;color:var(--muted);transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+details>summary h2,details>summary h3,details>summary h4{margin:0;font-size:1rem}
+details>summary h2{font-size:1.15rem}
+details>summary .date{flex-basis:100%;margin:0}
+details>summary .sum{color:var(--muted);font-size:.88rem;font-weight:400}
+details[open]>summary{margin-bottom:10px}
+details.day{padding:10px;margin:12px 0}
+details.sec{margin:14px 0}
+details.block{margin-top:10px;border:0;padding:0}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:10px}
+.pair .block{margin-top:0}
+.pair .kv{display:block}
+.pair .kv div{height:100%}
+.fm tr.grp td{background:var(--chip);padding-top:10px}
+footer{color:var(--muted);font-size:.85rem;margin-top:28px}
+ul.todo-list{list-style:none;padding-left:0}
+.todo-list li{margin:8px 0}
+.todo-list label{cursor:pointer;display:flex;gap:10px;align-items:baseline}
+.todo-list input{width:18px;height:18px;flex:none;margin:0;accent-color:var(--accent2)}
+.todo-list input:checked + span{text-decoration:line-through;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Оман</h1>
+  <p>Авіа-поїздка · 30 грудня 2026 – 8 січня 2027 · з Загреба і назад у Загреб</p>
+</header>
+
+<div class="route"><span class="c">Загреб</span><span class="a">→</span><span class="c">Відень</span><span class="a">→</span><span class="c">Маскат (Оман)</span><span class="a">→</span><span class="c">Відень</span><span class="a">→</span><span class="c">Загреб</span></div>
+
+
+<details class="sec"><summary><h3>Перед поїздкою</h3><span class="sum">7 завдань: документи, транспорт, місця, готель, страхування, квитки</span></summary>
+<div class="block" style="background:var(--card)">
+  <ul class="tips todo-list">
+    <li><label><input type="checkbox" class="todo" data-id="docs"> <span>Паспорти всіх чотирьох, дійсні 6+ місяців від в'їзду (віза не потрібна).</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="zgvie"> <span>Обрати транспорт Загреб → Відень: виїзд ~06:00, у VIE бути ~10:30.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="viezg"> <span>Вирішити, як повертатись із Відня 08.01 о 22:00: нічний переїзд чи ночівля.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="seats"> <span>Обрати місця в літаку (харчування в тарифі не включено).</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="hotel"> <span>Забронювати готель у Маскаті на 9 ночей (30.12 → 08.01).</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="insurance"> <span>Оформити медичне страхування мандрівників.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="print"> <span>Роздрукувати квитки на літак.</span></label></li>
+  </ul>
+</div></details>
+
+<details class="sec"><summary><h3>План по днях</h3><span class="sum">10 днів · 30 грудня – 8 січня 2027</span></summary>
+<details class="day"><summary><span class="date">День 1 · Середа, 30 грудня</span><h2>Загреб → Відень → Маскат</h2><span class="sum">виїзд з Загреба ~06:00 · виліт Відень 13:30 · приліт Маскат 22:40</span></summary>
+  <div class="block"><h4>Транспорт · Загреб → Відень (ще не заплановано)</h4>
+    <div class="kv">
+      <div><small>Рекомендований виїзд</small><b>~06:00–06:30</b></div>
+      <div><small>Відстань авто (орієнтовно)</small><b>~370 км</b></div>
+      <div><small>Час в дорозі (орієнтовно)</small><b>~4–4,5 год</b></div>
+      <div><small>Бути в аеропорту VIE</small><b>~10:30</b></div>
+    </div>
+    <p class="route-line">Маршрут авто: Загреб → Мацель (кордон) → Марибор → Шпільфельд → Грац → Відень (A2). Відстань і час орієнтовні, перевірте в навігаторі. Віньєтка Австрії та Словенії, платні ділянки Хорватії: див. розділ витрат.</p>
+  </div>
+  <div class="block"><h4>Переліт</h4>
+    <div class="kv">
+      <div><small>Виліт · Відень (VIE)</small><b>13:30</b></div>
+      <div><small>Приліт · Маскат (MCT)</small><b>22:40</b></div>
+    </div>
+  </div>
+</details>
+
+<details class="day"><summary><span class="date">День 2 · Четвер, 31 грудня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 3 · П'ятниця, 1 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 4 · Субота, 2 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 5 · Неділя, 3 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 6 · Понеділок, 4 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 7 · Вівторок, 5 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 8 · Середа, 6 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 9 · Четвер, 7 січня</span><h2>Оман</h2><span class="sum">поки порожньо</span></summary>
+  <div class="block"><p class="fair"><small>Поки порожньо: сюди додаватимуться програма дня, транспорт і бронювання.</small></p></div>
+</details>
+
+<details class="day"><summary><span class="date">День 10 · П'ятниця, 8 січня</span><h2>Маскат → Відень → Загреб</h2><span class="sum">виліт Маскат 17:55 · приліт Відень 22:00 · далі в Загреб (ще не заплановано)</span></summary>
+  <div class="block"><h4>Переліт</h4>
+    <div class="kv">
+      <div><small>Виліт · Маскат (MCT)</small><b>17:55</b></div>
+      <div><small>Приліт · Відень (VIE)</small><b>22:00</b></div>
+    </div>
+  </div>
+  <div class="block"><h4>Транспорт · Відень → Загреб (ще не заплановано)</h4>
+    <div class="kv">
+      <div><small>Приліт у Відень</small><b>22:00</b></div>
+      <div><small>Відстань авто (орієнтовно)</small><b>~370 км</b></div>
+      <div><small>Час в дорозі (орієнтовно)</small><b>~4–4,5 год</b></div>
+      <div><small>Приїзд у Загреб (за розрахунком)</small><b>~03:00 (09.01)</b></div>
+    </div>
+    <p class="route-line">Розрахунок: прильот 22:00 плюс ~1 година на багаж і вихід з аеропорту, потім ~4–4,5 год дороги. Альтернатива: ночівля у Відні (готель біля аеропорту) і виїзд 09.01 вранці. Не обрано.</p>
+  </div>
+</details>
+</details>
+
+<details class="sec"><summary><h3>Транспорт</h3><span class="sum">SalamAir · Lite · OV812, OV811 · 4 пасажири · дати, час, багаж</span></summary>
+<div class="block" style="background:var(--card)">
+  <h4>Перельоти</h4>
+  <table class="fm">
+    <thead><tr><th>Рейс</th><th>Дата</th><th>Виліт</th><th>Приліт</th><th>Час у повітрі</th><th>Пересадки</th><th>Тариф</th></tr></thead>
+    <tbody>
+      <tr><td><b>OV812</b><br><small>Відень → Маскат</small></td><td>середа, 30.12.2026</td><td>13:30 · Відень (VIE)</td><td>22:40 · Маскат (MCT)</td><td>6 год 10 хв</td><td>прямий</td><td>Lite</td></tr>
+      <tr><td><b>OV811</b><br><small>Маскат → Відень</small></td><td>п'ятниця, 08.01.2027</td><td>17:55 · Маскат (MCT)</td><td>22:00 · Відень (VIE)</td><td>7 год 5 хв</td><td>прямий</td><td>Lite</td></tr>
+    </tbody>
+  </table>
+  <p class="route-line">Час місцевий для кожного аеропорту: Маскат на 3 години попереду Відня й Загреба (UTC+4 проти UTC+1). Перевізник SalamAir, бронювання від 09.11.2026.</p>
+
+  <h4 style="margin:18px 0 8px">Пасажири, багаж і місця</h4>
+  <table class="fm">
+    <thead><tr><th>Пасажир</th><th>Тариф</th><th>Ручна поклажа</th><th>Зареєстрований багаж, OV812 (30.12)</th><th>Зареєстрований багаж, OV811 (08.01)</th><th>Місце</th><th>Харчування</th></tr></thead>
+    <tbody>
+      <tr><td>Олексій</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Олена</td><td>дорослий, Lite</td><td>5 кг під сидіння</td><td>1 місце 10 кг (куплено)</td><td>1 місце 10 кг (куплено)</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Софія</td><td>дорослий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
+      <tr><td>Аліса</td><td>дитячий тариф, Lite</td><td>5 кг під сидіння</td><td>немає</td><td>немає</td><td>не обрано</td><td>не включено</td></tr>
+    </tbody>
+  </table>
+  <p class="route-line">Разом зареєстрованого багажу: 2 місця по 10 кг на кожен рейс (20 кг на сім'ю), решта пасажирів літає лише з ручною поклажею 5 кг. Додатковий багаж 10 кг коштував 45,18 € за місце на рейс; суми дивіться нижче в цьому розділі.</p>
+
+  <h4 style="margin:18px 0 8px">Вартість перельотів за підтвердженням SalamAir</h4>
+  <table class="fm">
+    <thead><tr><th>Стаття</th><th>Розрахунок</th><th>Сума</th></tr></thead>
+    <tbody>
+      <tr><td>OV812, 30.12</td><td>4 пасажири × 218,02 € (тариф 171,80 + збір пасажира 23,47 + безпека Австрії 12,00 + безпека AT 10,75)</td><td>872,08 €</td></tr>
+      <tr><td>OV811, 08.01</td><td>4 пасажири × 326,21 € (тариф 295,94 + аеропорт Оману 22,59 + безпека 2,26 + інфраструктурний збір 4,97 + додатковий збір 0,45)</td><td>1 304,84 €</td></tr>
+      <tr><td>Додатковий багаж 10 кг, OV812</td><td>Олексій 45,18 € + адмін-збір 18,07 €; Олена 45,18 €</td><td>108,43 €</td></tr>
+      <tr><td>Додатковий багаж 10 кг, OV811</td><td>Олексій 45,18 €; Олена 45,18 €</td><td>90,36 €</td></tr>
+      <tr><td><b>Разом у підтвердженні</b></td><td>квитки 2 176,92 € + багаж 198,79 €</td><td><b>2 375,71 €</b></td></tr>
+      <tr><td>Фактично сплачено</td><td>за вашими даними, на 104,29 € більше за підтвердження</td><td><b>2 480 €</b></td></tr>
+    </tbody>
+  </table>
+
+  <h4 style="margin:18px 0 8px">Примітки до перельотів</h4>
+  <ul class="tips">
+    <li>Після прильоту в Маскат о 22:40 (30.12) потрібен трансфер до готелю, готель і трансфер ще не обрані.</li>
+    <li>Рейс назад вилітає з Маскату о 17:55 (08.01). Орієнтовно приїхати в аеропорт за ~3 години, тобто близько 14:55. Виселення з готелю плануйте з урахуванням цього.</li>
+    <li>У Відні 08.01 о 22:00 потрібно отримати 2 місця зареєстрованого багажу, далі дорога в Загреб: орієнтовно приїзд ~03:00 (09.01) або ночівля у Відні. Рішення ще не прийнято.</li>
+    <li>Код бронювання в цей файл не включено, бо папка plans/ доступна за посиланням.</li>
+  </ul>
+</div></details>
+
+<details class="sec"><summary><h3>Витрати</h3><span class="sum">сплачено 2 480 € (перельоти) · решта витрат ще не розрахована</span></summary><div class="block" style="background:var(--card)"><table class="fm">
+    <thead><tr><th>Стаття</th><th>Вже сплачено</th><th>Залишилось</th></tr></thead>
+    <tbody>
+      <tr><td><b>Авіаквитки SalamAir</b><br><small>Відень ↔ Маскат, 4 пасажири, разом з багажем; розбиття в розділі «Транспорт»</small></td><td><b>2 480 €</b></td><td>—</td></tr>
+      <tr><td>Дорога Загреб → Відень<br><small>авто, автобус чи потяг; віньєтки, платні ділянки, паркінг</small></td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Житло в Омані</td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Їжа</td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Пам'ятки і розваги</td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Транспорт в Омані<br><small>трансфери, оренда авто</small></td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Дорога Відень → Загреб<br><small>авто, автобус чи потяг; платні ділянки, паркінг</small></td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td>Візи, дозволи, страховка</td><td>—</td><td>ще не розраховано</td></tr>
+      <tr><td><b>Разом</b></td><td><b>2 480 €</b></td><td><b>ще не розраховано</b></td></tr>
+    </tbody>
+  </table>
+  <p class="route-line">Сума 2 480 € вказана за фактом оплати за перельоти. У підтвердженні бронювання SalamAir стоїть 2 375,71 € (різниця 104,29 €).</p></div></details>
+
+<details class="sec"><summary><h3>Практичні нотатки</h3><span class="sum">візи для українців в Оман</span></summary>
+<ul class="tips">
+  <li><b>Візи в Оман для українців.</b> Візу оформлювати не потрібно: Україна входить до <a href="https://experienceoman.om/media/3qqn4mzq/list-of-countries-with-visa-free-entry-to-sultanate-of-oman-1.pdf" target="_blank" rel="noopener">офіційного переліку країн із безвізовим в'їздом в Оман</a> (1-й список, без додаткових умов). Безвіз діє до 14 днів і не продовжується, ваша поїздка (прильот 30.12, виліт 08.01, 9 діб) у цей строк вкладається; за прострочення штраф 10 ріалів на день. Умови в'їзду: паспорт, дійсний щонайменше 6 місяців від дати в'їзду; квиток назад (є: OV811, 08.01); підтвердження готелю; медична страховка; кошти на витрати під час перебування. Під час безвізового перебування працювати не можна. Дані з офіційного переліку Міністерства спадщини й туризму Оману, перед поїздкою звірте їх на <a href="https://visitoman.om/visa-info" target="_blank" rel="noopener">Visit Oman</a>.</li>
+</ul>
+</details>
+
+<footer>Дані про перельоти взято з підтвердження бронювання SalamAir від 09.11.2026. Відстані й час наземної частини орієнтовні, перевірте в навігаторі. Готелі, програма й візові вимоги поки не додані й не перевірені.</footer>
+</div>
+<script>
+(function () {
+  var KEY = 'oman-trip-todo';
+  var boxes = document.querySelectorAll('input.todo');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  for (var i = 0; i < boxes.length; i++) {
+    (function (b) {
+      var id = b.getAttribute('data-id');
+      if (saved[id]) { b.checked = true; }
+      b.addEventListener('change', function () {
+        saved[id] = b.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      });
+    })(boxes[i]);
+  }
+})();
+</script>
+</body>
+</html>

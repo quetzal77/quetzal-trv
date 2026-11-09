@@ -207,11 +207,14 @@ div.my_countries span{color:var(--muted); font-weight:400}
 .stats-modal-list{padding:6px 20px 18px; overflow-y:auto}
 /* Plans page (admin only): iframe with plans/index.html */
 .plans-page{display:flex; flex-direction:column; gap:12px; margin:8px 0 24px}
-.plans-bar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
-.plans-title{margin:0; font-size:22px; font-weight:700; color:var(--text)}
-.plans-open{color:var(--accent); font-size:14px; text-decoration:none}
-.plans-open:hover{text-decoration:underline}
-.plans-frame{width:100%; height:calc(100vh - 190px); min-height:520px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface)}
+.plans-frame{width:100%; height:calc(100vh - 150px); min-height:520px; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface)}
+@media (max-width:767px){
+  .plans-page{margin:0 -15px}
+  .plans-frame{height:calc(100vh - 60px); min-height:0; border-width:0; border-radius:0}
+}
+@supports (height:100dvh){
+  @media (max-width:767px){ .plans-frame{height:calc(100dvh - 60px)} }
+}
 /* Login dialog (reuses the stats-modal shell) */
 .auth-box{max-width:360px}
 .auth-body{padding:14px 20px 20px; display:flex; flex-direction:column; gap:6px}
