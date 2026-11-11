@@ -195,6 +195,19 @@
       "map_img": "akrotiridhekeliaLow.js"
     },
     {
+      "country_id": "OM",
+      "country_type_id": "1",
+      "continent_id": "AS",
+      "name": "Oman",
+      "name_ua": "Оман",
+      "short_name": "oman",
+      "small_flag_img": "-42px -530px",
+      "name_nt": "عمان",
+      "flag_img": "oman_flag.png",
+      "emb_img": "oman_emb.png",
+      "map_img": "omanLow.js"
+    },
+    {
       "country_id": "AX",
       "country_type_id": "6",
       "continent_id": "EU",
@@ -1279,6 +1292,17 @@
     }
   ],
   "area": [
+    {"country_id": "OM", "region_id": "OM-DA", "name": "Ad Dākhilīyah", "name_ua": "Ед-Дахілія", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-MUU", "name": "Musandam", "name_ua": "Мусандам", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-ZU", "name": "Z̧ufār", "name_ua": "Дофа́р", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-ZA", "name": "Az̧ Z̧āhirah", "name_ua": "Ез-Захіра", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-BU", "name": "Al Buraymī", "name_ua": "Ель-Бураймі", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-WU", "name": "Al Wusţá", "name_ua": "Ель-Вуста", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-MA", "name": "Masqaţ", "name_ua": "Маскат", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-BAS", "name": "Al Bāţinah South", "name_ua": "Південна Ель-Батіна", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-SHS", "name": "Ash Sharqīyah South", "name_ua": "Південна Еш-Шаркія", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-BAN", "name": "Al Bāţinah North", "name_ua": "Північна Ель-Батіна", "active": "Y"},
+    {"country_id": "OM", "region_id": "OM-SHN", "name": "Ash Sharqīyah North", "name_ua": "Північна Еш-Шаркія", "active": "Y"},
     { "country_id": "XA", "region_id": "GB-AX", "name": "Akrotiri", "name_ua": "Акротірі", "active": "Y" },
     { "country_id": "XA", "region_id": "GB-DX", "name": "Dhekelia", "name_ua": "Декелія", "active": "Y" },
     { "country_id": "AX", "region_id": "AX-01", "name": "Åland Islands", "name_ua": "Аландські острови", "active": "Y" },
