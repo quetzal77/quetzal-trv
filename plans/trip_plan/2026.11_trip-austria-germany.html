@@ -54,6 +54,39 @@ details.block{margin-top:10px;border:0;padding:0}
 .pair .kv div{height:100%}
 .fm tr.grp td{background:var(--chip);padding-top:10px}
 footer{color:var(--muted);font-size:.85rem;margin-top:28px}
+ul.todo-list{list-style:none;padding-left:0}
+.todo-list li{margin:8px 0}
+.todo-list label{cursor:pointer;display:flex;gap:10px;align-items:baseline}
+.todo-list input{width:18px;height:18px;flex:none;margin:0;accent-color:var(--accent2)}
+.dr{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 10px}
+details>summary .dr .date{flex-basis:auto}
+.final{display:inline-block;margin-left:auto;background:var(--card);color:#1c6b34;border:1px solid #b9dfc2;border-radius:99px;padding:1px 10px;font-size:.8rem;font-weight:700}
+@media (prefers-color-scheme:dark){.final{color:#8fd6a3;border-color:#2c5a3a}}
+details.day.pending>summary{background:#e7eef7;border-color:#c5d5e8}
+details.day.done>summary{background:#e3f3e6;border-color:#b9dfc2}
+@media (prefers-color-scheme:dark){details.day.pending>summary{background:#1f2a38;border-color:#2f4157}details.day.done>summary{background:#1d3324;border-color:#2c5a3a}}
+ul.items{list-style:none;margin:0;padding:0}
+ul.items>li{border-bottom:1px solid var(--line)}
+ul.items>li:last-child{border-bottom:0}
+details.item>summary{background:none;border:0;border-radius:0;padding:10px 0 10px 22px}
+details.item>summary::before{left:2px;top:10px}
+details.item[open]>summary{margin-bottom:6px}
+details.item>summary b{font-size:1rem}
+details.item>.fm,details.item>.route-line{margin-bottom:10px}
+details.sec>details.day{padding:0;margin:4px 0 4px 14px;border-radius:10px}
+details.sec>details.day>summary{padding:6px 12px 6px 30px;gap:0 12px}
+details.sec>details.day>summary::before{top:7px;left:12px}
+details.sec>details.day>summary h2{font-size:1rem}
+details.sec>details.day>summary .date{font-size:.72rem}
+details.sec>details.day[open]>summary{margin-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0}
+details.sec>details.day>.block{margin:6px 8px 8px;padding:8px 12px}
+details.sec>details.day>.block .fair{margin:0 0 4px;line-height:1.4}
+details.sec>details.day>.block .fair:last-child{margin-bottom:0}
+details.sec>details.day>.block .route-line{margin-top:4px;line-height:1.35}
+details.sec>details.day>summary{line-height:1.3;padding-top:5px;padding-bottom:5px}
+details.sec>details.day>summary .dr{line-height:1.2}
+details.sec>details.day>summary .final{padding:0 9px;line-height:1.5}
+.todo-list input:checked + span{text-decoration:line-through;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -67,44 +100,27 @@ footer{color:var(--muted);font-size:.85rem;margin-top:28px}
 
 <details class="sec"><summary><h3>Перед поїздкою</h3><span class="sum">4 завдання: онлайн-чекін Лінц, віньєтка Австрії, баланс ENC, погода й дороги</span></summary>
 <div class="block" style="background:var(--card)">
-  <ul class="tips">
-    <li><b>Зачекінитись в готель Hotel Central Linz.</b> Заїзд 26.11 з 14:00 до 23:30, адреса Humboldtstraße 28, телефон +43 660 3858252.</li>
-    <li><b>Купити віньєтку в Австрію.</b> 10-денна цифрова, 12,80 €, діє на всі дати поїздки 26–29.11; купуйте на офіційному сайті asfinag.at або в додатку ASFINAG, до перетину кордону.</li>
-    <li><b>Перевірити суму на ENC (хорватські платні дороги).</b> Потрібно приблизно 12,80 € (A2 Загреб – Мацель ~6,40 € в один бік, двічі). Деякі джерела пишуть, що ENC може не діяти на цій ділянці, тому на всякий випадок візьміть банківську картку або готівку.</li>
-    <li><b>Перевірити погоду і стан доріг.</b> Маршрут: Хорватія, Словенія, Австрія (A9, тунелі Bosruck і Gleinalm), Німеччина. Наприкінці листопада можливі сніг і ожеледиця, тому перевірте прогноз і дорожню ситуацію напередодні виїзду та зранку 26.11 (і ще раз перед поверненням 29.11).</li>
+  <ul class="tips todo-list">
+    <li><label><input type="checkbox" class="todo" data-id="checkin"> <span><b>Зачекінитись в готель Hotel Central Linz.</b> Заїзд 26.11 з 14:00 до 23:30, адреса Humboldtstraße 28, телефон +43 660 3858252.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="vignette"> <span><b>Купити віньєтку в Австрію.</b> 10-денна цифрова, 12,80 €, діє на всі дати поїздки 26–29.11; купуйте на офіційному сайті asfinag.at або в додатку ASFINAG, до перетину кордону.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="enc"> <span><b>Перевірити суму на ENC (хорватські платні дороги).</b> Потрібно приблизно 12,80 € (A2 Загреб – Мацель ~6,40 € в один бік, двічі). Деякі джерела пишуть, що ENC може не діяти на цій ділянці, тому на всякий випадок візьміть банківську картку або готівку.</span></label></li>
+    <li><label><input type="checkbox" class="todo" data-id="weather"> <span><b>Перевірити погоду і стан доріг.</b> Маршрут: Хорватія, Словенія, Австрія (A9, тунелі Bosruck і Gleinalm), Німеччина. Наприкінці листопада можливі сніг і ожеледиця, тому перевірте прогноз і дорожню ситуацію напередодні виїзду та зранку 26.11 (і ще раз перед поверненням 29.11).</span></label></li>
   </ul>
 </div></details>
 
-<details class="day"><summary><span class="date">День 1 · Четвер, 26 листопада</span><h2>Загреб → Лінц</h2><span class="sum">~430 км · ~4,5–5 год · виїзд 8:00 · ночівля Лінц</span></summary>
-  <div class="block"><h4>Транспорт · авто</h4>
-    <div class="kv">
-      <div><small>Виїзд</small><b>08:00</b></div>
-      <div><small>Відстань</small><b>~430 км</b></div>
-      <div><small>Час в дорозі</small><b>~4 г 30 хв – 5 г</b></div>
-      <div><small>Прибуття (без зупинок)</small><b>~12:30–13:00</b></div>
-    </div>
-    <p class="route-line">Маршрут: Загреб → Мацель (кордон) → Марибор → Шпільфельд → Грац → A9 Pyhrn (тунелі Gleinalm, Bosruck — платні) → Лінц</p>
+<details class="sec"><summary><h3>План по днях</h3><span class="sum">4 дні · 26 – 29 листопада 2026</span></summary>
+<details class="day pending"><summary><span class="date">День 1 · Четвер, 26 листопада</span><h2>Загреб → Лінц</h2><span class="sum">~430 км · ~4,5–5 год · виїзд 8:00 · ночівля Лінц</span></summary>
+  <div class="block">
+    <p class="fair"><b>08:00</b> · Виїзд із Загреба на авто. Маршрут: Загреб → Мацель (кордон) → Марибор → Шпільфельд → Грац → A9 Pyhrn (тунелі Gleinalm і Bosruck, платні) → Лінц, ~430 км, ~4 г 30 хв – 5 г.</p>
+    <p class="fair"><b>~12:30–13:00</b> · Прибуття в Лінц (без зупинок). Авто на паркінг APCOA Parkgarage Blumau (<a href="https://www.google.com/maps/search/?api=1&query=APCOA%20Parkgarage%20Blumau%2C%20Linz" target="_blank" rel="noopener">Google Maps</a>).</p>
+    <p class="fair"><b>14:00–23:30</b> · Заселення в <b>Hotel Central Linz</b>, Humboldtstraße 28, Innere Stadt, 4020 Linz (<a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Central%20Linz%2C%20Humboldtstra%C3%9Fe%2028%2C%204020%20Linz%2C%20Austria" target="_blank" rel="noopener">Google Maps</a>), <a href="tel:+436603858252">+43 660 3858252</a>. Виселення 27.11 з 1:00 до 11:00.</p>
+    <p class="fair"><b>~10:00–21:00</b> · Різдвяний ярмарок <b>Christkindlmarkt на Hauptplatz</b>: працює з 21 листопада до 23–24 грудня (джерела розходяться).</p>
+    <p class="route-line">Вартість і тарифи дороги, паркінгу та готелю: розділи «Транспорт» і «Проживання».</p>
   </div>
-  <div class="block"><h4>Різдвяні ярмарки</h4>
-    <p class="fair"><b>Christkindlmarkt на Hauptplatz</b> — працює з 21 листопада, до 23–24 грудня (джерела розходяться). Щодня приблизно 10:00–21:00.</p>
-  </div>
-  <div class="pair"><div class="block"><h4>Паркінг · Лінц</h4>
-    <div class="kv"><div><b>APCOA Parkgarage Blumau</b><br>10 € за добу (1 доба: чт 26.11 – пт 27.11)<br><a href="https://www.google.com/maps/search/?api=1&query=APCOA%20Parkgarage%20Blumau%2C%20Linz" target="_blank" rel="noopener">Відкрити в Google Maps</a></div></div>
-  </div>
-  <div class="block"><h4>Бронювання · Hotel Central Linz</h4>
-    <div class="kv"><div><b>Hotel Central Linz</b><br>Humboldtstraße 28, Innere Stadt, 4020 Linz<br><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Central%20Linz%2C%20Humboldtstra%C3%9Fe%2028%2C%204020%20Linz%2C%20Austria" target="_blank" rel="noopener">Відкрити в Google Maps</a><br>Заїзд: <b>чт 26.11.2026, 14:00–23:30</b><br>Виїзд: <b>пт 27.11.2026, 1:00–11:00</b><br>Телефон: <b>+43 660 3858252</b></div></div>
-  </div></div>
 </details>
 
-<details class="day"><summary><span class="date">День 2 · П'ятниця, 27 листопада</span><h2>Лінц → Нюрнберг → Фюрт</h2><span class="sum">виїзд 8:30 · Zeppelinfeld 12:30–14:30 · музей 16:00–17:15 · відкриття ярмарку 17:30</span></summary>
-  <div class="block"><h4>Транспорт · авто</h4>
-    <div class="kv">
-      <div><small>Відстань</small><b>~330 км</b></div>
-      <div><small>Час в дорозі</small><b>~3 г 30 хв</b></div>
-    </div>
-    <p class="route-line">Маршрут: Лінц → A8/A3 → Пассау (кордон) → Регенсбург → Нюрнберг (A3)</p>
-  </div>
-  <div class="block"><h4>План дня</h4>
+<details class="day pending"><summary><span class="date">День 2 · П'ятниця, 27 листопада</span><h2>Лінц → Нюрнберг → Фюрт</h2><span class="sum">виїзд 8:30 · Zeppelinfeld 12:30–14:30 · музей 16:00–17:15 · відкриття ярмарку 17:30</span></summary>
+  <div class="block">
     <p class="fair"><b>8:30</b> виїзд з Лінца (авто на паркінгу APCOA Parkgarage Blumau) напряму до Нюрнберга (~330 км, ~3 год 30 хв без зупинок, A8 / A3 через Пассау і Регенсбург). Прибуття ~12:30 з урахуванням перерви.</p>
     <p class="fair"><b>~12:30–14:30</b> (2 години) Нюрнберг, Zeppelinfeld і Zeppelintribüne (Bayernstraße, на вулиці; сутеніє приблизно о 16:30). <a href="https://www.google.com/maps/search/?api=1&query=Zeppelinfeld%2C%20N%C3%BCrnberg" target="_blank" rel="noopener">Google Maps</a>. Поруч Документаційний центр (Dokuzentrum, Bayernstraße 110), у плані його немає; для довідки: вт–нд 10–17 за програмою 2026 (джерела розходяться), вхід ~7,50 €.</p>
     <p class="fair"><b>14:30</b> виїзд із Zeppelinfeld до Фюрта (~12 км, ~25 хв). <b>~14:55</b> паркінг <b>CONTIPARK Tiefgarage FLAIR</b> (підземний, Фюрт; <a href="https://www.google.com/maps/search/?api=1&query=CONTIPARK%20Tiefgarage%20FLAIR%20F%C3%BCrth" target="_blank" rel="noopener">Google Maps</a>), далі заселення в номер (check-in з 14:00), мінімум 30 хв.</p>
@@ -112,49 +128,32 @@ footer{color:var(--muted);font-size:.85rem;margin-top:28px}
     <p class="fair"><b>~16:00–17:15</b> «Німецький музей»: Germanisches Nationalmuseum, Kartäusergasse 1 (вт–нд 10–18, джерела розходяться; сімейний квиток ~14 €). Музей зачиняється о 18:00, але о 17:15 треба йти на ярмарок.</p>
     <p class="fair"><b>~17:15</b> пішки на Hauptmarkt (~10–15 хв), <b>17:30</b> урочисте відкриття Christkindlesmarkt (Christkind на балконі Frauenkirche). Далі прогулянка по ярмарку і старому місту, повернення метро у Фюрт.</p>
     <p class="fair"><small>Ввечері лягайте раніше: у суботу ранковий ринок в аеропорту.</small></p>
-  </div>
-  <div class="block"><h4>Різдвяні ярмарки</h4>
     <p class="fair"><b>Christkindlesmarkt (Hauptmarkt)</b> — 27 листопада – 24 грудня, щодня 10:00–21:00, вхід вільний. Урочисте відкриття <b>сьогодні о 17:30</b> — Christkind виступає з балкона Frauenkirche. Очікуйте великий натовп.</p>
     <p class="fair"><b>Регенсбург по дорозі (A3):</b> Romantischer Weihnachtsmarkt біля замку Thurn und Taxis — 20 листопада – 23 грудня; Christkindlmarkt на Neupfarrplatz — з 23 листопада до 23 грудня, вхід вільний. Обидва вже працюватимуть.</p>
+    <p class="route-line">Вартість і тарифи дороги, паркінгу, метро та готелю: розділи «Транспорт» і «Проживання».</p>
   </div>
-  <div class="pair"><div class="block"><h4>Паркінг · Фюрт</h4>
-    <div class="kv"><div><b>CONTIPARK Tiefgarage FLAIR</b>, Königstraße 112–114<br>15 € за добу, не більше 2 діб = 30 € (пт 27.11 ~15:30 – нд 29.11 ~11:00)<br><a href="https://www.google.com/maps/search/?api=1&query=CONTIPARK%20Tiefgarage%20FLAIR%20F%C3%BCrth" target="_blank" rel="noopener">Відкрити в Google Maps</a></div></div>
-  </div>
-  <div class="block"><h4>Бронювання · Hotel Centro Fürth Nürnberg</h4>
-    <div class="kv"><div><b>Hotel Centro Fürth Nürnberg</b><br>Mathildenstraße 26, 90762 Fürth<br><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Centro%20F%C3%BCrth%20N%C3%BCrnberg%2C%20Mathildenstra%C3%9Fe%2026%2C%2090762%20F%C3%BCrth" target="_blank" rel="noopener">Відкрити в Google Maps</a><br>Заїзд: <b>пт 27.11.2026, з 14:00</b><br>Виїзд: <b>нд 29.11.2026, 5:00–11:00</b><br>Телефон: <b>+49 911 97166900</b><br>Номер: сімейний з окремою ванною кімнатою, 4 окремі ліжка, 2 дорослих + 2 дітей (10 і 13 років), 1 номер, 2 ночі<br>Ціна: <b>183,20 €</b> за 2 ночі (198 € мінус знижка Booking.com 14,80 €; 185,05 € + 7 % ПДВ 12,95 € = 198 €), сніданок не включено<br>Скасування: безкоштовно за 3 дні до заїзду (до 24.11.2026), пізніше штраф = повна вартість</div></div>
-  </div></div>
 </details>
 
-<details class="day"><summary><span class="date">День 3 · Субота, 28 листопада</span><h2>Фюрт → аеропорт → Герцогенаурах → Фюрт</h2><span class="sum">аеропорт 9:00–11:00 · аутлети 11:45–14:00 · вільний вечір</span></summary>
-  <div class="block"><h4>Транспорт · авто</h4>
-    <div class="kv">
-      <div><small>Відстань авто</small><b>~75 км за день</b></div>
-      <div><small>Час за кермом</small><b>~2 год сумарно</b></div>
-    </div>
-    <p class="route-line">Маршрут: Фюрт → аеропорт Нюрнберга (~25 хв) → Герцогенаурах (~40 хв) → Фюрт (~35 хв)</p>
-  </div>
-  <div class="block"><h4>План дня</h4>
+<details class="day pending"><summary><span class="date">День 3 · Субота, 28 листопада</span><h2>Фюрт → аеропорт → Герцогенаурах → Фюрт</h2><span class="sum">аеропорт 9:00–11:00 · аутлети 11:45–14:00 · вільний вечір</span></summary>
+  <div class="block">
     <p class="fair"><b>8:30</b> виїзд з готелю на барахолку в аеропорту.</p>
     <p class="fair"><b>~9:00–11:00</b> (2 години) Riesenflohmarkt Flughafen Nürnberg, Großparkplatz P31/P7, Flughafenstraße 100 (6:00–16:00, дата підтверджена організатором Trödelteam Graage).</p>
     <p class="fair"><b>11:00</b> виїзд у Герцогенаурах (~35 км, ~40 хв). <b>11:45–14:00</b> аутлети: <b>adidas Outlet</b> (Olympiaring 2) і <b>Nike Factory Store</b>; у суботу працюють приблизно 9:00–18:00/19:00 (джерела розходяться, перевірте перед поїздкою). Обід за бажанням там же.</p>
     <p class="fair"><b>14:00</b> виїзд у Фюрт (~25 км, ~35 хв), паркінг <b>CONTIPARK Tiefgarage FLAIR</b>, піднімаєтесь у номер залишити покупки (мінімум 30 хв). <b>~15:15</b> вільний час.</p>
+    <p class="route-line">Маршрут авто: Фюрт → аеропорт Нюрнберга (~25 хв) → Герцогенаурах (~40 хв) → Фюрт (~35 хв), ~75 км за день, ~2 год за кермом.</p>
   </div>
 </details>
 
-<details class="day"><summary><span class="date">День 4 · Неділя, 29 листопада</span><h2>Фюрт → Загреб</h2><span class="sum">Hornbach на авто 9:00–10:30 · виїзд 10:30 · ~740 км, ~7,5–8 год</span></summary>
-  <div class="block"><h4>План дня</h4>
-    <p class="fair"><b>~8:30</b> виселення з готелю (виїзд 5:00–11:00), речі з собою. Забираєте авто з паркінгу CONTIPARK Tiefgarage FLAIR (2 доби оплачено, див. вище).</p>
+<details class="day pending"><summary><span class="date">День 4 · Неділя, 29 листопада</span><h2>Фюрт → Загреб</h2><span class="sum">Hornbach на авто 9:00–10:30 · виїзд 10:30 · ~740 км, ~7,5–8 год</span></summary>
+  <div class="block">
+    <p class="fair"><b>~8:30</b> виселення з готелю (виїзд 5:00–11:00), речі з собою. Забираєте авто з паркінгу CONTIPARK Tiefgarage FLAIR (2 доби, див. розділ «Транспорт»).</p>
     <p class="fair"><b>~8:45</b> їдете на Flohmarkt Hornbach Fürth, Magazinstraße 90 (~3 км, ~10 хв). <a href="https://www.google.com/maps/search/?api=1&query=Magazinstra%C3%9Fe%2090%2C%2090763%20F%C3%BCrth" target="_blank" rel="noopener">Відкрити в Google Maps</a>. Ринок 8:00–16:00, дата підтверджена на сайті організатора; умови паркування на місці не перевірені.</p>
     <p class="fair"><b>~9:00–10:30</b> барахолка.</p>
     <p class="fair"><b>~10:30</b> виїзд у Загреб. Дизель краще долити в Німеччині до виїзду, до 12:00 ціни зазвичай нижчі.</p>
+    <p class="route-line">Дорога: Фюрт → Регенсбург → Пассау → Лінц → A9 Pyhrn → Грац → Марибор → Загреб, ~740 км, ~7 г 30 хв – 8 год. Приїзд приблизно о 18:30–19:00 з урахуванням зупинок.</p>
   </div>
-  <div class="block"><h4>Транспорт · авто</h4>
-    <div class="kv">
-      <div><small>Відстань</small><b>~740 км</b></div>
-      <div><small>Час в дорозі</small><b>~7 г 30 хв – 8 год</b></div>
-    </div>
-    <p class="route-line">Маршрут: Фюрт → Регенсбург → Пассау → Лінц → A9 Pyhrn → Грац → Марибор → Загреб. Приїзд приблизно о 18:30–19:00 з урахуванням зупинок.</p>
-  </div>
+</details>
+
 </details>
 
 <details class="sec"><summary><h3>Барахолки (Flohmarkt)</h3><span class="sum">підтверджені: сб аеропорт; нд Hornbach, ALDI, OBI, Швайтенкірхен · карти</span></summary>
@@ -192,6 +191,51 @@ footer{color:var(--muted);font-size:.85rem;margin-top:28px}
 
 </details>
 
+<details class="sec"><summary><h3>Що спробувати</h3><span class="sum">1 пункт: лінцький торт</span></summary>
+<div class="block" style="background:var(--card)">
+  <ul class="items">
+    <li><details class="item"><summary><b>Лінцький торт (Linzer Torte)</b><span class="sum">Лінц · перший рецепт 1653 року</span></summary>
+      <p class="fair">Лінц — батьківщина найстарішого відомого рецепта торта у світі (перша згадка датується 1653 роком). Це унікальний пиріг із розсипчастого мигдалевого тіста з додаванням кориці та гвоздики, начинений кислуватим смородиновим або джемом із червоної порічки та прикрашений фірмовою сіточкою.</p>
+    </details></li>
+  </ul>
+</div></details>
+
+<details class="sec"><summary><h3>Транспорт</h3><span class="sum">авто Peugeot 3008 · ~1 590 км · дорога, паркінги, метро · вартість</span></summary>
+<div class="block" style="background:var(--card)">
+  <ul class="items">
+    <li><details class="item"><summary><b>Авто: маршрути по днях</b><span class="sum">Загреб – Лінц – Фюрт – Загреб · ~1 590 км</span></summary>
+      <table class="fm"><thead><tr><th>День</th><th>Маршрут</th><th>Відстань</th><th>Час в дорозі</th></tr></thead><tbody><tr><td><b>Чт 26.11</b></td><td>Загреб → Мацель (кордон) → Марибор → Шпільфельд → Грац → A9 Pyhrn → Лінц</td><td>~430 км</td><td>~4 г 30 хв – 5 г</td></tr><tr><td><b>Пт 27.11</b></td><td>Лінц → A8/A3 → Пассау (кордон) → Регенсбург → Нюрнберг (A3); далі Нюрнберг → Фюрт ~12 км (~25 хв)</td><td>~330 км</td><td>~3 г 30 хв</td></tr><tr><td><b>Сб 28.11</b></td><td>Фюрт → аеропорт Нюрнберга (~25 хв) → Герцогенаурах (~40 хв) → Фюрт (~35 хв)</td><td>~75 км</td><td>~2 год</td></tr><tr><td><b>Нд 29.11</b></td><td>Фюрт → Регенсбург → Пассау → Лінц → A9 Pyhrn → Грац → Марибор → Загреб (приїзд ~18:30–19:00)</td><td>~740 км</td><td>~7 г 30 хв – 8 год</td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Пальне (дизель)</b><span class="sum">Peugeot 3008 · ~237 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Витрата</b></td><td>Peugeot 3008 (2017): 50 л на 700 км = ~7,1 л/100 км. Маршрут ~1 590 км ≈ 113 л.</td></tr><tr><td><b>Перші ~700 км</b></td><td>на хорватському баку: 50 л × 1,88 € = 94 €</td></tr><tr><td><b>Решта ~890 км (~63 л)</b></td><td>заправка в Німеччині: 63 л × 2,26 € = ~143 € (середня ціна дизеля ADAC на 4.11.2026; у Баварії ~2,25 €). Заправляйтесь до 12:00, коли ціни зазвичай нижчі.</td></tr><tr><td><b>Вартість</b></td><td><b>~237 €</b></td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Віньєтки та платні дороги</b><span class="sum">~62,60 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Віньєтка Австрія</b></td><td>10-денна цифрова (ASFINAG), діє на всі дати 26–29.11; Німеччина без віньєтки. <a href="https://www.asfinag.at" target="_blank" rel="noopener">asfinag.at</a>: <b>12,80 €</b></td></tr><tr><td><b>Віньєтка Словенія</b></td><td>вже є: <b>0 €</b></td></tr><tr><td><b>Хорватія (A2)</b></td><td>Загреб – Мацель ~6,40 € в один бік, двічі: <b>~12,80 €</b></td></tr><tr><td><b>Тунелі A9 Pyhrn (не входять у віньєтку)</b></td><td>Bosruck ~7 € + Gleinalm ~11,50–12 € в один бік, двічі (Загреб–Лінц і назад): <b>~37 €</b></td></tr><tr><td><b>Разом</b></td><td><b>~62,60 €</b></td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Паркінг у Лінці</b><span class="sum">APCOA Parkgarage Blumau · 10 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Паркінг</b></td><td>APCOA Parkgarage Blumau (<a href="https://www.google.com/maps/search/?api=1&query=APCOA%20Parkgarage%20Blumau%2C%20Linz" target="_blank" rel="noopener">Google Maps</a>)</td></tr><tr><td><b>Тариф і строк</b></td><td>10 € за добу, 1 доба (чт 26.11 – пт 27.11)</td></tr><tr><td><b>Вартість</b></td><td><b>10 €</b></td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Паркінг у Фюрті</b><span class="sum">CONTIPARK Tiefgarage FLAIR · 30 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Паркінг</b></td><td>CONTIPARK Tiefgarage FLAIR, Königstraße 112–114 (<a href="https://www.google.com/maps/search/?api=1&query=CONTIPARK%20Tiefgarage%20FLAIR%20F%C3%BCrth" target="_blank" rel="noopener">Google Maps</a>)</td></tr><tr><td><b>Тариф і строк</b></td><td>15 € за добу, не більше 2 діб (пт 27.11 ~15:00 – нд 29.11 ~8:45). Актуальний тариф перевірте на mein-contipark.de</td></tr><tr><td><b>Вартість</b></td><td><b>30 €</b></td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Метро Фюрт ↔ Нюрнберг (VGN)</b><span class="sum">пт 27.11 · 15,50 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Квиток</b></td><td>груповий денний «TagesTicket Plus» для зони Нюрнберг–Фюрт, діє до 3:00 наступної ночі. Підходить на 1–6 осіб, з них не більше 2 дорослих (у вас 2 дорослих і 2 дітей).</td></tr><tr><td><b>Коли потрібен</b></td><td>лише на п'ятницю 27.11 (метро U1 з Фюрта до центру Нюрнберга, ~20 хв)</td></tr><tr><td><b>Ціна</b></td><td>з офіційного сайту VGN, станом на 1.01.2026: <b>15,50 €</b></td></tr></tbody></table>
+    </details></li>
+  </ul>
+</div></details>
+
+<details class="sec"><summary><h3>Проживання</h3><span class="sum">Лінц · 26 → 27.11 · 99 € · Фюрт · 27 → 29.11 · 183,20 €</span></summary>
+<div class="block" style="background:var(--card)">
+  <ul class="items">
+    <li><details class="item"><summary><b>Hotel Central Linz</b><span class="sum">26 → 27.11 · 1 ніч · 99 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Готель</b></td><td>Hotel Central Linz</td></tr><tr><td><b>Адреса</b></td><td>Humboldtstraße 28, Innere Stadt, 4020 Linz (<a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Central%20Linz%2C%20Humboldtstra%C3%9Fe%2028%2C%204020%20Linz%2C%20Austria" target="_blank" rel="noopener">Google Maps</a>)</td></tr><tr><td><b>Телефон</b></td><td><a href="tel:+436603858252">+43 660 3858252</a></td></tr><tr><td><b>Заїзд</b></td><td>четвер, 26.11.2026, 14:00–23:30</td></tr><tr><td><b>Виїзд</b></td><td>п'ятниця, 27.11.2026, 1:00–11:00</td></tr><tr><td><b>Ціна</b></td><td><b>99 €</b> за 1 ніч</td></tr></tbody></table>
+    </details></li>
+    <li><details class="item"><summary><b>Hotel Centro Fürth Nürnberg</b><span class="sum">27 → 29.11 · 2 ночі · 183,20 €</span></summary>
+      <table class="fm"><tbody><tr><td><b>Готель</b></td><td>Hotel Centro Fürth Nürnberg</td></tr><tr><td><b>Адреса</b></td><td>Mathildenstraße 26, 90762 Fürth (<a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Centro%20F%C3%BCrth%20N%C3%BCrnberg%2C%20Mathildenstra%C3%9Fe%2026%2C%2090762%20F%C3%BCrth" target="_blank" rel="noopener">Google Maps</a>)</td></tr><tr><td><b>Телефон</b></td><td><a href="tel:+4991197166900">+49 911 97166900</a></td></tr><tr><td><b>Заїзд</b></td><td>п'ятниця, 27.11.2026, з 14:00</td></tr><tr><td><b>Виїзд</b></td><td>неділя, 29.11.2026, 5:00–11:00</td></tr><tr><td><b>Склад</b></td><td>1 номер, 2 ночі: 2 дорослих, 2 дітей (10 і 13 років)</td></tr><tr><td><b>Номер</b></td><td>сімейний з окремою ванною кімнатою, 4 окремі ліжка; сніданок не включено</td></tr><tr><td><b>Ціна</b></td><td><b>183,20 €</b> за 2 ночі (198 € мінус знижка Booking.com 14,80 €; 185,05 € + 7 % ПДВ 12,95 € = 198 €)</td></tr><tr><td><b>Скасування</b></td><td>безкоштовно за 3 дні до заїзду (до 24.11.2026); пізніше штраф = повна вартість</td></tr></tbody></table>
+    </details></li>
+  </ul>
+</div></details>
+
 <details class="sec"><summary><h3>Витрати</h3><span class="sum">~651 €: житло 282,2, дорога ~355, пам'ятки 14</span></summary><div class="block" style="background:var(--card)"><table class="fm">
     <thead><tr><th>Стаття</th><th>Розрахунок</th><th>Сума</th></tr></thead>
     <tbody>
@@ -213,16 +257,33 @@ footer{color:var(--muted);font-size:.85rem;margin-top:28px}
     </tbody>
   </table></div></details>
 
-<details class="sec"><summary><h3>Практичні нотатки</h3><span class="sum">шини, документи, лінцький торт</span></summary>
+<details class="sec"><summary><h3>Практичні нотатки</h3><span class="sum">шини, документи</span></summary>
+<div class="block" style="background:var(--card)">
 <ul class="tips">
   <li><b>Зимові шини:</b> наприкінці листопада потрібна зимова гума або ланцюги (Австрія 1.11–15.04, Словенія 15.11–15.03; у Німеччині — за погодних умов).</li>
   <li><b>Документи:</b> паспорт/ID, зелена карта, техпаспорт.</li>
-  <li><b>Лінцький торт (Linzer Torte):</b> Лінц — батьківщина найстарішого відомого рецепта торта у світі (перша згадка датується 1653 роком). Це унікальний пиріг із розсипчастого мигдалевого тіста з додаванням кориці та гвоздики, начинений кислуватим смородиновим або джемом із червоної порічки та прикрашений фірмовою сіточкою.</li>
 </ul>
-
-</details>
+</div></details>
 
 <footer>Відстані та час — орієнтовні, без заторів і зупинок; перед виїздом перевірте в навігаторі. Дати ярмарків (особливо Лінц, Пассау, Регенсбург) взято з каталогів подій — звірте на офіційних сайтах міст.</footer>
 </div>
+<script>
+(function () {
+  var KEY = 'austria-trip-todo';
+  var boxes = document.querySelectorAll('input.todo');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+  for (var i = 0; i < boxes.length; i++) {
+    (function (b) {
+      var id = b.getAttribute('data-id');
+      if (saved[id]) { b.checked = true; }
+      b.addEventListener('change', function () {
+        saved[id] = b.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      });
+    })(boxes[i]);
+  }
+})();
+</script>
 </body>
 </html>
