@@ -22,6 +22,9 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
 #list { padding: 14px max(14px, env(safe-area-inset-right)) 28px max(14px, env(safe-area-inset-left)); max-width: 760px; margin: 0 auto; }
 #list h2 { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 18px 0 8px; }
 #list h2:first-child { margin-top: 4px; }
+.menu { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 6px; }
+.btn { display: inline-block; padding: 7px 14px; background: var(--surface); border: 1px solid var(--accent); border-radius: 99px; color: var(--accent); font-size: .9rem; font-weight: 600; text-decoration: none; }
+.btn:hover, .btn:focus-visible { background: var(--accent-soft); outline: none; }
 .card { display: block; padding: 14px 16px; margin-bottom: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; color: var(--fg); text-decoration: none; font-weight: 600; }
 .card:hover, .card:focus-visible { border-color: var(--accent); background: var(--accent-soft); outline: none; }
 .card small { display: block; color: var(--muted); font-weight: 400; font-size: .85rem; margin-top: 2px; }
@@ -39,6 +42,7 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
 </head>
 <body>
 <div id="list">
+  <nav class="menu" aria-label="Розділи"><a class="btn" href="2026.12_packing.html" data-title="Збори в дорогу">Збори в дорогу</a></nav>
   <h2>Поїздки</h2>
   <a class="card" href="trip_plan/2026.12_trip-oman.html" data-title="Оман — план поїздки">Оман<small>30.12.2026 – 08.01.2027, з Загреба</small></a>
   <a class="card" href="trip_plan/2026.11_trip-austria-germany.html" data-title="Австрія та Німеччина">Австрія та Німеччина<small>листопад 2026</small></a>
@@ -53,7 +57,7 @@ body { background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -appl
 </div>
 <script>
 (function () {
-  var cards = document.querySelectorAll('#list a.card');
+  var cards = document.querySelectorAll('#list a.card, #list a.btn');
   var list = document.getElementById('list');
   var viewer = document.getElementById('viewer');
   var frame = document.getElementById('frame');

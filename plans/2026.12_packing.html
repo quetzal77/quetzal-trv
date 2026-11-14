@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Збори в дорогу</title>
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--ink:#1d2433;--muted:#667085;--line:#e4e0d6;--accent:#b4381f;--accent2:#1f5f8b;--chip:#efe9dc}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--card:#1c2029;--ink:#eceff4;--muted:#9aa4b2;--line:#2b303b;--accent:#ff8a6b;--accent2:#7cc0ee;--chip:#262b36}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:24px 16px 56px}
+header h1{margin:0 0 4px;font-size:clamp(1.6rem,5vw,2.3rem)}
+header p{margin:0;color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:18px 0 8px}
+.total{font-weight:600}
+.meter{flex:1 1 160px;height:8px;background:var(--chip);border-radius:99px;overflow:hidden;min-width:120px}
+.meter i{display:block;height:100%;width:0;background:var(--accent2);transition:width .2s}
+button.reset{font:inherit;font-size:.9rem;font-weight:600;color:var(--accent);background:var(--card);border:1px solid var(--accent);border-radius:8px;padding:6px 12px;cursor:pointer}
+button.reset:hover,button.reset:focus-visible{background:var(--chip);outline:none}
+.block{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:10px}
+h3{font-size:1.05rem;margin:28px 0 8px}
+h4.grp{margin:16px 0 4px;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent2)}
+h4.grp:first-child{margin-top:0}
+details>summary{cursor:pointer;list-style:none;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 34px;position:relative}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"\25B8";position:absolute;left:14px;top:10px;color:var(--muted);transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+details>summary h3{margin:0;font-size:1rem}
+details>summary .sum{color:var(--muted);font-size:.88rem;font-weight:400}
+details[open]>summary{margin-bottom:10px}
+details.sec{margin:14px 0}
+ul.todo-list{list-style:none;padding-left:0;margin:0}
+.todo-list li{margin:8px 0}
+.todo-list label{cursor:pointer;display:flex;gap:10px;align-items:baseline}
+.todo-list input{width:18px;height:18px;flex:none;margin:0;accent-color:var(--accent2)}
+.todo-list input:checked+span{color:var(--muted);text-decoration:line-through}
+.todo-list small{color:var(--muted)}
+footer{color:var(--muted);font-size:.85rem;margin-top:28px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Збори в дорогу</h1>
+  <p>Оман, 30.12.2026 – 08.01.2027</p>
+</header>
+<div class="bar">
+  <span class="total" id="total"></span>
+  <span class="meter"><i id="meter"></i></span>
+  <button type="button" class="reset" id="reset">Стерти всі відмітки</button>
+</div>
+
+<details class="sec" open><summary><h3>1. Перевірити і зробити до поїздки</h3><span class="sum" data-count="s1"></span></summary>
+<div class="block" style="background:var(--card)"><ul class="todo-list" data-group="s1">
+      <li><label><input type="checkbox" class="todo" data-id="pk01"> <span>Поповнити мобільний</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk02"> <span>Зробити страховку</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk03"> <span>Перевірити погоду</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk04"> <span>Зареєструватися на літак</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk05"> <span>Роздрукувати квитки й документи</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk06"> <span>Відвезти гроші й документи до рідних</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk07"> <span>Сховати ключі від машини <small>· у Лені</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk08"> <span>Відігнати машину на стоянку</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk09"> <span>Заплатити за інтернет</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk10"> <span>Заплатити за квартиру</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk11"> <span>Заплатити за школу</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk12"> <span>Заплатити консьєржці</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk13"> <span>Зарядити фотоапарат</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk14"> <span>Зарядити повербанк</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk15"> <span>Зарядити годинник</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk16"> <span>Завантажити карту на телефон</span></label></li>
+</ul></div></details>
+
+<details class="sec" open><summary><h3>2. Взяти з собою</h3><span class="sum" data-count="s2"></span></summary>
+<div class="block" style="background:var(--card)">
+<h4 class="grp">Спорядження особисте</h4>
+<ul class="todo-list" data-group="s2">
+      <li><label><input type="checkbox" class="todo" data-id="pk17"> <span>Паспорт</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk18"> <span>Водійське посвідчення - не в гаманець</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk19"> <span>Квитки</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk20"> <span>Гроші (готівка) - в окремі кишені!!! <small>· 1000 євро: 400 у гаманці, 300 у рюкзаку, 300 у Лені в гаманці</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk21"> <span>Гроші (картка) <small>· 1250 євро, 500 євро перекинув із запасів</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk22"> <span>Страховка</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk23"> <span>Зарядка для мобільного</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk24"> <span>Зарядка для годинника</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk25"> <span>Ноутбук і зарядка</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk26"> <span>Перехідники на локальні розетки</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk27"> <span>Навушники</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk28"> <span>Повербанк</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk29"> <span>Ніж і штопор</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk30"> <span>Зубна щітка й паста</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk31"> <span>Мило й шампунь</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk32"> <span>Рушник</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk33"> <span>Бритва</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk34"> <span>Ліки (аптечка)</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk35"> <span>Фотоапарат</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk36"> <span>Запасні окуляри <small>· у машині</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk37"> <span>Дезодорант</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk38"> <span>Засіб від/для засмаги</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk39"> <span>Репелент від комах</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk40"> <span>Легкий складаний рюкзак для прогулянок</span></label></li>
+</ul>
+<h4 class="grp">Спорядження родинне</h4>
+<ul class="todo-list" data-group="s2">
+      <li><label><input type="checkbox" class="todo" data-id="pk41"> <span>Посуд, ложки та виделки, горнятка</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk42"> <span>Чайник</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk43"> <span>Їжа в дорогу <small>· Горішки, чіпси, мівіна, тортільї, печиво</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk44"> <span>Матраци надувні <small>· великий</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk45"> <span>Насос</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk46"> <span>Термоси з напоями</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk47"> <span>Вода</span></label></li>
+</ul>
+<h4 class="grp">Одяг</h4>
+<ul class="todo-list" data-group="s2">
+      <li><label><input type="checkbox" class="todo" data-id="pk48"> <span>Одяг для готелю - капці</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk49"> <span>Одяг для готелю - шорти, майка</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk50"> <span>Плавки <small>· 1 шт</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk51"> <span>Шапка</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk52"> <span>Сандалі, в&#x27;єтнамки <small>· в&#x27;єтнамки та крокси</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk53"> <span>Кросівки</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk54"> <span>Футболки й теніски <small>· плюс 1 на мені</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk55"> <span>Шорти <small>· на мені</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk56"> <span>Сорочки</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk57"> <span>Светр, тепла сорочка, пайта <small>· на мені</small></span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk58"> <span>Штани</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk59"> <span>Труси</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk60"> <span>Шкарпетки</span></label></li>
+      <li><label><input type="checkbox" class="todo" data-id="pk61"> <span>Дощовик або легка куртка</span></label></li>
+</ul>
+</div></details>
+
+<footer>Відмітки зберігаються в цьому браузері на цьому пристрої й не зникають, доки ви самі не натиснете «Стерти всі відмітки» (або не очистите дані сайту в браузері).</footer>
+</div>
+<script>
+(function () {
+  var KEY = 'oman-packing-v1';
+  var boxes = document.querySelectorAll('input.todo');
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+
+  function persist() {
+    try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+  }
+
+  function counts() {
+    var groups = { s1: [0, 0], s2: [0, 0] };
+    var done = 0;
+    for (var i = 0; i < boxes.length; i++) {
+      var g = boxes[i].closest('ul').getAttribute('data-group');
+      groups[g][1]++;
+      if (boxes[i].checked) { groups[g][0]++; done++; }
+    }
+    for (var k in groups) {
+      if (groups.hasOwnProperty(k)) {
+        var el = document.querySelector('[data-count="' + k + '"]');
+        if (el) { el.textContent = groups[k][0] + ' з ' + groups[k][1]; }
+      }
+    }
+    document.getElementById('total').textContent = 'Готово ' + done + ' з ' + boxes.length;
+    document.getElementById('meter').style.width = (boxes.length ? Math.round(done * 100 / boxes.length) : 0) + '%';
+  }
+
+  for (var i = 0; i < boxes.length; i++) {
+    (function (b) {
+      var id = b.getAttribute('data-id');
+      if (saved[id]) { b.checked = true; }
+      b.addEventListener('change', function () {
+        if (b.checked) { saved[id] = true; } else { delete saved[id]; }
+        persist();
+        counts();
+      });
+    })(boxes[i]);
+  }
+
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!window.confirm('Стерти всі відмітки? Це не можна скасувати.')) { return; }
+    saved = {};
+    persist();
+    for (var j = 0; j < boxes.length; j++) { boxes[j].checked = false; }
+    counts();
+  });
+
+  counts();
+})();
+</script>
+</body>
+</html>
