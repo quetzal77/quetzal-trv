@@ -18,6 +18,8 @@ function createPlansPage_HTML() {
         try {
             var d = frame.contentDocument;
             if (!d || !d.documentElement) { return; }
+            d.documentElement.style.overflow = "hidden";
+            if (d.body) { d.body.style.overflow = "hidden"; }
             var h = Math.max(d.documentElement.scrollHeight, d.body ? d.body.scrollHeight : 0);
             if (h > 0 && Math.abs(frame.offsetHeight - h) > 1) { frame.style.height = h + "px"; }
         } catch (e) {}
