@@ -110,11 +110,48 @@ IMG/                      flags, emblems, city photos, icons / favicons
 
 ## Deploy & cache-busting
 
-Deployed as static files to `https://quetzal.epizy.com/`. Statically-tagged assets
-(`SCRIPTS/bcd_onload.js`, `THEMES/global.css`, `THEMES/fonts.css`) carry a `?v=X.Y.Z`
-query that is bumped on each deploy to bust the browser cache; the same version shows on
-the About page. All other scripts are lazy-loaded via `$.getScript`, which auto-busts the
-cache, so they don't need a `?v=`.
+Live site: `https://quetzal.epizy.com/` (InfinityFree, static files in `htdocs/`).
+
+### How deploy works
+
+Deploy is automatic: **every push to `master` (i.e. every merge into it) triggers the
+GitHub Actions workflow `.github/workflows/deploy.yml`**, which uploads the repo over FTP
+(`SamKirkland/FTP-Deploy-Action`). Only changed files are uploaded; the action keeps a
+`.ftp-deploy-sync-state.json` on the server for that - do not delete it. Excluded from
+upload: `.git*`, `.github/`, `.claude/`, `.idea/`, `*.iml`, `CLAUDE.md`, `README.md`, `tools/`.
+
+Credentials live in the repo secrets `FTP_SERVER`, `FTP_USER`, `FTP_PASS`
+(GitHub -> Settings -> Secrets and variables -> Actions).
+
+Release steps:
+
+1. Work on a feature branch (e.g. `site_version_9_4`). If JS/CSS changed, bump the version
+   (see below); pure `DATA/*.json` / docs changes need no bump.
+2. Merge the branch into `master` and push `master`:
+   `git checkout master && git merge site_version_9_4 && git push origin master`
+3. The deploy starts by itself. A manual run is also possible: GitHub -> Actions ->
+   "Deploy to InfinityFree" -> Run workflow (pick `master`).
+
+### How to check the deploy status
+
+- GitHub -> **Actions** tab -> workflow "Deploy to InfinityFree": green check = uploaded,
+  red cross = failed (open the run and the "Upload via FTP" step for the log).
+  With GitHub CLI: `gh run list --workflow deploy.yml --limit 5`, `gh run watch`.
+- On the site: hard-refresh (Ctrl+F5) and check the version tag (`vX.Y.Z`) on the About
+  page; it must equal the version bumped in the release. Or open DevTools -> Network and
+  confirm `bcd_onload.js?v=X.Y.Z`.
+- If the Actions run is green but the site is stale: browser/CDN cache - hard-refresh;
+  for data-only changes (no version bump) the JSON is fetched with cache-busting anyway.
+- Common failures: wrong/expired FTP secrets (login error in the log), InfinityFree FTP
+  timeouts (just re-run the workflow).
+
+### Version / cache-busting
+
+Statically-tagged assets in `index.html` carry a `?v=X.Y.Z` query; `APP_V` in
+`SCRIPTS/bcd_onload.js` adds the same `?v=` to every lazy-loaded script (`$.getScript`).
+Bump the patch on each deploy with JS/CSS changes, in four places: `index.html` (`?v=`),
+`SCRIPTS/bcd_onload.js` (`APP_V`), `SCRIPTS/bcd_services.js` (`tech-tag` span, shown on
+the About page) and `CLAUDE.md` (current version).
 
 ## Roadmap
 

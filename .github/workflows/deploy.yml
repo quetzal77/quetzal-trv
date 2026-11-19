@@ -2,7 +2,7 @@ name: Deploy to InfinityFree
 
 on:
   push:
-    branches: [master, site_version_9_4]
+    branches: [master]
   workflow_dispatch:
 
 concurrency:
